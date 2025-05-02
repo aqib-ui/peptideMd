@@ -98,7 +98,7 @@ export default function HomePage() {
       </section>
 
       {/* Video Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-white opacity-90">
+      <section className="relative my-10 md:my-20 min-h-screen flex items-center justify-center bg-white opacity-90">
         <video
           ref={videoRef}
           // className="w-[90%] max-w-full rounded-[2rem] shadow-lg"
@@ -151,7 +151,7 @@ export default function HomePage() {
       </section>
 
       {/* Description Section */}
-      <section className="min-h-screen flex flex-col justify-center px-6 md:px-10 mb-0 ">
+      <section className="min-h-screen flex flex-col justify-center px-6 mb-0 my-10 md:my-20 ">
         <h1
           className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
           style={{ fontFamily: "Afacad, sans-serif" }}
@@ -263,8 +263,8 @@ export default function HomePage() {
                     <Image
                       src="/11.png"
                       alt="Avatar 1"
-                      width={40}
-                      height={40}
+                      width={60}
+                      height={60}
                       className="object-cover rounded-full border-2 border-white
                  w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
                  z-10 max-[460px]:mb-[-20px]"
@@ -272,8 +272,8 @@ export default function HomePage() {
                     <Image
                       src="/22.png"
                       alt="Avatar 2"
-                      width={40}
-                      height={40}
+                      width={60}
+                      height={60}
                       className="object-cover rounded-full border-2 border-white
                  w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
                  z-20 -ml-4 sm:-ml-5 md:-ml-6 max-[460px]:ml-0 max-[460px]:mb-[-20px]"
@@ -281,8 +281,8 @@ export default function HomePage() {
                     <Image
                       src="/33.png"
                       alt="Avatar 3"
-                      width={40}
-                      height={40}
+                      width={60}
+                      height={60}
                       className="object-cover rounded-full border-2 border-white
                  w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
                  z-30 -ml-4 sm:-ml-5 md:-ml-6 max-[460px]:ml-0"
@@ -302,14 +302,16 @@ export default function HomePage() {
             </div>
             {/* Top-right icons */}
             <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-12 lg:right-12 flex gap-4">
-              {/* Arrow Icon */}
-              <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
-                <FaArrowRight className="text-[#2D557A] text-base sm:text-lg" />
-              </div>
+              
 
               {/* Information Icon */}
               <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
-                <IoIosInformationCircleOutline />
+                <IoIosInformationCircleOutline className="text-[#2D557A] text-base sm:text-lg" />
+              </div>
+
+              {/* Arrow Icon */}
+              <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
+                <FaArrowRight className="text-[#2D557A] text-base sm:text-lg" />
               </div>
             </div>
           </div>
@@ -325,6 +327,7 @@ export default function HomePage() {
                 height={96}
                 className="w-40 h-40 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 ml-4 lg:ml-10"
               />
+              {/* card over image */}
               <div
                 className="absolute top-0 sm:top-36 md:top-40 lg:top-44 right-42 sm:right-60 md:right-76 lg:right-20 
                 flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
@@ -344,7 +347,7 @@ export default function HomePage() {
 
             {/* List section */}
             <div
-              className="flex justify-center mt-10 md:mt-26 px-4"
+              className="flex  justify-center mt-10 sm:mt-26 px-4"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               <ul className="space-y-6 w-full max-w-[700px]">
@@ -410,7 +413,7 @@ export default function HomePage() {
       {/* Card Section */}
       <section className="min-h-screen flex flex-col items-center justify-center bg-white ">
         <h1
-          className="text-4xl font-bold text-[72px] leading-[100%] text-center"
+          className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Discover

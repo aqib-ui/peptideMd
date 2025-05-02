@@ -3,10 +3,14 @@ import Image from "next/image";
 export default function Resources() {
   return (
     <div className="container px-6 py-10">
-      <div className="m-2">
+      <div className="m-2 w">
         <h1
-          className="text-2xl font-bold text-[38px] md:text-[48px] lg:text-[72px] leading-[100%] text-left"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          // className="text-2xl font-bold text-[38px] md:text-[48px] lg:text-[72px] leading-[100%] text-left"
+          // style={{ fontFamily: "Afacad, sans-serif" }}
+          // className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
+          className="text-4xl md:text-5xl lg:text-7xl  font-bold leading-tight"
+
+            style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Resources
           {/* <span style={{ color: "#224674" }} className="italic"> */}
