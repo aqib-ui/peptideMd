@@ -1,0 +1,286 @@
+// old code before 24/3/25 [deleted]
+
+// "use client";
+// import Image from "next/image";
+// import { useState } from "react";
+
+// export default function PeptideDatabase() {
+//   const [searchQuery, setSearchQuery] = useState("");
+
+//   return (
+//     <div className="container mx-auto px-4 py-10">
+//       <h1
+//         className="text-4xl font-bold text-[72px] leading-[100%] text-left"
+//         style={{ fontFamily: "Afacad, sans-serif" }}
+//       >
+//         Peptide{" "}
+//         <span style={{ color: "#FF7D7D" }} className="italic">
+//           Database
+//         </span>
+//       </h1>{" "}
+//       <h2
+//         className="text-[24px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
+//         style={{ fontFamily: "Afacad, sans-serif" }}
+//       >
+//         Your go-to database for peptide knowledge—browse, explore, and unlock
+//         detailed information with a click!
+//       </h2>
+//       <div className="relative w-[90%] md:w-[80%] lg:w-[45%] xl:w-[80%] max-w-[500px]">
+//         {/* Search Input */}
+//         <input
+//           type="text"
+//           placeholder="Search Peptides"
+//           value={searchQuery}
+//           onChange={(e) => setSearchQuery(e.target.value)}
+//           className="w-full px-6 pr-16 py-5 border-2 border-[#88D3FF] bg-white rounded-[1.25rem] shadow-sm
+//     focus:ring focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] outline-none text-lg font-semibold
+//     placeholder:text-xl placeholder-[#104576]/50 transition duration-100"
+//           style={{ fontFamily: "Afacad, sans-serif" }}
+//         />
+
+//         {/* Search Icon (Perfectly Aligned) */}
+//         <button
+//           className="absolute right-0 top-0 h-full flex items-center
+//     justify-center bg-[#88D3FF] w-18 rounded-[1.35rem]"
+//           onClick={() => console.log("Searching:", searchQuery)}
+//         >
+//           <img src="/blue-search.png" alt="Search" className="w-6 h-6" />
+//         </button>
+//       </div>
+//       {/* Peptides Table */}
+//       <div className="mt-30 overflow-x-auto rounded-t-lg border border-gray-300 shadow-md">
+//         <table
+//           className="min-w-full bg-white rounded-t-lg"
+//           style={{ fontFamily: "Afacad, sans-serif" }}
+//         >
+//           <thead>
+//             <tr className="bg-[#FFD9E6]">
+//               <th className="px-6 py-3 text-left">Name</th>
+//               <th className="px-6 py-3 text-left">Applications</th>
+//               <th className="px-6 py-3 text-left">Descriptions</th>
+//               <th className="px-6 py-3 text-left">Benefits</th>
+//               <th className="px-6 py-3 text-left">Risks</th>
+//               <th className="px-6 py-3 text-left">References</th>
+//               <th className="px-6 py-3 text-left">FDA Status</th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {/* Sample Row */}
+//             <tr className="border-t border-gray-300">
+//               <td className="px-6 py-4 w-40 font-bold">AHK-Cu</td>
+//               <td className="px-6 py-4 w-[200px]">
+//                 Skin health and tissue regeneration.
+//               </td>
+//               <td className="px-6 py-4 w-[300px]">
+//                 A copper peptide similar to GHK-Cu with specific properties.
+//               </td>
+//               <td className="px-6 py-4">Potential benefits.</td>
+//               <td className="px-6 py-4">Possible risks.</td>
+//               <td className="px-6 py-4">Scientific papers</td>
+//               <td className="px-6 py-4">Approved</td>
+//             </tr>
+//             {/* Sample Row */}
+//             <tr className="border-t border-gray-300">
+//               <td className="px-6 py-4 font-bold">Sample Peptide</td>
+//               <td className="px-6 py-4 w-[200px]">
+//                 Treatment of hypoactive sexual desire disorder and erectile
+//                 dysfunction.
+//               </td>
+//               <td className="px-6 py-4">
+//                 Also known as Bremelanotide, PT-141 is a melanocortin receptor
+//                 agonist designed to treat sexual dysfunction in both men and
+//                 women.
+//               </td>
+//               <td className="px-6 py-4">
+//   <ul className="list-circle">
+//     <li className="before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+//       Promotes collagen synthesis
+//     </li>
+//     <li className="before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+//       Antioxidant properties
+//     </li>
+//     <li className="before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+//       Supports wound healing
+//     </li>
+//     <li className="before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+//       Anti-inflammatory effects
+//     </li>
+//   </ul>
+// </td>
+
+//               <td className="px-6 py-4">Possible risks.</td>
+//               <td className="px-6 py-4">Scientific papers</td>
+//               <td className="px-6 py-4">Approved</td>
+//             </tr>
+//             {/* Sample Row */}
+//             <tr className="border-t border-gray-300">
+//               <td className="px-6 py-4 font-bold">Sample Peptide</td>
+//               <td className="px-6 py-4">Research</td>
+//               <td className="px-6 py-4">A short description.</td>
+//               <td className="px-6 py-4">Potential benefits.</td>
+//               <td className="px-6 py-4">Possible risks.</td>
+//               <td className="px-6 py-4">Scientific papers</td>
+//               <td className="px-6 py-4">Approved</td>
+//             </tr>
+//             {/* Sample Row */}
+//             <tr className="border-t border-gray-300">
+//               <td className="px-6 py-4 font-bold">Sample Peptide</td>
+//               <td className="px-6 py-4">Research</td>
+//               <td className="px-6 py-4">A short description.</td>
+//               <td className="px-6 py-4">Potential benefits.</td>
+//               <td className="px-6 py-4">Possible risks.</td>
+//               <td className="px-6 py-4">Scientific papers</td>
+//               <td className="px-6 py-4">Approved</td>
+//             </tr>
+//           </tbody>
+//         </table>
+//       </div>
+//     </div>
+//   );
+// }
+
+
+
+
+
+
+
+
+
+// table data before comparision btn table changes
+{/* <div className=" overflow-x-auto rounded-t-[72px] border border-gray-300 shadow-md">
+          <table
+            className="min-w-full bg-white rounded-t-[72px] p-10"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            <thead>
+              <tr
+                className="bg-[#94C4ED] text-sm md:text-base lg:text-lg mt-10"
+              >
+                <th
+                  className="px-10 py-6 text-left text-sm md:text-base lg:text-lg"
+                >
+                  Name
+                </th>
+                <th className="px-10 py-6 text-left">Applications</th>
+                <th className="px-10 py-6 text-left">Descriptions</th>
+                <th className="px-10 py-6 text-left">Benefits</th>
+                <th className="px-10 py-6 text-left">Risks</th>
+                <th className="px-5 py-6 text-left">References</th>
+                <th className="px-5 py-6 text-left">FDA Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {peptides.map((peptide, index) => (
+                <tr key={index}>
+                  <td
+                    className="px-2 py-4 text-sm md:text-base lg:text-lg"
+                  >
+                    <div className="inline-block rounded-full bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] p-[1.5px]">
+                      <span
+                        className="block rounded-full bg-white px-3 py-3 text-md font-bold text-black"
+                        style={{ fontFamily: "Afacad, sans-serif" }}
+                      >
+                        {peptide.name}
+                      </span>
+                    </div>
+                  </td>
+
+                  <td className="px-2 py-4">{peptide.applications}</td>
+                  <td className="px-2 py-4">{peptide.description}</td>
+                  <td className="px-2 py-4">
+                    <ul className="list-circle">
+                      {peptide.benefits.map((benefit, i) => (
+                        <li
+                          key={i}
+                          className="relative pl-3 before:content-[''] 
+                          before:absolute before:left-0 before:top-2 before:w-2 
+                          before:h-2 before:rounded-full before:border-2 before:border-[#88D3FF]"
+                        >
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </td>
+                  <td className="px-2 py-4">
+                    <ul className="list-circle">
+                      {peptide.risks.map((risk, i) => (
+                        <li
+                          key={i}
+                          className="relative pl-3 before:content-[''] 
+                          before:absolute before:left-0 before:top-2 before:w-2 
+                          before:h-2 before:rounded-full before:border-2 before:border-[#88D3FF]"
+                        >
+                          {risk}
+                        </li>
+                      ))}
+                    </ul>
+                  </td>
+                  <td className="px-2 py-4">{peptide.references}</td>
+
+                  <td className="px-2 py-4 ">
+                    {peptide.fdaStatus === "Not FDA Approved" ? (
+                      <span
+                        className="inline-block px-1 py-1 md:px-0 md:py-2 leading-tight text-center 
+                    rounded-[20px] bg-[#909090] text-sm md:text-base font-semibold"
+                      >
+                        {peptide.fdaStatus}
+                      </span>
+                    ) : (
+                      <span
+                        className="inline-block px-3 py-1 md:px-4 md:py-2 leading-tight text-start 
+                    rounded-[20px] bg-[#C5E87E] text-sm md:text-base font-semibold"
+                      >
+                        {peptide.fdaStatus}
+                      </span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div> */}
+
+
+
+
+
+
+
+        // table data aligned before spacing
+        // <td key={index} className="md:px-4 max-md:px-1 py-4 align-top ">
+                      //   <div className="ml-2 sm:ml-4 md:ml-8 lg:ml-16 xl:ml-[12.5rem] flex justify-start items-start gap-4">
+                      //   <div className="flex items-start justify-start gap-10 ">
+                      //     <span className="font-bold whitespace-nowrap">{row.label}:</span>
+              
+                      //     {Array.isArray(peptide[row.key as keyof typeof peptide]) ? (
+                      //       <ul>
+                      //         {(peptide[row.key as keyof typeof peptide] as string[]).map(
+                      //           (item, j) => (
+                      //             <li
+                      //               key={j}
+                      //               className="relative pl-3 before:content-[''] 
+                      //                 before:absolute before:left-0 before:top-2 before:w-2 
+                      //                 before:h-2 before:rounded-full before:border-2 before:border-[#88D3FF]"
+                      //             >
+                      //               {item}
+                      //             </li>
+                      //           )
+                      //         )}
+                      //       </ul>
+                      //     ) : row.key === "fdaStatus" ? (
+                      //       <span
+                      //         className={`inline-block px-3 py-1 rounded-[20px] text-sm md:text-base font-semibold ${
+                      //           peptide.fdaStatus === "FDA Approved"
+                      //             ? "bg-[#C5E87E]"
+                      //             : "bg-[#909090]"
+                      //         }`}
+                      //       >
+                      //         {peptide.fdaStatus}
+                      //       </span>
+                      //     ) : (
+                      //       <span>{peptide[row.key as keyof typeof peptide]}</span>
+                      //     )}
+                      //   </div>
+                      //   </div>
+                      // </td>

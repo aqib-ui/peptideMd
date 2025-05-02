@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(
+      -100%
+    ); /* Adjust this based on the number of text spans */
+  }
+}
+
+.animate-slide { 
+  display: flex;
+  min-width: 400%; /* Increase width to accommodate all text spans without cutting off */
+  animation: slide 40s linear infinite; /* Slow the animation down to avoid abrupt resets */
+  white-space: nowrap;
+}
+
+@layer components {
+  .gradient-border {
+    @apply mt-6 p-[2px] rounded-full w-[200px] h-[60px] bg-gradient-to-tr 
+  from-[#5CB0E2] to-[#EB6793] transition-colors duration-500 ease-in-out;
+  }
+
+  .gradient-card-border {
+    @apply p-[2px] rounded-[3rem] w-[90%] max-w-[450px] min-h-[450px] md:h-[500px] mx-auto 
+    relative bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793];
+  }
+  
+}
