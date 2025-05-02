@@ -77,7 +77,8 @@ function DosageGuide() {
   return (
     <div className="pl-5 pr-4">
       <h1
-        className="text-5xl md:text-[72px] font-bold leading-[100%] text-left mt-6"
+        // className="text-5xl md:text-[72px] font-bold leading-[100%] text-left mt-6"
+        className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         Peptides
@@ -496,7 +497,8 @@ function Calculator() {
   return (
     <div className="pl-5 pr-4">
       <h1
-        className="text-5xl md:text-[72px] font-bold leading-[100%] text-left mt-6"
+        // className="text-5xl md:text-[72px] font-bold leading-[100%] text-left mt-6"
+        className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         Peptides

@@ -38,7 +38,7 @@ export default function HomePage() {
         <div className="flex-1.2 relative z-10">
           <h1
             // className="text-4xl font-bold text-[72px] leading-[100%]"
-            className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
+            className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Welcome to
@@ -50,7 +50,7 @@ export default function HomePage() {
 
           <p
             // className="text-[34px] font-medium leading-[100%] mt-8"
-            className="text-3xl md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
+            className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Your Trusted Source for Evidence-Based Peptide Therapeutics.
@@ -58,7 +58,7 @@ export default function HomePage() {
 
           <p
             // className="text-[24px] font-medium leading-[100%] mt-6 max-w-4xl"
-            className="text-2xl md:text-[20px] lg:text-[24px] font-medium mt-2 max-w-xl md:max-w-3xl"
+            className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-2 max-w-xl md:max-w-3xl"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             PeptideMD.com is your trusted platform for exploring the world of
@@ -153,7 +153,7 @@ export default function HomePage() {
       {/* Description Section */}
       <section className="min-h-screen flex flex-col justify-center px-6 mb-0 my-10 md:my-20 ">
         <h1
-          className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
+          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           What are
@@ -163,7 +163,7 @@ export default function HomePage() {
         </h1>
 
         <p
-          className="text-2xl md:text-[20px] lg:text-[24px] font-medium mt-2 max-w-xl md:max-w-3xl mt-6"
+          className="text-[20px] md:text-[22px] lg:text-[24px] font-medium  max-w-xl md:max-w-3xl mt-6"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Peptides are tiny but powerful building blocks of life! They are short
@@ -177,7 +177,7 @@ export default function HomePage() {
         </p>
 
         <p
-          className="text-2xl md:text-[20px] lg:text-[24px] font-medium mt-2 max-w-xl md:max-w-3xl mt-6"
+          className="text-[20px] md:text-[22px] lg:text-[24px] font-medium  max-w-xl md:max-w-3xl mt-6"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Think of peptides like little messengers that tell your body how to
@@ -413,7 +413,7 @@ export default function HomePage() {
       {/* Card Section */}
       <section className="min-h-screen flex flex-col items-center justify-center bg-white ">
         <h1
-          className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
+          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Discover
@@ -431,7 +431,7 @@ export default function HomePage() {
         </h1>
 
         <p
-          className="text-[24px] font-medium leading-[100%] mt-6 px-6 max-w-4xl text-center"
+          className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[100%] mt-6 px-6 max-w-4xl text-center"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Select a tile below to explore and learn more about peptides.
@@ -491,7 +491,7 @@ export default function HomePage() {
 
                 {/* Card Title */}
                 <span
-                  className="text-[36px] md:text-[46px] font-semibold leading-[50px] text-center mt-2"
+                  className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px]  font-semibold leading-[50px] text-center mt-2"
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   {card.title}
@@ -499,7 +499,7 @@ export default function HomePage() {
 
                 {/* Description */}
                 <p
-                  className="text-[20px] md:text-[24px] font-medium leading-[130%] text-center px-4 mt-2"
+                  className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[130%] text-center px-4 mt-2"
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   {card.desc}
@@ -509,6 +509,7 @@ export default function HomePage() {
                 <button
                   className="mt-6 mb-12 px-10 py-2 bg-black text-white group-active:text-white text-md 
                 font-medium rounded-lg hover:bg-gray-800"
+                style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   More
                 </button>

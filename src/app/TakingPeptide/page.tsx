@@ -2,11 +2,14 @@ import Image from "next/image";
 
 export default function TakingPeptide() {
   return (
-    <div className="container px-2 py-10">
+    <div className="container px-4 py-10">
       <div className="m-2">
       <h1
-        className="text-2xl font-bold text-[38px] md:text-[48px] lg:text-[72px] leading-[100%] text-left"
-        style={{ fontFamily: "Afacad, sans-serif" }}
+        // className="text-2xl font-bold text-[38px] md:text-[48px] lg:text-[72px] leading-[100%] text-left"
+        // style={{ fontFamily: "Afacad, sans-serif" }}
+        className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
+
+            style={{ fontFamily: "Afacad, sans-serif" }}
       >
         Taking Peptides
         {/* <span style={{ color: "#224674" }} className="italic"> */}
@@ -32,7 +35,7 @@ export default function TakingPeptide() {
       {/* General Guideline Section */}
       <div className="relative mt-10 sm:mt-22 md:mt-30 lg:mt-60 ">
         <h3
-          className="text-[46px] font-semibold leading-[100%]  ml-6 text-left"
+          className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold leading-[100%]  md:ml-6 text-left"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           General Guideline
@@ -59,20 +62,20 @@ export default function TakingPeptide() {
             fontFamily: "Afacad, sans-serif",
           }}
         >
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Store peptides according to manufacturer specifications (usually
             refrigerated).
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Use sterile preparation techniques.
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Follow recommended dosing protocols.
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Monitor for any adverse reactions.
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Keep detailed records of administration and effects.
           </li>
         </ul>
@@ -81,7 +84,7 @@ export default function TakingPeptide() {
       {/* Admin Section */}
       <div className="relative mt-20 mb-25">
         <h3
-          className="text-[46px] font-semibold leading-[100%]  ml-6 text-left"
+          className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold leading-[100%]  md:ml-6 text-left"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Adminsitration Methods
@@ -98,7 +101,7 @@ export default function TakingPeptide() {
           }}
         >
           <h3
-            className="text-[34px] font-bold leading-[100%]  text-left"
+            className="text-[28px] md:text-[32px] lg:text-[34px]  font-bold leading-[100%]  text-left"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Subcutaneous Injection
@@ -113,23 +116,23 @@ export default function TakingPeptide() {
     />
   </div>
 
-          <p className="text-[24px] font-medium mt-6">
+          <p className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-6">
             Most common method for peptide administration:
           </p>
 
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Clean the injection site with alcohol swab
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Pinch the skin to create a fold
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Insert needle at 45-degree angle
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Slowly inject the contents
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Dispose of needles in appropriate sharps container
           </li>
 
@@ -137,7 +140,7 @@ export default function TakingPeptide() {
           <br />
 
           <h3
-            className="text-[34px] font-bold leading-[100%] md:mt-10 text-left"
+            className="text-[28px] md:text-[32px] lg:text-[34px] font-bold leading-[100%] md:mt-10 text-left"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Oral Administration
@@ -151,16 +154,16 @@ export default function TakingPeptide() {
       className="w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
     />
   </div>
-          <p className="text-[24px] font-medium mt-6">
+          <p className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-6">
             For specially formulated peptides:
           </p>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Take on an empty stomach unless specified otherwise
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Follow specific timing instructions
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Use provided measuring tools for accurate dosing
           </li>
         </ul>
@@ -261,7 +264,7 @@ export default function TakingPeptide() {
       {/* best practice Section */}
       <div className="mt-10">
         <h3
-          className="text-[40px] font-semibold leading-[100%]  ml-6 text-left"
+          className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold leading-[100%]  md:ml-6 text-left"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Best Practice
@@ -278,27 +281,27 @@ export default function TakingPeptide() {
           }}
         >
           <h3
-            className="text-[30px] font-semibold leading-[100%] text-left"
+            className="text-[28px] md:text-[32px] lg:text-[34px] font-semibold leading-[100%] text-left"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Documentation
           </h3>
 
-          <p className="text-[24px] font-medium mt-2">
+          <p className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-2">
             Keep a detailed log of:
           </p>
 
 
 <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mt-10 mb-10">
   {/* Heading 1 */}
-  <h3 className="text-[24px] font-medium">
+  <h3 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium">
     Administration date and time:
   </h3>
 
   {/* Value 1 */}
   {/* <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
     <div className="bg-white rounded-2xl px-8 py-2 flex items-center justify-center">
-      <p className="text-[24px] font-medium" style={{ fontFamily: "Afacad, sans-serif" }}>
+      <p className="text-[20px] md:text-[22px] lg:text-[24px] font-medium" style={{ fontFamily: "Afacad, sans-serif" }}>
         23/04/25
       </p>
     </div>
@@ -306,7 +309,7 @@ export default function TakingPeptide() {
   <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
   <div className="bg-white rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
     <p
-      className="text-[18px] md:text-[20px] lg:text-[24px] font-medium text-center"
+      className=" text-[20px] md:text-[22px] lg:text-[24px] font-medium text-center"
       style={{ fontFamily: "Afacad, sans-serif" }}
     >
       23/04/25
@@ -316,7 +319,7 @@ export default function TakingPeptide() {
 
 
   {/* Heading 2 */}
-  <h3 className="text-[24px] font-medium">
+  <h3 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium">
     Dosage used:
   </h3>
 
@@ -331,7 +334,7 @@ export default function TakingPeptide() {
   <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
   <div className="bg-white rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
     <p
-      className="text-[18px] md:text-[20px] lg:text-[24px] font-medium text-center"
+      className="text-[20px] md:text-[22px] lg:text-[24px] font-medium text-center"
       style={{ fontFamily: "Afacad, sans-serif" }}
     >
       Mon, Tues, Wed
@@ -340,7 +343,7 @@ export default function TakingPeptide() {
 </div>
 
   {/* Heading 3 */}
-  <h3 className="text-[24px] font-medium">
+  <h3 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium">
     Effect observed:
   </h3>
 
@@ -357,7 +360,7 @@ export default function TakingPeptide() {
 </div>
 
   {/* Heading 4 */}
-  <h3 className="text-[24px] font-medium">
+  <h3 className="text-[20px] md:text-[22px] lg:text-[24px] font-medium">
     After side effects experienced:
   </h3>
 
@@ -384,19 +387,19 @@ export default function TakingPeptide() {
             Safety Measures
           </h3>
 
-          <li className="text-[24px] mt-6 font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] mt-6 font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Use sterile equipment
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Rotate injection sites
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Follow proper storage protocols
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Monitor for adverse reactions
           </li>
-          <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+          <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
             Keep emergency contact information readily available
           </li>
         </ul>

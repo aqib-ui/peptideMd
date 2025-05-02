@@ -69,7 +69,9 @@ export default function PeptideDatabase() {
     <>
       <div className="container mx-auto px-8 py-10">
         <h1
-          className="text-4xl font-bold md:text-6xl lg:text-[72px]"
+          // className="text-4xl font-bold md:text-6xl lg:text-[72px]"
+          // style={{ fontFamily: "Afacad, sans-serif" }}
+          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Peptide
@@ -79,8 +81,10 @@ export default function PeptideDatabase() {
           </span>
         </h1>
         <h2
-          className="text-[24px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          // className="text-[24px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
+          // style={{ fontFamily: "Afacad, sans-serif" }}
+          className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
+            style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Your go-to database for peptide knowledge—browse, explore, and unlock
           detailed information with a click!
@@ -99,10 +103,10 @@ export default function PeptideDatabase() {
 
           {/* heading section */}
           <div className="px-10">
-            <h1 className="capitalize text-4xl font-semibold">
+            <h1 className="capitalize text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
               single peptide
             </h1>
-            <h3 className="my-1 mb-2 text-xl font-medium">
+            <h3 className="my-1 mb-2 text-[20px] md:text-[22px] lg:text-[24px] font-medium">
               click on any peptide to discover more!
             </h3>
           </div>
