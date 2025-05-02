@@ -53,7 +53,7 @@ export default function HomePage() {
             className="text-3xl md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
-            Yourr Trusted Source for Evidence-Based Peptide Therapeutics.
+            Your Trusted Source for Evidence-Based Peptide Therapeutics.
           </p>
 
           <p
@@ -205,12 +205,12 @@ export default function HomePage() {
             <div
               className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12 
       flex flex-col justify-start items-start bg-gray-100/10 border-3 border-amber-50
-      w-[clamp(44%,55vw,48%)] rounded-[2rem] px-4 py-4 overflow-hidden"
+      md:w-[clamp(44%,55vw,48%)] rounded-[2rem] px-4 py-4 overflow-hidden"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               <div className="absolute inset-0 bg-gray-100/60 rounded-xl pointer-events-none" />
-              <div className="flex justify-end items-center gap-10">
-                <div className="flex relative inset-1 justify-center mb-4">
+              <div className="flex justify-end items-center md:gap-10">
+                {/* <div className="flex relative inset-1 justify-center mb-4">
                   <Image
                     src="/11.png"
                     alt="Card Image"
@@ -232,14 +232,70 @@ export default function HomePage() {
                     height={40} // Adjusted for lg:h-24
                     className="object-cover rounded-full border-2 border-white"
                   />
+                </div> */}
+                {/* <div className="flex justify-center mb-4 overflow-visible">
+  <div className="flex items-center relative">
+    <Image
+      src="/11.png"
+      alt="Avatar 1"
+      width={40}
+      height={40}
+      className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-cover rounded-full border-2 border-white z-10"
+    />
+    <Image
+      src="/22.png"
+      alt="Avatar 2"
+      width={40}
+      height={40}
+      className="-ml-4 sm:-ml-5 md:-ml-6 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-cover rounded-full border-2 border-white z-20"
+    />
+    <Image
+      src="/33.png"
+      alt="Avatar 3"
+      width={40}
+      height={40}
+      className="-ml-4 sm:-ml-5 md:-ml-6 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 object-cover rounded-full border-2 border-white z-30"
+    />
+  </div>
+</div> */}
+                <div className="flex justify-center mb-4 overflow-visible">
+                  <div className="relative flex flex-row sm:flex-row max-[460px]:flex-col items-center">
+                    <Image
+                      src="/11.png"
+                      alt="Avatar 1"
+                      width={40}
+                      height={40}
+                      className="object-cover rounded-full border-2 border-white
+                 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
+                 z-10 max-[460px]:mb-[-20px]"
+                    />
+                    <Image
+                      src="/22.png"
+                      alt="Avatar 2"
+                      width={40}
+                      height={40}
+                      className="object-cover rounded-full border-2 border-white
+                 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
+                 z-20 -ml-4 sm:-ml-5 md:-ml-6 max-[460px]:ml-0 max-[460px]:mb-[-20px]"
+                    />
+                    <Image
+                      src="/33.png"
+                      alt="Avatar 3"
+                      width={40}
+                      height={40}
+                      className="object-cover rounded-full border-2 border-white
+                 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
+                 z-30 -ml-4 sm:-ml-5 md:-ml-6 max-[460px]:ml-0"
+                    />
+                  </div>
                 </div>
 
                 <div className="flex flex-col justify-start items-start">
-                  <h3 className="text-base capitalize sm:text-lg md:text-xl font-semibold leading-tight p-2 z-10">
+                  <h3 className="text-base capitalize sm:text-lg md:text-xl text-black font-semibold leading-tight p-2 z-10">
                     meet our resources
                   </h3>
                   <button className="gradient-border rounded-3xl font-medium text-white w-[88px] h-[44px] mt-2 z-10">
-                    Learn
+                    Explore
                   </button>
                 </div>
               </div>
@@ -276,7 +332,7 @@ export default function HomePage() {
                 rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
-                <div className="absolute inset-0 bg-gray-100/70 rounded-xl pointer-events-none" />
+                <div className="absolute inset-0 bg-gray-100/70 text-black rounded-xl pointer-events-none" />
                 <h3 className="text-base sm:text-lg md:text-xl font-semibold leading-tight p-2 z-10">
                   Good interaction with other molecules
                 </h3>
