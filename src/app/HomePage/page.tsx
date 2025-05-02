@@ -53,7 +53,7 @@ export default function HomePage() {
             className="text-3xl md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
-            Your Trusted Source for Evidence-Based Peptide Therapeutics.
+            Yourr Trusted Source for Evidence-Based Peptide Therapeutics.
           </p>
 
           <p
