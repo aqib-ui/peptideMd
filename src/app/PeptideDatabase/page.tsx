@@ -113,7 +113,7 @@ export default function PeptideDatabase() {
 
           <div className="flex flex-col md:flex-row justify-end gap-4 mr-4 md:mr-16 mb-5 w-full md:w-auto">
             {/* Filter & Compare Buttons */}
-            <div className="flex flex-wrap justify-center md:justify-end gap-4 text-sm md:text-base lg:text-lg font-semibold">
+            <div className="flex flex-wrap justify-center md:justify-end gap-4 text-base sm:text-lg md:text-xl lg:text-2xl font-medium">
               <button
                 onClick={() => setIsFilterClicked(!isFilterClicked)}
                 className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-2 border-2 
@@ -243,15 +243,15 @@ export default function PeptideDatabase() {
 
         {/* table and table data */}
 
-        <div className="overflow-x-auto rounded-t-[72px] border border-gray-300 shadow-md mt-10">
+        <div className="overflow-x-auto rounded-t-[72px] border border-gray-300 shadow-md">
           <table
-            className="min-w-full bg-white rounded-t-[72px] p-10"
+            className="min-w-full bg-[#F0F0F0] rounded-t-[72px] p-10"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             <thead>
               <tr className="bg-[#94C4ED] mt-10">
                 <th
-                  className={`font-bold text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 
+                  className={`font-bold text-[28px] md:text-[32px] lg:text-[34px]  
       ${
         isCompareClicked
           ? "px-2 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6 text-center pr-60"
@@ -265,13 +265,13 @@ export default function PeptideDatabase() {
               </tr>
 
               {!isCompareClicked && (
-                <tr className="bg-[#94C4ED] text-sm md:text-base lg:text-lg mt-10">
+                <tr className="bg-[#94C4ED] text-sm md:text-base lg:text-2xl mt-10">
                   <th className="px-10 py-6 text-left">Name</th>
                   <th className="px-10 py-6 text-left">Applications</th>
                   <th className="px-10 py-6 text-left">Descriptions</th>
                   <th className="px-10 py-6 text-left">Benefits</th>
                   <th className="px-10 py-6 text-left">Risks</th>
-                  <th className="px-5 py-6 text-left">References</th>
+                  <th className="pr-5 py-6 text-left">References</th>
                   <th className="px-5 py-6 text-left">FDA Status</th>
                 </tr>
               )}
@@ -281,10 +281,10 @@ export default function PeptideDatabase() {
               {!isCompareClicked ? (
                 // Normal table layout
                 peptides.map((peptide, index) => (
-                  <tr key={index}>
-                    <td className="px-2 py-4">
+                  <tr key={index} className="font-medium ">
+                    <td className="px-2 pt-10 flex justify-center items-center">
                       <div className="inline-block rounded-full bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] p-[1.5px]">
-                        <span className="block rounded-full bg-white px-3 py-3 text-md font-bold text-black">
+                        <span className="block rounded-full bg-[#F0F0F0] px-3 py-3 text-md font-bold text-black">
                           {peptide.name}
                         </span>
                       </div>
@@ -319,7 +319,7 @@ export default function PeptideDatabase() {
                         ))}
                       </ul>
                     </td>
-                    <td className="px-2 py-4">{peptide.references}</td>
+                    <td className="px-4 py-4">{peptide.references}</td>
                     <td className="px-2 py-4">
                       <span
                         className={`inline-block px-3 py-1 rounded-[20px] text-sm md:text-base font-semibold ${

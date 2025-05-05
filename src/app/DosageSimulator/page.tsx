@@ -88,7 +88,8 @@ function DosageGuide() {
       </h1>
 
       <h2
-        className="text-xl md:text-[34px] font-medium leading-[120%] mt-6 mb-10 max-w-7xl"
+        // className="text-xl md:text-[34px] font-medium leading-[120%] mt-6 mb-10 max-w-7xl"
+        className=" text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-2 max-w-8xl"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         This simulator is for educational purposes only. Always consult with a
@@ -100,7 +101,7 @@ function DosageGuide() {
         className="mt-[120px] mb-6 px-4 sm:px-6"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
-        <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold">
+        <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
           <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] mr-2">
             Step 1:
           </span>
@@ -121,7 +122,7 @@ function DosageGuide() {
                 <div className="relative">
                   <Listbox.Button
                     className="w-full px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 focus:outline-none 
-                  focus:ring-2 focus:ring-[#94C4ED] text-2xl text-[#224674] font-medium text-left"
+                  focus:ring-2 focus:ring-[#94C4ED] text-xl md:text-2xl text-[#224674] font-medium text-left"
                   >
                     {selectedPeptide || "Select a peptide"}
                     <Image
@@ -129,7 +130,7 @@ function DosageGuide() {
                       alt="Dropdown icon"
                       width={55}
                       height={0}
-                      className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
+                      className="absolute  top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
                     />
                   </Listbox.Button>
 
@@ -219,7 +220,7 @@ function DosageGuide() {
         className="mt-[120px] mb-6 px-4 sm:px-6"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
-        <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold">
+        <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
           <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] mr-2">
             Step 3:
           </span>
@@ -282,7 +283,7 @@ function DosageGuide() {
     }
   `}</style>
 </div> */}
-          <div className="relative mt-8 w-[90%] max-w-[1248px]">
+          <div className="relative mt-8 w-[90%] max-w-[1248px] mb-20">
             <input
               type="range"
               min="0"
@@ -298,22 +299,21 @@ function DosageGuide() {
                 {sliderValue} mcg
               </span>
             </div> */}
-            <div className="absolute right-0 bottom-[-38px] flex items-center gap-2">
-  <span className="font-medium text-lg">Selected peptide:</span>
-  <div className="bg-gradient-to-r from-[#5CB0E2] to-[#EB6793] p-[2px] rounded-2xl">
-    <span className="block bg-white text-[#224674] font-semibold text-lg px-3 py-1 rounded-2xl">
-      {sliderValue} mcg
-    </span>
-  </div>
-</div>
-
+            <div className="absolute right-0 flex items-center gap-2">
+              <span className="font-medium text-base sm:text-lg md:text-xl lg:text-2xl">Selected peptide:</span>
+              <div className="bg-gradient-to-r from-[#5CB0E2] to-[#EB6793] p-[2px] rounded-2xl">
+                <span className="block bg-white text-[#224674] font-semibold text-base sm:text-lg md:text-xl lg:text-2xl px-3 py-1 rounded-2xl">
+                  {sliderValue} mcg
+                </span>
+              </div>
+            </div>
 
             <style jsx>{`
               .custom-slider {
                 background: linear-gradient(
                   to right,
-                 #224674 ${(sliderValue / 2000) * 100}%,
-    #94c4ed66 ${(sliderValue / 2000) * 100}%
+                  #224674 ${(sliderValue / 2000) * 100}%,
+                  #94c4ed66 ${(sliderValue / 2000) * 100}%
                 );
                 border-radius: 9999px;
               }
@@ -357,21 +357,25 @@ function DosageGuide() {
             text-opacity-100 w-[90%] rounded-4xl mt-10 p-10 bg-[#94C4ED]/40"
           >
             <div className="mb-6">
-              <h2 className=" text-4xl">Description</h2>
-              <p className="text-2xl">
+              <h2 
+              // className=" text-4xl"
+              className="text-[28px] md:text-[32px] lg:text-[34px]  font-semibold leading-[100%] text-left"
+
+              >Description</h2>
+              <p className="text-[20px] md:text-[22px] lg:text-[24px]">
                 A copper peptide similar to GHK-Cu with specific properties.
               </p>
             </div>
 
             <div className="mt-6 mb-6">
-              <h2 className=" text-4xl">Applications</h2>
-              <p className="text-2xl">Skin health and tissue regeneration.</p>
+              <h2 className=" text-[28px] md:text-[32px] lg:text-[34px]">Applications</h2>
+              <p className="text-[20px] md:text-[22px] lg:text-[24px]">Skin health and tissue regeneration.</p>
             </div>
 
             <div className="mt-6 mb-10">
-              <h2 className=" text-4xl">Benefits</h2>
+              <h2 className=" text-[28px] md:text-[32px] lg:text-[34px]">Benefits</h2>
               {/* <p className="text-2xl ">Skin health and tissue regeneration.</p> */}
-              <ul className="text-2xl ">
+              <ul className="text-[20px] md:text-[22px] lg:text-[24px]">
                 <li
                   className="relative pl-4 before:content-[''] 
                             before:absolute before:left-0 before:top-3 before:w-2.5 
@@ -404,8 +408,8 @@ function DosageGuide() {
             </div>
 
             <div className="mt-6">
-              <h2 className=" text-4xl">Risk and Side Effects</h2>
-              <ul className="text-2xl mt-4 mb-10">
+              <h2 className="text-[28px] md:text-[32px] lg:text-[34px]">Risk and Side Effects</h2>
+              <ul className="text-[20px] md:text-[22px] lg:text-[24px] mt-4 mb-10">
                 <li
                   className="relative pl-4 before:content-[''] 
                             before:absolute before:left-0 before:top-3 before:w-2.5 
@@ -445,7 +449,7 @@ function DosageGuide() {
         className="mt-[120px] mb-6 px-4 sm:px-6"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
-        <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold">
+        <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
           <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] mr-2">
             Step 4:
           </span>
@@ -469,7 +473,7 @@ function DosageGuide() {
 
           <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
             <button
-              className="w-full h-full rounded-full bg-white text-black text-xl font-medium
+              className="w-full h-full rounded-full bg-white text-black text-base sm:text-lg md:text-xl lg:text-2xl font-medium
     flex items-center justify-center transition-colors duration-100 
     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
               style={{ fontFamily: "Afacad, sans-serif" }}

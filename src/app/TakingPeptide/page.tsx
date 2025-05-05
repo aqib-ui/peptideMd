@@ -309,7 +309,7 @@ export default function TakingPeptide() {
   <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
   <div className="bg-white rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
     <p
-      className=" text-[20px] md:text-[22px] lg:text-[24px] font-medium text-center"
+      className=" text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
       style={{ fontFamily: "Afacad, sans-serif" }}
     >
       23/04/25
@@ -334,7 +334,7 @@ export default function TakingPeptide() {
   <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
   <div className="bg-white rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
     <p
-      className="text-[20px] md:text-[22px] lg:text-[24px] font-medium text-center"
+      className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
       style={{ fontFamily: "Afacad, sans-serif" }}
     >
       Mon, Tues, Wed
@@ -351,7 +351,7 @@ export default function TakingPeptide() {
   <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
   <div className="bg-white rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
     <p
-      className="text-[18px] md:text-[20px] lg:text-[24px] font-medium text-center"
+      className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
       style={{ fontFamily: "Afacad, sans-serif" }}
     >
       Yes/No
@@ -368,7 +368,7 @@ export default function TakingPeptide() {
   <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
   <div className="bg-white rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
     <p
-      className="text-[18px] md:text-[20px] lg:text-[24px] font-medium text-center"
+      className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
       style={{ fontFamily: "Afacad, sans-serif" }}
     >
       Yes/No
@@ -381,7 +381,7 @@ export default function TakingPeptide() {
           <br />
 
           <h3
-            className="text-[30px] font-semibold leading-[100%] text-left"
+            className="text-[28px] md:text-[32px] lg:text-[34px]  font-semibold leading-[100%] text-left"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Safety Measures

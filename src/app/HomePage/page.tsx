@@ -32,10 +32,82 @@ export default function HomePage() {
 
   return (
     <main className="w-full">
+
       {/* Welcome Section */}
-      <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6">
+      {/* <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 lg:pb-32"> */}
         {/* Left Content (Text) */}
-        <div className="flex-1.2 relative z-10">
+        {/* <div className="flex-1.2 relative z-10">
+          <h1
+ 
+            className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            Welcome to */}
+            {/* <span style={{ color: "#224674" }} className="italic ml-2"> */}
+            {/* <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
+              PeptideMD
+            </span>
+          </h1> */}
+
+          {/* <p
+            className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            Your Trusted Source for Evidence-Based Peptide Therapeutics.
+          </p>
+
+          <p
+ 
+            className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-2 max-w-xl md:max-w-3xl"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            PeptideMD.com is your trusted platform for exploring the world of
+            peptides. Whether you&apos;re looking for in-depth information on
+            specific peptides, the latest research, clinical applications, or
+            expert-guided &quot;how-to&quot; resources, we&apos;ve got you
+            covered.
+          </p> */}
+
+          {/* "Peptide Overview" Button */}
+          {/* <div className="gradient-border">
+            <button
+              className="w-full h-full rounded-full bg-white text-black text-xl font-medium
+            flex items-center justify-center transition-colors duration-100 
+            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Peptide Overview
+            </button>
+          </div>
+        </div> */}
+
+        {/* Right Side (DNA Image - Hidden on Small Screens) */}
+        {/* <div className="relative flex-1 flex justify-end">
+          <Image
+            src="/dna.png"
+            alt="DNA Structure"
+            width={982}
+            height={1011}
+            className="absolute hidden md:block w-full 
+            max-w-[500px] md:max-w-[600px] lg:max-w-[700px]
+            h-[300px] md:h-[500px] lg:h-[700px] xl:h-[900px] 
+            md:top-[-570px] object-cover z-10 pointer-events-none"
+            
+            />
+ 
+        </div>
+      </section> */}
+
+
+{/* solving dna overlapping issue on larger screens 5/5/25*/}
+      {/* Welcome Section */}
+      {/* <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:pb-24 lg:pb-32 xl:pb-[200px]"> */}
+      {/* <section className="relative md:min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:pb-24 lg:pb-32 xl:pb-[200px] 2xl:pb-[500px]"> */}
+      <section className="relative md:min-h-screen flex flex-col md:flex-row items-center justify-between px-6 pb-[50vh]
+">
+
+        {/* Left Content (Text) */}
+        <div className="flex-1.2 relative z-10 md:w-[50%]">
           <h1
             // className="text-4xl font-bold text-[72px] leading-[100%]"
             className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
@@ -82,7 +154,7 @@ export default function HomePage() {
         </div>
 
         {/* Right Side (DNA Image - Hidden on Small Screens) */}
-        <div className="relative flex-1 flex justify-end">
+        {/* <div className="relative flex-1 flex justify-end">
           <Image
             src="/dna.png"
             alt="DNA Structure"
@@ -92,9 +164,27 @@ export default function HomePage() {
             max-w-[500px] md:max-w-[600px] lg:max-w-[700px]
             h-[300px] md:h-[500px] lg:h-[700px] xl:h-[900px] 
             md:top-[-570px] object-cover z-10 pointer-events-none"
-            // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it
+            
+            />
+        </div> */}
+
+        {/* Right Side (DNA Image - Hidden on Small Screens) */}
+        <div className="relative flex-1 flex justify-end">
+          <Image
+            src="/dna.png"
+            alt="DNA Structure"
+            width={982}
+            height={1011}
+            className="absolute hidden md:block 
+            w-auto
+            h-auto 
+            md:top-[-500px] lg:top-[-500px] xl:top-[-570px] object-cover z-10 pointer-events-none"
           />
+          {/* // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it */}
         </div>
+
+        {/* cover‑up bar */}
+        {/* <div className="absolute bottom-0 left-0 w-full h-40 bg-amber-300 z-20 pointer-events-none"/> */}
       </section>
 
       {/* Video Section */}
@@ -302,8 +392,6 @@ export default function HomePage() {
             </div>
             {/* Top-right icons */}
             <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-12 lg:right-12 flex gap-4">
-              
-
               {/* Information Icon */}
               <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
                 <IoIosInformationCircleOutline className="text-[#2D557A] text-base sm:text-lg" />
@@ -509,7 +597,7 @@ export default function HomePage() {
                 <button
                   className="mt-6 mb-12 px-10 py-2 bg-black text-white group-active:text-white text-md 
                 font-medium rounded-lg hover:bg-gray-800"
-                style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   More
                 </button>
