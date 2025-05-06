@@ -3,9 +3,16 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1F1F1F] text-white  px-6 md:px-10 flex flex-col">
+    // <footer className="bg-app text-white  px-6 md:px-10 flex flex-col" style={{ backgroundColor: '#0a0a0a' }}>
+<footer className="px-6 md:px-10 flex flex-col bg-[#0a0a0a] text-white">
+
+    {/* <footer
+  className="bg-app text-app px-6 md:px-10 flex flex-col"
+  style={{ backgroundColor: '#1F1F1F' }}
+> */}
+
       {/* Top Section */}
-      <div className="flex flex-col sm:flex-row sm:flex-wrap justify-between mt-10 sm:mt-20 lg:mt-40">
+      <div className="flex flex-col sm:flex-row  sm:flex-wrap justify-between mt-10 sm:mt-20 lg:mt-40">
         {/* Left-aligned Content */}
         <div className="max-w-3xl ml-[-10px] ">
           <Image

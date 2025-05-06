@@ -32,24 +32,23 @@ export default function HomePage() {
 
   return (
     <main className="w-full">
-
       {/* Welcome Section */}
       {/* <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 lg:pb-32"> */}
-        {/* Left Content (Text) */}
-        {/* <div className="flex-1.2 relative z-10">
+      {/* Left Content (Text) */}
+      {/* <div className="flex-1.2 relative z-10">
           <h1
  
             className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Welcome to */}
-            {/* <span style={{ color: "#224674" }} className="italic ml-2"> */}
-            {/* <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
+      {/* <span style={{ color: "#224674" }} className="italic ml-2"> */}
+      {/* <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
               PeptideMD
             </span>
           </h1> */}
 
-          {/* <p
+      {/* <p
             className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
@@ -68,8 +67,8 @@ export default function HomePage() {
             covered.
           </p> */}
 
-          {/* "Peptide Overview" Button */}
-          {/* <div className="gradient-border">
+      {/* "Peptide Overview" Button */}
+      {/* <div className="gradient-border">
             <button
               className="w-full h-full rounded-full bg-white text-black text-xl font-medium
             flex items-center justify-center transition-colors duration-100 
@@ -81,8 +80,8 @@ export default function HomePage() {
           </div>
         </div> */}
 
-        {/* Right Side (DNA Image - Hidden on Small Screens) */}
-        {/* <div className="relative flex-1 flex justify-end">
+      {/* Right Side (DNA Image - Hidden on Small Screens) */}
+      {/* <div className="relative flex-1 flex justify-end">
           <Image
             src="/dna.png"
             alt="DNA Structure"
@@ -98,14 +97,14 @@ export default function HomePage() {
         </div>
       </section> */}
 
-
-{/* solving dna overlapping issue on larger screens 5/5/25*/}
+      {/* solving dna overlapping issue on larger screens 5/5/25*/}
       {/* Welcome Section */}
       {/* <section className="relative min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:pb-24 lg:pb-32 xl:pb-[200px]"> */}
       {/* <section className="relative md:min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:pb-24 lg:pb-32 xl:pb-[200px] 2xl:pb-[500px]"> */}
-      <section className="relative md:min-h-screen flex flex-col md:flex-row items-center justify-between px-6 pb-[50vh]
-">
-
+      <section
+        className="relative md:min-h-screen flex flex-col md:flex-row items-center justify-between px-6 pb-[50vh]
+"
+      >
         {/* Left Content (Text) */}
         <div className="flex-1.2 relative z-10 md:w-[50%]">
           <h1
@@ -188,7 +187,7 @@ export default function HomePage() {
       </section>
 
       {/* Video Section */}
-      <section className="relative my-10 md:my-20 min-h-screen flex items-center justify-center bg-white opacity-90">
+      <section className="relative my-10 md:my-20 bg-app min-h-screen flex items-center justify-center bg-white opacity-90">
         <video
           ref={videoRef}
           // className="w-[90%] max-w-full rounded-[2rem] shadow-lg"
@@ -281,7 +280,7 @@ export default function HomePage() {
       </section>
 
       {/* 2 card section */}
-      <section className="min-h-screen flex flex-col max-md:px-2 bg-white mb-50">
+      <section className="min-h-screen flex flex-col max-md:px-2 mb-50">
         {/* <div className="grid grid-cols-2   gap-6 mt-8 p-6 md:p-10"> */}
         <div className="flex flex-wrap justify-around  mt-8 p-1 md:p-6">
           {/* left card */}
@@ -424,7 +423,7 @@ export default function HomePage() {
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 <div className="absolute inset-0 bg-gray-100/70 text-black rounded-xl pointer-events-none" />
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold leading-tight p-2 z-10">
+                <h3 className="text-base sm:text-lg md:text-xl text-black font-semibold leading-tight p-2 z-10">
                   Good interaction with other molecules
                 </h3>
                 <button className="gradient-border rounded-3xl font-medium text-white w-[88px] h-[44px] mt-2 z-10">
@@ -499,7 +498,7 @@ export default function HomePage() {
       </section>
 
       {/* Card Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center bg-white ">
+      <section className="min-h-screen flex flex-col items-center justify-center  ">
         <h1
           className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           style={{ fontFamily: "Afacad, sans-serif" }}
@@ -561,7 +560,7 @@ export default function HomePage() {
             <div key={index} className="gradient-card-border">
               <div
                 className="p-6 shadow-lg rounded-[3rem] flex flex-col items-center justify-center 
-                bg-white w-full h-full transition-colors duration-500 ease-in-out group 
+                bg-app w-full h-full transition-colors duration-500 ease-in-out group 
                 hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] 
                 cursor-pointer"
                 onClick={() => handleCardClick(card.title)}
@@ -594,9 +593,16 @@ export default function HomePage() {
                 </p>
 
                 {/* More Button */}
-                <button
+                {/* <button
                   className="mt-6 mb-12 px-10 py-2 bg-black text-white group-active:text-white text-md 
                 font-medium rounded-lg hover:bg-gray-800"
+                  style={{ fontFamily: "Afacad, sans-serif" }}
+                >
+                  More
+                </button> */}
+                <button
+                  className="mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium rounded-lg 
+             hover:bg-gray-800 dark:border dark:border-white"
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   More
