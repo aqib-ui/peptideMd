@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Resources() {
   return (
     <div className="container px-6 py-10">
-      <div className="m-2 w">
+      <div className="m-2 bg-app">
         <h1
           // className="text-2xl font-bold text-[38px] md:text-[48px] lg:text-[72px] leading-[100%] text-left"
           // style={{ fontFamily: "Afacad, sans-serif" }}
@@ -54,7 +54,7 @@ export default function Resources() {
         {/* Video Section */}
         <section
           className="relative min-h-screen min-w-[98vw] flex flex-wrap justify-center 
-              ml-[-20px] gap-10 px-6 py-10 bg-white opacity-90 w-full"
+              ml-[-20px] gap-10 px-6 py-10 bg-app opacity-90 w-full"
         >
           {/* Video 1 */}
           <div className="relative flex-1  md:max-w-[50%] sm:min-w-[300px] min-w-[90%]">
@@ -132,7 +132,7 @@ export default function Resources() {
 
           {/* List with Background Color and Styled Hollow Circles */}
           <ul
-            className="w-full rounded-[5rem] mt-6 space-y-1 list-none text-[#1F1F1F]"
+            className="w-full rounded-[5rem] mt-6 space-y-1 list-none "
             style={{
               // backgroundColor: "rgba(136, 211, 255, 0.3)",
               fontFamily: "Afacad, sans-serif",
@@ -186,7 +186,7 @@ export default function Resources() {
 
           {/* List with Background Color and Styled Hollow Circles */}
           <ul
-            className="w-full rounded-[5rem] mt-6 space-y-1 list-none text-[#1F1F1F]"
+            className="w-full rounded-[5rem] mt-6 space-y-1 list-none "
             style={{
               fontFamily: "Afacad, sans-serif",
             }}
@@ -229,7 +229,7 @@ export default function Resources() {
 
           {/* List with Background Color and Styled Hollow Circles */}
           <ul
-            className="w-full rounded-[5rem] mt-6 space-y-1 list-none text-[#1F1F1F]"
+            className="w-full rounded-[5rem] mt-6 space-y-1 list-none "
             style={{
               // backgroundColor: "rgba(136, 211, 255, 0.3)",
               fontFamily: "Afacad, sans-serif",

@@ -10,7 +10,7 @@ const AiAssistantPage = () => {
   return (
     <>
       {/* heading */}
-      <div className="container mx-auto px-8 py-10">
+      <div className="container bg-app mx-auto px-8 py-10">
         <h1
           className="text-4xl font-bold md:text-6xl lg:text-[72px]"
           style={{ fontFamily: "Afacad, sans-serif" }}
@@ -205,7 +205,7 @@ const AiAssistantPage = () => {
               className="cursor-pointer"
             >
               <div className="p-[2px] rounded-[3rem] mx-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
-                <div className="p-5 gap-2 rounded-[3rem] flex max-md:flex-col justify-between items-center bg-white">
+                <div className="p-5 gap-2 rounded-[3rem] flex max-md:flex-col justify-between items-center bg-app">
                   {/* left side */}
                   <div className="ml-5">
                     <h2
@@ -263,7 +263,7 @@ const AiAssistantPage = () => {
             className="p-[2px] min-h-screen rounded-[3rem] md:mt-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
-            <div className="bg-white min-h-[120vh]  rounded-[3rem] p-6 sm:p-10  flex flex-col items-start justify-between">
+            <div className="bg-app min-h-[120vh]  rounded-[3rem] p-6 sm:p-10  flex flex-col items-start justify-between">
               {/* Avatar + Text */}
               <div className="flex items-start gap-4 max-w-3xl w-full mt-6">
                 <Image
@@ -275,7 +275,8 @@ const AiAssistantPage = () => {
                 />
                 <div className="flex flex-col">
                   <h2
-                    className="text-base sm:text-lg md:text-2xl bg-[#94C4ED]/30 p-6 sm:p-8 font-semibold rounded-tr-[2rem] rounded-br-[2rem] rounded-bl-[2rem]"
+                    className="text-base sm:text-lg md:text-2xl bg-[#94C4ED]/30 p-6 sm:p-8 font-semibold rounded-tr-[2rem] 
+                    rounded-br-[2rem] rounded-bl-[2rem]"
                     style={{ fontFamily: "Afacad, sans-serif" }}
                   >
                     Hello! I'm your peptide research assistant. How can I help
@@ -288,9 +289,11 @@ const AiAssistantPage = () => {
                 <input
                   type="text"
                   placeholder="Ask About peptides..."
-                  className="bg-gray-100 px-6 sm:px-10 w-full p-4 sm:p-5 text-base sm:text-xl md:text-2xl font-medium rounded-full placeholder:text-sm sm:placeholder:text-base md:placeholder:text-xl"
+                  className="bg-gray-100 dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border px-6 sm:px-10 w-full p-4 sm:p-5 text-base sm:text-xl md:text-2xl font-medium 
+                  rounded-full placeholder:text-sm sm:placeholder:text-base md:placeholder:text-xl"
                 />
-                <div className="text-white text-4xl sm:text-5xl md:text-6xl p-2 sm:p-3 md:p-4 rounded-full bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
+                <div className="text-white text-4xl sm:text-5xl md:text-6xl p-2 sm:p-3 md:p-4 rounded-full bg-gradient-to-tr 
+                from-[#5CB0E2] to-[#EB6793]">
                   <TiLocationArrow className="p-1 sm:p-2" />
                 </div>
               </div>

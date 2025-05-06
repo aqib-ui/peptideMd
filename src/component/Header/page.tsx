@@ -391,7 +391,8 @@ export default function Header() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="focus:outline-none flex items-center"
-        >
+          style={{ fontFamily: "Afacad, sans-serif" }}
+        > <span className="text-base sm:text-lg md:text-xl lg:text-[22px] mr-2 sm:mr-3 md:mr-4 font-medium">Menu</span>
           <Image
             src="/headerIcon/hamBurger.png"
             alt="Menu"

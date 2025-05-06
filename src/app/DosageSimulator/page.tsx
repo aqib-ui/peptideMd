@@ -13,7 +13,7 @@ export default function DosageSimulator() {
       {/* Toggle switch */}
       <div className="flex justify-end mb-6">
         <div
-          className="relative flex w-full sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] p-[1.25px] rounded-[20px] 
+          className="relative flex w-full sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] p-[1.5px] rounded-[20px] 
     bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
         >
           <div
@@ -27,13 +27,13 @@ export default function DosageSimulator() {
 
             <button
               onClick={() => setSelected("Dosage Guide")}
-              className="relative z-10 w-1/2 text-center py-2 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px]"
+              className="relative z-10 w-1/2 text-center py-2 text-black text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px]"
             >
               Dosage Guide
             </button>
             <button
               onClick={() => setSelected("Calculator")}
-              className="relative z-10 w-1/2 text-center py-2 text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px]"
+              className="relative z-10 w-1/2 text-center py-2 text-black text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px]"
             >
               Calculator
             </button>
@@ -89,7 +89,7 @@ function DosageGuide() {
 
       <h2
         // className="text-xl md:text-[34px] font-medium leading-[120%] mt-6 mb-10 max-w-7xl"
-        className=" text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-2 max-w-8xl"
+        className=" text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[120%] mt-6 mb-2 max-w-8xl"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         This simulator is for educational purposes only. Always consult with a
@@ -102,7 +102,7 @@ function DosageGuide() {
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
-          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] mr-2">
+          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
             Step 1:
           </span>
           Protocol Selection
@@ -122,8 +122,16 @@ function DosageGuide() {
                 <div className="relative">
                   <Listbox.Button
                     className="w-full px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 focus:outline-none 
-                  focus:ring-2 focus:ring-[#94C4ED] text-xl md:text-2xl text-[#224674] font-medium text-left"
+                    text-xl md:text-2xl font-medium text-left
+                  text-[#224674] dark:text-[var(--foreground)]"
                   >
+                    {/* <input
+                type="text"
+                placeholder="Enter Desired Dose"
+                className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
+        focus:outline-none 
+        text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
+              /> */}
                     {selectedPeptide || "Select a peptide"}
                     <Image
                       src="/dropdown-icon.png"
@@ -135,8 +143,9 @@ function DosageGuide() {
                   </Listbox.Button>
 
                   <Listbox.Options
-                    className="absolute mt-1 w-full max-h-[96px] overflow-y-auto rounded-3xl bg-white
-                   shadow-lg z-50 text-[20px] text-[#224674] font-medium"
+                    className="absolute mt-1 w-full max-h-[96px] overflow-y-auto rounded-3xl bg-white text-[#224674] 
+                    dark:border-2 dark:border-r-0 dark:bg-[var(--background)] dark:text-[var(--foreground)] 
+                    shadow-lg z-50 text-[20px] font-medium"
                   >
                     {peptides.length > 0 ? (
                       peptides.map((peptide, index) => (
@@ -171,7 +180,7 @@ function DosageGuide() {
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold">
-          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] mr-2">
+          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
             Step 2:
           </span>
           Protocol Selection
@@ -221,7 +230,7 @@ function DosageGuide() {
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
-          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] mr-2">
+          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
             Step 3:
           </span>
           Dosage Selection & Visualization
@@ -353,10 +362,10 @@ function DosageGuide() {
           </div>
 
           <div
-            className="flex flex-col text-black font-medium 
+            className="flex flex-col  font-medium 
             text-opacity-100 w-[90%] rounded-4xl mt-10 p-10 bg-[#94C4ED]/40"
           >
-            <div className="mb-6">
+            <div className="mb-6 ">
               <h2 
               // className=" text-4xl"
               className="text-[28px] md:text-[32px] lg:text-[34px]  font-semibold leading-[100%] text-left"
@@ -450,7 +459,7 @@ function DosageGuide() {
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
-          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] mr-2">
+          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
             Step 4:
           </span>
           Administration Sites
@@ -502,7 +511,7 @@ function Calculator() {
     <div className="pl-5 pr-4">
       <h1
         // className="text-5xl md:text-[72px] font-bold leading-[100%] text-left mt-6"
-        className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
+        className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         Peptides
@@ -520,16 +529,16 @@ function Calculator() {
       </h2>
 
       <div className="mt-30 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
-        <h3 className="text-[46px] font-semibold flex items-center flex-wrap">
+        <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold flex items-center flex-wrap">
           Peptide Calculator
         </h3>
-        <h3 className="text-2xl text-[24px] leading-6.5 font-medium mb-12">
+        <h3 className="text-xl sm:text-2xl leading-6.5 font-medium mb-12">
           Calculate reconstitution measurements and injection volumes
         </h3>
 
         <div className="mt-16">
           <div className="relative w-[80%]">
-            <h3 className="text-2xl text-[34px] leading-6.5 font-semibold mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-[34px] leading-6.5 font-semibold mb-6">
               Peptide Amount (mg)
             </h3>
             <div className="relative">
@@ -538,7 +547,7 @@ function Calculator() {
                 placeholder="Enter peptide amount"
                 className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
-        text-2xl text-[#224674] font-medium text-left"
+        text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
               />
               <Image
                 src="/cal-enter-icon.png"
@@ -553,7 +562,7 @@ function Calculator() {
 
         <div className="mt-18">
           <div className="relative w-[80%]">
-            <h3 className="text-2xl text-[34px] leading-6.5 font-semibold mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-[34px] leading-6.5 font-semibold mb-6">
               Bacteriostatic Water (ml)
             </h3>
             <div className="relative">
@@ -562,7 +571,7 @@ function Calculator() {
                 placeholder="Enter Bacteriostatic Water"
                 className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
-        text-2xl text-[#224674] font-medium text-left"
+        text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
               />
               <Image
                 src="/cal-enter-icon.png"
@@ -577,7 +586,7 @@ function Calculator() {
 
         <div className="mt-18">
           <div className="relative w-[80%]">
-            <h3 className="text-2xl text-[34px] leading-6.5 font-semibold mb-6">
+            <h3 className="text-2xl sm:text-3xl md:text-[34px] leading-6.5 font-semibold mb-6">
               Desired Dose (mcg)
             </h3>
             <div className="relative">
@@ -586,7 +595,7 @@ function Calculator() {
                 placeholder="Enter Desired Dose"
                 className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
-        text-2xl text-[#224674] font-medium text-left"
+        text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
               />
               <Image
                 src="/cal-enter-icon.png"
@@ -602,8 +611,8 @@ function Calculator() {
         <div className="relative mt-18">
           <textarea
             placeholder="Enter desired dose"
-            className="w-[77%] h-40 px-4 py-3 focus:outline-none rounded-3xl bg-[#94C4ED]/30 text-[34px] 
-        text-black/65 font-medium "
+            className="w-[77%] h-40 px-4 py-3 focus:outline-none rounded-3xl bg-[#94C4ED]/30 text-2xl sm:text-3xl md:text-[34px]
+        text-black/65 dark:text-[var(--foreground)] font-medium "
           ></textarea>
         </div>
       </div>

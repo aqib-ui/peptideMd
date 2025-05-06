@@ -86,7 +86,7 @@ const Page = ({ params }: PageProps) => {
               className="text-[24px] font-medium leading-[130%] mb-10 mt-6 space-y-8"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
-              <li className="text-black">
+              <li className="">
                 <span className="text-[#88D3FF] font-bold mb-20">1.</span>
                 Peptides for Depression Depression is a serious condition that
                 makes people feel sad and tired. Studies show that some
@@ -95,7 +95,7 @@ const Page = ({ params }: PageProps) => {
                 study in Molecular Neurobiology (2016) found that Selank has
                 anti-anxiety and antidepressant effects.
               </li>
-              <li className="text-black">
+              <li className="">
                 <span className="text-[#88D3FF] font-bold">2.</span> Peptides
                 for Anxiety Anxiety causes worry and fear. Peptides like Selank
                 and Oxytocin can help people feel calmer. Oxytocin is sometimes
@@ -104,7 +104,7 @@ const Page = ({ params }: PageProps) => {
                 Behavioral Physiology (2018) showed that Selank helps lower
                 stress and improve relaxation.
               </li>
-              <li className="text-black">
+              <li className="">
                 <span className="text-[#88D3FF] font-bold">3.</span> Peptides
                 for ADD/ADHD Attention Deficit Disorder (ADD) and Attention
                 Deficit Hyperactivity Disorder (ADHD) make it hard for people to
@@ -113,7 +113,7 @@ const Page = ({ params }: PageProps) => {
                 suggests that Semax increases brain activity related to focus
                 and learning.
               </li>
-              <li className="text-black">
+              <li className="">
                 <span className="text-[#88D3FF] font-bold">4.</span> Peptides
                 for Sexual Dysfunction Sexual health is part of mental
                 well-being. Some peptides, like PT-141 (Bremelanotide), help

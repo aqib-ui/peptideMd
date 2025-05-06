@@ -98,7 +98,7 @@
 
 //         {/* 2nd div */}
 //         <div className="my-10 px-1 md:px-1 mx-10">
-//           <div className="bg-[#C5B3FF] py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
+//           <div className="bg-[#C5B3FF] py-1 text-black md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
 //             <div className="w-full text-center md:text-left">
 //               <h2
 //                 className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
@@ -140,7 +140,7 @@
 
 //         {/* 4th div */}
 //         <div className="my-10 px-1 md:px-1 mx-10">
-//           <div className="bg-[#C5B3FF] py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
+//           <div className="bg-[#C5B3FF] py-1 text-black md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
 //             <div className="w-full text-center md:text-left">
 //               <h2
 //                 className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
@@ -248,7 +248,7 @@ const CaseStudiesPage = () => {
   return (
     <>
       {/* heading */}
-      <div className="container mx-auto px-8 py-10">
+      <div className="container mx-auto bg-app px-8 py-10">
         <h1
           className="text-4xl font-bold md:text-6xl lg:text-[72px]"
           style={{ fontFamily: "Afacad, sans-serif" }}
@@ -292,7 +292,7 @@ const CaseStudiesPage = () => {
                   className="gradient-card-border w-full max-w-[443px] h-auto rounded-[1.875rem] min-h-0 cursor-pointer"
                   onClick={() => setShowNewSection(true)}
                 >
-                  <div className="p-6 shadow-lg rounded-[1.875rem] flex flex-col items-start bg-white w-full h-full transition-colors duration-500 ease-in-out group cursor-pointer">
+                  <div className="p-6 shadow-lg rounded-[1.875rem] flex flex-col items-start bg-app w-full h-full transition-colors duration-500 ease-in-out group cursor-pointer">
                     <h2
                       className="text-[clamp(18px,5vw,34px)] font-semibold leading-[100%] mt-4 md:mt-6 text-left"
                       style={{ fontFamily: "Afacad, sans-serif" }}
@@ -338,7 +338,7 @@ const CaseStudiesPage = () => {
 
         {/* 1st div */}
         <div className="my-10 px-1 md:px-1 mx-10">
-          <div className="bg-[#F7B6DB] py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="bg-[#F7B6DB] text-black py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="w-full text-center md:text-left">
               <h2
                 className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
@@ -359,7 +359,7 @@ const CaseStudiesPage = () => {
 
         {/* 2nd div */}
         <div className="my-10 px-1 md:px-1 mx-10">
-          <div className="bg-[#C5B3FF] py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="bg-[#C5B3FF] py-1 text-black md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="w-full text-center md:text-left">
               <h2
                 className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
@@ -380,7 +380,7 @@ const CaseStudiesPage = () => {
 
         {/* 3rd div */}
         <div className="my-10 px-1 md:px-1 mx-10 opacity-50">
-          <div className=" bg-[#F7B6DB] py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className=" bg-[#F7B6DB] text-black py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="w-full text-center md:text-left">
               <h2
                 className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
@@ -401,7 +401,7 @@ const CaseStudiesPage = () => {
 
         {/* 4th div */}
         <div className="my-10 px-1 md:px-1 mx-10 opacity-50">
-          <div className="bg-[#C5B3FF] py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="bg-[#C5B3FF] py-1 text-black md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="w-full text-center md:text-left">
               <h2
                 className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
@@ -430,7 +430,7 @@ const CaseStudiesPage = () => {
                 className="cursor-pointer"
               >
                 <div className="p-[3px] rounded-[30px] mx-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
-                  <div className="px-5 py-10 gap-2 rounded-[30px] flex max-md:flex-col justify-between items-center bg-white">
+                  <div className="px-5 py-10 gap-2 rounded-[30px] flex max-md:flex-col justify-between items-center bg-app">
                     {/* left side */}
                     <div className="ml-5">
                       <h2
@@ -479,7 +479,7 @@ const CaseStudiesPage = () => {
                 className="cursor-pointer"
               >
                 <div className="p-[3px] rounded-[30px] mx-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
-                  <div className="px-5 py-10 rounded-[30px] flex max-md:flex-col justify-between items-center bg-white">
+                  <div className="px-5 py-10 rounded-[30px] flex max-md:flex-col justify-between items-center bg-app">
                     {/* left side */}
                     <div className="ml-5">
                       <h2

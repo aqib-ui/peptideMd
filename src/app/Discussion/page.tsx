@@ -6,7 +6,7 @@ import { AiOutlineLike } from "react-icons/ai";
 import { FiTag } from "react-icons/fi";
 import { IoBookmarkOutline } from "react-icons/io5";
 import { FiPlusCircle } from "react-icons/fi";
-
+ 
 import {
   IoShareSocialOutline,
   IoArrowUpOutline,
@@ -68,7 +68,7 @@ const DiscussionPage = () => {
                   isExpanded
                     ? "md:right-6 lg:right-[640px] right-10"
                     : "sm:right-6 md:right-[40px] right-10"
-                } text-[28px] text-[#224674] cursor-pointer transition-all duration-200`}
+                } text-[28px] text-[#224674] dark:text-[var(--foreground)] cursor-pointer transition-all duration-200`}
                 onClick={() => setIsExpanded(!isExpanded)}
               >
                 <BsThreeDots />
@@ -218,7 +218,7 @@ const DiscussionPage = () => {
 
           {/* Popup Modal – appears *above* the blurred content */}
           {showPopup && (
-            <div className="absolute z-30 top-0 left-1/2 -translate-x-1/2 w-[90%] max-w-xl bg-white rounded-3xl p-6 shadow-lg">
+            <div className="absolute z-30 top-0 left-1/2 -translate-x-1/2 w-[90%] max-w-xl bg-app rounded-3xl p-6 shadow-lg">
               {/* <h2 className="text-2xl font-bold mb-4 text-center">
                 Create New Topic
               </h2> */}
