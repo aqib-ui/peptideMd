@@ -20,14 +20,14 @@ export default function Resources() {
         </h1>
 
         <h2
-          className=" text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-2 max-w-8xl"
+          className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-2 max-w-8xl"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Recent episodes discussing peptide research and applications.
           {/* <br /> */}
         </h2>
         <h2
-          className=" text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] max-w-8xl"
+          className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] max-w-8xl"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           This guide is for educational purposes only and should not be
@@ -36,16 +36,16 @@ export default function Resources() {
       </div>
 
       <div className="mt-30 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
-        <h3 className="text-[46px] font-semibold flex items-center flex-wrap">
+        <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold flex items-center flex-wrap">
           Latest Podcast
         </h3>
-        <h3 className="text-2xl text-[24px] leading-6.5 font-medium mb-12">
+        <h3 className="text-xl sm:text-2xl leading-6.5 font-medium mb-12">
           Recent episodes discussing peptide research and applications.
         </h3>
-        <h3 className="text-[34px] font-semibold flex items-center flex-wrap">
+        <h3 className="text-2xl sm:text-3xl md:text-[34px] font-semibold flex items-center flex-wrap">
           Coming Soon
         </h3>
-        <h3 className="text-2xl text-[24px] leading-6.5 font-medium mb-12 mt-5 ">
+        <h3 className="text-[20px] md:text-[22px] lg:text-[24px] leading-6.5 font-medium mb-12 mt-5 ">
           {/* className="" */}
           <span className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]"></span>
           Our podcast series featuring leading experts in peptide research and
@@ -98,14 +98,14 @@ export default function Resources() {
         {/* General Guideline Section */}
         <div className="relative mt-10 sm:mt-22 md:mt-30 px-6 lg:mt-40 ">
           <h3
-            className="text-[46px] font-semibold leading-[100%]   text-left"
+            className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold leading-[100%]   text-left"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Good Reads
           </h3>
 
           <h2
-            className=" text-[24px] md:text-[24px] lg:text-[24px]  font-medium leading-[100%] mt-5 mb-2 max-w-8xl"
+            className=" text-xl sm:text-2xl md:text-[24px] lg:text-[24px]  font-medium leading-[100%] mt-5 mb-2 max-w-8xl"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Recommended readings and publications
@@ -138,13 +138,13 @@ export default function Resources() {
               fontFamily: "Afacad, sans-serif",
             }}
           >
-            <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+            <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
               Comprehensive guide to peptide administration.
             </li>
-            <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+            <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
               Best practices in peptide storage and handling
             </li>
-            <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+            <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
               Patient monitoring protocols.
             </li>
           </ul>
@@ -152,14 +152,14 @@ export default function Resources() {
 
         <div className="relative mt-10 sm:mt-22 md:mt-30 px-6 lg:mt-40 ">
           <h3
-            className="text-[46px] font-semibold leading-[100%]   text-left"
+            className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold leading-[100%]   text-left"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             PeptideMD Articles
           </h3>
 
           <h2
-            className=" text-[24px] md:text-[24px] lg:text-[24px]  font-medium leading-[100%] mt-5 mb-2 max-w-8xl"
+            className=" text-[20px] md:text-[22px] lg:text-[24px]  font-medium leading-[100%] mt-5 mb-2 max-w-8xl"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Recommended readings and publications
@@ -191,13 +191,13 @@ export default function Resources() {
               fontFamily: "Afacad, sans-serif",
             }}
           >
-            <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+            <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
               Latest developments in peptide therapeutics
             </li>
-            <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+            <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
               Understanding peptide protocols
             </li>
-            <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+            <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
               Clinical applications of therapeutic peptides
             </li>
           </ul>
@@ -205,7 +205,7 @@ export default function Resources() {
 
         <div className="relative mt-10 sm:mt-22 md:mt-30 px-6 lg:mt-40 ">
           <h3
-            className="text-[46px] font-semibold leading-[100%]   text-left"
+            className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold leading-[100%]   text-left"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Other Relevant Resources
@@ -235,13 +235,13 @@ export default function Resources() {
               fontFamily: "Afacad, sans-serif",
             }}
           >
-            <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+            <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
               Video demonstrations
             </li>
-            <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+            <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
               Downloadable guides
             </li>
-            <li className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
+            <li className="text-[20px] md:text-[22px] lg:text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
               Educational webinars
             </li>
           </ul>
