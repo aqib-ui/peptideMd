@@ -26,7 +26,7 @@ export default function PeptideDatabase() {
         "Anti-inflammatory effects",
       ],
       risks: [
-        "Limited research", 
+        "Limited research",
         "Not FDA approved",
         "Optimal dosing unclear",
         "Cost considerations",
@@ -36,9 +36,10 @@ export default function PeptideDatabase() {
     },
     {
       name: "PT-141",
-      applications: "Treatment of sexual dysfunction.",
+      applications:
+        "Treatment of hypoactive sexual desire disorder and erectile dysfunction.",
       description:
-        "A melanocortin receptor agonist designed to treat sexual dysfunction in both men and women.",
+        "Also known as Bremelanotide, PT-141 is a melanocortin receptor agonist designed to treat sexual dysfunction in both men and women.",
       benefits: [
         "Increases sexual desire",
         "Improves erectile function",
@@ -84,7 +85,7 @@ export default function PeptideDatabase() {
           // className="text-[24px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
           // style={{ fontFamily: "Afacad, sans-serif" }}
           className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
-            style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Your go-to database for peptide knowledge—browse, explore, and unlock
           detailed information with a click!
@@ -245,7 +246,7 @@ export default function PeptideDatabase() {
 
         <div className="overflow-x-auto rounded-t-[72px] border border-gray-300 shadow-md">
           <table
-            className="min-w-full bg-[#F0F0F0] rounded-t-[72px] p-10"
+            className="min-w-full bg-[#F0F0F0] rounded-t-[72px] p-10 "
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             <thead>
@@ -264,6 +265,7 @@ export default function PeptideDatabase() {
                 </th>
               </tr>
 
+              {/* Normal table layout  */}
               {!isCompareClicked && (
                 <tr className="bg-[#94C4ED] text-sm md:text-base lg:text-2xl mt-10">
                   <th className="px-10 py-6 text-left">Name</th>
@@ -281,22 +283,33 @@ export default function PeptideDatabase() {
               {!isCompareClicked ? (
                 // Normal table layout
                 peptides.map((peptide, index) => (
-                  <tr key={index} className="font-medium ">
-                    <td className="px-2 pt-10 flex justify-center items-center">
+                  <tr key={index} className="font-medium text-sm md:text-base lg:text-2xl  ">
+                    <td className="px-2 align-top pt-15">
                       <div className="inline-block rounded-full bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] p-[1.5px]">
                         <span className="block rounded-full bg-[#F0F0F0] px-3 py-3 text-md font-bold text-black">
                           {peptide.name}
                         </span>
                       </div>
                     </td>
-                    <td className="px-2 py-4">{peptide.applications}</td>
-                    <td className="px-2 py-4">{peptide.description}</td>
-                    <td className="px-2 py-4">
-                      <ul className=" pl-4">
+
+                    <td className="px-2  w-[20%]  align-top pt-20 pb-5 ">
+                      <div className="flex  justify-start items-start">
+                        {peptide.applications}
+                      </div>
+                    </td>
+
+                    <td className="px-2  w-[30%] align-top pt-20 pb-5">
+                      <div className="flex flex-col justify-start items-start"> 
+                        {peptide.description}
+                      </div>
+                    </td>
+
+                    <td className="px-2  w-[30%] align-top pt-20 pb-5">
+                      <ul className="flex flex-col justify-start items-start">
                         {peptide.benefits.map((benefit, i) => (
                           <li
-                            className="relative pl-3 before:content-[''] 
-                            before:absolute before:left-0 before:top-2 before:w-2 
+                            className="relative pl-3 before:content-['']
+                            before:absolute before:left-0 before:top-2 before:w-2
                             before:h-2 before:rounded-full before:border-2 before:border-[#88D3FF]"
                             key={i}
                           >
@@ -305,12 +318,13 @@ export default function PeptideDatabase() {
                         ))}
                       </ul>
                     </td>
-                    <td className="px-2 py-4">
-                      <ul className=" pl-4">
+
+                    <td className="px-2  w-[25%] align-top pt-20 pb-5">
+                      <ul className=" flex flex-col justify-start items-start ">
                         {peptide.risks.map((risk, i) => (
                           <li
-                            className="relative pl-3 before:content-[''] 
-                            before:absolute before:left-0 before:top-2 before:w-2 
+                            className="relative pl-3 before:content-['']
+                            before:absolute before:left-0 before:top-2 before:w-2
                             before:h-2 before:rounded-full before:border-2 before:border-[#88D3FF]"
                             key={i}
                           >
@@ -319,10 +333,16 @@ export default function PeptideDatabase() {
                         ))}
                       </ul>
                     </td>
-                    <td className="px-4 py-4">{peptide.references}</td>
-                    <td className="px-2 py-4">
+
+                    <td className="px-4 flex align-top pt-20 pb-5">
+                      <div className="flex justify-start items-start">
+                        {peptide.references}
+                      </div>
+                    </td>
+
+                    <td className="px-2 align-top pt-15 ">
                       <span
-                        className={`inline-block px-3 py-1 rounded-[20px] text-sm md:text-base font-semibold ${
+                        className={`inline-block px-3 py-1 rounded-[20px] ext-sm md:text-base lg:text-2xl ${
                           peptide.fdaStatus === "FDA Approved"
                             ? "bg-[#C5E87E]"
                             : "bg-[#909090]"
@@ -332,6 +352,59 @@ export default function PeptideDatabase() {
                       </span>
                     </td>
                   </tr>
+                  // <tr
+                  //   key={index}
+                  //   className="font-medium text-sm md:text-base lg:text-2xl text-left "
+                  // >
+                  //   {/* note: all px‑* and py‑* removed; use a uniform p‑4 if you need some cell padding */}
+                  //   <td className="px-4">
+                  //     <div className="inline-block rounded-full bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] p-[1.5px]">
+                  //       <span className="block rounded-full bg-[#F0F0F0] px-3 py-3 text-md font-bold text-black">
+                  //         {peptide.name}
+                  //       </span>
+                  //     </div>
+                  //   </td>
+                  //   <td className="px-4 w-[20%]">{peptide.applications}</td>
+                  //   <td className="px-4 w-[30%]">{peptide.description}</td>
+                  //   <td className="px-4 w-[30%]">
+                  //     <ul>
+                  //       {peptide.benefits.map((b, i) => (
+                  //         <li
+                  //           key={i}
+                  //           className="relative pl-3 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 
+                  //           before:h-2 before:rounded-full before:border-2 before:border-[#88D3FF]"
+                  //         >
+                  //           {b}
+                  //         </li>
+                  //       ))}
+                  //     </ul>
+                  //   </td>
+                  //   <td className="px-4 w-[25%]">
+                  //     <ul>
+                  //       {peptide.risks.map((r, i) => (
+                  //         <li
+                  //           key={i}
+                  //           className="relative pl-3 before:content-[''] before:absolute before:left-0 before:top-2 before:w-2 
+                  //           before:h-2 before:rounded-full before:border-2 before:border-[#88D3FF]"
+                  //         >
+                  //           {r}
+                  //         </li>
+                  //       ))}
+                  //     </ul>
+                  //   </td>
+                  //   <td className="px-4">{peptide.references}</td>
+                  //   <td className="px-4">
+                  //     <span
+                  //       className={`inline-block px-3 py-1 rounded-[20px] text-sm md:text-base lg:text-2xl ${
+                  //         peptide.fdaStatus === "FDA Approved"
+                  //           ? "bg-[#C5E87E]"
+                  //           : "bg-[#909090]"
+                  //       }`}
+                  //     >
+                  //       {peptide.fdaStatus}
+                  //     </span>
+                  //   </td>
+                  // </tr>
                 ))
               ) : (
                 // Comparison layout
@@ -364,8 +437,8 @@ export default function PeptideDatabase() {
                               <div className="relative mx-4 sm:mx-6 hidden md:block">
                                 <div
                                   className="absolute top-1/2 left-0 
-      w-20 sm:w-28 md:w-12 lg:w-34 xl:w-52 2xl:w-45
-      h-[1px] bg-[#D59EFF] transform -translate-y-1/2"
+                                  w-20 sm:w-28 md:w-12 lg:w-34 xl:w-52 2xl:w-45
+                                  h-[1px] bg-[#D59EFF] transform -translate-y-1/2"
                                 ></div>
                               </div>
 

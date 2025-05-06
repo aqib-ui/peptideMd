@@ -367,7 +367,7 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header className="bg-white ">
+    <header className="bg-app">
       <div className="container mx-auto flex min-w-[98vw] items-center justify-between px-4 md:px-10 py-4">
         {/* Logo */}
         {/* <Image
@@ -404,7 +404,7 @@ export default function Header() {
 
       {/* Full-Screen Sidebar */}
       <div
-        className={`fixed inset-0 bg-white shadow-2xl z-50 
+        className={`fixed inset-0 bg-app shadow-2xl z-50 
           transform transition-transform duration-300 ease-in-out 
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
@@ -430,7 +430,7 @@ export default function Header() {
             ></div>
 
             {/* Inner White Circle */}
-            <div className="absolute inset-[2.5px] bg-white rounded-full flex items-center justify-center z-10">
+            <div className="absolute inset-[2.5px] bg-app rounded-full flex items-center justify-center z-10">
               <Image
                 src="/headerIcon/minimize.png"
                 alt="Close"
@@ -442,7 +442,7 @@ export default function Header() {
         </div>
 
         {/* Sidebar Content */}
-        <div className="flex items-center justify-center h-full bg-white">
+        <div className="flex items-center justify-center h-full bg-app">
           {/* Box with Gradient Border */}
           <div
             className="relative flex flex-wrap items-center justify-center gap-6 p-8 sm:p-4 
@@ -456,8 +456,8 @@ export default function Header() {
             ></div>
 
             {/* Inner White Box */}
-            <div className="absolute inset-[2px] bg-white rounded-[10rem] rounded-tr-[3.5rem] z-10"></div>
-            <ul className="text-gray-900 text-2xl font-semibold space-y-6 max-sm:space-y-3 z-10">
+            <div className="absolute inset-[2px] bg-app  rounded-[10rem] rounded-tr-[3.5rem] z-10"></div>
+            <ul className="text-gray-900 text-2xl text-app font-semibold space-y-6 max-sm:space-y-3 z-10">
               <li className="flex items-center space-x-4">
                 <Image
                   src="/headerIcon/Group 11.png"
@@ -555,7 +555,7 @@ export default function Header() {
               </li>
             </ul>
 
-            <ul className="text-gray-900 text-2xl font-semibold space-y-6 max-sm:space-y-3 z-10 pb-[4rem]">
+            <ul className="text-gray-900 text-2xl text-app font-semibold space-y-6 max-sm:space-y-3 z-10 pb-[4rem]">
               <li className="flex items-center space-x-4">
                 <Image
                   src="/headerIcon/Group 21.png"
