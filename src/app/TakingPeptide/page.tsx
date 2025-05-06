@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function TakingPeptide() {
   return (
-    <div className="container px-4 py-10">
+    <div className="container bg-app px-4 py-10">
       <div className="m-2">
       <h1
         // className="text-2xl font-bold text-[38px] md:text-[48px] lg:text-[72px] leading-[100%] text-left"
@@ -55,7 +55,7 @@ export default function TakingPeptide() {
         {/* List with Background Color and Styled Hollow Circles */}
         <ul
           // className="min-w-[98vw] -mx-4 pl-10 rounded-[5rem] mt-6 space-y-1 list-none text-[#1F1F1F]"
-          className="w-full px-4 md:px-10 -mx-4 pl-10 rounded-[5rem] mt-6 space-y-1 list-none text-[#1F1F1F]"
+          className="w-full px-4 md:px-10 -mx-4 pl-10 rounded-[5rem] mt-6 space-y-1 list-none "
 
           style={{
             // backgroundColor: "rgba(136, 211, 255, 0.3)",
@@ -93,7 +93,7 @@ export default function TakingPeptide() {
         {/* List with Background Color and Styled Hollow Circles */}
         <ul
           // className="min-w-[98vw] -mx-4 p-4 md:p-10 rounded-[5rem] mt-6 space-y-1 list-none text-[#1F1F1F]"
-          className="w-full px-4 md:px-10 p-4 md:p-10 rounded-[5rem] mt-6 space-y-1 list-none text-[#1F1F1F]"
+          className="w-full px-4 md:px-10 p-4 md:p-10 rounded-[5rem] mt-6 space-y-1 list-none"
 
           style={{
             // backgroundColor: "rgba(136, 211, 255, 0.3)",
@@ -172,7 +172,7 @@ export default function TakingPeptide() {
       {/* Video Section */}
       <section
         className="relative min-h-screen min-w-[98vw] flex flex-wrap justify-start 
-      ml-[-20px] gap-10 px-6 py-10 bg-white opacity-90 w-full"
+      ml-[-20px] gap-10 px-6 py-10 bg-app opacity-90 w-full"
       >
         {/* Video 1 */}
         <div className="relative flex-1 md:max-w-full sm:min-w-[300px] min-w-[90%]">
@@ -273,7 +273,7 @@ export default function TakingPeptide() {
         {/* List with Background Color and Styled Hollow Circles */}
         <ul
           // className="min-w-[98vw] -mx-4 p-4 md:p-10 rounded-[5rem] mt-6 space-y-1 list-none text-[#1F1F1F]"
-          className="w-full px-4 md:px-10 p-4 md:p-10 rounded-[5rem] mt-6 space-y-1 list-none text-[#1F1F1F]"
+          className="w-full px-4 md:px-10 p-4 md:p-10 rounded-[5rem] mt-6 space-y-1 list-none "
 
           style={{
             // backgroundColor: "rgba(136, 211, 255, 0.3)",
@@ -307,7 +307,7 @@ export default function TakingPeptide() {
     </div>
   </div> */}
   <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
-  <div className="bg-white rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
+  <div className="bg-white text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
     <p
       className=" text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
       style={{ fontFamily: "Afacad, sans-serif" }}
@@ -332,7 +332,7 @@ export default function TakingPeptide() {
     </div>
   </div> */}
   <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
-  <div className="bg-white rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
+  <div className="bg-white text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
     <p
       className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
       style={{ fontFamily: "Afacad, sans-serif" }}
@@ -349,7 +349,7 @@ export default function TakingPeptide() {
 
   {/* Value 3 */}
   <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
-  <div className="bg-white rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
+  <div className="bg-white text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
     <p
       className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
       style={{ fontFamily: "Afacad, sans-serif" }}
@@ -366,7 +366,7 @@ export default function TakingPeptide() {
 
   {/* Value 4 */}
   <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
-  <div className="bg-white rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
+  <div className="bg-white  text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
     <p
       className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
       style={{ fontFamily: "Afacad, sans-serif" }}
