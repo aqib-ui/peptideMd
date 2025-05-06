@@ -17,7 +17,7 @@ export default function DosageSimulator() {
     bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
         >
           <div
-            className="flex w-full bg-white rounded-[20px] px-1.5 py-1 relative"
+            className="flex w-full bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)]   rounded-[20px] px-1.5 py-1 relative"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             <div
@@ -27,13 +27,13 @@ export default function DosageSimulator() {
 
             <button
               onClick={() => setSelected("Dosage Guide")}
-              className="relative z-10 w-1/2 text-center py-2 text-black text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px]"
+              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px]"
             >
               Dosage Guide
             </button>
             <button
               onClick={() => setSelected("Calculator")}
-              className="relative z-10 w-1/2 text-center py-2 text-black text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px]"
+              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px]"
             >
               Calculator
             </button>
@@ -349,14 +349,14 @@ function DosageGuide() {
 
           {/* You can add more UI elements for protocol selection here */}
 
-          <div className="my-20">
+          <div className="my-20 ">
             <input
               type="image"
               placeholder="Enter desired dose"
               className="w-[90%] h-screen px-4 py-3 pb-20 focus:outline-none rounded-3xl bg-[#94C4ED]/30 text-[34px] 
-        text-black/70 font-medium text-left align-top"
+        text-black/70  font-medium text-left align-top"
             />
-            <p className="text-lg">
+            <p className="text-lg ">
               Interactive 3D model of AHK-Cu. Use mouse to rotate and zoom.
             </p>
           </div>
@@ -482,7 +482,7 @@ function DosageGuide() {
 
           <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
             <button
-              className="w-full h-full rounded-full bg-white text-black text-base sm:text-lg md:text-xl lg:text-2xl font-medium
+              className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl lg:text-2xl font-medium
     flex items-center justify-center transition-colors duration-100 
     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
               style={{ fontFamily: "Afacad, sans-serif" }}

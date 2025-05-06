@@ -488,7 +488,7 @@ export default function PeptideDatabase() {
                               </div>
 
                               {/* Peptide Name */}
-                              <div className="text-lg md:text-xl lg:text-2xl ml-21 sm:ml-22 md:ml-10 lg:ml-[8rem] xl:ml-[11rem] font-bold text-gray-900">
+                              <div className="text-lg md:text-xl lg:text-2xl ml-21 sm:ml-22 md:ml-10 lg:ml-[8rem] xl:ml-[11rem] font-bold ">
                                 {peptide.name}
                               </div>
                             </div>

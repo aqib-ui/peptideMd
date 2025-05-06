@@ -8,7 +8,7 @@ export default function Resources() {
           // className="text-2xl font-bold text-[38px] md:text-[48px] lg:text-[72px] leading-[100%] text-left"
           // style={{ fontFamily: "Afacad, sans-serif" }}
           // className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
-          className="text-4xl md:text-5xl lg:text-7xl  font-bold leading-tight"
+          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px]  font-bold leading-tight"
 
             style={{ fontFamily: "Afacad, sans-serif" }}
         >

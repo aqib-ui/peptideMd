@@ -26,7 +26,7 @@ const DiscussionPage = () => {
         <div className="gradient-border">
           <button
             onClick={() => setShowPopup(true)}
-            className="w-full h-full rounded-full bg-white text-black text-base sm:text-lg md:text-xl font-medium
+            className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl font-medium
             flex items-center justify-center transition-colors duration-100 
             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white px-4 py-2"
             style={{ fontFamily: "Afacad, sans-serif" }}
@@ -44,7 +44,7 @@ const DiscussionPage = () => {
         <div className="mx-2">
           {/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[100%] text-left"> */}
           <h1
-        className="text-5xl md:text-[72px] font-bold leading-[100%] text-left mt-6"
+        className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left mt-6"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
             Physician
@@ -53,7 +53,7 @@ const DiscussionPage = () => {
             </span>
           </h1>
 
-          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium leading-tight mt-6 mb-2">
+          <h2 className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-tight mt-6 mb-2">
             Connect and collaborate with fellow medical professionals.
           </h2>
         </div>
@@ -84,10 +84,10 @@ const DiscussionPage = () => {
                   className="object-cover aspect-square rounded-full border-2 border-white mr-3"
                 />
                 <div className="flex flex-col">
-                  <h1 className="text-2xl sm:text-3xl md:text-[38px] font-bold leading-tight">
+                  <h1 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-bold leading-tight">
                     Peptide 101
                   </h1>
-                  <p className="text-base sm:text-lg md:text-xl font-medium mt-1">
+                  <p className="text-xl sm:text-2xl  font-medium mt-1">
                     What they are, how they work, and their benefits.
                   </p>
                 </div>
@@ -151,7 +151,7 @@ const DiscussionPage = () => {
               <div className="mt-4 sm:mt-8 ml-4 sm:ml-8">
                 <div className="gradient-border">
                   <button
-                    className="w-full h-full rounded-full bg-white text-black text-base sm:text-lg md:text-xl font-medium
+                    className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl font-medium
                     flex items-center justify-center transition-colors duration-100 
                     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white px-4 py-2"
                     style={{ fontFamily: "Afacad, sans-serif" }}
@@ -247,7 +247,7 @@ const DiscussionPage = () => {
                   <div className="gradient-border w-[160px] h-[50px]">
                     <button
                       onClick={() => setShowPopup(false)}
-                      className="w-full h-full rounded-full bg-white text-black text-base sm:text-lg md:text-xl font-medium
+                      className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl font-medium
                       flex items-center justify-center transition-colors duration-100 
                       ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white px-2 py-2"
                       style={{ fontFamily: "Afacad, sans-serif" }}

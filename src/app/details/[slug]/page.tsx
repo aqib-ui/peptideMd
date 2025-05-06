@@ -32,7 +32,7 @@ const Page = ({ params }: PageProps) => {
 
             <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
               <button
-                className="w-full h-full rounded-full bg-white text-black text-xl font-medium
+                className="w-full h-full rounded-full bg-app text-black text-xl font-medium
     flex items-center justify-center transition-colors duration-100 
     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
                 style={{ fontFamily: "Afacad, sans-serif" }}
@@ -204,7 +204,7 @@ const Page = ({ params }: PageProps) => {
 
             <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
               <button
-                className="w-full h-full rounded-full bg-white text-black text-xl font-medium
+                className="w-full h-full rounded-full bg-app text-black text-xl font-medium
     flex items-center justify-center transition-colors duration-100 
     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
                 style={{ fontFamily: "Afacad, sans-serif" }}
