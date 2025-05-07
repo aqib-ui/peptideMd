@@ -19,7 +19,7 @@ export default function TakingPeptide() {
       </h1>
 
       <h2
-        className=" text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-2 max-w-8xl"
+        className=" text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-2 max-w-8xl"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         Always consult with a qualified healthcare provider before starting any
@@ -27,7 +27,7 @@ export default function TakingPeptide() {
         {/* <br /> */}
         
       </h2>
-      <h2 className=" text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] max-w-8xl"
+      <h2 className=" text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] max-w-8xl"
         style={{ fontFamily: "Afacad, sans-serif" }}>This guide is for educational purposes only and should not be considered
       medical advice.</h2>
       </div>

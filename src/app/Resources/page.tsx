@@ -9,8 +9,7 @@ export default function Resources() {
           // style={{ fontFamily: "Afacad, sans-serif" }}
           // className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
           className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px]  font-bold leading-tight"
-
-            style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Resources
           {/* <span style={{ color: "#224674" }} className="italic"> */}
@@ -35,22 +34,24 @@ export default function Resources() {
         </h2>
       </div>
 
-      <div className="mt-30 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
-        <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold flex items-center flex-wrap">
-          Latest Podcast
-        </h3>
-        <h3 className="text-xl sm:text-2xl leading-6.5 font-medium mb-12">
-          Recent episodes discussing peptide research and applications.
-        </h3>
-        <h3 className="text-2xl sm:text-3xl md:text-[34px] font-semibold flex items-center flex-wrap">
-          Coming Soon
-        </h3>
-        <h3 className="text-[20px] md:text-[22px] lg:text-[24px] leading-6.5 font-medium mb-12 mt-5 ">
-          {/* className="" */}
-          <span className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]"></span>
-          Our podcast series featuring leading experts in peptide research and
-          clinical applications will be launching soon.
-        </h3>
+      <div className="mt-20 sm:mt-22 md:mt-30 lg:mt-40 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
+        <div className="px-6 ">
+          <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold flex items-center flex-wrap">
+            Latest Podcast
+          </h3>
+          <h3 className="text-xl sm:text-2xl leading-6.5 font-medium mb-12">
+            Recent episodes discussing peptide research and applications.
+          </h3>
+          <h3 className="text-2xl sm:text-3xl md:text-[34px] font-semibold flex items-center flex-wrap">
+            Coming Soon
+          </h3>
+          <h3 className="text-[20px] md:text-[22px] lg:text-[24px] leading-6.5 font-medium mb-12 mt-5 ">
+            {/* className="" */}
+            <span className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]"></span>
+            Our podcast series featuring leading experts in peptide research and
+            clinical applications will be launching soon.
+          </h3>
+        </div>
         {/* Video Section */}
         <section
           className="relative min-h-screen min-w-[98vw] flex flex-wrap justify-center 
@@ -98,7 +99,7 @@ export default function Resources() {
         {/* General Guideline Section */}
         <div className="relative mt-10 sm:mt-22 md:mt-30 px-6 lg:mt-40 ">
           <h3
-            className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold leading-[100%]   text-left"
+            className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold leading-[100%]   text-left"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Good Reads
@@ -112,7 +113,7 @@ export default function Resources() {
             {/* <br /> */}
           </h2>
 
-          <div className="hidden md:block absolute right-0 bottom-0 md:bottom-2 md:-right-48 lg:right-10">
+          <div className="hidden md:block absolute right-0 bottom-0 md:bottom-2 md:-right-48 lg:right-10 md:pr-20 lg:pr-0">
             <Image
               src="/resourcesPod/mug.png"
               alt="pen image"
@@ -152,7 +153,7 @@ export default function Resources() {
 
         <div className="relative mt-10 sm:mt-22 md:mt-30 px-6 lg:mt-40 ">
           <h3
-            className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold leading-[100%]   text-left"
+            className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold leading-[100%]   text-left"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             PeptideMD Articles
@@ -166,7 +167,7 @@ export default function Resources() {
             {/* <br /> */}
           </h2>
 
-          <div className="hidden md:block absolute right-0 bottom-0 md:bottom-2 md:-right-48 lg:right-10">
+          <div className="hidden md:block absolute right-0 bottom-0 md:bottom-2 md:-right-48 lg:right-10 md:pr-20 lg:pr-0">
             <Image
               src="/resourcesPod/laptop.png"
               alt="pen image"
@@ -205,7 +206,7 @@ export default function Resources() {
 
         <div className="relative mt-10 sm:mt-22 md:mt-30 px-6 lg:mt-40 ">
           <h3
-            className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold leading-[100%]   text-left"
+            className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold leading-[100%]   text-left"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Other Relevant Resources
