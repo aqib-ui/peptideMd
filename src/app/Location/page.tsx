@@ -20,7 +20,7 @@ const Location = () => {
       {/* heading */}
       <div className="container mx-auto px-4 sm:px-6 md:px-8 py-10">
         <h1
-          className="text-4xl font-bold md:text-6xl lg:text-[72px]"
+          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold "
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Provider
@@ -30,7 +30,7 @@ const Location = () => {
           </span>
         </h1>
         <h2
-          className="text-[24px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
+          className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           AI Recommendations, AI Response, Video Suggestions and Community
