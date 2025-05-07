@@ -12,7 +12,7 @@ const AiAssistantPage = () => {
       {/* heading */}
       <div className="container bg-app mx-auto px-8 py-10">
         <h1
-          className="text-4xl font-bold md:text-6xl lg:text-[72px]"
+          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Peptide
@@ -21,7 +21,7 @@ const AiAssistantPage = () => {
           </span>
         </h1>
         <h2
-          className="text-[24px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
+          className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           AI Recommendations, AI Response, Video Suggestions and Community
@@ -36,15 +36,15 @@ const AiAssistantPage = () => {
             {/* 1st div */}
             <div className="bg-[#94C4ED]/30 mx-10  p-5 gap-2 rounded-4xl flex max-md:flex-col justify-between items-center">
               {/* left side */}
-              <div className="ml-5">
+              <div className="md:ml-5">
                 <h2
-                  className="text-[clamp(28px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
+                  className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   Videos you may relate.
                 </h2>
                 <h2
-                  className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
+                  className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   Calculate reconstitution measurements and injection volumes
@@ -122,15 +122,15 @@ const AiAssistantPage = () => {
           <div className="my-10">
             <div className="bg-[#94C4ED]/30 mx-10  p-5 gap-2 rounded-4xl flex max-md:flex-col justify-between items-center">
               {/* left side */}
-              <div className="ml-5">
+              <div className="md:ml-5">
                 <h2
-                  className="text-[clamp(28px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
+                  className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   Ai Chat History.
                 </h2>
                 <h2
-                  className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
+                  className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   Calculate reconstitution measurements and injection volumes
@@ -162,15 +162,15 @@ const AiAssistantPage = () => {
           <div className="my-10">
             <div className="bg-[#94C4ED]/30 mx-10  p-5 gap-2 rounded-4xl flex max-md:flex-col justify-between items-center">
               {/* left side */}
-              <div className="ml-5">
+              <div className="md:ml-5">
                 <h2
-                  className="text-[clamp(28px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
+                  className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   Community Discussion Links.
                 </h2>
                 <h2
-                  className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
+                  className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   Calculate reconstitution measurements and injection volumes
@@ -207,15 +207,15 @@ const AiAssistantPage = () => {
               <div className="p-[2px] rounded-[3rem] mx-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
                 <div className="p-5 gap-2 rounded-[3rem] flex max-md:flex-col justify-between items-center bg-app">
                   {/* left side */}
-                  <div className="ml-5">
+                  <div className="md:ml-5">
                     <h2
-                      className="text-[clamp(28px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
+                      className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
                       style={{ fontFamily: "Afacad, sans-serif" }}
                     >
                       New Ai Chat.
                     </h2>
                     <h2
-                      className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
+                      className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
                       style={{ fontFamily: "Afacad, sans-serif" }}
                     >
                       Calculate reconstitution measurements and injection
@@ -251,7 +251,7 @@ const AiAssistantPage = () => {
         <div className="md:mt-50 md:mb-100 mb-10 md:mx-50 mx-5">
           <div className="rounded-4xl flex justify-center items-center">
             <h2
-              className="text-xl sm:text-2xl md:text-3xl font-semibold text-center"
+              className="text-[20px] md:text-[28px] lg:text-[34px] font-semibold text-center"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               Ask questions about peptides, their applications, and latest
@@ -260,10 +260,10 @@ const AiAssistantPage = () => {
           </div>
 
           <div
-            className="p-[2px] min-h-screen rounded-[3rem] md:mt-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
+            className="p-[2px] min-h-screen rounded-[3rem] mt-2 md:mt-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
-            <div className="bg-app min-h-[120vh]  rounded-[3rem] p-6 sm:p-10  flex flex-col items-start justify-between">
+            <div className="bg-app min-h-[120vh]  rounded-[3rem] p-6 sm:p-10  flex flex-col items-start justify-between md:overflow-auto">
               {/* Avatar + Text */}
               <div className="flex items-start gap-4 max-w-3xl w-full mt-6">
                 <Image
