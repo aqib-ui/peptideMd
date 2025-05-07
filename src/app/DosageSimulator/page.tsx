@@ -21,7 +21,7 @@ export default function DosageSimulator() {
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             <div
-              className={`absolute inset-0 top-0 bottom-0 left-0 w-[52%] bg-[#94C4ED] rounded-[20px] transition-all duration-300
+              className={`absolute inset-0 top-0 bottom-0 left-0 w-[52%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[20px] transition-all duration-300
         ${selected === "Calculator" ? "left-[48%]" : "left-0"}`}
             ></div>
 
@@ -121,7 +121,7 @@ function DosageGuide() {
               <Listbox value={selectedPeptide} onChange={setSelectedPeptide}>
                 <div className="relative">
                   <Listbox.Button
-                    className="w-full px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 focus:outline-none 
+                    className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 focus:outline-none 
                     text-xl md:text-2xl font-medium text-left
                   text-[#224674] dark:text-[var(--foreground)]"
                   >
@@ -132,14 +132,21 @@ function DosageGuide() {
         focus:outline-none 
         text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
               /> */}
-                    {selectedPeptide || "Select a peptide"}
-                    <Image
+                    {selectedPeptide || "Select peptide"}
+                    {/* <Image
                       src="/dropdown-icon.png"
                       alt="Dropdown icon"
                       width={55}
                       height={0}
                       className="absolute  top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
-                    />
+                    /> */}
+                    <Image
+                src="/dropdown-icon.png"
+                alt="Dropdown icon"
+                width={60}
+                height={60}
+                className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
+              />
                   </Listbox.Button>
 
                   <Listbox.Options
@@ -180,7 +187,7 @@ function DosageGuide() {
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold">
-          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
+          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED]  text-black mr-2">
             Step 2:
           </span>
           Protocol Selection
@@ -194,9 +201,9 @@ function DosageGuide() {
           {/* Toggle Button - now same width as Step 1 dropdown */}
           <div className="flex  mt-6">
             <div className="relative w-[90%] max-w-[1248px] h-[80px] bg-[#94C4ED]/40 rounded-[25px]">
-              <div className="flex w-full h-full text-[#224674] text-lg sm:text-xl lg:text-2xl relative">
+              <div className="flex w-full h-full text-[#224674] dark:text-[var(--foreground)] text-lg sm:text-xl lg:text-2xl relative">
                 <div
-                  className={`absolute top-0 bottom-0 w-[52%] bg-[#94C4ED] rounded-[25px] transition-all duration-300
+                  className={`absolute top-0 bottom-0 w-[52%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
               ${selectedProtocol === "Microdosing" ? "left-[48%]" : "left-0"}
             `}
                 ></div>
@@ -544,7 +551,7 @@ function Calculator() {
             <div className="relative">
               <input
                 type="text"
-                placeholder="Enter peptide amount"
+                placeholder="Enter in mg"
                 className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
         text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
@@ -568,7 +575,7 @@ function Calculator() {
             <div className="relative">
               <input
                 type="text"
-                placeholder="Enter Bacteriostatic Water"
+                placeholder="Enter in ml"
                 className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
         text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
@@ -592,7 +599,7 @@ function Calculator() {
             <div className="relative">
               <input
                 type="text"
-                placeholder="Enter Desired Dose"
+                placeholder="Enter in mcg"
                 className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
         text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
