@@ -250,7 +250,7 @@ const CaseStudiesPage = () => {
       {/* heading */}
       <div className="container mx-auto bg-app px-8 py-10">
         <h1
-          className="text-4xl font-bold md:text-6xl lg:text-[72px]"
+          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Clinical
@@ -259,7 +259,7 @@ const CaseStudiesPage = () => {
           </span>
         </h1>
         <h2
-          className="text-[24px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
+          className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           AI Recommendations, AI Response, Video Suggestions and Community
@@ -294,13 +294,13 @@ const CaseStudiesPage = () => {
                 >
                   <div className="p-6 shadow-lg rounded-[1.875rem] flex flex-col items-start bg-app w-full h-full transition-colors duration-500 ease-in-out group cursor-pointer">
                     <h2
-                      className="text-[clamp(18px,5vw,34px)] font-semibold leading-[100%] mt-4 md:mt-6 text-left"
+                      className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-4 md:mt-6 text-left"
                       style={{ fontFamily: "Afacad, sans-serif" }}
                     >
                       {item.title}
                     </h2>
                     <h2
-                      className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-6 text-left"
+                      className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-6 text-left"
                       style={{ fontFamily: "Afacad, sans-serif" }}
                     >
                       {item.desc}
@@ -341,13 +341,13 @@ const CaseStudiesPage = () => {
           <div className="bg-[#F7B6DB] text-black py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="w-full text-center md:text-left">
               <h2
-                className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
+                className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Relevant Research Updates.
               </h2>
               <h2
-                className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
+                className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
@@ -362,13 +362,13 @@ const CaseStudiesPage = () => {
           <div className="bg-[#C5B3FF] py-1 text-black md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="w-full text-center md:text-left">
               <h2
-                className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
+                className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Relevant Research Updates.
               </h2>
               <h2
-                className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
+                className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
@@ -383,13 +383,13 @@ const CaseStudiesPage = () => {
           <div className=" bg-[#F7B6DB] text-black py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="w-full text-center md:text-left">
               <h2
-                className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
+                className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Relevant Research Updates.
               </h2>
               <h2
-                className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
+                className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
@@ -404,13 +404,13 @@ const CaseStudiesPage = () => {
           <div className="bg-[#C5B3FF] py-1 text-black md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="w-full text-center md:text-left">
               <h2
-                className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
+                className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Relevant Research Updates.
               </h2>
               <h2
-                className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
+                className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
@@ -432,15 +432,15 @@ const CaseStudiesPage = () => {
                 <div className="p-[3px] rounded-[30px] mx-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
                   <div className="px-5 py-10 gap-2 rounded-[30px] flex max-md:flex-col justify-between items-center bg-app">
                     {/* left side */}
-                    <div className="ml-5">
+                    <div className="md:ml-5">
                       <h2
-                        className="text-[clamp(18px,5vw,34px)] font-semibold leading-[100%] mt-6 max-w-2xl"
+                        className="text-[24px] md:text-[28px] lg:text-[34px]  font-semibold leading-[100%] mt-6 max-w-2xl"
                         style={{ fontFamily: "Afacad, sans-serif" }}
                       >
                         Peptide Case Studies & Success Stories.
                       </h2>
                       <h2
-                        className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-10 max-w-3xl"
+                        className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-10 max-w-3xl"
                         style={{ fontFamily: "Afacad, sans-serif" }}
                       >
                         Lorem ipsum dolor sit amet consectetur. Convallis donec
@@ -450,17 +450,17 @@ const CaseStudiesPage = () => {
 
                     {/* right side */}
                     <div
-                      className="px-10 flex max-md:flex-col gap-4 font-semibold text-[clamp(16px,3.5vw,24px)] items-center justify-center"
+                      className="px-10 flex max-md:flex-col gap-4 font-semibold text-[clamp(20px,3.5vw,24px)] items-center justify-center"
                       style={{ fontFamily: "Afacad, sans-serif" }}
                     >
                       <button
-                        className=" flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
+                        className=" w-full flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
                 bg-[#F7B6DB] rounded-full shadow-md transition duration-200"
                       >
                         Approve
                       </button>
                       <button
-                        className=" flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
+                        className="w-full flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
                 bg-[#C5B3FF] rounded-full shadow-md transition duration-200"
                       >
                         Publish
@@ -481,15 +481,15 @@ const CaseStudiesPage = () => {
                 <div className="p-[3px] rounded-[30px] mx-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
                   <div className="px-5 py-10 rounded-[30px] flex max-md:flex-col justify-between items-center bg-app">
                     {/* left side */}
-                    <div className="ml-5">
+                    <div className="md:ml-5">
                       <h2
-                        className="text-[clamp(18px,5vw,34px)] font-semibold leading-[100%] mt-6 max-w-2xl"
+                        className="text-[clamp(24px,5vw,34px)] font-semibold leading-[100%] mt-6 max-w-2xl"
                         style={{ fontFamily: "Afacad, sans-serif" }}
                       >
                         Peptide Case Studies & Success Stories.
                       </h2>
                       <h2
-                        className="text-[clamp(16px,5vw,24px)] font-medium leading-[100%] mt-3 mb-10 max-w-3xl"
+                        className="text-[clamp(20px,5vw,24px)] font-medium leading-[100%] mt-3 mb-10 max-w-3xl"
                         style={{ fontFamily: "Afacad, sans-serif" }}
                       >
                         Lorem ipsum dolor sit amet consectetur. Convallis donec
@@ -499,17 +499,17 @@ const CaseStudiesPage = () => {
 
                     {/* right side */}
                     <div
-                      className="px-10 flex max-md:flex-col gap-4 font-semibold text-[clamp(16px,3.5vw,24px)] items-center justify-center"
+                      className="px-10 flex max-md:flex-col gap-4 font-semibold text-[clamp(20px,3.5vw,24px)] items-center justify-center"
                       style={{ fontFamily: "Afacad, sans-serif" }}
                     >
                       <button
-                        className=" flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
+                        className="w-full flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
                 bg-[#F7B6DB] rounded-full shadow-md transition duration-200"
                       >
                         Approve
                       </button>
                       <button
-                        className=" flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
+                        className="w-full flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
                 bg-[#C5B3FF] rounded-full shadow-md transition duration-200"
                       >
                         Publish

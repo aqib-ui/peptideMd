@@ -42,7 +42,7 @@ export default function Resources() {
           <h3 className="text-xl sm:text-2xl leading-6.5 font-medium mb-12">
             Recent episodes discussing peptide research and applications.
           </h3>
-          <h3 className="text-2xl sm:text-3xl md:text-[34px] font-semibold flex items-center flex-wrap">
+          <h3 className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold flex items-center flex-wrap">
             Coming Soon
           </h3>
           <h3 className="text-[20px] md:text-[22px] lg:text-[24px] leading-6.5 font-medium mb-12 mt-5 ">
