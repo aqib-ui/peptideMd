@@ -98,7 +98,7 @@ const DiscussionPage = () => {
                 className={`relative  ${
                   isExpanded
                     ? "w-full flex justify-start mt-6 mb-6 overflow-hidden "
-                    : "w-[200px] h-[200px] sm:h-[230px] md:h-[260px] lg:w-[300px] lg:h-[250px]  lg:-mt-30 lg:mr-10 max-lg:mb-10 self-center lg:self-end"
+                    : "w-[200px] h-[200px] sm:h-[230px] sm:w-[270px] md:h-[260px] md:w-[300px] lg:w-[300px] lg:h-[250px] lg:-mt-30 lg:mr-8 max-lg:mb-10  self-center lg:self-end"
                 }`}
               >
                 <div
@@ -125,8 +125,8 @@ const DiscussionPage = () => {
 
               {/* Stats Section */}
               <div
-                className={`flex gap-4 w-[50%] flex-wrap ${
-                  !isExpanded ? "lg:-mt-10" : ""
+                className={` flex gap-4 w-[50%] flex-wrap ${
+                  !isExpanded ? "lg:-mt-10  px-10" : ""
                 }`}
               >
                 <div className="bg-[#224674] text-white px-4 py-2 flex items-center justify-center rounded-full text-lg gap-1">
