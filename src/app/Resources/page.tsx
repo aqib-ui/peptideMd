@@ -25,13 +25,13 @@ export default function Resources() {
           Recent episodes discussing peptide research and applications.
           {/* <br /> */}
         </h2>
-        <h2
+        {/* <h2
           className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] max-w-8xl"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           This guide is for educational purposes only and should not be
           considered medical advice.
-        </h2>
+        </h2> */}
       </div>
 
       <div className="mt-20 sm:mt-22 md:mt-30 lg:mt-40 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
@@ -74,7 +74,7 @@ export default function Resources() {
                   className="text-[clamp(20px,4vw,34px)] font-bold"
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
-                  Proper Storage Techniques
+                  Latest Podcast
                 </h2>
                 <p
                   className="text-[clamp(16px,3vw,24px)] mt-2"
@@ -255,7 +255,11 @@ export default function Resources() {
               height={308}
               className=" object-cover w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
             /> */}
-            <div className="relative w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px] shadow-lg overflow-hidden">
+            <div
+  className="relative w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px] shadow-2xl overflow-hidden"
+  style={{ boxShadow: '0px 14px 18px 0px #00000040' }}
+>
+
               <video
                 className="w-full h-full object-cover rounded-[50px]"
                 controls
@@ -271,7 +275,7 @@ export default function Resources() {
                   className="text-[clamp(16px,3vw,24px)] font-bold"
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
-                  Proper Storage Techniques
+                  Latest Podcast
                 </h2>
                 <p
                   className="text-[clamp(12px,2.5vw,18px)] mt-1"
@@ -279,7 +283,7 @@ export default function Resources() {
                 >
                   Video content will be added soon
                 </p>
-                <button className="relative z-10 mt-2">
+                <button className="relative z-10 mt-2 ">
                   <Image
                     src="/play.png"
                     alt="Play Button"
@@ -297,6 +301,7 @@ export default function Resources() {
               width={324}
               height={308}
               className=" object-cover w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
+              style={{ boxShadow: '0px 14px 18px 0px #00000040' }}
             />
             <Image
               src="/resourcesPod/bottom3.png"
@@ -304,6 +309,7 @@ export default function Resources() {
               width={324}
               height={308}
               className=" object-cover w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
+              style={{ boxShadow: '0px 14px 18px 0px #00000040' }}
             />
           </div>
         </div>

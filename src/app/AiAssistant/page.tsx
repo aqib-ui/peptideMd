@@ -178,23 +178,18 @@ const AiAssistantPage = () => {
               </div>
 
               {/* right side */}
-              <div className="px-10 flex max-md:flex-col gap-10 items-center justify-center">
-                <div
-                  className="relative px-1 rounded-[50px] overflow-hidden"
-                  style={{
-                    width: "clamp(112px, 50vw, 464px)",
-                    height: "clamp(102px, 50vw, 202px)",
-                  }}
-                >
-                  <Image
-                    className="w-full h-full object-cover rounded-[50px]"
-                    src="/aiAssistant/comdiscuss.png"
-                    alt="Video Thumbnail"
-                    width={500}
-                    height={500}
-                  />
-                </div>
-              </div>
+              <div className="px-10 flex flex-col items-center justify-center">
+  <div className="rounded-[50px] overflow-hidden w-[clamp(112px,50vw,464px)] h-[clamp(102px,30vw,202px)]">
+    <Image
+      src="/aiAssistant/comdiscuss.png"
+      alt="Video Thumbnail"
+      className="w-full h-full object-cover"
+      width={500}
+      height={500}
+    />
+  </div>
+</div>
+
             </div>
           </div>
 

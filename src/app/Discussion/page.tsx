@@ -83,10 +83,24 @@ const DiscussionPage = () => {
                   height={48}
                   className="object-cover aspect-square rounded-full border-2 border-white mr-3"
                 />
-                <div className="flex flex-col">
+                {/* <div className="flex flex-col">
+                  <div className="flex flex-wrap flex-row">
                   <h1 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-bold leading-tight">
                     Peptide 101
+                    <p className="text-xl sm:text-2xl  font-medium mt-1">
+                    - 14 hr. ago
+                  </p>
                   </h1>
+                  </div> */}
+                  <div className="flex flex-col">
+    <div className="flex items-center">
+      <h1 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-bold leading-tight">
+        Peptide 101
+      </h1>
+      <p className="text-xl sm:text-2xl font-medium ml-4 md:mt-4">
+        - 14 hr. ago
+      </p>
+    </div>
                   <p className="text-xl sm:text-2xl  font-medium mt-1">
                     What they are, how they work, and their benefits.
                   </p>
