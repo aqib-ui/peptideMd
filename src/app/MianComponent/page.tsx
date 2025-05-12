@@ -249,7 +249,7 @@ export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> =
                 <div className="relative z-10 max-w-7xl mx-2 p-4 md:p-6 bg-transparent">
                     <div className="relative inline-block w-full max-w-[90%] md:max-w-[80%] lg:max-w-[75%]">
                         <h1
-                            className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[50px] font-bold leading-[100%] text-left mt-6"
+                            className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-left mt-6"
                             style={{ fontFamily: "Afacad, sans-serif" }}
                         >
                             {mainheading}
@@ -259,7 +259,7 @@ export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> =
                         </h1>
 
                         <p
-                            className="text-[14px] md:text-[18px] lg:text-[26px] font-medium leading-[130%] mt-6 mb-6 text-left"
+                            className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-medium leading-[130%] mt-6 mb-6 text-left"
                             style={{ fontFamily: "Afacad, sans-serif" }}
                         >
                             {para}

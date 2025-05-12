@@ -972,22 +972,28 @@ export default function HomePage() {
       </section>
 
       {/* 2 card section */}
-      <section className="min-h-screen flex flex-col max-md:px-2 mb-50">
+      <section className="min-h-screen flex flex-col max-md:px-2 my-10 md:my-20">
         {/* <div className="grid grid-cols-2   gap-6 mt-8 p-6 md:p-10"> */}
-        <div className="flex flex-wrap justify-around  mt-8 p-1 md:p-6">
+        {/* <div className="flex flex-wrap justify-around  mt-8 p-1 md:p-6"> */}
+        <div className="flex flex-wrap xl:flex-nowrap justify-around mt-8 p-1 md:p-6">
           
           {/* left card */}
-          <div className="relative w-full lg:w-[40%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
+          {/* <div className="relative w-full 2xl:w-[40%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
+          {/* <div className="relative w-full 2xl:w-[40%] h-auto lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
+          {/* relative w-full 2xl:w-[40%] min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10 */}
+          <div className="relative w-full md:w-[65%] 2xl:w-[40%] bg-amber-300 h-[400px] sm:min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
+
+
             <Image
               src="/card-pic.png"
               alt="Card Image"
               fill
-              className="object-cover"
+              className="object-cover md:object-cover"
             />
             <div
               className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12 
       flex flex-col justify-start items-start backdrop-blur-md bg-gray-100/10 border-3 border-white
-      w-[80%] max-sm:w-[250px] sm:w-[290px] md:w-[260px] lg:w-[295px]
+      w-[80%] [350px]:w-[90%] sm:w-[290px] md:w-[260px] lg:w-[295px]
  rounded-[2rem] px-4 py-4 overflow-hidden"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
@@ -1051,9 +1057,9 @@ export default function HomePage() {
           </div>
 
           {/* right card */}
-          <div className="flex flex-col justify-between w-full lg:w-[55%] h-auto   rounded-[3rem] p-6 md:p-1">
+          <div className="flex flex-col justify-between w-full 2xl:w-[55%] h-auto   rounded-[3rem] p-6 md:p-1">
             {/* Top image + card */}
-            <div className="relative flex justify-center lg:justify-end items-start">
+            <div className="relative flex justify-center xl:justify-end items-start">
               <Image
                 src="/small-card-pic.png"
                 alt="Play Button"
@@ -1257,7 +1263,8 @@ export default function HomePage() {
 
 
 
-      <section className="relative w-full min-h-screen bg-white text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden py-16">
+      <section className="relative w-full min-h-screen bg-white dark:bg-[var(--background)]
+       text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden py-16 mb-20 md:mb-40">
         {/* Scrolling Text */}
         <div className="relative top-0 left-0 w-full overflow-hidden">
           <div
@@ -1315,7 +1322,8 @@ export default function HomePage() {
             <div
               key={card.title}
               onClick={HandleCardClick}
-              className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-gray-200 cursor-pointer absolute `}
+              className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-gray-200 
+                dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border-gray-200 dark:border-2 cursor-pointer absolute `}
               style={{
                 transform: isExpanded
                   ? `translateX(${card.expandedX}px) rotate(0deg)`
@@ -1331,7 +1339,7 @@ export default function HomePage() {
                 className="w-full h-[190px] object-cover rounded-t-2xl p-4"
               />
               <div className="p-3 flex justify-between items-center h-[calc(100%-190px)]">
-                <h3 className="font-semibold text-[16px] text-black leading-tight">
+                <h3 className="font-semibold text-[16px] text-app leading-tight">
                   {card.title}
                 </h3>
                 <button className="bg-[#6FA5D4] text-white rounded-full w-8 h-8 flex items-center justify-center transition hover:bg-[#5c90c0]">
