@@ -875,7 +875,7 @@ export default function HomePage() {
 
 
       {/* Video Section */}
-      <section className="relative  dark:bg-app min-h-screen flex items-center justify-center bg-white opacity-90">
+      <section className="relative  dark:bg-app min-h-screen flex items-center justify-center bg-white opacity-90 mb-10 my-10 md:my-0 ">
         <video
           ref={videoRef}
           // className="w-[90%] max-w-full rounded-[2rem] shadow-lg"
@@ -928,7 +928,7 @@ export default function HomePage() {
       </section>
 
       {/* Description Section */}
-      <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-0 my-10 md:my-0 ">
+      <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-10 my-10 md:my-0 ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-left"
@@ -983,7 +983,7 @@ export default function HomePage() {
           {/* <div className="relative w-full 2xl:w-[40%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
           {/* <div className="relative w-full 2xl:w-[40%] h-auto lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
           {/* relative w-full 2xl:w-[40%] min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10 */}
-          <div className="relative w-full md:w-[65%] 2xl:w-[40%] bg-amber-300 h-[400px] sm:min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
+          <div className="relative w-full md:w-[65%] 2xl:w-[40%]  h-[400px] sm:min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
 
 
             <Image
@@ -1067,7 +1067,7 @@ export default function HomePage() {
                 alt="Play Button"
                 width={96}
                 height={96}
-                className="w-40 h-40 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 ml-4 lg:ml-10"
+                className="w-65 h-65 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 ml-4 lg:ml-10"
               />
               {/* card over image */}
               <div
@@ -1075,7 +1075,7 @@ export default function HomePage() {
                 // flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
                 // w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(25%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(40%,25vw,28%)]
                 // rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
-                className="absolute top-0 sm:top-36 md:top-40 lg:top-44 right-22 max-sm:right-5 sm:right-60  lg:right-20 
+                className="absolute top-30 sm:top-36 md:top-40 lg:top-44 right-22 max-sm:right-20 sm:right-65 lg:right-100 xl:right-20 
                 flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
                 w-[80%] max-sm:w-[150px] sm:w-[200px] md:w-[180px] lg:w-[180px]
                 rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
@@ -1097,7 +1097,7 @@ export default function HomePage() {
 
             {/* List section */}
             <div
-              className="flex  lg:justify-end justify-center mt-10 sm:mt-16 px-4"
+              className="flex  xl:justify-end justify-center mt-10 sm:mt-16 px-4"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               <ul className="space-y-6 w-full max-w-[700px] ">
@@ -1266,7 +1266,7 @@ export default function HomePage() {
 
 
       <section className="relative w-full min-h-screen bg-white dark:bg-[var(--background)]
-       text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden ">
+       text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden mb-10 my-10 md:my-0 ">
         {/* Scrolling Text */}
         <div className="relative top-0 left-0 w-full overflow-hidden">
           <div
@@ -1395,7 +1395,7 @@ export default function HomePage() {
  
 
       {/* Card Section */}
-      <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10">
+      <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10 my-10 md:my-0 ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"

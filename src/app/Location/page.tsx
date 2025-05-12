@@ -155,7 +155,7 @@ const Location = () => {
       {/* button */}
       <div
         // className="container flex justify-end  gap-4 px-4 sm:px-6 md:px-8 "
-        className="container flex flex-col sm:flex-row justify-end gap-4 px-4 sm:px-8"
+        className="container flex flex-col sm:flex-row justify-end gap-4 px-4 sm:px-8 min-w-screen"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         <button

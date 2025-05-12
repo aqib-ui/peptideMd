@@ -12,12 +12,12 @@ export default function Resources() {
           para="Recent episodes discussing peptide research and applications."
         />
       </div>
-    <div className="container px-6 py-10 w-screen">
+    <div className="container px-6 py-10 min-w-screen overflow-hidden">
       
 
 
-      <div className="mt-20 sm:mt-22 md:mt-30 lg:mt-40 mb-6 w-screen" style={{ fontFamily: "Afacad, sans-serif" }}>
-        <div className="px-6 w-screen">
+      <div className="mt-20 sm:mt-22 md:mt-30 lg:mt-40 mb-6 min-w-screen" style={{ fontFamily: "Afacad, sans-serif" }}>
+        <div className="px-6 min-w-screen">
           <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold flex items-center flex-wrap">
             Latest Podcast
           </h3>
