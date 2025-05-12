@@ -667,31 +667,53 @@ export default function HomePage() {
 
   return (
     <main className="w-full mt-10">
+      {/* <!-- Heading: Keep previous -->
+      <h1 class="text-[clamp(36px,2.84vw+22.91px,72px)]">Heading</h1>
+      
+      <!-- Subheading: slower scale -->
+      <h2 class="text-[clamp(22.5px,1.67vw+17.2px,46px)]">Subheading</h2>
+      
+      <!-- 34px Text -->
+      <p class="text-[clamp(20.25px,0.98vw+17.1px,34px)]">Mid Text</p>
+      
+      <!-- Paragraph -->
+      <p class="text-[clamp(18px,0.43vw+16.63px,24px)]">Paragraph</p> 
+
+      
+      {/* <!-- 20px -->
+      <p class="text-[clamp(16px,0.284vw+15.1px,20px)]">Small Text</p> 
+
+      {/* <!-- list nonsense -->
+      <p class="text-[clamp(18px,1.13vw+14.4px,34px)]">Smart Responsive Text</p> */}
+
+
+
       
       {/* solving dna overlapping issue on larger screens 5/5/25*/}
       {/* Welcome Section */}
       <section
-        className="ml-3 relative md:min-h-screen flex flex-col md:flex-row md:items-center justify-between px-6 md:pb-[10vh] xl:pb-[50vh]
+        className="ml-3 relative md:min-h-screen flex flex-col md:flex-row md:items-center justify-between px-6 md:pb-[10vh] 2xl:pb-[50vh]
 "
       >
         {/* Left Content (Text) */}
-        <div className="flex-1.2 relative z-10 md:w-[70%]">
+        <div className="flex-1.2 relative z-10 md:w-[60%]">
           <h1
             // className="text-4xl font-bold text-[72px] leading-[100%]"
-            className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px]
- font-bold leading-tight"
+            // className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] font-bold leading-tight"
+            className="text-[clamp(36px,2.84vw+22.9px,72px)] font-bold leading-tight"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Welcome to
             {/* <span style={{ color: "#224674" }} className="italic ml-2"> */}
-            <span style={{ color: "#224674" }} className="italic ml-0 md:ml-4">
+            <span style={{ color: "#224674" }} className="italic ml-0 md:ml-3">
               PeptideMD
             </span>
           </h1>
 
           <p
             // className="text-[34px] font-medium leading-[100%] mt-8"
-            className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
+            // className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
+            className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-medium leading-snug mt-6"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             Your Trusted Source for Evidence-Based Peptide Therapeutics.
@@ -699,7 +721,8 @@ export default function HomePage() {
 
           <p
             // className="text-[24px] font-medium leading-[100%] mt-6 max-w-4xl"
-            className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-2 max-w-xl md:max-w-3xl"
+            // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-2 max-w-xl md:max-w-3xl"
+            className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-tight font-medium mt-2 max-w-xl md:max-w-3xl"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             PeptideMD.com is your trusted platform for exploring the world of
@@ -737,7 +760,7 @@ export default function HomePage() {
             className="absolute hidden md:block 
             w-auto 
             h-auto lg:h-screen
-            md:top-[-465px] lg:top-[-485px] xl:top-[-420px] md:object-fill z-10 pointer-events-none"
+            md:top-[-465px] lg:top-[-485px] xl:top-[-420px] -right-6 md:object-fill z-10 pointer-events-none"
           />
           {/* // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it */}
         </div>
@@ -872,7 +895,9 @@ export default function HomePage() {
       {/* Description Section */}
       <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-0 my-10 md:my-20 ">
         <h1
-          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
+          // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
+          className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-left"
+
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           What are
@@ -882,7 +907,9 @@ export default function HomePage() {
         </h1>
 
         <p
-          className="text-[20px] md:text-[22px] lg:text-[24px] font-medium  max-w-xl md:max-w-3xl mt-6"
+          // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
+          className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
+
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Peptides are tiny but powerful building blocks of life! They are short
@@ -896,7 +923,9 @@ export default function HomePage() {
         </p>
 
         <p
-          className="text-[20px] md:text-[22px] lg:text-[24px] font-medium  max-w-xl md:max-w-3xl mt-6"
+          // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
+          className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
+
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Think of peptides like little messengers that tell your body how to
@@ -913,8 +942,9 @@ export default function HomePage() {
       <section className="min-h-screen flex flex-col max-md:px-2 mb-50">
         {/* <div className="grid grid-cols-2   gap-6 mt-8 p-6 md:p-10"> */}
         <div className="flex flex-wrap justify-around  mt-8 p-1 md:p-6">
+          
           {/* left card */}
-          <div className="relative w-full lg:w-[40%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
+          <div className="relative w-full lg:w-[50%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
             <Image
               src="/card-pic.png"
               alt="Card Image"
@@ -988,7 +1018,7 @@ export default function HomePage() {
           </div>
 
           {/* right card */}
-          <div className="flex flex-col justify-between w-full lg:w-[55%] h-auto   rounded-[3rem] p-6 md:p-1">
+          <div className="flex flex-col justify-between w-full lg:w-[50%] h-auto   rounded-[3rem] p-6 md:p-1">
             {/* Top image + card */}
             <div className="relative flex justify-center lg:justify-end items-start">
               <Image
@@ -1026,7 +1056,7 @@ export default function HomePage() {
 
             {/* List section */}
             <div
-              className="flex  justify-center mt-10 sm:mt-16 px-4"
+              className="flex  lg:justify-end justify-center mt-10 sm:mt-16 px-4"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               <ul className="space-y-6 w-full max-w-[700px] ">
@@ -1046,15 +1076,21 @@ export default function HomePage() {
                 ].map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex flex-col md:flex-row items-start gap-10 lg:items-center "
+                    className="flex flex-col md:flex-row items-start xl:gap-10 lg:items-center "
                   >
-                    <div className="flex items-center md:ml-[5rem] gap-3 text-xl sm:text-2xl md:text-3xl font-medium min-w-[250px]">
+                    {/* <div className="flex items-center md:ml-[5rem] gap-3 text-xl sm:text-2xl md:text-3xl font-medium min-w-[250px]"> */}
+                    <div className="flex items-center md:ml-[5rem] gap-3 text-[clamp(20px,0.994vw+15.82px,34px)] font-medium min-w-[250px]">
                       <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
                         <FaArrowRight className="text-[#2D557A] text-base sm:text-lg" />
                       </div>
                       {item.title}
                     </div>
-                    <p className="text-base sm:text-lg md:text-xl  font-medium mt-2 md:mt-0 ">
+
+                    <p 
+                    // className="text-base sm:text-lg md:text-xl  font-medium mt-2 md:mt-0 "
+                    className="text-[clamp(16px,0.284vw+15.1px,20px)]  font-medium mt-2 md:mt-0 "
+
+                    >
                       {item.text}
                     </p>
                   </li>
@@ -1094,7 +1130,8 @@ export default function HomePage() {
       {/* Card Section */}
       <section className="min-h-screen flex flex-col items-center justify-center mb-50">
         <h1
-          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
+          // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
+          className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Discover
@@ -1106,7 +1143,7 @@ export default function HomePage() {
         </h1>
 
         <p
-          className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[100%] mt-6 px-6 max-w-4xl text-center"
+          className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-[100%] mt-6 px-6 max-w-4xl text-center"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Select a tile below to explore and learn more about peptides.
