@@ -1,36 +1,23 @@
+"use client";
+
 import Image from "next/image";
+import { MoleculeTopLeftAnimation } from "../MianComponent/page";
 
 export default function TakingPeptide() {
   return (
-    <div className="container bg-app px-4 py-10">
-      <div className="m-2">
-      <h1
-        // className="text-2xl font-bold text-[38px] md:text-[48px] lg:text-[72px] leading-[100%] text-left"
-        // style={{ fontFamily: "Afacad, sans-serif" }}
-        className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
-
-            style={{ fontFamily: "Afacad, sans-serif" }}
-      >
-        Taking Peptides
-        {/* <span style={{ color: "#224674" }} className="italic"> */}
-        <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
-          Guide and Instruction
-        </span>
-      </h1>
-
-      <h2
-        className=" text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-2 max-w-8xl"
-        style={{ fontFamily: "Afacad, sans-serif" }}
-      >
-        Always consult with a qualified healthcare provider before starting any
-        peptide therapy.
-        {/* <br /> */}
-        
-      </h2>
-      <h2 className=" text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] max-w-8xl"
-        style={{ fontFamily: "Afacad, sans-serif" }}>This guide is for educational purposes only and should not be considered
-      medical advice.</h2>
+    <>
+      <div>
+        <MoleculeTopLeftAnimation
+          mainheading="Taking Peptides"
+          span="Guide and Instruction"
+          para="Always consult with a qualified healthcare provider before starting any peptide therapy. This guide is for educational purposes only and should not be considered medical advice."
+        />
       </div>
+    <div className="container bg-app px-4 py-10 w-full ">
+      
+      
+
+
 
       {/* General Guideline Section */}
       <div className="relative mt-10 sm:mt-22 md:mt-30 lg:mt-60 ">
@@ -404,6 +391,7 @@ export default function TakingPeptide() {
           </li>
         </ul>
       </div>
-    </div>
+      </div>
+    </>
   );
 }

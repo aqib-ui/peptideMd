@@ -6,13 +6,14 @@ import { AiOutlineLike } from "react-icons/ai";
 import { FiTag } from "react-icons/fi";
 import { IoBookmarkOutline } from "react-icons/io5";
 import { FiPlusCircle } from "react-icons/fi";
- 
+
 import {
   IoShareSocialOutline,
   IoArrowUpOutline,
   IoArrowDownOutline,
 } from "react-icons/io5";
 import { FaRegComment } from "react-icons/fa";
+import { MoleculeTopLeftAnimation } from "../MianComponent/page";
 
 const DiscussionPage = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -36,27 +37,18 @@ const DiscussionPage = () => {
         </div>
       </div>
 
-      {/* Body */}
       <div
         className="py-8 sm:py-10 md:py-16"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
-        <div className="mx-2">
-          {/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[100%] text-left"> */}
-          <h1
-        className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left mt-6"
-        style={{ fontFamily: "Afacad, sans-serif" }}
-      >
-            Physician
-            <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
-              Discussion Forum
-            </span>
-          </h1>
+        <MoleculeTopLeftAnimation
+          mainheading="Physician"
+          span=" Discussion Forum"
+          para="Connect and collaborate with fellow medical professionals."
+          
+        />
 
-          <h2 className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-tight mt-6 mb-2">
-            Connect and collaborate with fellow medical professionals.
-          </h2>
-        </div>
+
 
         <div className="relative mb-50">
           {/* Blur only this wrapper when showPopup is true */}
@@ -64,11 +56,10 @@ const DiscussionPage = () => {
             {/* Discussion Card */}
             <div className="relative flex flex-col p-6 sm:px-10 bg-[#94C4ED]/30 md:mt-50 max-md:mt-20 rounded-4xl ">
               <div
-                className={`absolute top-5 ${
-                  isExpanded
-                    ? "md:right-6 lg:right-[640px] right-10"
-                    : "sm:right-6 md:right-[40px] right-10"
-                } text-[28px] text-[#224674] dark:text-[var(--foreground)] cursor-pointer transition-all duration-200`}
+                className={`absolute top-5 ${isExpanded
+                  ? "md:right-6 lg:right-[640px] right-10"
+                  : "sm:right-6 md:right-[40px] right-10"
+                  } text-[28px] text-[#224674] dark:text-[var(--foreground)] cursor-pointer transition-all duration-200`}
                 onClick={() => setIsExpanded(!isExpanded)}
               >
                 <BsThreeDots />
@@ -95,18 +86,16 @@ const DiscussionPage = () => {
 
               {/* Conditionally Render Flower Image Between Text and Buttons */}
               <div
-                className={`relative  ${
-                  isExpanded
-                    ? "w-full flex justify-start mt-6 mb-6 overflow-hidden "
-                    : "w-[200px] h-[200px] sm:h-[230px] sm:w-[270px] md:h-[260px] md:w-[300px] lg:w-[300px] lg:h-[250px] lg:-mt-30 lg:mr-8 max-lg:mb-10  self-center lg:self-end"
-                }`}
+                className={`relative  ${isExpanded
+                  ? "w-full flex justify-start mt-6 mb-6 overflow-hidden "
+                  : "w-[200px] h-[200px] sm:h-[230px] sm:w-[270px] md:h-[260px] md:w-[300px] lg:w-[300px] lg:h-[250px] lg:-mt-30 lg:mr-8 max-lg:mb-10  self-center lg:self-end"
+                  }`}
               >
                 <div
-                  className={`${
-                    isExpanded
-                      ? "w-full max-w-[780px] h-[580px]"
-                      : "relative w-full h-full"
-                  }`}
+                  className={`${isExpanded
+                    ? "w-full max-w-[780px] h-[580px]"
+                    : "relative w-full h-full"
+                    }`}
                 >
                   <Image
                     src="/discussionForum/flower.png"
@@ -114,20 +103,18 @@ const DiscussionPage = () => {
                     fill={isExpanded ? false : true}
                     width={isExpanded ? 780 : undefined}
                     height={isExpanded ? 580 : undefined}
-                    className={`object-cover ${
-                      isExpanded
-                        ? "rounded-[50px]  "
-                        : "rounded-[40px] lg:rounded-[50px] "
-                    } w-full h-full`}
+                    className={`object-cover ${isExpanded
+                      ? "rounded-[50px]  "
+                      : "rounded-[40px] lg:rounded-[50px] "
+                      } w-full h-full`}
                   />
                 </div>
               </div>
 
               {/* Stats Section */}
               <div
-                className={` flex gap-4 w-[50%] flex-wrap ${
-                  !isExpanded ? "lg:-mt-10  px-10" : ""
-                }`}
+                className={` flex gap-4 w-[50%] flex-wrap ${!isExpanded ? "lg:-mt-10  px-10" : ""
+                  }`}
               >
                 <div className="bg-[#224674] text-white px-4 py-2 flex items-center justify-center rounded-full text-lg gap-1">
                   <IoArrowUpOutline className="text-white text-xl" />

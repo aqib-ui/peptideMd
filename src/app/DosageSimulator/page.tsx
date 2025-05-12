@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import Image from "next/image";
+import { MoleculeTopLeftAnimation } from "../MianComponent/page";
 
 export default function DosageSimulator() {
   const [selected, setSelected] = useState<"Dosage Guide" | "Calculator">(
@@ -27,13 +28,13 @@ export default function DosageSimulator() {
 
             <button
               onClick={() => setSelected("Dosage Guide")}
-              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px]"
+              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px] cursor-pointer"
             >
               Dosage Guide
             </button>
             <button
               onClick={() => setSelected("Calculator")}
-              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px]"
+              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px] cursor-pointer"
             >
               Calculator
             </button>
@@ -74,27 +75,19 @@ function DosageGuide() {
   }, []);
   const [selectedProtocol, setSelectedProtocol] = useState("Standard");
 
-  return (
-    <div className="pl-5 pr-4">
-      <h1
-        // className="text-5xl md:text-[72px] font-bold leading-[100%] text-left mt-6"
-        className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
-        style={{ fontFamily: "Afacad, sans-serif" }}
-      >
-        Peptides
-        <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
-          Usage Simulator
-        </span>
-      </h1>
 
-      <h2
-        // className="text-xl md:text-[34px] font-medium leading-[120%] mt-6 mb-10 max-w-7xl"
-        className=" text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[120%] mt-6 mb-2 max-w-8xl"
-        style={{ fontFamily: "Afacad, sans-serif" }}
-      >
-        This simulator is for educational purposes only. Always consult with a
-        qualified healthcare provider before starting any peptide therapy.
-      </h2>
+  return (
+    <>
+      <div>
+        <MoleculeTopLeftAnimation
+          mainheading="Peptide"
+          span="Usage Simulator"
+          para="This simulator is for educational purposes only. Always consult with a qualified healthcare provider before starting any peptide therapy."
+        />
+      </div>
+    <div className="pl-5 pr-4">
+      
+
 
       {/* Step 1 */}
       <div
@@ -141,12 +134,12 @@ function DosageGuide() {
                       className="absolute  top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
                     /> */}
                     <Image
-                src="/dropdown-icon.png"
-                alt="Dropdown icon"
-                width={60}
-                height={60}
-                className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
-              />
+                      src="/dropdown-icon.png"
+                      alt="Dropdown icon"
+                      width={60}
+                      height={60}
+                      className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
+                    />
                   </Listbox.Button>
 
                   <Listbox.Options
@@ -160,8 +153,7 @@ function DosageGuide() {
                           key={index}
                           value={peptide}
                           className={({ active }) =>
-                            `cursor-pointer px-4 py-2 ${
-                              active ? "bg-[#94C4ED]/40" : ""
+                            `cursor-pointer px-4 py-2 ${active ? "bg-[#94C4ED]/40" : ""
                             }`
                           }
                         >
@@ -373,9 +365,9 @@ function DosageGuide() {
             text-opacity-100 w-[90%] rounded-4xl mt-10 p-10 bg-[#94C4ED]/40"
           >
             <div className="mb-6 ">
-              <h2 
-              // className=" text-4xl"
-              className="text-[28px] md:text-[32px] lg:text-[34px]  font-semibold leading-[100%] text-left"
+              <h2
+                // className=" text-4xl"
+                className="text-[28px] md:text-[32px] lg:text-[34px]  font-semibold leading-[100%] text-left"
 
               >Description</h2>
               <p className="text-[20px] md:text-[22px] lg:text-[24px]">
@@ -499,7 +491,8 @@ function DosageGuide() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      </>
   );
 }
 
@@ -515,25 +508,17 @@ function Calculator() {
   // const [sliderValue, setSliderValue] = useState(50);
 
   return (
+    <>
+      <div>
+        <MoleculeTopLeftAnimation
+          mainheading="Peptide"
+          span="Usage Simulator"
+          para="This simulator is for educational purposes only. Always consult with a qualified healthcare provider before starting any peptide therapy."
+        />
+      </div>
     <div className="pl-5 pr-4">
-      <h1
-        // className="text-5xl md:text-[72px] font-bold leading-[100%] text-left mt-6"
-        className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
-        style={{ fontFamily: "Afacad, sans-serif" }}
-      >
-        Peptides
-        <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
-          Usage Simulator
-        </span>
-      </h1>
+     
 
-      <h2
-        className="text-xl md:text-[34px] font-medium leading-[120%] mt-6 mb-10 max-w-7xl"
-        style={{ fontFamily: "Afacad, sans-serif" }}
-      >
-        This simulator is for educational purposes only. Always consult with a
-        qualified healthcare provider before starting any peptide therapy.
-      </h2>
 
       <div className="mt-30 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
         <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold flex items-center flex-wrap">
@@ -623,6 +608,7 @@ function Calculator() {
           ></textarea>
         </div>
       </div>
-    </div>
+      </div>
+      </>
   );
 }

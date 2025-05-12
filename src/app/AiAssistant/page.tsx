@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { TiLocationArrow } from "react-icons/ti";
+import { MoleculeTopLeftAnimation } from "../MianComponent/page";
 
 const AiAssistantPage = () => {
   const [showNewSection, setShowNewSection] = React.useState(false);
@@ -10,7 +11,7 @@ const AiAssistantPage = () => {
   return (
     <>
       {/* heading */}
-      <div className="container bg-app mx-auto px-8 py-10">
+      {/* <div className="container bg-app mx-auto px-8 py-10">
         <h1
           className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold"
           style={{ fontFamily: "Afacad, sans-serif" }}
@@ -27,7 +28,12 @@ const AiAssistantPage = () => {
           AI Recommendations, AI Response, Video Suggestions and Community
           Discussion Links
         </h2>
-      </div>
+      </div> */}
+      <MoleculeTopLeftAnimation
+        mainheading="Peptide"
+        span="Research Assistant"
+        para="AI Recommendations, AI Response, Video Suggestions and Community Discussion Links"
+      />
 
       {/* below heading */}
       {!showNewSection ? (

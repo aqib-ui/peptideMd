@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation"; // Import useRouter
 import Image from "next/image";
+import { AnimatedCard } from "../AnimatedCard/AnimatedCard"; // Adjust the import path as necessary
 
 import { FaArrowRight } from "react-icons/fa6";
 import { IoIosInformationCircleOutline } from "react-icons/io";
@@ -11,6 +12,12 @@ export default function HomePage() {
   const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const router = useRouter(); // Initialize router
+
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const HandleCardClick = () => {
+    setIsExpanded(!isExpanded);
+  }
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -29,6 +36,32 @@ export default function HomePage() {
     }, 3000); // Change slide every 3 seconds
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
+
+  const cards = [
+    {
+      title: "Oncology Testing",
+      imageSrc: "/image.png",
+      rotateDeg: -6,
+      expandedX: -160,  // spread left
+      zIndex: 10,
+    },
+    {
+      title: "Genetic Screening",
+      imageSrc: "/image.png",
+      rotateDeg: 0,
+      expandedX: 0, // center
+      zIndex: 20,
+    },
+    {
+      title: "AI Diagnostics",
+      imageSrc: "/image.png",
+      rotateDeg: 6,
+      expandedX: 160, // spread right
+      zIndex: 30,
+    },
+  ];
+  
+
 
   return (
     <main className="w-full">
@@ -474,7 +507,7 @@ export default function HomePage() {
       </section>
 
       {/* Slideshow Banner Section */}
-      <section
+       {/* <section 
         className="relative w-full min-h-screen  text-[#6FA5D4] text-3xl font-bold flex
         items-center overflow-hidden mb-50"
       >
@@ -495,7 +528,231 @@ export default function HomePage() {
             Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
           </span>
         </div>
+      </section>  */}
+
+       {/* <section className="relative w-full min-h-screen text-[#6FA5D4] text-3xl font-bold flex flex-col items-center justify-center overflow-hidden mb-50"> */}
+
+        {/* Scrolling Text */}
+        {/* <div
+          className="animate-slide whitespace-nowrap flex text-[32px] md:text-[48px] lg:text-[72px] font-semibold mb-20"
+          style={{ fontFamily: "Afacad, sans-serif" }}
+        >
+          <span className="uppercase">
+            Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+          </span>
+          <span className="uppercase">
+            Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+          </span>
+          <span className="uppercase">
+            Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+          </span>
+          <span className="uppercase">
+            Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+          </span>
+        </div> */}
+
+        {/* Stacked Cards */}
+        {/* <div className="absolute  w-[300px] h-[400px]">
+          <AnimatedCard
+            title="Oncology Testing"
+            imageSrc="image.png"
+            rotate="rotate-[-6deg]"
+            zIndex={10}
+          />
+          <AnimatedCard
+            title="Genetic Screening"
+            imageSrc="image.png"
+            rotate="rotate-[0deg]"
+            zIndex={20}
+          />
+          <AnimatedCard
+            title="AI Diagnostics"
+            imageSrc="image.png"
+            rotate="rotate-[6deg]"
+            zIndex={30}
+          />
+        </div>
+       </section>  */}
+      {/* <section className="relative w-full min-h-screen bg-white text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden py-16">
+
+        {/* Scrolling Text */}
+        {/* <div
+          className="relative top-0 left-0 w-full overflow-hidden"
+        >
+          <div
+            className="animate-slide whitespace-nowrap flex text-[28px] md:text-[40px] lg:text-[64px] font-semibold opacity-20"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+          </div>
+        </div> */}
+
+        {/* Centered Stacked Cards */}
+        <div className="absolute w-[250px] h-[320px] mt-12 border-2 border-red-500">
+          <AnimatedCard
+            title="Oncology Testing"
+            imageSrc="/image.png"
+            rotate="rotate-[-6deg]"
+          zIndex={10}
+          isExpanded={false}          
+          
+          />
+          <AnimatedCard
+          title="Genetic Screening"
+          imageSrc="/image.png"
+          rotate="rotate-[0deg]"
+          zIndex={20} isExpanded={false}          />
+          <AnimatedCard
+          title="AI Diagnostics"
+          imageSrc="/image.png"
+          rotate="rotate-[6deg]"
+          zIndex={30} isExpanded={false}          />
+        </div>
+      {/* </section> */} 
+
+
+
+
+
+
+
+
+      <section className="relative w-full min-h-screen bg-white text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden py-16">
+        {/* Scrolling Text */}
+        <div className="relative top-0 left-0 w-full overflow-hidden">
+          <div
+            className="animate-slide whitespace-nowrap flex text-[28px] md:text-[40px] lg:text-[64px] font-semibold opacity-20"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+          </div>
+        </div>
+
+        {/* Cards */}
+        <div
+          className={`absolute flex items-center justify-center transition-all duration-500 mt-12 ${isExpanded ? "gap-6 flex-row w-full max-w-5xl" : "w-[250px] h-[320px]"
+            }`}
+        >
+          {/* {cards.map((card) => (
+            <div
+              key={card.title}
+              onClick={HandleCardClick}
+              className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-white cursor-pointer transition-all duration-500 ${isExpanded
+                  ? "rotate-0 scale-100 relative z-auto"
+                  : `${card.rotate} absolute z-[${card.zIndex}]`
+                }`}
+              style={{
+                boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <img
+                src={card.imageSrc}
+                alt={card.title}
+                className="w-full h-[190px] object-cover rounded-t-2xl"
+              />
+              <div className="p-3 flex justify-between items-center h-[calc(100%-190px)]">
+                <h3 className="font-semibold text-[16px] text-black leading-tight">
+                  {card.title}
+                </h3>
+                <button className="bg-[#6FA5D4] text-white rounded-full w-8 h-8 flex items-center justify-center transition hover:bg-[#5c90c0]">
+                  →
+                </button>
+              </div>
+            </div>
+          ))} */}
+          {cards.map((card) => (
+            <div
+              key={card.title}
+              onClick={HandleCardClick}
+              className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-gray-200 cursor-pointer absolute `}
+              style={{
+                transform: isExpanded
+                  ? `translateX(${card.expandedX}px) rotate(0deg)`
+                  : `translateX(0px) rotate(${card.rotateDeg}deg)`,
+                zIndex: isExpanded ? 10 : card.zIndex,
+                transition: 'transform 0.6s ease',
+                boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
+              }}
+            >
+              <img
+                src={card.imageSrc}
+                alt={card.title}
+                className="w-full h-[190px] object-cover rounded-t-2xl p-4"
+              />
+              <div className="p-3 flex justify-between items-center h-[calc(100%-190px)]">
+                <h3 className="font-semibold text-[16px] text-black leading-tight">
+                  {card.title}
+                </h3>
+                <button className="bg-[#6FA5D4] text-white rounded-full w-8 h-8 flex items-center justify-center transition hover:bg-[#5c90c0]">
+                  →
+                </button>
+              </div>
+            </div>
+          ))}
+
+        </div>
       </section>
+
+
+
+
+
+
+
+
+      
+
+
+      {/* <section className="relative w-full min-h-screen bg-white text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden py-16">
+
+         Scrolling Background Text 
+        <div className="absolute top-0 left-0 w-full overflow-hidden">
+          <div
+            className="animate-slide whitespace-nowrap flex text-[28px] md:text-[40px] lg:text-[64px] font-semibold opacity-20"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+          </div>
+        </div>
+
+        {/* Cards Section */}
+        
+
+      {/* </section>  */}
+ 
 
       {/* Card Section */}
       <section className="min-h-screen flex flex-col items-center justify-center  ">

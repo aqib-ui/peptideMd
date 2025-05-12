@@ -240,7 +240,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+
+import { MoleculeTopLeftAnimation } from "../MianComponent/page";
 
 const CaseStudiesPage = () => {
   const [showNewSection, setShowNewSection] = useState(false);
@@ -248,23 +249,13 @@ const CaseStudiesPage = () => {
   return (
     <>
       {/* heading */}
-      <div className="container mx-auto bg-app px-8 py-10">
-        <h1
-          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold"
-          style={{ fontFamily: "Afacad, sans-serif" }}
-        >
-          Clinical
-          <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
-            Case Studies
-          </span>
-        </h1>
-        <h2
-          className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
-          style={{ fontFamily: "Afacad, sans-serif" }}
-        >
-          AI Recommendations, AI Response, Video Suggestions and Community
-          Discussion Links
-        </h2>
+      <div className="">
+        <MoleculeTopLeftAnimation
+
+          mainheading="Clinical"
+          span="Case Studies"
+          para="AI Recommendations, AI Response, Video Suggestions and Community Discussion Links"
+        />
       </div>
 
       <div className="md:mt-30 md:mb-100">

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { LiaAngleDownSolid } from "react-icons/lia";
+import { MoleculeTopLeftAnimation } from "../MianComponent/page";
 
 export default function PeptideDatabase() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -68,29 +69,20 @@ export default function PeptideDatabase() {
 
   return (
     <>
-      <div className="container mx-auto px-8 py-10">
-        <h1
-          // className="text-4xl font-bold md:text-6xl lg:text-[72px]"
-          // style={{ fontFamily: "Afacad, sans-serif" }}
-          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
-          style={{ fontFamily: "Afacad, sans-serif" }}
-        >
-          Peptide
-          {/* <span style={{ color: "#224674" }} className="italic ml-4"> */}
-          <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
-            Database
-          </span>
-        </h1>
-        <h2
-          // className="text-[24px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
-          // style={{ fontFamily: "Afacad, sans-serif" }}
-          className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
-          style={{ fontFamily: "Afacad, sans-serif" }}
-        >
-          Your go-to database for peptide knowledge—browse, explore, and unlock
-          detailed information with a click!
-        </h2>
-      </div>
+      <MoleculeTopLeftAnimation
+        mainheading="Peptide "
+        span="Database "
+        para="Your go-to database for peptide knowledge—browse, explore, and unlock detailed information with a click!"
+      />
+
+
+
+
+
+
+
+
+
 
       {/* Peptides Table */}
       <div
@@ -134,8 +126,7 @@ export default function PeptideDatabase() {
               <button
                 onClick={() => setIsFilterClicked(!isFilterClicked)}
                 className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-2 border-2 
-                  border-[#F7B6DB] rounded-full shadow-md transition duration-200 ${
-                    isFilterClicked ? "bg-[#F7B6DB]" : "hover:bg-[#F7B6DB]"
+                  border-[#F7B6DB] rounded-full shadow-md transition duration-200 ${isFilterClicked ? "bg-[#F7B6DB]" : "hover:bg-[#F7B6DB]"
                   }`}
               >
                 <Image
@@ -151,8 +142,7 @@ export default function PeptideDatabase() {
               <button
                 onClick={() => setIsCompareClicked(!isCompareClicked)}
                 className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-2 border-2
-                  border-[#C5B3FF] rounded-full shadow-md transition duration-200 ${
-                    isCompareClicked ? "bg-[#C5B3FF]" : "hover:bg-[#C5B3FF]"
+                  border-[#C5B3FF] rounded-full shadow-md transition duration-200 ${isCompareClicked ? "bg-[#C5B3FF]" : "hover:bg-[#C5B3FF]"
                   }`}
               >
                 <Image
@@ -296,11 +286,10 @@ export default function PeptideDatabase() {
               <tr className="bg-[#94C4ED] mt-10">
                 <th
                   className={`font-bold text-[28px] md:text-[32px] lg:text-[34px]  
-      ${
-        isCompareClicked
-          ? "px-2 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6 text-center pr-60"
-          : "px-4 sm:px-6 md:px-10 text-left"
-      }
+      ${isCompareClicked
+                      ? "px-2 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6 text-center pr-60"
+                      : "px-4 sm:px-6 md:px-10 text-left"
+                    }
     `}
                   colSpan={isCompareClicked ? peptides.length + 1 : 7}
                 >
@@ -388,11 +377,10 @@ export default function PeptideDatabase() {
 
                     <td className="px-2 align-top pt-15 ">
                       <span
-                        className={`inline-block text-black px-3 py-1 rounded-[20px] ext-sm md:text-base lg:text-2xl ${
-                          peptide.fdaStatus === "FDA Approved"
+                        className={`inline-block text-black px-3 py-1 rounded-[20px] ext-sm md:text-base lg:text-2xl ${peptide.fdaStatus === "FDA Approved"
                             ? "bg-[#C5E87E]"
                             : "bg-[#909090]"
-                        }`}
+                          }`}
                       >
                         {peptide.fdaStatus}
                       </span>
@@ -469,9 +457,8 @@ export default function PeptideDatabase() {
                         row.key === "name" ? (
                           <td
                             key={index}
-                            className={`md:px-4 max-md:px-1 py-4 align-top  ${
-                              index !== 0 ? "pl-10" : ""
-                            }`}
+                            className={`md:px-4 max-md:px-1 py-4 align-top  ${index !== 0 ? "pl-10" : ""
+                              }`}
                           >
                             <div className="flex items-center ml-2 sm:ml-4 md:ml-8 lg:ml-12 xl:ml-16 2xl:ml-[4.5rem] ">
                               {/* Purple Number Badge */}
@@ -497,9 +484,8 @@ export default function PeptideDatabase() {
                         ) : (
                           <td
                             key={index}
-                            className={`md:px-4 max-md:px-1 py-4 align-top ${
-                              index !== 0 ? "pl-10" : ""
-                            }`}
+                            className={`md:px-4 max-md:px-1 py-4 align-top ${index !== 0 ? "pl-10" : ""
+                              }`}
                           >
                             <div className="ml-2 sm:ml-4 md:ml-8 lg:ml-16 xl:ml-[12.5rem] flex gap-5 items-start justify-start">
                               {/* Label - fixed width */}
@@ -515,7 +501,7 @@ export default function PeptideDatabase() {
                                   <ul className="space-y-0">
                                     {(
                                       peptide[
-                                        row.key as keyof typeof peptide
+                                      row.key as keyof typeof peptide
                                       ] as string[]
                                     ).map((item, j) => (
                                       <li
@@ -530,11 +516,10 @@ export default function PeptideDatabase() {
                                   </ul>
                                 ) : row.key === "fdaStatus" ? (
                                   <span
-                                    className={`inline-block px-6 py-4 rounded-[20px] text-black text-md md:text-xl font-medium ${
-                                      peptide.fdaStatus === "FDA Approved"
+                                    className={`inline-block px-6 py-4 rounded-[20px] text-black text-md md:text-xl font-medium ${peptide.fdaStatus === "FDA Approved"
                                         ? "bg-[#C5E87E]"
                                         : "bg-[#909090]"
-                                    }`}
+                                      }`}
                                   >
                                     {peptide.fdaStatus}
                                   </span>

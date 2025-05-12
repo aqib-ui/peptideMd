@@ -1,38 +1,20 @@
+"use client";
 import Image from "next/image";
+import { MoleculeTopLeftAnimation } from "../MianComponent/page";
 
 export default function Resources() {
   return (
-    <div className="container px-6 py-10">
-      <div className="m-2 bg-app">
-        <h1
-          // className="text-2xl font-bold text-[38px] md:text-[48px] lg:text-[72px] leading-[100%] text-left"
-          // style={{ fontFamily: "Afacad, sans-serif" }}
-          // className="text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
-          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px]  font-bold leading-tight"
-          style={{ fontFamily: "Afacad, sans-serif" }}
-        >
-          Resources
-          {/* <span style={{ color: "#224674" }} className="italic"> */}
-          <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
-            Podcasts & Readings
-          </span>
-        </h1>
-
-        <h2
-          className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-2 max-w-8xl"
-          style={{ fontFamily: "Afacad, sans-serif" }}
-        >
-          Recent episodes discussing peptide research and applications.
-          {/* <br /> */}
-        </h2>
-        <h2
-          className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] max-w-8xl"
-          style={{ fontFamily: "Afacad, sans-serif" }}
-        >
-          This guide is for educational purposes only and should not be
-          considered medical advice.
-        </h2>
+    <>
+      <div>
+        <MoleculeTopLeftAnimation
+          mainheading="Resources"
+          span="Podcast & Readings"
+          para="Recent episodes discussing peptide research and applications."
+        />
       </div>
+    <div className="container px-6 py-10">
+      
+
 
       <div className="mt-20 sm:mt-22 md:mt-30 lg:mt-40 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
         <div className="px-6 ">
@@ -308,6 +290,7 @@ export default function Resources() {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      </>
   );
 }
