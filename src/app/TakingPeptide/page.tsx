@@ -72,7 +72,7 @@ export default function TakingPeptide() {
           {/* List with Background Color and Styled Hollow Circles */}
           <ul
             // className="min-w-[98vw] -mx-4 p-4 md:p-10 rounded-[5rem] mt-6 space-y-1 list-none text-[#1F1F1F]"
-            className="max-w-2xl lg:max-w-xl xl:max-w-4xl px-4 md:px-10 p-4 md:p-10 rounded-[5rem] mt-6 space-y-1 list-none"
+            className="max-w-2xl lg:max-w-xl xl:max-w-4xl  px-4 md:px-10 p-4 md:p-10 rounded-[5rem] mt-6 space-y-1 list-none"
             style={{
               // backgroundColor: "rgba(136, 211, 255, 0.3)",
               fontFamily: "Afacad, sans-serif",
