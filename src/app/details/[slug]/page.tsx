@@ -22,7 +22,7 @@ const Page = ({ params }: PageProps) => {
         content: (
           <div className="mx-auto text-left">
             <h2
-              className="text-[34px] max-md:text-[28px] max-md:mt-5 font-medium leading-[100%] mb-10"
+              className="text-[34px] max-md:text-[28px] max-md:mt-5 font-medium leading-[100%] mt-4 mb-10"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               Understanding the Role of Peptides in Mental Health
@@ -30,19 +30,31 @@ const Page = ({ params }: PageProps) => {
 
             {/* "Peptide Overview" Button */}
 
-            <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
+            {/* <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
               <button
-                className="w-full h-full rounded-full bg-app text-black text-xl font-medium
+                className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
     flex items-center justify-center transition-colors duration-100 
     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Explore More
               </button>
-            </div>
+            </div> */}
 
+{/* "Peptide Overview" Button */}
+<div className="gradient-border">
+            <button
+            className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
+            flex items-center justify-center transition-colors duration-100 
+            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Explore More
+            </button>
+          </div>
+            
             <p
-              className="text-[24px] font-medium leading-[130%] mb-10"
+              className="text-[24px] font-medium leading-[130%] mt-10 mb-10"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               Mental health is an important part of overall well-being. Many
@@ -201,12 +213,23 @@ const Page = ({ params }: PageProps) => {
             </h2>
 
             {/* "Peptide Overview" Button */}
-
+            {/* 
             <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
               <button
-                className="w-full h-full rounded-full bg-app text-black text-xl font-medium
+                className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
     flex items-center justify-center transition-colors duration-100 
     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
+                style={{ fontFamily: "Afacad, sans-serif" }}
+              >
+                Explore More
+              </button>
+            </div> */}
+            {/* "Peptide Overview" Button */}
+            <div className="gradient-border">
+              <button
+                className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
+            flex items-center justify-center transition-colors duration-100 
+            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Explore More

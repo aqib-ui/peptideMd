@@ -725,11 +725,10 @@ export default function HomePage() {
       {/* solving dna overlapping issue on larger screens 5/5/25*/}
       {/* Welcome Section */}
       <section
-        className="ml-3 relative md:min-h-screen flex flex-col md:flex-row md:items-center justify-between px-6 md:pb-[10vh] 2xl:pb-[50vh]
-"
+        className="ml-3  relative  md:min-h-screen flex flex-col md:flex-row  justify-between px-6 "
       >
         {/* Left Content (Text) */}
-        <div className="flex-1.2 relative z-10 md:w-[60%]">
+        <div className="flex-1.2 relative z-10 sm:w-[45%] lg:w-[60%]">
           <h1
             // className="text-4xl font-bold text-[72px] leading-[100%]"
             // className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] font-bold leading-tight"
@@ -770,7 +769,10 @@ export default function HomePage() {
           {/* "Peptide Overview" Button */}
           <div className="gradient-border">
             <button
-              className="w-full h-full rounded-full bg-app text-black text-xl font-medium
+            //   className="w-full h-full rounded-full bg-app text-black text-xl font-medium
+            // flex items-center justify-center transition-colors duration-100 
+            // ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
+            className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
             flex items-center justify-center transition-colors duration-100 
             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
               style={{ fontFamily: "Afacad, sans-serif" }}
@@ -792,8 +794,8 @@ export default function HomePage() {
             height={1011}
             className="absolute hidden md:block 
             w-auto 
-            h-auto lg:h-screen
-            md:top-[-465px] lg:top-[-485px] xl:top-[-420px] -right-6 md:object-fill z-10 pointer-events-none"
+            h-screen
+            lg:top-[-225px] xl:top-[-220px] -right-6 md:object-fill z-10 pointer-events-none"
           />
           {/* // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it */}
         </div>
@@ -873,7 +875,7 @@ export default function HomePage() {
 
 
       {/* Video Section */}
-      <section className="relative my-10 md:my-20 bg-app min-h-screen flex items-center justify-center bg-white opacity-90">
+      <section className="relative  dark:bg-app min-h-screen flex items-center justify-center bg-white opacity-90">
         <video
           ref={videoRef}
           // className="w-[90%] max-w-full rounded-[2rem] shadow-lg"
@@ -926,7 +928,7 @@ export default function HomePage() {
       </section>
 
       {/* Description Section */}
-      <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-0 my-10 md:my-20 ">
+      <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-0 my-10 md:my-0 ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-left"
@@ -972,7 +974,7 @@ export default function HomePage() {
       </section>
 
       {/* 2 card section */}
-      <section className="min-h-screen flex flex-col max-md:px-2 my-10 md:my-20">
+      <section className="min-h-screen flex flex-col max-md:px-2 ">
         {/* <div className="grid grid-cols-2   gap-6 mt-8 p-6 md:p-10"> */}
         {/* <div className="flex flex-wrap justify-around  mt-8 p-1 md:p-6"> */}
         <div className="flex flex-wrap xl:flex-nowrap justify-around mt-8 p-1 md:p-6">
@@ -1264,7 +1266,7 @@ export default function HomePage() {
 
 
       <section className="relative w-full min-h-screen bg-white dark:bg-[var(--background)]
-       text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden py-16 mb-20 md:mb-40">
+       text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden ">
         {/* Scrolling Text */}
         <div className="relative top-0 left-0 w-full overflow-hidden">
           <div
@@ -1393,7 +1395,7 @@ export default function HomePage() {
  
 
       {/* Card Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center mb-50">
+      <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"
