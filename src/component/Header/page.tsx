@@ -389,7 +389,7 @@ export default function Header() {
 
         {/* Hamburger Menu */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen(!isOpen)} 
           className="focus:outline-none flex items-center"
           style={{ fontFamily: "Afacad, sans-serif" }}
         > <span className="text-base sm:text-lg md:text-xl lg:text-[22px] mr-2 sm:mr-3 md:mr-4 font-medium">Menu</span>

@@ -29,13 +29,12 @@ export default function TakingPeptide() {
         </h3>
         
         
-        <div className="hidden md:block absolute right-0 bottom-0 md:bottom-2 md:-right-48 lg:right-10">
+        <div className="hidden md:block absolute right-0 bottom-0 md:bottom-2 md:-right-48 lg:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
     <Image
       src="/takingPeptide/image1.png"
       alt="pen image"
-      width={324}
-      height={308}
-      className="w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
+      fill
+      className=" rounded-[50px]  shadow-[0_20px_48px_rgba(0,0,0,0.4)] object-cover"
     />
   </div>
 
@@ -93,15 +92,23 @@ export default function TakingPeptide() {
           >
             Subcutaneous Injection
           </h3>
-          <div className="hidden md:block absolute right-0 -top-10 md:-right-40 lg:right-50">
+          {/* <div className="hidden md:block absolute right-0 -top-5 md:-right-40 lg:right-50">
     <Image
       src="/takingPeptide/image2.png"
       alt="pen image"
       width={324}
       height={308}
-      className="w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
+      className=" w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px] shadow-[0_20px_48px_rgba(0,0,0,0.4)]"
     />
-  </div>
+  </div> */}
+<div className="hidden md:block absolute right-0 -top-5 md:-right-40 lg:right-50 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
+  <Image
+    src="/takingPeptide/image2.png"
+    alt="pen image"
+    fill
+    className="rounded-[50px] shadow-[0_20px_48px_rgba(0,0,0,0.4)] object-cover"
+  />
+</div>
 
           <p className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-6">
             Most common method for peptide administration:
@@ -132,13 +139,13 @@ export default function TakingPeptide() {
           >
             Oral Administration
           </h3>
-          <div className="hidden md:block absolute right-0  md:bottom-28 md:-right-20 lg:right-10">
+          <div className="hidden md:block absolute right-0  md:bottom-18 md:-right-45 lg:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
     <Image
       src="/takingPeptide/image3.png"
       alt="pen image"
-      width={324}
-      height={308}
-      className="w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
+      fill
+      className=" rounded-[50px] shadow-[0_20px_48px_rgba(0,0,0,0.4)] object-cover"
+                                // shadow-[offsetX_offsetY_blur_spread_color]
     />
   </div>
           <p className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-6">

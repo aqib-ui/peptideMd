@@ -16,7 +16,7 @@ export default function Footer() {
         {/* Left-aligned Content */}
         <div className="max-w-3xl ml-[-10px] ">
           <Image
-            src="/footerLogo.png"
+            src="/footerlogo.png"
             alt="Logo"
             width={280}
             height={120}
