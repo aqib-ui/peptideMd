@@ -944,7 +944,7 @@ export default function HomePage() {
         <div className="flex flex-wrap justify-around  mt-8 p-1 md:p-6">
           
           {/* left card */}
-          <div className="relative w-full lg:w-[50%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
+          <div className="relative w-full lg:w-[40%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
             <Image
               src="/card-pic.png"
               alt="Card Image"
@@ -1018,7 +1018,7 @@ export default function HomePage() {
           </div>
 
           {/* right card */}
-          <div className="flex flex-col justify-between w-full lg:w-[50%] h-auto   rounded-[3rem] p-6 md:p-1">
+          <div className="flex flex-col justify-between w-full lg:w-[55%] h-auto   rounded-[3rem] p-6 md:p-1">
             {/* Top image + card */}
             <div className="relative flex justify-center lg:justify-end items-start">
               <Image
