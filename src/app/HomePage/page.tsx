@@ -641,6 +641,8 @@ import Image from "next/image";
 import { AnimatedCard } from "../AnimatedCard/AnimatedCard"; // Adjust the import path as necessary
 
 import { FaArrowRight } from "react-icons/fa6";
+import { IoIosArrowRoundForward } from "react-icons/io";
+
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 export default function HomePage() {
@@ -674,7 +676,7 @@ export default function HomePage() {
 
   const cards = [
     {
-      title: "Oncology Testing",
+      title: "Ai diagnostics",
       imageSrc: "/image.png",
       rotateDeg: -6,
       expandedX: -160,  // spread left
@@ -688,7 +690,7 @@ export default function HomePage() {
       zIndex: 20,
     },
     {
-      title: "AI Diagnostics",
+      title: "Oncology Testing",
       imageSrc: "/image.png",
       rotateDeg: 6,
       expandedX: 160, // spread right
@@ -1075,7 +1077,7 @@ export default function HomePage() {
                 // flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
                 // w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(25%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(40%,25vw,28%)]
                 // rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
-                className="absolute top-30 sm:top-36 md:top-40 lg:top-44 right-22 max-sm:right-20 sm:right-65 lg:right-100 xl:right-20 
+                className="absolute top-30 sm:top-36 md:top-40 lg:top-44 right-22 max-sm:right-20 sm:right-65 lg:right-100 xl:right-25 
                 flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
                 w-[80%] max-sm:w-[150px] sm:w-[200px] md:w-[180px] lg:w-[180px]
                 rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
@@ -1291,7 +1293,8 @@ export default function HomePage() {
         {/* Cards */}
         <div
           className={`absolute flex items-center justify-center transition-all duration-500 mt-12 ${isExpanded ? "gap-6 flex-row w-full max-w-5xl" : "w-[250px] h-[320px]"
-            }`}
+            }`
+          }
         >
           {/* {cards.map((card) => (
             <div
@@ -1324,8 +1327,8 @@ export default function HomePage() {
             <div
               key={card.title}
               onClick={HandleCardClick}
-              className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-gray-200 
-                dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border-gray-200 dark:border-2 cursor-pointer absolute `}
+              className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-[#E1E1E1] 
+                dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `}
               style={{
                 transform: isExpanded
                   ? `translateX(${card.expandedX}px) rotate(0deg)`
@@ -1340,12 +1343,14 @@ export default function HomePage() {
                 alt={card.title}
                 className="w-full h-[190px] object-cover rounded-t-2xl p-4"
               />
-              <div className="p-3 flex justify-between items-center h-[calc(100%-190px)]">
-                <h3 className="font-semibold text-[16px] text-app leading-tight">
+              <div className="p-3 flex justify-between items-center h-[calc(100%-190px)]" style={{ fontFamily: "Afacad, sans-serif" }}>
+                <h3 className="font-semibold text-[clamp(20.25px,1vw+14.1px,34px)] text-app leading-tight">
                   {card.title}
                 </h3>
-                <button className="bg-[#6FA5D4] text-white rounded-full w-8 h-8 flex items-center justify-center transition hover:bg-[#5c90c0]">
-                  →
+                <button className="bg-[#6FA5D4] text-app rounded-full w-8 h-8 flex items-center justify-center transition hover:bg-[#5c90c0]">
+                  {/* → */}
+                  <IoIosArrowRoundForward className="text-2xl" />
+
                 </button>
               </div>
             </div>
@@ -1395,7 +1400,7 @@ export default function HomePage() {
  
 
       {/* Card Section */}
-      <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10 my-10 md:my-0 ">
+      <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10 mt-10  ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"
@@ -1416,7 +1421,7 @@ export default function HomePage() {
           Select a tile below to explore and learn more about peptides.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 p-6 md:p-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-[63px] mt-8 p-6 md:p-12">
           {[
             {
               img: "brain.png",
@@ -1449,9 +1454,10 @@ export default function HomePage() {
               desc: "Essential information and emerging developments in peptide science",
             },
           ].map((card, index) => (
-            <div key={index} className="gradient-card-border">
+            <div key={index} className=" p-[2px] rounded-[3rem] w-[90%] max-w-[450px] min-h-[450px] md:h-[490px] mx-auto 
+    relative bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] ">
               <div
-                className="p-6 shadow-lg rounded-[3rem] flex flex-col items-center justify-center 
+                className="p-6  rounded-[3rem] flex flex-col items-center justify-center 
                 bg-app w-full h-full transition-colors duration-500 ease-in-out group 
                 hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] 
                 cursor-pointer"
@@ -1486,10 +1492,13 @@ export default function HomePage() {
 
                 {/* More Button */}
                 <button
-                  className="mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium rounded-lg 
+                  className="mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium  rounded-t-lg
              hover:bg-gray-800 dark:border dark:border-white"
              onClick={() => handleCardClick(card.title)}
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ 
+                    fontFamily: "Afacad, sans-serif",
+                    borderBottom: '4px solid #A6C9EE', // light blue stripe (adjust color as needed)
+                   }}
                 >
                   More
                 </button>
