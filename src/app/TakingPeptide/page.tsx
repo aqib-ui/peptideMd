@@ -14,7 +14,7 @@ export default function TakingPeptide() {
           para="Always consult with a qualified healthcare provider before starting any peptide therapy. This guide is for educational purposes only and should not be considered medical advice."
         />
       </div>
-      <div className="container bg-app px-4 py-10 min-w-[100vw] overflow-hidden mb-50">
+      <div className="container bg-app px-4 py-10 min-w-[100vw] overflow-hidden ">
         {/* General Guideline Section */}
         <div className="relative mt-10 sm:mt-22 md:mt-30 lg:mt-60 ">
           <h3
