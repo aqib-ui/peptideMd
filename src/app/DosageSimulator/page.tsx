@@ -11,8 +11,9 @@ export default function DosageSimulator() {
 
   return (
     <>
-      {/* Toggle switch */}
-      <div className="flex justify-end mx-6">
+
+ {/* Toggle switch */}
+ {/* <div className="flex justify-end mx-6">
         <div
           className="relative flex w-full sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] p-[1.5px] rounded-[20px] 
           bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
@@ -37,6 +38,41 @@ export default function DosageSimulator() {
               onClick={() => setSelected("Calculator")}
               className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)]
                text-[clamp(18px,0.43vw+16.63px,24px)] font-semibold transition rounded-[20px] cursor-pointer"
+            >
+              Calculator
+            </button>
+          </div>
+        </div>
+      </div> */}
+
+
+
+      {/* Toggle switch */}
+      <div className="flex justify-end mx-8">
+        <div
+          className="relative flex w-full sm:max-w-[300px] md:max-w-[350px] lg:max-w-[370px] p-[1.5px] rounded-[20px] 
+          bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
+        >
+          <div
+            className="flex w-full bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)]   rounded-[20px] px-1.5 py-1 relative"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            <div
+              className={`absolute inset-0 top-0 bottom-0 left-0 w-[50%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[20px] transition-all duration-300
+            ${selected === "Calculator" ? "left-[50%]" : "left-0"}`}
+            ></div>
+
+            <button
+              onClick={() => setSelected("Dosage Guide")}
+              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] 
+              text-[clamp(18px,0.43vw+16.63px,22px)] font-semibold transition rounded-[20px] cursor-pointer"
+            >
+              Dosage Guide
+            </button>
+            <button
+              onClick={() => setSelected("Calculator")}
+              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)]
+               text-[clamp(18px,0.43vw+16.63px,22px)] font-semibold transition rounded-[20px] cursor-pointer"
             >
               Calculator
             </button>
