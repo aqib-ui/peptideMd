@@ -13,42 +13,42 @@ export default function DosageSimulator() {
     <>
 
  {/* Toggle switch */}
- {/* <div className="flex justify-end mx-6">
+ <div className="flex justify-end mx-6">
         <div
-          className="relative flex w-full sm:max-w-[300px] md:max-w-[350px] lg:max-w-[400px] p-[1.5px] rounded-[20px] 
+          className="relative flex w-full sm:max-w-[300px] md:max-w-[350px] lg:max-w-[300px] 2xl:max-w-[420px] h-auto 2xl:h-[70px] p-[1.5px] rounded-[25px] 
           bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
         >
           <div
-            className="flex w-full bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)]   rounded-[20px] px-1.5 py-1 relative"
+            className="flex w-full bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)]   rounded-[25px] px-1.5 py-1 relative"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             <div
-              className={`absolute inset-0 top-0 bottom-0 left-0 w-[52%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[20px] transition-all duration-300
+              className={`absolute inset-0 top-0 bottom-0 left-0 w-[52%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
             ${selected === "Calculator" ? "left-[48%]" : "left-0"}`}
             ></div>
 
             <button
               onClick={() => setSelected("Dosage Guide")}
               className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] 
-              text-[clamp(18px,0.43vw+16.63px,24px)] font-semibold transition rounded-[20px] cursor-pointer"
+              text-[clamp(18px,0.43vw+16.63px,24px)] font-semibold transition rounded-[25px] cursor-pointer"
             >
               Dosage Guide
             </button>
             <button
               onClick={() => setSelected("Calculator")}
               className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)]
-               text-[clamp(18px,0.43vw+16.63px,24px)] font-semibold transition rounded-[20px] cursor-pointer"
+               text-[clamp(18px,0.43vw+16.63px,24px)] font-semibold transition rounded-[25px] cursor-pointer"
             >
               Calculator
             </button>
           </div>
         </div>
-      </div> */}
+      </div>
 
 
 
       {/* Toggle switch */}
-      <div className="flex justify-end mx-8">
+      {/* <div className="flex justify-end mx-8">
         <div
           className="relative flex w-full sm:max-w-[300px] md:max-w-[350px] lg:max-w-[370px] p-[1.5px] rounded-[20px] 
           bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
@@ -78,7 +78,7 @@ export default function DosageSimulator() {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
       
       <div className="container px-4 py-10  min-w-[95vw] overflow-hidden">
         {/* Conditionally render content */}
@@ -281,57 +281,7 @@ function DosageGuide() {
           </h3>
 
           {/*slider  */}
-          {/* <div className="relative mt-8 w-[90%] max-w-[1248px]">
-            <input
-              type="range"
-              min="0"
-              max="100"
-              step="1"
-              value={sliderValue}
-              onChange={(e) => setSliderValue(Number(e.target.value))}
-              className="w-full h-2 bg-[#94C4ED]/40 rounded-lg appearance-none cursor-pointer"
-            />
-            <span className="absolute right-0 bottom-[-28px] text-[#224674] font-semibold text-lg">
-              {sliderValue}%
-            </span>
-          </div> */}
-          {/* <div className="relative mt-8 w-[90%] max-w-[1248px]">
-  <input
-    type="range"
-    min="0"
-    max="100"
-    step="1"
-    value={sliderValue}
-    onChange={(e) => setSliderValue(Number(e.target.value))}
-    className="w-full h-2 appearance-none custom-slider"
-  />
-  <span className="absolute right-0 bottom-[-28px] text-[#224674] font-semibold text-lg">
-    {sliderValue}%
-  </span>
-
-  <style jsx>{`
-    .custom-slider {
-      background: linear-gradient(
-        to right,
-        #3b82f6 ${sliderValue}%,
-        #94c4ed66 ${sliderValue}%
-      );
-      border-radius: 9999px;
-    }
-    .custom-slider::-webkit-slider-thumb,
-    .custom-slider::-moz-range-thumb {
-      appearance: none;
-      height: 16px;
-      width: 16px;
-      background: #1d4ed8;
-      border-radius: 9999px;
-      border: 2px solid white;
-      cursor: pointer;
-      margin-top: -6px;
-    }
-  `}</style>
-</div> */}
-          <div className="relative mt-8 w-[90%] max-w-[1248px] mb-20">
+          <div className="relative mt-8 w-[90%] max-w-[1248px] h-[20px] mb-20">
             <input
               type="range"
               min="0"
@@ -339,24 +289,30 @@ function DosageGuide() {
               step="1"
               value={sliderValue}
               onChange={(e) => setSliderValue(Number(e.target.value))}
-              className="w-full h-2 appearance-none custom-slider"
+              className="w-full h-5 appearance-none custom-slider"
             />
 
-            {/* <div className="absolute right-0 bottom-[-38px] bg-gradient-to-r from-[#5CB0E2] to-[#EB6793] p-[2px] rounded-2xl">
-              <span className="block bg-white text-[#224674] font-semibold text-lg px-3 py-1 rounded-2xl">
-                {sliderValue} mcg
-              </span>
-            </div> */}
+            {/*  below slider */}
             <div className="absolute right-0 flex items-center gap-2">
               <span className="font-medium text-[clamp(18px,0.43vw+16.63px,24px)]">
                 Selected peptide:
               </span>
-              <div className="bg-gradient-to-r from-[#5CB0E2] to-[#EB6793] p-[2px] rounded-2xl">
-                <span className="block bg-white text-[#224674] font-semibold text-[clamp(18px,0.43vw+16.63px,24px)] px-3 py-1 rounded-2xl">
+            {/* 
+              <div className="bg-gradient-to-r from-[#5CB0E2] to-[#EB6793] p-[2px] rounded-[14px]">
+                <span className="block bg-white  font-semibold text-[clamp(18px,0.43vw+16.63px,24px)] px-3 py-1 rounded-[14px]">
                   {sliderValue} mcg
                 </span>
               </div>
-            </div>
+            </div> */}
+
+
+  <div className="min-w-[clamp(80px,8vw,96px)] h-[clamp(36px,4.5vw,46px)] p-[2px] rounded-[14px] bg-gradient-to-t from-[#5CB0E2] to-[#EB6793]">
+    <div className="w-full h-full flex items-center justify-center bg-white rounded-[12px] font-semibold text-[clamp(18px,0.43vw+16.63px,24px)]">
+      {sliderValue} mcg
+    </div>
+  </div>
+</div>
+
 
             <style jsx>{`
               .custom-slider {
@@ -369,22 +325,35 @@ function DosageGuide() {
               }
 
               .custom-slider::-webkit-slider-thumb {
-                appearance: none;
-                height: 24px;
-                width: 24px;
-                border-radius: 9999px;
-                border: 2px solid white;
-                cursor: pointer;
-                background: linear-gradient(to bottom, #eb6793, #5cb0e2);
-                margin-top: 0px;
-              }
+  appearance: none;
+  height: clamp(24px, 5vw, 36px);
+width: clamp(24px, 5vw, 36px);
 
-              .custom-slider::-moz-range-thumb {
-                border-radius: 9999px;
-                border: 2px solid white;
-                cursor: pointer;
-                background: linear-gradient(to bottom, #eb6793, #5cb0e2);
-              }
+  border-radius: 50%;
+  cursor: pointer;
+  background: 
+    linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%);
+  border: 2px solid transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-sizing: border-box;
+}
+
+.custom-slider::-moz-range-thumb {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: 
+    linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%);
+  border: 2px solid transparent;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  box-sizing: border-box;
+}
+
             `}</style>
           </div>
 
@@ -394,10 +363,10 @@ function DosageGuide() {
             <input
               type="image"
               placeholder="Enter desired dose"
-              className="w-[90%] h-screen px-4 py-3 pb-20 focus:outline-none rounded-3xl bg-[#94C4ED]/30 text-[clamp(20.25px,0.98vw+17.1px,34px)] 
-        text-black/70  font-medium text-left align-top"
+              className="w-[90%] h-screen px-4 py-3 pb-20 focus:outline-none rounded-3xl bg-[#94C4ED]/30 
+              text-[clamp(20.25px,0.98vw+17.1px,34px)] text-black/70  font-medium text-left align-top"
             />
-            <p className="text-lg ">
+            <p className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium ">
               Interactive 3D model of AHK-Cu. Use mouse to rotate and zoom.
             </p>
           </div>
