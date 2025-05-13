@@ -1047,7 +1047,7 @@ export default function HomePage() {
               </div>
             </div>
             {/* Top-right icons */}
-            <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-12 lg:right-12 flex gap-4">
+            <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-8 lg:right-12 flex gap-4">
               {/* Information Icon */}
               <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
                 <IoIosInformationCircleOutline className="text-[#2D557A] text-base sm:text-lg" />

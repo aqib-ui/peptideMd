@@ -28,13 +28,15 @@ export default function DosageSimulator() {
 
             <button
               onClick={() => setSelected("Dosage Guide")}
-              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px] cursor-pointer"
+              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] 
+              text-[clamp(18px,0.43vw+16.63px,24px)] font-semibold transition rounded-[20px] cursor-pointer"
             >
               Dosage Guide
             </button>
             <button
               onClick={() => setSelected("Calculator")}
-              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold transition rounded-[20px] cursor-pointer"
+              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)]
+               text-[clamp(18px,0.43vw+16.63px,24px)] font-semibold transition rounded-[20px] cursor-pointer"
             >
               Calculator
             </button>
@@ -42,7 +44,7 @@ export default function DosageSimulator() {
         </div>
       </div>
       
-      <div className="container px-4 py-10">
+      <div className="container px-4 py-10  min-w-[95vw] overflow-hidden">
         {/* Conditionally render content */}
         {selected === "Dosage Guide" ? <DosageGuide /> : <Calculator />}
       </div>
@@ -87,7 +89,7 @@ function DosageGuide() {
           para="This simulator is for educational purposes only. Always consult with a qualified healthcare provider before starting any peptide therapy."
         />
       </div>
-    <div className="pl-5 pr-4">
+    <div className="pl-5 pr-4 min-w-[95vw] overflow-hidden">
       
 
 
@@ -96,7 +98,7 @@ function DosageGuide() {
         className="mt-[120px] mb-6 px-4 sm:px-6"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
-        <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
+        <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
           <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
             Step 1:
           </span>
@@ -104,7 +106,7 @@ function DosageGuide() {
         </h3>
 
         <div className="lg:-mt-4 lg:ml-43">
-          <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
+          <h3 className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-[1.6] font-medium">
             Choose a peptide to simulate its usage
           </h3>
 
@@ -117,7 +119,7 @@ function DosageGuide() {
                 <div className="relative">
                   <Listbox.Button
                     className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 focus:outline-none 
-                    text-xl md:text-2xl font-medium text-left
+                    text-[clamp(18px,0.43vw+16.63px,24px)] font-medium text-left
                   text-[#224674] dark:text-[var(--foreground)]"
                   >
                     {/* <input
@@ -180,7 +182,7 @@ function DosageGuide() {
         className="mt-[120px] mb-6 px-4 sm:px-6"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
-        <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold">
+        <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
           <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED]  text-black mr-2">
             Step 2:
           </span>
@@ -188,14 +190,14 @@ function DosageGuide() {
         </h3>
 
         <div className="lg:-mt-4 lg:ml-43">
-          <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
+          <h3 className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-[1.6] font-medium">
             Choose between standard and microdosing protocols
           </h3>
 
           {/* Toggle Button - now same width as Step 1 dropdown */}
           <div className="flex  mt-6">
             <div className="relative w-[90%] max-w-[1248px] h-[80px] bg-[#94C4ED]/40 rounded-[25px]">
-              <div className="flex w-full h-full text-[#224674] dark:text-[var(--foreground)] text-lg sm:text-xl lg:text-2xl relative">
+              <div className="flex w-full h-full text-[#224674] dark:text-[var(--foreground)] text-[clamp(18px,0.43vw+16.63px,24px)] relative">
                 <div
                   className={`absolute top-0 bottom-0 w-[52%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
               ${selectedProtocol === "Microdosing" ? "left-[48%]" : "left-0"}
@@ -218,7 +220,7 @@ function DosageGuide() {
             </div>
           </div>
 
-          <h3 className="text-xl sm:text-2xl leading-[1.6] mt-4 font-medium">
+          <h3 className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-[1.6] mt-4 font-medium">
             Standard dosing protocol typically used for primary treatment
             phases.
           </h3>
@@ -230,7 +232,7 @@ function DosageGuide() {
         className="mt-[120px] px-4 sm:px-6"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
-        <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
+        <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
           <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
             Step 3:
           </span>
@@ -238,7 +240,7 @@ function DosageGuide() {
         </h3>
 
         <div className="lg:-mt-4 lg:ml-43">
-          <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
+          <h3 className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-[1.6] font-medium">
             Recommended range for AHK-Cu
           </h3>
 
@@ -310,11 +312,11 @@ function DosageGuide() {
               </span>
             </div> */}
             <div className="absolute right-0 flex items-center gap-2">
-              <span className="font-medium text-base sm:text-lg md:text-xl lg:text-2xl">
+              <span className="font-medium text-[clamp(18px,0.43vw+16.63px,24px)]">
                 Selected peptide:
               </span>
               <div className="bg-gradient-to-r from-[#5CB0E2] to-[#EB6793] p-[2px] rounded-2xl">
-                <span className="block bg-white text-[#224674] font-semibold text-base sm:text-lg md:text-xl lg:text-2xl px-3 py-1 rounded-2xl">
+                <span className="block bg-white text-[#224674] font-semibold text-[clamp(18px,0.43vw+16.63px,24px)] px-3 py-1 rounded-2xl">
                   {sliderValue} mcg
                 </span>
               </div>
@@ -356,7 +358,7 @@ function DosageGuide() {
             <input
               type="image"
               placeholder="Enter desired dose"
-              className="w-[90%] h-screen px-4 py-3 pb-20 focus:outline-none rounded-3xl bg-[#94C4ED]/30 text-[34px] 
+              className="w-[90%] h-screen px-4 py-3 pb-20 focus:outline-none rounded-3xl bg-[#94C4ED]/30 text-[clamp(20.25px,0.98vw+17.1px,34px)] 
         text-black/70  font-medium text-left align-top"
             />
             <p className="text-lg ">
@@ -371,29 +373,29 @@ function DosageGuide() {
             <div className="mb-6 ">
               <h2
                 // className=" text-4xl"
-                className="text-[28px] md:text-[32px] lg:text-[34px]  font-semibold leading-[100%] text-left"
+                className="text-[clamp(20.25px,0.98vw+17.1px,34px)]  font-semibold leading-[100%] text-left"
 
               >Description</h2>
-              <p className="text-[20px] md:text-[22px] lg:text-[24px]">
+              <p className="text-[clamp(18px,0.43vw+16.63px,24px)]">
                 A copper peptide similar to GHK-Cu with specific properties.
               </p>
             </div>
 
             <div className="mt-6 mb-6">
-              <h2 className=" text-[28px] md:text-[32px] lg:text-[34px]">
+              <h2 className=" text-[clamp(20.25px,0.98vw+17.1px,34px)]">
                 Applications
               </h2>
-              <p className="text-[20px] md:text-[22px] lg:text-[24px]">
+              <p className="text-[clamp(18px,0.43vw+16.63px,24px)]">
                 Skin health and tissue regeneration.
               </p>
             </div>
 
             <div className="mt-6 mb-10 first-letter:uppercase">
-              <h2 className=" text-[28px] md:text-[32px] lg:text-[34px]">
+              <h2 className=" text-[clamp(20.25px,0.98vw+17.1px,34px)]">
                 Benefits
               </h2>
               {/* <p className="text-2xl ">Skin health and tissue regeneration.</p> */}
-              <ul className="text-[20px] md:text-[22px] lg:text-[24px]">
+              <ul className="text-[clamp(18px,0.43vw+16.63px,24px)]">
                 <li
                   className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
                             before:absolute before:left-0 before:top-3 before:w-2.5 
@@ -426,10 +428,10 @@ function DosageGuide() {
             </div>
 
             <div className="mt-6 ">
-              <h2 className="text-[28px] md:text-[32px] lg:text-[34px]">
+              <h2 className="text-[clamp(20.25px,0.98vw+17.1px,34px)]">
                 Risk and Side Effects
               </h2>
-              <ul className="text-[20px] md:text-[22px] lg:text-[24px] mt-4 mb-10 ">
+              <ul className="text-[clamp(18px,0.43vw+16.63px,24px)] mt-4 mb-10 ">
                 <li
                   className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
                             before:absolute before:left-0 before:top-3 before:w-2.5 
@@ -469,7 +471,7 @@ function DosageGuide() {
         className="mt-[120px] mb-6 px-4 sm:px-6"
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
-        <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
+        <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
           <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
             Step 4:
           </span>
@@ -477,13 +479,13 @@ function DosageGuide() {
         </h3>
 
         <div className="md:lg:-mt-4 lg:ml-43">
-          <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
+          <h3 className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-[1.6] font-medium">
             Common injection sites and rotation guidelines
           </h3>
           {/* You can add more UI elements for protocol selection here */}
 
           <div
-            className="flex text-center justify-center items-center text-xl  text-black font-semibold 
+            className="flex text-center justify-center items-center text-[clamp(16px,0.284vw+15.1px,20px)]  text-black font-semibold 
             text-opacity-100 h-screen w-[90%] rounded-4xl mt-10 p-10 bg-[#94C4ED]/40"
           >
             Interactive diagram coming soon
@@ -493,7 +495,7 @@ function DosageGuide() {
 
           <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
             <button
-              className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl lg:text-2xl font-medium
+              className="w-full h-full rounded-full bg-app text-black text-[clamp(18px,0.43vw+16.63px,24px)] font-medium
     flex items-center justify-center transition-colors duration-100 
     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
               style={{ fontFamily: "Afacad, sans-serif" }}
@@ -528,15 +530,15 @@ function Calculator() {
           para="This simulator is for educational purposes only. Always consult with a qualified healthcare provider before starting any peptide therapy."
         />
       </div>
-    <div className="pl-5 pr-4">
+    <div className="pl-5 pr-4  min-w-[95vw] overflow-hidden">
      
 
 
       <div className="mt-30 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
-        <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold flex items-center flex-wrap">
+        <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold flex items-center flex-wrap">
           Peptide Calculator
         </h3>
-        <h3 className="text-xl sm:text-2xl leading-6.5 font-medium mb-12">
+        <h3 className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-6.5 font-medium mb-12">
           Calculate reconstitution measurements and injection volumes
         </h3>
 
@@ -551,7 +553,7 @@ function Calculator() {
                 placeholder="Enter in mg"
                 className="w-full h-16 px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
-        text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
+        text-[clamp(18px,0.43vw+16.63px,24px)] text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
               />
               <Image
                 src="/cal-enter-icon.png"
@@ -575,7 +577,7 @@ function Calculator() {
                 placeholder="Enter in ml"
                 className="w-full h-16 px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
-        text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
+        text-[clamp(18px,0.43vw+16.63px,24px)] text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
               />
               <Image
                 src="/cal-enter-icon.png"
@@ -599,7 +601,7 @@ function Calculator() {
                 placeholder="Enter in mcg"
                 className="w-full h-16 px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
-        text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
+        text-[clamp(18px,0.43vw+16.63px,24px)] text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
               />
               <Image
                 src="/cal-enter-icon.png"

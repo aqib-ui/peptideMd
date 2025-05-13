@@ -8,7 +8,7 @@ export default function Resources() {
       <div>
         <MoleculeTopLeftAnimation
           mainheading="Resources"
-          span="Podcast & Readings"
+          span="Podcast & Readings" 
           para="Recent episodes discussing peptide research and applications."
         />
       </div>
@@ -33,7 +33,7 @@ export default function Resources() {
             Our podcast series featuring leading experts in peptide research and
             clinical applications will be launching soon.
           </h3>
-        </div>
+        </div> 
         {/* Video Section */}
         <section
           className="relative min-h-screen min-w-[98vw] flex flex-wrap justify-center 

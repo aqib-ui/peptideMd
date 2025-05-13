@@ -121,7 +121,7 @@ export default function TakingPeptide() {
             </li>
             <li className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
               Dispose of needles in appropriate sharps container
-            </li>
+            </li> 
 
             <br />
             <br />
