@@ -14,7 +14,7 @@ export default function TakingPeptide() {
           para="Always consult with a qualified healthcare provider before starting any peptide therapy. This guide is for educational purposes only and should not be considered medical advice."
         />
       </div>
-      <div className="container bg-app px-4 py-10 min-w-[100vw] overflow-hidden ">
+      <div className="container bg-app px-4 py-10 min-w-[98vw] overflow-hidden ">
         {/* General Guideline Section */}
         <div className="relative mt-10 sm:mt-22 md:mt-30 lg:mt-60 ">
           <h3
@@ -127,7 +127,7 @@ export default function TakingPeptide() {
             <br />
 
             <h3
-              className="text-[clamp(20.25px,0.98vw+17.1px,34px)]font-bold leading-[100%] md:mt-10 text-left"
+              className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-bold leading-[100%] md:mt-10 text-left"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               Oral Administration
@@ -158,7 +158,7 @@ export default function TakingPeptide() {
 
         {/* Video Section */}
         <section
-          className="relative min-h-screen min-w-[98vw] flex flex-wrap justify-start 
+          className="relative min-h-screen min-w-[100vw] flex flex-wrap justify-start 
       ml-[-20px] gap-10 px-6 py-10 bg-app opacity-90 w-full"
         >
           {/* Video 1 */}
