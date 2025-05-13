@@ -1287,6 +1287,12 @@ export default function HomePage() {
             <span className="uppercase">
               Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
             </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
           </div>
         </div>
 
