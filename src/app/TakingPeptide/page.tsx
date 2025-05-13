@@ -6,14 +6,15 @@ import { MoleculeTopLeftAnimation } from "../MianComponent/page";
 export default function TakingPeptide() {
   return (
     <>
-      <div>
+      <div >
         <MoleculeTopLeftAnimation
+          className="!inline-block !max-w-[90%] !md:max-w-[80%] !lg:max-w-[85%]"
           mainheading="Taking Peptides"
           span="Guide and Instruction"
           para="Always consult with a qualified healthcare provider before starting any peptide therapy. This guide is for educational purposes only and should not be considered medical advice."
         />
       </div>
-      <div className="container bg-app px-4 py-10 w-full ">
+      <div className="container bg-app px-4 py-10 min-w-[100vw] overflow-hidden mb-50">
         {/* General Guideline Section */}
         <div className="relative mt-10 sm:mt-22 md:mt-30 lg:mt-60 ">
           <h3
@@ -23,7 +24,7 @@ export default function TakingPeptide() {
             General Guideline
           </h3>
 
-          <div className="hidden md:block absolute right-0 bottom-0 md:bottom-2 md:-right-48 lg:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
+          <div className="hidden md:block absolute right-0 bottom-0 md:bottom-2  xl:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
             <Image
               src="/takingPeptide/image1.png"
               alt="pen image"
@@ -79,7 +80,7 @@ export default function TakingPeptide() {
             }}
           >
             <h3
-              className="text-[28px] md:text-[32px] lg:text-[34px]  font-bold leading-[100%]  text-left"
+              className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-bold leading-[100%]  text-left"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               Subcutaneous Injection
@@ -93,7 +94,7 @@ export default function TakingPeptide() {
       className=" w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px] shadow-[0_20px_48px_rgba(0,0,0,0.4)]"
     />
   </div> */}
-            <div className="hidden md:block absolute right-0 -top-5 md:-right-40 lg:right-50 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
+            <div className="hidden md:block absolute right-0 -top-5 max-lg:top-10 xl:right-50 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
               <Image
                 src="/takingPeptide/image2.png"
                 alt="pen image"
@@ -126,12 +127,12 @@ export default function TakingPeptide() {
             <br />
 
             <h3
-              className="text-[28px] md:text-[32px] lg:text-[34px] font-bold leading-[100%] md:mt-10 text-left"
+              className="text-[clamp(20.25px,0.98vw+17.1px,34px)]font-bold leading-[100%] md:mt-10 text-left"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               Oral Administration
             </h3>
-            <div className="hidden md:block absolute right-0  md:bottom-18 md:-right-45 lg:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
+            <div className="hidden md:block absolute right-0  bottom-0 xl:bottom-18 xl:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
               <Image
                 src="/takingPeptide/image3.png"
                 alt="pen image"
@@ -266,7 +267,7 @@ export default function TakingPeptide() {
             }}
           >
             <h3
-              className="text-[28px] md:text-[32px] lg:text-[34px] font-semibold leading-[100%] text-left"
+              className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-semibold leading-[100%] text-left"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               Documentation
@@ -364,7 +365,7 @@ export default function TakingPeptide() {
             <br />
 
             <h3
-              className="text-[28px] md:text-[32px] lg:text-[34px]  font-semibold leading-[100%] text-left"
+              className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-semibold leading-[100%] text-left"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               Safety Measures

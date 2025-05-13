@@ -3,14 +3,16 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import clsx from 'clsx';
 
 interface MoleculeTopLeftAnimationProps {
     mainheading: string;
     span: string;
     para: string;
+    className?: string;
 }
 
-export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({ mainheading, span, para }) => {
+export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({ mainheading, span, para, className }) => {
     return (
         <>
             <section className="relative ">
@@ -28,7 +30,14 @@ export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> =
 
                 {/* --- Content Block --- */}
                 <div className="relative z-10 max-w-7xl mx-2 p-4 md:p-6 bg-transparent">
-                    <div className="relative inline-block w-full max-w-[90%] md:max-w-[80%] lg:max-w-[75%]">
+                    <div 
+                    // className="relative inline-block w-full max-w-[90%] md:max-w-[80%] lg:max-w-[75%]"
+                    // className={`relative inline-block w-full max-w-[90%] md:max-w-[80%] lg:max-w-[75%] ${className}`}
+                    className={clsx(
+                        "relative inline-block w-full max-w-[90%] md:max-w-[80%] lg:max-w-[75%]",
+                        className // this will override if present
+                      )}
+                    >
                         <h1
                             className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-left mt-6"
                             style={{ fontFamily: "Afacad, sans-serif" }}
