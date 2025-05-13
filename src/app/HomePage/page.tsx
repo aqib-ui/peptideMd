@@ -707,7 +707,7 @@ export default function HomePage() {
       
       <!-- Subheading: slower scale -->
       <h2 class="text-[clamp(22.5px,1.67vw+17.2px,46px)]">Subheading</h2>
-      
+     
       <!-- 34px Text -->
       <p class="text-[clamp(20.25px,0.98vw+17.1px,34px)]">Mid Text</p>
       
@@ -1473,10 +1473,15 @@ export default function HomePage() {
                     card.img === "sheild.png" ? "w-8" : "w-10"
                   }`}
                 />
+{/* 
+text-[clamp(22.5px,1.67vw+17.2px,46px)]
+text-[clamp(18px,0.43vw+16.63px,24px)] */}
 
                 {/* Card Title */}
                 <span
-                  className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px]  font-semibold leading-[50px] text-center mt-2"
+                  // className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px]  font-semibold leading-[50px] text-center mt-2"
+                  className="text-[clamp(22.5px,1.67vw+17.2px,46px)]  font-semibold leading-[50px] text-center mt-2"
+
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   {card.title}
@@ -1484,7 +1489,9 @@ export default function HomePage() {
 
                 {/* Description */}
                 <p
-                  className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[130%] text-center px-4 mt-2"
+                  // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[130%] text-center px-4 mt-2"
+                  className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-[130%] text-center px-4 mt-2"
+
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   {card.desc}
