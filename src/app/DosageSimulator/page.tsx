@@ -23,8 +23,8 @@ export default function DosageSimulator() {
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             <div
-              className={`absolute inset-0 top-0 bottom-0 left-0 w-[52%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
-            ${selected === "Calculator" ? "left-[48%]" : "left-0"}`}
+              className={`absolute inset-0 top-0 bottom-0 left-0 w-[51%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
+            ${selected === "Calculator" ? "left-[49%]" : "left-0"}`}
             ></div>
 
             <button
@@ -150,7 +150,7 @@ function DosageGuide() {
           <div className="mt-6">
             {/* <div className="relative max-lg:w-[80%]"> */}
             {/* <div className="relative w-full sm:w-[100%] md:w-[100%] lg:w-[100%] xl:w-[75%] 2xl:w-[81%]"> */}
-            <div className="relative w-[90%] max-w-[1248px] h-[80px] rounded-[25px]">
+            <div className="relative w-[95%] max-w-[1248px] h-[80px] rounded-[25px]">
               <Listbox value={selectedPeptide} onChange={setSelectedPeptide}>
                 <div className="relative">
                   <Listbox.Button
@@ -232,11 +232,11 @@ function DosageGuide() {
 
           {/* Toggle Button - now same width as Step 1 dropdown */}
           <div className="flex  mt-6">
-            <div className="relative w-[90%] max-w-[1248px] h-[80px] bg-[#94C4ED]/40 rounded-[25px]">
+            <div className="relative w-[95%] max-w-[1248px] h-[80px] bg-[#94C4ED]/40 rounded-[25px]">
               <div className="flex w-full h-full text-[#224674] dark:text-[var(--foreground)] text-[clamp(18px,0.43vw+16.63px,24px)] relative">
                 <div
-                  className={`absolute top-0 bottom-0 w-[52%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
-              ${selectedProtocol === "Microdosing" ? "left-[48%]" : "left-0"}
+                  className={`absolute top-0 bottom-0 w-[51%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
+              ${selectedProtocol === "Microdosing" ? "left-[49%]" : "left-0"}
             `}
                 ></div>
 
@@ -281,7 +281,7 @@ function DosageGuide() {
           </h3>
 
           {/*slider  */}
-          <div className="relative mt-8 w-[90%] max-w-[1248px] h-[20px] mb-20">
+          <div className="relative mt-8 w-[95%] max-w-[1248px] h-[20px] mb-20">
             <input
               type="range"
               min="0"
@@ -363,7 +363,7 @@ width: clamp(24px, 5vw, 36px);
             <input
               type="image"
               placeholder="Enter desired dose"
-              className="w-[90%] h-screen px-4 py-3 pb-20 focus:outline-none rounded-3xl bg-[#94C4ED]/30 
+              className="w-[95%] max-w-[1237px] h-[890px] px-4 py-3 pb-20 focus:outline-none rounded-3xl bg-[#94C4ED]/30 
               text-[clamp(20.25px,0.98vw+17.1px,34px)] text-black/70  font-medium text-left align-top"
             />
             <p className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium ">
@@ -373,7 +373,7 @@ width: clamp(24px, 5vw, 36px);
 
           <div
             className="flex flex-col  font-medium 
-            text-opacity-100 w-[90%] rounded-4xl mt-10 p-10 bg-[#94C4ED]/40"
+            text-opacity-100 w-[95%] max-w-[1233px] h-[706px] rounded-4xl mt-10 p-10 bg-[#94C4ED]/40"
           >
             <div className="mb-6 ">
               <h2
@@ -400,7 +400,7 @@ width: clamp(24px, 5vw, 36px);
                 Benefits
               </h2>
               {/* <p className="text-2xl ">Skin health and tissue regeneration.</p> */}
-              <ul className="text-[clamp(18px,0.43vw+16.63px,24px)]">
+              <ul className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-tight">
                 <li
                   className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
                             before:absolute before:left-0 before:top-3 before:w-2.5 
@@ -432,11 +432,11 @@ width: clamp(24px, 5vw, 36px);
               </ul>
             </div>
 
-            <div className="mt-6 ">
+            <div className=" ">
               <h2 className="text-[clamp(20.25px,0.98vw+17.1px,34px)]">
                 Risk and Side Effects
               </h2>
-              <ul className="text-[clamp(18px,0.43vw+16.63px,24px)] mt-4 mb-10 ">
+              <ul className="text-[clamp(18px,0.43vw+16.63px,24px)] mb-10 leading-tight ">
                 <li
                   className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
                             before:absolute before:left-0 before:top-3 before:w-2.5 
@@ -491,7 +491,7 @@ width: clamp(24px, 5vw, 36px);
 
           <div
             className="flex text-center justify-center items-center text-[clamp(16px,0.284vw+15.1px,20px)]  text-black font-semibold 
-            text-opacity-100 h-screen w-[90%] rounded-4xl mt-10 p-10 bg-[#94C4ED]/40"
+            text-opacity-100  max-w-[1234px] h-[890px] w-[95%] rounded-4xl mt-10 p-10 bg-[#94C4ED]/40"
           >
             Interactive diagram coming soon
           </div>
