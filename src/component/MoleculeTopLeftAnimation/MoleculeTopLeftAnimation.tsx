@@ -9,7 +9,7 @@ import clsx from 'clsx';
 import dynamic from 'next/dynamic';
 
 const ScrollButton = dynamic(() => import('@/component/ScrollButton/ScrollButton'), {
-  ssr: false
+    ssr: false
 });
 
 interface MoleculeTopLeftAnimationProps {

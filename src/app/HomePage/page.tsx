@@ -792,9 +792,9 @@ export default function HomePage() {
 
 
         </div>
-     <div className="bottom-[60px] absolute right-[550px] transform -translate-x-1/2 z-20">
-  <ScrollButton />
-</div>
+        <div className="bottom-[70px] absolute right-[590px] transform -translate-x-1/2 z-20">
+          <ScrollButton />
+        </div>
 
 
 
@@ -1523,6 +1523,7 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
              hover:bg-gray-800 dark:border dark:border-white"
                   onClick={() => handleCardClick(card.title)}
                   style={{
+                    cursor: "pointer",
                     fontFamily: "Afacad, sans-serif",
                     borderBottom: '4px solid #A6C9EE', // light blue stripe (adjust color as needed)
                   }}
