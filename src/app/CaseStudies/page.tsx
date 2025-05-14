@@ -284,7 +284,7 @@ const CaseStudiesPage = () => {
                 >
                   <div className="p-6 shadow-lg rounded-[1.875rem] flex flex-col items-start bg-app w-full h-full transition-colors duration-500 ease-in-out group cursor-pointer">
                     <h2
-                      className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-4 md:mt-6 text-left"
+                      className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-semibold leading-[100%] mt-4 md:mt-6 text-left"
                       style={{ fontFamily: "Afacad, sans-serif" }}
                     >
                       {item.title}

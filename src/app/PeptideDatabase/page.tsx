@@ -92,24 +92,24 @@ export default function PeptideDatabase() {
         {/* Heading searchbar etc Section */}
         <div
           // className="grid grid-cols-[auto_1fr] justify-around items-start gap-4"
-          className="flex items-start gap-4 justify-around"
+          className="flex items-start  justify-around md:flex-col"
         >
           {/*basically grid-cols-[auto_1fr] ===> "Give the first column as much space
                  as it needs (auto), and let the second one fill the rest (1fr)" */}
 
           {/* heading section */}
-          <div className="px-10 w-full">
-            <h1 className="capitalize text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
+          <div className="px-10 w-full bg-red-200">
+            <h1 className="capitalize text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
               single peptide
             </h1>
-            <h3 className="my-1 mb-2 text-[20px] md:text-[22px] lg:text-[24px] font-medium">
+            <h3 className="my-1 mb-2 text-[clamp(18px,0.43vw+16.63px,24px)] font-medium">
               click on any peptide to discover more!
             </h3>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-end gap-4 mr-4 md:mr-16 mb-5 w-full md:w-auto">
+          <div className="flex flex-col w-full md:flex-row justify-end md:justify-center gap-4 mr-4 md:mr-16 mb-5 bg-amber-400 ">
             {/* Filter & Compare Buttons */}
-            <div className="flex max-md:flex-wrap items-center justify-center md:justify-end gap-4 text-sm sm:text-md md:text-lg lg:text-xl font-medium">
+            <div className="flex max-md:flex-wrap items-center justify-center md:justify-end gap-4 text-[clamp(16px,0.284vw+15.1px,20px)] font-medium">
               <button
                 onClick={() => setIsFilterClicked(!isFilterClicked)}
                 className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-2 border-2 

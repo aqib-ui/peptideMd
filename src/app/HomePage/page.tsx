@@ -641,6 +641,8 @@ import Image from "next/image";
 import { AnimatedCard } from "../AnimatedCard/AnimatedCard"; // Adjust the import path as necessary
 
 import { FaArrowRight } from "react-icons/fa6";
+import { IoIosArrowRoundForward } from "react-icons/io";
+
 import { IoIosInformationCircleOutline } from "react-icons/io";
 
 export default function HomePage() {
@@ -674,7 +676,7 @@ export default function HomePage() {
 
   const cards = [
     {
-      title: "Oncology Testing",
+      title: "Ai diagnostics",
       imageSrc: "/image.png",
       rotateDeg: -6,
       expandedX: -160,  // spread left
@@ -688,7 +690,7 @@ export default function HomePage() {
       zIndex: 20,
     },
     {
-      title: "AI Diagnostics",
+      title: "Oncology Testing",
       imageSrc: "/image.png",
       rotateDeg: 6,
       expandedX: 160, // spread right
@@ -705,7 +707,7 @@ export default function HomePage() {
       
       <!-- Subheading: slower scale -->
       <h2 class="text-[clamp(22.5px,1.67vw+17.2px,46px)]">Subheading</h2>
-      
+     
       <!-- 34px Text -->
       <p class="text-[clamp(20.25px,0.98vw+17.1px,34px)]">Mid Text</p>
       
@@ -725,11 +727,10 @@ export default function HomePage() {
       {/* solving dna overlapping issue on larger screens 5/5/25*/}
       {/* Welcome Section */}
       <section
-        className="ml-3 relative md:min-h-screen flex flex-col md:flex-row md:items-center justify-between px-6 md:pb-[10vh] 2xl:pb-[50vh]
-"
+        className="ml-3  relative  md:min-h-screen flex flex-col md:flex-row  justify-between px-6 "
       >
         {/* Left Content (Text) */}
-        <div className="flex-1.2 relative z-10 md:w-[60%]">
+        <div className="flex-1.2 relative z-10 sm:w-[45%] lg:w-[60%]">
           <h1
             // className="text-4xl font-bold text-[72px] leading-[100%]"
             // className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] font-bold leading-tight"
@@ -770,7 +771,10 @@ export default function HomePage() {
           {/* "Peptide Overview" Button */}
           <div className="gradient-border">
             <button
-              className="w-full h-full rounded-full bg-app text-black text-xl font-medium
+              //   className="w-full h-full rounded-full bg-app text-black text-xl font-medium
+              // flex items-center justify-center transition-colors duration-100 
+              // ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
+              className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
             flex items-center justify-center transition-colors duration-100 
             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
               style={{ fontFamily: "Afacad, sans-serif" }}
@@ -825,8 +829,8 @@ export default function HomePage() {
             height={1011}
             className="absolute hidden md:block 
             w-auto 
-            h-auto lg:h-screen
-            md:top-[-465px] lg:top-[-485px] xl:top-[-420px] -right-6 md:object-fill z-10 pointer-events-none"
+            h-screen
+            lg:top-[-225px] xl:top-[-220px] -right-6 md:object-fill z-10 pointer-events-none"
           />
           {/* // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it */}
         </div>
@@ -906,7 +910,7 @@ export default function HomePage() {
 
 
       {/* Video Section */}
-      <section className="relative my-10 md:my-20 bg-app min-h-screen flex items-center justify-center bg-white opacity-90">
+      <section className="relative  dark:bg-app min-h-screen flex items-center justify-center bg-white opacity-90 mb-10 my-10 md:my-0 ">
         <video
           ref={videoRef}
           // className="w-[90%] max-w-full rounded-[2rem] shadow-lg"
@@ -959,7 +963,7 @@ export default function HomePage() {
       </section>
 
       {/* Description Section */}
-      <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-0 my-10 md:my-20 ">
+      <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-10 my-10 md:my-0 ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-left"
@@ -1005,22 +1009,28 @@ export default function HomePage() {
       </section>
 
       {/* 2 card section */}
-      <section className="min-h-screen flex flex-col max-md:px-2 mb-50">
+      <section className="min-h-screen flex flex-col max-md:px-2 ">
         {/* <div className="grid grid-cols-2   gap-6 mt-8 p-6 md:p-10"> */}
-        <div className="flex flex-wrap justify-around  mt-8 p-1 md:p-6">
+        {/* <div className="flex flex-wrap justify-around  mt-8 p-1 md:p-6"> */}
+        <div className="flex flex-wrap xl:flex-nowrap justify-around mt-8 p-1 md:p-6">
 
           {/* left card */}
-          <div className="relative w-full lg:w-[40%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
+          {/* <div className="relative w-full 2xl:w-[40%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
+          {/* <div className="relative w-full 2xl:w-[40%] h-auto lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
+          {/* relative w-full 2xl:w-[40%] min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10 */}
+          <div className="relative w-full md:w-[65%] 2xl:w-[40%]  h-[400px] sm:min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
+
+
             <Image
               src="/card-pic.png"
               alt="Card Image"
               fill
-              className="object-cover"
+              className="object-cover md:object-cover"
             />
             <div
               className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12 
       flex flex-col justify-start items-start backdrop-blur-md bg-gray-100/10 border-3 border-white
-      w-[80%] max-sm:w-[250px] sm:w-[290px] md:w-[260px] lg:w-[295px]
+      w-[80%] [350px]:w-[90%] sm:w-[290px] md:w-[260px] lg:w-[295px]
  rounded-[2rem] px-4 py-4 overflow-hidden"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
@@ -1070,7 +1080,7 @@ export default function HomePage() {
               </div>
             </div>
             {/* Top-right icons */}
-            <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-12 lg:right-12 flex gap-4">
+            <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-8 lg:right-12 flex gap-4">
               {/* Information Icon */}
               <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
                 <IoIosInformationCircleOutline className="text-[#2D557A] text-base sm:text-lg" />
@@ -1084,15 +1094,15 @@ export default function HomePage() {
           </div>
 
           {/* right card */}
-          <div className="flex flex-col justify-between w-full lg:w-[55%] h-auto   rounded-[3rem] p-6 md:p-1">
+          <div className="flex flex-col justify-between w-full 2xl:w-[55%] h-auto   rounded-[3rem] p-6 md:p-1">
             {/* Top image + card */}
-            <div className="relative flex justify-center lg:justify-end items-start">
+            <div className="relative flex justify-center xl:justify-end items-start">
               <Image
                 src="/small-card-pic.png"
                 alt="Play Button"
                 width={96}
                 height={96}
-                className="w-40 h-40 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 ml-4 lg:ml-10"
+                className="w-65 h-65 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 ml-4 lg:ml-10"
               />
               {/* card over image */}
               <div
@@ -1100,7 +1110,7 @@ export default function HomePage() {
                 // flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
                 // w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(25%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(40%,25vw,28%)]
                 // rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
-                className="absolute top-0 sm:top-36 md:top-40 lg:top-44 right-22 max-sm:right-5 sm:right-60  lg:right-20 
+                className="absolute top-30 sm:top-36 md:top-40 lg:top-44 right-22 max-sm:right-20 sm:right-65 lg:right-100 xl:right-25 
                 flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
                 w-[80%] max-sm:w-[150px] sm:w-[200px] md:w-[180px] lg:w-[180px]
                 rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
@@ -1122,7 +1132,7 @@ export default function HomePage() {
 
             {/* List section */}
             <div
-              className="flex  lg:justify-end justify-center mt-10 sm:mt-16 px-4"
+              className="flex  xl:justify-end justify-center mt-10 sm:mt-16 px-4"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               <ul className="space-y-6 w-full max-w-[700px] ">
@@ -1290,7 +1300,8 @@ export default function HomePage() {
 
 
 
-      <section className="relative w-full min-h-screen bg-white bg-app text-[#6FA5D4]  flex flex-col items-center justify-center overflow-hidden py-16">
+      <section className="relative w-full min-h-screen bg-white dark:bg-[var(--background)]
+       text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden mb-10 my-10 md:my-0 ">
         {/* Scrolling Text */}
         <div className="relative top-0 left-0 w-full overflow-hidden">
           <div
@@ -1309,13 +1320,20 @@ export default function HomePage() {
             <span className="uppercase">
               Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
             </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
+            <span className="uppercase">
+              Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
+            </span>
           </div>
         </div>
 
         {/* Cards */}
         <div
           className={`absolute flex items-center justify-center transition-all duration-500 mt-12 ${isExpanded ? "gap-6 flex-row w-full max-w-5xl" : "w-[250px] h-[320px]"
-            }`}
+            }`
+          }
         >
           {/* {cards.map((card) => (
             <div
@@ -1348,7 +1366,8 @@ export default function HomePage() {
             <div
               key={card.title}
               onClick={HandleCardClick}
-              className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-gray-200 cursor-pointer absolute `}
+              className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-[#E1E1E1] 
+                dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `}
               style={{
                 transform: isExpanded
                   ? `translateX(${card.expandedX}px) rotate(0deg)`
@@ -1363,12 +1382,14 @@ export default function HomePage() {
                 alt={card.title}
                 className="w-full h-[190px] object-cover rounded-t-2xl p-4"
               />
-              <div className="p-3 flex justify-between items-center h-[calc(100%-190px)]">
-                <h3 className="font-semibold text-[16px] text-black leading-tight">
+              <div className="p-3 flex justify-between items-center h-[calc(100%-190px)]" style={{ fontFamily: "Afacad, sans-serif" }}>
+                <h3 className="font-semibold text-[clamp(20.25px,1vw+14.1px,34px)] text-app leading-tight">
                   {card.title}
                 </h3>
-                <button className="bg-[#6FA5D4] text-white rounded-full w-8 h-8 flex items-center justify-center transition hover:bg-[#5c90c0]">
-                  →
+                <button className="bg-[#6FA5D4] text-app rounded-full w-8 h-8 flex items-center justify-center transition hover:bg-[#5c90c0]">
+                  {/* → */}
+                  <IoIosArrowRoundForward className="text-2xl" />
+
                 </button>
               </div>
             </div>
@@ -1420,7 +1441,7 @@ export default function HomePage() {
 
 
       {/* Card Section */}
-      <section className="min-h-screen flex flex-col items-center justify-center mb-50">
+      <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10 mt-10  ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"
@@ -1441,7 +1462,7 @@ export default function HomePage() {
           Select a tile below to explore and learn more about peptides.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 p-6 md:p-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-[63px] mt-8 p-6 md:p-12">
           {[
             {
               img: "brain.png",
@@ -1474,9 +1495,10 @@ export default function HomePage() {
               desc: "Essential information and emerging developments in peptide science",
             },
           ].map((card, index) => (
-            <div key={index} className="gradient-card-border">
+            <div key={index} className=" p-[2px] rounded-[3rem] w-[90%] max-w-[450px] min-h-[450px] md:h-[490px] mx-auto 
+    relative bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] ">
               <div
-                className="p-6 shadow-lg rounded-[3rem] flex flex-col items-center justify-center 
+                className="p-6  rounded-[3rem] flex flex-col items-center justify-center 
                 bg-app w-full h-full transition-colors duration-500 ease-in-out group 
                 hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] 
                 cursor-pointer"
@@ -1491,10 +1513,15 @@ export default function HomePage() {
                   className={`mb-2 h-10 ${card.img === "sheild.png" ? "w-8" : "w-10"
                     }`}
                 />
+                {/* 
+text-[clamp(22.5px,1.67vw+17.2px,46px)]
+text-[clamp(18px,0.43vw+16.63px,24px)] */}
 
                 {/* Card Title */}
                 <span
-                  className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px]  font-semibold leading-[50px] text-center mt-2"
+                  // className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px]  font-semibold leading-[50px] text-center mt-2"
+                  className="text-[clamp(22.5px,1.67vw+17.2px,46px)]  font-semibold leading-[50px] text-center mt-2"
+
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   {card.title}
@@ -1502,7 +1529,9 @@ export default function HomePage() {
 
                 {/* Description */}
                 <p
-                  className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[130%] text-center px-4 mt-2"
+                  // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[130%] text-center px-4 mt-2"
+                  className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-[130%] text-center px-4 mt-2"
+
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   {card.desc}
@@ -1510,10 +1539,13 @@ export default function HomePage() {
 
                 {/* More Button */}
                 <button
-                  className="mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium rounded-lg 
+                  className="mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium  rounded-t-lg
              hover:bg-gray-800 dark:border dark:border-white"
                   onClick={() => handleCardClick(card.title)}
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{
+                    fontFamily: "Afacad, sans-serif",
+                    borderBottom: '4px solid #A6C9EE', // light blue stripe (adjust color as needed)
+                  }}
                 >
                   More
                 </button>

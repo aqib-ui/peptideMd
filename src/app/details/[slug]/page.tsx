@@ -20,9 +20,9 @@ const Page = ({ params }: PageProps) => {
           </h1>
         ),
         content: (
-          <div className="mx-auto text-left">
+          <div className="mx-auto text-left mb-48">
             <h2
-              className="text-[34px] max-md:text-[28px] max-md:mt-5 font-medium leading-[100%] mb-10"
+              className="text-[34px] max-md:text-[28px] max-md:mt-5 font-medium leading-[100%] mt-4 mb-10"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               Understanding the Role of Peptides in Mental Health
@@ -30,19 +30,31 @@ const Page = ({ params }: PageProps) => {
 
             {/* "Peptide Overview" Button */}
 
-            <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
+            {/* <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
               <button
-                className="w-full h-full rounded-full bg-app text-black text-xl font-medium
+                className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
     flex items-center justify-center transition-colors duration-100 
     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Explore More
               </button>
-            </div>
+            </div> */}
 
+{/* "Peptide Overview" Button */}
+<div className="gradient-border">
+            <button
+            className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
+            flex items-center justify-center transition-colors duration-100 
+            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Explore More
+            </button>
+          </div>
+            
             <p
-              className="text-[24px] font-medium leading-[130%] mb-10"
+              className="text-[24px] font-medium leading-[130%] mt-10 mb-10"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               Mental health is an important part of overall well-being. Many
@@ -192,7 +204,7 @@ const Page = ({ params }: PageProps) => {
           </h1>
         ),
         content: (
-          <div className="max-w-4xl text-left">
+          <div className="max-w-4xl text-left mb-48">
             <h2
               className="text-[34px] font-medium leading-[100%] mt-4"
               style={{ fontFamily: "Afacad, sans-serif" }}
@@ -200,13 +212,11 @@ const Page = ({ params }: PageProps) => {
               Understanding Essentials
             </h2>
 
-            {/* "Peptide Overview" Button */}
-
-            <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
+            <div className="gradient-border">
               <button
-                className="w-full h-full rounded-full bg-app text-black text-xl font-medium
-    flex items-center justify-center transition-colors duration-100 
-    ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
+                className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
+            flex items-center justify-center transition-colors duration-100 
+            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
                 Explore More
@@ -349,35 +359,676 @@ const Page = ({ params }: PageProps) => {
           </div>
         ),
       },
-      longevity: {
-        title: <h1 className="text-4xl font-bold">Longevity</h1>,
+      "longevity": {
+        title: (
+          <h1
+            className="flex  max-md:flex-col text-4xl font-bold text-[72px] max-md:text-[60px] leading-[100%] text-left"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            Longevity
+            <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
+              Knowledge
+            </span>
+          </h1>
+        ),
         content: (
-          <p>
-            Learn about peptides that may support healthy aging and vitality.
-          </p>
+          <div className="max-w-4xl text-left mb-48">
+            <h2
+              className="text-[34px] font-medium leading-[100%] mt-4"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Discover how peptides may support healthy aging and vitality
+            </h2>
+
+            <div className="gradient-border">
+              <button
+                className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
+            flex items-center justify-center transition-colors duration-100 
+            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
+                style={{ fontFamily: "Afacad, sans-serif" }}
+              >
+                Explore More
+              </button>
+            </div>
+
+            <p
+              className="text-[24px] font-medium leading-[130%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              For General Readers:
+            </p>
+            <p
+              className="text-[24px] font-medium leading-[130%] mb-4"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Basic concepts to understand:
+            </p>
+
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-10 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 
+                before:border-3 before:border-[#88D3FF] before:rounded-full before:absolute
+                before:left-0 before:top-1/2 before:-translate-y-1/2"
+              >
+                What Are Peptides?
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 
+                before:border-3 before:border-[#88D3FF] before:rounded-full before:absolute
+                before:left-0 before:top-1/2 before:-translate-y-1/2"
+              >
+                How they work in the body
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Different types and uses
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Important safety information
+              </li>
+            </ul>
+
+            <h3
+              className="text-[24px] font-medium leading-[120%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              For Healthcare Professionals:
+            </h3>
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-2 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Advanced concepts:
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Molecular mechanisms
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Pharmacokinetics
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+              before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+              before:top-1/2 before:-translate-y-1/2"
+              >
+                Clinical applications
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3
+              before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+              before:top-1/2 before:-translate-y-1/2"
+              >
+                Treatment protocols
+              </li>
+            </ul>
+
+            <h3
+              className="text-[24px] font-medium leading-[120%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Stay Informed About:
+            </h3>
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-2 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                New research findings
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Regulatory updates
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Clinical best practices
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Patient selection criteria
+              </li>
+            </ul>
+          </div>
         ),
       },
       "research-focus": {
-        title: <h1 className="text-4xl font-bold">Research Focus</h1>,
+        title: (
+          <h1
+            className="flex  max-md:flex-col text-4xl font-bold text-[72px] max-md:text-[60px] leading-[100%] text-left"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            Research focus
+            <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
+              Knowledge
+            </span>
+          </h1>
+        ),
         content: (
-          <p>
-            Latest scientific discoveries and clinical applications of peptides.
-          </p>
+          <div className="max-w-4xl text-left mb-48">
+            <h2
+              className="text-[34px] font-medium leading-[100%] mt-4"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Latest scientific discoveries and clinical applications
+            </h2>
+
+            <div className="gradient-border">
+              <button
+                className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
+            flex items-center justify-center transition-colors duration-100 
+            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
+                style={{ fontFamily: "Afacad, sans-serif" }}
+              >
+                Explore More
+              </button>
+            </div>
+
+            <p
+              className="text-[24px] font-medium leading-[130%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              For General Readers:
+            </p>
+            <p
+              className="text-[24px] font-medium leading-[130%] mb-4"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Basic concepts to understand:
+            </p>
+
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-10 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 
+                before:border-3 before:border-[#88D3FF] before:rounded-full before:absolute
+                before:left-0 before:top-1/2 before:-translate-y-1/2"
+              >
+                What Are Peptides?
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 
+                before:border-3 before:border-[#88D3FF] before:rounded-full before:absolute
+                before:left-0 before:top-1/2 before:-translate-y-1/2"
+              >
+                How they work in the body
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Different types and uses
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Important safety information
+              </li>
+            </ul>
+
+            <h3
+              className="text-[24px] font-medium leading-[120%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              For Healthcare Professionals:
+            </h3>
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-2 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Advanced concepts:
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Molecular mechanisms
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Pharmacokinetics
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+              before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+              before:top-1/2 before:-translate-y-1/2"
+              >
+                Clinical applications
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3
+              before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+              before:top-1/2 before:-translate-y-1/2"
+              >
+                Treatment protocols
+              </li>
+            </ul>
+
+            <h3
+              className="text-[24px] font-medium leading-[120%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Stay Informed About:
+            </h3>
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-2 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                New research findings
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Regulatory updates
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Clinical best practices
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Patient selection criteria
+              </li>
+            </ul>
+          </div>
         ),
       },
       "safety-first": {
-        title: <h1 className="text-4xl font-bold">Safety First</h1>,
+        title: (
+          <h1
+            className="flex  max-md:flex-col text-4xl font-bold text-[72px] max-md:text-[60px] leading-[100%] text-left"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            Safety First
+            <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
+              Knowledge
+            </span>
+          </h1>
+        ),
         content: (
-          <p>
-            Understanding safety guidelines and best practices for using
-            peptides.
-          </p>
+          <div className="max-w-4xl text-left mb-48">
+            <h2
+              className="text-[34px] font-medium leading-[100%] mt-4"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Understanding safety guidelines and best practices
+            </h2>
+
+            <div className="gradient-border">
+              <button
+                className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
+            flex items-center justify-center transition-colors duration-100 
+            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
+                style={{ fontFamily: "Afacad, sans-serif" }}
+              >
+                Explore More
+              </button>
+            </div>
+
+            <p
+              className="text-[24px] font-medium leading-[130%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              For General Readers:
+            </p>
+            <p
+              className="text-[24px] font-medium leading-[130%] mb-4"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Basic concepts to understand:
+            </p>
+
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-10 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 
+                before:border-3 before:border-[#88D3FF] before:rounded-full before:absolute
+                before:left-0 before:top-1/2 before:-translate-y-1/2"
+              >
+                What Are Peptides?
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 
+                before:border-3 before:border-[#88D3FF] before:rounded-full before:absolute
+                before:left-0 before:top-1/2 before:-translate-y-1/2"
+              >
+                How they work in the body
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Different types and uses
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Important safety information
+              </li>
+            </ul>
+
+            <h3
+              className="text-[24px] font-medium leading-[120%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              For Healthcare Professionals:
+            </h3>
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-2 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Advanced concepts:
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Molecular mechanisms
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Pharmacokinetics
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+              before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+              before:top-1/2 before:-translate-y-1/2"
+              >
+                Clinical applications
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3
+              before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+              before:top-1/2 before:-translate-y-1/2"
+              >
+                Treatment protocols
+              </li>
+            </ul>
+
+            <h3
+              className="text-[24px] font-medium leading-[120%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Stay Informed About:
+            </h3>
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-2 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                New research findings
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Regulatory updates
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Clinical best practices
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Patient selection criteria
+              </li>
+            </ul>
+          </div>
         ),
       },
       "in-the-know": {
-        title: <h1 className="text-4xl font-bold">In the Know</h1>,
+        title: (
+          <h1
+            className="flex  max-md:flex-col text-4xl font-bold text-[72px] max-md:text-[60px] leading-[100%] text-left"
+            style={{ fontFamily: "Afacad, sans-serif" }}
+          >
+            In the know
+            <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
+              Knowledge
+            </span>
+          </h1>
+        ),
         content: (
-          <p>Stay updated with emerging developments in peptide science.</p>
+          <div className="max-w-4xl text-left mb-48">
+            <h2
+              className="text-[34px] font-medium leading-[100%] mt-4"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Essential information and emerging developments in peptide science
+            </h2>
+
+            <div className="gradient-border">
+              <button
+                className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
+            flex items-center justify-center transition-colors duration-100 
+            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
+                style={{ fontFamily: "Afacad, sans-serif" }}
+              >
+                Explore More
+              </button>
+            </div>
+
+            <p
+              className="text-[24px] font-medium leading-[130%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              For General Readers:
+            </p>
+            <p
+              className="text-[24px] font-medium leading-[130%] mb-4"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Basic concepts to understand:
+            </p>
+
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-10 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 
+                before:border-3 before:border-[#88D3FF] before:rounded-full before:absolute
+                before:left-0 before:top-1/2 before:-translate-y-1/2"
+              >
+                What Are Peptides?
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 
+                before:border-3 before:border-[#88D3FF] before:rounded-full before:absolute
+                before:left-0 before:top-1/2 before:-translate-y-1/2"
+              >
+                How they work in the body
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Different types and uses
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Important safety information
+              </li>
+            </ul>
+
+            <h3
+              className="text-[24px] font-medium leading-[120%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              For Healthcare Professionals:
+            </h3>
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-2 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Advanced concepts:
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Molecular mechanisms
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Pharmacokinetics
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+              before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+              before:top-1/2 before:-translate-y-1/2"
+              >
+                Clinical applications
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3
+              before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+              before:top-1/2 before:-translate-y-1/2"
+              >
+                Treatment protocols
+              </li>
+            </ul>
+
+            <h3
+              className="text-[24px] font-medium leading-[120%] mt-10"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              Stay Informed About:
+            </h3>
+            <ul
+              className="text-[24px] font-medium leading-[120%] mt-2 space-y-1"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                New research findings
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Regulatory updates
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0 
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Clinical best practices
+              </li>
+              <li
+                className="relative pl-6 before:content-[''] before:w-3 before:h-3 before:border-3 
+                before:border-[#88D3FF] before:rounded-full before:absolute before:left-0
+                before:top-1/2 before:-translate-y-1/2"
+              >
+                Patient selection criteria
+              </li>
+            </ul>
+          </div>
         ),
       },
     };
