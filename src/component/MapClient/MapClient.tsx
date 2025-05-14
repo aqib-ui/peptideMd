@@ -38,7 +38,7 @@ const MapControls = ({ mapRef }: { mapRef: React.MutableRefObject<any> }) => {
   };
 
   return (
-    <div className="absolute top-[40%] right-12 flex flex-col items-center gap-4 z-10 overflow-hidden">
+    <div className="absolute top-[40%] right-2 md:right-12 flex flex-col items-center gap-4 z-10 overflow-hidden">
       {/* Plus Button */}
       <div className="flex justify-center items-center w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full shadow-lg bg-app cursor-pointer" onClick={zoomIn}>
         <span className="text-[clamp(17px,0.94vw+14px,26px)] "><FiPlus/></span>
@@ -127,7 +127,7 @@ const MapClient = () => {
 
   
 
-  <div className="px-0 sm:px-1 lg:px-2 xl:px-4 2xl:px-6">
+  <div className="px-6 sm:px-4 lg:px-2 xl:px-4 2xl:px-6">
   <div
     className="w-full max-w-full sm:w-[1000px] md:w-[1200px] lg:w-[1400px] xl:w-[1500px] 2xl:w-[1600px] 
                h-[500px] sm:h-[700px] md:h-[900px] lg:h-[1000px] xl:h-[1100px] 2xl:h-[1200px]
