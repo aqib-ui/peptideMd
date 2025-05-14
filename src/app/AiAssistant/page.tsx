@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { TiLocationArrow } from "react-icons/ti";
-import MoleculeTopLeftAnimation from "@/app/MianComponent/page";
+import MoleculeTopLeftAnimation from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 
 const AiAssistantPage = () => {
   const [showNewSection, setShowNewSection] = React.useState(false);

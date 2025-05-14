@@ -3,7 +3,12 @@
 import Image from "next/image";
 import { useState } from "react";
 import { LiaAngleDownSolid } from "react-icons/lia";
-import MoleculeTopLeftAnimation from "@/app/MianComponent/page";
+import MoleculeTopLeftAnimation from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import dynamic from "next/dynamic";
+
+const ScrollButton2= dynamic(() => import('@/component/ScrollButton/ScrollButton2'), {
+  ssr: false
+});
 
 export default function PeptideDatabase() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -67,6 +72,7 @@ export default function PeptideDatabase() {
     // },
   ];
 
+   
   return (
     <>
       <MoleculeTopLeftAnimation
@@ -190,24 +196,11 @@ export default function PeptideDatabase() {
               </button>
 
               {/* Search Button - visually in front */}
-              <button
-                className="relative z-20 w-16 h-16 bg-[#88D3FF] rounded-full flex items-center justify-center"
-                onClick={() => {
-                  if (window.innerWidth < 768) {
-                    setShowSearch(!showSearch); // toggle for mobile
-                  } else {
-                    console.log("Searching:", searchQuery); // instant for desktop
-                  }
-                }}
-              >
-                <Image
-                  src="/blue-search.png"
-                  alt="Search"
-                  width={24}
-                  height={24}
-                  className="w-6 h-6"
-                />
-              </button>
+              <ScrollButton2
+  showSearch={showSearch}
+  setShowSearch={setShowSearch}
+  searchQuery={searchQuery}
+/>
 
               {/* Dropdown Menu */}
               {showDropdown && (

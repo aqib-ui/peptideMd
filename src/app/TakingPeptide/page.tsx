@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import MoleculeTopLeftAnimation from "@/app/MianComponent/page";
+import MoleculeTopLeftAnimation from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 
 export default function TakingPeptide() {
   return (

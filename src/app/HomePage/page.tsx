@@ -644,6 +644,11 @@ import { FaArrowRight } from "react-icons/fa6";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
 import { IoIosInformationCircleOutline } from "react-icons/io";
+import dynamic from "next/dynamic";
+
+const ScrollButton = dynamic(() => import('@/component/ScrollButton/ScrollButton'), {
+  ssr: false
+});
 
 export default function HomePage() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -661,6 +666,7 @@ export default function HomePage() {
   const handleCardClick = (slug: string) => {
     router.push(`/details/${slug.toLowerCase().replace(/\s+/g, "-")}`); // Converts title to URL-friendly slug
   };
+
 
   const slides = ["Dosage Guide", "Calculator", "Combination", "AI Chat Bot"];
 
@@ -786,35 +792,9 @@ export default function HomePage() {
 
 
         </div>
-        <div className="bottom-[60px] absolute right-[550px] transform -translate-x-1/2 z-20">
-          {/* Scroll Button restored */}
-          <button
-            // onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-            // onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-            // onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-
-
-
-
-            // onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
-            // onClick={() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })}
-            // onClick={() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })}
-
-            className="absolute right-30   -translate-y-1/2 bg-black text-white text-sm font-medium hover:bg-gray-800 transition rounded-lg shadow-md cursor-pointer"
-            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-
-            style={{
-              writingMode: 'vertical-rl',
-              padding: '2rem 0.75rem',
-              letterSpacing: '0.1rem',
-              borderLeft: '4px solid #A6C9EE', // light blue stripe (adjust color as needed)
-              borderTopLeftRadius: '8px',
-              borderBottomLeftRadius: '8px',
-            }}
-          >
-            Scroll
-          </button>
-        </div>
+     <div className="bottom-[60px] absolute right-[550px] transform -translate-x-1/2 z-20">
+  <ScrollButton />
+</div>
 
 
 
