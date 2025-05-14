@@ -782,8 +782,8 @@ export default function HomePage() {
               // ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
               className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
             flex items-center justify-center transition-colors duration-100 
-            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white "
+              style={{ fontFamily: "Afacad, sans-serif", cursor: "pointer" }}
             >
               Peptide Overview
             </button>
@@ -792,9 +792,9 @@ export default function HomePage() {
 
 
         </div>
-     <div className="bottom-[60px] absolute right-[550px] transform -translate-x-1/2 z-20">
-  <ScrollButton />
-</div>
+        <div className="bottom-[70px] absolute right-[590px] transform -translate-x-1/2 z-20">
+          <ScrollButton />
+        </div>
 
 
 
@@ -1523,6 +1523,7 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
              hover:bg-gray-800 dark:border dark:border-white"
                   onClick={() => handleCardClick(card.title)}
                   style={{
+                    cursor: "pointer",
                     fontFamily: "Afacad, sans-serif",
                     borderBottom: '4px solid #A6C9EE', // light blue stripe (adjust color as needed)
                   }}

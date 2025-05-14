@@ -39,6 +39,7 @@ interface AnimatedCardProps {
     rotate: string;
     zIndex: number;
     isExpanded: boolean;
+
 }
 
 export function AnimatedCard({ title, imageSrc, onClick, rotate, zIndex, isExpanded }: AnimatedCardProps) {
