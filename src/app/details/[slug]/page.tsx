@@ -5,6 +5,7 @@ interface PageProps {
   params: ParamsType;
 }
 import Image from "next/image";
+import ScrollButton from "@/component/ScrollButton/ScrollButton";
 
 
 
@@ -1084,6 +1085,8 @@ const Page = ({ params }: PageProps) => {
         </style>
       </div>
       {/* Button Scroll */}
+      {/* Scroll Button restored */}
+      <ScrollButton />
 
 
 
