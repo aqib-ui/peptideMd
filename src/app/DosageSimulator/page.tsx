@@ -374,7 +374,7 @@ width: clamp(24px, 5vw, 36px);
           {/* <div
             className="flex flex-col  font-medium 
             text-opacity-100 w-[95%] max-w-[1233px] h-[706px] rounded-4xl mt-10 p-10 bg-[#94C4ED]/40"
-          > */}
+          > */}  
           <div
   className="flex flex-col font-medium 
   text-opacity-100 w-[95%] max-w-[1233px] h-[706px] rounded-4xl mt-10 p-10 
