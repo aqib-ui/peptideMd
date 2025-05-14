@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import Image from "next/image";
-import { MoleculeTopLeftAnimation } from "../MianComponent/page";
+import MoleculeTopLeftAnimation from "@/app/MianComponent/page";
 
 export default function DosageSimulator() {
   const [selected, setSelected] = useState<"Dosage Guide" | "Calculator">(
@@ -41,7 +41,14 @@ export default function DosageSimulator() {
           </div>
         </div>
       </div>
-      
+      <div className="">
+        <MoleculeTopLeftAnimation
+          mainheading="Peptide"
+          span="Usage Simulator"
+          para="This simulator is for educational purposes only. Always consult with a qualified healthcare provider before starting any peptide therapy."
+        />
+      </div>
+
       <div className="container px-4 py-10">
         {/* Conditionally render content */}
         {selected === "Dosage Guide" ? <DosageGuide /> : <Calculator />}
@@ -80,170 +87,164 @@ function DosageGuide() {
 
   return (
     <>
-      <div>
-        <MoleculeTopLeftAnimation
-          mainheading="Peptide"
-          span="Usage Simulator"
-          para="This simulator is for educational purposes only. Always consult with a qualified healthcare provider before starting any peptide therapy."
-        />
-      </div>
-    <div className="pl-5 pr-4">
-      
+
+      <div className="pl-5 pr-4">
 
 
-      {/* Step 1 */}
-      <div
-        className="mt-[120px] mb-6 px-4 sm:px-6"
-        style={{ fontFamily: "Afacad, sans-serif" }}
-      >
-        <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
-          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
-            Step 1:
-          </span>
-          Select Peptide
-        </h3>
 
-        <div className="lg:-mt-4 lg:ml-43">
-          <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
-            Choose a peptide to simulate its usage
+        {/* Step 1 */}
+        <div
+          className="mt-[120px] mb-6 px-4 sm:px-6"
+          style={{ fontFamily: "Afacad, sans-serif" }}
+        >
+          <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
+            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
+              Step 1:
+            </span>
+            Select Peptide
           </h3>
 
-          {/* Dropdown */}
-          <div className="mt-6">
-            {/* <div className="relative max-lg:w-[80%]"> */}
-            {/* <div className="relative w-full sm:w-[100%] md:w-[100%] lg:w-[100%] xl:w-[75%] 2xl:w-[81%]"> */}
-            <div className="relative w-[90%] max-w-[1248px] h-[80px] rounded-[25px]">
-              <Listbox value={selectedPeptide} onChange={setSelectedPeptide}>
-                <div className="relative">
-                  <Listbox.Button
-                    className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 focus:outline-none 
+          <div className="lg:-mt-4 lg:ml-43">
+            <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
+              Choose a peptide to simulate its usage
+            </h3>
+
+            {/* Dropdown */}
+            <div className="mt-6">
+              {/* <div className="relative max-lg:w-[80%]"> */}
+              {/* <div className="relative w-full sm:w-[100%] md:w-[100%] lg:w-[100%] xl:w-[75%] 2xl:w-[81%]"> */}
+              <div className="relative w-[90%] max-w-[1248px] h-[80px] rounded-[25px]">
+                <Listbox value={selectedPeptide} onChange={setSelectedPeptide}>
+                  <div className="relative">
+                    <Listbox.Button
+                      className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 focus:outline-none 
                     text-xl md:text-2xl font-medium text-left
                   text-[#224674] dark:text-[var(--foreground)]"
-                  >
-                    {/* <input
+                    >
+                      {/* <input
                 type="text"
                 placeholder="Enter Desired Dose"
                 className="w-full h-16 px-4 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
         text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
               /> */}
-                    {selectedPeptide || "Select peptide"}
-                    {/* <Image
+                      {selectedPeptide || "Select peptide"}
+                      {/* <Image
                       src="/dropdown-icon.png"
                       alt="Dropdown icon"
                       width={55}
                       height={0}
                       className="absolute  top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
                     /> */}
-                    <Image
-                      src="/dropdown-icon.png"
-                      alt="Dropdown icon"
-                      width={60}
-                      height={60}
-                      className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
-                    />
-                  </Listbox.Button>
+                      <Image
+                        src="/dropdown-icon.png"
+                        alt="Dropdown icon"
+                        width={60}
+                        height={60}
+                        className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
+                      />
+                    </Listbox.Button>
 
-                  <Listbox.Options
-                    className="absolute mt-1 w-full max-h-[96px] overflow-y-auto rounded-3xl bg-white text-[#224674] 
+                    <Listbox.Options
+                      className="absolute mt-1 w-full max-h-[96px] overflow-y-auto rounded-3xl bg-white text-[#224674] 
                     dark:border-2 dark:border-r-0 dark:bg-[var(--background)] dark:text-[var(--foreground)] 
                     shadow-lg z-50 text-[20px] font-medium"
-                  >
-                    {peptides.length > 0 ? (
-                      peptides.map((peptide, index) => (
-                        <Listbox.Option
-                          key={index}
-                          value={peptide}
-                          className={({ active }) =>
-                            `cursor-pointer px-4 py-2 ${active ? "bg-[#94C4ED]/40" : ""
-                            }`
-                          }
-                        >
-                          {peptide}
-                        </Listbox.Option>
-                      ))
-                    ) : (
-                      <div className="px-4 py-2 text-gray-500">
-                        Loading peptides...
-                      </div>
-                    )}
-                  </Listbox.Options>
-                </div>
-              </Listbox>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Step 2: Protocol Selection */}
-      <div
-        className="mt-[120px] mb-6 px-4 sm:px-6"
-        style={{ fontFamily: "Afacad, sans-serif" }}
-      >
-        <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold">
-          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED]  text-black mr-2">
-            Step 2:
-          </span>
-          Protocol Selection
-        </h3>
-
-        <div className="lg:-mt-4 lg:ml-43">
-          <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
-            Choose between standard and microdosing protocols
-          </h3>
-
-          {/* Toggle Button - now same width as Step 1 dropdown */}
-          <div className="flex  mt-6">
-            <div className="relative w-[90%] max-w-[1248px] h-[80px] bg-[#94C4ED]/40 rounded-[25px]">
-              <div className="flex w-full h-full text-[#224674] dark:text-[var(--foreground)] text-lg sm:text-xl lg:text-2xl relative">
-                <div
-                  className={`absolute top-0 bottom-0 w-[52%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
-              ${selectedProtocol === "Microdosing" ? "left-[48%]" : "left-0"}
-            `}
-                ></div>
-
-                <button
-                  onClick={() => setSelectedProtocol("Standard")}
-                  className="relative z-10 w-1/2 text-center py-2 font-medium transition"
-                >
-                  Standard Protocol
-                </button>
-                <button
-                  onClick={() => setSelectedProtocol("Microdosing")}
-                  className="relative z-10 w-1/2 text-center py-2 font-medium transition"
-                >
-                  Microdosing Protocol
-                </button>
+                    >
+                      {peptides.length > 0 ? (
+                        peptides.map((peptide, index) => (
+                          <Listbox.Option
+                            key={index}
+                            value={peptide}
+                            className={({ active }) =>
+                              `cursor-pointer px-4 py-2 ${active ? "bg-[#94C4ED]/40" : ""
+                              }`
+                            }
+                          >
+                            {peptide}
+                          </Listbox.Option>
+                        ))
+                      ) : (
+                        <div className="px-4 py-2 text-gray-500">
+                          Loading peptides...
+                        </div>
+                      )}
+                    </Listbox.Options>
+                  </div>
+                </Listbox>
               </div>
             </div>
           </div>
-
-          <h3 className="text-xl sm:text-2xl leading-[1.6] mt-4 font-medium">
-            Standard dosing protocol typically used for primary treatment
-            phases.
-          </h3>
         </div>
-      </div>
 
-      {/* Step 3: Dosage Selection & Visualization */}
-      <div
-        className="mt-[120px] px-4 sm:px-6"
-        style={{ fontFamily: "Afacad, sans-serif" }}
-      >
-        <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
-          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
-            Step 3:
-          </span>
-          Dosage Selection & Visualization
-        </h3>
-
-        <div className="lg:-mt-4 lg:ml-43">
-          <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
-            Recommended range for AHK-Cu
+        {/* Step 2: Protocol Selection */}
+        <div
+          className="mt-[120px] mb-6 px-4 sm:px-6"
+          style={{ fontFamily: "Afacad, sans-serif" }}
+        >
+          <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold">
+            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED]  text-black mr-2">
+              Step 2:
+            </span>
+            Protocol Selection
           </h3>
 
-          {/*slider  */}
-          {/* <div className="relative mt-8 w-[90%] max-w-[1248px]">
+          <div className="lg:-mt-4 lg:ml-43">
+            <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
+              Choose between standard and microdosing protocols
+            </h3>
+
+            {/* Toggle Button - now same width as Step 1 dropdown */}
+            <div className="flex  mt-6">
+              <div className="relative w-[90%] max-w-[1248px] h-[80px] bg-[#94C4ED]/40 rounded-[25px]">
+                <div className="flex w-full h-full text-[#224674] dark:text-[var(--foreground)] text-lg sm:text-xl lg:text-2xl relative">
+                  <div
+                    className={`absolute top-0 bottom-0 w-[52%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
+              ${selectedProtocol === "Microdosing" ? "left-[48%]" : "left-0"}
+            `}
+                  ></div>
+
+                  <button
+                    onClick={() => setSelectedProtocol("Standard")}
+                    className="relative z-10 w-1/2 text-center py-2 font-medium transition"
+                  >
+                    Standard Protocol
+                  </button>
+                  <button
+                    onClick={() => setSelectedProtocol("Microdosing")}
+                    className="relative z-10 w-1/2 text-center py-2 font-medium transition"
+                  >
+                    Microdosing Protocol
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <h3 className="text-xl sm:text-2xl leading-[1.6] mt-4 font-medium">
+              Standard dosing protocol typically used for primary treatment
+              phases.
+            </h3>
+          </div>
+        </div>
+
+        {/* Step 3: Dosage Selection & Visualization */}
+        <div
+          className="mt-[120px] px-4 sm:px-6"
+          style={{ fontFamily: "Afacad, sans-serif" }}
+        >
+          <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
+            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
+              Step 3:
+            </span>
+            Dosage Selection & Visualization
+          </h3>
+
+          <div className="lg:-mt-4 lg:ml-43">
+            <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
+              Recommended range for AHK-Cu
+            </h3>
+
+            {/*slider  */}
+            {/* <div className="relative mt-8 w-[90%] max-w-[1248px]">
             <input
               type="range"
               min="0"
@@ -257,7 +258,7 @@ function DosageGuide() {
               {sliderValue}%
             </span>
           </div> */}
-          {/* <div className="relative mt-8 w-[90%] max-w-[1248px]">
+            {/* <div className="relative mt-8 w-[90%] max-w-[1248px]">
   <input
     type="range"
     min="0"
@@ -293,34 +294,34 @@ function DosageGuide() {
     }
   `}</style>
 </div> */}
-          <div className="relative mt-8 w-[90%] max-w-[1248px] mb-20">
-            <input
-              type="range"
-              min="0"
-              max="2000"
-              step="1"
-              value={sliderValue}
-              onChange={(e) => setSliderValue(Number(e.target.value))}
-              className="w-full h-2 appearance-none custom-slider"
-            />
+            <div className="relative mt-8 w-[90%] max-w-[1248px] mb-20">
+              <input
+                type="range"
+                min="0"
+                max="2000"
+                step="1"
+                value={sliderValue}
+                onChange={(e) => setSliderValue(Number(e.target.value))}
+                className="w-full h-2 appearance-none custom-slider"
+              />
 
-            {/* <div className="absolute right-0 bottom-[-38px] bg-gradient-to-r from-[#5CB0E2] to-[#EB6793] p-[2px] rounded-2xl">
+              {/* <div className="absolute right-0 bottom-[-38px] bg-gradient-to-r from-[#5CB0E2] to-[#EB6793] p-[2px] rounded-2xl">
               <span className="block bg-white text-[#224674] font-semibold text-lg px-3 py-1 rounded-2xl">
                 {sliderValue} mcg
               </span>
             </div> */}
-            <div className="absolute right-0 flex items-center gap-2">
-              <span className="font-medium text-base sm:text-lg md:text-xl lg:text-2xl">
-                Selected peptide:
-              </span>
-              <div className="bg-gradient-to-r from-[#5CB0E2] to-[#EB6793] p-[2px] rounded-2xl">
-                <span className="block bg-white text-[#224674] font-semibold text-base sm:text-lg md:text-xl lg:text-2xl px-3 py-1 rounded-2xl">
-                  {sliderValue} mcg
+              <div className="absolute right-0 flex items-center gap-2">
+                <span className="font-medium text-base sm:text-lg md:text-xl lg:text-2xl">
+                  Selected peptide:
                 </span>
+                <div className="bg-gradient-to-r from-[#5CB0E2] to-[#EB6793] p-[2px] rounded-2xl">
+                  <span className="block bg-white text-[#224674] font-semibold text-base sm:text-lg md:text-xl lg:text-2xl px-3 py-1 rounded-2xl">
+                    {sliderValue} mcg
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <style jsx>{`
+              <style jsx>{`
               .custom-slider {
                 background: linear-gradient(
                   to right,
@@ -348,163 +349,164 @@ function DosageGuide() {
                 background: linear-gradient(to bottom, #eb6793, #5cb0e2);
               }
             `}</style>
-          </div>
+            </div>
 
-          {/* You can add more UI elements for protocol selection here */}
+            {/* You can add more UI elements for protocol selection here */}
 
-          <div className="my-20 ">
-            <input
-              type="image"
-              placeholder="Enter desired dose"
-              className="w-[90%] h-screen px-4 py-3 pb-20 focus:outline-none rounded-3xl bg-[#94C4ED]/30 text-[34px] 
+            <div className="my-20 ">
+              <input
+                type="image"
+                placeholder="Enter desired dose"
+                className="w-[90%] h-screen px-4 py-3 pb-20 focus:outline-none rounded-3xl bg-[#94C4ED]/30 text-[34px] 
         text-black/70  font-medium text-left align-top"
-            />
-            <p className="text-lg ">
-              Interactive 3D model of AHK-Cu. Use mouse to rotate and zoom.
-            </p>
-          </div>
+              />
+              <p className="text-lg ">
+                Interactive 3D model of AHK-Cu. Use mouse to rotate and zoom.
+              </p>
+            </div>
 
-          <div
-            className="flex flex-col  font-medium 
+            <div
+              className="flex flex-col  font-medium 
             text-opacity-100 w-[90%] rounded-4xl mt-10 p-10 bg-[#94C4ED]/40"
-          >
-            <div className="mb-6 ">
-              <h2
-                // className=" text-4xl"
-                className="text-[28px] md:text-[32px] lg:text-[34px]  font-semibold leading-[100%] text-left"
+            >
+              <div className="mb-6 ">
+                <h2
+                  // className=" text-4xl"
+                  className="text-[28px] md:text-[32px] lg:text-[34px]  font-semibold leading-[100%] text-left"
 
-              >Description</h2>
-              <p className="text-[20px] md:text-[22px] lg:text-[24px]">
-                A copper peptide similar to GHK-Cu with specific properties.
-              </p>
-            </div>
+                >Description</h2>
+                <p className="text-[20px] md:text-[22px] lg:text-[24px]">
+                  A copper peptide similar to GHK-Cu with specific properties.
+                </p>
+              </div>
 
-            <div className="mt-6 mb-6">
-              <h2 className=" text-[28px] md:text-[32px] lg:text-[34px]">
-                Applications
-              </h2>
-              <p className="text-[20px] md:text-[22px] lg:text-[24px]">
-                Skin health and tissue regeneration.
-              </p>
-            </div>
+              <div className="mt-6 mb-6">
+                <h2 className=" text-[28px] md:text-[32px] lg:text-[34px]">
+                  Applications
+                </h2>
+                <p className="text-[20px] md:text-[22px] lg:text-[24px]">
+                  Skin health and tissue regeneration.
+                </p>
+              </div>
 
-            <div className="mt-6 mb-10 first-letter:uppercase">
-              <h2 className=" text-[28px] md:text-[32px] lg:text-[34px]">
-                Benefits
-              </h2>
-              {/* <p className="text-2xl ">Skin health and tissue regeneration.</p> */}
-              <ul className="text-[20px] md:text-[22px] lg:text-[24px]">
-                <li
-                  className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
+              <div className="mt-6 mb-10 first-letter:uppercase">
+                <h2 className=" text-[28px] md:text-[32px] lg:text-[34px]">
+                  Benefits
+                </h2>
+                {/* <p className="text-2xl ">Skin health and tissue regeneration.</p> */}
+                <ul className="text-[20px] md:text-[22px] lg:text-[24px]">
+                  <li
+                    className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
                             before:absolute before:left-0 before:top-3 before:w-2.5 
                             before:h-2.5 before:rounded-full before:border-3 before:border-[#88D3FF]"
-                >
-                  Promotes collagen synthesis
-                </li>
-                <li
-                  className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
+                  >
+                    Promotes collagen synthesis
+                  </li>
+                  <li
+                    className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
                             before:absolute before:left-0 before:top-3 before:w-2.5 
                             before:h-2.5 before:rounded-full before:border-3 before:border-[#88D3FF]"
-                >
-                  Antioxidant properties
-                </li>
-                <li
-                  className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
+                  >
+                    Antioxidant properties
+                  </li>
+                  <li
+                    className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
                             before:absolute before:left-0 before:top-3 before:w-2.5 
                             before:h-2.5 before:rounded-full before:border-3 before:border-[#88D3FF]"
-                >
-                  Supports wound healing
-                </li>
-                <li
-                  className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
+                  >
+                    Supports wound healing
+                  </li>
+                  <li
+                    className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
                             before:absolute before:left-0 before:top-3 before:w-2.5 
                             before:h-2.5 before:rounded-full before:border-3 before:border-[#88D3FF]"
-                >
-                  Anti-inflammatory effects
-                </li>
-              </ul>
-            </div>
+                  >
+                    Anti-inflammatory effects
+                  </li>
+                </ul>
+              </div>
 
-            <div className="mt-6 ">
-              <h2 className="text-[28px] md:text-[32px] lg:text-[34px]">
-                Risk and Side Effects
-              </h2>
-              <ul className="text-[20px] md:text-[22px] lg:text-[24px] mt-4 mb-10 ">
-                <li
-                  className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
+              <div className="mt-6 ">
+                <h2 className="text-[28px] md:text-[32px] lg:text-[34px]">
+                  Risk and Side Effects
+                </h2>
+                <ul className="text-[20px] md:text-[22px] lg:text-[24px] mt-4 mb-10 ">
+                  <li
+                    className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
                             before:absolute before:left-0 before:top-3 before:w-2.5 
                             before:h-2.5 before:rounded-full before:border-3 before:border-[#88D3FF]"
-                >
-                  Limited research
-                </li>
-                <li
-                  className="relative pl-4 before:content-[''] 
+                  >
+                    Limited research
+                  </li>
+                  <li
+                    className="relative pl-4 before:content-[''] 
                             before:absolute before:left-0 before:top-3 before:w-2.5 
                             before:h-2.5 before:rounded-full before:border-3 before:border-[#88D3FF]"
-                >
-                  Not FDA approved
-                </li>
-                <li
-                  className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
+                  >
+                    Not FDA approved
+
+                  </li>
+                  <li
+                    className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
                             before:absolute before:left-0 before:top-3 before:w-2.5 
                             before:h-2.5 before:rounded-full before:border-3 before:border-[#88D3FF]"
-                >
-                  Optimal dosage unclear
-                </li>
-                <li
-                  className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
+                  >
+                    Optimal dosage unclear
+                  </li>
+                  <li
+                    className="relative pl-4 before:content-[''] first-letter:uppercase lowercase
                             before:absolute before:left-0 before:top-3 before:w-2.5 
                             before:h-2.5 before:rounded-full before:border-3 before:border-[#88D3FF]"
-                >
-                  Cost considerations
-                </li>
-              </ul>
+                  >
+                    Cost considerations
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Step 4: Administration Sites */}
-      <div
-        className="mt-[120px] mb-6 px-4 sm:px-6"
-        style={{ fontFamily: "Afacad, sans-serif" }}
-      >
-        <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
-          <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
-            Step 4:
-          </span>
-          Administration Sites
-        </h3>
-
-        <div className="md:lg:-mt-4 lg:ml-43">
-          <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
-            Common injection sites and rotation guidelines
+        {/* Step 4: Administration Sites */}
+        <div
+          className="mt-[120px] mb-6 px-4 sm:px-6"
+          style={{ fontFamily: "Afacad, sans-serif" }}
+        >
+          <h3 className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px] font-semibold">
+            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
+              Step 4:
+            </span>
+            Administration Sites
           </h3>
-          {/* You can add more UI elements for protocol selection here */}
 
-          <div
-            className="flex text-center justify-center items-center text-xl  text-black font-semibold 
+          <div className="md:lg:-mt-4 lg:ml-43">
+            <h3 className="text-xl sm:text-2xl leading-[1.6] font-medium">
+              Common injection sites and rotation guidelines
+            </h3>
+            {/* You can add more UI elements for protocol selection here */}
+
+            <div
+              className="flex text-center justify-center items-center text-xl  text-black font-semibold 
             text-opacity-100 h-screen w-[90%] rounded-4xl mt-10 p-10 bg-[#94C4ED]/40"
-          >
-            Interactive diagram coming soon
-          </div>
+            >
+              Interactive diagram coming soon
+            </div>
 
-          {/* "Peptide Overview" Button */}
+            {/* "Peptide Overview" Button */}
 
-          <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
-            <button
-              className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl lg:text-2xl font-medium
+            <div className="gradient-border w-[184px] h-[66px] rounded-full mb-10">
+              <button
+                className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl lg:text-2xl font-medium
     flex items-center justify-center transition-colors duration-100 
     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
-              style={{ fontFamily: "Afacad, sans-serif" }}
-            >
-              Explore More
-            </button>
+                style={{ fontFamily: "Afacad, sans-serif" }}
+              >
+                Explore More
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-      </>
+    </>
   );
 }
 
@@ -517,124 +519,126 @@ function Calculator() {
 
   const [selectedPeptide, setSelectedPeptide] = useState<string>("");
   const [peptides, setPeptides] = useState<string[]>([]);
+
   // const [sliderValue, setSliderValue] = useState(50);
+
 
   return (
     <>
-      <div>
+      {/* <div>
         <MoleculeTopLeftAnimation
           mainheading="Peptide"
           span="Usage Simulator"
           para="This simulator is for educational purposes only. Always consult with a qualified healthcare provider before starting any peptide therapy."
         />
-      </div>
-    <div className="pl-5 pr-4">
-     
+      </div> */}
+      <div className="pl-5 pr-4">
 
 
-      <div className="mt-30 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
-        <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold flex items-center flex-wrap">
-          Peptide Calculator
-        </h3>
-        <h3 className="text-xl sm:text-2xl leading-6.5 font-medium mb-12">
-          Calculate reconstitution measurements and injection volumes
-        </h3>
 
-        <div className="mt-16">
-          <div className="relative w-[80%]">
-            <h3 className="text-2xl sm:text-3xl md:text-[34px] leading-6.5 font-semibold mb-6">
-              Peptide Amount (mg)
-            </h3>
-            <div className="relative">
-              <input
-                type="number"
-                placeholder="Enter in mg"
-                className="w-full h-16 px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
+        <div className="mt-30 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
+          <h3 className="text-[36px] sm:text-[42px] lg:text-[46px] font-semibold flex items-center flex-wrap">
+            Peptide Calculator
+          </h3>
+          <h3 className="text-xl sm:text-2xl leading-6.5 font-medium mb-12">
+            Calculate reconstitution measurements and injection volumes
+          </h3>
+
+          <div className="mt-16">
+            <div className="relative w-[80%]">
+              <h3 className="text-2xl sm:text-3xl md:text-[34px] leading-6.5 font-semibold mb-6">
+                Peptide Amount (mg)
+              </h3>
+              <div className="relative">
+                <input
+                  type="number"
+                  placeholder="Enter in mg"
+                  className="w-full h-16 px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
         text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
-              />
-              <Image
-                src="/cal-enter-icon.png"
-                alt="Dropdown icon"
-                width={60}
-                height={60}
-                className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
-              />
+                />
+                <Image
+                  src="/cal-enter-icon.png"
+                  alt="Dropdown icon"
+                  width={60}
+                  height={60}
+                  className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="mt-18">
-          <div className="relative w-[80%]">
-            <h3 className="text-2xl sm:text-3xl md:text-[34px] leading-6.5 font-semibold mb-6">
-              Bacteriostatic Water (ml)
-            </h3>
-            <div className=" relative">
-              <input
-                type="number"
-                placeholder="Enter in ml"
-                className="w-full h-16 px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
+          <div className="mt-18">
+            <div className="relative w-[80%]">
+              <h3 className="text-2xl sm:text-3xl md:text-[34px] leading-6.5 font-semibold mb-6">
+                Bacteriostatic Water (ml)
+              </h3>
+              <div className=" relative">
+                <input
+                  type="number"
+                  placeholder="Enter in ml"
+                  className="w-full h-16 px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
         text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
-              />
-              <Image
-                src="/cal-enter-icon.png"
-                alt="Dropdown icon"
-                width={60}
-                height={60}
-                className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
-              />
+                />
+                <Image
+                  src="/cal-enter-icon.png"
+                  alt="Dropdown icon"
+                  width={60}
+                  height={60}
+                  className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="mt-18">
-          <div className="relative w-[80%]">
-            <h3 className="text-2xl sm:text-3xl md:text-[34px] leading-6.5 font-semibold mb-6">
-              Desired Dose (mcg)
-            </h3>
-            <div className="relative">
-              <input
-                type="number"
-                placeholder="Enter in mcg"
-                className="w-full h-16 px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
+          <div className="mt-18">
+            <div className="relative w-[80%]">
+              <h3 className="text-2xl sm:text-3xl md:text-[34px] leading-6.5 font-semibold mb-6">
+                Desired Dose (mcg)
+              </h3>
+              <div className="relative">
+                <input
+                  type="number"
+                  placeholder="Enter in mcg"
+                  className="w-full h-16 px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
         focus:outline-none 
         text-xl md:text-2xl text-[#224674] dark:text-[var(--foreground)] font-medium text-left"
-              />
-              <Image
-                src="/cal-enter-icon.png"
-                alt="Dropdown icon"
-                width={60}
-                height={60}
-                className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
-              />
+                />
+                <Image
+                  src="/cal-enter-icon.png"
+                  alt="Dropdown icon"
+                  width={60}
+                  height={60}
+                  className="absolute top-1/2 right-[-5] transform -translate-y-1/2 pointer-events-none"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="relative mt-18 w-[77%] min-h-[10rem] overflow-y-auto px-4 py-3 focus:outline-none rounded-3xl bg-[#94C4ED]/30 text-2xl sm:text-3xl md:text-[34px]
+          <div className="relative mt-18 w-[77%] min-h-[10rem] overflow-y-auto px-4 py-3 focus:outline-none rounded-3xl bg-[#94C4ED]/30 text-2xl sm:text-3xl md:text-[34px]
         text-black/70 dark:text-[var(--foreground)] font-semibold">
-          <div className="px-2 py-2">
-          Results
-          
-          <div className="mt-1 flex flex-col text-base sm:text-xl ">
-  <div>Concatenation: 2500 mcg/ml</div>
-  <div>Injection volume for desired dose: 0.10 ml </div>
-  <div>Unit per 0.1 ml: 250 mcg</div>
-  {/* <div>concatenation</div>
+            <div className="px-2 py-2">
+              Results
+
+              <div className="mt-1 flex flex-col text-base sm:text-xl ">
+                <div>Concatenation: 2500 mcg/ml</div>
+                <div>Injection volume for desired dose: 0.10 ml </div>
+                <div>Unit per 0.1 ml: 250 mcg</div>
+                {/* <div>concatenation</div>
   <div>concatenation</div> */}
 
-</div>
+              </div>
 
-          </div>
-          {/* <textarea
+            </div>
+            {/* <textarea
             placeholder="Enter desired dose"
             className="w-[77%] h-40 px-4 py-3 focus:outline-none rounded-3xl bg-[#94C4ED]/30 text-2xl sm:text-3xl md:text-[34px]
         text-black/65 dark:text-[var(--foreground)] font-medium "
           ></textarea> */}
+          </div>
         </div>
       </div>
-      </div>
-      </>
+    </>
   );
 }

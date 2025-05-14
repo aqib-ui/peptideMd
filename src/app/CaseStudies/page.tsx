@@ -29,10 +29,10 @@
 //       </div>
 
 //       <div className="md:mt-30 md:mb-100">
-        
+
 //         {/* three gradient div */}
 //         <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-10 mb-10 px-10"
-        
+
 //         >
 //           {[
 //             {
@@ -158,13 +158,13 @@
 //             </div>
 //           </div>
 //         </div>
-        
-        
 
 
 
-       
-               
+
+
+
+
 //               ) : (
 //                 // NEW full page section
 //                 <div className="md:mt-50 md:mb-100 mb-10 md:mx-50 mx-5">
@@ -177,7 +177,7 @@
 //                       research findings
 //                     </h2>
 //                   </div>
-        
+
 //                   <div
 //                     className="p-[2px] min-h-screen rounded-[3rem] md:mt-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
 //                     style={{ fontFamily: "Afacad, sans-serif" }}
@@ -202,7 +202,7 @@
 //                           </h2>
 //                         </div>
 //                       </div>
-        
+
 //                       <div className="flex mx-5 gap-4 w-[95%] mt-6">
 //                         <input
 //                           type="text"
@@ -241,7 +241,7 @@
 
 import React, { useState } from "react";
 
-import { MoleculeTopLeftAnimation } from "../MianComponent/page";
+import MoleculeTopLeftAnimation from "@/app/MianComponent/page";
 
 const CaseStudiesPage = () => {
   const [showNewSection, setShowNewSection] = useState(false);
@@ -251,7 +251,6 @@ const CaseStudiesPage = () => {
       {/* heading */}
       <div className="">
         <MoleculeTopLeftAnimation
-
           mainheading="Clinical"
           span="Case Studies"
           para="AI Recommendations, AI Response, Video Suggestions and Community Discussion Links"
@@ -325,91 +324,91 @@ const CaseStudiesPage = () => {
                 </div>
               </div>
             ))} */}
- {/* color divs */}
+            {/* color divs */}
 
-        {/* 1st div */}
-        <div className="my-10 px-1 md:px-1 mx-10">
-          <div className="bg-[#F7B6DB] text-black py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="w-full text-center md:text-left">
-              <h2
-                className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
-                style={{ fontFamily: "Afacad, sans-serif" }}
-              >
-                Relevant Research Updates.
-              </h2>
-              <h2
-                className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-                style={{ fontFamily: "Afacad, sans-serif" }}
-              >
-                Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
-                sagittis morbi est adipiscing.
-              </h2>
+            {/* 1st div */}
+            <div className="my-10 px-1 md:px-1 mx-10">
+              <div className="bg-[#F7B6DB] text-black py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="w-full text-center md:text-left">
+                  <h2
+                    className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
+                    style={{ fontFamily: "Afacad, sans-serif" }}
+                  >
+                    Relevant Research Updates.
+                  </h2>
+                  <h2
+                    className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
+                    style={{ fontFamily: "Afacad, sans-serif" }}
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
+                    sagittis morbi est adipiscing.
+                  </h2>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        {/* 2nd div */}
-        <div className="my-10 px-1 md:px-1 mx-10">
-          <div className="bg-[#C5B3FF] py-1 text-black md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="w-full text-center md:text-left">
-              <h2
-                className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
-                style={{ fontFamily: "Afacad, sans-serif" }}
-              >
-                Relevant Research Updates.
-              </h2>
-              <h2
-                className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-                style={{ fontFamily: "Afacad, sans-serif" }}
-              >
-                Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
-                sagittis morbi est adipiscing.
-              </h2>
+            {/* 2nd div */}
+            <div className="my-10 px-1 md:px-1 mx-10">
+              <div className="bg-[#C5B3FF] py-1 text-black md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="w-full text-center md:text-left">
+                  <h2
+                    className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
+                    style={{ fontFamily: "Afacad, sans-serif" }}
+                  >
+                    Relevant Research Updates.
+                  </h2>
+                  <h2
+                    className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
+                    style={{ fontFamily: "Afacad, sans-serif" }}
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
+                    sagittis morbi est adipiscing.
+                  </h2>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        {/* 3rd div */}
-        <div className="my-10 px-1 md:px-1 mx-10 opacity-50">
-          <div className=" bg-[#F7B6DB] text-black py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="w-full text-center md:text-left">
-              <h2
-                className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
-                style={{ fontFamily: "Afacad, sans-serif" }}
-              >
-                Relevant Research Updates.
-              </h2>
-              <h2
-                className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-                style={{ fontFamily: "Afacad, sans-serif" }}
-              >
-                Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
-                sagittis morbi est adipiscing.
-              </h2>
+            {/* 3rd div */}
+            <div className="my-10 px-1 md:px-1 mx-10 opacity-50">
+              <div className=" bg-[#F7B6DB] text-black py-1 md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="w-full text-center md:text-left">
+                  <h2
+                    className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
+                    style={{ fontFamily: "Afacad, sans-serif" }}
+                  >
+                    Relevant Research Updates.
+                  </h2>
+                  <h2
+                    className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
+                    style={{ fontFamily: "Afacad, sans-serif" }}
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
+                    sagittis morbi est adipiscing.
+                  </h2>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        {/* 4th div */}
-        <div className="my-10 px-1 md:px-1 mx-10 opacity-50">
-          <div className="bg-[#C5B3FF] py-1 text-black md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="w-full text-center md:text-left">
-              <h2
-                className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
-                style={{ fontFamily: "Afacad, sans-serif" }}
-              >
-                Relevant Research Updates.
-              </h2>
-              <h2
-                className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-                style={{ fontFamily: "Afacad, sans-serif" }}
-              >
-                Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
-                sagittis morbi est adipiscing.
-              </h2>
+            {/* 4th div */}
+            <div className="my-10 px-1 md:px-1 mx-10 opacity-50">
+              <div className="bg-[#C5B3FF] py-1 text-black md:py-1 px-4 md:px-10 rounded-[50px] flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="w-full text-center md:text-left">
+                  <h2
+                    className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
+                    style={{ fontFamily: "Afacad, sans-serif" }}
+                  >
+                    Relevant Research Updates.
+                  </h2>
+                  <h2
+                    className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
+                    style={{ fontFamily: "Afacad, sans-serif" }}
+                  >
+                    Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
+                    sagittis morbi est adipiscing.
+                  </h2>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
           </>
         ) : (
           // NEW full page section
@@ -510,7 +509,7 @@ const CaseStudiesPage = () => {
                 </div>
               </div>
             </div>
-            
+
           </div>
         )}
       </div>

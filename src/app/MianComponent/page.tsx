@@ -10,7 +10,7 @@
 
 //     return (
 //         <>
-           
+
 
 //             <section className="relative w-full bg-app px-4 md:px-12 overflow-visible py-10">
 //                 {/* Top-left floating molecule image */}
@@ -40,7 +40,7 @@
 //                 {/* --- Content Blocks --- */}
 //                 <div className="relative z-10 max-w-7xl space-y-16">
 
-                  
+
 //                     {/* Block 3: Physician Forum */}
 //                     <div className="mx-2">
 //                         <h1
@@ -220,16 +220,18 @@
 // }
 
 "use client";
-import React from 'react';
+
+import React, { JSX } from 'react';
 import Image from 'next/image';
 
-interface MoleculeTopLeftAnimationProps {
-    mainheading: string;
-    span: string;
-    para: string;
+interface PageProps {
+    mainheading: any;
+    span: any;
+    para: any;
 }
 
-export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({ mainheading, span, para }) => {
+
+const MoleculeTopLeftAnimation: React.FC<PageProps> = ({ mainheading, span, para }) => {
     return (
         <>
             <section className="relative ">
@@ -249,7 +251,7 @@ export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> =
                 <div className="relative z-10 max-w-7xl mx-2 p-4 md:p-6 bg-transparent">
                     <div className="relative inline-block w-full max-w-[90%] md:max-w-[80%] lg:max-w-[75%]">
                         <h1
-                            className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[50px] font-bold leading-[100%] text-left mt-6"
+                            className="text-[36px] sm:text-[48px] md:text-[72px] lg:text-[50px] font-bold leading-[100%] text-left mt-6"
                             style={{ fontFamily: "Afacad, sans-serif" }}
                         >
                             {mainheading}
@@ -292,6 +294,8 @@ export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> =
 
                 {/* Scroll Button restored */}
                 <button
+                    onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+                    // onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
                     className="absolute right-3 top-1/2 -translate-y-1/2 bg-black text-white text-sm font-medium hover:bg-gray-800 transition rounded-lg shadow-md cursor-pointer"
                     style={{
                         writingMode: 'vertical-rl',
@@ -323,3 +327,5 @@ export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> =
         </>
     );
 }
+
+export default MoleculeTopLeftAnimation;

@@ -37,7 +37,7 @@
 //       {/* Left Content (Text) */}
 //       {/* <div className="flex-1.2 relative z-10">
 //           <h1
- 
+
 //             className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
 //             style={{ fontFamily: "Afacad, sans-serif" }}
 //           >
@@ -56,7 +56,7 @@
 //           </p>
 
 //           <p
- 
+
 //             className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-2 max-w-xl md:max-w-3xl"
 //             style={{ fontFamily: "Afacad, sans-serif" }}
 //           >
@@ -91,9 +91,9 @@
 //             max-w-[500px] md:max-w-[600px] lg:max-w-[700px]
 //             h-[300px] md:h-[500px] lg:h-[700px] xl:h-[900px] 
 //             md:top-[-570px] object-cover z-10 pointer-events-none"
-            
+
 //             />
- 
+
 //         </div>
 //       </section> */}
 
@@ -165,7 +165,7 @@
 //             max-w-[500px] md:max-w-[600px] lg:max-w-[700px]
 //             h-[300px] md:h-[500px] lg:h-[700px] xl:h-[900px] 
 //             md:top-[-570px] object-cover z-10 pointer-events-none"
-            
+
 //             />
 //         </div> */}
 
@@ -695,7 +695,7 @@ export default function HomePage() {
       zIndex: 30,
     },
   ];
-  
+
 
 
   return (
@@ -721,7 +721,7 @@ export default function HomePage() {
 
 
 
-      
+
       {/* solving dna overlapping issue on larger screens 5/5/25*/}
       {/* Welcome Section */}
       <section
@@ -778,13 +778,46 @@ export default function HomePage() {
               Peptide Overview
             </button>
           </div>
+
+
+
+        </div>
+        <div className="bottom-[60px] absolute right-[550px] transform -translate-x-1/2 z-20">
+          {/* Scroll Button restored */}
+          <button
+            // onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+            // onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+            // onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+
+
+
+
+            // onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
+            // onClick={() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })}
+            // onClick={() => window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' })}
+
+            className="absolute right-30   -translate-y-1/2 bg-black text-white text-sm font-medium hover:bg-gray-800 transition rounded-lg shadow-md cursor-pointer"
+            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+
+            style={{
+              writingMode: 'vertical-rl',
+              padding: '2rem 0.75rem',
+              letterSpacing: '0.1rem',
+              borderLeft: '4px solid #A6C9EE', // light blue stripe (adjust color as needed)
+              borderTopLeftRadius: '8px',
+              borderBottomLeftRadius: '8px',
+            }}
+          >
+            Scroll
+          </button>
         </div>
 
-       
+
+
 
         {/* Right Side (DNA Image - Hidden on Small Screens) */}
         <div className="relative flex-1 flex justify-end ">
-          
+
           <Image
             src="/dna.png"
             alt="DNA Structure"
@@ -975,7 +1008,7 @@ export default function HomePage() {
       <section className="min-h-screen flex flex-col max-md:px-2 mb-50">
         {/* <div className="grid grid-cols-2   gap-6 mt-8 p-6 md:p-10"> */}
         <div className="flex flex-wrap justify-around  mt-8 p-1 md:p-6">
-          
+
           {/* left card */}
           <div className="relative w-full lg:w-[40%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
             <Image
@@ -1119,9 +1152,9 @@ export default function HomePage() {
                       {item.title}
                     </div>
 
-                    <p 
-                    // className="text-base sm:text-lg md:text-xl  font-medium mt-2 md:mt-0 "
-                    className="text-[clamp(16px,0.284vw+15.1px,20px)]  font-medium mt-2 md:mt-0 "
+                    <p
+                      // className="text-base sm:text-lg md:text-xl  font-medium mt-2 md:mt-0 "
+                      className="text-[clamp(16px,0.284vw+15.1px,20px)]  font-medium mt-2 md:mt-0 "
 
                     >
                       {item.text}
@@ -1136,7 +1169,7 @@ export default function HomePage() {
 
 
       {/* Slideshow Banner Section */}
-       {/* <section 
+      {/* <section 
         className="relative w-full min-h-screen  text-[#6FA5D4] text-3xl font-bold flex
         items-center overflow-hidden mb-50"
       >
@@ -1159,10 +1192,10 @@ export default function HomePage() {
         </div>
       </section>  */}
 
-       {/* <section className="relative w-full min-h-screen text-[#6FA5D4] text-3xl font-bold flex flex-col items-center justify-center overflow-hidden mb-50"> */}
+      {/* <section className="relative w-full min-h-screen text-[#6FA5D4] text-3xl font-bold flex flex-col items-center justify-center overflow-hidden mb-50"> */}
 
-        {/* Scrolling Text */}
-        {/* <div
+      {/* Scrolling Text */}
+      {/* <div
           className="animate-slide whitespace-nowrap flex text-[32px] md:text-[48px] lg:text-[72px] font-semibold mb-20"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
@@ -1180,8 +1213,8 @@ export default function HomePage() {
           </span>
         </div> */}
 
-        {/* Stacked Cards */}
-        {/* <div className="absolute  w-[300px] h-[400px]">
+      {/* Stacked Cards */}
+      {/* <div className="absolute  w-[300px] h-[400px]">
           <AnimatedCard
             title="Oncology Testing"
             imageSrc="image.png"
@@ -1205,7 +1238,7 @@ export default function HomePage() {
       {/* <section className="relative w-full min-h-screen bg-white text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden py-16">
 
         {/* Scrolling Text */}
-        {/* <div
+      {/* <div
           className="relative top-0 left-0 w-full overflow-hidden"
         >
           <div
@@ -1227,28 +1260,28 @@ export default function HomePage() {
           </div>
         </div> */}
 
-        {/* Centered Stacked Cards */}
-        <div className="absolute w-[250px] h-[320px] mt-12 border-2 border-red-500">
-          <AnimatedCard
-            title="Oncology Testing"
-            imageSrc="/image.png"
-            rotate="rotate-[-6deg]"
+      {/* Centered Stacked Cards */}
+      {/* <div className="absolute w-[250px] h-[320px] mt-12 border-2 border-red-500">
+        <AnimatedCard
+          title="Oncology Testing"
+          imageSrc="/image.png"
+          rotate="rotate-[-6deg]"
           zIndex={10}
-          isExpanded={false}          
-          
-          />
-          <AnimatedCard
+          isExpanded={false}
+
+        />
+        <AnimatedCard
           title="Genetic Screening"
           imageSrc="/image.png"
           rotate="rotate-[0deg]"
-          zIndex={20} isExpanded={false}          />
-          <AnimatedCard
+          zIndex={20} isExpanded={false} />
+        <AnimatedCard
           title="AI Diagnostics"
           imageSrc="/image.png"
           rotate="rotate-[6deg]"
-          zIndex={30} isExpanded={false}          />
-        </div>
-      {/* </section> */} 
+          zIndex={30} isExpanded={false} />
+      </div> */}
+      {/* </section> */}
 
 
 
@@ -1257,7 +1290,7 @@ export default function HomePage() {
 
 
 
-      <section className="relative w-full min-h-screen bg-white text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden py-16">
+      <section className="relative w-full min-h-screen bg-white bg-app text-[#6FA5D4]  flex flex-col items-center justify-center overflow-hidden py-16">
         {/* Scrolling Text */}
         <div className="relative top-0 left-0 w-full overflow-hidden">
           <div
@@ -1341,6 +1374,8 @@ export default function HomePage() {
             </div>
           ))}
 
+
+
         </div>
       </section>
 
@@ -1352,7 +1387,7 @@ export default function HomePage() {
 
 
 
-      
+
 
 
       {/* <section className="relative w-full min-h-screen bg-white text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden py-16">
@@ -1379,10 +1414,10 @@ export default function HomePage() {
         </div>
 
         {/* Cards Section */}
-        
+
 
       {/* </section>  */}
- 
+
 
       {/* Card Section */}
       <section className="min-h-screen flex flex-col items-center justify-center mb-50">
@@ -1445,7 +1480,7 @@ export default function HomePage() {
                 bg-app w-full h-full transition-colors duration-500 ease-in-out group 
                 hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] 
                 cursor-pointer"
-                // onClick={() => handleCardClick(card.title)}
+              // onClick={() => handleCardClick(card.title)}
               >
                 {/* Icon */}
                 <Image
@@ -1453,9 +1488,8 @@ export default function HomePage() {
                   alt={card.title}
                   width={40} // Adjust width based on your requirements
                   height={40} // Adjust height based on your requirements
-                  className={`mb-2 h-10 ${
-                    card.img === "sheild.png" ? "w-8" : "w-10"
-                  }`}
+                  className={`mb-2 h-10 ${card.img === "sheild.png" ? "w-8" : "w-10"
+                    }`}
                 />
 
                 {/* Card Title */}
@@ -1478,7 +1512,7 @@ export default function HomePage() {
                 <button
                   className="mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium rounded-lg 
              hover:bg-gray-800 dark:border dark:border-white"
-             onClick={() => handleCardClick(card.title)}
+                  onClick={() => handleCardClick(card.title)}
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   More
@@ -1489,7 +1523,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      
+
     </main>
   );
 }

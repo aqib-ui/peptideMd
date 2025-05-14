@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { TiLocationArrow } from "react-icons/ti";
-import { MoleculeTopLeftAnimation } from "../MianComponent/page";
+import MoleculeTopLeftAnimation from "@/app/MianComponent/page";
 
 const AiAssistantPage = () => {
   const [showNewSection, setShowNewSection] = React.useState(false);
@@ -185,16 +185,16 @@ const AiAssistantPage = () => {
 
               {/* right side */}
               <div className="px-10 flex flex-col items-center justify-center">
-  <div className="rounded-[50px] overflow-hidden w-[clamp(112px,50vw,464px)] h-[clamp(102px,30vw,202px)]">
-    <Image
-      src="/aiAssistant/comdiscuss.png"
-      alt="Video Thumbnail"
-      className="w-full h-full object-cover"
-      width={500}
-      height={500}
-    />
-  </div>
-</div>
+                <div className="rounded-[50px] overflow-hidden w-[clamp(112px,50vw,464px)] h-[clamp(102px,30vw,202px)]">
+                  <Image
+                    src="/aiAssistant/comdiscuss.png"
+                    alt="Video Thumbnail"
+                    className="w-full h-full object-cover"
+                    width={500}
+                    height={500}
+                  />
+                </div>
+              </div>
 
             </div>
           </div>

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { LiaAngleDownSolid } from "react-icons/lia";
-import { MoleculeTopLeftAnimation } from "../MianComponent/page";
+import MoleculeTopLeftAnimation from "@/app/MianComponent/page";
 
 export default function PeptideDatabase() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -90,9 +90,9 @@ export default function PeptideDatabase() {
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         {/* Heading searchbar etc Section */}
-        <div 
-        // className="grid grid-cols-[auto_1fr] justify-around items-start gap-4"
-        className="flex items-start gap-4 justify-around"
+        <div
+          // className="grid grid-cols-[auto_1fr] justify-around items-start gap-4"
+          className="flex items-start gap-4 justify-around"
         >
           {/*basically grid-cols-[auto_1fr] ===> "Give the first column as much space
                  as it needs (auto), and let the second one fill the rest (1fr)" */}
@@ -163,18 +163,18 @@ export default function PeptideDatabase() {
             {!showSearch && (
               <div className="flex items-start">
                 <input
-                type="text"
-                placeholder="Search Peptides"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className={`
+                  type="text"
+                  placeholder="Search Peptides"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className={`
                 px-8 py-4  border-2 border-[#88D3FF] bg-app text-app rounded-full shadow-sm focus:ring
                 focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] outline-none text-lg md:text-xl font-semibold 
                 max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full sm:w-[200px] md:
                 ${showSearch ? "block" : "hidden"} md:block
               `}
-                style={{ fontFamily: "Afacad, sans-serif" }}
-              />
+                  style={{ fontFamily: "Afacad, sans-serif" }}
+                />
               </div>
             )}
 
@@ -343,8 +343,8 @@ export default function PeptideDatabase() {
                     <td className="px-2 align-top pt-15 ">
                       <span
                         className={`inline-block text-black px-3 py-1 rounded-[20px] ext-sm md:text-base lg:text-2xl ${peptide.fdaStatus === "FDA Approved"
-                            ? "bg-[#C5E87E]"
-                            : "bg-[#909090]"
+                          ? "bg-[#C5E87E]"
+                          : "bg-[#909090]"
                           }`}
                       >
                         {peptide.fdaStatus}
@@ -482,8 +482,8 @@ export default function PeptideDatabase() {
                                 ) : row.key === "fdaStatus" ? (
                                   <span
                                     className={`inline-block px-6 py-4 rounded-[20px] text-black text-md md:text-xl font-medium ${peptide.fdaStatus === "FDA Approved"
-                                        ? "bg-[#C5E87E]"
-                                        : "bg-[#909090]"
+                                      ? "bg-[#C5E87E]"
+                                      : "bg-[#909090]"
                                       }`}
                                   >
                                     {peptide.fdaStatus}
