@@ -645,6 +645,7 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import dynamic from "next/dynamic";
+import { CardSection2 } from "@/component/TwoCardSection/page";
 
 const ScrollButton = dynamic(() => import('@/component/ScrollButton/ScrollButton'), {
   ssr: false
@@ -890,11 +891,13 @@ export default function HomePage() {
 
 
       {/* Video Section */}
-      <section className="relative  dark:bg-app min-h-screen flex items-center justify-center bg-white opacity-90 mb-10 my-10 md:my-0 ">
+      <section className="relative  dark:bg-app min-h-screen flex items-center justify-center bg-green-400 opacity-90 mb-10 my-10 md:my-0 ">
         <video
           ref={videoRef}
           // className="w-[90%] max-w-full rounded-[2rem] shadow-lg"
-          className="w-[95%] max-w-[1628px] h-[745px] rounded-[50px] shadow-lg object-cover"
+          // style={{ maxHeight: 'clamp(400px, 43vw, 765px)' }}
+          style={{ height: 'clamp(400px, 45vw, 765px)' }}
+          className="w-[95%] max-w-[1628px]  rounded-[50px] shadow-lg object-cover"
           controls
           onPlay={handlePlay}
           poster="/vid.png" // ✅ Add this line
@@ -989,16 +992,16 @@ export default function HomePage() {
       </section>
 
       {/* 2 card section */}
-      <section className="min-h-screen flex flex-col max-md:px-2 ">
+      {/* <section className="min-h-screen flex flex-col max-md:px-2 "> */}
         {/* <div className="grid grid-cols-2   gap-6 mt-8 p-6 md:p-10"> */}
         {/* <div className="flex flex-wrap justify-around  mt-8 p-1 md:p-6"> */}
-        <div className="flex flex-wrap xl:flex-nowrap justify-around mt-8 p-1 md:p-6">
+        {/* <div className="flex flex-wrap xl:flex-nowrap justify-around mt-8 p-1 md:p-6"> */}
 
           {/* left card */}
           {/* <div className="relative w-full 2xl:w-[40%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
           {/* <div className="relative w-full 2xl:w-[40%] h-auto lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
           {/* relative w-full 2xl:w-[40%] min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10 */}
-          <div className="relative w-full md:w-[65%] 2xl:w-[40%]  h-[400px] sm:min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
+          {/* <div className="relative w-full md:w-[65%] 2xl:w-[40%]  h-[400px] sm:min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
 
 
             <Image
@@ -1015,9 +1018,9 @@ export default function HomePage() {
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               <div className="absolute inset-0 backdrop-blur-md bg-gray-100/60 rounded-xl pointer-events-none" />
-              <div className="flex justify-end items-center md:gap-10">
+              <div className="flex justify-end items-center md:gap-10"> */}
                 {/* 3pngs 11 22 33 */}
-                <div className="flex justify-center mb-4 overflow-visible">
+                {/* <div className="flex justify-center mb-4 overflow-visible">
                   <div className="relative flex flex-row sm:flex-row max-[460px]:flex-col items-center">
                     <Image
                       src="/11.png"
@@ -1058,34 +1061,34 @@ export default function HomePage() {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* Top-right icons */}
-            <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-8 lg:right-12 flex gap-4">
+            {/* <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-8 lg:right-12 flex gap-4"> */}
               {/* Information Icon */}
-              <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
+              {/* <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
                 <IoIosInformationCircleOutline className="text-[#2D557A] text-base sm:text-lg" />
-              </div>
+              </div> */}
 
               {/* Arrow Icon */}
-              <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
+              {/* <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
                 <FaArrowRight className="text-[#2D557A] text-base sm:text-lg" />
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* right card */}
-          <div className="flex flex-col justify-between w-full 2xl:w-[55%] h-auto   rounded-[3rem] p-6 md:p-1">
+          {/* <div className="flex flex-col justify-between w-full 2xl:w-[55%] h-auto   rounded-[3rem] p-6 md:p-1"> */}
             {/* Top image + card */}
-            <div className="relative flex justify-center xl:justify-end items-start">
+            {/* <div className="relative flex justify-center xl:justify-end items-start">
               <Image
                 src="/small-card-pic.png"
                 alt="Play Button"
                 width={96}
                 height={96}
                 className="w-65 h-65 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 ml-4 lg:ml-10"
-              />
+              /> */}
               {/* card over image */}
-              <div
+              {/* <div
                 // className="absolute top-0 sm:top-36 md:top-40 lg:top-44 right-42 sm:right-60 md:right-76 lg:right-20
                 // flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
                 // w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(25%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(40%,25vw,28%)]
@@ -1108,10 +1111,10 @@ export default function HomePage() {
                   Learn
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* List section */}
-            <div
+            {/* <div
               className="flex  xl:justify-end justify-center mt-10 sm:mt-16 px-4"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
@@ -1133,9 +1136,9 @@ export default function HomePage() {
                   <li
                     key={idx}
                     className="flex flex-col md:flex-row items-start xl:gap-10 lg:items-center "
-                  >
+                  > */}
                     {/* <div className="flex items-center md:ml-[5rem] gap-3 text-xl sm:text-2xl md:text-3xl font-medium min-w-[250px]"> */}
-                    <div className="flex items-center md:ml-[5rem] gap-3 text-[clamp(20px,0.994vw+15.82px,34px)] font-medium min-w-[250px]">
+                    {/* <div className="flex items-center md:ml-[5rem] gap-3 text-[clamp(20px,0.994vw+15.82px,34px)] font-medium min-w-[250px]">
                       <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
                         <FaArrowRight className="text-[#2D557A] text-base sm:text-lg" />
                       </div>
@@ -1155,7 +1158,9 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <CardSection2/>
 
 
       {/* Slideshow Banner Section */}
