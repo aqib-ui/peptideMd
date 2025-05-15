@@ -14,8 +14,6 @@
 //     const [isFilterClicked, setIsFilterClicked] = useState(false);
 //     const [isCompareClicked, setIsCompareClicked] = useState(false);
 
-
-
 //   return (
 //     <>
 //       {/* heading */}
@@ -103,7 +101,7 @@
 
 // new code
 
-"use client"
+"use client";
 
 import React, { useRef } from "react";
 import Image from "next/image";
@@ -120,9 +118,7 @@ const MapClient = dynamic(() => import("@/component/MapClient/MapClient"), {
   ssr: false,
 });
 
-
 const Location = () => {
-
   return (
     <>
       <div className="">
@@ -134,13 +130,22 @@ const Location = () => {
       </div>
 
       {/* Buttons */}
-      <div className="container flex flex-col sm:flex-row justify-end gap-4 px-4 sm:px-8" style={{ fontFamily: "Afacad, sans-serif" }}>
-        <button className="w-auto self-end flex items-center gap-2 border-2 border-[#C5B3FF] font-medium py-4 px-4 rounded-full hover:bg-[#C5B3FF] transition">
+      <div
+        className=" flex flex-col sm:flex-row flex-wrap content-center sm:justify-end gap-4 px-8 2xl:px-16 text-[clamp(18px,0.43vw+16.63px,24px)]"
+        style={{ fontFamily: "Afacad, sans-serif" }}
+      >
+        <button className="w-full sm:w-auto justify-center self-end flex items-center gap-2 border-2 border-[#C5B3FF] font-medium py-2 sm:py-4 px-4 rounded-full hover:bg-[#C5B3FF] transition">
           <LuPen /> Enter Zip Code
         </button>
 
-        <button className="w-auto self-end flex items-center border-2 font-medium border-[#F7B6DB] py-4 px-4 rounded-full hover:bg-[#F7B6DB] transition">
-          <Image src="/filterIcon.png" alt="Compare" width={26} height={26} className="w-3 mr-2 h-3" />
+        <button className="w-full sm:w-auto justify-center self-end flex items-center border-2 font-medium border-[#F7B6DB] py-2 sm:py-4 px-4 rounded-full hover:bg-[#F7B6DB] transition">
+          <Image
+            src="/filterIcon.png"
+            alt="Compare"
+            width={26}
+            height={26}
+            className="w-3 mr-2 h-3"
+          />
           Filter by Speciality
         </button>
       </div>
@@ -148,10 +153,8 @@ const Location = () => {
       {/* Map Container */}
 
       <MapClient />
-     
     </>
   );
 };
 
 export default Location;
-

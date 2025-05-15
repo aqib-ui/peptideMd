@@ -16,7 +16,7 @@ export default function TakingPeptide() {
       </div>
       <div className="container bg-app px-4 py-10 min-w-[98vw] overflow-hidden ">
         {/* General Guideline Section */}
-        <div className="relative mt-10 sm:mt-22 md:mt-30 lg:mt-60 ">
+        <div className="relative mt-10 sm:mt-22 md:mt-30 lg:mt-35 2xl:mt-50 ">
           <h3
             className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold leading-[100%]  md:ml-6 text-left"
             style={{ fontFamily: "Afacad, sans-serif" }}
@@ -292,7 +292,7 @@ export default function TakingPeptide() {
     </div>
   </div> */}
               <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
-                <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
+                <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full  h-full">
                   <p
                     className=" text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
                     style={{ fontFamily: "Afacad, sans-serif" }}
