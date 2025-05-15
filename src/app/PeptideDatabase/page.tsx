@@ -336,7 +336,7 @@ export default function PeptideDatabase() {
 
                     <td className="px-2 align-top pt-15 ">
                       <span
-                        className={`inline-block text-black px-3 py-1 rounded-[20px] text-[clamp(18px,0.43vw+16.63px,24px)] ${peptide.fdaStatus === "FDA Approved"
+                        className={`inline-block text-black px-3 py-1 rounded-[30px] text-[clamp(18px,0.43vw+16.63px,24px)] ${peptide.fdaStatus === "FDA Approved"
                           ? "bg-[#C5E87E]"
                           : "bg-[#909090]"
                           }`}
