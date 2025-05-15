@@ -135,7 +135,7 @@ export const CardSection2 = () => {
                           className="flex  xl:justify-end justify-center mt-10 2xl:mt-16 px-4"
                           style={{ fontFamily: "Afacad, sans-serif" }}
                         >
-                          <ul className="space-y-6 xl:space-y-1 2xl:space-y-10 w-full max-w-[724px] ">
+                          <ul className="space-y-6 xl:space-y-1 2xl:space-y-10 w-full  max-w-[724px] ">
                             {[
                               {
                                 title: "Unparalleled Diagnostics",
