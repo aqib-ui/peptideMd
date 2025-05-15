@@ -208,8 +208,7 @@ export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> =
 
                 {/* Scroll Button restored */}
                 <ScrollButton />
-
-
+                
                 {/* Animation Styles */}
                 <style jsx global>{`
                     @keyframes floatRotate {
