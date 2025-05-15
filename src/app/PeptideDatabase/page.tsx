@@ -328,7 +328,7 @@ export default function PeptideDatabase() {
                       </ul>
                     </td>
 
-                    <td className="px-4 flex align-top pt-20 pb-5"> 
+                    <td className="px-4 flex align-top pt-20 pb-5">  
                       <div className="flex justify-start items-start">
                         {peptide.references}
                       </div>
