@@ -1448,7 +1448,7 @@ export default function HomePage() {
           ].map((card, index) => (
             <div
               key={index}
-              className=" p-[2px] rounded-[3rem] w-[90%] max-w-[450px] min-h-[450px] md:h-[490px] mx-auto 
+              className=" p-[2px] rounded-[3rem] w-[85.13%] max-w-[450px] min-h-[450px] 2xl:h-[478.83px] mx-auto 
     relative bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] "
             >
               <div
