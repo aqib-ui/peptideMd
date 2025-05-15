@@ -716,12 +716,16 @@ export default function HomePage() {
       <!-- Paragraph -->
       <p class="text-[clamp(18px,0.43vw+16.63px,24px)]">Paragraph</p> 
 
+      <!-- 22px Text -->
+      clamp(16px, 0.625vw + 14px, 22px)
       
       {/* <!-- 20px -->
       <p class="text-[clamp(16px,0.284vw+15.1px,20px)]">Small Text</p> 
 
       {/* <!-- list nonsense -->
       <p class="text-[clamp(18px,1.13vw+14.4px,34px)]">Smart Responsive Text</p> */}
+
+      
 
       {/* solving dna overlapping issue on larger screens 5/5/25*/}
       {/* Welcome Section */}
@@ -1394,7 +1398,7 @@ export default function HomePage() {
       {/* </section>  */}
 
       {/* Card Section */}
-      <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10 mt-10  ">
+      <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10 mt-18  ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"

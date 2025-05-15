@@ -28,14 +28,14 @@ export const CardSection2 = () => {
                           className="object-cover md:object-cover"
                         />
                         <div
-                          className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12 
-                  flex flex-col justify-start items-start backdrop-blur-md bg-gray-100/10 border-3 border-white
-                  w-[80%] [350px]:w-[90%] sm:w-[290px] md:w-[260px] lg:w-[295px]
-             rounded-[2rem] px-4 py-4 overflow-hidden"
+                          className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-10 md:left-10 lg:bottom-10 lg:left-10 
+                  flex flex-col justify-start items-start backdrop-blur-md  border-3 border-white
+                  w-[70%] [350px]:w-[90%] sm:w-[290px] md:w-[260px] lg:w-[295px] 2xl:w-[308px]
+             rounded-[40px] px-4 py-4 overflow-hidden"
                           style={{ fontFamily: "Afacad, sans-serif" }}
                         >
                           <div className="absolute inset-0 backdrop-blur-md bg-gray-100/60 rounded-xl pointer-events-none" />
-                          <div className="flex justify-end items-center md:gap-10">
+                          <div className="flex justify-end items-center gap-5 md:gap-10">
                             {/* 3pngs 11 22 33 */}
                             <div className="flex justify-center mb-4 overflow-visible">
                               <div className="relative flex flex-row sm:flex-row max-[460px]:flex-col items-center">
@@ -70,7 +70,7 @@ export const CardSection2 = () => {
                             </div>
             
                             <div className="flex flex-col justify-start items-start">
-                              <h3 className="text-base capitalize sm:text-lg md:text-xl text-black font-semibold leading-tight p-2 z-10">
+                              <h3 className="capitalize text-[clamp(16px,0.284vw+15.1px,20px)] text-black font-semibold leading-tight  z-10">
                                 meet our resources
                               </h3>
                               <button className="gradient-border rounded-3xl font-medium text-white w-[88px] h-[44px] mt-2 z-10">
@@ -121,7 +121,7 @@ export const CardSection2 = () => {
                             style={{ fontFamily: "Afacad, sans-serif" }}
                           >
                             <div className="absolute inset-0 backdrop-blur-md bg-white/30 p-6 text-black rounded-xl pointer-events-none" />
-                            <h3 className="text-base sm:text-lg md:text-xl text-black font-semibold leading-tight px-2 z-10 ">
+                            <h3 className="text-[clamp(16px,0.284vw+15.1px,20px)] text-black font-semibold leading-tight px-2 z-10 ">
                               Good interaction with other molecules.
                             </h3>
                             <button className=" gradient-border rounded-3xl font-medium text-white w-[88px] h-[44px] mt-2 z-10">
@@ -135,7 +135,7 @@ export const CardSection2 = () => {
                           className="flex  xl:justify-end justify-center mt-10 2xl:mt-16 px-4"
                           style={{ fontFamily: "Afacad, sans-serif" }}
                         >
-                          <ul className="space-y-6 xl:space-y-1 2xl:space-y-10 w-full  max-w-[724px] ">
+                          <ul className="space-y-6 xl:space-y-4 [@media(min-width:1600px)]:space-y-10 w-full  max-w-[724px] ">
                             {[
                               {
                                 title: "Unparalleled Diagnostics",
@@ -152,7 +152,7 @@ export const CardSection2 = () => {
                             ].map((item, idx) => (
                               <li
                                 key={idx}
-                                className="flex flex-col md:flex-row items-start xl:gap-10 lg:items-center 2xl:items-start "
+                                className="flex flex-col md:flex-row items-start xl:gap-10 xl:items-center 2xl:items-start "
                               >
                                 {/* <div className="flex items-center md:ml-[5rem] gap-3 text-xl sm:text-2xl md:text-3xl font-medium min-w-[250px]"> */}
                                 <div className="flex items-center  md:ml-[5rem] gap-3 text-[clamp(20px,0.994vw+15.82px,34px)] leading-tight font-medium min-w-[240px]">
@@ -164,7 +164,7 @@ export const CardSection2 = () => {
             
                                 <p
                                   // className="text-base sm:text-lg md:text-xl  font-medium mt-2 md:mt-0 "
-                                  className="text-[clamp(16px,0.284vw+15.1px,20px)]  font-medium mt-2 md:mt-0 "
+                                  className="text-[clamp(16px,0.284vw+15.1px,20px)] leading-tight font-medium mt-2 md:mt-0 "
             
                                 >
                                   {item.text}
