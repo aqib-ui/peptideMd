@@ -98,13 +98,13 @@ export default function PeptideDatabase() {
         {/* Heading searchbar etc Section */}
         <div
           // className="grid grid-cols-[auto_1fr] justify-around items-start gap-4"
-          className="flex items-start  justify-around md:flex-col"
+          className="flex items-start justify-around max-xl:flex-col"
         >
           {/*basically grid-cols-[auto_1fr] ===> "Give the first column as much space
                  as it needs (auto), and let the second one fill the rest (1fr)" */}
 
           {/* heading section */}
-          <div className="px-10 w-full bg-red-200">
+          <div className="px-10 w-full flex flex-1 flex-col ">
             <h1 className="capitalize text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
               single peptide
             </h1>
@@ -113,12 +113,12 @@ export default function PeptideDatabase() {
             </h3>
           </div>
 
-          <div className="flex flex-col w-full md:flex-row justify-end md:justify-center gap-4 mr-4 md:mr-16 mb-5 bg-amber-400 ">
+          <div className="flex flex-col w-full p-6 pl-2 pt-10 flex-3 md:flex-row justify-center xl:justify-end gap-4 mr-4 md:mr-16  ">
             {/* Filter & Compare Buttons */}
             <div className="flex max-md:flex-wrap items-center justify-center md:justify-end gap-4 text-[clamp(16px,0.284vw+15.1px,20px)] font-medium">
               <button
                 onClick={() => setIsFilterClicked(!isFilterClicked)}
-                className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-2 border-2 
+                className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 border-2 
                   border-[#F7B6DB] rounded-full shadow-md transition duration-200 ${isFilterClicked ? "bg-[#F7B6DB]" : "hover:bg-[#F7B6DB]"
                   }`}
               >
@@ -134,7 +134,7 @@ export default function PeptideDatabase() {
               {/* compare button */}
               <button
                 onClick={() => setIsCompareClicked(!isCompareClicked)}
-                className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-2 border-2
+                className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 border-2
                   border-[#C5B3FF] rounded-full shadow-md transition duration-200 ${isCompareClicked ? "bg-[#C5B3FF]" : "hover:bg-[#C5B3FF]"
                   }`}
               >
@@ -153,7 +153,7 @@ export default function PeptideDatabase() {
             {showSearch && (
               <input
                 type="text"
-                placeholder="4 Peptides"
+                placeholder="Search Peptides"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className={`
@@ -174,9 +174,9 @@ export default function PeptideDatabase() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className={`
-                px-8 py-4  border-2 border-[#88D3FF] bg-app text-app rounded-full shadow-sm focus:ring
+                px-8 py-4  border-2 border-[#88D3FF] bg-app text-app rounded-full shadow-sm focus:ring 
                 focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] outline-none text-lg md:text-xl font-semibold 
-                max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full sm:w-[200px] md:
+                max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full sm:w-[200px] lg:w-[400px]
                 ${showSearch ? "block" : "hidden"} md:block
               `}
                   style={{ fontFamily: "Afacad, sans-serif" }}
@@ -185,7 +185,7 @@ export default function PeptideDatabase() {
             )}
 
             {/* working dropdown behind search button responsive */}
-            <div className="relative w-fit">
+            <div className="relative w-fit left-[12rem] md:left-0 ">
               {/* Dropdown Trigger (fake behind) */}
               <button
                 className="absolute right-0 top-0 translate-x-7 translate-y-0 z-10 w-16 h-16
@@ -205,8 +205,8 @@ export default function PeptideDatabase() {
               {/* Dropdown Menu */}
               {showDropdown && (
                 <div
-                  className="absolute top-full md:mt-12 z-30 w-60 max-md:w-40 md:left-1/6 max-md:left-1/4 bg-white 
-    bg-app dark:border dark:border-white shadow-xl p-4 rounded-3xl"
+                  className="absolute top-full mt-6 md:mt-7 xl:mt-10 z-30 w-60 max-md:w-40 md:left-1/6 max-md:left-1/4 
+                  bg-white bg-app dark:border dark:border-white shadow-xl p-4 rounded-3xl"
                   style={{
                     transform: "translateX(-60%)",
                     fontFamily: "Afacad, sans-serif",
@@ -257,7 +257,7 @@ export default function PeptideDatabase() {
 
               {/* Normal table layout  */}
               {!isCompareClicked && (
-                <tr className="bg-[#94C4ED] dark:text-black text-sm md:text-base lg:text-2xl mt-10">
+                <tr className="bg-[#94C4ED] dark:text-black text-[clamp(18px,0.43vw+16.63px,24px)] mt-10">
                   <th className="px-10 py-6 text-left">Name</th>
                   <th className="px-10 py-6 text-left">Applications</th>
                   <th className="px-10 py-6 text-left">Descriptions</th>
@@ -275,11 +275,12 @@ export default function PeptideDatabase() {
                 peptides.map((peptide, index) => (
                   <tr
                     key={index}
-                    className="font-medium bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] text-sm md:text-base lg:text-2xl  "
+                    className="font-medium bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[clamp(18px,0.43vw+16.63px,24px)]  "
                   >
                     <td className="px-2 align-top pt-15 ">
                       <div className="inline-block rounded-full bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] p-[1.5px]">
-                        <span className="block rounded-full bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] px-3 py-3 text-md font-bold text-black">
+                        <span className="block rounded-full bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] 
+                        px-3 py-3 font-bold text-black">
                           {peptide.name}
                         </span>
                       </div>
@@ -335,7 +336,7 @@ export default function PeptideDatabase() {
 
                     <td className="px-2 align-top pt-15 ">
                       <span
-                        className={`inline-block text-black px-3 py-1 rounded-[20px] ext-sm md:text-base lg:text-2xl ${peptide.fdaStatus === "FDA Approved"
+                        className={`inline-block text-black px-3 py-1 rounded-[20px] text-[clamp(18px,0.43vw+16.63px,24px)] ${peptide.fdaStatus === "FDA Approved"
                           ? "bg-[#C5E87E]"
                           : "bg-[#909090]"
                           }`}
@@ -420,7 +421,7 @@ export default function PeptideDatabase() {
                           >
                             <div className="flex items-center ml-2 sm:ml-4 md:ml-8 lg:ml-12 xl:ml-16 2xl:ml-[4.5rem] ">
                               {/* Purple Number Badge */}
-                              <div className="flex items-center justify-center w-12  h-12 rounded-full bg-[#D59EFF] md:text-2xl font-bold">
+                              <div className="flex items-center justify-center w-12  h-12 rounded-full bg-[#D59EFF] text-[clamp(20.25px,0.98vw+17.1px,34px)] font-bold">
                                 {index + 1}
                               </div>
 
@@ -434,7 +435,7 @@ export default function PeptideDatabase() {
                               </div>
 
                               {/* Peptide Name */}
-                              <div className="text-lg md:text-xl lg:text-2xl ml-21 sm:ml-22 md:ml-10 lg:ml-[8rem] xl:ml-[11rem] font-bold ">
+                              <div className="text-[clamp(20.25px,0.98vw+17.1px,34px)] ml-21 sm:ml-22 md:ml-10 lg:ml-[8rem] xl:ml-[11rem] font-bold ">
                                 {peptide.name}
                               </div>
                             </div>
@@ -447,12 +448,12 @@ export default function PeptideDatabase() {
                           >
                             <div className="ml-2 sm:ml-4 md:ml-8 lg:ml-16 xl:ml-[12.5rem] flex gap-5 items-start justify-start">
                               {/* Label - fixed width */}
-                              <div className="font-bold text-base md:text-lg lg:text-xl whitespace-nowrap min-w-[120px]">
+                              <div className="font-bold text-[clamp(18px,0.43vw+16.63px,24px)] whitespace-nowrap min-w-[120px]">
                                 {row.label}:
                               </div>
 
                               {/* Value - fills remaining space */}
-                              <div className="flex-1 text-base md:text-lg lg:text-xl font-medium">
+                              <div className="flex-1 text-[clamp(18px,0.43vw+16.63px,24px)] font-medium">
                                 {Array.isArray(
                                   peptide[row.key as keyof typeof peptide]
                                 ) ? (
@@ -474,7 +475,7 @@ export default function PeptideDatabase() {
                                   </ul>
                                 ) : row.key === "fdaStatus" ? (
                                   <span
-                                    className={`inline-block px-6 py-4 rounded-[20px] text-black text-md md:text-xl font-medium ${peptide.fdaStatus === "FDA Approved"
+                                    className={`inline-block px-6 py-4 rounded-[30px] text-black text-[clamp(18px,0.43vw+16.63px,24px)] font-medium ${peptide.fdaStatus === "FDA Approved"
                                       ? "bg-[#C5E87E]"
                                       : "bg-[#909090]"
                                       }`}
