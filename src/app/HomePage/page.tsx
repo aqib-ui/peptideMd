@@ -71,7 +71,7 @@
 //       {/* <div className="gradient-border">
 //             <button
 //               className="w-full h-full rounded-full bg-white text-black text-xl font-medium
-//             flex items-center justify-center transition-colors duration-100 
+//             flex items-center justify-center transition-colors duration-100
 //             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
 //               style={{ fontFamily: "Afacad, sans-serif" }}
 //             >
@@ -87,9 +87,9 @@
 //             alt="DNA Structure"
 //             width={982}
 //             height={1011}
-//             className="absolute hidden md:block w-full 
+//             className="absolute hidden md:block w-full
 //             max-w-[500px] md:max-w-[600px] lg:max-w-[700px]
-//             h-[300px] md:h-[500px] lg:h-[700px] xl:h-[900px] 
+//             h-[300px] md:h-[500px] lg:h-[700px] xl:h-[900px]
 //             md:top-[-570px] object-cover z-10 pointer-events-none"
 
 //             />
@@ -145,7 +145,7 @@
 //           <div className="gradient-border">
 //             <button
 //               className="w-full h-full rounded-full bg-app text-black text-xl font-medium
-//             flex items-center justify-center transition-colors duration-100 
+//             flex items-center justify-center transition-colors duration-100
 //             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
 //               style={{ fontFamily: "Afacad, sans-serif" }}
 //             >
@@ -161,9 +161,9 @@
 //             alt="DNA Structure"
 //             width={982}
 //             height={1011}
-//             className="absolute hidden md:block w-full 
+//             className="absolute hidden md:block w-full
 //             max-w-[500px] md:max-w-[600px] lg:max-w-[700px]
-//             h-[300px] md:h-[500px] lg:h-[700px] xl:h-[900px] 
+//             h-[300px] md:h-[500px] lg:h-[700px] xl:h-[900px]
 //             md:top-[-570px] object-cover z-10 pointer-events-none"
 
 //             />
@@ -176,9 +176,9 @@
 //             alt="DNA Structure"
 //             width={982}
 //             height={1011}
-//             className="absolute hidden md:block 
+//             className="absolute hidden md:block
 //             w-auto
-//             h-auto 
+//             h-auto
 //             md:top-[-500px] lg:top-[-500px] xl:top-[-570px] object-cover z-10 pointer-events-none"
 //           />
 //           {/* // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it */}
@@ -208,7 +208,7 @@
 //             {/* Text - Above Player on Large Screens, Behind Player on Small Screens */}
 //             <div
 //               className="absolute transition-all duration-300 text-center w-[90%] max-w-[90%]
-//               top-1/2 translate-y-[-50%] opacity-100 
+//               top-1/2 translate-y-[-50%] opacity-100
 //               lg:top-[35%] lg:translate-y-0"
 //             >
 //               <h2
@@ -294,7 +294,7 @@
 //               className="object-cover"
 //             />
 //             <div
-//               className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12 
+//               className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12
 //       flex flex-col justify-start items-start bg-gray-100/10 border-3 border-amber-50
 //       md:w-[clamp(44%,55vw,48%)] rounded-[2rem] px-4 py-4 overflow-hidden"
 //               style={{ fontFamily: "Afacad, sans-serif" }}
@@ -422,7 +422,7 @@
 //                 // flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
 //                 // w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(25%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(40%,25vw,28%)]
 //                 // rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
-//                 className="absolute top-0 sm:top-36 md:top-40 lg:top-44 right-42 sm:right-60 md:right-76 lg:right-20 
+//                 className="absolute top-0 sm:top-36 md:top-40 lg:top-44 right-42 sm:right-60 md:right-76 lg:right-20
 //                 flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
 //                 w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(25%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(20%,25vw,28%)]
 //                 rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
@@ -570,9 +570,9 @@
 //           ].map((card, index) => (
 //             <div key={index} className="gradient-card-border">
 //               <div
-//                 className="p-6 shadow-lg rounded-[3rem] flex flex-col items-center justify-center 
-//                 bg-app w-full h-full transition-colors duration-500 ease-in-out group 
-//                 hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] 
+//                 className="p-6 shadow-lg rounded-[3rem] flex flex-col items-center justify-center
+//                 bg-app w-full h-full transition-colors duration-500 ease-in-out group
+//                 hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793]
 //                 cursor-pointer"
 //                 onClick={() => handleCardClick(card.title)}
 //               >
@@ -605,14 +605,14 @@
 
 //                 {/* More Button */}
 //                 {/* <button
-//                   className="mt-6 mb-12 px-10 py-2 bg-black text-white group-active:text-white text-md 
+//                   className="mt-6 mb-12 px-10 py-2 bg-black text-white group-active:text-white text-md
 //                 font-medium rounded-lg hover:bg-gray-800"
 //                   style={{ fontFamily: "Afacad, sans-serif" }}
 //                 >
 //                   More
 //                 </button> */}
 //                 <button
-//                   className="mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium rounded-lg 
+//                   className="mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium rounded-lg
 //              hover:bg-gray-800 dark:border dark:border-white"
 //                   style={{ fontFamily: "Afacad, sans-serif" }}
 //                 >
@@ -627,11 +627,6 @@
 //   );
 // }
 
-
-
-
-
-
 // 9/5/25////////////////// same size no matter what in next file this is scaleable
 "use client";
 
@@ -645,11 +640,14 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import dynamic from "next/dynamic";
-import CardSection2 from "@/component/TwoCardSection/page";
+import { CardSection2 } from "@/component/TwoCardSection/page";
 
-const ScrollButton = dynamic(() => import('@/component/ScrollButton/ScrollButton'), {
-  ssr: false
-});
+const ScrollButton = dynamic(
+  () => import("@/component/ScrollButton/ScrollButton"),
+  {
+    ssr: false,
+  }
+);
 
 export default function HomePage() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -660,14 +658,13 @@ export default function HomePage() {
 
   const HandleCardClick = () => {
     setIsExpanded(!isExpanded);
-  }
+  };
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleCardClick = (slug: string) => {
     router.push(`/details/${slug.toLowerCase().replace(/\s+/g, "-")}`); // Converts title to URL-friendly slug
   };
-
 
   const slides = ["Dosage Guide", "Calculator", "Combination", "AI Chat Bot"];
 
@@ -686,7 +683,7 @@ export default function HomePage() {
       title: "Ai diagnostics",
       imageSrc: "/image.png",
       rotateDeg: -6,
-      expandedX: -160,  // spread left
+      expandedX: -160, // spread left
       zIndex: 10,
     },
     {
@@ -705,8 +702,6 @@ export default function HomePage() {
     },
   ];
 
-
-
   return (
     <main className="w-full mt-10">
       {/* <!-- Heading: Keep previous -->
@@ -721,6 +716,8 @@ export default function HomePage() {
       <!-- Paragraph -->
       <p class="text-[clamp(18px,0.43vw+16.63px,24px)]">Paragraph</p> 
 
+      <!-- 22px Text -->
+      clamp(16px, 0.625vw + 14px, 22px)
       
       {/* <!-- 20px -->
       <p class="text-[clamp(16px,0.284vw+15.1px,20px)]">Small Text</p> 
@@ -728,13 +725,13 @@ export default function HomePage() {
       {/* <!-- list nonsense -->
       <p class="text-[clamp(18px,1.13vw+14.4px,34px)]">Smart Responsive Text</p> */}
 
-
-
+      
 
       {/* solving dna overlapping issue on larger screens 5/5/25*/}
       {/* Welcome Section */}
       <section
-        className="ml-3  relative  md:min-h-screen flex flex-col md:flex-row  justify-between px-6 "
+        // className="ml-3  relative  md:min-h-screen flex flex-col md:flex-row  justify-between px-6 "
+        className="ml-3  relative  md:min-h-[80vh] flex flex-col md:flex-row  justify-between px-6 "
       >
         {/* Left Content (Text) */}
         <div className="flex-1.2 relative z-10 sm:w-[45%] lg:w-[60%]">
@@ -779,7 +776,7 @@ export default function HomePage() {
           <div className="gradient-border">
             <button
               //   className="w-full h-full rounded-full bg-app text-black text-xl font-medium
-              // flex items-center justify-center transition-colors duration-100 
+              // flex items-center justify-center transition-colors duration-100
               // ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
               className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
             flex items-center justify-center transition-colors duration-100 
@@ -789,20 +786,13 @@ export default function HomePage() {
               Peptide Overview
             </button>
           </div>
-
-
-
         </div>
-        <div className="bottom-[70px] absolute right-[590px] transform -translate-x-1/2 z-20">
+        <div className="bottom-[60px] absolute right-[550px] transform -translate-x-1/2 z-20">
           <ScrollButton />
         </div>
 
-
-
-
         {/* Right Side (DNA Image - Hidden on Small Screens) */}
         <div className="relative flex-1 flex justify-end ">
-
           <Image
             src="/dna.png"
             alt="DNA Structure"
@@ -816,9 +806,6 @@ export default function HomePage() {
           {/* // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it */}
         </div>
       </section>
-
-
-
 
       {/* new code */}
       {/* <section
@@ -887,68 +874,73 @@ export default function HomePage() {
       </section> */}
       {/* new code above */}
 
-
-
-
+ 
+ 
+ 
       {/* Video Section */}
-      <section className="relative  dark:bg-app min-h-screen flex items-center justify-center bg-white opacity-90 mb-10 my-10 md:my-0 ">
-        <video
-          ref={videoRef}
-          // className="w-[90%] max-w-full rounded-[2rem] shadow-lg"
-          className="w-[95%] max-w-[1628px] h-[745px] rounded-[50px] shadow-lg object-cover"
-          controls
-          onPlay={handlePlay}
-          poster="/vid.png" // ✅ Add this line
-        >
-          <source src="/sample-video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+      <section className="relative dark:bg-app min-h-screen flex items-center justify-center mb-10 my-10 md:my-0">
+        {/* Video Wrapper with Relative Positioning */}
+        <div className="relative w-[95%] max-w-[1628px] rounded-[50px] shadow-lg overflow-hidden">
+          <video
+            ref={videoRef}
+            // style={{ height: "clamp(400px, 45vw, 765px)" }}
+            style={{ height: "clamp(400px, calc(-117px + 51.14vw), 765px)" }}
 
-        {/* Overlay Text & Play Button */}
-        {!isPlaying && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-6">
-            {/* Text - Above Player on Large Screens, Behind Player on Small Screens */}
-            <div
-              className="absolute transition-all duration-300 text-center w-[90%] max-w-[90%]
-              top-1/2 translate-y-[-50%] opacity-100 
-              lg:top-[35%] lg:translate-y-0"
-            >
-              <h2
-                className="text-[clamp(20px,4vw,34px)] font-bold leading-[clamp(24px,4.5vw,40px)]"
-                style={{ fontFamily: "Afacad, sans-serif" }}
-              >
-                Welcome Video
-              </h2>
+            className="w-full rounded-[50px] object-cover"
+            controls
+            onPlay={handlePlay}
+            poster="/vid.png"
+          >
+            <source src="/sample-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
 
-              <p
-                className="text-[clamp(16px,3vw,24px)] leading-[clamp(18px,3.5vw,30px)] mt-2"
-                style={{ fontFamily: "Afacad, sans-serif" }}
+          {/* Overlay Text & Play Button */}
+          {!isPlaying && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center bg-black/30 p-6 z-10">
+              <div
+                className="absolute transition-all duration-300 text-center w-[90%] max-w-[90%]
+          top-1/2 translate-y-[-50%] opacity-100 
+          lg:top-[35%] lg:translate-y-0"
               >
-                Watch our introduction to PeptideMD and learn how we&apos;re
-                advancing peptide research and education.
-              </p>
+                <h2
+                  className="text-[clamp(20px,4vw,34px)] font-bold leading-[clamp(24px,4.5vw,40px)]"
+                  style={{ fontFamily: "Afacad, sans-serif" }}
+                >
+                  Welcome Video
+                </h2>
+
+                <p
+                  className="text-[clamp(16px,3vw,24px)] leading-[clamp(18px,3.5vw,30px)] mt-2"
+                  style={{ fontFamily: "Afacad, sans-serif" }}
+                >
+                  Watch our introduction to PeptideMD and learn how we&apos;re
+                  advancing peptide research and education.
+                </p>
+              </div>
+
+              <button className="absolute flex items-center justify-center w-full h-full mt-0 lg:mt-16 lg:opacity-100">
+                <Image
+                  src="/play.png"
+                  alt="Play Button"
+                  width={96}
+                  height={96}
+                  className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
+                />
+              </button>
             </div>
-
-            {/* Play Button - Adjusted for Large Screens */}
-            <button className="absolute flex items-center justify-center w-full h-full mt-0 lg:mt-16 lg:opacity-100">
-              <Image
-                src="/play.png"
-                alt="Play Button"
-                width={96} // Adjusted for lg:w-24
-                height={96} // Adjusted for lg:h-24
-                className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24"
-              />
-            </button>
-          </div>
-        )}
+          )}
+        </div>
       </section>
+
+
+      
 
       {/* Description Section */}
       <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-10 my-10 md:my-0 ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-left"
-
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           What are
@@ -960,7 +952,6 @@ export default function HomePage() {
         <p
           // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
           className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
-
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Peptides are tiny but powerful building blocks of life! They are short
@@ -976,7 +967,6 @@ export default function HomePage() {
         <p
           // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
           className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
-
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Think of peptides like little messengers that tell your body how to
@@ -990,9 +980,175 @@ export default function HomePage() {
       </section>
 
       {/* 2 card section */}
+      {/* <section className="min-h-screen flex flex-col max-md:px-2 "> */}
+      {/* <div className="grid grid-cols-2   gap-6 mt-8 p-6 md:p-10"> */}
+      {/* <div className="flex flex-wrap justify-around  mt-8 p-1 md:p-6"> */}
+      {/* <div className="flex flex-wrap xl:flex-nowrap justify-around mt-8 p-1 md:p-6"> */}
 
-      <CardSection2/>
+      {/* left card */}
+      {/* <div className="relative w-full 2xl:w-[40%] h-screen lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
+      {/* <div className="relative w-full 2xl:w-[40%] h-auto lg:h-auto shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
+      {/* relative w-full 2xl:w-[40%] min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10 */}
+      {/* <div className="relative w-full md:w-[65%] 2xl:w-[40%]  h-[400px] sm:min-h-[600px] lg:min-h-[700px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10">
 
+
+            <Image
+              src="/card-pic.png"
+              alt="Card Image"
+              fill
+              className="object-cover md:object-cover"
+            />
+            <div
+              className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12 
+      flex flex-col justify-start items-start backdrop-blur-md bg-gray-100/10 border-3 border-white
+      w-[80%] [350px]:w-[90%] sm:w-[290px] md:w-[260px] lg:w-[295px]
+ rounded-[2rem] px-4 py-4 overflow-hidden"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <div className="absolute inset-0 backdrop-blur-md bg-gray-100/60 rounded-xl pointer-events-none" />
+              <div className="flex justify-end items-center md:gap-10"> */}
+      {/* 3pngs 11 22 33 */}
+      {/* <div className="flex justify-center mb-4 overflow-visible">
+                  <div className="relative flex flex-row sm:flex-row max-[460px]:flex-col items-center">
+                    <Image
+                      src="/11.png"
+                      alt="Avatar 1"
+                      width={60}
+                      height={60}
+                      className="object-cover rounded-full border-2 border-white
+                 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
+                 z-10 max-[460px]:mb-[-20px]"
+                    />
+                    <Image
+                      src="/22.png"
+                      alt="Avatar 2"
+                      width={60}
+                      height={60}
+                      className="object-cover rounded-full border-2 border-white
+                 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
+                 z-20 -ml-4 sm:-ml-5 md:-ml-6 max-[460px]:ml-0 max-[460px]:mb-[-20px]"
+                    />
+                    <Image
+                      src="/33.png"
+                      alt="Avatar 3"
+                      width={60}
+                      height={60}
+                      className="object-cover rounded-full border-2 border-white
+                 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14
+                 z-30 -ml-4 sm:-ml-5 md:-ml-6 max-[460px]:ml-0"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col justify-start items-start">
+                  <h3 className="text-base capitalize sm:text-lg md:text-xl text-black font-semibold leading-tight p-2 z-10">
+                    meet our resources
+                  </h3>
+                  <button className="gradient-border rounded-3xl font-medium text-white w-[88px] h-[44px] mt-2 z-10">
+                    Explore
+                  </button>
+                </div>
+              </div>
+            </div> */}
+      {/* Top-right icons */}
+      {/* <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-8 lg:right-12 flex gap-4"> */}
+      {/* Information Icon */}
+      {/* <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
+                <IoIosInformationCircleOutline className="text-[#2D557A] text-base sm:text-lg" />
+              </div> */}
+
+      {/* Arrow Icon */}
+      {/* <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
+                <FaArrowRight className="text-[#2D557A] text-base sm:text-lg" />
+              </div>
+            </div>
+          </div> */}
+
+      {/* right card */}
+      {/* <div className="flex flex-col justify-between w-full 2xl:w-[55%] h-auto   rounded-[3rem] p-6 md:p-1"> */}
+      {/* Top image + card */}
+      {/* <div className="relative flex justify-center xl:justify-end items-start">
+              <Image
+                src="/small-card-pic.png"
+                alt="Play Button"
+                width={96}
+                height={96}
+                className="w-65 h-65 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 ml-4 lg:ml-10"
+              /> */}
+      {/* card over image */}
+      {/* <div
+                // className="absolute top-0 sm:top-36 md:top-40 lg:top-44 right-42 sm:right-60 md:right-76 lg:right-20
+                // flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
+                // w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(25%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(40%,25vw,28%)]
+                // rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
+                className="absolute top-30 sm:top-36 md:top-40 lg:top-44 right-22 max-sm:right-20 sm:right-65 lg:right-100 xl:right-25 
+                flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
+                w-[80%] max-sm:w-[150px] sm:w-[200px] md:w-[180px] lg:w-[180px]
+                rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
+                // className="absolute top-0 sm:top-36 md:top-40 lg:top-44 right-22 sm:right-60 md:right-66 lg:right-20
+                // flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-white
+                // w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(45%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(40%,25vw,38%)]
+                // rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
+                style={{ fontFamily: "Afacad, sans-serif" }}
+              >
+                <div className="absolute inset-0 backdrop-blur-md bg-white/30 p-6 text-black rounded-xl pointer-events-none" />
+                <h3 className="text-base sm:text-lg md:text-xl text-black font-semibold leading-tight px-2 z-10 ">
+                  Good interaction with other molecules.
+                </h3>
+                <button className=" gradient-border rounded-3xl font-medium text-white w-[88px] h-[44px] mt-2 z-10">
+                  Learn
+                </button>
+              </div>
+            </div> */}
+
+      {/* List section */}
+      {/* <div
+              className="flex  xl:justify-end justify-center mt-10 sm:mt-16 px-4"
+              style={{ fontFamily: "Afacad, sans-serif" }}
+            >
+              <ul className="space-y-6 w-full max-w-[700px] ">
+                {[
+                  {
+                    title: "Unparalleled Diagnostics",
+                    text: "Lorem1 ipsum dolor sit amet consectetur. Fermentum eget bibendum lectus risus morbi ante risus ut.",
+                  },
+                  {
+                    title: "AI Assistant",
+                    text: "Lorem2 ipsum dolor sit amet consectetur. Fermentum eget bibendum lectus risus morbi ante risus ut.",
+                  },
+                  {
+                    title: "Case Studies",
+                    text: "Lorem3 ipsum dolor sit amet consectetur. Fermentum eget bibendum lectus risus morbi ante risus ut.",
+                  },
+                ].map((item, idx) => (
+                  <li
+                    key={idx}
+                    className="flex flex-col md:flex-row items-start xl:gap-10 lg:items-center "
+                  > */}
+      {/* <div className="flex items-center md:ml-[5rem] gap-3 text-xl sm:text-2xl md:text-3xl font-medium min-w-[250px]"> */}
+      {/* <div className="flex items-center md:ml-[5rem] gap-3 text-[clamp(20px,0.994vw+15.82px,34px)] font-medium min-w-[250px]">
+                      <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
+                        <FaArrowRight className="text-[#2D557A] text-base sm:text-lg" />
+                      </div>
+                      {item.title}
+                    </div>
+
+                    <p
+                      // className="text-base sm:text-lg md:text-xl  font-medium mt-2 md:mt-0 "
+                      className="text-[clamp(16px,0.284vw+15.1px,20px)]  font-medium mt-2 md:mt-0 "
+
+                    >
+                      {item.text}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      <CardSection2 />
 
       {/* Slideshow Banner Section */}
       {/* <section 
@@ -1109,19 +1265,14 @@ export default function HomePage() {
       </div> */}
       {/* </section> */}
 
-
-
-
-
-
-
-
-      <section className="relative w-full min-h-screen bg-white dark:bg-[var(--background)]
-       text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden mb-10 my-10 md:my-0 ">
+      <section
+        className="relative w-full min-h-screen bg-white dark:bg-[var(--background)]
+       text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden mb-10 my-10 md:my-0 "
+      >
         {/* Scrolling Text */}
         <div className="relative top-0 left-0 w-full overflow-hidden">
           <div
-            className="animate-slide whitespace-nowrap flex text-[28px] md:text-[40px] lg:text-[64px] font-semibold opacity-20"
+            className="animate-slide whitespace-nowrap flex text-[28px] md:text-[40px] lg:text-[64px] font-semibold"
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             <span className="uppercase">
@@ -1147,9 +1298,11 @@ export default function HomePage() {
 
         {/* Cards */}
         <div
-          className={`absolute flex items-center justify-center transition-all duration-500 mt-12 ${isExpanded ? "gap-6 flex-row w-full max-w-5xl" : "w-[250px] h-[320px]"
-            }`
-          }
+          className={`absolute flex items-center justify-center transition-all duration-500 mt-12 ${
+            isExpanded
+              ? "gap-6 flex-row w-full max-w-5xl"
+              : "w-[250px] h-[320px]"
+          }`}
         >
           {/* {cards.map((card) => (
             <div
@@ -1182,14 +1335,16 @@ export default function HomePage() {
             <div
               key={card.title}
               onClick={HandleCardClick}
+              // className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-[#E1E1E1]
+              //   dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `}
               className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-[#E1E1E1] 
-                dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `}
+                dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `}
               style={{
                 transform: isExpanded
                   ? `translateX(${card.expandedX}px) rotate(0deg)`
                   : `translateX(0px) rotate(${card.rotateDeg}deg)`,
                 zIndex: isExpanded ? 10 : card.zIndex,
-                transition: 'transform 0.6s ease',
+                transition: "transform 0.6s ease",
                 boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
               }}
             >
@@ -1198,34 +1353,22 @@ export default function HomePage() {
                 alt={card.title}
                 className="w-full h-[190px] object-cover rounded-t-2xl p-4"
               />
-              <div className="p-3 flex justify-between items-center h-[calc(100%-190px)]" style={{ fontFamily: "Afacad, sans-serif" }}>
+              <div
+                className="p-3 flex justify-between items-center h-[calc(100%-190px)]"
+                style={{ fontFamily: "Afacad, sans-serif" }}
+              >
                 <h3 className="font-semibold text-[clamp(20.25px,1vw+14.1px,34px)] text-app leading-tight">
                   {card.title}
                 </h3>
                 <button className="bg-[#6FA5D4] text-app rounded-full w-8 h-8 flex items-center justify-center transition hover:bg-[#5c90c0]">
                   {/* → */}
                   <IoIosArrowRoundForward className="text-2xl" />
-
                 </button>
               </div>
             </div>
           ))}
-
-
-
         </div>
       </section>
-
-
-
-
-
-
-
-
-
-
-
 
       {/* <section className="relative w-full min-h-screen bg-white text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden py-16">
 
@@ -1252,21 +1395,17 @@ export default function HomePage() {
 
         {/* Cards Section */}
 
-
       {/* </section>  */}
 
-
       {/* Card Section */}
-      <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10 mt-10  ">
+      <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10 mt-18  ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           Discover
-          <span
-            className="italic  bg-clip-text inline-block pr-[5px] text-[#224674] "
-          >
+          <span className="italic  bg-clip-text inline-block pr-[5px] text-[#224674] ">
             More
           </span>
         </h1>
@@ -1311,14 +1450,17 @@ export default function HomePage() {
               desc: "Essential information and emerging developments in peptide science",
             },
           ].map((card, index) => (
-            <div key={index} className=" p-[2px] rounded-[3rem] w-[90%] max-w-[450px] min-h-[450px] md:h-[490px] mx-auto 
-    relative bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] ">
+            <div
+              key={index}
+              className=" p-[2px] rounded-[3rem] w-[85.13%] max-w-[450px] min-h-[450px] 2xl:h-[478.83px] mx-auto 
+    relative bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] "
+            >
               <div
                 className="p-6  rounded-[3rem] flex flex-col items-center justify-center 
                 bg-app w-full h-full transition-colors duration-500 ease-in-out group 
                 hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] 
                 cursor-pointer"
-              // onClick={() => handleCardClick(card.title)}
+                // onClick={() => handleCardClick(card.title)}
               >
                 {/* Icon */}
                 <Image
@@ -1326,8 +1468,9 @@ export default function HomePage() {
                   alt={card.title}
                   width={40} // Adjust width based on your requirements
                   height={40} // Adjust height based on your requirements
-                  className={`mb-2 h-10 ${card.img === "sheild.png" ? "w-8" : "w-10"
-                    }`}
+                  className={`mb-2 h-10 ${
+                    card.img === "sheild.png" ? "w-8" : "w-10"
+                  }`}
                 />
                 {/* 
 text-[clamp(22.5px,1.67vw+17.2px,46px)]
@@ -1337,7 +1480,6 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
                 <span
                   // className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px]  font-semibold leading-[50px] text-center mt-2"
                   className="text-[clamp(22.5px,1.67vw+17.2px,46px)]  font-semibold leading-[50px] text-center mt-2"
-
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   {card.title}
@@ -1347,7 +1489,6 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
                 <p
                   // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[130%] text-center px-4 mt-2"
                   className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-[130%] text-center px-4 mt-2"
-
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 >
                   {card.desc}
@@ -1361,7 +1502,7 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
                   style={{
                     cursor: "pointer",
                     fontFamily: "Afacad, sans-serif",
-                    borderBottom: '4px solid #A6C9EE', // light blue stripe (adjust color as needed)
+                    borderBottom: "4px solid #A6C9EE", // light blue stripe (adjust color as needed)
                   }}
                 >
                   More
@@ -1371,8 +1512,6 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
           ))}
         </div>
       </section>
-
-
     </main>
   );
 }
