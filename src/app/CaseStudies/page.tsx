@@ -241,7 +241,7 @@
 
 import React, { useState } from "react";
 
-import MoleculeTopLeftAnimation from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import {MoleculeTopLeftAnimation} from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 
 const CaseStudiesPage = () => {
   const [showNewSection, setShowNewSection] = useState(false);

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { LiaAngleDownSolid } from "react-icons/lia";
-import MoleculeTopLeftAnimation from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import { MoleculeTopLeftAnimation } from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 import dynamic from "next/dynamic";
 import ScrollButton from "@/component/ScrollButton/ScrollButton";
 
