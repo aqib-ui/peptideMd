@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import MoleculeTopLeftAnimation from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import {MoleculeTopLeftAnimation} from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 
 export default function Resources() {
   return (

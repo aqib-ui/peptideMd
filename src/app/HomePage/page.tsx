@@ -633,12 +633,9 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation"; // Import useRouter
 import Image from "next/image";
-import { AnimatedCard } from "../AnimatedCard/AnimatedCard"; // Adjust the import path as necessary
 
-import { FaArrowRight } from "react-icons/fa6";
 import { IoIosArrowRoundForward } from "react-icons/io";
 
-import { IoIosInformationCircleOutline } from "react-icons/io";
 import dynamic from "next/dynamic";
 import { CardSection2 } from "@/component/TwoCardSection/page";
 
@@ -725,7 +722,7 @@ export default function HomePage() {
       {/* <!-- list nonsense -->
       <p class="text-[clamp(18px,1.13vw+14.4px,34px)]">Smart Responsive Text</p> */}
 
-      
+
 
       {/* solving dna overlapping issue on larger screens 5/5/25*/}
       {/* Welcome Section */}
@@ -874,9 +871,9 @@ export default function HomePage() {
       </section> */}
       {/* new code above */}
 
- 
- 
- 
+
+
+
       {/* Video Section */}
       <section className="relative dark:bg-app min-h-screen flex items-center justify-center mb-10 my-10 md:my-0">
         {/* Video Wrapper with Relative Positioning */}
@@ -934,7 +931,7 @@ export default function HomePage() {
       </section>
 
 
-      
+
 
       {/* Description Section */}
       <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-10 my-10 md:my-0 ">
@@ -1298,11 +1295,11 @@ export default function HomePage() {
 
         {/* Cards */}
         <div
-          className={`absolute flex items-center justify-center transition-all duration-500 mt-12 ${
-            isExpanded
-              ? "gap-6 flex-row w-full max-w-5xl"
-              : "w-[250px] h-[320px]"
-          }`}
+          className={`absolute flex items-center justify-center transition-all duration-700 ease-in-out mt-12 ${isExpanded
+            ? "gap-6 flex-row w-full max-w-5xl"
+            : "w-[250px] h-[320px]"
+            }`}
+
         >
           {/* {cards.map((card) => (
             <div
@@ -1346,7 +1343,9 @@ export default function HomePage() {
                 zIndex: isExpanded ? 10 : card.zIndex,
                 transition: "transform 0.6s ease",
                 boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
+                willChange: "transform",
               }}
+
             >
               <img
                 src={card.imageSrc}
@@ -1357,7 +1356,7 @@ export default function HomePage() {
                 className="p-3 flex justify-between items-center h-[calc(100%-190px)]"
                 style={{ fontFamily: "Afacad, sans-serif" }}
               >
-                <h3 className="font-semibold text-[clamp(20.25px,1vw+14.1px,34px)] text-app leading-tight">
+                <h3 className="font-semibold text-[clamp(20px,1.5vw,28px)] leading-snug text-app">
                   {card.title}
                 </h3>
                 <button className="bg-[#6FA5D4] text-app rounded-full w-8 h-8 flex items-center justify-center transition hover:bg-[#5c90c0]">
@@ -1368,6 +1367,8 @@ export default function HomePage() {
             </div>
           ))}
         </div>
+
+
       </section>
 
       {/* <section className="relative w-full min-h-screen bg-white text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden py-16">
@@ -1460,7 +1461,7 @@ export default function HomePage() {
                 bg-app w-full h-full transition-colors duration-500 ease-in-out group 
                 hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] 
                 cursor-pointer"
-                // onClick={() => handleCardClick(card.title)}
+              // onClick={() => handleCardClick(card.title)}
               >
                 {/* Icon */}
                 <Image
@@ -1468,9 +1469,8 @@ export default function HomePage() {
                   alt={card.title}
                   width={40} // Adjust width based on your requirements
                   height={40} // Adjust height based on your requirements
-                  className={`mb-2 h-10 ${
-                    card.img === "sheild.png" ? "w-8" : "w-10"
-                  }`}
+                  className={`mb-2 h-10 ${card.img === "sheild.png" ? "w-8" : "w-10"
+                    }`}
                 />
                 {/* 
 text-[clamp(22.5px,1.67vw+17.2px,46px)]
