@@ -5,8 +5,9 @@ import { useState } from "react";
 import { LiaAngleDownSolid } from "react-icons/lia";
 import MoleculeTopLeftAnimation from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 import dynamic from "next/dynamic";
+import ScrollButton from "@/component/ScrollButton/ScrollButton";
 
-const ScrollButton2= dynamic(() => import('@/component/ScrollButton/ScrollButton2'), {
+const ScrollButton2 = dynamic(() => import('@/component/ScrollButton/ScrollButton2'), {
   ssr: false
 });
 
@@ -72,7 +73,7 @@ export default function PeptideDatabase() {
     // },
   ];
 
-   
+
   return (
     <>
       <MoleculeTopLeftAnimation
@@ -80,6 +81,7 @@ export default function PeptideDatabase() {
         span="Database "
         para="Your go-to database for peptide knowledge—browse, explore, and unlock detailed information with a click!"
       />
+      <ScrollButton />
 
 
 
@@ -197,10 +199,10 @@ export default function PeptideDatabase() {
 
               {/* Search Button - visually in front */}
               <ScrollButton2
-  showSearch={showSearch}
-  setShowSearch={setShowSearch}
-  searchQuery={searchQuery}
-/>
+                showSearch={showSearch}
+                setShowSearch={setShowSearch}
+                searchQuery={searchQuery}
+              />
 
               {/* Dropdown Menu */}
               {showDropdown && (

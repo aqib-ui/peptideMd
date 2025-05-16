@@ -23,8 +23,8 @@ export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> =
 
     return (
         <>
-            <section className="relative ">
-                {/* Top-left floating molecule image */}
+            <section className="relative  ">
+                {/* Top-left floating molecule imagse */}
                 <Image
                     src="/image1.png"
                     alt="Molecule Top Left"
@@ -37,7 +37,7 @@ export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> =
                 />
 
                 {/* --- Content Block --- */}
-                <div className="relative z-10 max-w-7xl mx-2 p-4 md:p-6 bg-transparent">
+                <div className="relative z-10 max-w-7xl mx-2 p-4 md:p-6 bg-transparent ">
                     <div
                         // className="relative inline-block w-full max-w-[90%] md:max-w-[80%] lg:max-w-[75%]"
                         // className={`relative inline-block w-full max-w-[90%] md:max-w-[80%] lg:max-w-[75%] ${className}`}
