@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { TiLocationArrow } from "react-icons/ti";
-import {MoleculeTopLeftAnimation} from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import  MoleculeTopLeftAnimation  from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 import ScrollButton from "@/component/ScrollButton/ScrollButton";
 
 const AiAssistantPage = () => {
@@ -35,7 +35,7 @@ const AiAssistantPage = () => {
         span="Research Assistant"
         para="AI Recommendations, AI Response, Video Suggestions and Community Discussion Links"
       />
-      <ScrollButton />
+      {/* <ScrollButton /> */}
 
       {/* below heading */}
       {!showNewSection ? (

@@ -310,7 +310,7 @@ import {
   IoArrowDownOutline,
 } from "react-icons/io5";
 import { FaRegComment } from "react-icons/fa";
-import { MoleculeTopLeftAnimation } from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import  MoleculeTopLeftAnimation  from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 
 const DiscussionPage = () => {
   const [isExpanded, setIsExpanded] = useState(false);

@@ -130,7 +130,7 @@ interface MoleculeTopLeftAnimationProps {
     className?: string;
 }
 
-export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
+ const  MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
     mainheading,
     span,
     para,
@@ -211,3 +211,5 @@ export const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> =
         </section>
     );
 };
+
+export default MoleculeTopLeftAnimation;

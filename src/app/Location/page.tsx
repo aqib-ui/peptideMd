@@ -111,7 +111,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 import L from "leaflet";
-import {MoleculeTopLeftAnimation } from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import  MoleculeTopLeftAnimation  from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 import dynamic from "next/dynamic";
 import ScrollButton from "@/component/ScrollButton/ScrollButton";
 
@@ -128,7 +128,7 @@ const Location = () => {
           span="Locator"
           para="AI Recommendations, AI Response, Video Suggestions and Community Discussion Links"
         />
-        <ScrollButton />
+        {/* <ScrollButton /> */}
       </div>
 
       {/* Buttons */}

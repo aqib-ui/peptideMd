@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import Image from "next/image";
 // import { MoleculeTopLeftAnimation } from "../MianComponent/page";
-import {MoleculeTopLeftAnimation} from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import  MoleculeTopLeftAnimation  from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 
 export default function DosageSimulator() {
   const [selected, setSelected] = useState<"Dosage Guide" | "Calculator">(
@@ -89,6 +89,9 @@ export default function DosageSimulator() {
   );
 }
 
+
+
+
 // =============================
 // DosageGuide Component (inline)
 // =============================
@@ -128,7 +131,7 @@ function DosageGuide() {
         {/* <ScrollButton /> */}
 
       </div>
-     
+
 
       <div className="pl-5 pr-4 min-w-[95vw] overflow-hidden">
 
