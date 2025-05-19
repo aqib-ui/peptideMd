@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { TiLocationArrow } from "react-icons/ti";
 import MoleculeTopLeftAnimation from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import ScrollButton from "@/component/ScrollButton/ScrollButton";
 
 const AiAssistantPage = () => {
   const [showNewSection, setShowNewSection] = React.useState(false);
@@ -16,6 +17,7 @@ const AiAssistantPage = () => {
         span="Research Assistant"
         para="AI Recommendations, AI Response, Video Suggestions and Community Discussion Links"
       />
+      <ScrollButton />
 
       {/* below heading */}
       {!showNewSection ? (
