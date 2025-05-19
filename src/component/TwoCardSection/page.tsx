@@ -1,7 +1,7 @@
-import React from "react"
-import Image from "next/image"
-import { IoIosInformationCircleOutline } from "react-icons/io"
-import { FaArrowRight } from "react-icons/fa"
+import React from "react";
+import Image from "next/image";
+import { IoIosInformationCircleOutline } from "react-icons/io";
+import { FaArrowRight } from "react-icons/fa";
 
 export const CardSection2 = () => {
   return (
@@ -9,18 +9,17 @@ export const CardSection2 = () => {
       {/* 2 card section */}
       <section className="min-h-screen flex flex-col max-md:px-2 mt-20 sm:mt-10 ">
         <div className="flex flex-wrap xl:flex-nowrap justify-around ">
-
           {/* left card */}
           {/* <div className="relative w-full md:w-[65%] 2xl:w-[40%]  h-[400px] sm:min-h-[600px] lg:h-[550px] 2xl:min-h-[753px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
           <div
             className="relative w-full md:w-[60%] 2xl:w-[34.838%]  shadow-lg overflow-hidden rounded-[3rem] md:mb-10"
-            style={{ height: 'clamp(450px, calc(-45.0001px + 46.18vw), 753px)' }}
-          // style={{ height: 'clamp(550px, calc(288.33px + 23.03vw), 753px)', }}
-          // style={{ height: 'clamp(550px, calc(385px + 0.2135vw), 753px)' }}
 
+            style={{
+              height: "clamp(450px, calc(-45.0001px + 46.18vw), 753px)",
+            }}
+            // style={{ height: 'clamp(550px, calc(288.33px + 23.03vw), 753px)', }}
+            // style={{ height: 'clamp(550px, calc(385px + 0.2135vw), 753px)' }}
           >
-
-
             <Image
               src="/card-pic.png"
               alt="Card Image"
@@ -132,10 +131,13 @@ export const CardSection2 = () => {
 
             {/* List section */}
             <div
-              className="flex  xl:justify-end justify-center mt-10 2xl:mt-16 px-4"
+              className="flex  xl:justify-end justify-center mt-10 2xl:mt-20 px-4" 
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
-              <ul className="space-y-6 xl:space-y-4 [@media(min-width:1600px)]:space-y-10 w-full  max-w-[724px] ">
+              <ul
+                // className="space-y-6 xl:space-y-4 [@media(min-width:1600px)]:space-y-10 w-full  max-w-[724px] "
+                className="space-y-6 xl:space-y-4 [@media(min-width:1600px)]:space-y-10 w-full  max-w-[745px] "
+              >
                 {[
                   {
                     title: "Unparalleled Diagnostics",
@@ -155,7 +157,9 @@ export const CardSection2 = () => {
                     className="flex flex-col md:flex-row items-start xl:gap-10 xl:items-center 2xl:items-start "
                   >
                     {/* <div className="flex items-center md:ml-[5rem] gap-3 text-xl sm:text-2xl md:text-3xl font-medium min-w-[250px]"> */}
-                    <div className="flex items-center  md:ml-[5rem] gap-3 text-[clamp(20px,0.994vw+15.82px,34px)] leading-tight font-medium min-w-[240px]">
+
+                    <div className="flex items-center  md:ml-[5rem] gap-3 text-[clamp(20.25px,0.98vw+17.1px,34px)] leading-tight font-medium min-w-[240px]">
+
                       <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
                         <FaArrowRight className="text-[#2D557A] text-base sm:text-lg" />
                       </div>
@@ -164,7 +168,10 @@ export const CardSection2 = () => {
 
                     <p
                       // className="text-base sm:text-lg md:text-xl  font-medium mt-2 md:mt-0 "
-                      className="text-[clamp(16px,0.284vw+15.1px,20px)] leading-tight font-medium mt-2 md:mt-0 "
+
+                      // className="text-[clamp(16px,0.284vw+15.1px,20px)] leading-tight font-medium mt-2 md:mt-0 "
+                      className="text-[clamp(18px,1.5625vw-3px,24px)]
+ leading-tight font-medium mt-2 md:mt-0 "
 
                     >
                       {item.text}
@@ -178,6 +185,7 @@ export const CardSection2 = () => {
       </section>
 
     </>
-  )
-}
-export default CardSection2
+  );
+};
+export default CardSection2;
+
