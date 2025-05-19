@@ -13,6 +13,7 @@ export const CardSection2 = () => {
           {/* <div className="relative w-full md:w-[65%] 2xl:w-[40%]  h-[400px] sm:min-h-[600px] lg:h-[550px] 2xl:min-h-[753px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
           <div
             className="relative w-full md:w-[60%] 2xl:w-[34.838%]  shadow-lg overflow-hidden rounded-[3rem] md:mb-10"
+
             style={{
               height: "clamp(450px, calc(-45.0001px + 46.18vw), 753px)",
             }}
@@ -156,7 +157,9 @@ export const CardSection2 = () => {
                     className="flex flex-col md:flex-row items-start xl:gap-10 xl:items-center 2xl:items-start "
                   >
                     {/* <div className="flex items-center md:ml-[5rem] gap-3 text-xl sm:text-2xl md:text-3xl font-medium min-w-[250px]"> */}
+
                     <div className="flex items-center  md:ml-[5rem] gap-3 text-[clamp(20.25px,0.98vw+17.1px,34px)] leading-tight font-medium min-w-[240px]">
+
                       <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
                         <FaArrowRight className="text-[#2D557A] text-base sm:text-lg" />
                       </div>
@@ -165,9 +168,11 @@ export const CardSection2 = () => {
 
                     <p
                       // className="text-base sm:text-lg md:text-xl  font-medium mt-2 md:mt-0 "
+
                       // className="text-[clamp(16px,0.284vw+15.1px,20px)] leading-tight font-medium mt-2 md:mt-0 "
                       className="text-[clamp(18px,1.5625vw-3px,24px)]
  leading-tight font-medium mt-2 md:mt-0 "
+
                     >
                       {item.text}
                     </p>
@@ -178,7 +183,9 @@ export const CardSection2 = () => {
           </div>
         </div>
       </section>
+
     </>
   );
 };
 export default CardSection2;
+
