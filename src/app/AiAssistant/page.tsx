@@ -17,7 +17,7 @@ const AiAssistantPage = () => {
         span="Research Assistant"
         para="AI Recommendations, AI Response, Video Suggestions and Community Discussion Links"
       />
-      <ScrollButton />
+      {/* <ScrollButton /> */}
 
       {/* below heading */}
       {!showNewSection ? (

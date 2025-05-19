@@ -128,7 +128,7 @@ const Location = () => {
           span="Locator"
           para="AI Recommendations, AI Response, Video Suggestions and Community Discussion Links"
         />
-        <ScrollButton />
+        {/* <ScrollButton /> */}
       </div>
 
       {/* Buttons */}
