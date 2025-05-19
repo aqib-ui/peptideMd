@@ -132,7 +132,7 @@ export default function TakingPeptide() {
             >
               Oral Administration
             </h3>
-            <div className="hidden md:block absolute right-0  bottom-0 xl:bottom-18 xl:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
+            <div className="hidden md:block absolute right-0  bottom-0 xl:bottom-12 2xl:bottom-18 xl:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
               <Image
                 src="/takingPeptide/image3.png"
                 alt="pen image"
@@ -210,7 +210,7 @@ export default function TakingPeptide() {
               <video
                 className="w-full h-full object-cover"
                 controls
-                poster="/takingPeptide/redGlobe-br.png" // ✅ Add this line
+                poster="/takingPeptide/redglobe-br.png" // ✅ Add this line
               >
                 <source src="/sample-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
