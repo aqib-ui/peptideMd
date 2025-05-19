@@ -11,24 +11,6 @@ const AiAssistantPage = () => {
   return (
     <>
       {/* heading */}
-      {/* <div className="container bg-app mx-auto px-8 py-10">
-        <h1
-          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold"
-          style={{ fontFamily: "Afacad, sans-serif" }}
-        >
-          Peptide
-          <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
-            Research Assistant
-          </span>
-        </h1>
-        <h2
-          className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
-          style={{ fontFamily: "Afacad, sans-serif" }}
-        >
-          AI Recommendations, AI Response, Video Suggestions and Community
-          Discussion Links
-        </h2>
-      </div> */}
       <MoleculeTopLeftAnimation
         mainheading="Peptide"
         span="Research Assistant"
@@ -290,7 +272,9 @@ const AiAssistantPage = () => {
                 <input
                   type="text"
                   placeholder="Ask About peptides..."
-                  className="bg-gray-100 dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border px-6 sm:px-10 w-full p-4 sm:p-5 text-base sm:text-xl md:text-2xl font-medium 
+                  // className="bg-gray-100 dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border px-6 sm:px-10 w-full p-4 sm:p-5 text-base sm:text-xl md:text-2xl font-medium 
+                  // rounded-full placeholder:text-sm sm:placeholder:text-base md:placeholder:text-xl" // --> dark mode
+                   className="bg-gray-100 px-6 sm:px-10 w-full p-4 sm:p-5 text-base sm:text-xl md:text-2xl font-medium 
                   rounded-full placeholder:text-sm sm:placeholder:text-base md:placeholder:text-xl"
                 />
                 <div className="text-white text-4xl sm:text-5xl md:text-6xl p-2 sm:p-3 md:p-4 rounded-full bg-gradient-to-tr 
