@@ -130,7 +130,7 @@ export const CardSection2 = () => {
 
             {/* List section */}
             <div
-              className="flex  xl:justify-end justify-center mt-10 2xl:mt-20 px-4"
+              className="flex  xl:justify-end justify-center mt-10 2xl:mt-20 px-4" 
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
               <ul
