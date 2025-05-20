@@ -801,7 +801,7 @@ export default function HomePage() {
             className="absolute hidden md:block 
             w-auto 
             h-screen
-            lg:top-[-225px] xl:top-[-220px] -right-6 md:object-fill z-10 pointer-events-none"
+            lg:top-[-225px] xl:top-[-222px] -right-6 md:object-fill z-10 pointer-events-none"
           />
           {/* // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it */}
         </div>
@@ -863,9 +863,7 @@ export default function HomePage() {
           )}
         </div>
       </section>
-
-
-      
+     
 
       {/* Description Section */}
       <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-10 my-10 md:my-0 ">
@@ -909,9 +907,11 @@ export default function HomePage() {
           help your body perform at its best!
         </p>
       </section>
+      
 
       {/* 2 card section */}
       <CardSection2 />
+    
 
       {/* Slideshow Banner Section */}
       <section
@@ -945,7 +945,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Cards */}
+        {/* Cards over scrolling text */}
         <div
           className={`absolute flex items-center justify-center transition-all duration-500 mt-12 ${
             isExpanded
@@ -953,33 +953,6 @@ export default function HomePage() {
               : "w-[250px] h-[320px]"
           }`}
         >
-          {/* {cards.map((card) => (
-            <div
-              key={card.title}
-              onClick={HandleCardClick}
-              className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-white cursor-pointer transition-all duration-500 ${isExpanded
-                  ? "rotate-0 scale-100 relative z-auto"
-                  : `${card.rotate} absolute z-[${card.zIndex}]`
-                }`}
-              style={{
-                boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
-              }}
-            >
-              <img
-                src={card.imageSrc}
-                alt={card.title}
-                className="w-full h-[190px] object-cover rounded-t-2xl"
-              />
-              <div className="p-3 flex justify-between items-center h-[calc(100%-190px)]">
-                <h3 className="font-semibold text-[16px] text-black leading-tight">
-                  {card.title}
-                </h3>
-                <button className="bg-[#6FA5D4] text-white rounded-full w-8 h-8 flex items-center justify-center transition hover:bg-[#5c90c0]">
-                  →
-                </button>
-              </div>
-            </div>
-          ))} */}
           {cards.map((card) => (
             <div
               key={card.title}

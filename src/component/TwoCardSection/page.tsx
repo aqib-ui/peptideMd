@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
-import { IoIosInformationCircleOutline } from "react-icons/io";
+import { IoIosInformationCircleOutline, IoMdArrowForward  } from "react-icons/io";
 import { FaArrowRight } from "react-icons/fa";
 
 export const CardSection2 = () => {
   return (
     <>
       {/* 2 card section */}
-      <section className="min-h-screen flex flex-col max-md:px-2 mt-20 sm:mt-10 ">
+      <section className="min-h-screen flex flex-col max-md:px-2 mt-20 sm:mt-10 mx-6 2xl:mx-0">
         <div className="flex flex-wrap xl:flex-nowrap justify-around ">
           {/* left card */}
           {/* <div className="relative w-full md:w-[65%] 2xl:w-[40%]  h-[400px] sm:min-h-[600px] lg:h-[550px] 2xl:min-h-[753px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
@@ -27,9 +27,9 @@ export const CardSection2 = () => {
               className="object-cover md:object-cover"
             />
             <div
-              className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-10 md:left-10 lg:bottom-10 lg:left-10 
+              className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-10 md:left-10 lg:bottom-7 2xl:bottom-10 lg:left-10 
                   flex flex-col justify-start items-start backdrop-blur-md  border-3 border-white
-                  w-[70%] [350px]:w-[90%] sm:w-[290px] md:w-[260px] lg:w-[295px] 2xl:w-[308px]
+                  w-[70%] [350px]:w-[90%] sm:w-[290px] md:w-[260px] lg:w-[265px] 2xl:w-[308px]
              rounded-[40px] px-4 py-4 overflow-hidden"
               style={{ fontFamily: "Afacad, sans-serif" }}
             >
@@ -79,7 +79,7 @@ export const CardSection2 = () => {
               </div>
             </div>
             {/* Top-right icons */}
-            <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-8 lg:right-12 flex gap-4">
+            <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-5 lg:right-8 2xl:top-8 2xl:right-12 flex gap-4">
               {/* Information Icon */}
               <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
                 <IoIosInformationCircleOutline className="text-[#2D557A] text-base sm:text-lg" />
@@ -87,7 +87,7 @@ export const CardSection2 = () => {
 
               {/* Arrow Icon */}
               <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
-                <FaArrowRight className="text-[#2D557A] text-base sm:text-lg" />
+                <IoMdArrowForward  className="text-[#2D557A] text-base sm:text-lg" />
               </div>
             </div>
           </div>
