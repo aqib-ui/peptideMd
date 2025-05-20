@@ -94,7 +94,7 @@ body {
   .txt-46 { font-size:  clamp(22.5px,1.67vw + 17.2px,46px); } 
 
   /* .txt-34 { font-size: clamp(18px, 1.13vw + 14.4px, 34px); } */
-  .txt-34 { font-size: clamp(20.25px,0.98vw +1 7.1px,34px); } 
+  .txt-34 { font-size: clamp(20.25px,0.98vw + 17.1px,34px); } 
 
   .txt-30 { font-size: clamp(18px, 0.96vw + 15.2px, 30px); }
   .txt-26 { font-size: clamp(17px, 0.94vw + 15px, 26px); }

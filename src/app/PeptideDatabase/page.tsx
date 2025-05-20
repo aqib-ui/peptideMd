@@ -91,14 +91,14 @@ export default function PeptideDatabase() {
         {/* Heading searchbar etc Section */}
         <div
           // className="grid grid-cols-[auto_1fr] justify-around items-start gap-4"
-          className="flex items-start justify-around max-xl:flex-col"
+          className="flex px-6 w-full items-start justify-around max-xl:flex-col"
         >
           {/*basically grid-cols-[auto_1fr] ===> "Give the first column as much space
                  as it needs (auto), and let the second one fill the rest (1fr)" */}
 
           {/* heading section */}
-          <div className="px-10 w-full flex flex-1 flex-col ">
-            <h1 className="capitalize text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
+          <div className="md:ml-[1rem] w-full flex flex-2 md:flex-1.1 2xl:flex-1.2 flex-col max-sm:items-center max-sm:justify-center sm:align-middle">
+            <h1 className="capitalize text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold ">
               single peptide
             </h1>
             <h3 className="my-1 mb-2 text-[clamp(18px,0.43vw+16.63px,24px)] font-medium">
@@ -106,7 +106,7 @@ export default function PeptideDatabase() {
             </h3>
           </div>
 
-          <div className="flex flex-col w-full p-6 pl-2 pt-10 flex-3 md:flex-row justify-center xl:justify-end gap-4 mr-4 md:mr-16  ">
+          <div className="flex flex-col w-full max-xl:p-6 pl-2 pt-8 flex-5 md:flex-row justify-center xl:justify-end gap-4 mr-4 md:mr-12  ">
             {/* Filter & Compare Buttons */}
             <div className="flex max-md:flex-wrap items-center justify-center md:justify-end gap-4 text-[clamp(16px,0.284vw+15.1px,20px)] font-medium">
               <button
@@ -154,7 +154,7 @@ export default function PeptideDatabase() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className={`
-                px-8 py-4 border-2 border-[#88D3FF] bg-app text-app rounded-full shadow-sm focus:ring
+                px-8 py-4 border-2 border-[#88D3FF] bg-app text-app rounded-full  focus:ring
                 focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] outline-none text-lg md:text-xl font-semibold 
                 max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full md:w-auto
                 ${showSearch ? "block" : "hidden"} md:block
@@ -171,7 +171,7 @@ export default function PeptideDatabase() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className={`
-                px-8 py-4  border-2 border-[#88D3FF] bg-app text-app rounded-full shadow-sm focus:ring 
+                px-8 py-4  border-2 border-[#88D3FF] bg-app text-app rounded-full  focus:ring 
                 focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] outline-none text-lg md:text-xl font-semibold 
                 max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full sm:w-[200px] lg:w-[400px]
                 ${showSearch ? "block" : "hidden"} md:block
@@ -182,7 +182,7 @@ export default function PeptideDatabase() {
             )}
 
             {/* working dropdown behind search button responsive */}
-            <div className="relative w-fit left-[12rem] md:left-0 ">
+            <div className="relative w-fit left-[11rem] md:left-0 ">
               {/* Dropdown Trigger (fake behind) */}
               <button
                 className="absolute right-0 top-0 translate-x-7 translate-y-0 z-10 w-16 h-16
@@ -201,21 +201,31 @@ export default function PeptideDatabase() {
 
               {/* Dropdown Menu */}
               {showDropdown && (
+                // <div
+                //   className="absolute top-full mt-6 md:mt-7 xl:mt-9 2xl:mt-6 z-30 w-60 max-md:w-40 md:left-1/6 max-md:left-1/4
+                //   bg-white bg-app dark:border dark:border-white shadow-xl p-4 rounded-3xl rounded-tr-md"
+                //   style={{
+                //     transform: "translateX(-60%)",
+                //     fontFamily: "Afacad, sans-serif",
+                //   }}
+                // >
                 <div
-                  className="absolute top-full mt-6 md:mt-7 xl:mt-10 z-30 w-60 max-md:w-40 md:left-1/6 max-md:left-1/4 
-                  bg-white bg-app dark:border dark:border-white shadow-xl p-4 rounded-3xl"
+                  className="absolute top-full mt-6 xl:mt-3 2xl:mt-3.5 z-30 w-[180px] sm:w-[240px] [@media(min-width:1541px)]:w-[294px] 
+                   h-[190px] sm:h-[180px] lg:h-[200px] [@media(min-width:1441px)]:h-[215px] md:left-1/6 max-md:left-1/4 
+                  bg-white bg-app dark:border dark:border-white p-4 rounded-4xl rounded-tr-md"
                   style={{
                     transform: "translateX(-60%)",
                     fontFamily: "Afacad, sans-serif",
+                    boxShadow: "0px 6px 20px 0px #1F1F1F1F",
                   }}
                 >
                   <p
                     // className="text-[#1F1F1F]/40 dark:text-[#E5F0F8]/40 text-sm md:text-base lg:text-xl font-semibold mb-2" --> dark mode
-                    className="text-[#1F1F1F]/40 text-sm md:text-base lg:text-xl font-semibold mb-2"
+                    className="text-[#1F1F1F]/40 txt-24 font-semibold mb-2"
                   >
                     Search by:
                   </p>
-                  <ul className="space-y-0 mt-3 pb-5 font-semibold text-sm md:text-base lg:text-xl leading-tight">
+                  <ul className="space-y-0 mt-3 pb-5 font-semibold txt-24 leading-tight">
                     <li
                       // className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40" --> dark mode
                       className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40"
@@ -299,19 +309,20 @@ export default function PeptideDatabase() {
                       </div>
                     </td>
 
-                    <td className="px-2  w-[20%]  align-top pt-20 pb-5 ">
+                    <td className="px-2  w-[15%]  align-top pt-20 pb-5 ">
                       <div className="flex  justify-start items-start">
                         {peptide.applications}
                       </div>
                     </td>
 
-                    <td className="px-2  w-[30%] align-top pt-20 pb-5">
+                    {/* <td className="px-2  w-[30%] align-top pt-20 pb-5"> */}
+                    <td className="px-4  w-[20%] align-top pt-20 pb-5">
                       <div className="flex flex-col justify-start items-start">
                         {peptide.description}
                       </div>
                     </td>
 
-                    <td className="px-2  w-[30%] align-top pt-20 pb-5">
+                    <td className="px-4  w-[19%] align-top pt-20 pb-5">
                       <ul className="flex flex-col justify-start items-start">
                         {peptide.benefits.map((benefit, i) => (
                           <li
@@ -326,7 +337,7 @@ export default function PeptideDatabase() {
                       </ul>
                     </td>
 
-                    <td className="px-2  w-[25%] align-top pt-20 pb-5">
+                    <td className="px-2  w-[18%] align-top pt-20 pb-5">
                       <ul className=" flex flex-col justify-start items-start ">
                         {peptide.risks.map((risk, i) => (
                           <li
@@ -341,15 +352,16 @@ export default function PeptideDatabase() {
                       </ul>
                     </td>
 
-                    <td className="px-4 flex align-top pt-20 pb-5">
-                      <div className="flex justify-start items-start">
-                        {peptide.references}
-                      </div>
+                    {/* <td className="px-4 flex align-top pt-20 pb-5"> */}
+                    <td className="flex  pt-20 pb-5  w-full">
+                      {/* <div className="flex justify-start items-start"> */}
+                      {peptide.references}
+                      {/* </div> */}
                     </td>
 
-                    <td className="px-2 align-top pt-15 ">
+                    <td className="px-2 align-top pt-15 w-[10%] ">
                       <span
-                        className={`inline-block text-black px-3 py-1 rounded-[30px] text-[clamp(18px,0.43vw+16.63px,24px)] ${
+                        className={`inline-block text-black px-8 py-1 rounded-[30px] text-[clamp(18px,0.43vw+16.63px,24px)] ${
                           peptide.fdaStatus === "FDA Approved"
                             ? "bg-[#C5E87E]"
                             : "bg-[#909090]"

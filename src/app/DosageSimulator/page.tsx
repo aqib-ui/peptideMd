@@ -103,7 +103,7 @@ function DosageGuide() {
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
-            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
+            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C3ED] text-black mr-2">
               Step 1:
             </span>
             Select Peptide
@@ -179,7 +179,7 @@ function DosageGuide() {
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
-            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED]  text-black mr-2">
+            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C3ED]  text-black mr-2">
               Step 2:
             </span>
             Protocol Selection
@@ -233,7 +233,7 @@ function DosageGuide() {
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
-            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
+            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C3ED] text-black mr-2">
               Step 3:
             </span>
             Dosage Selection & Visualization
@@ -450,7 +450,7 @@ function DosageGuide() {
           style={{ fontFamily: "Afacad, sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
-            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
+            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C3ED] text-black mr-2">
               Step 4:
             </span>
             Administration Sites
