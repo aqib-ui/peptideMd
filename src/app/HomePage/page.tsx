@@ -974,7 +974,7 @@ export default function HomePage() {
               onClick={HandleCardClick}
               // className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-[#E1E1E1]
               //   dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `}
-              className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-[#E1E1E1] 
+              className={`w-[250px] h-[320px] rounded-2xl  bg-[#E1E1E1] 
                 dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `}
               style={{
                 transform: isExpanded
@@ -982,7 +982,8 @@ export default function HomePage() {
                   : `translateX(0px) rotate(${card.rotateDeg}deg)`,
                 zIndex: isExpanded ? 10 : card.zIndex,
                 transition: "transform 0.6s ease",
-                boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
+                // boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
+                boxShadow: "0px 4px 10px 0px #00000040",
               }}
             >
               <img
@@ -1110,16 +1111,24 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
 
                 {/* More Button */}
                 <button
-                  className="mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium  rounded-t-lg
+                  className="relative mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium  rounded-t-lg
              hover:bg-gray-800 dark:border dark:border-white"
                   onClick={() => handleCardClick(card.title)}
                   style={{
                     cursor: "pointer",
                     fontFamily: "Afacad Flux, sans-serif",
-                    borderBottom: "4px solid #A6C9EE", // light blue stripe (adjust color as needed)
+                    borderBottom: "4px solid #94C4ED", // light blue stripe (adjust color as needed)
                   }}
                 >
                   More
+
+                  {/* Smoothed inner blue curved corner */}
+        <span
+          className="absolute top-9 left-28 w-[4px] h-6 bg-[#94C4ED] rounded-full"
+          style={{
+            transform: 'translate(-250%, 5%) rotate(48deg)',
+          }}
+        ></span>
                 </button>
               </div>
             </div>

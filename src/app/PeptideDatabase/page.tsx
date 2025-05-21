@@ -242,7 +242,7 @@ export default function PeptideDatabase() {
                       // className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40" --> dark mode
                       className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40"
                     >
-                      Desired outcomes
+                      Desired outcomes etc.
                     </li>
                   </ul>
                 </div>

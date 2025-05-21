@@ -13,10 +13,10 @@ export default function Resources() {
         />
       </div>
       <div className="container px-6 py-10 min-w-[98vw] overflow-hidden">
-
-
-
-        <div className="mt-20 sm:mt-22 md:mt-30 lg:mt-40 mb-6 bg-app " style={{ fontFamily: "Afacad Flux, sans-serif" }}>
+        <div
+          className="mt-20 sm:mt-22 md:mt-30 lg:mt-40 mb-6 bg-app "
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
+        >
           <div className="px-6 ">
             <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold flex items-center flex-wrap">
               Latest Podcast
@@ -30,8 +30,8 @@ export default function Resources() {
             <h3 className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-6.5 font-medium mb-12 mt-5 ">
               {/* className="" */}
               <span className="text-[24px] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]"></span>
-              Our podcast series featuring leading experts in peptide research and
-              clinical applications will be launching soon.
+              Our podcast series featuring leading experts in peptide research
+              and clinical applications will be launching soon.
             </h3>
           </div>
           {/* Video Section */}
@@ -102,6 +102,7 @@ export default function Resources() {
                 width={324}
                 height={308}
                 className=" object-cover w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
+                style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
               />
             </div>
 
@@ -155,7 +156,8 @@ export default function Resources() {
                 alt="pen image"
                 width={324}
                 height={308}
-                className="w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
+                className="w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px] "
+                style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
               />
             </div>
 
@@ -205,7 +207,6 @@ export default function Resources() {
             <h2
               // className=" text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-12 mb-2 max-w-8xl"
               className=" text-[clamp(20.25px,0.98vw+17.1px,34px)] font-medium leading-[100%] mt-12 mb-2 max-w-8xl"
-
               style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               Supplementary Resources
@@ -241,9 +242,8 @@ export default function Resources() {
             /> */}
               <div
                 className="relative w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px] shadow-2xl overflow-hidden"
-                style={{ boxShadow: '0px 14px 18px 0px #00000040' }}
+                style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
               >
-
                 <video
                   className="w-full h-full object-cover rounded-[50px]"
                   controls
@@ -285,7 +285,7 @@ export default function Resources() {
                 width={324}
                 height={308}
                 className=" object-cover w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
-                style={{ boxShadow: '0px 14px 18px 0px #00000040' }}
+                style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
               />
               <Image
                 src="/resourcesPod/bottom3.png"
@@ -293,7 +293,7 @@ export default function Resources() {
                 width={324}
                 height={308}
                 className=" object-cover w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
-                style={{ boxShadow: '0px 14px 18px 0px #00000040' }}
+                style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
               />
             </div>
           </div>

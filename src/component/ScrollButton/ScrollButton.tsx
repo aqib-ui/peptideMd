@@ -34,6 +34,14 @@ const ScrollButton = () => {
       }}
     >
       Scroll
+
+      {/* Smoothed inner blue curved corner */}
+        <span
+          className="absolute bottom-0 left-0 w-[5px] h-7 bg-[#94C4ED] rounded-full"
+          style={{
+            transform: 'translate(-245%, 12%) rotate(135deg)',
+          }}
+        ></span>
     </button>
   );
 };

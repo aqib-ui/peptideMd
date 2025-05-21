@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     // <footer className="bg-app text-white  px-6 md:px-10 flex flex-col" style={{ backgroundColor: '#0a0a0a' }}>
-    <footer className="px-6 md:px-10 flex flex-col bg-[#0a0a0a] text-white">
+    <footer className="px-6 md:px-10 flex flex-col bg-[#1F1F1F] text-white">
       {/* <footer
   className="bg-app text-app px-6 md:px-10 flex flex-col"
   style={{ backgroundColor: '#1F1F1F' }}
@@ -71,22 +71,25 @@ export default function Footer() {
 
           <ul className="text-[clamp(18px,0.43vw+16.63px,24px)] space-y-9">
             <li>
-              <a href="#" className="hover:text-blue-500">
+              {/* <a href="/AiAssistant" className="hover:text-blue-500">
                 AI Assistant
-              </a>
+              </a> */}
+              <Link href="/AiAssistant" className="hover:text-blue-500">
+                AI Assistant
+                </Link>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-500">
+              <a href="/CaseStudies" className="hover:text-blue-500">
                 Case Studies
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-500">
+              <a href="/Location" className="hover:text-blue-500">
                 Research Updates
               </a>
             </li>
             <li>
-              <a href="#" className="hover:text-blue-500">
+              <a href="/Discussion" className="hover:text-blue-500">
                 Discussion Forum
               </a>
             </li>
