@@ -11,14 +11,13 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-/* 
-@media (prefers-color-scheme: dark) {
+/* darkmode */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
 } */
-
 
 body {
   background: var(--background);
@@ -37,7 +36,7 @@ body {
   }
 }
 
-.animate-slide { 
+.animate-slide {
   display: flex;
   min-width: 400%; /* Increase width to accommodate all text spans without cutting off */
   animation: slide 40s linear infinite; /* Slow the animation down to avoid abrupt resets */
@@ -54,9 +53,7 @@ body {
     @apply p-[2px] rounded-[3rem] w-[90%] max-w-[450px] min-h-[450px] md:h-[500px] mx-auto 
     relative bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793];
   }
-  
 }
-
 
 /* darkmode */
 @layer utilities {
@@ -78,40 +75,60 @@ body {
   }
 }
 
-
-
-
-
 /* globals.css */
 
 @layer utilities {
   /* .txt-72 { font-size: clamp(40px, 2.1vw + 28.5px, 72px); } */
-  .txt-72 { font-size: clamp(36px,2.84vw + 22.91px,72px); }
+  .txt-72 {
+    font-size: clamp(36px, 2.84vw + 22.95px, 72px);
+  }
 
-  .txt-66 { font-size: clamp(40px, 1.8vw + 27.2px, 66px); } /* ???? */
+  .txt-66 {
+    font-size: clamp(40px, 1.8vw + 27.2px, 66px);
+  } /* ???? */
 
   /* .txt-46 { font-size: clamp(28px, 1.14vw + 23.3px, 46px); } */
-  .txt-46 { font-size:  clamp(22.5px,1.67vw + 17.2px,46px); } 
+  .txt-46 {
+    font-size: clamp(22.5px, 1.67vw + 17.2px, 46px);
+  }
 
   /* .txt-34 { font-size: clamp(18px, 1.13vw + 14.4px, 34px); } */
-  .txt-34 { font-size: clamp(20.25px,0.98vw + 17.1px,34px); } 
+  .txt-34 {
+    font-size: clamp(20.25px, 0.98vw + 17.1px, 34px);
+  }
 
-  .txt-30 { font-size: clamp(18px, 0.96vw + 15.2px, 30px); }
-  .txt-26 { font-size: clamp(17px, 0.94vw + 15px, 26px); }
+  .txt-30 {
+    font-size: clamp(18px, 0.96vw + 15.2px, 30px);
+  }
+  .txt-26 {
+    font-size: clamp(17px, 0.94vw + 15px, 26px);
+  }
 
   /* .txt-24 { font-size: clamp(16px, 0.57vw + 14.2px, 24px); } */
-    .txt-24 { font-size: clamp(18px,0.43vw + 16.63px,24px); }
+  .txt-24 {
+    font-size: clamp(18px, 0.43vw + 16.63px, 24px);
+  }
 
-
-  .txt-22 { font-size: clamp(16px, 0.625vw + 14px, 22px); }
-
-  /* .txt-20 { font-size: clamp(16px, 0.284vw + 15.1px, 20px); } */
-    .txt-20 { font-size: clamp(16px,0.284vw + 15.1px,20px); }
-
+  .txt-btn-24 {
+  font-size: clamp(16px, 1.389vw, 24px);
 }
 
 
+  .txt-22 {
+    font-size: clamp(16px, 0.625vw + 14px, 22px);
+  }
 
+  /* .txt-20 { font-size: clamp(16px, 0.284vw + 15.1px, 20px); } */
+  .txt-20 {
+    font-size: clamp(16px, 0.284vw + 15.1px, 20px);
+  }
+
+  .txt-16 {
+    font-size: clamp(13px, 0.39vw + 10px, 16px);
+  }
+}
+
+/* for commented values or untouched values this is the behaviour */
 /* | Class    | 320px  | 768px    | 1024px   | 1280px   | 1440px   | 1728px+ | Max Cap |
 | -------- | ------ | -------- | -------- | -------- | -------- | ------- | ------- |
 | `txt-72` | \~40px | \~51px   | \~58px   | \~65px   | \~70px   | 72px    | 72px    |
@@ -122,5 +139,6 @@ body {
 | `txt-26` | \~17px | \~20px   | \~23px   | 26px     | 26px     | 26px    | 26px    |
 | `txt-24` | \~16px | \~18.6px | \~20px   | \~22.4px | \~23.8px | 24px    | 24px    |
 | `txt-22` | \~16px | \~18.5px | \~20.5px | 22px     | 22px     | 22px    | 22px    |
-| `txt-20` | \~16px | \~17.5px | \~18.2px | \~18.8px | \~19.4px | 20px    | 20px    | */
-
+| `txt-20` | \~16px | \~17.5px | \~18.2px | \~18.8px | \~19.4px | 20px    | 20px    | 
+| `txt-16` | \~13px | \~13px   | \~14px   | \~15px | \~15.6px   | 16px    | 16px    |
+*/

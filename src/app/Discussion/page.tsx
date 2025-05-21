@@ -35,7 +35,7 @@
 //               className="w-full h-full  rounded-full bg-app text-black text-base sm:text-lg md:text-xl font-medium
 //             flex items-center justify-center transition-colors duration-100
 //             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white px-4 py-2"
-//               style={{ fontFamily: "Afacad, sans-serif" }}
+//               style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //             >
 //               Create Topic
 //             </button>
@@ -52,7 +52,7 @@
 //         <div
 
 //           className="py-8 sm:py-10 md:py-16 "
-//           style={{ fontFamily: "Afacad, sans-serif" }}
+//           style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //         >
 //           <div className="z-10 ">
 //             <MoleculeTopLeftAnimation
@@ -178,7 +178,7 @@
 //                       className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl font-medium
 //                     flex items-center justify-center transition-colors duration-100
 //                     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white px-4 py-2"
-//                       style={{ fontFamily: "Afacad, sans-serif" }}
+//                       style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //                     >
 //                       Add Comment
 //                     </button>
@@ -274,7 +274,7 @@
 //                         className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl font-medium
 //                       flex items-center justify-center transition-colors duration-100
 //                       ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white px-2 py-2"
-//                         style={{ fontFamily: "Afacad, sans-serif" }}
+//                         style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //                       >
 //                         Create Topic
 //                       </button>
@@ -329,7 +329,7 @@ const DiscussionPage = () => {
               className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl font-medium
             flex items-center justify-center transition-colors duration-100 
             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white px-4 py-2"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               Create Topic
             </button>
@@ -343,7 +343,7 @@ const DiscussionPage = () => {
 
         <div
           className="py-8 sm:py-10 md:py-16"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           {/* <MoleculeTopLeftAnimation
             mainheading="Physician"
@@ -469,7 +469,7 @@ const DiscussionPage = () => {
                       className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl font-medium
                     flex items-center justify-center transition-colors duration-100 
                     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white px-4 py-2"
-                      style={{ fontFamily: "Afacad, sans-serif" }}
+                      style={{ fontFamily: "Afacad Flux, sans-serif" }}
                     >
                       Add Comment
                     </button>
@@ -565,7 +565,7 @@ const DiscussionPage = () => {
                         className="w-full h-full rounded-full bg-app text-black text-base sm:text-lg md:text-xl font-medium
                       flex items-center justify-center transition-colors duration-100 
                       ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white px-2 py-2"
-                        style={{ fontFamily: "Afacad, sans-serif" }}
+                        style={{ fontFamily: "Afacad Flux, sans-serif" }}
                       >
                         Create Topic
                       </button>

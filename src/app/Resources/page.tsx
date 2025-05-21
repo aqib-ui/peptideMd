@@ -16,7 +16,7 @@ export default function Resources() {
 
 
 
-        <div className="mt-20 sm:mt-22 md:mt-30 lg:mt-40 mb-6 bg-app " style={{ fontFamily: "Afacad, sans-serif" }}>
+        <div className="mt-20 sm:mt-22 md:mt-30 lg:mt-40 mb-6 bg-app " style={{ fontFamily: "Afacad Flux, sans-serif" }}>
           <div className="px-6 ">
             <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold flex items-center flex-wrap">
               Latest Podcast
@@ -54,13 +54,13 @@ export default function Resources() {
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-6 bg-black/50">
                   <h2
                     className="text-[clamp(20px,4vw,34px)] font-bold"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Latest Podcast
                   </h2>
                   <p
                     className="text-[clamp(16px,3vw,24px)] mt-2"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Video content will be added soon
                   </p>
@@ -82,14 +82,14 @@ export default function Resources() {
           <div className="relative mt-10 sm:mt-22 md:mt-30 px-6 lg:mt-40 ">
             <h3
               className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold leading-[100%]   text-left"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               Good Reads
             </h3>
 
             <h2
               className=" text-[clamp(18px,0.43vw+16.63px,24px)]  font-medium leading-[100%] mt-5 mb-2 max-w-8xl"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               Recommended readings and publications
               {/* <br /> */}
@@ -107,7 +107,7 @@ export default function Resources() {
 
             <h2
               className=" text-[clamp(20.25px,0.98vw+17.1px,34px)] font-medium leading-[100%] mt-12 mb-2 max-w-8xl"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               Latest Readings
               {/* <br /> */}
@@ -118,7 +118,7 @@ export default function Resources() {
               className="w-full rounded-[5rem] mt-6 space-y-1 list-none "
               style={{
                 // backgroundColor: "rgba(136, 211, 255, 0.3)",
-                fontFamily: "Afacad, sans-serif",
+                fontFamily: "Afacad Flux, sans-serif",
               }}
             >
               <li className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
@@ -136,14 +136,14 @@ export default function Resources() {
           <div className="relative mt-10 sm:mt-22 md:mt-30 px-6 lg:mt-40 ">
             <h3
               className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold leading-[100%]   text-left"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               PeptideMD Articles
             </h3>
 
             <h2
               className="text-[clamp(18px,0.43vw+16.63px,24px)]  font-medium leading-[100%] mt-5 mb-2 max-w-8xl"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               Recommended readings and publications
               {/* <br /> */}
@@ -161,7 +161,7 @@ export default function Resources() {
 
             <h2
               className=" text-[clamp(20.25px,0.98vw+17.1px,34px)] font-medium leading-[100%] mt-12 mb-2 max-w-8xl"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               Featured Articles
               {/* <br /> */}
@@ -171,7 +171,7 @@ export default function Resources() {
             <ul
               className="w-full rounded-[5rem] mt-6 space-y-1 list-none "
               style={{
-                fontFamily: "Afacad, sans-serif",
+                fontFamily: "Afacad Flux, sans-serif",
               }}
             >
               <li className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
@@ -189,14 +189,14 @@ export default function Resources() {
           <div className="relative mt-10 sm:mt-22 md:mt-30 px-6 lg:mt-40 ">
             <h3
               className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold leading-[100%]   text-left"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               Other Relevant Resources
             </h3>
 
             <h2
               className="text-[clamp(18px,0.43vw+16.63px,24px)]  font-medium leading-[100%] mt-5 mb-2 max-w-8xl"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               Additional educational materials and tools
               {/* <br /> */}
@@ -206,7 +206,7 @@ export default function Resources() {
               // className=" text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-12 mb-2 max-w-8xl"
               className=" text-[clamp(20.25px,0.98vw+17.1px,34px)] font-medium leading-[100%] mt-12 mb-2 max-w-8xl"
 
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               Supplementary Resources
               {/* <br /> */}
@@ -217,7 +217,7 @@ export default function Resources() {
               className="w-full rounded-[5rem] mt-6 space-y-1 list-none "
               style={{
                 // backgroundColor: "rgba(136, 211, 255, 0.3)",
-                fontFamily: "Afacad, sans-serif",
+                fontFamily: "Afacad Flux, sans-serif",
               }}
             >
               <li className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
@@ -257,13 +257,13 @@ export default function Resources() {
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-4 bg-black/50 rounded-[50px]">
                   <h2
                     className="text-[clamp(16px,3vw,24px)] font-bold"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Latest Podcast
                   </h2>
                   <p
                     className="text-[clamp(12px,2.5vw,18px)] mt-1"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Video content will be added soon
                   </p>

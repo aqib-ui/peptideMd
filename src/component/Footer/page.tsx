@@ -24,7 +24,7 @@ export default function Footer() {
           />
           <p
             className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-[130%] mt-6 mb-10"
-            style={{ fontFamily: "Afacad, sans-serif" }}
+            style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             PeptideMD.com is your trusted platform for exploring the world of
             peptides. Whether you&apos;re looking for in-depth information on
@@ -39,7 +39,7 @@ export default function Footer() {
         {/* Right-aligned Lists */}
         <div
           className="flex flex-col md:flex-row gap-20 mt-10 md:mt-0"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           <ul className="text-[clamp(18px,0.43vw+16.63px,24px)] space-y-9">
             <li>
@@ -99,7 +99,7 @@ export default function Footer() {
         <hr className="border-t border-gray-600 w-full mb-4" />
         <div
           className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-10 text-center"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           <p className="text-[clamp(18px,0.43vw+16.63px,24px)]">
             © {new Date().getFullYear()} Nuda Peptide Therapeutics, All Rights

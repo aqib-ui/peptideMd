@@ -12,7 +12,7 @@
 //         <h1
 //           className="text-[32px] md:text-[46px] font-bold text-black leading-[100%] px-4 py-2 rounded-md"
 //           style={{
-//             fontFamily: "Afacad, sans-serif",
+//             fontFamily: "Afacad Flux, sans-serif",
 //             display: "inline-block",
 //           }}
 //         >
@@ -170,7 +170,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -189,7 +189,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -208,7 +208,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -227,7 +227,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -246,7 +246,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -268,7 +268,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -287,7 +287,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -306,7 +306,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -325,7 +325,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -391,7 +391,7 @@ export default function Header() {
         <button
           onClick={() => setIsOpen(!isOpen)} 
           className="focus:outline-none flex items-center"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         > <span className="text-base sm:text-lg md:text-xl lg:text-[22px] mr-2 sm:mr-3 md:mr-4 font-medium">Menu</span>
           <Image
             src="/headerIcon/hamBurger.png"
@@ -475,7 +475,7 @@ export default function Header() {
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
-                    fontFamily: "Afacad, sans-serif",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -495,7 +495,7 @@ export default function Header() {
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
-                    fontFamily: "Afacad, sans-serif",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -515,7 +515,7 @@ export default function Header() {
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
-                    fontFamily: "Afacad, sans-serif",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -535,7 +535,7 @@ export default function Header() {
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
-                    fontFamily: "Afacad, sans-serif",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -555,7 +555,7 @@ export default function Header() {
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
-                    fontFamily: "Afacad, sans-serif",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -578,7 +578,7 @@ export default function Header() {
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
-                    fontFamily: "Afacad, sans-serif",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -598,7 +598,7 @@ export default function Header() {
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
-                    fontFamily: "Afacad, sans-serif",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -618,7 +618,7 @@ export default function Header() {
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
-                    fontFamily: "Afacad, sans-serif",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -638,7 +638,7 @@ export default function Header() {
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
-                    fontFamily: "Afacad, sans-serif",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >

@@ -31,7 +31,7 @@ export const CardSection2 = () => {
                   flex flex-col justify-start items-start backdrop-blur-md  border-3 border-white
                   w-[70%] [350px]:w-[90%] sm:w-[290px] md:w-[260px] lg:w-[265px] 2xl:w-[308px]
              rounded-[40px] px-4 py-4 overflow-hidden"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               <div className="absolute inset-0 backdrop-blur-md bg-gray-100/60 rounded-xl pointer-events-none" />
               <div className="flex justify-end items-center gap-5 md:gap-10">
@@ -117,7 +117,7 @@ export const CardSection2 = () => {
                 // flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-white
                 // w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(45%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(40%,25vw,38%)]
                 // rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
-                style={{ fontFamily: "Afacad, sans-serif" }}
+                style={{ fontFamily: "Afacad Flux, sans-serif" }}
               >
                 <div className="absolute inset-0 backdrop-blur-md bg-white/30 p-6 text-black rounded-xl pointer-events-none" />
                 <h3 className="text-[clamp(16px,0.284vw+15.1px,20px)] text-black font-semibold leading-tight px-2 z-10 ">
@@ -132,7 +132,7 @@ export const CardSection2 = () => {
             {/* List section */}
             <div
               className="flex  xl:justify-end justify-center mt-10 2xl:mt-20 px-4" 
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               <ul
                 // className="space-y-6 xl:space-y-4 [@media(min-width:1600px)]:space-y-10 w-full  max-w-[724px] "
