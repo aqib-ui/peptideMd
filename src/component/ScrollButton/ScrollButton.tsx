@@ -30,7 +30,7 @@ const ScrollButton = () => {
         borderLeft: '4px solid #94C4ED', // light blue stripe (adjust color as needed)
         borderTopLeftRadius: '8px',
         borderBottomLeftRadius: '8px',
-        fontFamily: "Afacad Flux , sans-serif",
+        fontFamily: "Afacad Flux Flux , sans-serif",
       }}
     >
       Scroll

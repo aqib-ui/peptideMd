@@ -39,7 +39,7 @@
 //           <h1
 
 //             className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-tight"
-//             style={{ fontFamily: "Afacad, sans-serif" }}
+//             style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //           >
 //             Welcome to */}
 //       {/* <span style={{ color: "#224674" }} className="italic ml-2"> */}
@@ -50,7 +50,7 @@
 
 //       {/* <p
 //             className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
-//             style={{ fontFamily: "Afacad, sans-serif" }}
+//             style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //           >
 //             Your Trusted Source for Evidence-Based Peptide Therapeutics.
 //           </p>
@@ -58,7 +58,7 @@
 //           <p
 
 //             className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-2 max-w-xl md:max-w-3xl"
-//             style={{ fontFamily: "Afacad, sans-serif" }}
+//             style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //           >
 //             PeptideMD.com is your trusted platform for exploring the world of
 //             peptides. Whether you&apos;re looking for in-depth information on
@@ -73,7 +73,7 @@
 //               className="w-full h-full rounded-full bg-white text-black text-xl font-medium
 //             flex items-center justify-center transition-colors duration-100
 //             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
-//               style={{ fontFamily: "Afacad, sans-serif" }}
+//               style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //             >
 //               Peptide Overview
 //             </button>
@@ -110,7 +110,7 @@
 //           <h1
 //             // className="text-4xl font-bold text-[72px] leading-[100%]"
 //             className="text-[36px] sm:text-[48px] md:text-[60px]  font-bold leading-tight w-screen"
-//             style={{ fontFamily: "Afacad, sans-serif" }}
+//             style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //           >
 //             Welcome to
 //             {/* <span style={{ color: "#224674" }} className="italic ml-2"> */}
@@ -122,7 +122,7 @@
 //           <p
 //             // className="text-[34px] font-medium leading-[100%] mt-8"
 //             className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
-//             style={{ fontFamily: "Afacad, sans-serif" }}
+//             style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //           >
 //             Your Trusted Source for Evidence-Based Peptide Therapeutics.
 //           </p>
@@ -130,7 +130,7 @@
 //           <p
 //             // className="text-[24px] font-medium leading-[100%] mt-6 max-w-4xl"
 //             className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-2 max-w-xl md:max-w-3xl"
-//             style={{ fontFamily: "Afacad, sans-serif" }}
+//             style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //           >
 //             PeptideMD.com is your trusted platform for exploring the world of
 //             peptides. Whether you&apos;re looking for in-depth information on
@@ -147,7 +147,7 @@
 //               className="w-full h-full rounded-full bg-app text-black text-xl font-medium
 //             flex items-center justify-center transition-colors duration-100
 //             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
-//               style={{ fontFamily: "Afacad, sans-serif" }}
+//               style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //             >
 //               Peptide Overview
 //             </button>
@@ -213,14 +213,14 @@
 //             >
 //               <h2
 //                 className="text-[clamp(20px,4vw,34px)] font-bold leading-[clamp(24px,4.5vw,40px)]"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //               >
 //                 Welcome Video
 //               </h2>
 
 //               <p
 //                 className="text-[clamp(16px,3vw,24px)] leading-[clamp(18px,3.5vw,30px)] mt-2"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //               >
 //                 Watch our introduction to PeptideMD and learn how we&apos;re
 //                 advancing peptide research and education.
@@ -245,7 +245,7 @@
 //       <section className="min-h-screen flex flex-col justify-center px-6 mb-0 my-10 md:my-20 ">
 //         <h1
 //           className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
-//           style={{ fontFamily: "Afacad, sans-serif" }}
+//           style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //         >
 //           What are
 //           <span style={{ color: "#224674" }} className="italic ml-2">
@@ -255,7 +255,7 @@
 
 //         <p
 //           className="text-[20px] md:text-[22px] lg:text-[24px] font-medium  max-w-xl md:max-w-3xl mt-6"
-//           style={{ fontFamily: "Afacad, sans-serif" }}
+//           style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //         >
 //           Peptides are tiny but powerful building blocks of life! They are short
 //           chains of amino acids, which are like the &quot;letters&quot; that
@@ -269,7 +269,7 @@
 
 //         <p
 //           className="text-[20px] md:text-[22px] lg:text-[24px] font-medium  max-w-xl md:max-w-3xl mt-6"
-//           style={{ fontFamily: "Afacad, sans-serif" }}
+//           style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //         >
 //           Think of peptides like little messengers that tell your body how to
 //           work better. Some can help build muscle and burn fat, while others
@@ -297,7 +297,7 @@
 //               className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-10 md:left-10 lg:bottom-12 lg:left-12
 //       flex flex-col justify-start items-start bg-gray-100/10 border-3 border-amber-50
 //       md:w-[clamp(44%,55vw,48%)] rounded-[2rem] px-4 py-4 overflow-hidden"
-//               style={{ fontFamily: "Afacad, sans-serif" }}
+//               style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //             >
 //               <div className="absolute inset-0 bg-gray-100/60 rounded-xl pointer-events-none" />
 //               <div className="flex justify-end items-center md:gap-10">
@@ -430,7 +430,7 @@
 //                 // flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-white
 //                 // w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(45%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(40%,25vw,38%)]
 //                 // rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //               >
 //                 <div className="absolute inset-0 backdrop-blur-md bg-white/30 p-6 text-black rounded-xl pointer-events-none" />
 //                 <h3 className="text-base sm:text-lg md:text-xl text-black font-semibold leading-tight px-2 z-10 ">
@@ -445,7 +445,7 @@
 //             {/* List section */}
 //             <div
 //               className="flex  justify-center mt-10 sm:mt-26 px-4"
-//               style={{ fontFamily: "Afacad, sans-serif" }}
+//               style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //             >
 //               <ul className="space-y-6 w-full max-w-[700px]">
 //                 {[
@@ -490,7 +490,7 @@
 //       >
 //         <div
 //           className="animate-slide whitespace-nowrap flex text-[32px] md:text-[48px] lg:text-[72px] font-semibold"
-//           style={{ fontFamily: "Afacad, sans-serif" }}
+//           style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //         >
 //           <span className="uppercase">
 //             Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
@@ -511,7 +511,7 @@
 //       <section className="min-h-screen flex flex-col items-center justify-center  ">
 //         <h1
 //           className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
-//           style={{ fontFamily: "Afacad, sans-serif" }}
+//           style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //         >
 //           Discover
 //           <span
@@ -530,7 +530,7 @@
 
 //         <p
 //           className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[100%] mt-6 px-6 max-w-4xl text-center"
-//           style={{ fontFamily: "Afacad, sans-serif" }}
+//           style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //         >
 //           Select a tile below to explore and learn more about peptides.
 //         </p>
@@ -590,7 +590,7 @@
 //                 {/* Card Title */}
 //                 <span
 //                   className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px]  font-semibold leading-[50px] text-center mt-2"
-//                   style={{ fontFamily: "Afacad, sans-serif" }}
+//                   style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //                 >
 //                   {card.title}
 //                 </span>
@@ -598,7 +598,7 @@
 //                 {/* Description */}
 //                 <p
 //                   className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[130%] text-center px-4 mt-2"
-//                   style={{ fontFamily: "Afacad, sans-serif" }}
+//                   style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //                 >
 //                   {card.desc}
 //                 </p>
@@ -607,14 +607,14 @@
 //                 {/* <button
 //                   className="mt-6 mb-12 px-10 py-2 bg-black text-white group-active:text-white text-md
 //                 font-medium rounded-lg hover:bg-gray-800"
-//                   style={{ fontFamily: "Afacad, sans-serif" }}
+//                   style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //                 >
 //                   More
 //                 </button> */}
 //                 <button
 //                   className="mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium rounded-lg
 //              hover:bg-gray-800 dark:border dark:border-white"
-//                   style={{ fontFamily: "Afacad, sans-serif" }}
+//                   style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //                 >
 //                   More
 //                 </button>
@@ -736,7 +736,7 @@ export default function HomePage() {
             // className="text-4xl font-bold text-[72px] leading-[100%]"
             // className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] font-bold leading-tight"
             className="text-[clamp(36px,2.84vw+22.9px,72px)] font-bold leading-tight"
-            style={{ fontFamily: "Afacad, sans-serif" }}
+            style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             Welcome to
             {/* <span style={{ color: "#224674" }} className="italic ml-2"> */}
@@ -749,7 +749,7 @@ export default function HomePage() {
             // className="text-[34px] font-medium leading-[100%] mt-8"
             // className="text-[24px] md:text-[28px] lg:text-[34px] font-medium leading-snug mt-6"
             className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-medium leading-snug mt-6"
-            style={{ fontFamily: "Afacad, sans-serif" }}
+            style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             Your Trusted Source for Evidence-Based Peptide Therapeutics.
           </p>
@@ -758,7 +758,7 @@ export default function HomePage() {
             // className="text-[24px] font-medium leading-[100%] mt-6 max-w-4xl"
             // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium mt-2 max-w-xl md:max-w-3xl"
             className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-tight font-medium mt-2 max-w-xl md:max-w-3xl"
-            style={{ fontFamily: "Afacad, sans-serif" }}
+            style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             PeptideMD.com is your trusted platform for exploring the world of
             peptides. Whether you&apos;re looking for in-depth information on
@@ -778,7 +778,7 @@ export default function HomePage() {
               className="w-full h-full rounded-full bg-app text-black text-[clamp(16px,0.284vw+16.1px,20px)] font-medium
             flex items-center justify-center transition-colors duration-100 
             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white "
-              style={{ fontFamily: "Afacad, sans-serif", cursor: "pointer" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif", cursor: "pointer" }}
             >
               Peptide Overview
             </button>
@@ -833,14 +833,14 @@ export default function HomePage() {
               >
                 <h2
                   className="text-[clamp(20px,4vw,34px)] font-bold leading-[clamp(24px,4.5vw,40px)]"
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
                 >
                   Welcome Video
                 </h2>
 
                 <p
                   className="text-[clamp(16px,3vw,24px)] leading-[clamp(18px,3.5vw,30px)] mt-2"
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
                 >
                   Watch our introduction to PeptideMD and learn how we&apos;re
                   advancing peptide research and education.
@@ -869,7 +869,7 @@ export default function HomePage() {
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-left"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           What are
           <span style={{ color: "#224674" }} className="italic ml-2">
@@ -880,7 +880,7 @@ export default function HomePage() {
         <p
           // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
           className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           Peptides are tiny but powerful building blocks of life! They are short
           chains of amino acids, which are like the &quot;letters&quot; that
@@ -895,7 +895,7 @@ export default function HomePage() {
         <p
           // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
           className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-tight max-w-xl md:max-w-4xl mt-6"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           Think of peptides like little messengers that tell your body how to
           work better. Some can help build muscle and burn fat, while others
@@ -919,7 +919,7 @@ export default function HomePage() {
         <div className="relative top-0 left-0 w-full overflow-hidden">
           <div
             className="animate-slide whitespace-nowrap flex text-[28px] md:text-[40px] lg:text-[64px] font-semibold"
-            style={{ fontFamily: "Afacad, sans-serif" }}
+            style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             <span className="uppercase">
               Dosage Guide / Calculator / Combination / AI Chat Bot &nbsp;&nbsp;
@@ -1003,7 +1003,7 @@ export default function HomePage() {
               />
               <div
                 className="p-3 flex justify-between items-center h-[calc(100%-190px)]"
-                style={{ fontFamily: "Afacad, sans-serif" }}
+                style={{ fontFamily: "Afacad Flux, sans-serif" }}
               >
                 <h3 className="font-semibold text-[clamp(20px,1.5vw,28px)] leading-snug text-app">
                   {card.title}
@@ -1027,7 +1027,7 @@ export default function HomePage() {
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           Discover
           <span className="italic  bg-clip-text inline-block pr-[5px] text-[#224674] ">
@@ -1037,7 +1037,7 @@ export default function HomePage() {
 
         <p
           className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-[100%] mt-6 px-6 max-w-4xl text-center"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           Select a tile below to explore and learn more about peptides.
         </p>
@@ -1104,7 +1104,7 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
                 <span
                   // className="text-[34px] sm:text-[36px] md:text-[40px] lg:text-[46px]  font-semibold leading-[50px] text-center mt-2"
                   className="text-[clamp(22.5px,1.67vw+17.2px,46px)]  font-semibold leading-[50px] text-center mt-2"
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
                 >
                   {card.title}
                 </span>
@@ -1113,7 +1113,7 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
                 <p
                   // className="text-[20px] md:text-[22px] lg:text-[24px] font-medium leading-[130%] text-center px-4 mt-2"
                   className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium leading-[130%] text-center px-4 mt-2"
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
                 >
                   {card.desc}
                 </p>
@@ -1125,7 +1125,7 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
                   onClick={() => handleCardClick(card.title)}
                   style={{
                     cursor: "pointer",
-                    fontFamily: "Afacad, sans-serif",
+                    fontFamily: "Afacad Flux, sans-serif",
                     borderBottom: "4px solid #A6C9EE", // light blue stripe (adjust color as needed)
                   }}
                 >

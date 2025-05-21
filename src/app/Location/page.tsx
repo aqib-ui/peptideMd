@@ -28,7 +28,7 @@
 //       {/* button */}
 //       <div
 //         className="container flex flex-col sm:flex-row justify-end gap-4 px-4 sm:px-8"
-//         style={{ fontFamily: "Afacad Flux, sans-serif" }}
+//         style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
 //       >
 //         <button
 //                 onClick={() => setIsCompareClicked(!isCompareClicked)}
@@ -71,7 +71,7 @@
 //         <div
 //           className="p-[2px] min-h-screen rounded-[3rem] mt-5 bg-gradient-to-br
 //                   from-[#5CB0E2] to-[#EB6793]"
-//           style={{ fontFamily: "Afacad Flux, sans-serif" }}
+//           style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
 //         >
 //           <div
 //             className="bg-white bg-app min-h-[120vh] rounded-[3rem] p-6 sm:p-10
@@ -134,7 +134,7 @@ const Location = () => {
       {/* Buttons */}
       <div
         className=" flex flex-col sm:flex-row flex-wrap content-center sm:justify-end gap-4 px-8 2xl:px-16 text-[clamp(18px,0.43vw+16.63px,24px)]"
-        style={{ fontFamily: "Afacad Flux, sans-serif" }}
+        style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
       >
         <button className="w-full sm:w-auto justify-center self-end flex items-center gap-2 border-2 border-[#C5B3FF] font-medium py-2 sm:py-4 px-4 rounded-full hover:bg-[#C5B3FF] transition">
           <LuPen /> Enter Zip Code

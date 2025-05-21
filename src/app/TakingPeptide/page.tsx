@@ -19,7 +19,7 @@ export default function TakingPeptide() {
         <div className="relative mt-10 sm:mt-22 md:mt-30 lg:mt-35 2xl:mt-50 ">
           <h3
             className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold leading-[100%]  md:ml-6 text-left"
-            style={{ fontFamily: "Afacad Flux, sans-serif" }}
+            style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
           >
             General Guideline
           </h3>
@@ -39,7 +39,7 @@ export default function TakingPeptide() {
             className="max-w-2xl lg:max-w-xl xl:max-w-4xl px-4 md:px-10 -mx-4 pl-10 rounded-[5rem] mt-6 space-y-1 list-none "
             style={{
               // backgroundColor: "rgba(136, 211, 255, 0.3)",
-              fontFamily: "Afacad Flux, sans-serif",
+              fontFamily: "Afacad Flux Flux, sans-serif",
             }}
           >
             <li className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium before:content-['o'] before:mr-2 before:text-[#88D3FF]">
@@ -65,7 +65,7 @@ export default function TakingPeptide() {
         <div className="relative mt-20 mb-25">
           <h3
             className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold leading-[100%]  md:ml-6 text-left"
-            style={{ fontFamily: "Afacad Flux, sans-serif" }}
+            style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
           >
             Adminsitration Methods
           </h3>
@@ -76,12 +76,12 @@ export default function TakingPeptide() {
             className="max-w-2xl lg:max-w-xl xl:max-w-4xl  px-4 md:px-10 p-4 md:p-10 rounded-[5rem] mt-6 space-y-1 list-none"
             style={{
               // backgroundColor: "rgba(136, 211, 255, 0.3)",
-              fontFamily: "Afacad Flux, sans-serif",
+              fontFamily: "Afacad Flux Flux, sans-serif",
             }}
           >
             <h3
               className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-bold leading-[100%]  text-left"
-              style={{ fontFamily: "Afacad Flux, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
             >
               Subcutaneous Injection
             </h3>
@@ -128,7 +128,7 @@ export default function TakingPeptide() {
 
             <h3
               className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-bold leading-[100%] md:mt-10 text-left"
-              style={{ fontFamily: "Afacad Flux, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
             >
               Oral Administration
             </h3>
@@ -176,13 +176,13 @@ export default function TakingPeptide() {
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-6 bg-black/50">
                 <h2
                   className="text-[clamp(20px,4vw,34px)] font-bold"
-                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
                 >
                   Proper Storage Techniques
                 </h2>
                 <p
                   className="text-[clamp(16px,3vw,24px)] mt-2"
-                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
                 >
                   Video content will be added soon
                 </p>
@@ -219,13 +219,13 @@ export default function TakingPeptide() {
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-6 bg-black/50">
                 <h2
                   className="text-[clamp(20px,4vw,34px)] font-bold"
-                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
                 >
                   Safe Injection Demonstration
                 </h2>
                 <p
                   className="text-[clamp(16px,3vw,24px)] mt-2"
-                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
                 >
                   Video content will be added soon
                 </p>
@@ -252,7 +252,7 @@ export default function TakingPeptide() {
         <div className="mt-10">
           <h3
             className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold leading-[100%]  md:ml-6 text-left"
-            style={{ fontFamily: "Afacad Flux, sans-serif" }}
+            style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
           >
             Best Practice
           </h3>
@@ -263,12 +263,12 @@ export default function TakingPeptide() {
             className="w-full px-4 md:px-10 p-4 md:p-10 rounded-[5rem] mt-6 space-y-1 list-none "
             style={{
               // backgroundColor: "rgba(136, 211, 255, 0.3)",
-              fontFamily: "Afacad Flux, sans-serif",
+              fontFamily: "Afacad Flux Flux, sans-serif",
             }}
           >
             <h3
               className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-semibold leading-[100%] text-left"
-              style={{ fontFamily: "Afacad Flux, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
             >
               Documentation
             </h3>
@@ -286,7 +286,7 @@ export default function TakingPeptide() {
               {/* Value 1 */}
               {/* <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
     <div className="bg-white rounded-2xl px-8 py-2 flex items-center justify-center">
-      <p className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium" style={{ fontFamily: "Afacad Flux, sans-serif" }}>
+      <p className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium" style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}>
         23/04/25
       </p>
     </div>
@@ -295,7 +295,7 @@ export default function TakingPeptide() {
                 <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full  h-full">
                   <p
                     className=" text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
-                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
                   >
                     23/04/25
                   </p>
@@ -310,7 +310,7 @@ export default function TakingPeptide() {
               {/* Value 2 */}
               {/* <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
     <div className="bg-white rounded-2xl px-8 py-2 flex items-center justify-center">
-      <p className="text-[24px] font-medium" style={{ fontFamily: "Afacad Flux, sans-serif" }}>
+      <p className="text-[24px] font-medium" style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}>
         Mon, Tues, Wed
       </p>
     </div>
@@ -319,7 +319,7 @@ export default function TakingPeptide() {
                 <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
                   <p
                     className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
-                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
                   >
                     Mon, Tues, Wed
                   </p>
@@ -336,7 +336,7 @@ export default function TakingPeptide() {
                 <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
                   <p
                     className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
-                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
                   >
                     Yes/No
                   </p>
@@ -353,7 +353,7 @@ export default function TakingPeptide() {
                 <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
                   <p
                     className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
-                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
                   >
                     Yes/No
                   </p>
@@ -366,7 +366,7 @@ export default function TakingPeptide() {
 
             <h3
               className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-semibold leading-[100%] text-left"
-              style={{ fontFamily: "Afacad Flux, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
             >
               Safety Measures
             </h3>

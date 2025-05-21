@@ -21,7 +21,7 @@ export default function DosageSimulator() {
         >
           <div
             className="flex w-full bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)]    rounded-[25px] px-1.5 py-1 relative"
-            style={{ fontFamily: "Afacad, sans-serif" }}
+            style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             <div
               className={`absolute inset-0 top-0 bottom-0 left-0 w-[51%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
@@ -56,7 +56,7 @@ export default function DosageSimulator() {
         >
           <div
             className="flex w-full bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)]   rounded-[20px] px-1.5 py-1 relative"
-            style={{ fontFamily: "Afacad, sans-serif" }}
+            style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             <div
               className={`absolute inset-0 top-0 bottom-0 left-0 w-[50%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[20px] transition-all duration-300
@@ -141,7 +141,7 @@ function DosageGuide() {
         {/* Step 1 */}
         <div
           className="mt-[120px] mb-6 px-4 sm:px-6"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
             <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
@@ -210,7 +210,7 @@ function DosageGuide() {
         {/* Step 2: Protocol Selection */}
         <div
           className="mt-[120px] mb-6 px-4 sm:px-6"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
             <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED]  text-black mr-2">
@@ -260,7 +260,7 @@ function DosageGuide() {
         {/* Step 3: Dosage Selection & Visualization */}
         <div
           className="mt-[120px] px-4 sm:px-6"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
             <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
@@ -474,7 +474,7 @@ width: clamp(24px, 5vw, 36px);
         {/* Step 4: Administration Sites */}
         <div
           className="mt-[120px] mb-6 px-4 sm:px-6"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
             <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
@@ -503,7 +503,7 @@ width: clamp(24px, 5vw, 36px);
                 className="w-full h-full rounded-full bg-app text-black text-[clamp(18px,0.43vw+16.63px,24px)] font-medium
     flex items-center justify-center transition-colors duration-100 
     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
-                style={{ fontFamily: "Afacad, sans-serif" }}
+                style={{ fontFamily: "Afacad Flux, sans-serif" }}
               >
                 Explore More
               </button>
@@ -539,7 +539,7 @@ function Calculator() {
 
 
 
-        <div className="mt-30 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
+        <div className="mt-30 mb-6" style={{ fontFamily: "Afacad Flux, sans-serif" }}>
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-bold flex items-center flex-wrap">
             Peptide Calculator
           </h3>
