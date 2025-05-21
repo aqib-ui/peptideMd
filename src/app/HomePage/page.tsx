@@ -786,7 +786,7 @@ export default function HomePage() {
                   style={{ fontFamily: " 'Afacad Flux', sans-serif", cursor: "pointer" }}
                 >
                   Peptide Overview
-                </button>
+                </button> 
               </div> */} 
               
           <div className="gradient-border min-w-[clamp(180px,13.3vw,229px)] min-h-[clamp(50px,3.8vw,66px)]">
