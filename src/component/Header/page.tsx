@@ -12,7 +12,7 @@
 //         <h1
 //           className="text-[32px] md:text-[46px] font-bold text-black leading-[100%] px-4 py-2 rounded-md"
 //           style={{
-//             fontFamily: "Afacad, sans-serif",
+//             fontFamily: "Afacad Flux, sans-serif",
 //             display: "inline-block",
 //           }}
 //         >
@@ -170,7 +170,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -189,7 +189,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -208,7 +208,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -227,7 +227,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -246,7 +246,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -268,7 +268,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -287,7 +287,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -306,7 +306,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -325,7 +325,7 @@
 //                   className="hover:text-blue-500 font-semibold leading-[100%]"
 //                   style={{
 //                     fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-//                     fontFamily: "Afacad, sans-serif",
+//                     fontFamily: "Afacad Flux, sans-serif",
 //                     letterSpacing: "0%",
 //                   }}
 //                 >
@@ -391,7 +391,7 @@ export default function Header() {
         <button
           onClick={() => setIsOpen(!isOpen)} 
           className="focus:outline-none flex items-center"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: "Afacad Flux, sans-serif" }}
         > <span className="text-base sm:text-lg md:text-xl lg:text-[22px] mr-2 sm:mr-3 md:mr-4 font-medium">Menu</span>
           <Image
             src="/headerIcon/hamBurger.png"
@@ -410,19 +410,22 @@ export default function Header() {
           ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         {/* Header Section with Logo & Close Button */}
-        <div className="absolute top-4 left-4 right-4 px-6 flex justify-between items-center">
+        <div className="absolute top-4 left-4 right-4 px-6 flex justify-between items-center z-10">
           {/* Logo on the Left */}
+          <Link href="/">
           <Image
             src="/headerIcon/logo.png"
             alt="Logo"
-            width={200}
-            height={50}
+            width={200} // Adjust width as needed
+            height={50} // Adjust height as needed
+            className="cursor-pointer"
           />
+        </Link>
 
           {/* Close Button with Gradient Border */}
           <button
             onClick={() => setIsOpen(false)}
-            className="relative w-[70px] h-[70px] focus:outline-none flex items-center justify-center"
+            className="relative w-[70px] h-[70px] focus:outline-none flex items-center justify-center cursor-pointer"
           >
             {/* Gradient Border */}
             <div
@@ -446,19 +449,19 @@ export default function Header() {
         <div className="flex items-center justify-center h-full bg-app">
           {/* Box with Gradient Border */}
           <div
-            className="relative flex flex-wrap items-center justify-center gap-6 p-8 sm:p-4 
-            w-full max-w-[95%] sm:max-w-[55%] min-h-[450px] sm:min-h-[500px] mr-6 ml-6 mx-auto mt-16 md:mt-24 
-            rounded-[10rem] rounded-tr-[2rem] transition-all duration-300 ease-in-out"
+            className="relative flex flex-wrap items-center justify-center gap-0 lg:gap-6 xl:gap-32 2xl:gap-48 p-8 lg:p-4 
+            w-full max-w-[95%] sm:max-w-[55%] 2xl:max-w-[65%] min-h-[450px] sm:min-h-[500px] 2xl:min-h-[600px] [@media(min-width:1600px)]:min-h-[704px] mr-6 ml-6 mx-auto mt-16 md:mt-24 
+            transition-all duration-300 ease-in-out"
           >
             {/* Gradient Border (Pseudo-element) */}
             <div
               className="absolute inset-0 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] 
-              rounded-[10rem] rounded-tr-[3.5rem] p-[4px] opacity-70"
+              rounded-[12rem] 2xl:rounded-[17rem] rounded-tr-[5rem] 2xl:rounded-tr-[5rem] p-[4px] opacity-70"
             ></div>
 
             {/* Inner White Box */}
-            <div className="absolute inset-[2px] bg-app  rounded-[10rem] rounded-tr-[3.5rem] z-10"></div>
-            <ul className="text-gray-900 text-2xl text-app font-semibold space-y-6 max-sm:space-y-3 z-10">
+            <div className="absolute inset-[2px] bg-app rounded-[12rem] 2xl:rounded-[17rem] rounded-tr-[5rem] 2xl:rounded-tr-[5rem] z-10"></div>
+            <ul className="text-gray-900 txt-34 text-app font-semibold space-y-8 max-lg:space-y-3 z-10">
               <li className="flex items-center space-x-4">
                 <Image
                   src="/headerIcon/Group 11.png"
@@ -470,8 +473,9 @@ export default function Header() {
                   href="/"
                   className="hover:text-blue-500 font-semibold leading-[100%]"
                   style={{
-                    fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-                    fontFamily: "Afacad, sans-serif",
+                    // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
+                    // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -489,8 +493,9 @@ export default function Header() {
                   href="/PeptideDatabase"
                   className="hover:text-blue-500 font-semibold leading-[100%]"
                   style={{
-                    fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-                    fontFamily: "Afacad, sans-serif",
+                    // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
+                    // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -508,8 +513,9 @@ export default function Header() {
                   href="/TakingPeptide"
                   className="hover:text-blue-500 font-semibold leading-[100%]"
                   style={{
-                    fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-                    fontFamily: "Afacad, sans-serif",
+                    // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
+                    // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -527,8 +533,9 @@ export default function Header() {
                   href="/DosageSimulator"
                   className="hover:text-blue-500 font-semibold leading-[100%]"
                   style={{
-                    fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-                    fontFamily: "Afacad, sans-serif",
+                    // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
+                    // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -546,8 +553,9 @@ export default function Header() {
                   href="/Resources"
                   className="hover:text-blue-500 font-semibold leading-[100%]"
                   style={{
-                    fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-                    fontFamily: "Afacad, sans-serif",
+                    // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
+                    // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -556,7 +564,7 @@ export default function Header() {
               </li>
             </ul>
 
-            <ul className="text-gray-900 text-2xl text-app font-semibold space-y-6 max-sm:space-y-3 z-10 pb-[4rem]">
+            <ul className="text-gray-900 txt-34 text-app font-semibold space-y-8 max-lg:space-y-3 z-10 pb-[1rem] xl:pb-[4rem]">
               <li className="flex items-center space-x-4">
                 <Image
                   src="/headerIcon/Group 21.png"
@@ -568,8 +576,9 @@ export default function Header() {
                   href="/AiAssistant"
                   className="hover:text-blue-500 font-semibold leading-[100%]"
                   style={{
-                    fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-                    fontFamily: "Afacad, sans-serif",
+                    // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
+                    // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -587,8 +596,9 @@ export default function Header() {
                   href="/CaseStudies"
                   className="hover:text-blue-500 font-semibold leading-[100%]"
                   style={{
-                    fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-                    fontFamily: "Afacad, sans-serif",
+                    // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
+                    // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -606,8 +616,9 @@ export default function Header() {
                   href="/Location"
                   className="hover:text-blue-500 font-semibold leading-[100%]"
                   style={{
-                    fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-                    fontFamily: "Afacad, sans-serif",
+                    // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
+                    // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -625,8 +636,9 @@ export default function Header() {
                   href="/Discussion"
                   className="hover:text-blue-500 font-semibold leading-[100%]"
                   style={{
-                    fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
-                    fontFamily: "Afacad, sans-serif",
+                    // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
+                    // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
+                    fontFamily: "Afacad Flux, sans-serif",
                     letterSpacing: "0%",
                   }}
                 >
@@ -644,7 +656,7 @@ export default function Header() {
               alt="small Red"
               width={40}
               height={40}
-              className="absolute top-[50%] left-[20%] sm:top-[12%] sm:left-[88%]"
+              className="absolute hidden xl:block top-[50%] left-[20%] sm:top-[12%] sm:left-[88%] 2xl:top-[10%] [@media(min-width:1600px)]:top-[9%] 2xl:left-[90%]"
             />
 
             {/* big Red PNG */}
@@ -653,7 +665,7 @@ export default function Header() {
               alt="big Red"
               width={70}
               height={70}
-              className="absolute top-[50%] left-[10%] sm:top-[18%] sm:left-[80%]"
+              className="absolute hidden xl:block top-[50%] left-[10%] sm:top-[15%] sm:left-[80%] 2xl:top-[15%] [@media(min-width:1600px)]:top-[12%] 2xl:left-[84%]"
             />
 
             {/* Big Blue PNG */}
@@ -662,7 +674,7 @@ export default function Header() {
               alt="Big blue"
               width={40}
               height={40}
-              className="absolute top-[50%] left-[15%] sm:top-[80%] sm:left-[20%]"
+              className="absolute hidden xl:block top-[50%] left-[15%] sm:top-[82%] 2xl:top-[88%] sm:left-[20%] [@media(min-width:1600px)]:top-[85%] 2xl:left-[17%]"
             />
 
             {/* Small Blue PNG */}
@@ -671,10 +683,11 @@ export default function Header() {
               alt="Big blue"
               width={20}
               height={20}
-              className="absolute top-[50%] left-[10%] sm:top-[88%] sm:left-[16%]"
+              className="absolute hidden xl:block top-[50%] left-[10%] sm:top-[88%] 2xl:top-[93%] sm:left-[16%] 2xl:left-[13%]"
             />
           </div>
         </div>
+        
       </div>
     </header>
   );

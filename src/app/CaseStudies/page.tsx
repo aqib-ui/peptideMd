@@ -12,7 +12,7 @@
 //       <div className="container mx-auto px-8 py-10">
 //         <h1
 //           className="text-4xl font-bold md:text-6xl lg:text-[72px]"
-//           style={{ fontFamily: "Afacad, sans-serif" }}
+//           style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //         >
 //           Clinical
 //           <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
@@ -21,7 +21,7 @@
 //         </h1>
 //         <h2
 //           className="text-[24px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
-//           style={{ fontFamily: "Afacad, sans-serif" }}
+//           style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //         >
 //           AI Recommendations, AI Response, Video Suggestions and Community
 //           Discussion Links
@@ -58,13 +58,13 @@
 //                duration-500 ease-in-out group cursor-pointer">
 //                 <h2
 //                   className="text-[clamp(18px,5vw,34px)] font-semibold leading-[100%] mt-4 md:mt-6 text-left"
-//                   style={{ fontFamily: "Afacad, sans-serif" }}
+//                   style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //                 >
 //                   {item.title}
 //                 </h2>
 //                 <h2
 //                   className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-6 text-left"
-//                   style={{ fontFamily: "Afacad, sans-serif" }}
+//                   style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //                 >
 //                   {item.desc}
 //                 </h2>
@@ -81,13 +81,13 @@
 //             <div className="w-full text-center md:text-left">
 //               <h2
 //                 className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //               >
 //                 Relevant Research Updates.
 //               </h2>
 //               <h2
 //                 className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //               >
 //                 Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
 //                 sagittis morbi est adipiscing.
@@ -102,13 +102,13 @@
 //             <div className="w-full text-center md:text-left">
 //               <h2
 //                 className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //               >
 //                 Relevant Research Updates.
 //               </h2>
 //               <h2
 //                 className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //               >
 //                 Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
 //                 sagittis morbi est adipiscing.
@@ -123,13 +123,13 @@
 //             <div className="w-full text-center md:text-left">
 //               <h2
 //                 className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //               >
 //                 Relevant Research Updates.
 //               </h2>
 //               <h2
 //                 className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //               >
 //                 Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
 //                 sagittis morbi est adipiscing.
@@ -144,13 +144,13 @@
 //             <div className="w-full text-center md:text-left">
 //               <h2
 //                 className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //               >
 //                 Relevant Research Updates.
 //               </h2>
 //               <h2
 //                 className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //               >
 //                 Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
 //                 sagittis morbi est adipiscing.
@@ -171,7 +171,7 @@
 //                   <div className="rounded-4xl flex justify-center items-center">
 //                     <h2
 //                       className="text-xl sm:text-2xl md:text-3xl font-semibold text-center"
-//                       style={{ fontFamily: "Afacad, sans-serif" }}
+//                       style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //                     >
 //                       Ask questions about peptides, their applications, and latest
 //                       research findings
@@ -180,7 +180,7 @@
 
 //                   <div
 //                     className="p-[2px] min-h-screen rounded-[3rem] md:mt-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
-//                     style={{ fontFamily: "Afacad, sans-serif" }}
+//                     style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //                   >
 //                     <div className="bg-white min-h-[120vh]  rounded-[3rem] p-6 sm:p-10  flex flex-col items-start justify-between">
 //                       {/* Avatar + Text */}
@@ -195,7 +195,7 @@
 //                         <div className="flex flex-col">
 //                           <h2
 //                             className="text-base sm:text-lg md:text-2xl bg-[#94C4ED]/30 p-6 sm:p-8 font-semibold rounded-tr-[2rem] rounded-br-[2rem] rounded-bl-[2rem]"
-//                             style={{ fontFamily: "Afacad, sans-serif" }}
+//                             style={{ fontFamily: "Afacad Flux, sans-serif" }}
 //                           >
 //                             Hello! I'm your peptide research assistant. How can I help
 //                             you today?
@@ -285,13 +285,13 @@ const CaseStudiesPage = () => {
                   <div className="p-6 shadow-lg rounded-[1.875rem] flex flex-col items-start bg-app w-full h-full transition-colors duration-500 ease-in-out group cursor-pointer">
                     <h2
                       className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-semibold leading-[100%] mt-4 md:mt-6 text-left"
-                      style={{ fontFamily: "Afacad, sans-serif" }}
+                      style={{ fontFamily: "Afacad Flux, sans-serif" }}
                     >
                       {item.title}
                     </h2>
                     <h2
                       className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-6 text-left"
-                      style={{ fontFamily: "Afacad, sans-serif" }}
+                      style={{ fontFamily: "Afacad Flux, sans-serif" }}
                     >
                       {item.desc}
                     </h2>
@@ -309,13 +309,13 @@ const CaseStudiesPage = () => {
                   <div className="w-full text-center md:text-left">
                     <h2
                       className="text-[clamp(18px,5vw,36px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-                      style={{ fontFamily: "Afacad, sans-serif" }}
+                      style={{ fontFamily: "Afacad Flux, sans-serif" }}
                     >
                       Relevant Research Updates.
                     </h2>
                     <h2
                       className="text-[clamp(16px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-                      style={{ fontFamily: "Afacad, sans-serif" }}
+                      style={{ fontFamily: "Afacad Flux, sans-serif" }}
                     >
                       Lorem ipsum dolor sit amet consectetur. Convallis donec
                       aliquam sagittis morbi est adipiscing.
@@ -332,13 +332,13 @@ const CaseStudiesPage = () => {
                 <div className="w-full text-center md:text-left">
                   <h2
                     className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Relevant Research Updates.
                   </h2>
                   <h2
                     className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
                     sagittis morbi est adipiscing.
@@ -353,13 +353,13 @@ const CaseStudiesPage = () => {
                 <div className="w-full text-center md:text-left">
                   <h2
                     className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Relevant Research Updates.
                   </h2>
                   <h2
                     className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
                     sagittis morbi est adipiscing.
@@ -374,13 +374,13 @@ const CaseStudiesPage = () => {
                 <div className="w-full text-center md:text-left">
                   <h2
                     className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Relevant Research Updates.
                   </h2>
                   <h2
                     className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
                     sagittis morbi est adipiscing.
@@ -395,13 +395,13 @@ const CaseStudiesPage = () => {
                 <div className="w-full text-center md:text-left">
                   <h2
                     className="text-[24px] md:text-[28px] lg:text-[34px] font-semibold leading-[100%] mt-6 max-w-2xl"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Relevant Research Updates.
                   </h2>
                   <h2
                     className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-7"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Lorem ipsum dolor sit amet consectetur. Convallis donec aliquam
                     sagittis morbi est adipiscing.
@@ -425,13 +425,13 @@ const CaseStudiesPage = () => {
                     <div className="md:ml-5">
                       <h2
                         className="text-[24px] md:text-[28px] lg:text-[34px]  font-semibold leading-[100%] mt-6 max-w-2xl"
-                        style={{ fontFamily: "Afacad, sans-serif" }}
+                        style={{ fontFamily: "Afacad Flux, sans-serif" }}
                       >
                         Peptide Case Studies & Success Stories.
                       </h2>
                       <h2
                         className="text-[clamp(20px,3.5vw,24px)] font-medium leading-[100%] mt-3 mb-10 max-w-3xl"
-                        style={{ fontFamily: "Afacad, sans-serif" }}
+                        style={{ fontFamily: "Afacad Flux, sans-serif" }}
                       >
                         Lorem ipsum dolor sit amet consectetur. Convallis donec
                         aliquam sagittis morbi est adipiscing.
@@ -441,7 +441,7 @@ const CaseStudiesPage = () => {
                     {/* right side */}
                     <div
                       className="px-10 flex max-md:flex-col gap-4 font-semibold text-[clamp(20px,3.5vw,24px)] items-center justify-center"
-                      style={{ fontFamily: "Afacad, sans-serif" }}
+                      style={{ fontFamily: "Afacad Flux, sans-serif" }}
                     >
                       <button
                         className=" w-full flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
@@ -474,13 +474,13 @@ const CaseStudiesPage = () => {
                     <div className="md:ml-5">
                       <h2
                         className="text-[clamp(24px,5vw,34px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-                        style={{ fontFamily: "Afacad, sans-serif" }}
+                        style={{ fontFamily: "Afacad Flux, sans-serif" }}
                       >
                         Peptide Case Studies & Success Stories.
                       </h2>
                       <h2
                         className="text-[clamp(20px,5vw,24px)] font-medium leading-[100%] mt-3 mb-10 max-w-3xl"
-                        style={{ fontFamily: "Afacad, sans-serif" }}
+                        style={{ fontFamily: "Afacad Flux, sans-serif" }}
                       >
                         Lorem ipsum dolor sit amet consectetur. Convallis donec
                         aliquam sagittis morbi est adipiscing.
@@ -490,7 +490,7 @@ const CaseStudiesPage = () => {
                     {/* right side */}
                     <div
                       className="px-10 flex max-md:flex-col gap-4 font-semibold text-[clamp(20px,3.5vw,24px)] items-center justify-center"
-                      style={{ fontFamily: "Afacad, sans-serif" }}
+                      style={{ fontFamily: "Afacad Flux, sans-serif" }}
                     >
                       <button
                         className="w-full flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 

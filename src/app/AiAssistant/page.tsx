@@ -12,24 +12,6 @@ const AiAssistantPage = () => {
   return (
     <>
       {/* heading */}
-      {/* <div className="container bg-app mx-auto px-8 py-10">
-        <h1
-          className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold"
-          style={{ fontFamily: "Afacad, sans-serif" }}
-        >
-          Peptide
-          <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
-            Research Assistant
-          </span>
-        </h1>
-        <h2
-          className="text-[20px] md:text-[28px] lg:text-[34px] font-medium leading-[100%] mt-6 mb-10 max-w-2xl"
-          style={{ fontFamily: "Afacad, sans-serif" }}
-        >
-          AI Recommendations, AI Response, Video Suggestions and Community
-          Discussion Links
-        </h2>
-      </div> */}
       <MoleculeTopLeftAnimation
         mainheading="Peptide"
         span="Research Assistant"
@@ -47,13 +29,13 @@ const AiAssistantPage = () => {
               <div className="md:ml-5">
                 <h2
                   className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
                 >
                   Videos you may relate.
                 </h2>
                 <h2
                   className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
                 >
                   Calculate reconstitution measurements and injection volumes
                 </h2>
@@ -133,13 +115,13 @@ const AiAssistantPage = () => {
               <div className="md:ml-5">
                 <h2
                   className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
                 >
                   Ai Chat History.
                 </h2>
                 <h2
                   className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
                 >
                   Calculate reconstitution measurements and injection volumes
                 </h2>
@@ -173,13 +155,13 @@ const AiAssistantPage = () => {
               <div className="md:ml-5">
                 <h2
                   className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
                 >
                   Community Discussion Links.
                 </h2>
                 <h2
                   className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
                 >
                   Calculate reconstitution measurements and injection volumes
                 </h2>
@@ -213,13 +195,13 @@ const AiAssistantPage = () => {
                   <div className="md:ml-5">
                     <h2
                       className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-                      style={{ fontFamily: "Afacad, sans-serif" }}
+                      style={{ fontFamily: "Afacad Flux, sans-serif" }}
                     >
                       New Ai Chat.
                     </h2>
                     <h2
                       className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
-                      style={{ fontFamily: "Afacad, sans-serif" }}
+                      style={{ fontFamily: "Afacad Flux, sans-serif" }}
                     >
                       Calculate reconstitution measurements and injection
                       volumes
@@ -255,7 +237,7 @@ const AiAssistantPage = () => {
           <div className="rounded-4xl flex justify-center items-center">
             <h2
               className="text-[20px] md:text-[28px] lg:text-[34px] font-semibold text-center"
-              style={{ fontFamily: "Afacad, sans-serif" }}
+              style={{ fontFamily: "Afacad Flux, sans-serif" }}
             >
               Ask questions about peptides, their applications, and latest
               research findings
@@ -264,7 +246,7 @@ const AiAssistantPage = () => {
 
           <div
             className="p-[2px] min-h-screen rounded-[3rem] mt-2 md:mt-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
-            style={{ fontFamily: "Afacad, sans-serif" }}
+            style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             <div className="bg-app min-h-[120vh]  rounded-[3rem] p-6 sm:p-10  flex flex-col items-start justify-between md:overflow-auto">
               {/* Avatar + Text */}
@@ -280,7 +262,7 @@ const AiAssistantPage = () => {
                   <h2
                     className="text-base sm:text-lg md:text-2xl bg-[#94C4ED]/30 p-6 sm:p-8 font-semibold rounded-tr-[2rem] 
                     rounded-br-[2rem] rounded-bl-[2rem]"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: "Afacad Flux, sans-serif" }}
                   >
                     Hello! I'm your peptide research assistant. How can I help
                     you today?
@@ -292,7 +274,9 @@ const AiAssistantPage = () => {
                 <input
                   type="text"
                   placeholder="Ask About peptides..."
-                  className="bg-gray-100 dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border px-6 sm:px-10 w-full p-4 sm:p-5 text-base sm:text-xl md:text-2xl font-medium 
+                  // className="bg-gray-100 dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border px-6 sm:px-10 w-full p-4 sm:p-5 text-base sm:text-xl md:text-2xl font-medium 
+                  // rounded-full placeholder:text-sm sm:placeholder:text-base md:placeholder:text-xl" // --> dark mode
+                   className="bg-gray-100 px-6 sm:px-10 w-full p-4 sm:p-5 text-base sm:text-xl md:text-2xl font-medium 
                   rounded-full placeholder:text-sm sm:placeholder:text-base md:placeholder:text-xl"
                 />
                 <div className="text-white text-4xl sm:text-5xl md:text-6xl p-2 sm:p-3 md:p-4 rounded-full bg-gradient-to-tr 
