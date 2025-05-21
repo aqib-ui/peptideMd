@@ -211,7 +211,7 @@ const Page = ({ params }: PageProps) => {
           Essential Peptide
           <span style={{ color: "#224674" }} className="italic ml-1 md:ml-4">
             Knowledge
-          </span>
+          </span> 
         </h1>
       ),
       content: (
