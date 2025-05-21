@@ -217,7 +217,7 @@ const Page = ({ params }: PageProps) => {
       content: (
         <div className="max-w-4xl text-left mb-48">
           <h2
-            className="txt-34 font-medium leading-[100%] mt-4"
+            className="txt-34  font-medium leading-[100%] mt-4"
             style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             Understanding Essentials
@@ -387,7 +387,7 @@ const Page = ({ params }: PageProps) => {
       content: (
         <div className="max-w-4xl text-left mb-48">
           <h2
-            className="txt-34 font-medium leading-[100%] mt-4"
+            className="txt-34  font-medium leading-[100%] mt-4"
             style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             Discover how peptides may support healthy aging and vitality
@@ -557,7 +557,7 @@ const Page = ({ params }: PageProps) => {
       content: (
         <div className="max-w-4xl text-left mb-48">
           <h2
-            className="txt-34 font-medium leading-[100%] mt-4"
+            className="txt-34  font-medium leading-[100%] mt-4"
             style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             Latest scientific discoveries and clinical applications
@@ -727,7 +727,7 @@ const Page = ({ params }: PageProps) => {
       content: (
         <div className="max-w-4xl text-left mb-48">
           <h2
-            className="txt-34 font-medium leading-[100%] mt-4"
+            className="txt-34  font-medium leading-[100%] mt-4"
             style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             Understanding safety guidelines and best practices
@@ -897,7 +897,7 @@ const Page = ({ params }: PageProps) => {
       content: (
         <div className="max-w-4xl text-left mb-48">
           <h2
-            className="txt-34 font-medium leading-[100%] mt-4"
+            className="txt-34  font-medium leading-[100%] mt-4"
             style={{ fontFamily: "Afacad Flux, sans-serif" }}
           >
             Essential information and emerging developments in peptide science
