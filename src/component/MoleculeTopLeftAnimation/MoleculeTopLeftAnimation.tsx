@@ -44,7 +44,7 @@ const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
         >
           <h1
             className="text-[clamp(36px,2.84vw+22.93px,72px)] font-bold leading-[100%] text-left mt-6"
-            style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+            style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             {mainheading}
             <span style={{ color: "#224674" }} className="italic">
@@ -54,7 +54,7 @@ const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
 
           <p
             className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-medium leading-[130%] mt-6 mb-6 text-left"
-            style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+            style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             {para}
           </p>

@@ -29,13 +29,13 @@ const AiAssistantPage = () => {
               <div className="md:ml-5">
                 <h2
                   className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-                  style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+                  style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                 >
                   Videos you may relate.
                 </h2>
                 <h2
                   className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
-                  style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+                  style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                 >
                   Calculate reconstitution measurements and injection volumes
                 </h2>
@@ -115,13 +115,13 @@ const AiAssistantPage = () => {
               <div className="md:ml-5">
                 <h2
                   className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-                  style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+                  style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                 >
                   Ai Chat History.
                 </h2>
                 <h2
                   className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
-                  style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+                  style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                 >
                   Calculate reconstitution measurements and injection volumes
                 </h2>
@@ -155,13 +155,13 @@ const AiAssistantPage = () => {
               <div className="md:ml-5">
                 <h2
                   className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-                  style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+                  style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                 >
                   Community Discussion Links.
                 </h2>
                 <h2
                   className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
-                  style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+                  style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                 >
                   Calculate reconstitution measurements and injection volumes
                 </h2>
@@ -195,13 +195,13 @@ const AiAssistantPage = () => {
                   <div className="md:ml-5">
                     <h2
                       className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
-                      style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+                      style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                     >
                       New Ai Chat.
                     </h2>
                     <h2
                       className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"
-                      style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+                      style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                     >
                       Calculate reconstitution measurements and injection
                       volumes
@@ -237,7 +237,7 @@ const AiAssistantPage = () => {
           <div className="rounded-4xl flex justify-center items-center">
             <h2
               className="text-[20px] md:text-[28px] lg:text-[34px] font-semibold text-center"
-              style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+              style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
             >
               Ask questions about peptides, their applications, and latest
               research findings
@@ -246,7 +246,7 @@ const AiAssistantPage = () => {
 
           <div
             className="p-[2px] min-h-screen rounded-[3rem] mt-2 md:mt-10 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
-            style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+            style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             <div className="bg-app min-h-[120vh]  rounded-[3rem] p-6 sm:p-10  flex flex-col items-start justify-between md:overflow-auto">
               {/* Avatar + Text */}
@@ -262,7 +262,7 @@ const AiAssistantPage = () => {
                   <h2
                     className="text-base sm:text-lg md:text-2xl bg-[#94C4ED]/30 p-6 sm:p-8 font-semibold rounded-tr-[2rem] 
                     rounded-br-[2rem] rounded-bl-[2rem]"
-                    style={{ fontFamily: "Afacad Flux Flux, sans-serif" }}
+                    style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                   >
                     Hello! I'm your peptide research assistant. How can I help
                     you today?

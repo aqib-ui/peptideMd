@@ -95,7 +95,7 @@ export default function PeptideDatabase() {
       {/* Peptides Table */}
       <div
         className=" md:mt-20 py-10"
-        style={{ fontFamily: "Afacad Flux, sans-serif" }}
+        style={{ fontFamily: "Afacad, sans-serif" }}
       >
         {/* Heading searchbar etc Section */}
         <div
@@ -164,7 +164,7 @@ export default function PeptideDatabase() {
                 max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full md:w-auto
                 ${showSearch ? "block" : "hidden"} md:block
               `}
-                style={{ fontFamily: "Afacad Flux, sans-serif" }}
+                style={{ fontFamily: "Afacad, sans-serif" }}
               />
             )}
             {/* Search Input - visible only when toggled on small screens */}
@@ -181,7 +181,7 @@ export default function PeptideDatabase() {
                 max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full sm:w-[200px] lg:w-[400px]
                 ${showSearch ? "block" : "hidden"} md:block
               `}
-                  style={{ fontFamily: "Afacad Flux, sans-serif" }}
+                  style={{ fontFamily: "Afacad, sans-serif" }}
                 />
               </div>
             )}
@@ -211,7 +211,7 @@ export default function PeptideDatabase() {
                   bg-white bg-app dark:border dark:border-white shadow-xl p-4 rounded-3xl"
                   style={{
                     transform: "translateX(-60%)",
-                    fontFamily: "Afacad Flux, sans-serif",
+                    fontFamily: "Afacad, sans-serif",
                   }}
                 >
                   <p className="text-[#1F1F1F]/40 dark:text-[#E5F0F8]/40 text-sm md:text-base lg:text-xl font-semibold mb-2">
@@ -240,7 +240,7 @@ export default function PeptideDatabase() {
         <div className="overflow-x-auto rounded-t-[72px] border border-gray-300 dark:border-t-0 dark:border-r-0 dark:border-l-0 dark:border-b shadow-md">
           <table
             className="min-w-full bg-[#F0F0F0] rounded-t-[72px] p-10 "
-            style={{ fontFamily: "Afacad Flux, sans-serif" }}
+            style={{ fontFamily: "Afacad, sans-serif" }}
           >
             <thead>
               <tr className="bg-[#94C4ED] dark:text-black mt-10">
