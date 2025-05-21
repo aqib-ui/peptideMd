@@ -802,7 +802,7 @@ export default function HomePage() {
         </div>
         <div className="absolute bottom-[40px] sm:bottom-[60px] left-1/2 transform -translate-x-1/2 z-20">
           <ScrollButton />
-        </div>
+        </div> 
 
         {/* Right Side (DNA Image - Hidden on Small Screens) */}
         <div className="relative flex-1 flex justify-end ">
