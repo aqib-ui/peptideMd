@@ -389,7 +389,7 @@ export default function PeptideDatabase() {
       {/* Peptides Table */}
       <div
         className=" md:mt-20 py-10 "
-        style={{ fontFamily: "Afacad, sans-serif" }}
+        style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
       >
         {/* Heading searchbar etc Section */}
         <div
@@ -465,7 +465,7 @@ export default function PeptideDatabase() {
                 max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full max-2xl:w-auto
                 ${showSearch ? "block" : "hidden"} md:block
               `}
-                style={{ fontFamily: "Afacad, sans-serif" }}
+                style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
               />
             )}
             {/* Search Input - visible only when toggled on small screens */}
@@ -489,7 +489,7 @@ export default function PeptideDatabase() {
                 [@media(min-width:1600px)]:h-[80px] [@media(min-width:1600px)]:w-[460px]
                 ${showSearch ? "block" : "hidden"} md:block
               `}
-                  style={{ fontFamily: "Afacad, sans-serif" }}
+                  style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                 />
               </div>
             )}
@@ -519,7 +519,7 @@ export default function PeptideDatabase() {
                   h-[200px] [@media(min-width:1600px)]:h-[215px] max-2xl:h-50 max-md:h-50 md:left-1/6 max-md:left-1/4 bg-white bg-app dark:border dark:border-white  p-5 rounded-[40px] rounded-tr-[10px]"
                   style={{
                     transform: "translateX(-60%)",
-                    fontFamily: "Afacad, sans-serif",
+                    fontFamily: " 'Afacad Flux', sans-serif",
                     boxShadow: "0px 6px 20px 0px rgba(31, 31, 31, 0.12)",
                   }}
                 >
@@ -561,7 +561,7 @@ export default function PeptideDatabase() {
         <div className="overflow-x-auto mt-2 rounded-t-[72px] md:rounded-t-[80px] border border-gray-300 dark:border-t-0 dark:border-r-0 dark:border-l-0 dark:border-b shadow-md">
           <table
             className="min-w-full bg-[#F0F0F0] p-10 "
-            style={{ fontFamily: "Afacad, sans-serif" }}
+            style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             <thead>
               <tr className="bg-[#94C4ED] dark:text-black mt-10">

@@ -741,7 +741,7 @@ export default function HomePage() {
             // className="text-[clamp(36px,2.84vw+22.9px,72px)] font-bold leading-tight"
             className="txt-72 font-bold leading-tight"
 
-            style={{ fontFamily: " 'Afacad Flux' , sans-serif" }}
+           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             Welcome to
             {/* <span style={{ color: "#224674" }} className="italic ml-2"> */}
@@ -814,7 +814,7 @@ export default function HomePage() {
             className="absolute hidden md:block 
             w-auto 
             h-screen
-            lg:top-[-225px] xl:top-[-222px] -right-6 md:object-fill z-10 pointer-events-none"
+            lg:top-[-225px] xl:top-[-222px] 2xl:top-[-190px] -right-6 md:object-fill z-10 pointer-events-none"
           />
           {/* // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it */}
         </div>

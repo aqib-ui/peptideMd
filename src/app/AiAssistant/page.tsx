@@ -197,7 +197,7 @@ const AiAssistantPage = () => {
                       className="text-[clamp(34px,5vw,46px)] font-semibold leading-[100%] mt-6 max-w-2xl"
                       style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                     >
-                      New Ai Chat.
+                      New AI Chat.
                     </h2>
                     <h2
                       className="text-xl sm:text-2xl font-medium leading-[100%] mt-3 mb-10 max-w-2xl"

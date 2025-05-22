@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Listbox } from "@headlessui/react";
 import Image from "next/image";
 // import { MoleculeTopLeftAnimation } from "../MianComponent/page";
-import  MoleculeTopLeftAnimation  from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import MoleculeTopLeftAnimation from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 
 export default function DosageSimulator() {
   const [selected, setSelected] = useState<"Dosage Guide" | "Calculator">(
@@ -12,7 +12,6 @@ export default function DosageSimulator() {
 
   return (
     <>
-
       {/* Toggle switch */}
       <div className="flex justify-end mx-6 ">
         <div
@@ -20,33 +19,37 @@ export default function DosageSimulator() {
           bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]"
         >
           <div
-            className="flex w-full bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)]    rounded-[25px] px-1.5 py-1 relative"
-            style={{ fontFamily: "Afacad, sans-serif" }}
+            // className="flex w-full bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)]    rounded-[25px] px-1.5 py-1 relative"
+            className="flex w-full bg-white rounded-[25px] px-1.5 py-1 relative"
+            style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             <div
-              className={`absolute inset-0 top-0 bottom-0 left-0 w-[51%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
-            ${selected === "Calculator" ? "left-[49%]" : "left-0"}`}
+              // className={`absolute inset-0 top-0 bottom-0 left-0 w-[51%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
+              className={`absolute inset-0 top-0 bottom-0 left-0 w-[51%] bg-[#94C4ED]  rounded-[25px] transition-all duration-300
+              ${selected === "Calculator" ? "left-[49%]" : "left-0"}`}
             ></div>
 
             <button
               onClick={() => setSelected("Dosage Guide")}
-              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)] 
-              text-[clamp(18px,0.43vw+16.63px,24px)] font-semibold transition rounded-[25px] cursor-pointer"
+              // className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)]
+              // text-[clamp(18px,0.43vw+16.63px,24px)] font-semibold transition rounded-[25px] cursor-pointer" // --> dark mode
+              className="relative z-10 w-1/2 text-center py-2 text-black text-[clamp(18px,0.43vw+16.63px,24px)]
+              font-semibold transition rounded-[25px] cursor-pointer"
             >
               Dosage Guide
             </button>
             <button
               onClick={() => setSelected("Calculator")}
-              className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)]
-               text-[clamp(18px,0.43vw+16.63px,24px)] font-semibold transition rounded-[25px] cursor-pointer"
+              // className="relative z-10 w-1/2 text-center py-2 text-black dark:text-[var(--foreground)]
+              //  text-[clamp(18px,0.43vw+16.63px,24px)] font-semibold transition rounded-[25px] cursor-pointer" // --> dark mode
+              className="relative z-10 w-1/2 text-center py-2 text-black text-[clamp(18px,0.43vw+16.63px,24px)] 
+               font-semibold transition rounded-[25px] cursor-pointer"
             >
               Calculator
             </button>
           </div>
         </div>
       </div>
-
-
 
       {/* Toggle switch */}
       {/* <div className="flex justify-end mx-8">
@@ -56,7 +59,7 @@ export default function DosageSimulator() {
         >
           <div
             className="flex w-full bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)]   rounded-[20px] px-1.5 py-1 relative"
-            style={{ fontFamily: "Afacad, sans-serif" }}
+            style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             <div
               className={`absolute inset-0 top-0 bottom-0 left-0 w-[50%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[20px] transition-all duration-300
@@ -89,9 +92,6 @@ export default function DosageSimulator() {
   );
 }
 
-
-
-
 // =============================
 // DosageGuide Component (inline)
 // =============================
@@ -119,7 +119,6 @@ function DosageGuide() {
   }, []);
   const [selectedProtocol, setSelectedProtocol] = useState("Standard");
 
-
   return (
     <>
       <div className="">
@@ -129,22 +128,16 @@ function DosageGuide() {
           para="This simulator is for educational purposes only. Always consult with a qualified healthcare provider before starting any peptide therapy."
         />
         {/* <ScrollButton /> */}
-
       </div>
 
-
       <div className="pl-5 pr-4 min-w-[95vw] overflow-hidden">
-
-
-
-
         {/* Step 1 */}
         <div
           className="mt-[120px] mb-6 px-4 sm:px-6"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
-            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
+            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C3ED] text-black mr-2">
               Step 1:
             </span>
             Select Peptide
@@ -163,10 +156,15 @@ function DosageGuide() {
                 <Listbox value={selectedPeptide} onChange={setSelectedPeptide}>
                   <div className="relative">
                     <Listbox.Button
+                      //     className="w-full max-w-[1248px] h-[60px] sm:h-[70px] md:h-[80px] rounded-[25px] px-4 py-3 pr-10  bg-[#94C4ED]/30 focus:outline-none
+                      //   text-[clamp(18px,0.43vw+16.63px,24px)] font-medium text-left
+                      // text-[#224674] dark:text-[var(--foreground)]" // --> dark mode
                       className="w-full max-w-[1248px] h-[60px] sm:h-[70px] md:h-[80px] rounded-[25px] px-4 py-3 pr-10  bg-[#94C4ED]/30 focus:outline-none 
                     text-[clamp(18px,0.43vw+16.63px,24px)] font-medium text-left
-                  text-[#224674] dark:text-[var(--foreground)]"
-                    > {selectedPeptide || "Select peptide"}
+                  text-[#224674]"
+                    >
+                      {" "}
+                      {selectedPeptide || "Select peptide"}
                       <Image
                         src="/dropdown-icon.png"
                         alt="Dropdown icon"
@@ -177,8 +175,10 @@ function DosageGuide() {
                     </Listbox.Button>
 
                     <Listbox.Options
-                      className="absolute mt-1 w-full max-h-[96px] overflow-y-auto rounded-3xl bg-white text-[#224674] 
-                    dark:border-2 dark:border-r-0 dark:bg-[var(--background)] dark:text-[var(--foreground)] 
+                      //   className="absolute mt-1 w-full max-h-[96px] overflow-y-auto rounded-3xl bg-white text-[#224674]
+                      // dark:border-2 dark:border-r-0 dark:bg-[var(--background)] dark:text-[var(--foreground)]
+                      // shadow-lg z-50 text-[20px] font-medium" // --> dark mode
+                      className="absolute mt-1 w-full max-h-[96px] overflow-y-auto rounded-3xl bg-white text-[#224674]  
                     shadow-lg z-50 text-[20px] font-medium"
                     >
                       {peptides.length > 0 ? (
@@ -187,7 +187,8 @@ function DosageGuide() {
                             key={index}
                             value={peptide}
                             className={({ active }) =>
-                              `cursor-pointer px-4 py-2 ${active ? "bg-[#94C4ED]/40" : ""
+                              `cursor-pointer px-4 py-2 ${
+                                active ? "bg-[#94C4ED]/40" : ""
                               }`
                             }
                           >
@@ -210,10 +211,10 @@ function DosageGuide() {
         {/* Step 2: Protocol Selection */}
         <div
           className="mt-[120px] mb-6 px-4 sm:px-6"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
-            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED]  text-black mr-2">
+            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C3ED]  text-black mr-2">
               Step 2:
             </span>
             Protocol Selection
@@ -227,9 +228,14 @@ function DosageGuide() {
             {/* Toggle Button - now same width as Step 1 dropdown */}
             <div className="flex  mt-6">
               <div className="relative w-[95%] max-w-[1248px] h-[80px] bg-[#94C4ED]/40 rounded-[25px]">
-                <div className="flex w-full h-full text-[#224674] dark:text-[var(--foreground)] text-[clamp(18px,0.43vw+16.63px,24px)] relative">
+                <div
+                  // className="flex w-full h-full text-[#224674] dark:text-[var(--foreground)] text-[clamp(18px,0.43vw+16.63px,24px)] relative"> // --> dark mode
+                  className="flex w-full h-full text-[#224674] text-[clamp(18px,0.43vw+16.63px,24px)] relative"
+                >
                   <div
-                    className={`absolute top-0 bottom-0 w-[50%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
+                    // className={`absolute top-0 bottom-0 w-[50%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300 // --> dark mode
+                    className={`absolute top-0 bottom-0 w-[50%] bg-[#94C4ED]  rounded-[25px] transition-all duration-300
+
               ${selectedProtocol === "Microdosing" ? "left-[50%]" : "left-0"}
             `}
                   ></div>
@@ -260,10 +266,10 @@ function DosageGuide() {
         {/* Step 3: Dosage Selection & Visualization */}
         <div
           className="mt-[120px] px-4 sm:px-6"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
-            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
+            <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C3ED] text-black mr-2">
               Step 3:
             </span>
             Dosage Selection & Visualization
@@ -299,7 +305,6 @@ function DosageGuide() {
               </div>
             </div> */}
 
-
                 <div className="min-w-[clamp(80px,8vw,96px)] h-[clamp(36px,4.5vw,46px)] p-[2px] rounded-[14px] bg-gradient-to-t from-[#5CB0E2] to-[#EB6793]">
                   <div className="w-full h-full flex items-center justify-center bg-app rounded-[12px] font-semibold text-[clamp(18px,0.43vw+16.63px,24px)]">
                     {sliderValue} mcg
@@ -307,48 +312,52 @@ function DosageGuide() {
                 </div>
               </div>
 
-
               <style jsx>{`
-              .custom-slider {
-                background: linear-gradient(
-                  to right,
-                  #224674 ${(sliderValue / 2000) * 100}%,
-                  #94c4ed66 ${(sliderValue / 2000) * 100}%
-                );
-                border-radius: 9999px;
-              }
+                .custom-slider {
+                  background: linear-gradient(
+                    to right,
+                    #224674 ${(sliderValue / 2000) * 100}%,
+                    #94c4ed66 ${(sliderValue / 2000) * 100}%
+                  );
+                  border-radius: 9999px;
+                }
 
-              .custom-slider::-webkit-slider-thumb {
-  appearance: none;
-  height: clamp(24px, 5vw, 36px);
-width: clamp(24px, 5vw, 36px);
+                .custom-slider::-webkit-slider-thumb {
+                  appearance: none;
+                  height: clamp(24px, 5vw, 36px);
+                  width: clamp(24px, 5vw, 36px);
 
-  border-radius: 50%;
-  cursor: pointer;
-  background: 
-    linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-    linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%);
-  border: 2px solid transparent;
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  box-sizing: border-box;
-}
+                  border-radius: 50%;
+                  cursor: pointer;
+                  background: linear-gradient(
+                      0deg,
+                      rgba(255, 255, 255, 0.3),
+                      rgba(255, 255, 255, 0.3)
+                    ),
+                    linear-gradient(212.17deg, #eb6793 0%, #5cb0e2 96.39%);
+                  border: 2px solid transparent;
+                  background-origin: border-box;
+                  background-clip: content-box, border-box;
+                  box-sizing: border-box;
+                }
 
-.custom-slider::-moz-range-thumb {
-  height: 36px;
-  width: 36px;
-  border-radius: 50%;
-  cursor: pointer;
-  background: 
-    linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-    linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%);
-  border: 2px solid transparent;
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  box-sizing: border-box;
-}
-
-            `}</style>
+                .custom-slider::-moz-range-thumb {
+                  height: 36px;
+                  width: 36px;
+                  border-radius: 50%;
+                  cursor: pointer;
+                  background: linear-gradient(
+                      0deg,
+                      rgba(255, 255, 255, 0.3),
+                      rgba(255, 255, 255, 0.3)
+                    ),
+                    linear-gradient(212.17deg, #eb6793 0%, #5cb0e2 96.39%);
+                  border: 2px solid transparent;
+                  background-origin: border-box;
+                  background-clip: content-box, border-box;
+                  box-sizing: border-box;
+                }
+              `}</style>
             </div>
 
             {/* You can add more UI elements for protocol selection here */}
@@ -374,13 +383,13 @@ width: clamp(24px, 5vw, 36px);
   text-opacity-100 w-[95%] max-w-[1233px] h-[706px] rounded-4xl mt-10 p-10 
   bg-[#94C4ED]/40 overflow-y-auto sm:overflow-visible"
             >
-
               <div className="mb-6 ">
                 <h2
                   // className=" text-4xl"
                   className="text-[clamp(20.25px,0.98vw+17.1px,34px)]  font-semibold leading-[100%] text-left"
-
-                >Description</h2>
+                >
+                  Description
+                </h2>
                 <p className="text-[clamp(18px,0.43vw+16.63px,24px)]">
                   A copper peptide similar to GHK-Cu with specific properties.
                 </p>
@@ -474,7 +483,7 @@ width: clamp(24px, 5vw, 36px);
         {/* Step 4: Administration Sites */}
         <div
           className="mt-[120px] mb-6 px-4 sm:px-6"
-          style={{ fontFamily: "Afacad, sans-serif" }}
+          style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
             <span className="rounded-3xl px-4 py-2 inline-block bg-[#94C4ED] text-black mr-2">
@@ -503,7 +512,7 @@ width: clamp(24px, 5vw, 36px);
                 className="w-full h-full rounded-full bg-app text-black text-[clamp(18px,0.43vw+16.63px,24px)] font-medium
     flex items-center justify-center transition-colors duration-100 
     ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
-                style={{ fontFamily: "Afacad, sans-serif" }}
+                style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
               >
                 Explore More
               </button>
@@ -536,10 +545,10 @@ function Calculator() {
         />
       </div>
       <div className="pl-5 pr-4  min-w-[95vw] overflow-hidden">
-
-
-
-        <div className="mt-30 mb-6" style={{ fontFamily: "Afacad, sans-serif" }}>
+        <div
+          className="mt-30 mb-6"
+          style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
+        >
           <h3 className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-bold flex items-center flex-wrap">
             Peptide Calculator
           </h3>
@@ -556,12 +565,18 @@ function Calculator() {
                 <input
                   type="number"
                   placeholder="Enter in mg"
+                  //               className="w-full max-w-[1248px] h-[60px] sm:h-[70px] md:h-[80px]
+                  // px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30
+                  // focus:outline-none
+                  // text-[clamp(18px,0.43vw+16.63px,24px)]
+                  // text-[#224674] dark:text-[var(--foreground)]
+                  // font-medium text-left"  // --> dark mode
                   className="w-full max-w-[1248px] h-[60px] sm:h-[70px] md:h-[80px] 
-    px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
-    focus:outline-none 
-    text-[clamp(18px,0.43vw+16.63px,24px)] 
-    text-[#224674] dark:text-[var(--foreground)] 
-    font-medium text-left"
+                  px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
+                  focus:outline-none 
+                  text-[clamp(18px,0.43vw+16.63px,24px)] 
+                  text-[#224674]
+                  font-medium text-left"
                 />
 
                 <Image
@@ -569,7 +584,7 @@ function Calculator() {
                   alt="Dropdown icon"
                   width={80}
                   height={80}
-                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain pointer-events-none"
+                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain "
                 />
               </div>
             </div>
@@ -584,11 +599,17 @@ function Calculator() {
                 <input
                   type="number"
                   placeholder="Enter in ml"
+                  //               className="w-full max-w-[1248px] h-[60px] sm:h-[70px] md:h-[80px]
+                  // px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30
+                  // focus:outline-none
+                  // text-[clamp(18px,0.43vw+16.63px,24px)]
+                  // text-[#224674] dark:text-[var(--foreground)]
+                  // font-medium text-left" --> dark mode
                   className="w-full max-w-[1248px] h-[60px] sm:h-[70px] md:h-[80px] 
     px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
     focus:outline-none 
     text-[clamp(18px,0.43vw+16.63px,24px)] 
-    text-[#224674] dark:text-[var(--foreground)] 
+    text-[#224674]
     font-medium text-left"
                 />
 
@@ -597,7 +618,7 @@ function Calculator() {
                   alt="Dropdown icon"
                   width={80}
                   height={80}
-                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain pointer-events-none"
+                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain "
                 />
               </div>
             </div>
@@ -612,12 +633,17 @@ function Calculator() {
                 <input
                   type="number"
                   placeholder="Enter in mcg"
+                  //               className="w-full max-w-[1248px] h-[60px] sm:h-[70px] md:h-[80px]
+                  // px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30
+                  // focus:outline-none
+                  // text-[clamp(18px,0.43vw+16.63px,24px)]
+                  // text-[#224674] dark:text-[var(--foreground)]
+                  // font-medium text-left"
                   className="w-full max-w-[1248px] h-[60px] sm:h-[70px] md:h-[80px] 
-    px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
-    focus:outline-none 
-    text-[clamp(18px,0.43vw+16.63px,24px)] 
-    text-[#224674] dark:text-[var(--foreground)] 
-    font-medium text-left"
+                  px-6 py-3 pr-10 rounded-3xl bg-[#94C4ED]/30 
+                  focus:outline-none 
+                  text-[clamp(18px,0.43vw+16.63px,24px)] 
+                  text-[#224674] font-medium text-left"
                 />
 
                 <Image
@@ -625,27 +651,27 @@ function Calculator() {
                   alt="Dropdown icon"
                   width={80}
                   height={80}
-                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain pointer-events-none"
+                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain "
                 />
-
               </div>
             </div>
           </div>
 
-          <div className="relative mt-24 w-full max-w-[1181px] h-[227px]  overflow-y-auto px-4 py-3 focus:outline-none rounded-3xl bg-[#94C4ED]/30 
-        text-[clamp(20.25px,0.98vw+17.1px,34px)] text-black/70 dark:text-[var(--foreground)] font-semibold">
+          <div
+            //     className="relative mt-24 w-full max-w-[1181px] h-[227px]  overflow-y-auto px-4 py-3 focus:outline-none rounded-3xl bg-[#94C4ED]/30
+            // text-[clamp(20.25px,0.98vw+17.1px,34px)] text-black/70 dark:text-[var(--foreground)] font-semibold" --> dark mode
+            className="relative mt-24 w-full max-w-[1181px] h-[227px]  overflow-y-auto px-4 py-3 focus:outline-none rounded-3xl bg-[#94C4ED]/30 
+        text-[clamp(20.25px,0.98vw+17.1px,34px)] text-black/70 font-semibold"
+          >
             <div className="px-2 py-2">
               Results
-
               <div className="mt-1 flex flex-col text-[clamp(18px,0.43vw+16.63px,24px)] ">
                 <div>Concatenation: 2500 mcg/ml</div>
                 <div>Injection volume for desired dose: 0.10 ml </div>
                 <div>Unit per 0.1 ml: 250 mcg</div>
                 {/* <div>concatenation</div>
   <div>concatenation</div> */}
-
               </div>
-
             </div>
             {/* <textarea
             placeholder="Enter desired dose"
