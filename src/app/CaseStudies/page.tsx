@@ -282,7 +282,7 @@ const CaseStudiesPage = () => {
                   className="gradient-card-border w-full max-w-[443px] h-auto rounded-[1.875rem] min-h-0 cursor-pointer"
                   onClick={() => setShowNewSection(true)}
                 >
-                  <div className="p-6 shadow-lg rounded-[1.875rem] flex flex-col items-start bg-app w-full h-full transition-colors duration-500 ease-in-out group cursor-pointer">
+                  <div className="p-6  rounded-[1.875rem] flex flex-col items-start bg-app w-full h-full transition-colors duration-500 ease-in-out group cursor-pointer">
                     <h2
                       className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-semibold leading-[100%] mt-4 md:mt-6 text-left"
                       style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
@@ -445,13 +445,13 @@ const CaseStudiesPage = () => {
                     >
                       <button
                         className=" w-full flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
-                bg-[#F7B6DB] rounded-full shadow-md transition duration-200"
+                bg-[#F7B6DB] rounded-full    transition duration-200"
                       >
                         Approve
                       </button>
                       <button
                         className="w-full flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
-                bg-[#C5B3FF] rounded-full shadow-md transition duration-200"
+                bg-[#C5B3FF] rounded-full    transition duration-200"
                       >
                         Publish
                       </button>
@@ -494,13 +494,13 @@ const CaseStudiesPage = () => {
                     >
                       <button
                         className="w-full flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
-                bg-[#F7B6DB] rounded-full shadow-md transition duration-200"
+                bg-[#F7B6DB] rounded-full    transition duration-200"
                       >
                         Approve
                       </button>
                       <button
                         className="w-full flex items-center justify-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 
-                bg-[#C5B3FF] rounded-full shadow-md transition duration-200"
+                bg-[#C5B3FF] rounded-full    transition duration-200"
                       >
                         Publish
                       </button>

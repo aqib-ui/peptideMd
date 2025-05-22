@@ -41,7 +41,7 @@
 //             >
 //                 <div
 //                     className="animate-slide whitespace-nowrap flex text-[28px] md:text-[40px] lg:text-[64px] font-semibold"
-//                     style={{ fontFamily: "Afacad, sans-serif" }}
+//                     style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
 //                 >
 //                     {[...Array(6)].map((_, i) => (
 //                         <span key={i} className="uppercase">
@@ -85,7 +85,7 @@
 //                         />
 //                         <div
 //                             className="p-3 flex justify-between items-center h-[calc(100%-190px)]"
-//                             style={{ fontFamily: "Afacad, sans-serif" }}
+//                             style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
 //                         >
 //                             <h3 className="font-semibold text-[clamp(20px,1.5vw,28px)] leading-snug text-app">
 //                                 {card.title}
@@ -107,7 +107,7 @@
 //             {/* The text below cards remains here */}
 //             <div
 //                 className="relative z-0 mt-10 max-w-3xl px-4 text-center text-black dark:text-white"
-//                 style={{ fontFamily: "Afacad, sans-serif" }}
+//                 style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
 //             >
 //                 <p>
 //                     This is some text below the cards. The cards appear above this text
@@ -154,7 +154,7 @@ export default function CardSection() {
             <div className="relative z-0 w-full overflow-hidden">
                 <div
                     className="animate-slide whitespace-nowrap flex text-[28px] md:text-[40px] lg:text-[64px] font-semibold"
-                    style={{ fontFamily: "Afacad, sans-serif" }}
+                    style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                 >
                     {[...Array(6)].map((_, i) => (
                         <span key={i} className="uppercase">
@@ -194,7 +194,7 @@ export default function CardSection() {
                         />
                         <div
                             className="p-3 flex justify-between items-center h-[calc(100%-190px)]"
-                            style={{ fontFamily: "Afacad, sans-serif" }}
+                            style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                         >
                             <h3 className="font-semibold text-[clamp(20px,1.5vw,28px)] leading-snug text-app">
                                 {card.title}

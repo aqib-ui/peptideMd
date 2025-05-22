@@ -53,7 +53,7 @@ const Page = ({ params }: PageProps) => {
             </div> */}
 
           {/* "Peptide Overview" Button */}
-          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.8vw,66px)]">
+          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.85vw,66px)]">
             <button
               className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
@@ -224,7 +224,7 @@ const Page = ({ params }: PageProps) => {
           </h2>
 
           {/* "Peptide Overview" Button */}
-          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.8vw,66px)]">
+          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.85vw,66px)]">
             <button
               className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
@@ -394,7 +394,7 @@ const Page = ({ params }: PageProps) => {
           </h2>
 
           {/* "Peptide Overview" Button */}
-          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.8vw,66px)]">
+          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.85vw,66px)]">
             <button
               className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
@@ -564,7 +564,7 @@ const Page = ({ params }: PageProps) => {
           </h2>
 
           {/* "Peptide Overview" Button */}
-          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.8vw,66px)]">
+          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.85vw,66px)]">
             <button
               className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
@@ -734,7 +734,7 @@ const Page = ({ params }: PageProps) => {
           </h2>
 
           {/* "Peptide Overview" Button */}
-          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.8vw,66px)]">
+          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.85vw,66px)]">
             <button
               className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
@@ -904,7 +904,7 @@ const Page = ({ params }: PageProps) => {
           </h2>
 
           {/* "Peptide Overview" Button */}
-          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.8vw,66px)]">
+          <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.85vw,66px)]">
             <button
               className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
