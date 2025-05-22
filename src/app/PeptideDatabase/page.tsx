@@ -3,13 +3,16 @@
 import Image from "next/image";
 import { useState } from "react";
 import { LiaAngleDownSolid } from "react-icons/lia";
-import  MoleculeTopLeftAnimation  from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import MoleculeTopLeftAnimation from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 import dynamic from "next/dynamic";
 import ScrollButton from "@/component/ScrollButton/ScrollButton";
 
-const ScrollButton2 = dynamic(() => import('@/component/ScrollButton/ScrollButton2'), {
-  ssr: false
-});
+const ScrollButton2 = dynamic(
+  () => import("@/component/ScrollButton/ScrollButton2"),
+  {
+    ssr: false,
+  }
+);
 
 export default function PeptideDatabase() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -73,7 +76,6 @@ export default function PeptideDatabase() {
     // },
   ];
 
-
   return (
     <>
       <MoleculeTopLeftAnimation
@@ -83,45 +85,40 @@ export default function PeptideDatabase() {
       />
       {/* <ScrollButton /> */}
 
-
-
-
-
-
-
-
-
-
       {/* Peptides Table */}
       <div
-        className=" md:mt-20 py-10"
+        className=" md:mt-20 py-10 "
         style={{ fontFamily: "Afacad, sans-serif" }}
       >
         {/* Heading searchbar etc Section */}
         <div
           // className="grid grid-cols-[auto_1fr] justify-around items-start gap-4"
-          className="flex items-start justify-around max-xl:flex-col"
+          className="flex items-center justify-around max-xl:flex-col "
         >
           {/*basically grid-cols-[auto_1fr] ===> "Give the first column as much space
                  as it needs (auto), and let the second one fill the rest (1fr)" */}
 
           {/* heading section */}
-          <div className="px-10 w-full flex flex-1 flex-col ">
-            <h1 className="capitalize text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold">
+          <div className="px-10 flex flex-2 flex-col  ">
+            <h1 className="capitalize text-[clamp(22.5px,1.67vw+17.2px,46px)]  font-semibold">
               single peptide
             </h1>
-            <h3 className="my-1 mb-2 text-[clamp(18px,0.43vw+16.63px,24px)] font-medium">
+            <h3 className="my-0 mb-0 text-[clamp(18px,0.43vw+16.63px,24px)]  font-medium">
               click on any peptide to discover more!
             </h3>
           </div>
 
-          <div className="flex flex-col w-full p-6 pl-2 pt-10 flex-3 md:flex-row justify-center xl:justify-end gap-4 mr-4 md:mr-16  ">
+          <div className="flex flex-col w-full p-2 max-xl:p-10   pl-2  flex-5  md:flex-row justify-center xl:justify-end gap-4 mr-4 md:mr-16  ">
             {/* Filter & Compare Buttons */}
-            <div className="flex max-md:flex-wrap items-center justify-center md:justify-end gap-4 text-[clamp(16px,0.284vw+15.1px,20px)] font-medium">
+            <div
+              // className="flex max-md:flex-wrap items-center justify-center md:justify-end gap-4 text-[clamp(16px,0.284vw+15.1px,20px)] font-medium"
+              className="flex max-md:flex-wrap items-center justify-center md:justify-end gap-4 txt-btn-24 font-medium"
+            >
               <button
                 onClick={() => setIsFilterClicked(!isFilterClicked)}
-                className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 border-2 
-                  border-[#F7B6DB] rounded-full shadow-md transition duration-200 ${isFilterClicked ? "bg-[#F7B6DB]" : "hover:bg-[#F7B6DB]"
+                className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 w-auto [@media(min-width:1600px)]:w-[137px] h-auto [@media(min-width:1600px)]:h-[80px] border-2 
+                  border-[#F7B6DB] rounded-full  transition duration-200 ${
+                    isFilterClicked ? "bg-[#F7B6DB]" : "hover:bg-[#F7B6DB]"
                   }`}
               >
                 <Image
@@ -129,15 +126,17 @@ export default function PeptideDatabase() {
                   alt="Compare"
                   width={24}
                   height={24}
-                  className="w-5 mr-2 h-5 dark:filter dark:invert"
+                  // className="w-5 mr-2 h-5 dark:filter dark:invert"
+                  className="w-5 mr-2 h-5"
                 />
                 Filter
               </button>
               {/* compare button */}
               <button
                 onClick={() => setIsCompareClicked(!isCompareClicked)}
-                className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 border-2
-                  border-[#C5B3FF] rounded-full shadow-md transition duration-200 ${isCompareClicked ? "bg-[#C5B3FF]" : "hover:bg-[#C5B3FF]"
+                className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 w-auto [@media(min-width:1600px)]:w-[265px] [@media(min-width:1600px)]:h-[80px] border-2
+                  border-[#C5B3FF] rounded-full  transition duration-200 ${
+                    isCompareClicked ? "bg-[#C5B3FF]" : "hover:bg-[#C5B3FF]"
                   }`}
               >
                 <Image
@@ -145,7 +144,8 @@ export default function PeptideDatabase() {
                   alt="Compare"
                   width={24}
                   height={24}
-                  className="w-5 mr-2 h-5 dark:filter dark:invert"
+                  // className="w-5 mr-2 h-5 dark:filter dark:invert"
+                  className="w-5 mr-2 h-5"
                 />
                 Compare Peptide
               </button>
@@ -159,9 +159,9 @@ export default function PeptideDatabase() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className={`
-                px-8 py-4 border-2 border-[#88D3FF] bg-app text-app rounded-full shadow-sm focus:ring
+                px-8 py-4 2xl:py-6 border-2 border-[#88D3FF] bg-app text-app rounded-full shadow-sm focus:ring
                 focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] outline-none text-lg md:text-xl font-semibold 
-                max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full md:w-auto
+                max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full max-2xl:w-auto
                 ${showSearch ? "block" : "hidden"} md:block
               `}
                 style={{ fontFamily: "Afacad, sans-serif" }}
@@ -175,10 +175,17 @@ export default function PeptideDatabase() {
                   placeholder="Search Peptides"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
+                  //     className={`
+                  //   px-8 py-4  border-2 border-[#88D3FF] bg-app text-app rounded-full shadow-sm focus:ring
+                  //   focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] outline-none text-lg md:text-xl font-semibold
+                  //   max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full sm:w-[200px] lg:w-[400px] [@media(min-width:1600px)]:h-[80px] [@media(min-width:1600px)]:w-[590px]
+                  //   ${showSearch ? "block" : "hidden"} md:block
+                  // `}
                   className={`
-                px-8 py-4  border-2 border-[#88D3FF] bg-app text-app rounded-full shadow-sm focus:ring 
-                focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] outline-none text-lg md:text-xl font-semibold 
-                max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full sm:w-[200px] lg:w-[400px]
+                px-8 py-4  border-2 border-[#88D3FF] bg-app text-app rounded-full focus:ring 
+                focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] outline-none txt-btn-24 font-semibold 
+                max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full sm:w-[200px] lg:w-[400px] 
+                [@media(min-width:1600px)]:h-[80px] [@media(min-width:1600px)]:w-[460px]
                 ${showSearch ? "block" : "hidden"} md:block
               `}
                   style={{ fontFamily: "Afacad, sans-serif" }}
@@ -190,7 +197,7 @@ export default function PeptideDatabase() {
             <div className="relative w-fit left-[12rem] md:left-0 ">
               {/* Dropdown Trigger (fake behind) */}
               <button
-                className="absolute right-0 top-0 translate-x-7 translate-y-0 z-10 w-16 h-16
+                className="absolute right-0 top-0 translate-x-7 translate-y-0 z-10 w-16 h-16 [@media(min-width:1600px)]:w-20 [@media(min-width:1600px)]:h-20
                  bg-[#224674] rounded-full flex items-center justify-end"
                 onClick={() => setShowDropdown((prev) => !prev)}
               >
@@ -207,25 +214,38 @@ export default function PeptideDatabase() {
               {/* Dropdown Menu */}
               {showDropdown && (
                 <div
-                  className="absolute top-full mt-6 md:mt-7 xl:mt-10 z-30 w-60 max-md:w-40 md:left-1/6 max-md:left-1/4 
-                  bg-white bg-app dark:border dark:border-white shadow-xl p-4 rounded-3xl"
+                  className="absolute top-full mt-12  xl:mt-6 2xl:mt-5 z-30 w-[265px] [@media(min-width:1600px)]:w-[294px] max-2xl:w-60 max-md:w-40 
+                  h-[200px] [@media(min-width:1600px)]:h-[215px] max-2xl:h-50 max-md:h-50 md:left-1/6 max-md:left-1/4 bg-white bg-app dark:border dark:border-white  p-5 rounded-[40px] rounded-tr-[10px]"
                   style={{
                     transform: "translateX(-60%)",
                     fontFamily: "Afacad, sans-serif",
+                    boxShadow: "0px 6px 20px 0px rgba(31, 31, 31, 0.12)",
                   }}
                 >
-                  <p className="text-[#1F1F1F]/40 dark:text-[#E5F0F8]/40 text-sm md:text-base lg:text-xl font-semibold mb-2">
+                  <p
+                    //  className="text-[#1F1F1F]/40 dark:text-[#E5F0F8]/40 text-sm md:text-base lg:text-xl font-semibold mb-2" // --> dark mode
+                    className="text-[#1F1F1F]/40 txt-24 font-semibold mb-2"
+                  >
                     Search by:
                   </p>
-                  <ul className="space-y-0 mt-3 pb-5 font-semibold text-sm md:text-base lg:text-xl leading-tight">
-                    <li className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40">
+                  <ul className="space-y-0 mt-3 pb-5 font-semibold txt-24 leading-tight">
+                    <li
+                      // className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40" // --> dark mode
+                      className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40"
+                    >
                       Symptoms
                     </li>
-                    <li className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40">
+                    <li
+                      // className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40" // --> dark mode
+                      className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40"
+                    >
                       Current medications
                     </li>
-                    <li className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40">
-                      Desired outcomes
+                    <li
+                      // className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40" // --> dark mode
+                      className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40"
+                    >
+                      Desired outcomes etc.
                     </li>
                   </ul>
                 </div>
@@ -237,19 +257,20 @@ export default function PeptideDatabase() {
         {/* table and table data */}
 
         {/* <div className="overflow-x-auto rounded-t-[72px] border border-gray-300 shadow-md"> */}
-        <div className="overflow-x-auto rounded-t-[72px] border border-gray-300 dark:border-t-0 dark:border-r-0 dark:border-l-0 dark:border-b shadow-md">
+        <div className="overflow-x-auto mt-2 rounded-t-[72px] md:rounded-t-[80px] border border-gray-300 dark:border-t-0 dark:border-r-0 dark:border-l-0 dark:border-b shadow-md">
           <table
-            className="min-w-full bg-[#F0F0F0] rounded-t-[72px] p-10 "
+            className="min-w-full bg-[#F0F0F0] p-10 "
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             <thead>
               <tr className="bg-[#94C4ED] dark:text-black mt-10">
                 <th
-                  className={`font-bold text-[28px] md:text-[32px] lg:text-[34px]  
-      ${isCompareClicked
-                      ? "px-2 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6 text-center pr-60"
-                      : "px-4 sm:px-6 md:px-10 text-left"
-                    }
+                  className={`font-bold txt-34 
+      ${
+        isCompareClicked
+          ? "px-2 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6 text-center pr-60"
+          : "px-4 sm:px-6 md:px-10 text-left"
+      }
     `}
                   colSpan={isCompareClicked ? peptides.length + 1 : 7}
                 >
@@ -277,12 +298,16 @@ export default function PeptideDatabase() {
                 peptides.map((peptide, index) => (
                   <tr
                     key={index}
-                    className="font-medium bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[clamp(18px,0.43vw+16.63px,24px)]  "
+                    // className="font-medium bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[clamp(18px,0.43vw+16.63px,24px)]  " // --> dark mode
+                    className="font-medium bg-[#F0F0F0] text-[clamp(18px,0.43vw+16.63px,24px)] leading-tight  "
                   >
                     <td className="px-2 align-top pt-15 ">
                       <div className="inline-block rounded-full bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] p-[1.5px]">
-                        <span className="block rounded-full bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] 
-                        px-3 py-3 font-bold text-black">
+                        <span
+                        //   className="block rounded-full bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] // --> dark mode
+                        // px-3 py-3 font-bold text-black"
+                        className="block rounded-full bg-[#F0F0F0] px-3 py-3 font-bold text-black"
+                        >
                           {peptide.name}
                         </span>
                       </div>
@@ -294,19 +319,19 @@ export default function PeptideDatabase() {
                       </div>
                     </td>
 
-                    <td className="px-2  w-[30%] align-top pt-20 pb-5">
+                    <td className="px-4 w-[30%] align-top pt-20 pb-5">
                       <div className="flex flex-col justify-start items-start">
                         {peptide.description}
                       </div>
                     </td>
 
-                    <td className="px-2  w-[30%] align-top pt-20 pb-5">
+                    <td className="px-6  w-[25%] align-top pt-20 pb-5">
                       <ul className="flex flex-col justify-start items-start">
                         {peptide.benefits.map((benefit, i) => (
                           <li
                             className="relative pl-3 before:content-['']
-                            before:absolute before:left-0 before:top-2 before:w-2
-                            before:h-2 before:rounded-full before:border-2 before:border-[#88D3FF]"
+                            before:absolute before:left-0 before:top-3 before:w-2
+                            before:h-2 before:rounded-full before:border-2 before:border-[#5CB0E2]"
                             key={i}
                           >
                             {benefit}
@@ -315,13 +340,13 @@ export default function PeptideDatabase() {
                       </ul>
                     </td>
 
-                    <td className="px-2  w-[25%] align-top pt-20 pb-5">
+                    <td className="px-2  w-[20%] align-top pt-20 pb-5">
                       <ul className=" flex flex-col justify-start items-start ">
                         {peptide.risks.map((risk, i) => (
                           <li
                             className="relative pl-3 before:content-['']
-                            before:absolute before:left-0 before:top-2 before:w-2
-                            before:h-2 before:rounded-full before:border-2 before:border-[#88D3FF]"
+                            before:absolute before:left-0 before:top-3 before:w-2
+                            before:h-2 before:rounded-full before:border-2 before:border-[#5CB0E2]"
                             key={i}
                           >
                             {risk}
@@ -330,7 +355,7 @@ export default function PeptideDatabase() {
                       </ul>
                     </td>
 
-                    <td className="px-4 flex align-top pt-20 pb-5">
+                    <td className="  w-full flex align-top pt-20 pb-5">
                       <div className="flex justify-start items-start">
                         {peptide.references}
                       </div>
@@ -338,10 +363,11 @@ export default function PeptideDatabase() {
 
                     <td className="px-2 align-top pt-15 ">
                       <span
-                        className={`inline-block text-black px-3 py-1 rounded-[30px] text-[clamp(18px,0.43vw+16.63px,24px)] ${peptide.fdaStatus === "FDA Approved"
-                          ? "bg-[#C5E87E]"
-                          : "bg-[#909090]"
-                          }`}
+                        className={`inline-block text-black px-5 py-2 rounded-[30px] text-[clamp(18px,0.43vw+16.63px,24px)] ${
+                          peptide.fdaStatus === "FDA Approved"
+                            ? "bg-[#C5E87E]"
+                            : "bg-[#909090]"
+                        }`}
                       >
                         {peptide.fdaStatus}
                       </span>
@@ -413,13 +439,18 @@ export default function PeptideDatabase() {
                     { label: "References", key: "references" },
                     { label: "FDA Status", key: "fdaStatus" },
                   ].map((row, i) => (
-                    <tr key={i} className="bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] ">
+                    <tr
+                      key={i}
+                      // className="bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] "
+                       className="bg-[#F0F0F0] "
+                    >
                       {peptides.map((peptide, index) =>
                         row.key === "name" ? (
                           <td
                             key={index}
-                            className={`md:px-4 max-md:px-1 py-4 align-top  ${index !== 0 ? "pl-10" : ""
-                              }`}
+                            className={`md:px-4 max-md:px-1 py-4 align-top  ${
+                              index !== 0 ? "pl-10" : ""
+                            }`}
                           >
                             <div className="flex items-center ml-2 sm:ml-4 md:ml-8 lg:ml-12 xl:ml-16 2xl:ml-[4.5rem] ">
                               {/* Purple Number Badge */}
@@ -445,8 +476,9 @@ export default function PeptideDatabase() {
                         ) : (
                           <td
                             key={index}
-                            className={`md:px-4 max-md:px-1 py-4 align-top ${index !== 0 ? "pl-10" : ""
-                              }`}
+                            className={`md:px-4 max-md:px-1 py-4 align-top ${
+                              index !== 0 ? "pl-10" : ""
+                            }`}
                           >
                             <div className="ml-2 sm:ml-4 md:ml-8 lg:ml-16 xl:ml-[12.5rem] flex gap-5 items-start justify-start">
                               {/* Label - fixed width */}
@@ -462,14 +494,14 @@ export default function PeptideDatabase() {
                                   <ul className="space-y-0">
                                     {(
                                       peptide[
-                                      row.key as keyof typeof peptide
+                                        row.key as keyof typeof peptide
                                       ] as string[]
                                     ).map((item, j) => (
                                       <li
                                         key={j}
                                         className="relative pl-3 before:content-[''] leading-tight
-                      before:absolute before:left-0 before:top-2 before:w-2 
-                      before:h-2 before:rounded-full before:border-2 before:border-[#88D3FF]"
+                      before:absolute before:left-0 before:top-3 before:w-2 
+                      before:h-2 before:rounded-full before:border-2 before:border-[#5CB0E2]"
                                       >
                                         {item}
                                       </li>
@@ -477,10 +509,11 @@ export default function PeptideDatabase() {
                                   </ul>
                                 ) : row.key === "fdaStatus" ? (
                                   <span
-                                    className={`inline-block px-6 py-4 rounded-[30px] text-black text-[clamp(18px,0.43vw+16.63px,24px)] font-medium ${peptide.fdaStatus === "FDA Approved"
-                                      ? "bg-[#C5E87E]"
-                                      : "bg-[#909090]"
-                                      }`}
+                                    className={`inline-block px-6 py-4 rounded-[30px] text-black text-[clamp(18px,0.43vw+16.63px,24px)] font-medium ${
+                                      peptide.fdaStatus === "FDA Approved"
+                                        ? "bg-[#C5E87E]"
+                                        : "bg-[#909090]"
+                                    }`}
                                   >
                                     {peptide.fdaStatus}
                                   </span>

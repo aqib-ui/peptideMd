@@ -24,7 +24,8 @@ export default function DosageSimulator() {
             style={{ fontFamily: "Afacad, sans-serif" }}
           >
             <div
-              className={`absolute inset-0 top-0 bottom-0 left-0 w-[51%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
+              // className={`absolute inset-0 top-0 bottom-0 left-0 w-[51%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
+              className={`absolute inset-0 top-0 bottom-0 left-0 w-[51%] bg-[#94C4ED]   rounded-[25px] transition-all duration-300
             ${selected === "Calculator" ? "left-[49%]" : "left-0"}`}
             ></div>
 
@@ -229,7 +230,9 @@ function DosageGuide() {
               <div className="relative w-[95%] max-w-[1248px] h-[80px] bg-[#94C4ED]/40 rounded-[25px]">
                 <div className="flex w-full h-full text-[#224674] dark:text-[var(--foreground)] text-[clamp(18px,0.43vw+16.63px,24px)] relative">
                   <div
-                    className={`absolute top-0 bottom-0 w-[50%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
+                    // className={`absolute top-0 bottom-0 w-[50%] bg-[#94C4ED] dark:bg-[#6d91b0]  rounded-[25px] transition-all duration-300
+                                        className={`absolute top-0 bottom-0 w-[50%] bg-[#94C4ED]  rounded-[25px] transition-all duration-300
+
               ${selectedProtocol === "Microdosing" ? "left-[50%]" : "left-0"}
             `}
                   ></div>
@@ -569,7 +572,7 @@ function Calculator() {
                   alt="Dropdown icon"
                   width={80}
                   height={80}
-                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain pointer-events-none"
+                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain "
                 />
               </div>
             </div>
@@ -597,7 +600,7 @@ function Calculator() {
                   alt="Dropdown icon"
                   width={80}
                   height={80}
-                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain pointer-events-none"
+                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain "
                 />
               </div>
             </div>
@@ -625,7 +628,7 @@ function Calculator() {
                   alt="Dropdown icon"
                   width={80}
                   height={80}
-                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain pointer-events-none"
+                  className="w-[60px] md:w-[80px] h-auto absolute top-1/2 right-0 transform -translate-y-1/2 object-contain "
                 />
 
               </div>

@@ -21,7 +21,7 @@ const ScrollButton2: React.FC<ScrollButton2Props> = ({ showSearch, setShowSearch
 
   return (
     <button
-      className="relative z-20 w-16 h-16 bg-[#88D3FF] rounded-full flex items-center justify-center"
+      className="relative z-20 w-16 h-16 [@media(min-width:1600px)]:w-20 [@media(min-width:1600px)]:h-20 bg-[#88D3FF] rounded-full flex items-center justify-center"
       onClick={handleScroll} // <-- fixed here
     >
       <Image
