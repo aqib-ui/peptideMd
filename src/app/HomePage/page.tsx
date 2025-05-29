@@ -671,36 +671,90 @@ export default function HomePage() {
   // Handle play event
   const handlePlay = () => setIsPlaying(true);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 3000); // Change slide every 3 seconds
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, []);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
+  //   }, 3000); // Change slide every 3 seconds
+  //   return () => clearInterval(interval); // Cleanup on unmount
+  // }, []);
 
-  const cards = [
-    {
-      title: "Ai diagnostics",
-      imageSrc: "/image.png",
-      rotateDeg: -6,
-      expandedX: -160, // spread left
-      zIndex: 10,
-    },
-    {
-      title: "Genetic Screening",
-      imageSrc: "/image.png",
-      rotateDeg: 0,
-      expandedX: 0, // center
-      zIndex: 20,
-    },
-    {
-      title: "Oncology Testing",
-      imageSrc: "/image.png",
-      rotateDeg: 6,
-      expandedX: 160, // spread right
-      zIndex: 30,
-    },
-  ];
+  // const cards = [
+  //   {
+  //     title: "Ai diagnostics",
+  //     imageSrc: "/image.png",
+  //     rotateDeg: -6,
+  //     expandedX: -420, // spread left
+  //     zIndex: 10,
+  //   },
+  //   {
+  //     title: "Genetic Screening",
+  //     imageSrc: "/image.png",
+  //     rotateDeg: 0,
+  //     expandedX: 0, // center
+  //     zIndex: 20,
+  //   },
+  //   {
+  //     title: "Oncology Testing",
+  //     imageSrc: "/image.png",
+  //     rotateDeg: 6,
+  //     expandedX: 420, // spread right
+  //     zIndex: 30,
+  //   },
+  // ];
+  type CardType = {
+    title: string;
+    imageSrc: string;
+    rotateDeg: number;
+    expandedX: number;
+    expandedY: number;
+    zIndex: number;
+  };
+
+  const [cards, setCards] = useState<CardType[]>([]);
+
+  useEffect(() => {
+    const updateCards = () => {
+      const isLargeScreen = window.innerWidth >= 1280;
+
+      const newCards: CardType[] = [
+        {
+          title: "Ai diagnostics",
+          imageSrc: "/image.png",
+          rotateDeg: -6,
+          expandedX: isLargeScreen ? -420 : 0,
+          expandedY: isLargeScreen ? 0 : -300,
+          zIndex: 10,
+        },
+        {
+          title: "Genetic Screening",
+          imageSrc: "/image.png",
+          rotateDeg: 0,
+          expandedX: 0,
+          expandedY: 0,
+          zIndex: 20,
+        },
+        {
+          title: "Oncology Testing",
+          imageSrc: "/image.png",
+          rotateDeg: 6,
+          expandedX: isLargeScreen ? 420 : 0,
+          expandedY: isLargeScreen ? 0 : 300,
+          zIndex: 30,
+        },
+      ];
+
+      setCards(newCards);
+    };
+
+    // Initial run
+    updateCards();
+
+    // Listen for resize
+    window.addEventListener("resize", updateCards);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", updateCards);
+  }, []);
 
   return (
     <main className="w-full mt-10">
@@ -725,8 +779,6 @@ export default function HomePage() {
       {/* <!-- list nonsense -->
       <p class="text-[clamp(18px,1.13vw+14.4px,34px)]">Smart Responsive Text</p> */}
 
-      
-
       {/* solving dna overlapping issue on larger screens 5/5/25*/}
       {/* Welcome Section */}
       <section
@@ -740,8 +792,7 @@ export default function HomePage() {
             // className="text-[24px] sm:text-[36px] md:text-[48px] lg:text-[60px] xl:text-[72px] font-bold leading-tight"
             // className="text-[clamp(36px,2.84vw+22.9px,72px)] font-bold leading-tight"
             className="txt-72 font-bold leading-tight"
-
-           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
+            style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             Welcome to
             {/* <span style={{ color: "#224674" }} className="italic ml-2"> */}
@@ -775,7 +826,7 @@ export default function HomePage() {
           </p>
 
           {/* "Peptide Overview" Button */}
-              {/* <div className="gradient-border">
+          {/* <div className="gradient-border">
                 <button
                   //   className="w-full h-full rounded-full bg-app text-black text-xl font-medium
                   // flex items-center justify-center transition-colors duration-100
@@ -787,14 +838,17 @@ export default function HomePage() {
                 >
                   Peptide Overview
                 </button> 
-              </div> */} 
-              
+              </div> */}
+
           <div className="gradient-border min-w-[clamp(180px,13.3vw,229px)] min-h-[clamp(50px,3.8vw,66px)]">
             <button
               className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white "
-              style={{ fontFamily: " 'Afacad Flux', sans-serif", cursor: "pointer" }}
+              style={{
+                fontFamily: " 'Afacad Flux', sans-serif",
+                cursor: "pointer",
+              }}
             >
               Peptide Overview
             </button>
@@ -802,7 +856,8 @@ export default function HomePage() {
         </div>
         <div className="absolute bottom-[40px] sm:bottom-[60px] left-1/2 transform -translate-x-1/2 z-20">
           <ScrollButton />
-        </div> 
+                  
+        </div>
 
         {/* Right Side (DNA Image - Hidden on Small Screens) */}
         <div className="relative flex-1 flex justify-end ">
@@ -818,9 +873,8 @@ export default function HomePage() {
           />
           {/* // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it */}
         </div>
-      </section> 
- 
- 
+      </section>
+
       {/* Video Section */}
       <section className="relative dark:bg-app min-h-screen flex items-center justify-center mb-10 my-10 md:my-0">
         {/* Video Wrapper with Relative Positioning */}
@@ -829,7 +883,6 @@ export default function HomePage() {
             ref={videoRef}
             // style={{ height: "clamp(400px, 45vw, 765px)" }}
             style={{ height: "clamp(400px, calc(-117px + 51.14vw), 765px)" }}
-
             className="w-full rounded-[50px] object-cover"
             controls
             onPlay={handlePlay}
@@ -863,7 +916,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <button className="absolute flex items-center justify-center w-full h-full mt-0 lg:mt-16 lg:opacity-100">
+              <button className="absolute flex items-center justify-center w-full h-full mt-6 lg:mt-16 lg:opacity-100">
                 <Image
                   src="/play.png"
                   alt="Play Button"
@@ -876,7 +929,6 @@ export default function HomePage() {
           )}
         </div>
       </section>
-     
 
       {/* Description Section */}
       <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-10 my-10 md:my-0 ">
@@ -884,7 +936,6 @@ export default function HomePage() {
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
           // className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-left"
           className="txt-72 font-bold leading-[100%] text-left"
-
           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
           What are
@@ -922,21 +973,19 @@ export default function HomePage() {
           help your body perform at its best!
         </p>
       </section>
-      
 
       {/* 2 card section */}
       <CardSection2 />
-    
 
       {/* Slideshow Banner Section */}
       <section
-        className="relative w-full min-h-screen bg-white dark:bg-[var(--background)]
+        className="relative w-full min-h-screen max-xl:h-[160vh] bg-white dark:bg-[var(--background)]
        text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden mb-10 my-10 md:my-0 "
       >
         {/* Scrolling Text */}
         <div className="relative top-0 left-0 w-full overflow-hidden">
           <div
-            className="animate-slide whitespace-nowrap flex text-[28px] md:text-[40px] lg:text-[64px] font-semibold"
+            className="animate-slide whitespace-nowrap flex txt-72 font-semibold"
             style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             <span className="uppercase">
@@ -973,34 +1022,37 @@ export default function HomePage() {
               key={card.title}
               onClick={HandleCardClick}
               // className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-[#E1E1E1]
-              //   dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `}
-              className={`w-[250px] h-[320px] rounded-2xl  bg-[#E1E1E1] 
-                dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `}
+              // dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `} // --> dark mode
+              className={`w-[250px] h-[320px] xl:h-[500px] xl:w-[400px] rounded-[50px] 
+                 bg-[#E1E1E1] cursor-pointer absolute  px-7 py-5 xl:p-7`}
               style={{
                 transform: isExpanded
-                  ? `translateX(${card.expandedX}px) rotate(0deg)`
-                  : `translateX(0px) rotate(${card.rotateDeg}deg)`,
+                  ? `translate(${card.expandedX}px, ${card.expandedY}px) rotate(0deg)`
+                  : `translate(0px, 0px) rotate(${card.rotateDeg}deg)`,
                 zIndex: isExpanded ? 10 : card.zIndex,
                 transition: "transform 0.6s ease",
-                // boxShadow: "0 10px 20px rgba(0, 0, 0, 0.1)",
                 boxShadow: "0px 4px 10px 0px #00000040",
               }}
             >
               <img
                 src={card.imageSrc}
                 alt={card.title}
-                className="w-full h-[190px] object-cover rounded-t-2xl p-4"
+                className="w-[200px] h-[200px] xl:w-[340px] xl:h-[344px] object-cover rounded-4xl xl:rounded-[50px]"
               />
               <div
-                className="p-3 flex justify-between items-center h-[calc(100%-190px)]"
+                className="p-1 2xl:p-6 flex justify-between items-center  h-[calc(100%-190px)] xl:h-[calc(100%-320px)]"
                 style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
               >
-                <h3 className="font-semibold text-[clamp(20.25px,1vw+14.1px,34px)] text-app leading-tight">
+                <h3 className="font-semibold txt-34 2xl:w-50 text-app leading-tight">
                   {card.title}
                 </h3>
-                <button className="bg-[#6FA5D4] text-app rounded-full w-8 h-8 flex items-center justify-center transition hover:bg-[#5c90c0]">
+                <button
+                  className="bg-[#94C4ED] text-app rounded-full w-10 h-10 
+                xl:h-[50px] xl:w-[50px] 2xl:w-[63.7px] 2xl:h-[63.7px] 
+                flex items-center justify-center transition "
+                >
                   {/* → */}
-                  <IoIosArrowRoundForward className="text-2xl" />
+                  <IoIosArrowRoundForward className="text-5xl" />
                 </button>
               </div>
             </div>
@@ -1008,15 +1060,12 @@ export default function HomePage() {
         </div>
       </section>
 
-
-
       {/* Card Section */}
       <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10 mt-18  ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           // className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"
           className="txt-72 font-bold leading-[100%] text-center"
-
           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
           Discover
@@ -1121,14 +1170,13 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
                   }}
                 >
                   More
-
                   {/* Smoothed inner blue curved corner */}
-        <span
-          className="absolute top-9 left-28 w-[4px] h-6 bg-[#94C4ED] rounded-full"
-          style={{
-            transform: 'translate(-250%, 5%) rotate(48deg)',
-          }}
-        ></span>
+                  <span
+                    className="absolute top-9 left-28 w-[4px] h-6 bg-[#94C4ED] rounded-full"
+                    style={{
+                      transform: "translate(-250%, 5%) rotate(48deg)",
+                    }}
+                  ></span>
                 </button>
               </div>
             </div>
@@ -1138,7 +1186,3 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
     </main>
   );
 }
-
-
-
-

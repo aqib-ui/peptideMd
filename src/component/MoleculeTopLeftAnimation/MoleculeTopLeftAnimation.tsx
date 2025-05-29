@@ -29,9 +29,10 @@ const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
         alt="Molecule Top Left"
         width={160}
         height={160}
-        className="absolute top-[-60px] left-[-40px] w-[100px] md:w-[130px] lg:w-[160px] animate-float-rotate z-0 opacity-60 pointer-events-none"
+        className="absolute top-[-60px] left-[-40px] w-[100px] md:w-[130px] lg:w-[160px] animate-rotate  opacity-60 pointer-events-none"
         style={{
-          filter: "brightness(0.6) grayscale(50%)",
+          filter: "brightness(1) grayscale(90%)",
+          color: "black",
         }}
       />
 
@@ -44,7 +45,7 @@ const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
         >
           <h1
             className="text-[clamp(36px,2.84vw+22.93px,72px)] font-bold leading-[100%] text-left mt-6"
-            style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
+            style={{ fontFamily: "Afacad, sans-serif" }}
           >
             {mainheading}
             <span style={{ color: "#224674" }} className="italic">
@@ -54,7 +55,7 @@ const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
 
           <p
             className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-medium leading-[130%] mt-6 mb-6 text-left"
-            style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
+            style={{ fontFamily: "Afacad, sans-serif" }}
           >
             {para}
           </p>
@@ -64,9 +65,12 @@ const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
             alt="Molecule Bottom Right"
             width={220}
             height={220}
-            className="absolute w-[120px] md:w-[160px] bottom-[-14px] right-[-50px] lg:w-[200px] animate-float-rotate opacity-60 pointer-events-none mt-8 ml-auto"
+            className="absolute  w-[120px] md:w-[160px] bottom-[-14px] xl:bottom-[-70px] right-[-50px] xl:-right-[100px]  lg:w-[200px] xl:w-[335px] animate-rotate opacity-60 pointer-events-none mt-8 ml-auto"
             style={{
-              filter: "brightness(0.7) grayscale(70%)",
+              filter: "brightness(1) grayscale(90%)",
+              color: "black",
+
+
             }}
           />
         </div>
@@ -75,27 +79,20 @@ const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
       <ScrollButton />
 
       <style jsx global>{`
-        @keyframes floatRotate {
-          0% {
-            transform: translateY(0px) scale(1) rotate(0deg);
-          }
-          25% {
-            transform: translateY(-8px) scale(1.05) rotate(90deg);
-          }
-          50% {
-            transform: translateY(0px) scale(1) rotate(180deg);
-          }
-          75% {
-            transform: translateY(8px) scale(0.95) rotate(270deg);
-          }
-          100% {
-            transform: translateY(0px) scale(1) rotate(360deg);
-          }
-        }
-        .animate-float-rotate {
-          animation: floatRotate 12s ease-in-out infinite;
-        }
-      `}</style>
+  @keyframes continuousRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-rotate {
+    animation: continuousRotate 20s linear infinite;
+  }
+`}</style>
+
     </section>
   );
 };

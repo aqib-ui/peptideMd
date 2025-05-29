@@ -557,7 +557,7 @@ const Page = ({ params }: PageProps) => {
       content: (
         <div className="max-w-4xl text-left mb-48">
           <h2
-            className="txt-34  font-medium leading-[100%] mt-4"
+            className="txt-34  font-medium leading-[100%] mt-4 max-sm:w-56"
             style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             Latest scientific discoveries and clinical applications
@@ -727,7 +727,7 @@ const Page = ({ params }: PageProps) => {
       content: (
         <div className="max-w-4xl text-left mb-48">
           <h2
-            className="txt-34  font-medium leading-[100%] mt-4"
+            className="txt-34  font-medium leading-[100%] mt-4 max-sm:w-56"
             style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             Understanding safety guidelines and best practices
@@ -897,7 +897,7 @@ const Page = ({ params }: PageProps) => {
       content: (
         <div className="max-w-4xl text-left mb-48">
           <h2
-            className="txt-34  font-medium leading-[100%] mt-4"
+            className="txt-34  font-medium leading-[100%] mt-4 max-sm:w-56"
             style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
           >
             Essential information and emerging developments in peptide science
@@ -1068,7 +1068,7 @@ const Page = ({ params }: PageProps) => {
       {data.content}
 
       {/* image with Animation  */}
-      <div>
+      {/* <div>
         <Image
           src="/image2.png"
           alt="Molecule Bottom Right"
@@ -1092,6 +1092,34 @@ const Page = ({ params }: PageProps) => {
 
           `}
 
+        </style>
+      </div> */}
+      {/* image with Animation  */}
+      <div>
+        <Image
+          src="/image2.png"
+          alt="Molecule Bottom Right"
+          width={220}
+          height={220}
+          className="absolute w-[120px] md:w-[160px] top-[140px] right-[0px] sm:right-[150px] xl:right-[500px] 2xl:right-[700px] lg:w-[300px] animate-rotate opacity-90 pointer-events-none mt-8 ml-auto"
+
+        />
+        {/* Inject custom animation keyframes */}
+        <style>
+          {`
+         @keyframes continuousRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-rotate {
+    animation: continuousRotate 40s linear infinite;
+  }
+        `}
         </style>
       </div>
       {/* Button Scroll */}

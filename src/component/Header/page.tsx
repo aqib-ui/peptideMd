@@ -383,7 +383,7 @@ export default function Header() {
             alt="Logo"
             width={200} // Adjust width as needed
             height={50} // Adjust height as needed
-            className="cursor-pointer"
+            className="cursor-pointer [@media(min-width:1600px)]:w-[280px] [@media(min-width:1600px)]:h-[120px]"
           />
         </Link>
 
@@ -392,13 +392,13 @@ export default function Header() {
           onClick={() => setIsOpen(!isOpen)} 
           className="focus:outline-none flex items-center"
           style={{ fontFamily: "  'Afacad Flux', sans-serif" }}
-        > <span className="text-base sm:text-lg md:text-xl lg:text-[22px] mr-2 sm:mr-3 md:mr-4 font-medium">Menu</span>
+        > <span className="txt-22 mr-2 sm:mr-3 md:mr-4 font-medium">Menu</span>
           <Image
             src="/headerIcon/hamBurger.png"
             alt="Menu"
             width={50}
             height={50}
-            className="cursor-pointer"
+            className="cursor-pointer [@media(min-width:1600px)]:w-[70px] [@media(min-width:1600px)]:h-[70px]"
           />
         </button>
       </div>
@@ -449,9 +449,10 @@ export default function Header() {
         <div className="flex items-center justify-center h-full bg-app">
           {/* Box with Gradient Border */}
           <div
-            className="relative flex flex-wrap items-center justify-center gap-0 lg:gap-6 xl:gap-32 2xl:gap-48 p-8 lg:p-4 
-            w-full max-w-[95%] sm:max-w-[55%] 2xl:max-w-[65%] min-h-[450px] sm:min-h-[500px] 2xl:min-h-[600px] [@media(min-width:1600px)]:min-h-[704px] mr-6 ml-6 mx-auto mt-16 md:mt-24 
-            transition-all duration-300 ease-in-out"
+            className="relative flex flex-wrap items-center justify-center gap-0 xl:gap-6 [@media(min-width:1400px)]:gap-32 
+            [@media(min-width:1600px)]:gap-48 p-8 xl:p-4 w-full max-w-[95%] sm:max-w-[49%] md:max-w-[52%] xl:max-w-[55%]
+            [@media(min-width:1600px)]:max-w-[65.278%] min-h-[470px] xl:min-h-[500px] [@media(min-width:1600px)]:min-h-[704px]
+            mr-6 ml-6 mx-auto mt-8 max-md:mt-16 2xl:mt-24 transition-all duration-300 ease-in-out"
           >
             {/* Gradient Border (Pseudo-element) */}
             <div
@@ -461,7 +462,7 @@ export default function Header() {
 
             {/* Inner White Box */}
             <div className="absolute inset-[2px] bg-app rounded-[12rem] 2xl:rounded-[17rem] rounded-tr-[5rem] 2xl:rounded-tr-[5rem] z-10"></div>
-            <ul className="text-gray-900 txt-34 text-app font-semibold space-y-8 max-lg:space-y-3 z-10">
+            <ul className="text-gray-900 txt-34 text-app font-semibold space-y-8 max-xl:space-y-3 z-10">
               <li className="flex items-center space-x-4">
                 <Image
                   src="/headerIcon/Group 11.png"
@@ -564,7 +565,7 @@ export default function Header() {
               </li>
             </ul>
 
-            <ul className="text-gray-900 txt-34 text-app font-semibold space-y-8 max-lg:space-y-3 z-10 pb-[1rem] xl:pb-[4rem]">
+            <ul className="text-gray-900 txt-34 text-app font-semibold space-y-8 max-xl:space-y-3 z-10 pb-[1rem] xl:pb-[4rem]">
               <li className="flex items-center space-x-4">
                 <Image
                   src="/headerIcon/Group 21.png"
