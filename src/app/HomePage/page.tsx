@@ -882,7 +882,7 @@ export default function HomePage() {
             className="absolute hidden md:block 
             w-auto 
             h-screen
-            lg:top-[-225px] xl:top-[-222px] 2xl:top-[-190px] -right-6 md:object-fill z-10 pointer-events-none"
+            lg:top-[-225px] xl:top-[-222px] 2xl:top-[-190px] [@media(min-width:1600px)]:top-[-230px]  -right-6 md:object-fill z-10 pointer-events-none"
           />
           {/* // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it */}
         </div>

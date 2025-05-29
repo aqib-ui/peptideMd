@@ -342,6 +342,7 @@
 
 // ////////////////////////////////////19-25/3/25 pixel perfecting ////////////////////////
 
+
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation"; // Import usePathname
@@ -450,18 +451,18 @@ export default function Header() {
           {/* Box with Gradient Border */}
           <div
             className="relative flex flex-wrap items-center justify-center gap-0 xl:gap-6 [@media(min-width:1400px)]:gap-32 
-            [@media(min-width:1600px)]:gap-48 p-8 xl:p-4 w-full max-w-[95%] sm:max-w-[49%] md:max-w-[52%] xl:max-w-[55%]
-            [@media(min-width:1600px)]:max-w-[65.278%] min-h-[470px] xl:min-h-[500px] [@media(min-width:1600px)]:min-h-[704px]
-            mr-6 ml-6 mx-auto mt-8 max-md:mt-16 2xl:mt-24 transition-all duration-300 ease-in-out"
+            [@media(min-width:1700px)]:gap-48 p-8 xl:p-4 w-full max-w-[95%] sm:max-w-[49%] md:max-w-[52%] xl:max-w-[55%]
+            [@media(min-width:1700px)]:max-w-[65.278%] min-h-[470px] xl:min-h-[500px] 2xl:min-h-[550px] [@media(min-width:1700px)]:min-h-[704px]
+            mr-6 ml-6 mx-auto mt-8 max-md:mt-16 2xl:mt-16 [@media(min-width:1700px)]:mt-24 transition-all duration-300 ease-in-out"
           >
             {/* Gradient Border (Pseudo-element) */}
             <div
               className="absolute inset-0 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] 
-              rounded-[12rem] 2xl:rounded-[17rem] rounded-tr-[5rem] 2xl:rounded-tr-[5rem] p-[4px] opacity-70"
+              rounded-[12rem] 2xl:rounded-[15rem] rounded-tr-[5rem] 2xl:rounded-tr-[5rem] p-[4px] opacity-70"
             ></div>
 
             {/* Inner White Box */}
-            <div className="absolute inset-[2px] bg-app rounded-[12rem] 2xl:rounded-[17rem] rounded-tr-[5rem] 2xl:rounded-tr-[5rem] z-10"></div>
+            <div className="absolute inset-[2px] bg-app rounded-[12rem] 2xl:rounded-[15rem]  rounded-tr-[5rem] 2xl:rounded-tr-[5rem] z-10"></div>
             <ul className="text-gray-900 txt-34 text-app font-semibold space-y-8 max-xl:space-y-3 z-10">
               <li className="flex items-center space-x-4">
                 <Image
@@ -657,7 +658,7 @@ export default function Header() {
               alt="small Red"
               width={40}
               height={40}
-              className="absolute hidden xl:block top-[50%] left-[20%] sm:top-[12%] sm:left-[88%] 2xl:top-[10%] [@media(min-width:1600px)]:top-[9%] 2xl:left-[90%]"
+              className="absolute hidden xl:block top-[50%] left-[20%] sm:top-[12%] sm:left-[88%] xl:top-[10.5%] 2xl:top-[11%] [@media(min-width:1700px)]:top-[9%] 2xl:left-[88%] [@media(min-width:1700px)]:left-[90%]"
             />
 
             {/* big Red PNG */}
@@ -666,7 +667,7 @@ export default function Header() {
               alt="big Red"
               width={70}
               height={70}
-              className="absolute hidden xl:block top-[50%] left-[10%] sm:top-[15%] sm:left-[80%] 2xl:top-[15%] [@media(min-width:1600px)]:top-[12%] 2xl:left-[84%]"
+              className="absolute hidden xl:block top-[50%] left-[10%] sm:top-[15%] sm:left-[80%] xl:top-[14%] 2xl:top-[15%] [@media(min-width:1700px)]:top-[13%] 2xl:left-[80%] [@media(min-width:1700px)]:left-[84%]"
             />
 
             {/* Big Blue PNG */}
@@ -675,7 +676,7 @@ export default function Header() {
               alt="Big blue"
               width={40}
               height={40}
-              className="absolute hidden xl:block top-[50%] left-[15%] sm:top-[82%] 2xl:top-[88%] sm:left-[20%] [@media(min-width:1600px)]:top-[85%] 2xl:left-[17%]"
+              className="absolute hidden xl:block top-[50%] left-[15%] sm:top-[82%] 2xl:top-[78%] sm:left-[20%] [@media(min-width:1700px)]:top-[88%] 2xl:left-[21%] [@media(min-width:1700px)]:left-[17%]"
             />
 
             {/* Small Blue PNG */}
@@ -684,7 +685,7 @@ export default function Header() {
               alt="Big blue"
               width={20}
               height={20}
-              className="absolute hidden xl:block top-[50%] left-[10%] sm:top-[88%] 2xl:top-[93%] sm:left-[16%] 2xl:left-[13%]"
+              className="absolute hidden xl:block top-[50%] left-[10%] sm:top-[88%] 2xl:top-[85%] [@media(min-width:1700px)]:top-[94%] sm:left-[16%] 2xl:left-[17%] [@media(min-width:1700px)]:left-[13%]"
             />
           </div>
         </div>
