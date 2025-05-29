@@ -714,15 +714,32 @@ export default function HomePage() {
 
   useEffect(() => {
     const updateCards = () => {
-      const isLargeScreen = window.innerWidth >= 1280;
+      const screenWidth = window.innerWidth;
+
+      let spacingX = 0;
+      let spacingY = 0;
+
+      if (screenWidth >= 1600) {
+        spacingX = 420; // Full large screen
+      }
+      else if (screenWidth >= 1280) {
+        spacingX = 350; // Mid-size (1440px breakpoint)
+      }
+      else if (screenWidth > 1024) {
+        spacingX = 280; // Mid-size (1440px breakpoint)
+      }else if (screenWidth >= 868) {
+        spacingX = 260; // Mid-size (1440px breakpoint)
+      } else {
+        spacingY = 300; // Small screens: vertical stack
+      }
 
       const newCards: CardType[] = [
         {
           title: "Ai diagnostics",
           imageSrc: "/image.png",
           rotateDeg: -6,
-          expandedX: isLargeScreen ? -420 : 0,
-          expandedY: isLargeScreen ? 0 : -300,
+          expandedX: spacingX ? -spacingX : 0,
+          expandedY: spacingY ? -spacingY : 0,
           zIndex: 10,
         },
         {
@@ -737,8 +754,8 @@ export default function HomePage() {
           title: "Oncology Testing",
           imageSrc: "/image.png",
           rotateDeg: 6,
-          expandedX: isLargeScreen ? 420 : 0,
-          expandedY: isLargeScreen ? 0 : 300,
+          expandedX: spacingX ? spacingX : 0,
+          expandedY: spacingY ? spacingY : 0,
           zIndex: 30,
         },
       ];
@@ -746,14 +763,10 @@ export default function HomePage() {
       setCards(newCards);
     };
 
-    // Initial run
-    updateCards();
+    updateCards(); // run once on mount
+    window.addEventListener("resize", updateCards); // on resize
 
-    // Listen for resize
-    window.addEventListener("resize", updateCards);
-
-    // Cleanup
-    return () => window.removeEventListener("resize", updateCards);
+    return () => window.removeEventListener("resize", updateCards); // cleanup
   }, []);
 
   return (
@@ -1023,8 +1036,8 @@ export default function HomePage() {
               onClick={HandleCardClick}
               // className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-[#E1E1E1]
               // dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `} // --> dark mode
-              className={`w-[250px] h-[320px] xl:h-[500px] xl:w-[400px] rounded-[50px] 
-                 bg-[#E1E1E1] cursor-pointer absolute  px-7 py-5 xl:p-7`}
+              className={`w-[250px] h-[320px] xl:h-[400px] xl:w-[320px] bg-[#E1E1E1] cursor-pointer absolute  
+                px-7 py-5 xl:p-7 [@media(min-width:1600px)]:h-[500px] [@media(min-width:1600px)]:w-[400px] rounded-[50px] `}
               style={{
                 transform: isExpanded
                   ? `translate(${card.expandedX}px, ${card.expandedY}px) rotate(0deg)`
@@ -1037,18 +1050,20 @@ export default function HomePage() {
               <img
                 src={card.imageSrc}
                 alt={card.title}
-                className="w-[200px] h-[200px] xl:w-[340px] xl:h-[344px] object-cover rounded-4xl xl:rounded-[50px]"
+                className="w-[200px] h-[200px] xl:w-[300px] xl:h-[265px] rounded-4xl xl:rounded-[50px]
+                object-cover [@media(min-width:1600px)]:w-[340px] [@media(min-width:1600px)]:h-[344px]"
               />
               <div
-                className="p-1 2xl:p-6 flex justify-between items-center  h-[calc(100%-190px)] xl:h-[calc(100%-320px)]"
+                className="p-1 [@media(min-width:1600px)]:p-6 flex justify-between items-center 
+                h-[calc(100%-190px)] xl:h-[calc(100%-240px)] [@media(min-width:1600px)]:h-[calc(100%-330px)]"
                 style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
               >
-                <h3 className="font-semibold txt-34 2xl:w-50 text-app leading-tight">
+                <h3 className="font-semibold txt-34 [@media(min-width:1600px)]:w-50 text-app leading-tight">
                   {card.title}
                 </h3>
                 <button
                   className="bg-[#94C4ED] text-app rounded-full w-10 h-10 
-                xl:h-[50px] xl:w-[50px] 2xl:w-[63.7px] 2xl:h-[63.7px] 
+                xl:h-[50px] xl:w-[50px] [@media(min-width:1600px)]:w-[63.7px] [@media(min-width:1600px)]:h-[63.7px] 
                 flex items-center justify-center transition "
                 >
                   {/* → */}
