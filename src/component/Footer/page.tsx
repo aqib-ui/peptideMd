@@ -101,7 +101,7 @@ export default function Footer() {
       <div className="mt-10 md:mt-30 w-full">
         <hr className="border-t border-gray-600 w-full mb-4" />
         <div
-          className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-10 text-center"
+          className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-20 [@media(min-width:1600px)]:space-x-30 text-center"
           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
           <p className="text-[clamp(18px,0.43vw+16.63px,24px)]">

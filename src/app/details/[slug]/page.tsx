@@ -1124,7 +1124,7 @@ const Page = ({ params }: PageProps) => {
       </div>
       {/* Button Scroll */}
       {/* Scroll Button restored */}
-      <ScrollButton />
+      {/* <ScrollButton /> */}
 
 
 

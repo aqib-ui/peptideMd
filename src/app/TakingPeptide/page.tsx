@@ -291,10 +291,10 @@ export default function TakingPeptide() {
       </p>
     </div>
   </div> */}
-              <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
+              <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[220px] h-full max-h-[48px]  ">
                 <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full  h-full">
                   <p
-                    className=" text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
+                    className=" txt-24 font-medium text-center"
                     style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                   >
                     23/04/25
@@ -315,10 +315,10 @@ export default function TakingPeptide() {
       </p>
     </div>
   </div> */}
-              <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
+              <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[220px] h-full max-h-[48px]">
                 <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
                   <p
-                    className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
+                    className="txt-24 font-medium text-center"
                     style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                   >
                     Mon, Tues, Wed
@@ -332,10 +332,10 @@ export default function TakingPeptide() {
               </h3>
 
               {/* Value 3 */}
-              <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
+              <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[220px] h-full max-h-[48px]">
                 <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
                   <p
-                    className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
+                    className="txt-24 font-medium text-center"
                     style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                   >
                     Yes/No
@@ -349,10 +349,10 @@ export default function TakingPeptide() {
               </h3>
 
               {/* Value 4 */}
-              <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[240px]">
+              <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[220px] h-full max-h-[48px]">
                 <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
                   <p
-                    className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-center"
+                    className="txt-24 font-medium text-center"
                     style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
                   >
                     Yes/No

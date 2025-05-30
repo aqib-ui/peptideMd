@@ -82,12 +82,12 @@ export const CardSection2 = () => {
             <div className="absolute top-6 right-6 sm:top-8 sm:right-8 md:top-10 md:right-10 lg:top-5 lg:right-8 2xl:top-8 2xl:right-12 flex gap-4">
               {/* Information Icon */}
               <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
-                <IoIosInformationCircleOutline className="text-[#2D557A] text-base sm:text-lg" />
+                <IoIosInformationCircleOutline className="text-[#2D557A] txt-24" />
               </div>
 
               {/* Arrow Icon */}
               <div className="bg-[#94C3ED] rounded-full p-2 sm:p-3 flex justify-center items-center">
-                <IoMdArrowForward  className="text-[#2D557A] text-base sm:text-lg" />
+                <IoMdArrowForward  className="text-[#2D557A] txt-24" />
               </div>
             </div>
           </div>

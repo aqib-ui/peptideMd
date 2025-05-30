@@ -76,7 +76,7 @@ const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
         </div>
       </div>
 
-      <ScrollButton />
+      {/* <ScrollButton /> */}
 
       <style jsx global>{`
   @keyframes continuousRotate {

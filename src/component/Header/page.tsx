@@ -393,7 +393,7 @@ export default function Header() {
           onClick={() => setIsOpen(!isOpen)} 
           className="focus:outline-none flex items-center"
           style={{ fontFamily: "  'Afacad Flux', sans-serif" }}
-        > <span className="txt-22 mr-2 sm:mr-3 md:mr-4 font-medium">Menu</span>
+        > <span className="hidden [@media(min-width:400px)]:block txt-22 mr-2 sm:mr-3 md:mr-4 font-medium">Menu</span>
           <Image
             src="/headerIcon/hamBurger.png"
             alt="Menu"
@@ -451,18 +451,18 @@ export default function Header() {
           {/* Box with Gradient Border */}
           <div
             className="relative flex flex-wrap items-center justify-center gap-0 xl:gap-6 [@media(min-width:1400px)]:gap-32 
-            [@media(min-width:1700px)]:gap-48 p-8 xl:p-4 w-full max-w-[95%] sm:max-w-[49%] md:max-w-[52%] xl:max-w-[55%]
+            [@media(min-width:1500px)]:gap-48 p-8 xl:p-4 w-full max-w-[95%] sm:max-w-[49%] md:max-w-[52%] xl:max-w-[55%]
             [@media(min-width:1700px)]:max-w-[65.278%] min-h-[470px] xl:min-h-[500px] 2xl:min-h-[550px] [@media(min-width:1700px)]:min-h-[704px]
             mr-6 ml-6 mx-auto mt-8 max-md:mt-16 2xl:mt-16 [@media(min-width:1700px)]:mt-24 transition-all duration-300 ease-in-out"
           >
             {/* Gradient Border (Pseudo-element) */}
             <div
               className="absolute inset-0 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] 
-              rounded-[12rem] 2xl:rounded-[15rem] rounded-tr-[5rem] 2xl:rounded-tr-[5rem] p-[4px] opacity-70"
+              rounded-[12rem] [@media(min-width:1700px)]:rounded-[15rem] rounded-tr-[4rem] [@media(min-width:1700px)]:rounded-tr-[5rem] p-[4px] opacity-70"
             ></div>
 
             {/* Inner White Box */}
-            <div className="absolute inset-[2px] bg-app rounded-[12rem] 2xl:rounded-[15rem]  rounded-tr-[5rem] 2xl:rounded-tr-[5rem] z-10"></div>
+            <div className="absolute inset-[2px] bg-app rounded-[12rem] [@media(min-width:1700px)]:rounded-[15rem]  rounded-tr-[4rem] [@media(min-width:1700px)]:rounded-tr-[5rem] z-10"></div>
             <ul className="text-gray-900 txt-34 text-app font-semibold space-y-8 max-xl:space-y-3 z-10">
               <li className="flex items-center space-x-4">
                 <Image
@@ -473,7 +473,7 @@ export default function Header() {
                 />
                 <Link
                   href="/"
-                  className="hover:text-blue-500 font-semibold leading-[100%]"
+                  className="hover:text-blue-500 leading-[100%]"
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
@@ -493,7 +493,7 @@ export default function Header() {
                 />
                 <a
                   href="/PeptideDatabase"
-                  className="hover:text-blue-500 font-semibold leading-[100%]"
+                  className="hover:text-blue-500 leading-[100%]"
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
@@ -513,7 +513,7 @@ export default function Header() {
                 />
                 <a
                   href="/TakingPeptide"
-                  className="hover:text-blue-500 font-semibold leading-[100%]"
+                  className="hover:text-blue-500 leading-[100%]"
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
@@ -533,7 +533,7 @@ export default function Header() {
                 />
                 <a
                   href="/DosageSimulator"
-                  className="hover:text-blue-500 font-semibold leading-[100%]"
+                  className="hover:text-blue-500 leading-[100%]"
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
@@ -553,7 +553,7 @@ export default function Header() {
                 />
                 <a
                   href="/Resources"
-                  className="hover:text-blue-500 font-semibold leading-[100%]"
+                  className="hover:text-blue-500 leading-[100%]"
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
@@ -576,7 +576,7 @@ export default function Header() {
                 />
                 <a
                   href="/AiAssistant"
-                  className="hover:text-blue-500 font-semibold leading-[100%]"
+                  className="hover:text-blue-500 leading-[100%]"
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
@@ -596,7 +596,7 @@ export default function Header() {
                 />
                 <a
                   href="/CaseStudies"
-                  className="hover:text-blue-500 font-semibold leading-[100%]"
+                  className="hover:text-blue-500 leading-[100%]"
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
@@ -616,7 +616,7 @@ export default function Header() {
                 />
                 <a
                   href="/Location"
-                  className="hover:text-blue-500 font-semibold leading-[100%]"
+                  className="hover:text-blue-500 leading-[100%]"
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
@@ -636,7 +636,7 @@ export default function Header() {
                 />
                 <a
                   href="/Discussion"
-                  className="hover:text-blue-500 font-semibold leading-[100%]"
+                  className="hover:text-blue-500 leading-[100%]"
                   style={{
                     // fontSize: "clamp(14px, 2vw, 24px)", // Min: 14px, Preferred: 2vw, Max: 24px
                     // fontSize: "clamp(20.25px,0.98vw +17.1px,34px)",
@@ -676,7 +676,7 @@ export default function Header() {
               alt="Big blue"
               width={40}
               height={40}
-              className="absolute hidden xl:block top-[50%] left-[15%] sm:top-[82%] 2xl:top-[78%] sm:left-[20%] [@media(min-width:1700px)]:top-[88%] 2xl:left-[21%] [@media(min-width:1700px)]:left-[17%]"
+              className="absolute hidden xl:block top-[50%] left-[15%] sm:top-[82%] 2xl:top-[78%] sm:left-[20%] [@media(min-width:1700px)]:top-[88%] 2xl:left-[19%] [@media(min-width:1700px)]:left-[17%]"
             />
 
             {/* Small Blue PNG */}
@@ -685,7 +685,7 @@ export default function Header() {
               alt="Big blue"
               width={20}
               height={20}
-              className="absolute hidden xl:block top-[50%] left-[10%] sm:top-[88%] 2xl:top-[85%] [@media(min-width:1700px)]:top-[94%] sm:left-[16%] 2xl:left-[17%] [@media(min-width:1700px)]:left-[13%]"
+              className="absolute hidden xl:block top-[50%] left-[10%] sm:top-[88%] 2xl:top-[85%] [@media(min-width:1700px)]:top-[94%] sm:left-[16%] 2xl:left-[15%] [@media(min-width:1700px)]:left-[13%]"
             />
           </div>
         </div>
