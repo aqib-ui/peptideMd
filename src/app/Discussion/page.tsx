@@ -421,7 +421,7 @@ const DiscussionPage = () => {
                 >
                   <div
                     className={`${isExpanded
-                      ? "w-full max-w-[780px] h-[580px]"
+                      ? "w-full max-w-[780px] md:h-[580px]"
                       : "relative w-full h-full"
                       }`}
                   >
@@ -434,27 +434,27 @@ const DiscussionPage = () => {
                       className={`object-cover ${isExpanded
                         ? "rounded-[50px]  "
                         : "rounded-[40px] lg:rounded-[50px] "
-                        } w-full h-full`}
+                        } w-full h-[55vh] md:h-full`}
                     />
                   </div>
                 </div>
 
                 {/* Stats Section */}
                 <div
-                  className={` flex gap-4 w-[50%] flex-wrap ${!isExpanded ? "lg:-mt-10  px-10" : ""
+                  className={` flex gap-1 md:gap-4 ${!isExpanded ? "lg:-mt-10 px-0 lg:px-10 max-sm:-ml-3" : "max-sm:-ml-3"
                     }`}
                 >
-                  <div className="bg-[#224674] text-white px-4 py-2 flex items-center justify-center rounded-full text-lg gap-1">
-                    <IoArrowUpOutline className="text-white text-xl" />
+                  <div className="bg-[#224674] text-white px-4 py-2 flex items-center justify-center rounded-full txt-20 gap-1">
+                    <IoArrowUpOutline className="text-white txt-20" />
                     8.7k
-                    <IoArrowDownOutline className="text-white text-xl" />
+                    <IoArrowDownOutline className="text-white txt-20" />
                   </div>
-                  <div className="bg-[#224674] text-white px-4 py-2 flex items-center justify-center rounded-full text-lg gap-1">
-                    <FaRegComment className="text-white text-lg" />
+                  <div className="bg-[#224674] text-white px-4 py-2 flex items-center justify-center rounded-full txt-20 gap-1">
+                    <FaRegComment className="text-white txt-20" />
                     7k
                   </div>
-                  <div className="bg-[#224674] text-white px-4 py-2 flex items-center justify-center rounded-full text-lg gap-1">
-                    <IoShareSocialOutline className="text-white text-xl" />
+                  <div className="bg-[#224674] text-white px-4 py-2 flex items-center justify-center rounded-full txt-20 gap-1">
+                    <IoShareSocialOutline className="text-white txt-20" />
                     Share
                   </div>
                 </div>
@@ -474,7 +474,7 @@ const DiscussionPage = () => {
                       Add Comment
                     </button>
                   </div>
-                  <div className="flex items-start mb-4 mt-6">
+                  <div className="flex items-start mb-4 mt-6 max-sm:-ml-4">
                     <Image
                       src="/discussionForum/dropDown.png"
                       alt="Card Image"
@@ -484,44 +484,44 @@ const DiscussionPage = () => {
                     />
                     <div className="flex flex-col">
                       <div className="flex items-center gap-2">
-                        <h1 className="text-2xl sm:text-3xl md:text-[34px] font-bold leading-tight">
+                        <h1 className="txt-34 font-bold leading-tight">
                           Fales dreams
                         </h1>
                         <div className="font-medium flex capitalize">
-                          <div className=" max-md:pl-1  max-md:px-1  px-2 py-2 flex items-center justify-center rounded-full text-lg ">
+                          <div className=" max-md:pl-1  max-md:px-1  px-2 py-2 flex items-center justify-center rounded-full txt-20 ">
                             -7hr.ago
                           </div>
-                          <div className=" max-md:pl-1  max-md:px-1  px-2 py-2 flex items-center justify-center rounded-full text-lg ">
+                          <div className=" max-md:pl-1  max-md:px-1  px-2 py-2 flex items-center justify-center rounded-full txt-20 ">
                             <FiTag className=" text-xl pr-1" />
                             tag
                           </div>
-                          <div className=" max-md:pl-1  max-md:px-1  px-2 py-2 flex items-center justify-center rounded-full text-lg ">
+                          <div className=" max-md:pl-1  max-md:px-1  px-2 py-2 flex items-center justify-center rounded-full txt-20 ">
                             <IoBookmarkOutline className=" text-xl pr-1" />
                             save
                           </div>
                         </div>
                       </div>
-                      <p className="text-base sm:text-lg md:text-xl font-medium mt-2">
+                      <p className="txt-20 font-medium mt-2">
                         Definition of professionalism
                       </p>
 
                       <div className="flex md:gap-1 font-medium flex-wrap">
-                        <div className=" max-md:pl-1  max-md:px-1 px-3 py-2 flex items-center justify-center rounded-full text-lg ">
+                        <div className=" max-md:pl-1  max-md:px-1 px-3 py-2 flex items-center justify-center rounded-full txt-20 ">
                           <IoArrowUpOutline className=" text-xl" />
                           8.7k
                           <IoArrowDownOutline className=" text-xl" />
                         </div>
-                        <div className=" max-md:pl-1  max-md:px-1  px-3 py-2 flex items-center justify-center rounded-full text-lg ">
+                        <div className=" max-md:pl-1  max-md:px-1  px-3 py-2 flex items-center justify-center rounded-full txt-20 ">
                           <FaRegComment className=" text-xl pr-1" />
                           7k
                         </div>
-                        <div className=" max-md:pl-1  max-md:px-1  px-3 py-2 flex items-center justify-center rounded-full text-lg ">
+                        <div className=" max-md:pl-1  max-md:px-1  px-3 py-2 flex items-center justify-center rounded-full txt-20 ">
                           <AiOutlineLike className=" text-xl" />
                           2k
                         </div>
                       </div>
 
-                      <div className=" px-4 py-2 font-medium flex items-center rounded-full text-lg gap-1">
+                      <div className=" px-4 py-2 font-medium flex items-center rounded-full txt-20 gap-1">
                         <FiPlusCircle className=" text-xl" />
                         40 more replies
                       </div>

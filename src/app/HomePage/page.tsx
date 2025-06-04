@@ -721,13 +721,11 @@ export default function HomePage() {
 
       if (screenWidth >= 1600) {
         spacingX = 420; // Full large screen
-      }
-      else if (screenWidth >= 1280) {
+      } else if (screenWidth >= 1280) {
         spacingX = 350; // Mid-size (1440px breakpoint)
-      }
-      else if (screenWidth > 1024) {
+      } else if (screenWidth > 1024) {
         spacingX = 280; // Mid-size (1440px breakpoint)
-      }else if (screenWidth >= 868) {
+      } else if (screenWidth >= 868) {
         spacingX = 260; // Mid-size (1440px breakpoint)
       } else {
         spacingY = 300; // Small screens: vertical stack
@@ -735,7 +733,7 @@ export default function HomePage() {
 
       const newCards: CardType[] = [
         {
-          title: "Ai diagnostics",
+          title: "AI Diagnostics",
           imageSrc: "/image.png",
           rotateDeg: -6,
           expandedX: spacingX ? -spacingX : 0,
@@ -889,7 +887,7 @@ export default function HomePage() {
       </section>
 
       {/* Video Section */}
-      <section className="relative dark:bg-app min-h-screen flex items-center justify-center mb-10 my-10 md:my-0">
+      <section className="relative dark:bg-app xl:min-h-screen flex items-center justify-center mb-10 my-10 ">
         {/* Video Wrapper with Relative Positioning */}
         <div className="relative w-[95%] max-w-[1628px] rounded-[50px] shadow-lg overflow-hidden">
           <video
@@ -944,7 +942,7 @@ export default function HomePage() {
       </section>
 
       {/* Description Section */}
-      <section className="ml-3 min-h-screen flex flex-col justify-center px-6 mb-10 my-10 md:my-0 ">
+      <section className="ml-3 xl:min-h-screen flex flex-col justify-center px-6 mb-10 my-10 ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
           // className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-left"
@@ -992,8 +990,17 @@ export default function HomePage() {
 
       {/* Slideshow Banner Section */}
       <section
-        className="relative w-full min-h-screen max-xl:h-[160vh] bg-white dark:bg-[var(--background)]
-       text-[#6FA5D4] flex flex-col items-center justify-center overflow-hidden mb-10 my-10 md:my-0 "
+        // className={`relative w-full bg-white dark:bg-[var(--background)] text-[#6FA5D4] 
+        //       flex flex-col items-center justify-center overflow-hidden mb-10 my-10 md:my-0
+        //       transition-all duration-700 ease-in-out                                          // --> dark mode
+         className={`relative w-full bg-white text-[#6FA5D4] 
+              flex flex-col items-center justify-center overflow-hidden mb-10  md:my-0
+              transition-all duration-700 ease-in-out
+              ${
+                isExpanded
+                  ? "h-[100vh] max-lg:h-[160vh]"
+                  : "h-[100vh] max-xl:h-[65vh]"
+              }`}
       >
         {/* Scrolling Text */}
         <div className="relative top-0 left-0 w-full overflow-hidden">
@@ -1054,7 +1061,7 @@ export default function HomePage() {
                 object-cover [@media(min-width:1600px)]:w-[340px] [@media(min-width:1600px)]:h-[344px]"
               />
               <div
-                className="p-1 [@media(min-width:1600px)]:p-6 flex justify-between items-center 
+                className="p-2 [@media(min-width:1600px)]:p-6 flex justify-between items-center 
                 h-[calc(100%-190px)] xl:h-[calc(100%-240px)] [@media(min-width:1600px)]:h-[calc(100%-330px)]"
                 style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
               >

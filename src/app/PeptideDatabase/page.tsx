@@ -108,15 +108,15 @@ export default function PeptideDatabase() {
             </h3>
           </div>
 
-          <div className="flex flex-col w-full p-2 max-xl:p-10   pl-2  flex-5  md:flex-row justify-center xl:justify-end gap-4 mr-4 md:mr-16  ">
+          <div className="flex flex-col w-full   md:flex-5 md:flex-row justify-center xl:justify-end gap-4 xl:mr-16  ">
             {/* Filter & Compare Buttons */}
             <div
               // className="flex max-md:flex-wrap items-center justify-center md:justify-end gap-4 text-[clamp(16px,0.284vw+15.1px,20px)] font-medium"
-              className="flex max-md:flex-wrap items-center justify-center md:justify-end gap-4 txt-btn-24 font-medium"
+              className="flex max-md:flex-wrap  items-center justify-center md:justify-end gap-3 sm:gap-4 txt-btn-24 font-medium"
             >
               <button
                 onClick={() => setIsFilterClicked(!isFilterClicked)}
-                className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 w-auto [@media(min-width:1600px)]:w-[137px] h-auto [@media(min-width:1600px)]:h-[80px] border-2 
+                className={`flex items-center px-4 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 w-auto [@media(min-width:1600px)]:w-[137px] h-auto [@media(min-width:1600px)]:h-[80px] border-2 
                   border-[#F7B6DB] rounded-full  transition duration-200 ${
                     isFilterClicked ? "bg-[#F7B6DB]" : "hover:bg-[#F7B6DB]"
                   }`}
@@ -134,7 +134,7 @@ export default function PeptideDatabase() {
               {/* compare button */}
               <button
                 onClick={() => setIsCompareClicked(!isCompareClicked)}
-                className={`flex items-center px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 w-auto [@media(min-width:1600px)]:w-[265px] [@media(min-width:1600px)]:h-[80px] border-2
+                className={`flex items-center px-4 py-3 sm:px-6 sm:py-3 md:px-8 md:py-4 w-auto [@media(min-width:1600px)]:w-[265px] [@media(min-width:1600px)]:h-[80px] border-2
                   border-[#C5B3FF] rounded-full  transition duration-200 ${
                     isCompareClicked ? "bg-[#C5B3FF]" : "hover:bg-[#C5B3FF]"
                   }`}
@@ -152,23 +152,23 @@ export default function PeptideDatabase() {
             </div>
 
             {/* Search Input - visible only when toggled on small screens */}
-            {showSearch && (
+            {/* {showSearch && (
               <input
                 type="text"
                 placeholder="Search Peptides"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className={`
-                px-8 py-4 2xl:py-6 border-2 border-[#88D3FF] bg-app text-app rounded-full shadow-sm focus:ring
+                px-8 py-4 2xl:py-6 border-2 border-[#88D3FF] bg-yellow-300 text-app rounded-full shadow-sm focus:ring
                 focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] outline-none text-lg md:text-xl font-semibold 
-                max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full max-2xl:w-auto
+                max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full max-2xl:w-[200px]
                 ${showSearch ? "block" : "hidden"} md:block
               `}
                 style={{ fontFamily: "Afacad, sans-serif" }}
               />
-            )}
+            )} */}
             {/* Search Input - visible only when toggled on small screens */}
-            {!showSearch && (
+            {/* {!showSearch && (
               <div className="flex items-start">
                 <input
                   type="text"
@@ -182,7 +182,7 @@ export default function PeptideDatabase() {
                   //   ${showSearch ? "block" : "hidden"} md:block
                   // `}
                   className={`
-                px-8 py-4  border-2 border-[#88D3FF] bg-app text-app rounded-full focus:ring 
+                px-8 py-4  border-2 border-[#88D3FF] bg-yellow-300 text-app rounded-full focus:ring 
                 focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] outline-none txt-btn-24 font-semibold 
                 max-dark:placeholder:text-[#104576]/50 transition duration-100 w-full sm:w-[200px] lg:w-[400px] 
                 [@media(min-width:1600px)]:h-[80px] [@media(min-width:1600px)]:w-[460px]
@@ -191,65 +191,85 @@ export default function PeptideDatabase() {
                   style={{ fontFamily: "Afacad, sans-serif" }}
                 />
               </div>
-            )}
+            )} */}
 
-            {/* working dropdown behind search button responsive */}
-            <div className="relative w-fit left-[12rem] md:left-0 ">
-              {/* Dropdown Trigger (fake behind) */}
-              <button
-                className="absolute right-0 top-0 translate-x-7 translate-y-0 z-10 w-16 h-16 [@media(min-width:1600px)]:w-20 [@media(min-width:1600px)]:h-20
-                 bg-[#224674] rounded-full flex items-center justify-end"
-                onClick={() => setShowDropdown((prev) => !prev)}
-              >
-                <LiaAngleDownSolid className="text-[#94C4ED] text-xl mr-1" />
-              </button>
-
-              {/* Search Button - visually in front */}
-              <ScrollButton2
-                showSearch={showSearch}
-                setShowSearch={setShowSearch}
-                searchQuery={searchQuery}
+            {/* Search Input and Dropdown Button - visible on all screens */}
+            <div className="flex max-md:flex-wrap items-center justify-center md:justify-end gap-2 sm:gap-4 max-sm:mr-[1.5rem] txt-btn-24 font-medium">
+              <input
+                type="text"
+                placeholder="Search Peptides"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="
+              px-8 py-4 border-2 border-[#88D3FF] bg-app text-app rounded-full 
+              shadow-sm focus:ring focus:ring-[#88D3FF]/60 focus:border-[#88D3FF] 
+              outline-none text-lg md:text-xl font-semibold transition duration-100 
+              w-[190px] lg:w-[400px] [@media(min-width:1600px)]:h-[80px] 
+              [@media(min-width:1600px)]:w-[460px]
+            "
+                style={{ fontFamily: "Afacad, sans-serif" }}
               />
 
-              {/* Dropdown Menu */}
-              {showDropdown && (
-                <div
-                  className="absolute top-full mt-12  xl:mt-6 2xl:mt-5 z-30 w-[265px] [@media(min-width:1600px)]:w-[294px] max-2xl:w-60 max-md:w-40 
-                  h-[200px] [@media(min-width:1600px)]:h-[215px] max-2xl:h-50 max-md:h-50 md:left-1/6 max-md:left-1/4 bg-white bg-app dark:border dark:border-white  p-5 rounded-[40px] rounded-tr-[10px]"
-                  style={{
-                    transform: "translateX(-60%)",
-                    fontFamily: "Afacad, sans-serif",
-                    boxShadow: "0px 6px 20px 0px rgba(31, 31, 31, 0.12)",
-                  }}
+              {/* working dropdown behind search button responsive */}
+              {/* <div className="relative w-fit left-[13rem] max-md:bottom-[5rem] md:left-0 bg-blue-400 "> */}
+              <div className="relative w-fit md:left-0">
+                {/* Dropdown Trigger (fake behind) */}
+                <button
+                  className="absolute right-0 top-0 translate-x-7 translate-y-0 z-10 w-16 h-16 [@media(min-width:1600px)]:w-20 [@media(min-width:1600px)]:h-20
+                 bg-[#224674] rounded-full flex items-center justify-end"
+                  onClick={() => setShowDropdown((prev) => !prev)}
                 >
-                  <p
-                    //  className="text-[#1F1F1F]/40 dark:text-[#E5F0F8]/40 text-sm md:text-base lg:text-xl font-semibold mb-2" // --> dark mode
-                    className="text-[#1F1F1F]/40 txt-24 font-semibold mb-2"
+                  <LiaAngleDownSolid className="text-[#94C4ED] text-xl mr-1" />
+                </button>
+
+                {/* Search Button - visually in front */}
+                <ScrollButton2
+                  showSearch={showSearch}
+                  setShowSearch={setShowSearch}
+                  searchQuery={searchQuery}
+                />
+
+                {/* Dropdown Menu */}
+                {showDropdown && (
+                  <div
+                    // className="absolute top-full mt-12  xl:mt-6 2xl:mt-5 z-30 w-[265px] [@media(min-width:1600px)]:w-[294px] max-2xl:w-60 max-md:w-40
+                    className="absolute top-full mt-2  xl:mt-6 2xl:mt-5 z-30 w-[265px] [@media(min-width:1600px)]:w-[294px] max-2xl:w-60 max-md:w-40 
+                    h-[200px] [@media(min-width:1600px)]:h-[215px] max-2xl:h-50 max-md:h-50 md:left-1/6 max-md:left-1/4 bg-white bg-app dark:border dark:border-white  p-5 rounded-[40px] rounded-tr-[10px]"
+                    style={{
+                      transform: "translateX(-60%)",
+                      fontFamily: "Afacad, sans-serif",
+                      boxShadow: "0px 6px 20px 0px rgba(31, 31, 31, 0.12)",
+                    }}
                   >
-                    Search by:
-                  </p>
-                  <ul className="space-y-0 mt-3 pb-5 font-semibold txt-24 leading-tight">
-                    <li
-                      // className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40" // --> dark mode
-                      className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40"
+                    <p
+                      //  className="text-[#1F1F1F]/40 dark:text-[#E5F0F8]/40 text-sm md:text-base lg:text-xl font-semibold mb-2" // --> dark mode
+                      className="text-[#1F1F1F]/40 txt-24 font-semibold mb-2"
                     >
-                      Symptoms
-                    </li>
-                    <li
-                      // className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40" // --> dark mode
-                      className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40"
-                    >
-                      Current medications
-                    </li>
-                    <li
-                      // className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40" // --> dark mode
-                      className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40"
-                    >
-                      Desired outcomes etc.
-                    </li>
-                  </ul>
-                </div>
-              )}
+                      Search by:
+                    </p>
+                    <ul className="space-y-0 mt-3 pb-5 font-semibold txt-24 leading-tight">
+                      <li
+                        // className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40" // --> dark mode
+                        className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40"
+                      >
+                        Symptoms
+                      </li>
+                      <li
+                        // className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40" // --> dark mode
+                        className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40"
+                      >
+                        Current medications
+                      </li>
+                      <li
+                        // className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40 dark:text-[#E5F0F8]/40" // --> dark mode
+                        className="cursor-pointer hover:text-[#88D3FF] text-[#224674]/40"
+                      >
+                        Desired outcomes etc.
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -266,12 +286,12 @@ export default function PeptideDatabase() {
               <tr className="bg-[#94C4ED] dark:text-black mt-10">
                 <th
                   className={`font-bold txt-34 
-      ${
-        isCompareClicked
-          ? "px-2 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6 text-center pr-60"
-          : "px-4 sm:px-6 md:px-10 text-left"
-      }
-    `}
+                  ${
+                    isCompareClicked
+                      ? "px-2 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6 text-center pr-60"
+                      : "px-4 sm:px-6 md:px-10 text-left"
+                  }
+                `}
                   colSpan={isCompareClicked ? peptides.length + 1 : 7}
                 >
                   {isCompareClicked ? "Peptide Comparison" : ""}
@@ -304,9 +324,9 @@ export default function PeptideDatabase() {
                     <td className="px-2 align-top pt-15 ">
                       <div className="inline-block rounded-full bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] p-[1.5px]">
                         <span
-                        //   className="block rounded-full bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] // --> dark mode
-                        // px-3 py-3 font-bold text-black"
-                        className="block rounded-full bg-[#F0F0F0] px-3 py-3 font-bold text-black"
+                          //   className="block rounded-full bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] // --> dark mode
+                          // px-3 py-3 font-bold text-black"
+                          className="block rounded-full bg-[#F0F0F0] px-3 py-3 font-bold text-black"
                         >
                           {peptide.name}
                         </span>
@@ -442,7 +462,7 @@ export default function PeptideDatabase() {
                     <tr
                       key={i}
                       // className="bg-[#F0F0F0] dark:bg-[var(--background)] dark:text-[var(--foreground)] "
-                       className="bg-[#F0F0F0] "
+                      className="bg-[#F0F0F0] "
                     >
                       {peptides.map((peptide, index) =>
                         row.key === "name" ? (

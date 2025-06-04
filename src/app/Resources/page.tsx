@@ -14,7 +14,8 @@ export default function Resources() {
       </div>
       <div className="container px-6 py-10 min-w-[98vw] overflow-hidden">
         <div
-          className="mt-20 sm:mt-22 md:mt-30 lg:mt-40 mb-6 bg-app "
+          // className="mt-20 sm:mt-22 md:mt-30 lg:mt-40 mb-6 bg-app "
+          className="mt-00 sm:mt-2 mb-6 bg-app "
           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
           <div className="px-6 ">
@@ -36,7 +37,7 @@ export default function Resources() {
           </div>
           {/* Video Section */}
           <section
-            className="relative min-h-screen min-w-[98vw] flex flex-wrap justify-center 
+            className="relative h-[50vh] md:min-h-screen min-w-[98vw] flex flex-wrap justify-center 
               ml-[-20px] gap-10 px-6 py-10 bg-app opacity-90 w-full"
           >
             {/* Video 1 */}
@@ -95,16 +96,7 @@ export default function Resources() {
               {/* <br /> */}
             </h2>
 
-            <div className="hidden md:block absolute right-0 bottom-0 md:bottom-2 md:-right-28 lg:right-10 md:pr-20 lg:pr-0">
-              <Image
-                src="/resourcesPod/mug.png"
-                alt="pen image"
-                width={324}
-                height={308}
-                className=" object-cover w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
-                style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
-              />
-            </div>
+           
 
             <h2
               className=" text-[clamp(20.25px,0.98vw+17.1px,34px)] font-medium leading-[100%] mt-12 mb-2 max-w-8xl"
@@ -132,6 +124,18 @@ export default function Resources() {
                 Patient monitoring protocols.
               </li>
             </ul>
+
+             <div className="mt-8 flex justify-center md:absolute md:right-0 md:bottom-2 md:pr-20 lg:right-10 lg:pr-0">
+  <Image
+    src="/resourcesPod/mug.png"
+    alt="pen image"
+    width={324}
+    height={308}
+    className="w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
+    style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
+  />
+</div>
+
           </div>
 
           <div className="relative mt-10 sm:mt-22 md:mt-30 px-6 lg:mt-40 ">
@@ -150,16 +154,7 @@ export default function Resources() {
               {/* <br /> */}
             </h2>
 
-            <div className="hidden md:block absolute right-0 bottom-0 md:bottom-2 md:-right-28 lg:right-10 md:pr-20 lg:pr-0">
-              <Image
-                src="/resourcesPod/laptop.png"
-                alt="pen image"
-                width={324}
-                height={308}
-                className="w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px] "
-                style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
-              />
-            </div>
+            
 
             <h2
               className=" text-[clamp(20.25px,0.98vw+17.1px,34px)] font-medium leading-[100%] mt-12 mb-2 max-w-8xl"
@@ -186,6 +181,20 @@ export default function Resources() {
                 Clinical applications of therapeutic peptides
               </li>
             </ul>
+
+            <div className="mt-8 flex justify-center md:absolute md:right-0 md:bottom-2 md:pr-20 lg:right-10 lg:pr-0">
+  <Image
+    src="/resourcesPod/laptop.png"
+    alt="pen image"
+    width={324}
+    height={308}
+    className="w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px]"
+    style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
+  />
+</div>
+
+
+            
           </div>
 
           <div className="relative mt-10 sm:mt-22 md:mt-30 px-6 lg:mt-40 ">

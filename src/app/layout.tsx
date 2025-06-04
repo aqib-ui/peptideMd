@@ -37,7 +37,7 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Header />  {/* ✅ Now your Header appears on all pages */}
-        <main className="pt-16" >{children}</main> {/* Push content below the fixed header */}
+        <main className="pt-9 md:pt-16" >{children}</main> {/* Push content below the fixed header */}
         <Footer /> {/* ✅ Footer added below the content */}
 
       </body>

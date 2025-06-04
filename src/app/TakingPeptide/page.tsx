@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import  MoleculeTopLeftAnimation  from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import MoleculeTopLeftAnimation from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 
 export default function TakingPeptide() {
   return (
     <>
-      <div >
+      <div>
         <MoleculeTopLeftAnimation
           className="!inline-block !max-w-[90%] !md:max-w-[80%] !lg:max-w-[85%]"
           mainheading="Taking Peptides"
@@ -14,9 +14,11 @@ export default function TakingPeptide() {
           para="Always consult with a qualified healthcare provider before starting any peptide therapy. This guide is for educational purposes only and should not be considered medical advice."
         />
       </div>
-      <div className="container bg-app px-4 py-10 min-w-[98vw] overflow-hidden ">
+      <div className="container bg-app px-4 py-0 md:py-10 min-w-[98vw] overflow-hidden ">
         {/* General Guideline Section */}
-        <div className="relative mt-10 sm:mt-22 md:mt-30 lg:mt-35 2xl:mt-50 ">
+        {/* <div className="relative mt-10 sm:mt-22 md:mt-30 lg:mt-35 2xl:mt-50 "> */}
+                <div className="relative mt-10 sm:mt-22 md:mt-30 lg:mt-35 ">
+
           <h3
             className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold leading-[100%]  md:ml-6 text-left"
             style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
@@ -24,19 +26,10 @@ export default function TakingPeptide() {
             General Guideline
           </h3>
 
-          <div className="hidden md:block absolute right-0 bottom-0 md:bottom-2  xl:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
-            <Image
-              src="/takingPeptide/image1.png"
-              alt="pen image"
-              fill
-              className=" rounded-[50px]  shadow-[0_20px_48px_rgba(0,0,0,0.4)] object-cover"
-            />
-          </div>
-
           {/* List with Background Color and Styled Hollow Circles */}
           <ul
             // className="min-w-[98vw] -mx-4 pl-10 rounded-[5rem] mt-6 space-y-1 list-none text-[#1F1F1F]"
-            className="max-w-2xl lg:max-w-xl xl:max-w-4xl px-4 md:px-10 -mx-4 pl-10 rounded-[5rem] mt-6 space-y-1 list-none "
+            className="max-w-lg xl:max-w-4xl px-4 md:px-10 -mx-4 pl-10 rounded-[5rem] mt-6 space-y-1 list-none "
             style={{
               // backgroundColor: "rgba(136, 211, 255, 0.3)",
               fontFamily: " 'Afacad Flux', sans-serif",
@@ -59,10 +52,19 @@ export default function TakingPeptide() {
               Keep detailed records of administration and effects.
             </li>
           </ul>
+
+          <div className="relative md:absolute max-md:left-1/2 max-md:translate-x-[-50%] right-0 -bottom-6 md:bottom-2  xl:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
+            <Image
+              src="/takingPeptide/image1.png"
+              alt="pen image"
+              fill
+              className=" rounded-[50px]  shadow-[0_20px_48px_rgba(0,0,0,0.4)] object-cover"
+            />
+          </div>
         </div>
 
         {/* Admin Section */}
-        <div className="relative mt-20 mb-25">
+        <div className="relative mt-20 mb-20 md:mt-20 md:mb-25">
           <h3
             className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold leading-[100%]  md:ml-6 text-left"
             style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
@@ -85,23 +87,6 @@ export default function TakingPeptide() {
             >
               Subcutaneous Injection
             </h3>
-            {/* <div className="hidden md:block absolute right-0 -top-5 md:-right-40 lg:right-50">
-    <Image
-      src="/takingPeptide/image2.png"
-      alt="pen image"
-      width={324}
-      height={308}
-      className=" w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px] rounded-[50px] shadow-[0_20px_48px_rgba(0,0,0,0.4)]"
-    />
-  </div> */}
-            <div className="hidden md:block absolute right-0 -top-5 max-lg:top-10 xl:right-50 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
-              <Image
-                src="/takingPeptide/image2.png"
-                alt="pen image"
-                fill
-                className="rounded-[50px] shadow-[0_20px_48px_rgba(0,0,0,0.4)] object-cover"
-              />
-            </div>
 
             <p className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium mt-6">
               Most common method for peptide administration:
@@ -123,24 +108,27 @@ export default function TakingPeptide() {
               Dispose of needles in appropriate sharps container
             </li>
 
+            
+
+            <div className="relative md:absolute max-md:left-1/2 max-md:translate-x-[-50%] right-0 top-4  lg:-top-5 xl:right-50 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
+              <Image
+                src="/takingPeptide/image2.png"
+                alt="pen image"
+                fill
+                className="rounded-[50px] shadow-[0_20px_48px_rgba(0,0,0,0.4)] object-cover"
+              />
+            </div>
+
             <br />
             <br />
 
             <h3
-              className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-bold leading-[100%] md:mt-10 text-left"
+              className="text-[clamp(20.25px,0.98vw+17.1px,34px)] font-bold leading-[100%] mt-5 md:mt-10 text-left"
               style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
             >
               Oral Administration
             </h3>
-            <div className="hidden md:block absolute right-0  bottom-0 xl:bottom-12 2xl:bottom-18 xl:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
-              <Image
-                src="/takingPeptide/image3.png"
-                alt="pen image"
-                fill
-                className=" rounded-[50px] shadow-[0_20px_48px_rgba(0,0,0,0.4)] object-cover"
-              // shadow-[offsetX_offsetY_blur_spread_color]
-              />
-            </div>
+
             <p className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium mt-6">
               For specially formulated peptides:
             </p>
@@ -154,11 +142,23 @@ export default function TakingPeptide() {
               Use provided measuring tools for accurate dosing
             </li>
           </ul>
+
+          <div className="relative md:absolute max-md:left-1/2 max-md:translate-x-[-50%] right-0 bottom-0 xl:bottom-12 2xl:bottom-18 xl:right-10 w-[200px] h-[190px] md:w-[250px] md:h-[230px] lg:w-[324px] lg:h-[308px]">
+            <Image
+              src="/takingPeptide/image3.png"
+              alt="pen image"
+              fill
+              className=" rounded-[50px] shadow-[0_20px_48px_rgba(0,0,0,0.4)] object-cover"
+              // shadow-[offsetX_offsetY_blur_spread_color]
+            />
+          </div>
         </div>
+
+        
 
         {/* Video Section */}
         <section
-          className="relative min-h-screen min-w-[100vw] flex flex-wrap justify-start 
+          className="relative min-h-screen min-w-[100vw] flex max-lg:flex-wrap justify-start 
       ml-[-20px] gap-10 px-6 py-10 bg-app opacity-90 w-full"
         >
           {/* Video 1 */}
@@ -249,7 +249,7 @@ export default function TakingPeptide() {
         </section>
 
         {/* best practice Section */}
-        <div className="mt-10">
+        <div className="mt-10 mb-50">
           <h3
             className="text-[clamp(22.5px,1.67vw+17.2px,46px)] font-semibold leading-[100%]  md:ml-6 text-left"
             style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
@@ -285,12 +285,12 @@ export default function TakingPeptide() {
 
               {/* Value 1 */}
               {/* <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
-    <div className="bg-white rounded-2xl px-8 py-2 flex items-center justify-center">
-      <p className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium" style={{ fontFamily: " 'Afacad Flux', sans-serif" }}>
-        23/04/25
-      </p>
-    </div>
-  </div> */}
+                <div className="bg-white rounded-2xl px-8 py-2 flex items-center justify-center">
+                  <p className="text-[clamp(18px,0.43vw+16.63px,24px)] font-medium" style={{ fontFamily: " 'Afacad Flux', sans-serif" }}>
+                    23/04/25
+                  </p>
+                </div>
+              </div> */}
               <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[220px] h-full max-h-[48px]  ">
                 <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full  h-full">
                   <p
@@ -309,12 +309,12 @@ export default function TakingPeptide() {
 
               {/* Value 2 */}
               {/* <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793]">
-    <div className="bg-white rounded-2xl px-8 py-2 flex items-center justify-center">
-      <p className="text-[24px] font-medium" style={{ fontFamily: " 'Afacad Flux', sans-serif" }}>
-        Mon, Tues, Wed
-      </p>
-    </div>
-  </div> */}
+                <div className="bg-white rounded-2xl px-8 py-2 flex items-center justify-center">
+                  <p className="text-[24px] font-medium" style={{ fontFamily: " 'Afacad Flux', sans-serif" }}>
+                    Mon, Tues, Wed
+                  </p>
+                </div>
+              </div> */}
               <div className="relative inline-block p-[1.75px] rounded-2xl bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] w-full max-w-[220px] h-full max-h-[48px]">
                 <div className="bg-white dark:bg-[var(--background)] dark:text-[var(--foreground)] text-[#1F1F1F] rounded-2xl px-4 md:px-6 py-2 flex items-center justify-center w-full h-full">
                   <p
