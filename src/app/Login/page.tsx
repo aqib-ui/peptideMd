@@ -5,11 +5,15 @@ import logo from "../../../public/headerIcon/logo.png";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  // const [confirmPassword, setConfirmPassword] = useState("");
+  const router = useRouter();
+
   const [errors, setErrors] = useState<{
     email?: string;
     password?: string;
@@ -30,11 +34,11 @@ export default function LoginPage() {
     else if (password.length < 6)
       newErrors.password = "Password must be at least 6 characters.";
 
-    if (!confirmPassword) {
-      newErrors.confirmPassword = "Confirm Password is required.";
-    } else if (confirmPassword !== password) {
-      newErrors.confirmPassword = "Passwords do not match.";
-    }
+    // if (!confirmPassword) {
+    //   newErrors.confirmPassword = "Confirm Password is required.";
+    // } else if (confirmPassword !== password) {
+    //   newErrors.confirmPassword = "Passwords do not match.";
+    // }
 
     return newErrors;
   };
@@ -44,14 +48,24 @@ export default function LoginPage() {
     return Object.keys(currentErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!isFormValid()) return;
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (!isFormValid()) return;
 
-    setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1500)); // Simulated delay
-    setIsSubmitting(false);
-  };
+  //   setIsSubmitting(true);
+  //   await new Promise((r) => setTimeout(r, 1500)); // Simulated delay
+  //   setIsSubmitting(false);
+  // };
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  if (!isFormValid()) return;
+
+  setIsSubmitting(true);
+  await new Promise((r) => setTimeout(r, 1500)); // Simulated delay
+  setIsSubmitting(false);
+  router.push("/"); // 🔁 Redirect to homepage after "login"
+};
+
 
   return (
     <div className="min-h-screen flex flex-col md:flex-row md:justify-between p-4 xl:py-8 xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34">

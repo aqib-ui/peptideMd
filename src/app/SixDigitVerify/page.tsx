@@ -1,19 +1,21 @@
 "use client";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import logo from "../../../public/headerIcon/logo.png";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export default function SixDigitVerify() {
+export const dynamic = "force-dynamic";
+
+function SixDigitVerifyInner() {
   const [code, setCode] = useState(Array(6).fill(""));
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(30);
   const inputsRef = useRef<Array<HTMLInputElement | null>>([]);
   const router = useRouter();
   const searchParams = useSearchParams();
-  const from = searchParams.get("from"); // ← Get the origin
-
+  const from = searchParams.get("from");
+  
   const isFormValid = () => {
     return code.every((digit) => digit !== "");
   };
@@ -35,10 +37,7 @@ export default function SixDigitVerify() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    index: number
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
     const value = e.target.value.replace(/\D/, "");
     if (!value) return;
 
@@ -51,10 +50,7 @@ export default function SixDigitVerify() {
     }
   };
 
-  const handleKeyDown = (
-    e: React.KeyboardEvent<HTMLInputElement>,
-    index: number
-  ) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
     if (e.key === "Backspace" && !code[index] && index > 0) {
       const newCode = [...code];
       newCode[index - 1] = "";
@@ -85,18 +81,16 @@ export default function SixDigitVerify() {
       alert("Please enter all 6 digits.");
       setIsSubmitting(false);
     } else {
-      // Simulate verification delay
       setTimeout(() => {
         alert("Verification successful!");
         setIsSubmitting(false);
 
-        // Redirect based on origin
         if (from === "signup") {
           router.push("/Signup");
         } else if (from === "forgetpassword") {
           router.push("/ForgetPassword");
         } else {
-          router.push("/"); // fallback
+          router.push("/");
         }
       }, 1000);
     }
@@ -105,12 +99,10 @@ export default function SixDigitVerify() {
   return (
     <div className="min-h-screen flex flex-col md:flex-row md:justify-between p-4 xl:py-8 xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34">
       {/* Left Section */}
-      <div
-        className="w-full md:w-[48%] md:h-[calc(100vh-64px)] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
+      <div className="w-full md:w-[48%] md:h-[calc(100vh-64px)] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
         style={{
           background: "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
-        }}
-      >
+        }}>
         <div className="bg-white rounded-[48px] p-8 flex items-center justify-center w-full h-full">
           <Image
             src={logo}
@@ -134,14 +126,12 @@ export default function SixDigitVerify() {
                 } else if (from === "forgetpassword") {
                   router.push("/ForgetPassword");
                 } else {
-                  router.push("/"); // fallback
+                  router.push("/");
                 }
               }}
               className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition"
             >
-              <span className="txt-24 font-medium text-gray-700">
-                <IoIosArrowRoundBack className="txt-24" />
-              </span>
+              <IoIosArrowRoundBack className="txt-24" />
             </button>
           </div>
 
@@ -197,7 +187,6 @@ export default function SixDigitVerify() {
               )}
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               className={`w-full 2xl:w-[496px] 2xl:h-[56px] py-3 rounded-full font-semibold transition ${
@@ -221,5 +210,13 @@ export default function SixDigitVerify() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function SixDigitVerify() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SixDigitVerifyInner />
+    </Suspense>
   );
 }
