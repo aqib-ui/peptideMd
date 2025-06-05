@@ -370,13 +370,6 @@ export default function Header() {
     <header className="bg-app">
       <div className="container mx-auto flex min-w-[98vw] items-center justify-between px-4 md:px-10 max-2xl:py-4">
         {/* Logo */}
-        {/* <Image
-          src="/headerIcon/logo.png"
-          alt="Logo"
-          width={200} // Adjust width as needed
-          height={50} // Adjust height as needed
-        /> */}
-        {/* Logo with Home Redirect */}
         <Link href="/">
           <Image
             src="/headerIcon/logo.png"
@@ -659,17 +652,19 @@ export default function Header() {
 
             {/* Buttons for Login and Signup */}
             <div className="flex items-center justify-center gap-1 sm:gap-4 z-10">
-              <button className="bg-[#C8E4FC] text-[#224674] px-6 py-2 [@media(min-width:1600px)]:px-[62.83px] [@media(min-width:1600px)]:py-[14.5px]  rounded-full hover:bg-blue-600 transition-colors duration-300">
+              <button className="bg-[#224674] text-white px-6 py-2 [@media(min-width:1600px)]:px-[62.83px] [@media(min-width:1600px)]:py-[14.5px] rounded-full cursor-pointer transition-colors duration-300">
+                <Link href="/Login" className="txt-18 font-semibold">
+                  Signup
+                </Link>
+              </button>
+
+              
+              <button className="bg-[#C8E4FC] text-[#224674] px-6 py-2 [@media(min-width:1600px)]:px-[62.83px] [@media(min-width:1600px)]:py-[14.5px]  rounded-full cursor-pointer transition-colors duration-300">
                 <Link href="/Login" className="txt-18 font-semibold">
                   Log In
                 </Link>
               </button>
 
-              <button className="bg-[#224674] text-white px-6 py-2 [@media(min-width:1600px)]:px-[62.83px] [@media(min-width:1600px)]:py-[14.5px] rounded-full hover:bg-blue-600 transition-colors duration-300">
-                <Link href="/Login" className="txt-18 font-semibold">
-                  Signup
-                </Link>
-              </button>
             </div>
           </div>
 
