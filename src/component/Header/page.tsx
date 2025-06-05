@@ -652,14 +652,14 @@ export default function Header() {
 
             {/* Buttons for Login and Signup */}
             <div className="flex items-center justify-center gap-1 sm:gap-4 z-10">
-              <button className="bg-[#224674] text-white px-6 py-2 [@media(min-width:1600px)]:px-[62.83px] [@media(min-width:1600px)]:py-[14.5px] rounded-full cursor-pointer transition-colors duration-300">
-                <Link href="/Login" className="txt-18 font-semibold">
+              <button className="bg-[#224674] text-white px-6 py-2 [@media(min-width:1400px)]:px-[62.83px] [@media(min-width:1400px)]:py-[14.5px] rounded-full cursor-pointer transition-colors duration-300">
+                <Link href="/Signup" className="txt-18 font-semibold">
                   Signup
                 </Link>
               </button>
 
               
-              <button className="bg-[#C8E4FC] text-[#224674] px-6 py-2 [@media(min-width:1600px)]:px-[62.83px] [@media(min-width:1600px)]:py-[14.5px]  rounded-full cursor-pointer transition-colors duration-300">
+              <button className="bg-[#C8E4FC] text-[#224674] px-6 py-2 [@media(min-width:1400px)]:px-[62.83px] [@media(min-width:1400px)]:py-[14.5px]  rounded-full cursor-pointer transition-colors duration-300">
                 <Link href="/Login" className="txt-18 font-semibold">
                   Log In
                 </Link>
