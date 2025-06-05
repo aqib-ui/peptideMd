@@ -99,6 +99,11 @@ body {
     font-size: clamp(20.25px, 0.98vw + 17.1px, 34px);
   }
 
+  .txt-32 {
+  font-size: clamp(20px, 1.14vw + 15.4px, 32px);
+}
+
+
   .txt-30 {
     font-size: clamp(18px, 0.96vw + 15.2px, 30px);
   }
@@ -125,10 +130,25 @@ body {
     font-size: clamp(16px, 0.284vw + 15.1px, 20px);
   }
 
+  .txt-18 {
+  font-size: clamp(14px, 0.39vw + 11.5px, 18px);
+}
+
+
+
   .txt-16 {
     font-size: clamp(13px, 0.39vw + 10px, 16px);
   }
+
+
+  .txt-14 {
+      font-size: clamp(12px, 0.34vw + 10.8px, 14px);
+    }
+
+
+
 }
+
 
 /* for commented values or untouched values this is the behaviour */
 /* | Class    | 320px  | 768px    | 1024px   | 1280px   | 1440px   | 1728px+ | Max Cap |
@@ -137,12 +157,15 @@ body {
 | `txt-66` | \~40px | \~50px   | \~56px   | \~62px   | 66px     | 66px    | 66px    |
 | `txt-46` | \~28px | \~34px   | \~38px   | \~42px   | \~44px   | 46px    | 46px    |
 | `txt-34` | \~18px | \~22px   | \~26px   | \~30px   | \~32px   | 34px    | 34px    |
+| `txt-32` | \~20px | \~24.15px| \~27.1px | \~30px   | \~31.8px | 32px    | 32px    |
 | `txt-30` | \~18px | \~22px   | \~25px   | 30px     | 30px     | 34px    | 34px    |
 | `txt-26` | \~17px | \~20px   | \~23px   | 26px     | 26px     | 26px    | 26px    |
 | `txt-24` | \~16px | \~18.6px | \~20px   | \~22.4px | \~23.8px | 24px    | 24px    |
 | `txt-22` | \~16px | \~18.5px | \~20.5px | 22px     | 22px     | 22px    | 22px    |
-| `txt-20` | \~16px | \~17.5px | \~18.2px | \~18.8px | \~19.4px | 20px    | 20px    | 
-| `txt-16` | \~13px | \~13px   | \~14px   | \~15px | \~15.6px   | 16px    | 16px    |
+| `txt-20` | \~16px | \~17.5px | \~18.2px | \~18.8px | \~19.4px | 20px    | 20px    |
+| `txt-18` | \~14px | \~14.3px | \~15.3px | \~16.3px | \~17px   | 18px    | 18px    | 
+| `txt-16` | \~13px | \~13px   | \~14px   | \~15px   | \~15.6px | 16px    | 16px    |
+| `txt-14` | \~12px | \~13.41px| \~14px   | \~14px   | \~14px   | 14px    | 14px    |
 */
 
 

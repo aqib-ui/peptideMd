@@ -342,7 +342,6 @@
 
 // ////////////////////////////////////19-25/3/25 pixel perfecting ////////////////////////
 
-
 "use client";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation"; // Import usePathname
@@ -390,10 +389,14 @@ export default function Header() {
 
         {/* Hamburger Menu */}
         <button
-          onClick={() => setIsOpen(!isOpen)} 
+          onClick={() => setIsOpen(!isOpen)}
           className="focus:outline-none flex items-center"
           style={{ fontFamily: "  'Afacad Flux', sans-serif" }}
-        > <span className="hidden [@media(min-width:400px)]:block txt-22 mr-2 sm:mr-3 md:mr-4 font-medium">Menu</span>
+        >
+          {" "}
+          <span className="hidden [@media(min-width:400px)]:block txt-22 mr-2 sm:mr-3 md:mr-4 font-medium">
+            Menu
+          </span>
           <Image
             src="/headerIcon/hamBurger.png"
             alt="Menu"
@@ -414,14 +417,14 @@ export default function Header() {
         <div className="absolute top-4 left-4 right-4 px-6 flex justify-between items-center z-10">
           {/* Logo on the Left */}
           <Link href="/">
-          <Image
-            src="/headerIcon/logo.png"
-            alt="Logo"
-            width={200} // Adjust width as needed
-            height={50} // Adjust height as needed
-            className="cursor-pointer"
-          />
-        </Link>
+            <Image
+              src="/headerIcon/logo.png"
+              alt="Logo"
+              width={200} // Adjust width as needed
+              height={50} // Adjust height as needed
+              className="cursor-pointer"
+            />
+          </Link>
 
           {/* Close Button with Gradient Border */}
           <button
@@ -450,20 +453,24 @@ export default function Header() {
         <div className="flex items-center justify-center h-full bg-app">
           {/* Box with Gradient Border */}
           <div
-            className="relative flex flex-wrap items-center justify-center gap-0 xl:gap-6 [@media(min-width:1400px)]:gap-32 
-            [@media(min-width:1500px)]:gap-48 p-8 xl:p-4 w-full max-w-[95%] sm:max-w-[49%] md:max-w-[52%] xl:max-w-[55%]
+            className="relative flex flex-wrap items-center justify-center gap-0 xl:gap-6 [@media(min-width:1400px)]:gap-y-8 
+            [@media(min-width:1400px)]:gap-x-20 [@media(min-width:1500px)]:gap-x-24 [@media(min-width:1600px)]:gap-x-48 p-8 xl:p-4 
+            [@media(min-width:1700px)]:px-36 [@media(min-width:1700px)]:pt-32 w-full max-w-[95%] sm:max-w-[48%]  xl:max-w-[55%]
             [@media(min-width:1700px)]:max-w-[65.278%] min-h-[470px] xl:min-h-[500px] 2xl:min-h-[550px] [@media(min-width:1700px)]:min-h-[704px]
             mr-6 ml-6 mx-auto mt-8 max-md:mt-16 2xl:mt-16 [@media(min-width:1700px)]:mt-24 transition-all duration-300 ease-in-out"
           >
             {/* Gradient Border (Pseudo-element) */}
             <div
-              className="absolute inset-0 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] 
-              rounded-[12rem] [@media(min-width:1700px)]:rounded-[15rem] rounded-tr-[4rem] [@media(min-width:1700px)]:rounded-tr-[5rem] p-[4px] opacity-70"
+              className="absolute inset-0 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] p-[4px] opacity-70
+              rounded-[12rem] [@media(min-width:1700px)]:rounded-[15rem] rounded-tr-[4rem] [@media(min-width:1700px)]:rounded-tr-[5rem]"
             ></div>
 
             {/* Inner White Box */}
-            <div className="absolute inset-[2px] bg-app rounded-[12rem] [@media(min-width:1700px)]:rounded-[15rem]  rounded-tr-[4rem] [@media(min-width:1700px)]:rounded-tr-[5rem] z-10"></div>
-            <ul className="text-gray-900 txt-34 text-app font-semibold space-y-8 max-xl:space-y-3 z-10">
+            <div
+              className="absolute inset-[2px] bg-app rounded-[12rem] [@media(min-width:1700px)]:rounded-[15rem]  rounded-tr-[4rem] 
+            [@media(min-width:1700px)]:rounded-tr-[5rem] z-10"
+            ></div>
+            <ul className="text-gray-900 txt-34 text-app xl:mt-10 mt-3 font-semibold space-y-8 max-xl:space-y-3 z-10">
               <li className="flex items-center space-x-4">
                 <Image
                   src="/headerIcon/Group 11.png"
@@ -566,7 +573,8 @@ export default function Header() {
               </li>
             </ul>
 
-            <ul className="text-gray-900 txt-34 text-app font-semibold space-y-8 max-xl:space-y-3 z-10 pb-[1rem] xl:pb-[4rem]">
+            {/* <ul className="text-gray-900 txt-34 text-app xl:mt-10 mt-3 font-semibold space-y-8 max-xl:space-y-3 z-10 pb-[1rem] xl:pb-[4rem]"> */}
+            <ul className="text-gray-900 txt-34 text-app xl:mt-10 mt-3 font-semibold space-y-8 max-xl:space-y-3 z-10 pb-[1rem] xl:pb-[4rem]">
               <li className="flex items-center space-x-4">
                 <Image
                   src="/headerIcon/Group 21.png"
@@ -648,6 +656,21 @@ export default function Header() {
                 </a>
               </li>
             </ul>
+
+            {/* Buttons for Login and Signup */}
+            <div className="flex items-center justify-center gap-1 sm:gap-4 z-10">
+              <button className="bg-[#C8E4FC] text-[#224674] px-6 py-2 [@media(min-width:1600px)]:px-[62.83px] [@media(min-width:1600px)]:py-[14.5px]  rounded-full hover:bg-blue-600 transition-colors duration-300">
+                <Link href="/Login" className="txt-18 font-semibold">
+                  Log In
+                </Link>
+              </button>
+
+              <button className="bg-[#224674] text-white px-6 py-2 [@media(min-width:1600px)]:px-[62.83px] [@media(min-width:1600px)]:py-[14.5px] rounded-full hover:bg-blue-600 transition-colors duration-300">
+                <Link href="/Login" className="txt-18 font-semibold">
+                  Signup
+                </Link>
+              </button>
+            </div>
           </div>
 
           {/* Position All PNGs Inside This Wrapper */}
@@ -689,7 +712,6 @@ export default function Header() {
             />
           </div>
         </div>
-        
       </div>
     </header>
   );
