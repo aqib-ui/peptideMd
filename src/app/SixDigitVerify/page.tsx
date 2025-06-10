@@ -4,6 +4,10 @@ import logo from "../../../public/headerIcon/logo.png";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
+import { FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { AiFillInstagram } from "react-icons/ai";
+import { FaXTwitter } from "react-icons/fa6";
 
 export const dynamic = "force-dynamic";
 
@@ -15,7 +19,7 @@ function SixDigitVerifyInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const from = searchParams.get("from");
-  
+
   const isFormValid = () => {
     return code.every((digit) => digit !== "");
   };
@@ -37,7 +41,10 @@ function SixDigitVerifyInner() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
     const value = e.target.value.replace(/\D/, "");
     if (!value) return;
 
@@ -50,7 +57,10 @@ function SixDigitVerifyInner() {
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>, index: number) => {
+  const handleKeyDown = (
+    e: React.KeyboardEvent<HTMLInputElement>,
+    index: number
+  ) => {
     if (e.key === "Backspace" && !code[index] && index > 0) {
       const newCode = [...code];
       newCode[index - 1] = "";
@@ -97,118 +107,151 @@ function SixDigitVerifyInner() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col md:flex-row md:justify-between p-4 xl:py-8 xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34">
-      {/* Left Section */}
-      <div className="w-full md:w-[48%] md:h-[calc(100vh-64px)] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
-        style={{
-          background: "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
-        }}>
-        <div className="bg-white rounded-[48px] p-8 flex items-center justify-center w-full h-full">
-          <Image
-            src={logo}
-            alt="PeptideMD Logo"
-            width={492}
-            height={211}
-            className="max-w-full h-auto object-contain"
-          />
-        </div>
-      </div>
-
-      {/* Right Section */}
-      <div className="md:w-[52%] flex justify-start items-center max-sm:mt-6 max-sm:mb-20">
-        <div className="w-full max-w-lg p-2 lg:px-4 bg-white rounded-3xl">
-          {/* Back Button */}
-          <div className="mb-6">
-            <button
-              onClick={() => {
-                if (from === "signup") {
-                  router.push("/Signup");
-                } else if (from === "forgetpassword") {
-                  router.push("/ForgetPassword");
-                } else {
-                  router.push("/");
-                }
-              }}
-              className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition"
-            >
-              <IoIosArrowRoundBack className="txt-24" />
-            </button>
-          </div>
-
-          {/* Icon */}
-          <div className="p-2 bg-[#DD6F941F] border-[#DD6F94] border-1 rounded-xl flex items-center justify-center w-fit mb-6">
-            <img
-              src="/authIcons/password-check.png"
-              alt="SMS Icon"
-              className="w-10 h-10 object-contain"
+    <div className="min-h-screen grid grid-rows-[1fr_auto]">
+      {/* === Content Area === */}
+      <div
+        className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 max-xl:p-2 px-4 pt-2 pb-2 [@media(min-width:1600px)]:p- 
+       xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"
+      >
+        {/* Left Section */}
+        <div
+          className="w-full md:w-[48%] md:h-[calc(100vh-64px)] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
+          style={{
+            background:
+              "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
+          }}
+        >
+          <div className="bg-white rounded-[48px] p-8 flex items-center justify-center w-full h-full">
+            <Image
+              src={logo}
+              alt="PeptideMD Logo"
+              width={492}
+              height={211}
+              className="max-w-full h-auto object-contain"
             />
           </div>
+        </div>
 
-          <h2 className="txt-32 font-semibold mb-2">Enter Verification Code</h2>
-          <p className="txt-20 text-gray-500 mb-6">
-            Please enter the verification code sent to{" "}
-            <span className="text-[#224674]">janecooper10@gmail.com</span> to
-            complete your signup and start your personalized peptide journey.
-          </p>
-
-          <form onSubmit={handleSubmit}>
-            <div className="w-full 2xl:w-[496px] 2xl:h-[56px] flex justify-center gap-3 mb-6">
-              {code.map((digit, idx) => (
-                <input
-                  key={idx}
-                  type="text"
-                  maxLength={1}
-                  value={digit}
-                  onChange={(e) => handleChange(e, idx)}
-                  onKeyDown={(e) => handleKeyDown(e, idx)}
-                  onPaste={handlePaste}
-                  ref={(el) => {
-                    inputsRef.current[idx] = el;
-                  }}
-                  className="w-18 h-16 text-center text-lg border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 bg-gray-50"
-                />
-              ))}
+        {/* Right Section */}
+        <div className="md:w-[52%] flex justify-start items-center max-sm:mt-6 max-sm:mb-20">
+          <div className="w-full max-w-lg p-2 lg:px-4 bg-white rounded-3xl">
+            {/* Back Button */}
+            <div className="mb-6">
+              <button
+                onClick={() => {
+                  if (from === "signup") {
+                    router.push("/Signup");
+                  } else if (from === "forgetpassword") {
+                    router.push("/ForgetPassword");
+                  } else {
+                    router.push("/");
+                  }
+                }}
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition"
+              >
+                <IoIosArrowRoundBack className="txt-24" />
+              </button>
             </div>
 
-            <div className="text-left mb-6">
-              {secondsLeft > 0 ? (
-                <div className="text-[#8D9A9B] txt-18 font-[400] leading-[100%] font-[Afacad Flux]">
-                  Request a new code (0:
-                  {secondsLeft < 10 ? `0${secondsLeft}` : secondsLeft})
-                </div>
-              ) : (
-                <button
-                  type="button"
-                  onClick={handleResendCode}
-                  className="text-[#224674] txt-16 font-[600] leading-[100%] underline font-[Afacad Flux] transition"
-                >
-                  Request a new code
-                </button>
-              )}
+            {/* Icon */}
+            <div className="p-2 bg-[#DD6F941F] border-[#DD6F94] border-1 rounded-xl flex items-center justify-center w-fit mb-6">
+              <img
+                src="/authIcons/password-check.png"
+                alt="SMS Icon"
+                className="w-10 h-10 object-contain"
+              />
             </div>
 
-            <button
-              type="submit"
-              className={`w-full 2xl:w-[496px] 2xl:h-[56px] py-3 rounded-full font-semibold transition ${
-                !isFormValid()
-                  ? "bg-[#D8DFE0] cursor-not-allowed text-[#9EA9AA]"
-                  : "bg-[#224674] text-white"
-              }`}
-              disabled={!isFormValid()}
-            >
-              {isSubmitting ? (
-                <img
-                  src="/loader.gif"
-                  alt="Loading..."
-                  className="w-6 h-6 mx-auto bg-[#224674]"
-                />
-              ) : (
-                "Verify"
-              )}
-            </button>
-          </form>
+            <h2 className="txt-32 font-semibold mb-2 text-[#25292A]">
+              Enter Verification Code
+            </h2>
+            <p className="txt-20 text-[#51595A] mb-6">
+              Please enter the verification code sent to{" "}
+              <span className="text-[#224674]">janecooper10@gmail.com</span> to
+              complete your signup and start your personalized peptide journey.
+            </p>
+
+            <form onSubmit={handleSubmit}>
+              <div className="w-full 2xl:w-[496px] 2xl:h-[56px] flex justify-around  gap-2 lg:gap-3 mb-6">
+                {code.map((digit, idx) => (
+                  <input
+                    key={idx}
+                    type="text"
+                    maxLength={1}
+                    value={digit}
+                    onChange={(e) => handleChange(e, idx)}
+                    onKeyDown={(e) => handleKeyDown(e, idx)}
+                    onPaste={handlePaste}
+                    ref={(el) => {
+                      inputsRef.current[idx] = el;
+                    }}
+                    className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-14 xl:w-18 xl:h-16
+                  text-center txt-18 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 bg-gray-50"
+                  />
+                ))}
+              </div>
+
+              <div className="text-left mb-6">
+                {secondsLeft > 0 ? (
+                  <div className="text-[#8D9A9B] txt-18 font-[400] leading-[100%] font-[Afacad Flux]">
+                    Request a new code (0:
+                    {secondsLeft < 10 ? `0${secondsLeft}` : secondsLeft})
+                  </div>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={handleResendCode}
+                    className="text-[#224674] txt-16 font-[600] leading-[100%] underline font-[Afacad Flux] transition"
+                  >
+                    Request a new code
+                  </button>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                className={`w-full txt-18 2xl:w-[496px] 2xl:h-[56px] py-3 rounded-full font-semibold transition ${
+                  !isFormValid()
+                    ? "bg-[#D8DFE0] cursor-not-allowed text-[#9EA9AA]"
+                    : "bg-[#224674] text-white"
+                }`}
+                disabled={!isFormValid()}
+              >
+                {isSubmitting ? (
+                  <img
+                    src="/loader.gif"
+                    alt="Loading..."
+                    className="w-6 h-6 mx-auto bg-[#224674]"
+                  />
+                ) : (
+                  "Verify"
+                )}
+              </button>
+            </form>
+          </div>
         </div>
       </div>
+      {/* === Footer === */}
+      <footer className="bg-[#F2F5F6] py-2">
+        <div className="max-w-full mx-auto px-10 flex justify-between items-center max-md:text-center max-md:flex-col max-md:gap-1 txt-16 text-[#25292A]">
+          {/* <Link href="/privacy-policy"> */}
+          <p className="text-[#25292A] ">
+            Privacy Policy <span className="px-4 max-lg:px-1">|</span> Terms &amp; Conditions
+          </p>
+          {/* </Link> */}
+          <span className="text-[#25292A] ">
+            © 2025, Nuda Peptide Therapeutics, All Rights Reserved
+          </span>
+          {/* <Link href="/terms"> */}
+          <p className="text-[#224674] gap-4 flex items-center txt-20">
+            <FaFacebookF />
+            <FaLinkedinIn />
+            <AiFillInstagram />
+            <FaXTwitter />
+          </p>
+          {/* </Link> */}
+        </div>
+      </footer>
     </div>
   );
 }

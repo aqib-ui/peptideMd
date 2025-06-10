@@ -14,16 +14,16 @@ export default function Footer() {
       <div className="flex flex-col sm:flex-row  sm:flex-wrap justify-between mt-10 sm:mt-20 lg:mt-40">
         {/* Left-aligned Content */}
         <div className="max-w-3xl ml-[-10px]">
-  <Link href="/">
-    <Image
-      src="/footerlogo.png"
-      alt="Logo"
-      width={280}
-      height={120}
-      layout="intrinsic"
-      className="ml-[-20px] self-start cursor-pointer"
-    />
-  </Link>
+          <Link href="/">
+            <Image
+              src="/footerlogo.png"
+              alt="Logo"
+              width={280}
+              height={120}
+              layout="intrinsic"
+              className="ml-[-20px] self-start cursor-pointer"
+            />
+          </Link>
           <p
             className="text-[clamp(18px,0.43vw+16.63px,24px)] leading-[130%] mt-6 mb-10"
             style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
@@ -78,7 +78,7 @@ export default function Footer() {
               </a> */}
               <Link href="/AiAssistant" className="hover:text-blue-500">
                 AI Assistant
-                </Link>
+              </Link>
             </li>
             <li>
               <a href="/CaseStudies" className="hover:text-blue-500">
