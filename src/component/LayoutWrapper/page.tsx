@@ -42,7 +42,7 @@ export default function LayoutWrapper({
   const pathname = usePathname(); // e.g. "/login"
 
   // Lowercase the list to match pathname
-  const noLayoutRoutes = ["/login", "/signup", "/forgetpassword", "/sixdigitverify"];
+  const noLayoutRoutes = ["/login", "/signup", "/forgetpassword", "/sixdigitverify", "/createnewpassword"];
 
   const shouldHideLayout = noLayoutRoutes.includes(pathname.toLowerCase());
 

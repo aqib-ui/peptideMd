@@ -109,33 +109,29 @@ function SixDigitVerifyInner() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-  const verificationCode = code.join("");
+    e.preventDefault();
+    setIsSubmitting(true);
+    const verificationCode = code.join("");
 
-  if (verificationCode.length !== 6) {
-    toast.error("Please enter all 6 digits.");
-    setIsSubmitting(false);
-  } else {
-    const toastId = toast.loading("Verifying...");
-    setTimeout(() => {
-      toast.success("Verification successful!", { id: toastId });
+    if (verificationCode.length !== 6) {
       setIsSubmitting(false);
+    } else {
+      setTimeout(() => {
+        setIsSubmitting(false);
+        if (from === "signup") {
+          router.push("/Signup");
+        } else if (from === "forgetpassword") {
+          router.push("/CreateNewPassword"); // Navigate to create password page
+        } else {
+          router.push("/");
+        }
+      }, 1000);
+    }
+  };
 
-      if (from === "signup") {
-        router.push("/Signup");
-      } else if (from === "forgetpassword") {
-        router.push("/ForgetPassword");
-      } else {
-        router.push("/");
-      }
-    }, 1000);
-  }
-};
   return (
     <div className="min-h-screen grid grid-rows-[1fr_auto]">
-
-       <Toaster position="top-center" />
+      <Toaster position="top-center" />
 
       {/* === Content Area === */}
       <div
