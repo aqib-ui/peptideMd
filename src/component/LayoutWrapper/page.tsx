@@ -12,7 +12,7 @@ export default function LayoutWrapper({
   const pathname = usePathname(); // returns something like "/Login"
 
   // Match the actual route casing: /Login, /ForgetPassword
-  const noLayoutRoutes = ["/Login", "/Signup", "/ForgetPassword"];
+  const noLayoutRoutes = ["/Login", "/Signup", "/ForgetPassword", "/SixDigitVerify"];
 
   const shouldHideLayout = noLayoutRoutes.includes(pathname);
 
