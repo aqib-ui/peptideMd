@@ -9,6 +9,9 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaXTwitter } from "react-icons/fa6";
 
+import { message } from "antd"; // Make sure this import is at the top
+import { Toaster, toast } from "react-hot-toast";
+
 export const dynamic = "force-dynamic";
 
 function SixDigitVerifyInner() {
@@ -69,29 +72,28 @@ function SixDigitVerifyInner() {
   //   }
   // };
   const handleKeyDown = (
-  e: React.KeyboardEvent<HTMLInputElement>,
-  index: number
-) => {
-  const newCode = [...code];
+    e: React.KeyboardEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    const newCode = [...code];
 
-  if (e.key === "Backspace") {
-    if (code[index]) {
+    if (e.key === "Backspace") {
+      if (code[index]) {
+        newCode[index] = "";
+      } else if (index > 0) {
+        newCode[index - 1] = "";
+        inputsRef.current[index - 1]?.focus();
+      }
+      setCode(newCode);
+    } else if (e.key === "Delete") {
       newCode[index] = "";
-    } else if (index > 0) {
-      newCode[index - 1] = "";
+      setCode(newCode);
+    } else if (e.key === "ArrowLeft" && index > 0) {
       inputsRef.current[index - 1]?.focus();
+    } else if (e.key === "ArrowRight" && index < 5) {
+      inputsRef.current[index + 1]?.focus();
     }
-    setCode(newCode);
-  } else if (e.key === "Delete") {
-    newCode[index] = "";
-    setCode(newCode);
-  } else if (e.key === "ArrowLeft" && index > 0) {
-    inputsRef.current[index - 1]?.focus();
-  } else if (e.key === "ArrowRight" && index < 5) {
-    inputsRef.current[index + 1]?.focus();
-  }
-};
-
+  };
 
   const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -107,38 +109,41 @@ function SixDigitVerifyInner() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    const verificationCode = code.join("");
+  e.preventDefault();
+  setIsSubmitting(true);
+  const verificationCode = code.join("");
 
-    if (verificationCode.length !== 6) {
-      alert("Please enter all 6 digits.");
+  if (verificationCode.length !== 6) {
+    toast.error("Please enter all 6 digits.");
+    setIsSubmitting(false);
+  } else {
+    const toastId = toast.loading("Verifying...");
+    setTimeout(() => {
+      toast.success("Verification successful!", { id: toastId });
       setIsSubmitting(false);
-    } else {
-      setTimeout(() => {
-        alert("Verification successful!");
-        setIsSubmitting(false);
 
-        if (from === "signup") {
-          router.push("/Signup");
-        } else if (from === "forgetpassword") {
-          router.push("/ForgetPassword");
-        } else {
-          router.push("/");
-        }
-      }, 1000);
-    }
-  };
-
+      if (from === "signup") {
+        router.push("/Signup");
+      } else if (from === "forgetpassword") {
+        router.push("/ForgetPassword");
+      } else {
+        router.push("/");
+      }
+    }, 1000);
+  }
+};
   return (
     <div className="min-h-screen grid grid-rows-[1fr_auto]">
+
+       <Toaster position="top-center" />
+
       {/* === Content Area === */}
-            <div
-              className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 px-4 pt-3 pb-3 [@media(min-width:1600px)]:p- 
+      <div
+        className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 px-4 pt-3 pb-3 [@media(min-width:1600px)]:p- 
             xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"
-            >
-              {/* Left Section */}
-              {/* <div
+      >
+        {/* Left Section */}
+        {/* <div
                 className="[@media(min-width:1600px)]:w-full w-[48%] max-sm:w-full md:h-[calc(100vh-44px)] lg:h-[calc(100vh-54px)] 
                 xl:h-[calc(100vh-84px)] [@media(min-width:1600px)]:h-[calc(100vh-54px)] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px]
                 flex items-center justify-center"
@@ -157,25 +162,24 @@ function SixDigitVerifyInner() {
                   />
                 </div>
               </div> */}
-              <div
-                className="w-full md:w-[48%] md:h-[calc(100vh-64px)] lg:h-[calc(100vh-66px)] [@media(min-width:1600px)]:h-[calc(100vh-104px)]
+        <div
+          className="w-full md:w-[48%] md:h-[calc(100vh-64px)] lg:h-[calc(100vh-66px)] [@media(min-width:1600px)]:h-[calc(100vh-104px)]
                  [@media(min-width:1600px)]::mt-[2rem] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
-                style={{
-                  background:
-                    "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
-                }}
-              >
-                <div className="bg-white rounded-[48px] p-8 flex items-center justify-center w-full h-full">
-                  <Image
-                    src={logo}
-                    alt="PeptideMD Logo"
-                    width={492}
-                    height={211}
-                    className="w-auto xl:!w-[492px] h-auto xl:!h-[211px] object-contain"
-                  />
-                </div>
-              </div>
-      
+          style={{
+            background:
+              "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
+          }}
+        >
+          <div className="bg-white rounded-[48px] p-8 flex items-center justify-center w-full h-full">
+            <Image
+              src={logo}
+              alt="PeptideMD Logo"
+              width={492}
+              height={211}
+              className="w-auto xl:!w-[492px] h-auto xl:!h-[211px] object-contain"
+            />
+          </div>
+        </div>
 
         {/* Right Section */}
         <div className="md:w-[52%] flex justify-start items-center max-sm:mt-6 max-sm:mb-20">
@@ -281,7 +285,8 @@ function SixDigitVerifyInner() {
         <div className="max-w-full mx-auto px-10 flex justify-between items-center max-md:text-center max-md:flex-col max-md:gap-1 txt-16 text-[#25292A]">
           {/* <Link href="/privacy-policy"> */}
           <p className="text-[#25292A] ">
-            Privacy Policy <span className="px-4 max-lg:px-1">|</span> Terms &amp; Conditions
+            Privacy Policy <span className="px-4 max-lg:px-1">|</span> Terms
+            &amp; Conditions
           </p>
           {/* </Link> */}
           <span className="text-[#25292A] ">
