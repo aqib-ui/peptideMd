@@ -79,7 +79,7 @@ export default function LoginPage() {
       {/* <div className="min-h-screen flex flex-col md:flex-row md:justify-between p-4 xl:py-8 xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"> */}
       {/* === Content Area === */}
       <div
-        className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 px-4 pt-4 pb-3 [@media(min-width:1600px)]:p- 
+        className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 px-4 pt-3 pb-3 [@media(min-width:1600px)]:p- 
       xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"
       >
         {/* Left Section */}
