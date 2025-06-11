@@ -57,17 +57,41 @@ function SixDigitVerifyInner() {
     }
   };
 
+  // const handleKeyDown = (
+  //   e: React.KeyboardEvent<HTMLInputElement>,
+  //   index: number
+  // ) => {
+  //   if (e.key === "Backspace" && !code[index] && index > 0) {
+  //     const newCode = [...code];
+  //     newCode[index - 1] = "";
+  //     setCode(newCode);
+  //     inputsRef.current[index - 1]?.focus();
+  //   }
+  // };
   const handleKeyDown = (
-    e: React.KeyboardEvent<HTMLInputElement>,
-    index: number
-  ) => {
-    if (e.key === "Backspace" && !code[index] && index > 0) {
-      const newCode = [...code];
+  e: React.KeyboardEvent<HTMLInputElement>,
+  index: number
+) => {
+  const newCode = [...code];
+
+  if (e.key === "Backspace") {
+    if (code[index]) {
+      newCode[index] = "";
+    } else if (index > 0) {
       newCode[index - 1] = "";
-      setCode(newCode);
       inputsRef.current[index - 1]?.focus();
     }
-  };
+    setCode(newCode);
+  } else if (e.key === "Delete") {
+    newCode[index] = "";
+    setCode(newCode);
+  } else if (e.key === "ArrowLeft" && index > 0) {
+    inputsRef.current[index - 1]?.focus();
+  } else if (e.key === "ArrowRight" && index < 5) {
+    inputsRef.current[index + 1]?.focus();
+  }
+};
+
 
   const handlePaste = (e: React.ClipboardEvent<HTMLInputElement>) => {
     e.preventDefault();
