@@ -302,29 +302,49 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen grid grid-rows-[1fr_auto]">
       {/* === Content Area === */}
-      <div
-        className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 max-xl:p-1 px-4 pt-2 pb-2 [@media(min-width:1600px)]:p- 
-       xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"
-      >
-        {/* Left Section */}
-        <div
-          className="[@media(min-width:1600px)]:w-full w-[48%] max-sm:w-full md:h-[calc(100vh-44px)] lg:h-[calc(100vh-54px)] xl:h-[calc(100vh-84px)]
-           [@media(min-width:1600px)]:h-[calc(100vh-54px)] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
-          style={{
-            background:
-              "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
-          }}
-        >
-          <div className="bg-white rounded-[48px] p-8 flex items-center justify-center w-full h-full">
-            <Image
-              src={logo}
-              alt="PeptideMD Logo"
-              width={492}
-              height={211}
-              className="w-auto xl:!w-[492px] h-auto xl:!h-[211px] object-contain"
-            />
-          </div>
-        </div>
+            <div
+              className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 px-4 pt-4 pb-3 [@media(min-width:1600px)]:p- 
+            xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"
+            >
+              {/* Left Section */}
+              {/* <div
+                className="[@media(min-width:1600px)]:w-full w-[48%] max-sm:w-full md:h-[calc(100vh-44px)] lg:h-[calc(100vh-54px)] 
+                xl:h-[calc(100vh-84px)] [@media(min-width:1600px)]:h-[calc(100vh-54px)] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px]
+                flex items-center justify-center"
+                style={{
+                  background:
+                    "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
+                }}
+              >
+                <div className="bg-white rounded-[48px] p-8 flex items-center justify-center w-full h-full">
+                  <Image
+                    src={logo}
+                    alt="PeptideMD Logo"
+                    width={492}
+                    height={211}
+                    className="w-auto xl:!w-[492px] h-auto xl:!h-[211px] object-contain"
+                  />
+                </div>
+              </div> */}
+              <div
+                className="w-full md:w-[48%] md:h-[calc(100vh-64px)] lg:h-[calc(100vh-66px)] [@media(min-width:1600px)]:h-[calc(100vh-104px)]
+                 [@media(min-width:1600px)]::mt-[2rem] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
+                style={{
+                  background:
+                    "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
+                }}
+              >
+                <div className="bg-white rounded-[48px] p-8 flex items-center justify-center w-full h-full">
+                  <Image
+                    src={logo}
+                    alt="PeptideMD Logo"
+                    width={492}
+                    height={211}
+                    className="w-auto xl:!w-[492px] h-auto xl:!h-[211px] object-contain"
+                  />
+                </div>
+              </div>
+      
 
         {/* Right Section */}
         <div className="md:w-[52%] flex justify-start items-center  max-sm:mt-6 max-sm:mb-20">

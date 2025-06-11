@@ -79,14 +79,32 @@ export default function LoginPage() {
       {/* <div className="min-h-screen flex flex-col md:flex-row md:justify-between p-4 xl:py-8 xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"> */}
       {/* === Content Area === */}
       <div
-        className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 max-xl:p-1 px-4 pt-2 pb-2 [@media(min-width:1600px)]:p- 
+        className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 px-4 pt-4 pb-3 [@media(min-width:1600px)]:p- 
       xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"
       >
         {/* Left Section */}
-        <div
+        {/* <div
           className="[@media(min-width:1600px)]:w-full w-[48%] max-sm:w-full md:h-[calc(100vh-44px)] lg:h-[calc(100vh-54px)] 
           xl:h-[calc(100vh-84px)] [@media(min-width:1600px)]:h-[calc(100vh-54px)] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px]
           flex items-center justify-center"
+          style={{
+            background:
+              "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
+          }}
+        >
+          <div className="bg-white rounded-[48px] p-8 flex items-center justify-center w-full h-full">
+            <Image
+              src={logo}
+              alt="PeptideMD Logo"
+              width={492}
+              height={211}
+              className="w-auto xl:!w-[492px] h-auto xl:!h-[211px] object-contain"
+            />
+          </div>
+        </div> */}
+        <div
+          className="w-full md:w-[48%] md:h-[calc(100vh-64px)] lg:h-[calc(100vh-66px)] [@media(min-width:1600px)]:h-[calc(100vh-104px)]
+           [@media(min-width:1600px)]::mt-[2rem] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
           style={{
             background:
               "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
@@ -118,7 +136,7 @@ export default function LoginPage() {
             <h2 className="txt-32 font-semibold mb-2  text-[#25292A]">
               Create your PeptideMD Account
             </h2>
-            <p className="txt-20 text-[#51595A]  max-md:mb-6 md:mb-3 [@media(min-width:1600px)]:mb-4">
+            <p className="txt-20 text-[#51595A]  max-md:mb-6 2xl:mb-3 [@media(min-width:1600px)]:mb-4">
               Access expert resources, AI insights, and personalized tracking.
             </p>
 
@@ -294,7 +312,8 @@ export default function LoginPage() {
         <div className="max-w-full mx-auto px-10 flex justify-between items-center max-md:flex-col max-md:gap-1 max-md:text-center txt-16 text-[#25292A]">
           {/* <Link href="/privacy-policy"> */}
           <p className="text-[#25292A] ">
-            Privacy Policy <span className="px-4 max-lg:px-1">|</span> Terms &amp; Conditions
+            Privacy Policy <span className="px-4 max-lg:px-1">|</span> Terms
+            &amp; Conditions
           </p>
           {/* </Link> */}
           <span className="text-[#25292A] ">
