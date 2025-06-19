@@ -243,16 +243,20 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import logo from "../../../public/headerIcon/logo.png";
+// import logo from "../../../public/headerIcon/logo.png";
+import authLogo from "../../../public/authIcons/authLogo.png";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Link from "next/link";
-import { FaFacebookF } from "react-icons/fa";
-import { FaLinkedinIn } from "react-icons/fa";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaXTwitter } from "react-icons/fa6";
+// import { FaFacebookF } from "react-icons/fa";
+// import { FaLinkedinIn } from "react-icons/fa";
+// import { AiFillInstagram } from "react-icons/ai";
+// import { FaXTwitter } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const [confirmPassword, setConfirmPassword] = useState("");
@@ -290,24 +294,46 @@ export default function LoginPage() {
     return Object.keys(currentErrors).length === 0;
   };
 
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   if (!isFormValid()) return;
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   const validationErrors = validate(); // Run validation
+  //   if (Object.keys(validationErrors).length > 0) return;
+
+  //   setIsSubmitting(true);
+  //   await new Promise((r) => setTimeout(r, 1500)); // Simulated delay
+  //   setIsSubmitting(false);
+  // };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isFormValid()) return;
+
+    const validationErrors = validate();
+    setErrors(validationErrors); // Update UI with errors
+
+    if (Object.keys(validationErrors).length > 0) return;
 
     setIsSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1500)); // Simulated delay
+
+    // Simulate login API
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
     setIsSubmitting(false);
+
+    // On successful login
+    router.push("/Dashboard");
   };
 
   return (
     <div className="min-h-screen grid grid-rows-[1fr_auto]">
       {/* === Content Area === */}
-            <div
-              className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 px-4 pt-3 pb-3 [@media(min-width:1600px)]:p- 
-            xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"
-            >
-              {/* Left Section */}
-              {/* <div
+      <div
+        className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 px-4 py-6 2xl:py-8 [@media(min-width:1600px)]:p- 
+            xl:pl-10 2xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"
+      >
+        {/* Left Section */}
+        {/* <div
                 className="[@media(min-width:1600px)]:w-full w-[48%] max-sm:w-full md:h-[calc(100vh-44px)] lg:h-[calc(100vh-54px)] 
                 xl:h-[calc(100vh-84px)] [@media(min-width:1600px)]:h-[calc(100vh-54px)] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px]
                 flex items-center justify-center"
@@ -326,25 +352,42 @@ export default function LoginPage() {
                   />
                 </div>
               </div> */}
-              <div
-                className="w-full md:w-[48%] md:h-[calc(100vh-64px)] lg:h-[calc(100vh-66px)] [@media(min-width:1600px)]:h-[calc(100vh-104px)]
+        <div
+          className="w-full md:w-[48%] md:h-[calc(100vh-64px)] lg:h-[calc(100vh-66px)] [@media(min-width:1600px)]:h-[calc(100vh-104px)]
                  [@media(min-width:1600px)]::mt-[2rem] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
-                style={{
-                  background:
-                    "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
-                }}
-              >
-                <div className="bg-white rounded-[48px] p-8 flex items-center justify-center w-full h-full">
-                  <Image
-                    src={logo}
-                    alt="PeptideMD Logo"
-                    width={492}
-                    height={211}
-                    className="w-auto xl:!w-[492px] h-auto xl:!h-[211px] object-contain"
-                  />
-                </div>
-              </div>
-      
+          // style={{
+          //   background:
+          //     "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
+          // }}
+        >
+          <div className="relative w-full h-full rounded-[16px] overflow-hidden">
+            {/* Background video */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/authIcons/authVid.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            {/* Dark translucent overlay */}
+            <div className="absolute inset-0 bg-[#000D1F]/32"></div>
+
+            {/* Foreground content */}
+            <div className="relative z-10 flex items-center justify-center w-full h-full p-8">
+              <Image
+                src={authLogo}
+                alt="PeptideMD Logo"
+                width={492}
+                height={211}
+                className="w-auto xl:!w-[492px] h-auto xl:!h-[211px] object-contain"
+              />
+            </div>
+          </div>
+        </div>
 
         {/* Right Section */}
         <div className="md:w-[52%] flex justify-start items-center  max-sm:mt-6 max-sm:mb-20">
@@ -352,7 +395,7 @@ export default function LoginPage() {
             {/* Back Button */}
             <Link href="/">
               <div className="mb-6">
-                <button className="w-9 h-9 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition">
+                <button className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition">
                   <IoIosArrowRoundBack className="text-gray-700 txt-24" />
                 </button>
               </div>
@@ -376,7 +419,7 @@ export default function LoginPage() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className={`w-full  2xl:w-[496px] 2xl:h-[56px] rounded-md bg-[#F2F5F6] p-3 txt-14 outline-none ${
+                  className={`w-full  2xl:w-[496px] 2xl:h-[56px] rounded-lg bg-[#F2F5F6] p-3 pr-12 txt-14 outline-none ${
                     errors.email
                       ? "border border-red-500"
                       : "border border-transparent focus:border-[#224674] focus:bg-[#C8E4FC80]"
@@ -398,7 +441,7 @@ export default function LoginPage() {
                     type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className={`w-full h-[56px] border bg-[#F2F5F6] p-3 pr-12 txt-14 outline-none rounded-md ${
+                    className={`w-full  2xl:w-[496px] 2xl:h-[56px] rounded-lg bg-[#F2F5F6] p-3 pr-12 txt-14 outline-none border ${
                       errors.password
                         ? "border-red-500"
                         : "border-transparent focus:border-[#224674] focus:bg-[#C8E4FC80]"
@@ -465,10 +508,11 @@ export default function LoginPage() {
             </div> */}
 
               {/* Forgot Password */}
-              <div className="w-full 2xl:w-[496px] mt-1">
+              <div className="w-full 2xl:w-[496px] mt-1 flex justify-end">
                 <Link
                   href="/ForgetPassword"
-                  className="txt-18 text-[#224674] font-semibold underline block text-right"
+                  className="txt-18 text-[#224674] font-semibold underline text-right"
+                  // className="inline-block text-[#224674] font-semibold underline text-right text-[18px]"
                 >
                   Forgot Password?
                 </Link>
@@ -496,12 +540,12 @@ export default function LoginPage() {
               </button>
 
               {/* Sign Up Link */}
-              <div className="w-full 2xl:w-[496px] mt-1">
+              <div className="w-full 2xl:w-[496px] mt-1 flex justify-center">
                 <Link
                   href="/Signup"
-                  className="txt-18 text-[#224674] font-semibold underline block text-center"
+                  className="inline-block text-[#224674] font-semibold underline text-center txt-18"
                 >
-                  I dont have an account?
+                  I don’t have an account?
                 </Link>
               </div>
             </form>
@@ -510,26 +554,25 @@ export default function LoginPage() {
       </div>
 
       {/* === Footer === */}
-      <footer className="bg-[#F2F5F6] py-2">
-        <div className="max-w-full mx-auto px-10 flex justify-between items-center max-md:flex-col max-md:gap-1 max-md:text-center txt-16 text-[#25292A]">
-          {/* <Link href="/privacy-policy"> */}
-          <p className="text-[#25292A] ">
-            Privacy Policy <span className="px-4 max-lg:px-1">|</span> Terms &amp; Conditions
+      {/* <footer className="bg-[#F2F5F6] py-2">
+        <div className="max-w-[1440px] sm:mx-auto sm:px-6 grid grid-cols-3 max-sm:flex max-sm:flex-col max-sm:gap-1 items-center text-[#25292A] txt-16 font-medium">
+
+          <p className="text-left max-md:text-center">
+            Privacy Policy <span className="px-4">|</span> Terms & Conditions
           </p>
-          {/* </Link> */}
-          <span className="text-[#25292A] ">
+
+          <span className="text-center">
             © 2025, Nuda Peptide Therapeutics, All Rights Reserved
           </span>
-          {/* <Link href="/terms"> */}
-          <p className="text-[#224674] gap-4 flex items-center txt-20">
+
+          <div className="flex justify-end max-md:justify-center gap-4 text-[#224674] text-lg">
             <FaFacebookF />
             <FaLinkedinIn />
             <AiFillInstagram />
             <FaXTwitter />
-          </p>
-          {/* </Link> */}
+          </div>
         </div>
-      </footer>
+      </footer> */}
     </div>
   );
 }

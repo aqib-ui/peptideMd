@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html,
+body {
+  height: 100%;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,8 +28,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   /* font-family: Arial, Helvetica, sans-serif; */
-  font-family: 'Afacad Flux', 'Afacad', 'Roboto', sans-serif;
-
+  font-family: "Afacad Flux", "Afacad", "Roboto", sans-serif;
 }
 
 @keyframes slide {
@@ -77,6 +81,42 @@ body {
   }
 }
 
+/* no scrollbar */
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+/* thin scrollbar */
+/* Works in modern browsers */
+.custom-scroll::-webkit-scrollbar {
+  width: 4px; /* Thin scrollbar */
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent; /* Optional: make track transparent */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: #C8E4FC; /* Match your design */
+  border-radius: 9999px;      /* Fully rounded */
+}
+
+.custom-scroll {
+  scrollbar-width: thin;           /* Firefox */
+  scrollbar-color: #C8E4FC transparent; /* Firefox */
+}
+
+
+
+
 /* globals.css */
 
 @layer utilities {
@@ -89,9 +129,37 @@ body {
     font-size: clamp(40px, 1.8vw + 27.2px, 66px);
   } /* ???? */
 
+  .txt-50 {
+    font-size: clamp(30px, 1.91vw + 16.5px, 50px);
+  }
+
+  .txt-48 {
+    font-size: clamp(28px, 1.83vw + 16.2px, 48px);
+  }
+
   /* .txt-46 { font-size: clamp(28px, 1.14vw + 23.3px, 46px); } */
   .txt-46 {
     font-size: clamp(22.5px, 1.67vw + 17.2px, 46px);
+  }
+
+  .txt-44 {
+    font-size: clamp(27px, 1.63vw + 16.2px, 44px);
+  }
+
+  .txt-42 {
+    font-size: clamp(26px, 1.56vw + 16px, 42px);
+  }
+
+  .txt-40 {
+    font-size: clamp(24px, 1.47vw + 16px, 40px);
+  }
+
+  .txt-38 {
+    font-size: clamp(23px, 1.36vw + 15px, 38px);
+  }
+
+  .txt-36 {
+    font-size: clamp(22px, 1.28vw + 14.8px, 36px);
   }
 
   /* .txt-34 { font-size: clamp(18px, 1.13vw + 14.4px, 34px); } */
@@ -100,12 +168,14 @@ body {
   }
 
   .txt-32 {
-  font-size: clamp(20px, 1.14vw + 15.4px, 32px);
-}
-
+    font-size: clamp(20px, 1.14vw + 15.4px, 32px);
+  }
 
   .txt-30 {
     font-size: clamp(18px, 0.96vw + 15.2px, 30px);
+  }
+  .txt-28 {
+    font-size: clamp(18px, 0.94vw + 13.2px, 28px);
   }
   .txt-26 {
     font-size: clamp(17px, 0.94vw + 15px, 26px);
@@ -117,9 +187,8 @@ body {
   }
 
   .txt-btn-24 {
-  font-size: clamp(16px, 1.389vw, 24px);
-}
-
+    font-size: clamp(16px, 1.389vw, 24px);
+  }
 
   .txt-22 {
     font-size: clamp(16px, 0.625vw + 14px, 22px);
@@ -131,34 +200,47 @@ body {
   }
 
   .txt-18 {
-  font-size: clamp(14px, 0.39vw + 11.5px, 18px);
-}
-
-
+    font-size: clamp(14px, 0.39vw + 11.5px, 18px);
+  }
 
   .txt-16 {
     font-size: clamp(13px, 0.39vw + 10px, 16px);
   }
 
-
   .txt-14 {
-      font-size: clamp(12px, 0.34vw + 10.8px, 14px);
-    }
+    font-size: clamp(12px, 0.34vw + 10.8px, 14px);
+  }
 
+  .txt-12 {
+    font-size: clamp(10.5px, 0.28vw + 9px, 12px);
+  }
 
+  .txt-10 {
+    font-size: clamp(9px, 0.2vw + 7.5px, 10px);
+  }
 
+  .txt-8 {
+    font-size: clamp(7px, 0.16vw + 5.5px, 8px);
+  }
 }
-
 
 /* for commented values or untouched values this is the behaviour */
 /* | Class    | 320px  | 768px    | 1024px   | 1280px   | 1440px   | 1728px+ | Max Cap |
 | -------- | ------ | -------- | -------- | -------- | -------- | ------- | ------- |
 | `txt-72` | \~40px | \~51px   | \~58px   | \~65px   | \~70px   | 72px    | 72px    |
 | `txt-66` | \~40px | \~50px   | \~56px   | \~62px   | 66px     | 66px    | 66px    |
+| `txt-50` | 30px   | \~32px   | \~36.3px | \~40.8px | \~45.4px | 48.2px  | 50px    |
+| `txt-48` | 28px   | \~30.1px | \~34.3px | \~38.8px | \~43.2px | 46.2px  | 48px    |
 | `txt-46` | \~28px | \~34px   | \~38px   | \~42px   | \~44px   | 46px    | 46px    |
+| `txt-44` | 27px   | \~28.9px | \~32.3px | \~36.4px | \~40.6px | 43.3px  | 44px    |
+| `txt-42` | 26px   | \~27.8px | \~31px   | \~35px   | \~39px   | 41.4px  | 42px    |
+| `txt-40` | 24px   | 24px     | \~27.3px | \~31px   | \~34.8px | 37.2px  | 40px    |
+| `txt-38` | 23px   | \~24.8px | \~27.9px | \~31.6px | \~35px   | 37.4px  | 38px    |
+| `txt-36` | 22px   | \~23.7px | \~26.6px | \~30px   | \~33.4px | 35.7px  | 36px    |
 | `txt-34` | \~18px | \~22px   | \~26px   | \~30px   | \~32px   | 34px    | 34px    |
 | `txt-32` | \~20px | \~24.15px| \~27.1px | \~30px   | \~31.8px | 32px    | 32px    |
 | `txt-30` | \~18px | \~22px   | \~25px   | 30px     | 30px     | 34px    | 34px    |
+| `txt-28` | \~18px | \~20.4px | \~22.8px | \~25.2px | \~26.7px | 28px    | 28px    |
 | `txt-26` | \~17px | \~20px   | \~23px   | 26px     | 26px     | 26px    | 26px    |
 | `txt-24` | \~16px | \~18.6px | \~20px   | \~22.4px | \~23.8px | 24px    | 24px    |
 | `txt-22` | \~16px | \~18.5px | \~20.5px | 22px     | 22px     | 22px    | 22px    |
@@ -166,9 +248,9 @@ body {
 | `txt-18` | \~14px | \~14.3px | \~15.3px | \~16.3px | \~17px   | 18px    | 18px    | 
 | `txt-16` | \~13px | \~13px   | \~14px   | \~15px   | \~15.6px | 16px    | 16px    |
 | `txt-14` | \~12px | \~13.41px| \~14px   | \~14px   | \~14px   | 14px    | 14px    |
+| `txt-12` | 10.5px | \~11px   | \~11.7px | \~12px   | 12px     | 12px    | 12px    |
+| `txt-10` | 9px    | \~9.4px  | \~9.8px  | 10px     | 10px     | 10px    | 10px    |
+| `txt-8`  | 7px    | \~7.5px  | \~7.9px  | \~8px    | 8px      | 8px     | 8px     |
+
+
 */
-
-
-
-
-
