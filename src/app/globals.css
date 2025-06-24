@@ -51,7 +51,7 @@ body {
 
 @layer components {
   .gradient-border {
-    @apply mt-6 p-[2px] rounded-full w-[180px] h-[60px] bg-gradient-to-tr 
+    @apply mt-6 p-[0px] rounded-full w-[180px] h-[60px] bg-gradient-to-tr 
   from-[#5CB0E2] to-[#EB6793] transition-colors duration-500 ease-in-out;
   }
 

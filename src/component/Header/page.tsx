@@ -744,16 +744,16 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header className="bg-app">
-      <div className="container mx-auto flex min-w-[98vw] items-center justify-between px-4 md:px-10 max-2xl:py-4">
+    <header className="bg-app max-w-[1920px] mx-auto border-b border-[#E9EDEE] ">
+      <div className=" flex items-center justify-between px-4 md:pl-6 md:pr-12 max-2xl:py-2">
         {/* Logo */}
         <Link href="/">
           <Image
-            src="/headerIcon/logo.png"
+            src="/headerIcon/logo.svg"
             alt="Logo"
             width={200} // Adjust width as needed
             height={50} // Adjust height as needed
-            className="cursor-pointer [@media(min-width:1600px)]:w-[280px] [@media(min-width:1600px)]:h-[120px]"
+            className=" cursor-pointer 2xl:w-[280px] 2xl:h-[120px] object-contain "
           />
         </Link>
 

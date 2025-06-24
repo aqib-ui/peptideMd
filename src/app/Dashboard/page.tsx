@@ -89,17 +89,7 @@ export default function DashboardPage() {
   };
 
   return (
-    <main className="min-h-screen px-2 max-lg:px-4 [@media(min-width:1600px)]:px- ">
-      {/* Manual popup trigger button */}
-      {/* <div className="flex justify-end mt-4">
-        <button
-          className="text-sm text-[#C8E4FC] underline"
-          onClick={() => setShowPopup(true)}
-        >
-          Change Plan
-        </button>
-      </div> */}
-
+    <main className="px-10 py-8">
       {showPopup && (
         <DashboardPopup
           onClose={handleMaybeLater}
@@ -109,7 +99,7 @@ export default function DashboardPage() {
 
       {showSuccessModal && <SuccessModal onClose={handleCloseSuccessModal} />}
 
-      <div className="flex max-lg:flex-col gap-6 py-8">
+      <div className="flex max-lg:flex-col gap-6">
         <div className="w-[75%] max-lg:w-full max-2xl:gap-10  flex flex-col gap-6">
           <RecommendedVideos />
           <StartTracking />

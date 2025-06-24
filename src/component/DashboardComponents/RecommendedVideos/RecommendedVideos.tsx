@@ -200,6 +200,7 @@
 //   );
 // }
 
+import Link  from "next/link";
 import { RiPlayMiniLine } from "react-icons/ri";
 
 export default function RecommendedVideos() {
@@ -227,24 +228,25 @@ export default function RecommendedVideos() {
   ];
 
   return (
-    <div className=" p-4 max-lg:p-0 rounded-xl ">
-      <div className="flex justify-between items-center mb-">
-        <h2 className="txt-28 font-medium">Recommended Articles</h2>
-        <a
-          href="/articles"
-          className="text-[#224674] txt-16 underline font-medium hover:text-[#1b3a5c]"
-        >
-          View All
-        </a>
+    <div className=" rounded-xl ">
+      <div className="flex justify-between items-center py-2">
+        <h2 className="txt-28 font-medium text-[#25292A]">
+          Recommended Articles
+        </h2>
+
+        <span className="cursor-pointer text-[#224674] txt-16 underline font-medium hover:text-[#1b3a5c]">
+          <Link href="/dashboard/videos">View All</Link> 
+        </span>
+       
       </div>
 
-      <div className="flex justify-start lg:justify-evenly items-center max-xl:flex-wrap gap-3 w-full">
+      <div className="pt-1 flex gap-3   max-xl:flex-wrap  w-full ">
         {videoData.map((video, index) => (
           <div
             key={index}
-            className="relative w-full h-[190px] lg:w-[250px] lg:h-[230px] xl:w-[287px] xl:h-[280px] 
+            className=" grow-1 relative w-full h-[190px] lg:w-[250px] lg:h-[230px] xl:w-[287px] xl:h-[280px] 
             rounded-[12px] overflow-hidden"
-            style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
+            // style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
           >
             <video
               className="w-full h-full object-cover rounded-[12px] no-action"

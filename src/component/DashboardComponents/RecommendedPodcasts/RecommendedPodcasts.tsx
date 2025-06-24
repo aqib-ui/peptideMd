@@ -175,7 +175,7 @@ const podcasts = [
 
 export default function RecommendedPodcasts() {
   return (
-    <div className="bg-white p-4 max-lg:p-0 w-full rounded-xl">
+    <div className="bg-white  py-4 max-lg:p-0 w-full rounded-xl">
       <div className="flex justify-between items-center mb-1">
         <h2 className="txt-28 font-medium">Recommended Podcast</h2>
         <a
@@ -190,7 +190,7 @@ export default function RecommendedPodcasts() {
         {podcasts.map((podcast, index) => (
           <div
             key={index}
-            className="bg-[#F2F5F6] w-full h-[124px] rounded-lg flex items-center px-4 gap-3"
+            className="bg-[#F2F5F6] w-full rounded-lg flex  p-3 gap-3"
           >
             {/* left */}
             <div className="relative w-[100px] h-[100px] rounded-[12px] overflow-hidden flex-shrink-0">
@@ -214,13 +214,13 @@ export default function RecommendedPodcasts() {
             </div>
 
             {/* right */}
-            <div className="flex flex-col gap-2 w-full">
+            <div className="flex flex-col justify-between gap-2  w-full">
               <h3 className="txt-18 font-semibold">{podcast.title}</h3>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between  ">
                 <p className="text-[#626D6F] font-medium txt-14">
                   {podcast.date}
                 </p>
-                <button className="w-10 h-10 flex items-center justify-center">
+                <button className="w-10 h-10 flex items-end justify-end">
                   <Image
                     src="/Dashboard/archive-add.png"
                     alt="Add to archive"

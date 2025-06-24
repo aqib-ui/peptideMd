@@ -768,33 +768,14 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className="w-full mt-10">
+    <main className="w-full mx-auto mt-10">
       {/* <!-- Heading: Keep previous -->
-      <h1 class="text-[clamp(36px,2.84vw+22.91px,72px)]">Heading</h1>
-      
-      <!-- Subheading: slower scale -->
-      <h2 class="text-[clamp(22.5px,1.67vw+17.2px,46px)]">Subheading</h2>
-     
-      <!-- 34px Text -->
-      <p class="text-[clamp(20.25px,0.98vw+17.1px,34px)]">Mid Text</p>
-      
-      <!-- Paragraph -->
-      <p class="text-[clamp(18px,0.43vw+16.63px,24px)]">Paragraph</p> 
-
-      <!-- 22px Text -->
-      clamp(16px, 0.625vw + 14px, 22px)
-      
-      {/* <!-- 20px -->
-      <p class="text-[clamp(16px,0.284vw+15.1px,20px)]">Small Text</p> 
-
-      {/* <!-- list nonsense -->
-      <p class="text-[clamp(18px,1.13vw+14.4px,34px)]">Smart Responsive Text</p> */}
-
+    
       {/* solving dna overlapping issue on larger screens 5/5/25*/}
       {/* Welcome Section */}
       <section
         // className="ml-3  relative  md:min-h-screen flex flex-col md:flex-row  justify-between px-6 "
-        className="ml-3  relative  md:min-h-[80vh] flex flex-col md:flex-row  justify-between px-6 "
+        className="ml-3   relative  md:min-h-[80vh] flex flex-col md:flex-row  justify-between pl-10 "
       >
         {/* Left Content (Text) */}
         <div className="flex-1.2 relative z-10 sm:w-[45%] lg:w-[60%]">
@@ -851,17 +832,17 @@ export default function HomePage() {
                 </button> 
               </div> */}
 
-          <div className="gradient-border min-w-[clamp(180px,13.3vw,229px)] min-h-[clamp(50px,3.8vw,66px)]">
+          <div className="gradient-border border-none  min-w-[clamp(180px,13.3vw,229px)] min-h-[clamp(50px,3.8vw,66px)]">
             <button
-              className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
-            flex items-center justify-center transition-colors duration-100 
-            ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white "
+              className="w-full h-full  rounded-full bg-[#224674] text-white txt-btn-24 font-medium
+            flex items-center justify-center"
+            // transition-colors duration-100 ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white
               style={{
                 fontFamily: " 'Afacad Flux', sans-serif",
                 cursor: "pointer",
               }}
             >
-              Peptide Overview
+              Explore Peptides
             </button>
           </div>
         </div>
@@ -871,7 +852,7 @@ export default function HomePage() {
         </div> */}
 
         {/* Right Side (DNA Image - Hidden on Small Screens) */}
-        <div className="relative flex-1 flex justify-end ">
+        <div className=" relative flex-1 flex justify-end ">
           <Image
             src="/dna.png"
             alt="DNA Structure"
@@ -887,9 +868,9 @@ export default function HomePage() {
       </section>
 
       {/* Video Section */}
-      <section className="relative dark:bg-app xl:min-h-screen flex items-center justify-center mb-10 my-10 ">
+      <section className=" relative dark:bg-app  flex items-center justify-center mt-14  px-12 ">
         {/* Video Wrapper with Relative Positioning */}
-        <div className="relative w-[95%] max-w-[1628px] rounded-[50px] shadow-lg overflow-hidden">
+        <div className="relative w-full rounded-[50px] shadow-lg overflow-hidden">
           <video
             ref={videoRef}
             // style={{ height: "clamp(400px, 45vw, 765px)" }}
@@ -942,7 +923,7 @@ export default function HomePage() {
       </section>
 
       {/* Description Section */}
-      <section className="ml-3 xl:min-h-screen flex flex-col justify-center px-6 mb-10 my-10 ">
+      <section className="ml-3  flex flex-col justify-center px-12 my-40">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-left"
           // className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-left"
@@ -993,17 +974,18 @@ export default function HomePage() {
         // className={`relative w-full bg-white dark:bg-[var(--background)] text-[#6FA5D4] 
         //       flex flex-col items-center justify-center overflow-hidden mb-10 my-10 md:my-0
         //       transition-all duration-700 ease-in-out                                          // --> dark mode
-         className={`relative w-full bg-white text-[#6FA5D4] 
+         className={` relative w-full bg-white text-[#6FA5D4] 
               flex flex-col items-center justify-center overflow-hidden mb-10  md:my-0
-              transition-all duration-700 ease-in-out
-              ${
+              transition-all duration-700 ease-in-out h-[572px]
+              `}
+      >
+          {/* ${
                 isExpanded
                   ? "h-[100vh] max-lg:h-[160vh]"
-                  : "h-[100vh] max-xl:h-[65vh]"
-              }`}
-      >
+                  : "h-[100vh] max-xl:h-[65vh]"} */}
+                  
         {/* Scrolling Text */}
-        <div className="relative top-0 left-0 w-full overflow-hidden">
+        <div className="relative top-0 left-0 w-full overflow-hidden ">
           <div
             className="animate-slide whitespace-nowrap flex txt-72 font-semibold"
             style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
@@ -1083,7 +1065,7 @@ export default function HomePage() {
       </section>
 
       {/* Card Section */}
-      <section className="min-h-screen flex  flex-col items-center justify-center mb-50 pt-10 mt-18  ">
+      <section className="flex  flex-col items-center justify-center py-34  ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           // className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"
@@ -1103,7 +1085,7 @@ export default function HomePage() {
           Select a tile below to explore and learn more about peptides.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-[63px] mt-8 p-6 md:p-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16  mt-26 mx-50 ">
           {[
             {
               img: "brain.png",
@@ -1138,11 +1120,11 @@ export default function HomePage() {
           ].map((card, index) => (
             <div
               key={index}
-              className=" p-[2px] rounded-[3rem] w-[85.13%] max-w-[450px] min-h-[450px] 2xl:h-[478.83px] mx-auto 
+              className=" p-[2px] rounded-[3rem] 
     relative bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] "
             >
               <div
-                className="p-6  rounded-[3rem] flex flex-col items-center justify-center 
+                className="p-6 border-2 py-28  rounded-[3rem] flex flex-col items-center justify-center 
                 bg-app w-full h-full transition-colors duration-500 ease-in-out group 
                 hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] 
                 cursor-pointer"

@@ -164,7 +164,7 @@ const peptides = [
     id: 4,
     name: "Bremelanotide (PT-141)",
     benefit: "Sexual Arousal",
-    isFDAApproved: false,
+    isFDAApproved: true,
   },
   {
     id: 5,

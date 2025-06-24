@@ -174,7 +174,7 @@ const caseStudies = [
 
 export default function RecommendedCaseStudies() {
   return (
-    <div className="bg-white p-4 max-lg:p-0 w-full rounded-xl">
+    <div className="bg-white py-4 max-lg:p-0 w-full rounded-xl">
       <div className="flex justify-between items-center mb-">
         <h2 className="txt-28 font-medium">Recommended Case Studies</h2>
         <a
@@ -186,14 +186,14 @@ export default function RecommendedCaseStudies() {
       </div>
 
       {/* <div className="flex w-full gap-3"> */}
-      <div className="flex flex-wrap xl:flex-nowrap w-full gap-3">
+      <div className=" flex flex-wrap xl:flex-nowrap w-full gap-3 ">
         {caseStudies.map((study, index) => (
           <div
             key={index}
-            className="bg-[#F2F5F6] w-full h-[124px] rounded-lg flex items-center px-4 gap-3"
+            className="bg-[#F2F5F6] w-full  rounded-lg flex  p-3 gap-3"
           >
             {/* left */}
-            <div className="relative w-[100px] h-[100px] rounded-[12px] overflow-hidden flex-shrink-0">
+            <div className="relative w-[110px]  align-self-stretch max-h-[110px]   rounded-[12px] overflow-hidden flex-shrink-0">
               <video
                 className="w-full h-full object-cover rounded-[12px]"
                 poster={study.poster}
@@ -202,27 +202,27 @@ export default function RecommendedCaseStudies() {
                 Your browser does not support the video tag.
               </video>
               <div className="absolute inset-0 flex items-center justify-center text-white rounded-[12px]">
-                <button className="relative z-10 w-8 h-8 rounded-full bg-[#C8E4FC] text-[#224674] flex items-center justify-center backdrop-blur-[24px]">
+                {/* <button className="relative z-10 w-8 h-8 rounded-full bg-[#C8E4FC] text-[#224674] flex items-center justify-center backdrop-blur-[24px]">
                   <RiPlayMiniLine className="w-4 h-4" />
-                </button>
+                </button> */}
               </div>
             </div>
 
             {/* right */}
             {/* <div className="flex flex-col justify-between h-full pt-2"> */}
-            <div className="flex flex-col w-full gap-2 max-2xl:gap-0">
+            <div className="flex flex-col  w-full   justify-between  max-2xl:gap-0">
               <h3 className="txt-18 font-semibold ">{study.title}</h3>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between  ">
                 <p className="text-[#626D6F] font-medium txt-14">
                   {study.date}
                 </p>
-                <button className="w-10 h-10 flex items-center justify-center">
+                <button className=" w-full h-full  flex items-center justify-end">
                   <Image
                     src="/Dashboard/archive-add.png"
                     alt="Add to archive"
                     width={24}
                     height={24}
-                    className="w-6 h-6"
+                    className="w-6 h-full "
                   />
                 </button>
               </div>
