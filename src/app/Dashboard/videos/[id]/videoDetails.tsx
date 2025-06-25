@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import CustomVideoPlayer from "./CustomVideoPlayer";
+import ShareDialog from "./ShareDialog";
 
 type VideoType = {
   id: string;
@@ -15,6 +16,7 @@ type VideoType = {
 };
 
 export default function VideoDetailClient({ video }: { video: VideoType }) {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [archives, setArchives] = useState(true);
 
   if (!video) return notFound();
@@ -76,7 +78,10 @@ export default function VideoDetailClient({ video }: { video: VideoType }) {
             )}
           </button>
           {/* share button */}
-          <button className="cursor-pointer">
+          <button
+            onClick={() => setIsDialogOpen(true)}
+            className="cursor-pointer"
+          >
             <Image
               src="/dashboard/videos/share-button.svg"
               alt=""
@@ -86,6 +91,7 @@ export default function VideoDetailClient({ video }: { video: VideoType }) {
           </button>
         </div>
       </div>
+    {isDialogOpen && <ShareDialog  onClose={() => setIsDialogOpen(false)} />}
 
       {/* Video Player Section */}
       <CustomVideoPlayer videoUrl={video.image} posterUrl={video.image} />
@@ -109,6 +115,10 @@ export default function VideoDetailClient({ video }: { video: VideoType }) {
           {video.description}
         </p>
       </div>
+
+      {/* comments */}
+      <hr className="mt-8" />
+      <hr className="mb-8" />
     </div>
   );
 }
