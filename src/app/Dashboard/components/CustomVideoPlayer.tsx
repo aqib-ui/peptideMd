@@ -13,7 +13,7 @@ const CustomVideoPlayer: React.FC<VideoPlayerProps> = ({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [currentTime, setCurrentTime] = useState("0:00:02");
+  const [currentTime, setCurrentTime] = useState("0:00:00");
   const [duration, setDuration] = useState("10:44");
 
   // Format time as H:MM:SS
@@ -106,10 +106,9 @@ const CustomVideoPlayer: React.FC<VideoPlayerProps> = ({
           onClick={togglePlay}
           poster={posterUrl}
         >
-          <source src="/Dashboard/videos/hero-video.mp4" type="video/mp4" />
+          <source src={videoUrl} type="video/mp4" />
           Your browser doesn't support videos.
         </video>
-        <source src="/Dashboard/videos/hero-video.mp4" type="video/mp4" />
         {/* Custom Controls Container - Positioned at bottom-4 */}
         <div className="absolute bottom-4 left-10 right-10 pt-4.5 px-3.5 bg-[rgba(37,37,37,.70)] rounded-2xl  h-[100px]">
           {/* Progress Bar */}

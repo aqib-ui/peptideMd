@@ -24,7 +24,7 @@ export default function PepiAI() {
           alt="Injection"
           width={140}
           height={127}
-          className="object-contain"
+          className="object-contain w-[140px] h-[127px] "
         />
       </div>
     </div>

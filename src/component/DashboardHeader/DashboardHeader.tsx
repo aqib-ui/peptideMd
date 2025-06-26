@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -12,12 +11,12 @@ const Header = () => {
       <div className="w-full mx-auto flex justify-between items-center h-20">
         {/* Left: Logo */}
         <div className="flex items-center space-x-2">
-          <Link href="/">
+          <Link href="/dashboard">
             <Image
               src="/headerIcon/logo.svg"
               alt="Logo"
-              width={150} // Adjust width as needed
-              height={74} // Adjust height as needed
+              width={150}
+              height={74}
               className=" w-[150px] h-[74px] cursor-pointer  "
             />
           </Link>
@@ -25,13 +24,14 @@ const Header = () => {
         {/* Navigation */}
         <nav className="flex  items-center">
           <Link
-            href="/"
-            className="hover:underline mr-5 text-[#224674] text-xl font-medium  transition-colors duration-200"
+            href="/dashboard"
+            className="relative inline-block mr-5 text-[#224674] text-xl font-medium group"
           >
-            Dashboard
+            <span className="relative z-10">Dashboard</span>
+            <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span>
           </Link>
 
-          {/* Explore with dropdown - Fixed with hover bridge */}
+          {/* Explore with dropdown */}
           <div
             className="relative pr-3 mr-2 "
             onMouseEnter={() => setIsExploreHovered(true)}
@@ -41,6 +41,7 @@ const Header = () => {
               <span className="text-[#626D6F]  hover:text-[#224674] text-xl font-medium transition-colors">
                 Explore
               </span>
+
               {isExploreHovered ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +90,11 @@ const Header = () => {
               onMouseLeave={() => setIsExploreHovered(false)}
             >
               <ul className="overflow-hidden">
-                <li className="flex items-center gap-3 p-4 border-b border-[#D8DFE0]  hover:bg-blue-50 cursor-pointer transition-colors">
+                <Link
+                  onClick={() => setIsExploreHovered(false)}
+                  href="/dashboard/videos"
+                  className="flex items-center gap-3 p-4 border-b border-[#D8DFE0]  hover:bg-blue-50 cursor-pointer transition-colors"
+                >
                   <Image
                     src={"/headerIcon/video-square.svg"}
                     alt=""
@@ -99,8 +104,12 @@ const Header = () => {
                   <span className="text-[#626D6F] text-xl font-medium">
                     Videos
                   </span>
-                </li>
-                <li className="flex items-center gap-3 p-4 border-b border-[#D8DFE0] hover:bg-blue-50 cursor-pointer transition-colors">
+                </Link>
+                <Link
+                  onClick={() => setIsExploreHovered(false)}
+                  href="/dashboard/podcast"
+                  className="flex items-center gap-3 p-4 border-b border-[#D8DFE0] hover:bg-blue-50 cursor-pointer transition-colors"
+                >
                   <Image
                     src={"/headerIcon/microphone.svg"}
                     alt=""
@@ -110,7 +119,7 @@ const Header = () => {
                   <span className="text-[#626D6F] text-xl font-medium">
                     Podcast
                   </span>
-                </li>
+                </Link>
                 <li className="flex items-center gap-3 p-4 border-b border-[#D8DFE0] hover:bg-blue-50 cursor-pointer transition-colors">
                   <Image
                     src={"/headerIcon/document-text.svg"}
@@ -138,36 +147,47 @@ const Header = () => {
           </div>
 
           <Link
-            href="#"
-            className="  mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors"
+            href="/peptides"
+            className="relative inline-block mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors group"
           >
-            Peptides
+            <span className="relative z-10">Peptides</span>
+            <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span>
           </Link>
           <Link
-            href="#"
-            className=" mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors"
+            href="/chat-with-pepi"
+            className="relative inline-block mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors group"
           >
-            Chat with Pepi
+            <span className="relative z-10">Chat with Pepi</span>
+            <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span>
           </Link>
           <Link
-            href="#"
-            className=" mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors"
+            href="/dosage"
+            className="relative inline-block mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors group"
           >
-            Dosage
+            <span className="relative z-10">Dosage</span>
+            <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span>
           </Link>
           <Link
-            href="#"
-            className=" mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors"
+            href="/more"
+            className="relative inline-block mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors group"
           >
-            More
+            <span className="relative z-10">More</span>
+            <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span>
           </Link>
         </nav>
 
         {/* User Avatar */}
-        <div className="p-[1px] rounded-full bg-gradient-to-r from-[#FFC02E] to-[#D7D43C] cursor-pointer ">
+        <div className="relative p-[1px] rounded-full bg-gradient-to-r from-[#FFC02E] to-[#D7D43C] cursor-pointer ">
           <div className="w-10 h-10 rounded-full text-lg bg-[#C8E4FC] flex items-center justify-center  text-[#224674] font-semibold">
             JC
           </div>
+          <Image
+            src="/headerIcon/chevron-down.svg"
+            alt=""
+            width={24}
+            height={24}
+            className="absolute top-0 -right-2  w-[20px] h-[20px]"
+          />
         </div>
       </div>
     </header>
@@ -175,101 +195,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// "use client";
-
-// import { useState } from "react";
-// import Link from "next/link";
-// import Image from "next/image";
-// import { ChevronDown, ChevronUp, Video, Mic, BookOpen, Share2 } from "lucide-react";
-
-// const Header = () => {
-//   const [isExploreOpen, setIsExploreOpen] = useState(false);
-
-//   return (
-//   <header className="border-b p-[7.5px_40px]">
-//       <div className="w-full mx-auto flex justify-between items-center h-20">
-//         {/* Left: Logo */}
-//         <div className="flex items-center space-x-2">
-//           <Link href="/">
-//             <Image
-//               src="/headerIcon/logo.svg"
-//               alt="Logo"
-//               width={150} // Adjust width as needed
-//               height={74} // Adjust height as needed
-//               className=" cursor-pointer  "
-//             />
-//           </Link>
-//         </div>
-//         {/* Center: Navigation */}
-//         <nav className="flex space-x-8 items-center relative">
-//           <Link href="#" className="hover:underline text-blue-900 font-semibold">
-//             Dashboard
-//           </Link>
-
-//           {/* Explore + Dropdown hover */}
-//           <div
-//             className="relative"
-//             onMouseEnter={() => setIsExploreOpen(true)}
-//             onMouseLeave={() => setIsExploreOpen(false)}
-//           >
-//             {/* Explore Button */}
-//             <button className="flex items-center space-x-1 hover:text-blue-800 font-medium">
-//               <span>Explore</span>
-//               {isExploreOpen ? (
-//                 <ChevronUp size={16} />
-//               ) : (
-//                 <ChevronDown size={16} />
-//               )}
-//             </button>
-
-//             {/* Dropdown Menu */}
-//             <div
-//               className={`absolute left-0 top-8 w-48 bg-white shadow-lg rounded-md border transition-all duration-200 ease-in-out z-20
-//               ${
-//                 isExploreOpen
-//                   ? "opacity-100 translate-y-0 pointer-events-auto"
-//                   : "opacity-0 -translate-y-2 pointer-events-none"
-//               }`}
-//             >
-//               <ul className="py-2">
-//                 <li className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer">
-//                   <Video size={16} className="text-pink-500" /> Videos
-//                 </li>
-//                 <li className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer">
-//                   <Mic size={16} className="text-pink-500" /> Podcast
-//                 </li>
-//                 <li className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer">
-//                   <BookOpen size={16} className="text-pink-500" /> Articles
-//                 </li>
-//                 <li className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 cursor-pointer">
-//                   <Share2 size={16} className="text-pink-500" /> Case Studies
-//                 </li>
-//               </ul>
-//             </div>
-//           </div>
-
-//           <Link href="#" className="hover:text-blue-800">
-//             Peptides
-//           </Link>
-//           <Link href="#" className="hover:text-blue-800">
-//             Chat with Pepi
-//           </Link>
-//           <Link href="#" className="hover:text-blue-800">
-//             Dosage
-//           </Link>
-//           <Link href="#" className="hover:text-blue-800">
-//             More
-//           </Link>
-//         </nav>
-
-//         {/* Right: User Profile Circle */}
-//         <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-900 font-bold">
-//           JC
-//         </div>
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default Header;

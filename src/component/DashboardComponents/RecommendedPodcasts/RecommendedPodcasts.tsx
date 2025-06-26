@@ -153,6 +153,7 @@
 
 
 import Image from "next/image";
+import Link from "next/link";
 import { RiPlayMiniLine } from "react-icons/ri";
 
 const podcasts = [
@@ -178,12 +179,9 @@ export default function RecommendedPodcasts() {
     <div className="bg-white  py-4 max-lg:p-0 w-full rounded-xl">
       <div className="flex justify-between items-center mb-1">
         <h2 className="txt-28 font-medium">Recommended Podcast</h2>
-        <a
-          href="/articles"
-          className="text-[#224674] txt-16 underline font-medium hover:text-[#1b3a5c]"
-        >
-          View All
-        </a>
+       <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">
+          <Link href="/dashboard/podcast">View All</Link> 
+        </span>
       </div>
 
       <div className="flex flex-wrap xl:flex-nowrap w-full gap-3">

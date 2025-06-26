@@ -151,6 +151,7 @@
 
 // 17 june 25 mapping ////////////
 import Image from "next/image";
+import Link from "next/link";
 import { RiPlayMiniLine } from "react-icons/ri";
 
 const caseStudies = [
@@ -177,12 +178,9 @@ export default function RecommendedCaseStudies() {
     <div className="bg-white py-4 max-lg:p-0 w-full rounded-xl">
       <div className="flex justify-between items-center mb-">
         <h2 className="txt-28 font-medium">Recommended Case Studies</h2>
-        <a
-          href="/articles"
-          className="text-[#224674] txt-16 underline font-medium hover:text-[#1b3a5c]"
-        >
-          View All
-        </a>
+        <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">
+          <Link href="/dashboard">View All</Link> 
+        </span>
       </div>
 
       {/* <div className="flex w-full gap-3"> */}
@@ -193,7 +191,7 @@ export default function RecommendedCaseStudies() {
             className="bg-[#F2F5F6] w-full  rounded-lg flex  p-3 gap-3"
           >
             {/* left */}
-            <div className="relative w-[110px]  align-self-stretch max-h-[110px]   rounded-[12px] overflow-hidden flex-shrink-0">
+            <div className="relative w-[100px]  align-self-stretch max-h-[100px]   rounded-[12px] overflow-hidden flex-shrink-0">
               <video
                 className="w-full h-full object-cover rounded-[12px]"
                 poster={study.poster}
@@ -211,7 +209,7 @@ export default function RecommendedCaseStudies() {
             {/* right */}
             {/* <div className="flex flex-col justify-between h-full pt-2"> */}
             <div className="flex flex-col  w-full   justify-between  max-2xl:gap-0">
-              <h3 className="txt-18 font-semibold ">{study.title}</h3>
+              <h3 className="txt-18 leading-6 font-semibold ">{study.title}</h3>
               <div className="flex items-center justify-between  ">
                 <p className="text-[#626D6F] font-medium txt-14">
                   {study.date}
@@ -222,7 +220,7 @@ export default function RecommendedCaseStudies() {
                     alt="Add to archive"
                     width={24}
                     height={24}
-                    className="w-6 h-full "
+                    className="w-6 h-6 "
                   />
                 </button>
               </div>

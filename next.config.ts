@@ -34,7 +34,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   experimental: {
-    scrollRestoration: true, // 👈 Add this line
+    scrollRestoration: true, 
   },
 };
 

@@ -234,7 +234,7 @@ export default function RecommendedVideos() {
           Recommended Articles
         </h2>
 
-        <span className="cursor-pointer text-[#224674] txt-16 underline font-medium hover:text-[#1b3a5c]">
+        <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">
           <Link href="/dashboard/videos">View All</Link> 
         </span>
        

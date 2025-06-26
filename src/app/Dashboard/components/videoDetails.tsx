@@ -9,15 +9,29 @@ import ShareDialog from "./ShareDialog";
 type VideoType = {
   id: string;
   title: string;
-  image: string;
+  videoUrl: string;
+  poster: string;
   description: string;
   date: string;
   recommended: boolean;
 };
 
-export default function VideoDetailClient({ video }: { video: VideoType }) {
+export default function VideoDetailClient({ video }: { video: any }) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [archives, setArchives] = useState(true);
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  const toggleArchive = () => {
+    setArchives(!archives);
+    const isArchiving = !archives;
+
+    if (!isArchiving) {
+      setShowTooltip(true);
+      setTimeout(() => setShowTooltip(false), 2500);
+    }
+
+    setArchives(isArchiving);
+  };
 
   if (!video) return notFound();
 
@@ -39,7 +53,7 @@ export default function VideoDetailClient({ video }: { video: VideoType }) {
           {/* Archives button */}
           <button
             className="flex p-2 items-center gap-2 bg-[#F2F5F6] rounded-full cursor-pointer"
-            onClick={() => setArchives(!archives)}
+            onClick={toggleArchive}
           >
             {archives ? (
               <svg
@@ -77,6 +91,29 @@ export default function VideoDetailClient({ video }: { video: VideoType }) {
               </svg>
             )}
           </button>
+          {/* Tooltip when archiving  */}
+          {showTooltip && (
+            <div className="absolute top-10 right-10 w-[300px] h-[48px]  flex items-center gap-2 bg-white shadow-[0px_4px_16px_0px_rgba(0,0,0,0.08)] border border-gray-300 rounded-lg px-4 py-2 z-50 animate-fade-in">
+              <div className="w-5 h-5  rounded-full flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                >
+                  <path
+                    d="M10.0003 1.66699C5.40866 1.66699 1.66699 5.40866 1.66699 10.0003C1.66699 14.592 5.40866 18.3337 10.0003 18.3337C14.592 18.3337 18.3337 14.592 18.3337 10.0003C18.3337 5.40866 14.592 1.66699 10.0003 1.66699ZM13.9837 8.08366L9.25866 12.8087C9.14199 12.9253 8.98366 12.992 8.81699 12.992C8.65033 12.992 8.49199 12.9253 8.37533 12.8087L6.01699 10.4503C5.77533 10.2087 5.77533 9.80866 6.01699 9.56699C6.25866 9.32533 6.65866 9.32533 6.90033 9.56699L8.81699 11.4837L13.1003 7.20033C13.342 6.95866 13.742 6.95866 13.9837 7.20033C14.2253 7.44199 14.2253 7.83366 13.9837 8.08366Z"
+                    fill="#224674"
+                  />
+                </svg>
+              </div>
+              <span className="text-sm font-semibold text-[#25292A]">
+                Video saved.
+              </span>
+            </div>
+          )}
+
           {/* share button */}
           <button
             onClick={() => setIsDialogOpen(true)}
@@ -91,10 +128,10 @@ export default function VideoDetailClient({ video }: { video: VideoType }) {
           </button>
         </div>
       </div>
-    {isDialogOpen && <ShareDialog  onClose={() => setIsDialogOpen(false)} />}
+      {isDialogOpen && <ShareDialog onClose={() => setIsDialogOpen(false)} />}
 
       {/* Video Player Section */}
-      <CustomVideoPlayer videoUrl={video.image} posterUrl={video.image} />
+      <CustomVideoPlayer videoUrl={video.videoUrl} posterUrl={video.poster} />
 
       {/* Recommended and Date */}
       <div className="mt-6 flex ">
@@ -107,7 +144,7 @@ export default function VideoDetailClient({ video }: { video: VideoType }) {
       </div>
 
       {/* Title and Description */}
-      <div className="mt-8 ">
+      <div className="mt-4 ">
         <h1 className="text-[32px] font-semibold text-[#25292A]">
           {video.title}
         </h1>
@@ -115,10 +152,6 @@ export default function VideoDetailClient({ video }: { video: VideoType }) {
           {video.description}
         </p>
       </div>
-
-      {/* comments */}
-      <hr className="mt-8" />
-      <hr className="mb-8" />
     </div>
   );
 }
