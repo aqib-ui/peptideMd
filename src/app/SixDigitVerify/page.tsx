@@ -119,7 +119,7 @@ function SixDigitVerifyInner() {
       setTimeout(() => {
         setIsSubmitting(false);
         if (from === "signup") {
-          router.push("/Dashboard"); // Navigate to dashboard
+          router.push("/dashboard"); // Navigate to dashboard
         } else if (from === "forgetpassword") {
           router.push("/CreateNewPassword"); // Navigate to create password page
         } else {

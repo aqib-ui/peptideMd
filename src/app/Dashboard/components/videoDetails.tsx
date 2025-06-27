@@ -43,7 +43,7 @@ export default function VideoDetailClient({ video }: { video: any }) {
           <Image
             width={40}
             height={40}
-            src="/dashboard/videos/left-arrow.svg"
+            src="/Dashboard/videos/left-arrow.svg"
             alt=""
             className="cursor-pointer w-[40px] h-[40px]"
           />
@@ -120,7 +120,7 @@ export default function VideoDetailClient({ video }: { video: any }) {
             className="cursor-pointer"
           >
             <Image
-              src="/dashboard/videos/share-button.svg"
+              src="/Dashboard/videos/share-button.svg"
               alt=""
               width={40}
               height={40}

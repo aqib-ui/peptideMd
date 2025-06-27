@@ -7,7 +7,7 @@ export default function VideoGrid() {
   return (
     <div className="p-4 md:py-10 bg-white max-w-[1128px] mx-auto">
       <div className="flex gap-4">
-         <Link href="/dashboard"><img src="/dashboard/videos/left-arrow.svg" alt="left-arrows" /></Link>
+         <Link href="/dashboard"><img src="/Dashboard/videos/left-arrow.svg" alt="left-arrows" /></Link>
         <h1 className="text-3xl font-semibold">Videos</h1>
       </div>
 
