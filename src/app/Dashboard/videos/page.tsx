@@ -7,13 +7,13 @@ export default function VideoGrid() {
   return (
     <div className="p-4 md:py-10 bg-white max-w-[1128px] mx-auto">
       <div className="flex gap-4">
-         <Link href="/dashboard"><img src="/Dashboard/videos/left-arrow.svg" alt="left-arrows" /></Link>
+         <Link href="/Dashboard"><img src="/Dashboard/videos/left-arrow.svg" alt="left-arrows" /></Link>
         <h1 className="text-3xl font-semibold">Videos</h1>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-6">
         {videos.map((video) => (
-          <Link href={`/dashboard/videos/${video.id}`} key={video.id}>
+          <Link href={`/Dashboard/videos/${video.id}`} key={video.id}>
             <div className="relative rounded-xl overflow-hidden shadow-md group cursor-pointer">
               <Image
                 src={video.poster}

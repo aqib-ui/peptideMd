@@ -11,7 +11,7 @@ const Header = () => {
       <div className="w-full mx-auto flex justify-between items-center h-20">
         {/* Left: Logo */}
         <div className="flex items-center space-x-2">
-          <Link href="/dashboard">
+          <Link href="/Dashboard">
             <Image
               src="/headerIcon/logo.svg"
               alt="Logo"
@@ -24,7 +24,7 @@ const Header = () => {
         {/* Navigation */}
         <nav className="flex  items-center">
           <Link
-            href="/dashboard"
+            href="/Dashboard"
             className="relative inline-block mr-5 text-[#224674] text-xl font-medium group"
           >
             <span className="relative z-10">Dashboard</span>
@@ -92,7 +92,7 @@ const Header = () => {
               <ul className="overflow-hidden">
                 <Link
                   onClick={() => setIsExploreHovered(false)}
-                  href="/dashboard/videos"
+                  href="/Dashboard/videos"
                   className="flex items-center gap-3 p-4 border-b border-[#D8DFE0]  hover:bg-blue-50 cursor-pointer transition-colors"
                 >
                   <Image
@@ -107,7 +107,7 @@ const Header = () => {
                 </Link>
                 <Link
                   onClick={() => setIsExploreHovered(false)}
-                  href="/dashboard/podcast"
+                  href="/Dashboard/podcast"
                   className="flex items-center gap-3 p-4 border-b border-[#D8DFE0] hover:bg-blue-50 cursor-pointer transition-colors"
                 >
                   <Image

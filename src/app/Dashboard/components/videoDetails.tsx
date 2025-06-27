@@ -39,7 +39,7 @@ export default function VideoDetailClient({ video }: { video: any }) {
     <div className="max-w-[1128px] mx-auto p-4 md:p-6 bg-white">
       {/*top section */}
       <div className="mb-10 flex justify-between ">
-        <Link href="/dashboard/videos" className="">
+        <Link href="/Dashboard/videos" className="">
           <Image
             width={40}
             height={40}

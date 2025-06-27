@@ -18,7 +18,7 @@ export default function VideoGrid() {
   return (
     <div className="p-4 md:py-10 bg-white max-w-[1128px] mx-auto">
       <div className="flex gap-4">
-        <Link href="/dashboard">
+        <Link href="/Dashboard">
           <img src="/Dashboard/videos/left-arrow.svg" alt="left-arrows" />
         </Link>
         <h1 className="text-3xl font-semibold">Podcast</h1>
@@ -28,7 +28,7 @@ export default function VideoGrid() {
         {podcast.map((pod, index) => (
           <div key={index} className="w-full relative">
             {/* card section */}
-            <Link href={`/dashboard/podcast/${pod.id}`}>
+            <Link href={`/Dashboard/podcast/${pod.id}`}>
               <div
                 key={index}
                 className="bg-[#F2F5F6] w-full h-[124px] rounded-lg flex p-3 gap-3"

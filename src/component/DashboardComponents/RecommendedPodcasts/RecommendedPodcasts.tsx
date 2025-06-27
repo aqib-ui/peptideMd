@@ -180,7 +180,7 @@ export default function RecommendedPodcasts() {
       <div className="flex justify-between items-center mb-1">
         <h2 className="txt-28 font-medium">Recommended Podcast</h2>
        <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">
-          <Link href="/dashboard/podcast">View All</Link> 
+          <Link href="/Dashboard/podcast">View All</Link> 
         </span>
       </div>
 

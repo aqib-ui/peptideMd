@@ -322,7 +322,7 @@ export default function LoginPage() {
     setIsSubmitting(false);
 
     // On successful login
-    router.push("/dashboard");
+    router.push("/Dashboard");
   };
 
   return (

@@ -4,7 +4,7 @@ export const videos = [
     title: "What Peptides Can Actually Do for Your Body",
     videoUrl:
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-    poster: "/dashboard/videos/purpleBlock.jpg",
+    poster: "/Dashboard/videos/purpleBlock.jpg",
     description:
       "Discover how peptides influence muscle growth, fat loss, skin health, and overall recovery. This video breaks down the science behind peptides in a simple, engaging way — perfect for beginners and enthusiasts alike.",
     date: "May 1, 2025",
@@ -14,7 +14,7 @@ export const videos = [
     id: "2",
     title: "Choosing the Right Peptides for Your Health Goals",
     videoUrl: "/Dashboard/videos/hero-video.mp4",
-    poster: "/dashboard/videos/bottle.jpg",
+    poster: "/Dashboard/videos/bottle.jpg",
     description:
       "This video helps you choose the best peptide for your needs. if you have a specific health goal or need, this video can help you find the right peptides to help you achieve your goals.",
     date: "May 3, 2019",
@@ -28,7 +28,7 @@ export const videos = [
     description:
       "Learn the safe and effective usage of peptides in this guide. so if you have a specific health goal or need, this video can help you find the right peptides to help you achieve your goals.",
     date: "May 5, 2021",
-    poster: "/dashboard/videos/insulin.jpg",
+    poster: "/Dashboard/videos/insulin.jpg",
     recommended: false,
   },
   {
@@ -39,7 +39,7 @@ export const videos = [
     description:
       "For beginners and enthusiasts alike and if you have a specific health goal or need, this video can help you find the right peptides to help you achieve your goals.",
     date: "May 5, 2005",
-    poster: "/dashboard/videos/purpleBlock.jpg",
+    poster: "/Dashboard/videos/purpleBlock.jpg",
     recommended: false,
   },
   {
@@ -49,7 +49,7 @@ export const videos = [
     description:
       "Learn the safe and effective usage of peptides in this guide. My video is for beginners and enthusiasts alike. If you have a specific health goal or need, this video can help you find the right peptides to help you achieve your goals.",
     date: "May 5, 2002",
-    poster: "/dashboard/videos/bottle.jpg",
+    poster: "/Dashboard/videos/bottle.jpg",
     recommended: true,
   },
   {
@@ -60,7 +60,7 @@ export const videos = [
     description:
       "Learn the safe and effective usage of peptides in this guide. My video is for beginners and enthusiasts alike. If you have a specific health goal or need, this video can help you find the right peptides to help you achieve your goals.",
     date: "May 5, 2010",
-    poster: "/dashboard/videos/insulin.jpg",
+    poster: "/Dashboard/videos/insulin.jpg",
     recommended: false,
   },
   {
@@ -71,7 +71,7 @@ export const videos = [
     description:
       "if you have a specific health goal or need, this video can help you find the right peptides to help you achieve your goals. My video is for beginners and enthusiasts alike. If you have a specific health goal or need, this video can help you find the right peptides to help you achieve your goals.",
     date: "May 5, 2032",
-    poster: "/dashboard/videos/purpleBlock.jpg",
+    poster: "/Dashboard/videos/purpleBlock.jpg",
     recommended: true,
   },
   {
@@ -82,7 +82,7 @@ export const videos = [
     description:
       "My video is for beginners and enthusiasts alike. If you have a specific health goal or need, this video can help you find the right peptides to help you achieve your goals.",
     date: "May 5, 2032",
-    poster: "/dashboard/videos/bottle.jpg",
+    poster: "/Dashboard/videos/bottle.jpg",
     recommended: false,
   },
   {
@@ -93,7 +93,7 @@ export const videos = [
     description:
       "My video is for beginners and enthusiasts alike. If you have a specific health goal or need, this video can help you find the right peptides to help you achieve your goals.",
     date: "May 5, 2032",
-    poster: "/dashboard/videos/insulin.jpg",
+    poster: "/Dashboard/videos/insulin.jpg",
     recommended: false,
   },
 ];
