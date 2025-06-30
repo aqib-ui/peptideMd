@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Header from "@/component/Header/page";
 import DashboardHeader from "@/component/DashboardHeader/DashboardHeader";
+import Footer from "../Footer/page";
 
 export default function LayoutWrapper({
   children,
@@ -41,6 +42,8 @@ export default function LayoutWrapper({
         isDashboard ? <DashboardHeader/> : <Header />
       )}
        <main className={`${!shouldHideLayout ? "" : ""}`}>{children}</main>
+       {/* footer */}
+      {!shouldHideLayout && <Footer />}
     </>
   );
 }

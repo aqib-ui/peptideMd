@@ -16,7 +16,13 @@ type VideoType = {
   recommended: boolean;
 };
 
-export default function VideoDetailClient({ video }: { video: any }) {
+export default function VideoDetailClient({
+  video,
+  page,
+}: {
+  video: any;
+  page: string;
+}) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [archives, setArchives] = useState(true);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -35,11 +41,15 @@ export default function VideoDetailClient({ video }: { video: any }) {
 
   if (!video) return notFound();
 
+
   return (
-    <div className="max-w-[1128px] mx-auto p-4 md:p-6 bg-white">
+    <div className="max-w-[1128px] mx-auto bg-white mt-12">
       {/*top section */}
       <div className="mb-10 flex justify-between ">
-        <Link href="/Dashboard/videos" className="">
+        <Link
+          href={page === "videos" ? "/Dashboard/videos" : "/Dashboard/podcast"}
+          className=""
+        >
           <Image
             width={40}
             height={40}

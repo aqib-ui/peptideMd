@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+@theme {
+  --breakpoint-xll: 1400px;
+   --breakpoint-3xl: 1600px;
+      --breakpoint-4xl: 1700px;
+}
+
+
 html,
 body {
   height: 100%;

@@ -14,5 +14,5 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   if (!video) return <div>Video not found</div>;
 
-  return <VideoDetailClient video={video} />;
+  return <VideoDetailClient video={video} page="podcast" />;
 }

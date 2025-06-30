@@ -231,11 +231,11 @@ export default function RecommendedVideos() {
     <div className=" rounded-xl ">
       <div className="flex justify-between items-center py-2">
         <h2 className="txt-28 font-medium text-[#25292A]">
-          Recommended Articles
+          Recommended Videos
         </h2>
 
         <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">
-          <Link href="/Dashboard/videos">View All</Link> 
+          <Link href="/Dashboard/videos?viewAll=true">View All</Link> 
         </span>
        
       </div>

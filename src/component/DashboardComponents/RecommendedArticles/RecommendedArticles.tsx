@@ -172,6 +172,7 @@
 
 
 
+import Link  from "next/link";
 import Image from "next/image";
 
 const articles = [
@@ -207,12 +208,9 @@ export default function RecommendedArticles() {
 
       <div className="flex justify-between items-center mb-1">
         <h2 className="txt-28 font-medium">Recommended Articles</h2>
-        <a
-          href="/articles"
-          className="text-[#224674] txt-16 underline font-medium hover:text-[#1b3a5c]"
-        >
-          View All
-        </a>
+       <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">
+          <Link href="/Dashboard/articles?viewAll=true">View All</Link> 
+        </span>
       </div>
 
       <div className="flex flex-wrap w-full gap-3">

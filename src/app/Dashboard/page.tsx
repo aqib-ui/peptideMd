@@ -60,12 +60,6 @@ export default function DashboardPage() {
   const [showPopup, setShowPopup] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-  // TEMP: Reset subscription on every load for testing
-  //   useEffect(() => {
-  //     localStorage.removeItem("hasSubscribed");
-  //   }, []);
-
-  // Show popup on first visit if not subscribed
   useEffect(() => {
     const hasSubscribed = localStorage.getItem("hasSubscribed");
     if (!hasSubscribed) {

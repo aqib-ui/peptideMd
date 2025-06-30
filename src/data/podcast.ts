@@ -27,7 +27,7 @@ export const podcast = [
     description:
       "Learn the safe and effective usage of peptides in this guide. so if you have a specific health goal or need, this video can help you find the right peptides to help you achieve your goals.",
     date: "30/April/2025",
-    recommended: false,
+    recommended: true,
   },
   {
     id: "4",

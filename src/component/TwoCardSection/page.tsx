@@ -7,8 +7,8 @@ export const CardSection2 = () => {
   return (
     <>
       {/* 2 card section */}
-      <section className="min-h-screen flex flex-col max-md:px-2 mt-20 sm:mt-10 mx-6 2xl:mx-0">
-        <div className="flex flex-wrap xl:flex-nowrap justify-around ">
+      <section className="min-h-screen flex flex-col max-md:px-2 mt-20 sm:mt-10 mx-3  lg:mx-6 2xl:mx-0">
+        <div className="flex flex-wrap xl:flex-nowrap justify-around">
           {/* left card */}
           {/* <div className="relative w-full md:w-[65%] 2xl:w-[40%]  h-[400px] sm:min-h-[600px] lg:h-[550px] 2xl:min-h-[753px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}
           <div
@@ -93,7 +93,7 @@ export const CardSection2 = () => {
           </div>
 
           {/* right card */}
-          <div className="flex flex-col  w-full 2xl:w-[55%] h-auto   rounded-[3rem] p-6 md:p-1">
+          <div className="flex flex-col  w-full 2xl:w-[55%] h-auto   rounded-[3rem] mt-10 lg:mt-0 lg:p-6 ">
             {/* Top image + card */}
             <div className="relative flex justify-center xl:justify-end items-start">
               <Image
@@ -101,22 +101,15 @@ export const CardSection2 = () => {
                 alt="Play Button"
                 width={96}
                 height={96}
-                className="w-65 h-65 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 ml-4 lg:ml-10"
+                className=" w-80 h-80 ml-4 lg:ml-10"
               />
               {/* card over image */}
               <div
-                // className="absolute top-0 sm:top-36 md:top-40 lg:top-44 right-42 sm:right-60 md:right-76 lg:right-20
-                // flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
-                // w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(25%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(40%,25vw,28%)]
-                // rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
                 className="absolute top-30 sm:top-36 md:top-40 lg:top-44 right-22 max-sm:right-20 sm:right-65 lg:right-100 xl:right-25 
                             flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-amber-50
                             w-[80%] max-sm:w-[150px] sm:w-[200px] md:w-[180px] lg:w-[180px]
                             rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
-                // className="absolute top-0 sm:top-36 md:top-40 lg:top-44 right-22 sm:right-60 md:right-66 lg:right-20
-                // flex flex-col justify-start items-start bg-gray-100/10 border-t-2 border-l-2 border-r-2 border-white
-                // w-[clamp(20%,25vw,28%)] max-sm:w-[clamp(45%,30vw,35%)] md:w-[clamp(20%,25vw,28%)] lg:w-[clamp(40%,25vw,38%)]
-                // rounded-[2rem] px-4 py-4 sm:py-6 overflow-hidden"
+               
                 style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
               >
                 <div className="absolute inset-0 backdrop-blur-md bg-white/30 p-6 text-black rounded-xl pointer-events-none" />
@@ -131,7 +124,7 @@ export const CardSection2 = () => {
 
             {/* List section */}
             <div
-              className="flex  xl:justify-end justify-center mt-10 2xl:mt-20 px-4" 
+              className="flex  xl:justify-end justify-center mt-10 2xl:mt-20 md:px-4" 
               style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
             >
               <ul

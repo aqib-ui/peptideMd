@@ -179,7 +179,7 @@ export default function RecommendedCaseStudies() {
       <div className="flex justify-between items-center mb-">
         <h2 className="txt-28 font-medium">Recommended Case Studies</h2>
         <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">
-          <Link href="/dashboard">View All</Link> 
+          <Link href="/Dashboard/case-studies?viewAll=true">View All</Link>
         </span>
       </div>
 
