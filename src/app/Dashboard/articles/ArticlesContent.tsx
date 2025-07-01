@@ -4,8 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ArticlePage() {
+    const router = useRouter();
   const searchParams = useSearchParams();
   const fromViewAll = searchParams.get("viewAll");
   const [archives, setArchives] = useState<{ [key: number]: boolean }>({});
@@ -21,9 +23,9 @@ export default function ArticlePage() {
   return (
     <div className="p-4 md:py-10 bg-white max-w-[1128px] mx-auto">
       <div className="flex gap-4">
-        <Link href="/Dashboard">
+        <div onClick={() => router.back()} className="cursor-pointer">
           <img src="/Dashboard/videos/left-arrow.svg" alt="left-arrows" />
-        </Link>
+        </div>
         <h1 className="text-3xl font-semibold">
           {fromViewAll === "true" ? "Recommended Articles" : "Articles"}
         </h1>

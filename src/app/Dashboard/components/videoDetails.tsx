@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import CustomVideoPlayer from "./CustomVideoPlayer";
 import ShareDialog from "./ShareDialog";
+import { useRouter } from "next/navigation";
 
 type VideoType = {
   id: string;
@@ -23,6 +24,7 @@ export default function VideoDetailClient({
   video: any;
   page: string;
 }) {
+  const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [archives, setArchives] = useState(true);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -41,15 +43,11 @@ export default function VideoDetailClient({
 
   if (!video) return notFound();
 
-
   return (
     <div className="max-w-[1128px] mx-auto bg-white mt-12">
       {/*top section */}
       <div className="mb-10 flex justify-between ">
-        <Link
-          href={page === "videos" ? "/Dashboard/videos" : "/Dashboard/podcast"}
-          className=""
-        >
+        <div onClick={() => router.back()} className="cursor-pointer">
           <Image
             width={40}
             height={40}
@@ -57,7 +55,7 @@ export default function VideoDetailClient({
             alt=""
             className="cursor-pointer w-[40px] h-[40px]"
           />
-        </Link>
+        </div>
         {/* Right section : archives add and share buttons */}
         <div className="flex items-center gap-4">
           {/* Archives button */}

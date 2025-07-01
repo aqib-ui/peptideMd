@@ -19,10 +19,10 @@ export default function LayoutWrapper({
     "/sixdigitverify",
     "/createnewpassword",
   ];
-  
+
   const shouldHideLayout = noLayoutRoutes.includes(pathname.toLowerCase());
 
- const isDashboard = pathname.toLowerCase().startsWith("/dashboard");
+  const isDashboard = pathname.toLowerCase().startsWith("/dashboard");
 
   useEffect(() => {
     if (shouldHideLayout) {
@@ -37,13 +37,11 @@ export default function LayoutWrapper({
   }, [shouldHideLayout]);
 
   return (
-     <>
-      {!shouldHideLayout && (
-        isDashboard ? <DashboardHeader/> : <Header />
-      )}
-       <main className={`${!shouldHideLayout ? "" : ""}`}>{children}</main>
-       {/* footer */}
-      {!shouldHideLayout && <Footer />}
+    <>
+      {!shouldHideLayout && (isDashboard ? <DashboardHeader /> : <Header />)}
+      <main className={`${!shouldHideLayout ? "" : ""}`}>{children}</main>
+      {/* footer */}
+      {!shouldHideLayout && (isDashboard ? null : <Footer />)}
     </>
   );
 }

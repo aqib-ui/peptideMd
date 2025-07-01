@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import ShareDialog from "./ShareDialog";
+import { useRouter } from "next/navigation";
 
 type VideoType = {
   id: string;
@@ -20,6 +21,7 @@ export default function PeptidesArticle({
   Obj: VideoType;
   page: string;
 }) {
+    const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [archives, setArchives] = useState(true);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -39,13 +41,8 @@ export default function PeptidesArticle({
     <div className="max-w-[1128px] mx-auto text-xl px-4 py-10 text-[#51595A]">
       {/*top section */}
       <div className="mb-10 flex justify-between ">
-        <Link
-          href={
-            page === "articles"
-              ? "/Dashboard/articles"
-              : "/Dashboard/case-studies"
-          }
-          className=""
+        <div
+          onClick={() => router.back()} className="cursor-pointer"
         >
           <Image
             width={40}
@@ -54,7 +51,7 @@ export default function PeptidesArticle({
             alt=""
             className="cursor-pointer w-[40px] h-[40px]"
           />
-        </Link>
+        </div>
         {/* Right section : archives add and share buttons */}
         <div className="flex items-center gap-4">
           {/* Archives button */}

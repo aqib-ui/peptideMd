@@ -107,6 +107,7 @@ export default function Footer() {
           <p className="text-[clamp(18px,0.43vw+16.63px,24px)]">
             © {new Date().getFullYear()} Nuda Peptide Therapeutics, All Rights
             Reserved
+            
           </p>
           {/* <p className="text-[clamp(18px,0.43vw+16.63px,24px)]">
                 Privacy Policy | Terms & Conditions
@@ -117,6 +118,7 @@ export default function Footer() {
             Terms & Conditions
           </p>
         </div>
+        
       </div>
     </footer>
   );
