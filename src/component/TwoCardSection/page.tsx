@@ -7,7 +7,7 @@ export const CardSection2 = () => {
   return (
     <>
       {/* 2 card section */}
-      <section className="min-h-screen flex flex-col max-md:px-2 mt-20 sm:mt-10 mx-3  lg:mx-6 2xl:mx-0">
+      <section className="min-h-screen flex flex-col max-md:px-2 mt-20 sm:mt-10 mx-3 lg:mx-6 2xl:mx-0">
         <div className="flex flex-wrap xl:flex-nowrap justify-around">
           {/* left card */}
           {/* <div className="relative w-full md:w-[65%] 2xl:w-[40%]  h-[400px] sm:min-h-[600px] lg:h-[550px] 2xl:min-h-[753px] shadow-lg overflow-hidden rounded-[3rem] md:mb-10"> */}

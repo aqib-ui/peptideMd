@@ -26,8 +26,8 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header className="bg-app max-w-[1920px] mx-auto  ">
-      <div className=" flex items-center justify-between px-4 md:pl-6 md:pr-12 max-2xl:py-2">
+    <header className="bg-app max-w-[1920px] mx-auto md:-mt-2 xl:-mt-0">
+      <div className=" flex items-center justify-between px-4 md:pl-2 2xl:pl-6   md:pr-8 2xl:pr-12 max-2xl:py-2">
         {/* Logo */}
         <Link href="/">
           <Image

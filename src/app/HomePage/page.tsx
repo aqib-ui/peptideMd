@@ -110,7 +110,7 @@ export default function HomePage() {
     <main className="w-full mx-auto mt-10">
       {/* Welcome Section */}
 
-      <section className="ml-3   relative  md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px] xll:min-h-[600px!important] 2xl:min-h-[650px] 3xl:min-h-[700px!important]  4xl:min-h-[800px!important] flex flex-col md:flex-row  justify-between px-2 md:px-0 md:pl-10 ">
+      <section className="ml-3   relative  md:min-h-[400px] lg:min-h-[500px] xl:min-h-[500px] xll:min-h-[600px!important] 2xl:min-h-[650px] 3xl:min-h-[700px!important]  4xl:min-h-[800px!important] flex flex-col md:flex-row  justify-between px-2 md:px-0 md:pl-4 2xl:pl-10 ">
         {/* Left Content (Text) */}
         <div className=" flex-1.2 relative z-10  lg:w-[60%]">
           <h1
@@ -165,17 +165,17 @@ export default function HomePage() {
             src="/dna.png"
             alt="DNA Structure"
             width={882}
-            height={1011}
+            height={1211}
             className="absolute 
             w-auto 
-          top-[-225px]  2xl:top-[-230px]  border right-0 md:object-fill z-10 pointer-events-none"
+          top-[-140px] xl:top-[-150px]  2xl:top-[-180px]  border right-0 md:object-cover z-10 pointer-events-none"
           />
           {/* // 👆 z-10 keeps it above other content but pointer-events-none allows clicking through it */}
         </div>
       </section>
 
       {/* Video Section */}
-      <section className=" relative dark:bg-app  flex items-center justify-center px-3 md:px-6 lg:px-12 mt-10">
+      <section className=" relative dark:bg-app  flex items-center justify-center px-3 md:px-8 2xl:px-12 pt-13 z-50  bg-white">
         {/* Video Wrapper with Relative Positioning */}
         <div className="relative w-full rounded-[50px] shadow-lg overflow-hidden">
           <video
@@ -230,7 +230,7 @@ export default function HomePage() {
       </section>
 
       {/* Description Section */}
-      <section className="ml-3  flex flex-col justify-center px-2 md:px-6 lg:px-12 my-14 md:my-20 lg:my-40">
+      <section className="  flex flex-col justify-center px-2  md:px-8 2xl:px-12 my-14 md:my-20 lg:my-26 2xl:my-40">
         <h1
           className="txt-72 font-bold leading-[100%] text-left"
           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
@@ -279,7 +279,7 @@ export default function HomePage() {
                                       
         className={` relative w-full  bg-white text-[#6FA5D4] 
               flex flex-col items-center justify-center overflow-hidden mb-10  md:my-0
-              transition-all duration-700 ease-in-out h-[950px] lg:h-[572px]
+              transition-all duration-700 ease-in-out h-[950px] lg:h-[480px] 2xl:h-[572px]
               `}
       >
         <div className="relative top-0 left-0 w-full overflow-hidden ">
@@ -362,7 +362,7 @@ export default function HomePage() {
       </section>
 
       {/* Card Section */}
-      <section className="flex  flex-col items-center justify-center lg:py-34  ">
+      <section className="flex  flex-col items-center justify-center  py-20 2xl:py-34 ">
         <h1
           // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
           // className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"
@@ -421,7 +421,7 @@ export default function HomePage() {
     relative bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] "
             >
               <div
-                className="p-6 py-10 lg:py-22  rounded-[3rem] flex flex-col items-center justify-center 
+                className="p-6 py-10 lg:py-18 2xl:py-22  rounded-[3rem] flex flex-col items-center justify-center 
                 bg-app w-full h-full transition-colors duration-500 ease-in-out group 
                 hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] 
                 cursor-pointer"

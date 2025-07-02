@@ -19,7 +19,7 @@ export default function LayoutWrapper({
     "/sixdigitverify",
     "/createnewpassword",
   ];
-
+ console.log(pathname)
   const shouldHideLayout = noLayoutRoutes.includes(pathname.toLowerCase());
 
   const isDashboard = pathname.toLowerCase().startsWith("/dashboard");

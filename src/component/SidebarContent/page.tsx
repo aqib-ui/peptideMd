@@ -3,14 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-interface SidebarContentProps {
-  isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
-}
-
-const menuItems = [
-  { title: "Overview", icon: "/headerIcon/overview-icon.svg", href: "/" },
+const menuItemsLeft = [
+  {
+    title: "Overview",
+    icon: "/headerIcon/overview-icon.svg",
+    href: "/",
+  },
   {
     title: "Videos",
     icon: "/headerIcon/video-icon.svg",
@@ -21,41 +19,29 @@ const menuItems = [
     icon: "/headerIcon/article-icon.svg",
     href: "/Dashboard/articles",
   },
+];
+
+const menuItemsRight = [
   {
     title: "Peptide Database",
     icon: "/headerIcon/video-icon.svg",
     href: "/PeptideDatabase",
   },
-  { title: "Podcast", icon: "/headerIcon/podcast-icon.svg", href: "/Dashboard/podcast" },
+  {
+    title: "Podcast",
+    icon: "/headerIcon/podcast-icon.svg",
+    href: "/Dashboard/podcast",
+  },
   {
     title: "Case Studies",
-    icon: "/headerIcon/podcast-icon.svg",
+    icon: "/headerIcon/case-icon.svg",
     href: "/Dashboard/case-studies",
   },
 ];
-
-const decorativeImages = [
-  {
-    src: "/headerIcon/small-red.png",
-    alt: "small Red",
-    className: "top-[10.5%] left-[88%] 2xl:top-[10.5%] 2xl:left-[90%]",
-  },
-  {
-    src: "/headerIcon/big-red.png",
-    alt: "big Red",
-    className: "top-[13%] left-[81%] 2xl:top-[14%] 2xl:left-[84%]",
-  },
-  {
-    src: "/headerIcon/big-blue.png",
-    alt: "Big blue",
-    className: "top-[88%] left-[17%]",
-  },
-  {
-    src: "/headerIcon/small-blue.png",
-    alt: "Small blue",
-    className: "top-[94%] left-[13%]",
-  },
-];
+interface SidebarContentProps {
+  isOpen: boolean;
+  setIsOpen: (open: boolean) => void;
+}
 
 export default function SidebarContent({
   isOpen,
@@ -67,10 +53,20 @@ export default function SidebarContent({
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) return null;
-  {
-  
-  }
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      // Restore scroll when the component unmounts
+      document.body.style.overflow = "unset";
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isOpen]);
+
   return (
     <div
       className={`fixed inset-0 bg-app shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
@@ -79,7 +75,7 @@ export default function SidebarContent({
     >
       {/* Header Section */}
       <div className="absolute top-1 lg:top-4 left-4 right-4 lg:px-7 flex justify-between items-center z-10 2xl:max-w-[1920px] 2xl:w-full 2xl:mx-auto">
-        <Link href="/">
+        <Link href="/" onClick={() => setIsOpen(false)}>
           <Image
             src="/headerIcon/logo.png"
             alt="Logo"
@@ -91,7 +87,7 @@ export default function SidebarContent({
 
         <button
           onClick={() => setIsOpen(false)}
-          className="relative top-0 lg:top-4 lg:right-4 xl:right-6 w-[60px] h-[60px] lg:w-[70px] lg:h-[70px] xl:w-[90px] xl:h-[90px] focus:outline-none flex items-center justify-center cursor-pointer"
+          className="relative top-0 lg:top-4 lg:right-4 xl:right-6 w-[60px] h-[60px] lg:w-[70px] lg:h-[70px] xl:w-[80px] xl:h-[80px] 2xl:w-[90px] 2xl:h-[90px] focus:outline-none flex items-center justify-center cursor-pointer"
           aria-label="Close Menu"
         >
           <div className="absolute inset-0 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] rounded-full p-[2px] opacity-40" />
@@ -101,7 +97,7 @@ export default function SidebarContent({
               alt="Close"
               width={70}
               height={70}
-              className="w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] xl:w-[70px] xl:h-[70px]"
+              className="w-[40px] h-[40px] lg:w-[50px] lg:h-[50px] xl:w-[60px] xl:h-[60px] 2xl:w-[70px] 2xl:h-[70px]"
             />
           </div>
         </button>
@@ -109,8 +105,6 @@ export default function SidebarContent({
 
       {/* Main Content with Precise Border Shape */}
       <div className="flex items-center justify-center h-full w-full   ">
-        {/* w-full max-w-[1078px  min-h-[654px]*/}
-
         <div className="relative ]  w-full max-w-[85%] md:max-w-[75%]    min-h-[500px] md:min-h-[454px] xl:min-h-[520px] xl:max-w-[70%] 2xl:max-w-[1078px] 2xl:min-h-[654px]    ">
           {/* Gradient Border */}
           <div className="absolute inset-0 bg-gradient-to-tr from-[#5CB0E2] to-[#EB6793] p-[4px] opacity-80 rounded-[120px_60px_120px_120px] md:rounded-[200px_70px_200px_200px] lg:rounded-[280px_80px_280px_280px]" />
@@ -120,15 +114,50 @@ export default function SidebarContent({
               <div className="flex flex-col md:flex-row gap-6  md:gap-16 lg:gap-32 xl:gap-54 2xl:gap-72 ">
                 {/* Left Column */}
                 <div className="flex flex-col justify-center space-y-6  pr-0 md:pr-4">
-                  {menuItems.slice(0, 3).map((item, index) => (
-                    <MenuItem key={index} {...item} />
+                  {menuItemsLeft.map((item, index) => (
+                    <Link
+                      key={index}
+                      href={item.href}
+                      {...(item.title === "Overview" && {
+                        onClick: () => setIsOpen(false),
+                      })}
+                      className="group flex items-center gap-3 md:gap-4"
+                    >
+                      <div className="relative w-7 h-7 md:w-8 md:h-8">
+                        <Image
+                          src={item.icon}
+                          alt={`${item.title} Icon`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <span className="text-[#1F1F1F] text-xl md:text-2xl lg:text-3xl font-semibold  group-hover:text-[#224674] transition-colors">
+                        {item.title}
+                      </span>
+                    </Link>
                   ))}
                 </div>
 
                 {/* Right Column */}
                 <div className=" flex flex-col justify-center space-y-6  pl-0 md:pl-4 ">
-                  {menuItems.slice(3).map((item, index) => (
-                    <MenuItem key={index} {...item} />
+                  {menuItemsRight.map((item, index) => (
+                    <Link
+                      key={index}
+                      href={item.href}
+                      className="group flex items-center gap-3 md:gap-4"
+                    >
+                      <div className="relative w-7 h-7 md:w-8 md:h-8">
+                        <Image
+                          src={item.icon}
+                          alt={`${item.title} Icon`}
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
+                      <span className="text-[#1F1F1F] text-xl md:text-2xl lg:text-3xl font-semibold  group-hover:text-[#224674] transition-colors">
+                        {item.title}
+                      </span>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -147,33 +176,6 @@ export default function SidebarContent({
 
       {/* Decorative Elements */}
     </div>
-  );
-}
-
-// Menu Item Component
-function MenuItem({
-  title,
-  icon,
-  href,
-}: {
-  title: string;
-  icon: string;
-  href: string;
-}) {
-  return (
-    <Link href={href} className="group flex items-center gap-3 md:gap-4">
-      <div className="relative w-7 h-7 md:w-8 md:h-8">
-        <Image
-          src={icon}
-          alt={`${title} Icon`}
-          fill
-          className="object-contain"
-        />
-      </div>
-      <span className="text-[#1F1F1F] text-xl md:text-2xl lg:text-3xl font-semibold  group-hover:text-[#224674] transition-colors">
-        {title}
-      </span>
-    </Link>
   );
 }
 
