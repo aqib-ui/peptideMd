@@ -175,7 +175,7 @@ export default function HomePage() {
       </section>
 
       {/* Video Section */}
-      <section className=" relative dark:bg-app  flex items-center justify-center px-3 md:px-8 2xl:px-12 pt-13 z-50  bg-white">
+      <section className=" relative dark:bg-app  flex items-center justify-center px-3 md:px-8 2xl:px-12 pt-13 z-30  bg-white">
         {/* Video Wrapper with Relative Positioning */}
         <div className="relative w-full rounded-[50px] shadow-lg overflow-hidden">
           <video

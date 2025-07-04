@@ -11,12 +11,12 @@ const menuItemsLeft = [
   },
   {
     title: "Videos",
-    icon: "/headerIcon/video-icon.svg",
+    icon: "/headerIcon/prep-video.svg",
     href: "/Dashboard/videos",
   },
   {
     title: "Articles",
-    icon: "/headerIcon/article-icon.svg",
+    icon: "/headerIcon/prep-article.svg",
     href: "/Dashboard/articles",
   },
 ];
@@ -24,12 +24,12 @@ const menuItemsLeft = [
 const menuItemsRight = [
   {
     title: "Peptide Database",
-    icon: "/headerIcon/video-icon.svg",
-    href: "/PeptideDatabase",
+    icon: "/headerIcon/prep-database.svg",
+    href: "/Dashboard/peptides",
   },
   {
     title: "Podcast",
-    icon: "/headerIcon/podcast-icon.svg",
+    icon: "/headerIcon/prep-podcast.svg",
     href: "/Dashboard/podcast",
   },
   {

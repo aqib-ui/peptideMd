@@ -11,7 +11,7 @@
 
 //       <div className="mt-6 w-full">
 //         {/* div 1 */}
-//         <div className="flex bg-white border-1 border-t-0 border-r-0 border-l-0 border-b-[#D8DFE0] 
+//         <div className="flex bg-white border-1 border-t-0 border-r-0 border-l-0 border-b-[#D8DFE0]
 //         w-full justify-between items-center px-4 py-1">
 //           {/* left */}
 //           <div className="flex gap-3">
@@ -132,14 +132,10 @@
 //   );
 // }
 
-
-
-
-
-
 import Image from "next/image";
 import { IoWarningOutline } from "react-icons/io5";
 import { BsCheckCircleFill } from "react-icons/bs";
+import Link from "next/link";
 
 const peptides = [
   {
@@ -221,9 +217,12 @@ export default function RecommendedPeptides() {
 
         {/* Button */}
         <div className="w-full flex justify-center items-center">
-          <button className="my-6 text-[#224674] font-medium txt-16 w-[90.477%] text-center bg-[#C8E4FC] rounded-[48px] p-3">
+          <Link
+            href="/Dashboard/peptides?viewAll=true"
+            className="my-6 text-[#224674] font-medium txt-16 w-[90.477%] text-center bg-[#C8E4FC] rounded-[48px] p-3"
+          >
             Explore more peptides
-          </button>
+          </Link>
         </div>
       </div>
     </div>

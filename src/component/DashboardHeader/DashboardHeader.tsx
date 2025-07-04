@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-const Header = () => {
+const DashboardHeader = () => {
   const [isExploreHovered, setIsExploreHovered] = useState(false);
 
   return (
@@ -134,7 +134,7 @@ const Header = () => {
           </div>
 
           <Link
-            href="/peptides"
+            href="/Dashboard/peptides"
             className="relative inline-block mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors group"
           >
             <span className="relative z-10">Peptides</span>
@@ -181,4 +181,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default DashboardHeader;

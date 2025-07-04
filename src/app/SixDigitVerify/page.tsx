@@ -230,8 +230,7 @@ function SixDigitVerifyInner() {
             </h2>
             <p className="txt-20 text-[#51595A] mb-6 w-full 2xl:w-[496px]">
               Please enter the verification code sent to{" "}
-              <span className="text-[#224674]">janecooper10@gmail.com</span> to
-              complete your signup and start your personalized peptide journey.
+              <span className="text-[#224674]">janecooper10@gmail.com</span> to verify your request and continue resetting your password.
             </p>
 
             <form onSubmit={handleSubmit}>
