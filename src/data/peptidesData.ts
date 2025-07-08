@@ -1,6 +1,7 @@
 // src/data/peptidesData.ts
 
 export interface Peptide {
+  id: string;
   peptide: string;
   nudaName: string;
   primaryApplications: string;
@@ -11,7 +12,8 @@ export interface Peptide {
 }
 
 const peptidesData: Peptide[] = [
-  {
+  { 
+    id: "1",
     peptide: "AOD-3664",
     nudaName: "Arden",
     primaryApplications: "Weight management, fat loss",
@@ -21,6 +23,7 @@ const peptidesData: Peptide[] = [
     status: "Not FDA",
   },
   {
+    id: "2",
     peptide: "BPC-157",
     nudaName: "Omeisane",
     primaryApplications:
@@ -31,6 +34,7 @@ const peptidesData: Peptide[] = [
     status: "Not FDA",
   },
   {
+    id : "3",
     peptide: "CJC-1395",
     nudaName: "Crescens",
     primaryApplications:
@@ -41,6 +45,7 @@ const peptidesData: Peptide[] = [
     status: "FDA",
   },
   {
+    id: "4",
     peptide: "Igomorelin",
     nudaName: "Pulcar",
     primaryApplications:
@@ -51,6 +56,7 @@ const peptidesData: Peptide[] = [
     status: "FDA",
   },
   {
+    id: "5",
     peptide: "Risapoptin",
     nudaName: "Catalyst",
     primaryApplications:

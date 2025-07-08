@@ -22,7 +22,7 @@ const DashboardHeader = () => {
           </Link>
         </div>
         {/* Navigation */}
-        <nav className="flex  items-center">
+        <nav className="hidden md:flex  items-center">
           <Link
             href="/Dashboard"
             className="relative inline-block mr-5 text-[#224674] text-xl font-medium group"

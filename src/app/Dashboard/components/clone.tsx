@@ -29,20 +29,6 @@ const SIDE_EFFECT_PROFILES = ["Minimal", "Moderate"];
 const STATUS_TYPES = ["FDA", "Not FDA"];
 
 export default function PeptidesContent() {
-  const [isCompareMode, setIsCompareMode] = useState(false);
-  const [selectedPeptides, setSelectedPeptides] = useState<string[]>([]);
-
-  const toggleCompareMode = () => {
-    setIsCompareMode(true);
-    setSelectedPeptides([]); // reset on every start
-  };
-
-  const cancelCompareMode = () => {
-    setIsCompareMode(false);
-    setSelectedPeptides([]);
-  };
-
-  //
   const searchParams = useSearchParams();
   const fromViewAll = searchParams.get("viewAll");
   const router = useRouter();
@@ -65,90 +51,19 @@ export default function PeptidesContent() {
 
   return (
     <div className="p-4 md:py-10 bg-white lg:px-8 2xl:px-0 max-w-screen-2xl mx-auto">
-      {/* Header Section */}
-      <div className="flex justify-between">
-        {/* Left Section */}
-        <div className="flex gap-4 items-center">
-          <div onClick={() => router.back()} className="cursor-pointer">
-            <img src="/Dashboard/videos/left-arrow.svg" alt="left-arrows" />
-          </div>
-          <h1 className=" text-xl sm:text-3xl font-semibold">
-            {fromViewAll === "true" ? "Recomended Peptides" : "Peptides"}
-          </h1>
+      <div className="flex gap-4 items-center">
+        <div onClick={() => router.back()} className="cursor-pointer">
+          <img src="/Dashboard/videos/left-arrow.svg" alt="left-arrows" />
         </div>
-
-        {/* Right Section : ==> if view all is not true, show compare button */}
-        {fromViewAll !== "true" && (
-          <div className="flex gap-3 ">
-            {isCompareMode && (
-              <button
-                onClick={cancelCompareMode}
-                className="text-base text-[#25292A] font-semibold  cursor-pointer"
-              >
-                Cancel
-              </button>
-            )}
-
-            {isCompareMode && (
-              <button
-                disabled={selectedPeptides.length !== 2}
-                className={` px-2 sm:px-6 py-0 sm:py-3 rounded-full font-semibold  text-sm sm:text-base transition-all ${
-                  selectedPeptides.length === 2
-                    ? "bg-[#224674] text-white hover:bg-[#1a3654] cursor-pointer"
-                    : "bg-[#D8DFE0] text-[#9EA9AA] cursor-not-allowed"
-                }`}
-                onClick={() =>
-                  router.push(
-                    `/Dashboard/peptides/compare?id1=${selectedPeptides[0]}&id2=${selectedPeptides[1]}`
-                  )
-                }
-              >
-                Compare ({selectedPeptides.length} of 2)
-              </button>
-            )}
-
-            {!isCompareMode && (
-              <button
-                onClick={toggleCompareMode}
-                className="bg-[#224674] text-white px-6 py-3 rounded-full font-semibold text-base hover:bg-[#1a3654]"
-              >
-                Compare
-              </button>
-            )}
-          </div>
-        )}
+        <h1 className="text-3xl font-semibold">
+          {fromViewAll === "true" ? "Recomended Peptides" : "Peptides"}
+        </h1>
       </div>
-      {/* End Header Section */}
-
-      {/* tooltip for compare */}
-      {isCompareMode && (
-        <div className=" bg-[#F2F5F6]  py-3 px-3 rounded-[8px] flex items-center justify-between w-full mt-11">
-          <div className="flex gap-1 items-center">
-            <Image
-              src="/Dashboard/pep-database/info-icon.svg"
-              alt="info"
-              width={20}
-              height={20}
-            />
-            <span className="text-[#25292A text-xs font-semibold">
-              You can compare only two peptides
-            </span>
-          </div>
-          <Image
-            src="/Dashboard/pep-database/cancel-button.svg"
-            alt="close"
-            width={20}
-            height={20}
-            className="cursor-pointer"
-            onClick={cancelCompareMode}
-          />
-        </div>
-      )}
 
       {/* Filters */}
 
       {fromViewAll !== "true" && (
-        <div className="grid md:grid-cols-[1.5fr_1fr] xl:grid-cols-[2.5fr_1fr_1fr_1fr] w-full gap-4 mt-6 ">
+        <div className="grid md:grid-cols-[2.5fr_1fr_1fr_1fr] w-full gap-4 mt-6 ">
           {/* Search Input */}
           <div className="relative">
             <input
@@ -189,104 +104,84 @@ export default function PeptidesContent() {
             placeholder="Select Status"
             onChange={setFilterStatus}
           />
+          {/* Filters according to experience */}
+          {/* <select
+          className="border border-[#E9EDEE] px-4 py-3 rounded-lg w-full"
+          value={filterExperience}
+          onChange={(e) => setFilterExperience(e.target.value)}
+        > 
+          
+          <option value="">Select Experience Level</option>
+          {EXPERIENCE_LEVELS.map((lvl) => (
+            <option key={lvl} value={lvl}>
+              {lvl}
+            </option>
+          ))}
+        </select> */}
+          {/* Filters according to side effect */}
+          {/* <select
+          className="border border-[#E9EDEE] px-4 py-3 rounded-lg w-full"
+          value={filterSideEffect}
+          onChange={(e) => setFilterSideEffect(e.target.value)}
+        >
+          <option value="">Select Side Effect Profile</option>
+          {SIDE_EFFECT_PROFILES.map((profile) => (
+            <option key={profile} value={profile}>
+              {profile}
+            </option>
+          ))}
+        </select> */}
+
+          {/* Filters according to status */}
+          {/* <select
+          className="border border-[#E9EDEE] px-4 py-3 rounded-lg w-full"
+          value={filterStatus}
+          onChange={(e) => setFilterStatus(e.target.value)}
+        >
+          <option value="">Select Status</option>
+          {STATUS_TYPES.map((status) => (
+            <option key={status} value={status}>
+              {status}
+            </option>
+          ))}
+        </select> */}
         </div>
       )}
 
       {/* Table Component */}
-      <TableComponent
-        peptidesData={filteredPeptides}
-        isCompareMode={isCompareMode}
-        selectedPeptides={selectedPeptides}
-        setSelectedPeptides={setSelectedPeptides}
-      />
+      <TableComponent peptidesData={filteredPeptides} />
     </div>
   );
 }
 
-function TableComponent({
-  peptidesData,
-  isCompareMode,
-  selectedPeptides,
-  setSelectedPeptides,
-}: {
-  peptidesData: Peptide[];
-  isCompareMode: boolean;
-  selectedPeptides: string[];
-  setSelectedPeptides: React.Dispatch<React.SetStateAction<string[]>>;
-}) {
+function TableComponent({ peptidesData }: { peptidesData: Peptide[] }) {
   const router = useRouter();
-
-  const handleCheckboxToggle = (id: string) => {
-    if (selectedPeptides.includes(id)) {
-      setSelectedPeptides(selectedPeptides.filter((item) => item !== id));
-    } else {
-      if (selectedPeptides.length < 2) {
-        setSelectedPeptides([...selectedPeptides, id]);
-      }
-    }
-  };
-
-  // console.log("Selected Peptides:", selectedPeptides);
-
   return (
     <div className="w-full bg-white rounded-[24px] mt-6 border border-gray-200 overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full">
           <thead className="bg-[#C8E4FC] text-[#224674]">
             <tr>
-              {isCompareMode && <th className="px-4"></th>}
               <th className="text-left px-8 py-4 tracking-wider">Peptide</th>
-              <th className="text-left pr-8 py-4 tracking-wider whitespace-nowrap">Nuda Name</th>
+              <th className="text-left pr-8 py-4 tracking-wider">Nuda Name</th>
               <th className="text-left py-4 tracking-wider">
                 Primary Applications
               </th>
               <th className="py-4 tracking-wider">Protocol Duration</th>
               <th className="py-4 tracking-wider">Experience Level</th>
-              <th className="py-4 tracking-wider whitespace-nowrap">Side Effect Profile</th>
+              <th className="py-4 tracking-wider">Side Effect Profile</th>
               <th className="py-4 tracking-wider">Status</th>
               <th></th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-gray-200 text-[#25292A] text-center">
+          <tbody className=" divide-y divide-gray-200 text-[#25292A] text-center">
             {peptidesData.map((peptide, index) => (
               <tr
+                onClick={() => router.push(`/Dashboard/peptides/${peptide.id}`)}
                 key={index}
-                className={`${index % 2 === 0 ? "bg-white" : "bg-gray-50"} ${
-                  isCompareMode ? "cursor-default" : "cursor-pointer"
-                }`}
-                onClick={() =>
-                  !isCompareMode &&
-                  router.push(`/Dashboard/peptides/${peptide.id}`)
-                }
+                style={{ cursor: "pointer" }}
+                className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
               >
-                {isCompareMode && (
-                  <td className="px-4 min-w-[56px] ">
-                    <div className="relative min-w-[36px] xl:min-w-[33px] 2xl:min-w-[26px]">
-                      <input
-                        type="checkbox"
-                        checked={selectedPeptides.includes(peptide.id)}
-                        onChange={() => handleCheckboxToggle(peptide.id)}
-                        className="w-6 h-6 rounded-[6px] border-2 border-[#9EA9AA] cursor-pointer
-      appearance-none checked:bg-[#224674] checked:border-[#224674]"
-                      />
-                      {selectedPeptides.includes(peptide.id) && (
-                        <svg
-                          className="w-5 h-5 text-white absolute left-2 top-[2px] pointer-events-none"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={3}
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                      )}
-                    </div>
-                  </td>
-                )}
                 <td className="px-8 text-left py-4 font-medium whitespace-nowrap">
                   {peptide.peptide}
                 </td>
@@ -333,28 +228,25 @@ function TableComponent({
                   </span>
                 </td>
                 <td className="px-4">
-                  {!isCompareMode && (
-                    <Image
-                      src="/Dashboard/Line-arrow-right.svg"
-                      alt="Line-arrow-right"
-                      width={24}
-                      height={24}
-                    />
-                  )}
+                  <Image
+                    src="/Dashboard/Line-arrow-right.svg"
+                    alt="Line-arrow-right"
+                    width={24}
+                    height={24}
+                  />
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-
-      {/* Pagination - Optional */}
+      {/* Pagination */}
       <div className="px-5 py-3 bg-gray-50 border-t border-gray-200">
         <div className="flex text-sm text-[#25292A] items-center">
           <div className="flex gap-2 mt-2 ml-auto">
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <p>
-                Rows per page: <span className="pl-2 pr-1">10</span>
+                Rows per page: <span className="pl-2 pr-1">10</span>{" "}
               </p>
               <Image
                 src="/Dashboard/arrow-down.svg"
@@ -363,14 +255,14 @@ function TableComponent({
                 height={16}
               />
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <p>1-1 of 1</p>
             </div>
-            <div className="flex items-center">
+            <div className="flex items-center ">
               <button>
                 <Image
                   src="/Dashboard/arrow-left.svg"
-                  alt="left-arrow"
+                  alt="up-arrow"
                   width={24}
                   height={24}
                 />
@@ -378,7 +270,7 @@ function TableComponent({
               <button>
                 <Image
                   src="/Dashboard/arrow-right.svg"
-                  alt="right-arrow"
+                  alt="up-arrow"
                   width={24}
                   height={24}
                 />
@@ -390,136 +282,6 @@ function TableComponent({
     </div>
   );
 }
-
-// previous code
-// function TableComponent({ peptidesData }: { peptidesData: Peptide[] }) {
-//   const router = useRouter();
-//   return (
-//     <div className="w-full bg-white rounded-[24px] mt-6 border border-gray-200 overflow-hidden">
-//       <div className="overflow-x-auto">
-//         <table className="w-full">
-//           <thead className="bg-[#C8E4FC] text-[#224674]">
-//             <tr>
-//               <th className="text-left px-8 py-4 tracking-wider">Peptide</th>
-//               <th className="text-left pr-8 py-4 tracking-wider">Nuda Name</th>
-//               <th className="text-left py-4 tracking-wider">
-//                 Primary Applications
-//               </th>
-//               <th className="py-4 tracking-wider">Protocol Duration</th>
-//               <th className="py-4 tracking-wider">Experience Level</th>
-//               <th className="py-4 tracking-wider">Side Effect Profile</th>
-//               <th className="py-4 tracking-wider">Status</th>
-//               <th></th>
-//             </tr>
-//           </thead>
-//           <tbody className=" divide-y divide-gray-200 text-[#25292A] text-center">
-//             {peptidesData.map((peptide, index) => (
-//               <tr
-//                 onClick={() => router.push(`/Dashboard/peptides/${peptide.id}`)}
-//                 key={index}
-//                 style={{ cursor: "pointer" }}
-//                 className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
-//               >
-//                 <td className="px-8 text-left py-4 font-medium whitespace-nowrap">
-//                   {peptide.peptide}
-//                 </td>
-//                 <td className="pr-8 text-left py-4 font-medium whitespace-nowrap">
-//                   {peptide.nudaName}
-//                 </td>
-//                 <td className="text-left py-4 font-medium min-w-[200px] max-w-[300px] whitespace-nowrap overflow-hidden text-ellipsis">
-//                   {peptide.primaryApplications}
-//                 </td>
-//                 <td className="py-4 whitespace-nowrap">
-//                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-medium">
-//                     {peptide.protocolDuration}
-//                   </span>
-//                 </td>
-//                 <td className="py-4 whitespace-nowrap">
-//                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-medium">
-//                     {peptide.experiencesLevel}
-//                   </span>
-//                 </td>
-//                 <td className="py-4 whitespace-nowrap">
-//                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full font-medium">
-//                     {peptide.sideEffectProfile}
-//                   </span>
-//                 </td>
-//                 <td className="text-center py-4 whitespace-nowrap">
-//                   <span
-//                     className={`inline-flex items-center px-2.5 py-0.5 gap-1 rounded-full font-medium ${
-//                       peptide.status === "Not FDA"
-//                         ? "bg-[#FCF3DB] text-[#A18233]"
-//                         : "bg-[#DBFCDF] text-[#1C8F5D]"
-//                     }`}
-//                   >
-//                     <Image
-//                       src={
-//                         peptide.status === "Not FDA"
-//                           ? "/Dashboard/not-fda.svg"
-//                           : "/Dashboard/fda.svg"
-//                       }
-//                       alt="fda"
-//                       width={16}
-//                       height={16}
-//                     />
-//                     {peptide.status}
-//                   </span>
-//                 </td>
-//                 <td className="px-4">
-//                   <Image
-//                     src="/Dashboard/Line-arrow-right.svg"
-//                     alt="Line-arrow-right"
-//                     width={24}
-//                     height={24}
-//                   />
-//                 </td>
-//               </tr>
-//             ))}
-//           </tbody>
-//         </table>
-//       </div>
-//       {/* Pagination */}
-//       <div className="px-5 py-3 bg-gray-50 border-t border-gray-200">
-//         <div className="flex text-sm text-[#25292A] items-center">
-//           <div className="flex gap-2 mt-2 ml-auto">
-//             <div className="flex items-center ">
-//               <p>
-//                 Rows per page: <span className="pl-2 pr-1">10</span>{" "}
-//               </p>
-//               <Image
-//                 src="/Dashboard/arrow-down.svg"
-//                 alt="down-arrow"
-//                 width={16}
-//                 height={16}
-//               />
-//             </div>
-//             <div className="flex items-center ">
-//               <p>1-1 of 1</p>
-//             </div>
-//             <div className="flex items-center ">
-//               <button>
-//                 <Image
-//                   src="/Dashboard/arrow-left.svg"
-//                   alt="up-arrow"
-//                   width={24}
-//                   height={24}
-//                 />
-//               </button>
-//               <button>
-//                 <Image
-//                   src="/Dashboard/arrow-right.svg"
-//                   alt="up-arrow"
-//                   width={24}
-//                   height={24}
-//                 />
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 
 // "use client";
 // interface Peptide {
