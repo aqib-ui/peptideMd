@@ -10,7 +10,7 @@ export default function PepiAI() {
           Hi, I am Pepi!Your AI friend
         </h2>
         <Link
-          href="/AiAssistant"
+          href="/Dashboard/chat-pepi"
           className="rounded-[48px] bg-[#224674] text-white txt-18 font-medium text-center flex items-center justify-center sm:w-[152px] sm:h-[56px] sm:px-6 py-2 sm:py-4"
         >
           Start a Chat

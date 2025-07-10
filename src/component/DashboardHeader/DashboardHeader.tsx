@@ -2,9 +2,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation"; // Naya hook import kiya hai
 
 const DashboardHeader = () => {
   const [isExploreHovered, setIsExploreHovered] = useState(false);
+  const pathname = usePathname(); // Current URL path get karne ke liye
+
+  // Helper function jo check karega ke link active hai ya nahi
+  const isActive = (href: string) => {
+    return pathname === href;
+  };
 
   return (
     <header className="border-b border-[#D8DFE0] p-[7.5px_40px]">
@@ -17,20 +24,24 @@ const DashboardHeader = () => {
               alt="Logo"
               width={150}
               height={74}
-              className=" w-[150px] h-[74px] cursor-pointer  "
+              className="w-[150px] h-[74px] cursor-pointer"
             />
           </Link>
         </div>
+
         {/* Navigation */}
-        <nav className="hidden md:flex  items-center">
+        <nav className="hidden md:flex items-center">
           <Link
             href="/Dashboard"
-            className="relative inline-block mr-5 text-[#224674] text-xl font-medium group"
+            className={`relative inline-block mr-5 text-xl font-medium group ${
+              isActive("/Dashboard")
+                ? "text-[#224674] underline underline-offset-7 decoration-[#224674] decoration-3"
+                : "text-[#626D6F] hover:text-[#224674]"
+            }`}
           >
             <span className="relative z-10">Dashboard</span>
-            <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span>
+            {/* <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span> */}
           </Link>
-
           {/* Explore with dropdown menu */}
           <div
             className="relative pr-3 mr-2 "
@@ -107,7 +118,11 @@ const DashboardHeader = () => {
                     Podcast
                   </span>
                 </Link>
-                <Link href={"/Dashboard/articles"} onClick={() => setIsExploreHovered(false)} className="flex items-center gap-3 p-4 border-b border-[#D8DFE0] hover:bg-blue-50 cursor-pointer transition-colors">
+                <Link
+                  href={"/Dashboard/articles"}
+                  onClick={() => setIsExploreHovered(false)}
+                  className="flex items-center gap-3 p-4 border-b border-[#D8DFE0] hover:bg-blue-50 cursor-pointer transition-colors"
+                >
                   <Image
                     src={"/headerIcon/document-text.svg"}
                     alt=""
@@ -118,7 +133,11 @@ const DashboardHeader = () => {
                     Articles
                   </span>
                 </Link>
-                <Link href={"/Dashboard/case-studies"} onClick={() => setIsExploreHovered(false)} className="flex items-center gap-3 p-4  hover:bg-blue-50 cursor-pointer transition-colors">
+                <Link
+                  href={"/Dashboard/case-studies"}
+                  onClick={() => setIsExploreHovered(false)}
+                  className="flex items-center gap-3 p-4  hover:bg-blue-50 cursor-pointer transition-colors"
+                >
                   <Image
                     src={"/headerIcon/case study.svg"}
                     alt=""
@@ -135,37 +154,44 @@ const DashboardHeader = () => {
 
           <Link
             href="/Dashboard/peptides"
-            className="relative inline-block mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors group"
+            className={`relative inline-block mr-5 text-xl font-medium group ${
+              isActive("/Dashboard/peptides")
+                ? "text-[#224674] underline underline-offset-7 decoration-[#224674] decoration-3"
+                : "text-[#626D6F] hover:text-[#224674]"
+            }`}
           >
             <span className="relative z-10">Peptides</span>
-            <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span>
+            {/* <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span> */}
           </Link>
+
           <Link
-            href="/chat-with-pepi"
-            className="relative inline-block mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors group"
+            href="/Dashboard/chat-pepi"
+            className={`relative inline-block mr-5 text-xl font-medium group ${
+              isActive("/Dashboard/chat-pepi")
+                ? "text-[#224674] underline underline-offset-7 decoration-[#224674] decoration-3"
+                : "text-[#626D6F] hover:text-[#224674]"
+            }`}
           >
             <span className="relative z-10">Chat with Pepi</span>
-            <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span>
+            {/* <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span> */}
           </Link>
+
           <Link
             href="/dosage"
-            className="relative inline-block mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors group"
+            className={`relative inline-block mr-5 text-xl font-medium group ${
+              isActive("/dosage")
+                ? "text-[#224674] underline underline-offset-7 decoration-[#224674] decoration-3"
+                : "text-[#626D6F] hover:text-[#224674]"
+            }`}
           >
             <span className="relative z-10">Dosage</span>
-            <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span>
-          </Link>
-          <Link
-            href="/more"
-            className="relative inline-block mr-5 text-[#626D6F] text-xl font-medium hover:text-[#224674] transition-colors group"
-          >
-            <span className="relative z-10">More</span>
-            <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span>
+            {/* <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span> */}
           </Link>
         </nav>
 
         {/* User Avatar */}
-        <div className="relative p-[1px] rounded-full bg-gradient-to-r from-[#FFC02E] to-[#D7D43C] cursor-pointer ">
-          <div className="w-10 h-10 rounded-full text-lg bg-[#C8E4FC] flex items-center justify-center  text-[#224674] font-semibold">
+        <div className="relative p-[1px] rounded-full bg-gradient-to-r from-[#FFC02E] to-[#D7D43C] cursor-pointer">
+          <div className="w-10 h-10 rounded-full text-lg bg-[#C8E4FC] flex items-center justify-center text-[#224674] font-semibold">
             JC
           </div>
           <Image
@@ -173,7 +199,7 @@ const DashboardHeader = () => {
             alt=""
             width={24}
             height={24}
-            className="absolute top-0 -right-2  w-[20px] h-[20px]"
+            className="absolute top-0 -right-2 w-[20px] h-[20px]"
           />
         </div>
       </div>

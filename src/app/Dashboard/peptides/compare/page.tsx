@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import peptidesDataRaw from "@/data/peptidesData";
@@ -16,10 +16,12 @@ interface Peptide {
   status: string;
 }
 
-export default function ComparisonPeptide() {
+// Inner component with Suspense boundary
+function ComparisonPeptideContent() {
   const searchParams = useSearchParams();
   const id1 = searchParams.get("id1");
   const id2 = searchParams.get("id2");
+  const router = useRouter();
 
   const peptide1 = peptidesDataRaw.find((item) => item.id === id1);
   const peptide2 = peptidesDataRaw.find((item) => item.id === id2);
@@ -33,13 +35,7 @@ export default function ComparisonPeptide() {
   }
 
   const obj: Peptide[] = [peptide1, peptide2];
-
-  const router = useRouter();
-
-  // Active default tab
   const [activePeptideId, setActivePeptideId] = useState(obj[0].id);
-
-  // find Active object based on activePeptideId
   const activePeptideObj = obj.find((item) => item.id === activePeptideId);
 
   return (
@@ -58,14 +54,14 @@ export default function ComparisonPeptide() {
       </div>
 
       {/* Tabs */}
-      <div className="flex space-x-4 mb-6 rounded-md  w-[334px] bg-[#E9EDEE] p-1">
+      <div className="flex space-x-4 mb-6 rounded-md w-[334px] bg-[#E9EDEE] p-1">
         {obj.map((peptide) => (
           <button
             key={peptide.id}
             onClick={() => setActivePeptideId(peptide.id)}
-            className={` py-2 rounded-sm font-medium text-sm grow  ${
+            className={`py-2 rounded-sm font-medium text-sm grow cursor-pointer ${
               activePeptideId === peptide.id
-                ? " bg-white text-[#224674] shadow-[3px_3px_8px_0px_rgba(0,0,0,0.06)] "
+                ? "bg-white text-[#224674] shadow-[3px_3px_8px_0px_rgba(0,0,0,0.06)]"
                 : "bg-[#E9EDEE] text-[#51595A]"
             }`}
           >
@@ -77,5 +73,16 @@ export default function ComparisonPeptide() {
       {/* Content */}
       {activePeptideObj && <MainPeptideContentCard obj={activePeptideObj} />}
     </div>
+  );
+}
+
+// Outer component with Suspense boundary
+export default function ComparisonPeptide() {
+  return (
+    <Suspense
+      fallback={<div className="text-center p-8">Loading comparison...</div>}
+    >
+      <ComparisonPeptideContent />
+    </Suspense>
   );
 }

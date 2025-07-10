@@ -79,10 +79,10 @@ export default function CreateNewPassword() {
         <div
           className="w-full md:w-[48%] md:h-[calc(100vh-64px)] lg:h-[calc(100vh-66px)] [@media(min-width:1600px)]:h-[calc(100vh-104px)] 
           max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
-        //   style={{
-        //     background:
-        //       "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
-        //   }}
+          //   style={{
+          //     background:
+          //       "linear-gradient(212.17deg, #EB6793 0%, #5CB0E2 96.39%)",
+          //   }}
         >
           <div className="relative w-full h-full rounded-[16px] overflow-hidden">
             {/* Background video */}

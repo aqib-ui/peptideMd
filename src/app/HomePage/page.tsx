@@ -3,12 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation"; // Import useRouter
 import Image from "next/image";
-import { AnimatedCard } from "../AnimatedCard/AnimatedCard"; // Adjust the import path as necessary
-
-import { FaArrowRight } from "react-icons/fa6";
 import { IoIosArrowRoundForward } from "react-icons/io";
-
-import { IoIosInformationCircleOutline } from "react-icons/io";
 import dynamic from "next/dynamic";
 import { CardSection2 } from "@/component/TwoCardSection/page";
 
@@ -26,15 +21,7 @@ export default function HomePage() {
 
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const HandleCardClick = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleCardClick = (slug: string) => {
-    router.push(`/details/${slug.toLowerCase().replace(/\s+/g, "-")}`); // Converts title to URL-friendly slug
-  };
 
   const slides = ["Dosage Guide", "Calculator", "Combination", "AI Chat Bot"];
 
@@ -187,7 +174,7 @@ export default function HomePage() {
             onPlay={handlePlay}
             poster="/vid.png"
           >
-            <source src="#" type="video/mp4" />
+            <source src="#" type="/authIcons/authVid.mp4" />
             Your browser does not support the video tag.
           </video>
 
@@ -276,7 +263,6 @@ export default function HomePage() {
 
       {/* Slideshow Banner Section */}
       <section
-                                      
         className={` relative w-full  bg-white text-[#6FA5D4] 
               flex flex-col items-center justify-center overflow-hidden mb-10  md:my-0
               transition-all duration-700 ease-in-out h-[950px] lg:h-[480px] 2xl:h-[572px]
@@ -319,9 +305,7 @@ export default function HomePage() {
           {cards.map((card) => (
             <div
               key={card.title}
-              onClick={HandleCardClick}
-              // className={`w-[250px] h-[320px] rounded-2xl shadow-lg bg-[#E1E1E1]
-              // dark:bg-[var(--background)] dark:text-[var(--foreground)] dark:border-[#E1E1E1] dark:border-2 cursor-pointer absolute `} // --> dark mode
+              onClick={() => setIsExpanded(!isExpanded)}
               className={`w-[250px] h-[320px] xl:h-[400px] xl:w-[320px] bg-[#E1E1E1] cursor-pointer absolute  
                 px-7 py-5 xl:p-7 [@media(min-width:1600px)]:h-[500px] [@media(min-width:1600px)]:w-[400px] rounded-[50px] `}
               style={{
@@ -364,8 +348,6 @@ export default function HomePage() {
       {/* Card Section */}
       <section className="flex  flex-col items-center justify-center  py-20 2xl:py-34 ">
         <h1
-          // className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[72px] font-bold leading-[100%] text-center"
-          // className="text-[clamp(36px,2.84vw+22.91px,72px)] font-bold leading-[100%] text-center"
           className="txt-72 font-bold leading-[100%] text-center"
           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
@@ -425,7 +407,6 @@ export default function HomePage() {
                 bg-app w-full h-full transition-colors duration-500 ease-in-out group 
                 hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] 
                 cursor-pointer"
-                // onClick={() => handleCardClick(card.title)}
               >
                 {/* Icon */}
                 <Image
@@ -463,7 +444,13 @@ text-[clamp(18px,0.43vw+16.63px,24px)] */}
                 <button
                   className="relative mt-6 mb-12 px-10 py-2 bg-black text-white text-md font-medium  rounded-t-lg
              hover:bg-gray-800 dark:border dark:border-white"
-                  onClick={() => handleCardClick(card.title)}
+                  onClick={() =>
+                    router.push(
+                      `/details/${card.title
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}`
+                    )
+                  }
                   style={{
                     cursor: "pointer",
                     fontFamily: " 'Afacad Flux', sans-serif",
