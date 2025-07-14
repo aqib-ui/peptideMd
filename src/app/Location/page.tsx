@@ -111,11 +111,11 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 
 import L from "leaflet";
-import  MoleculeTopLeftAnimation  from "@/component/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
+import  MoleculeTopLeftAnimation  from "@/components/MoleculeTopLeftAnimation/MoleculeTopLeftAnimation";
 import dynamic from "next/dynamic";
-import ScrollButton from "@/component/ScrollButton/ScrollButton";
+import ScrollButton from "@/components/ScrollButton/ScrollButton";
 
-const MapClient = dynamic(() => import("@/component/MapClient/MapClient"), {
+const MapClient = dynamic(() => import("@/components/MapClient/MapClient"), {
   ssr: false,
 });
 

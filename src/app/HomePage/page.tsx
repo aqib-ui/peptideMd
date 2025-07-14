@@ -5,10 +5,10 @@ import { useRouter } from "next/navigation"; // Import useRouter
 import Image from "next/image";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import dynamic from "next/dynamic";
-import { CardSection2 } from "@/component/TwoCardSection/page";
+import { CardSection2 } from "@/components/TwoCardSection/page";
 
 const ScrollButton = dynamic(
-  () => import("@/component/ScrollButton/ScrollButton"),
+  () => import("@/components/ScrollButton/ScrollButton"),
   {
     ssr: false,
   }

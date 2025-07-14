@@ -3,8 +3,8 @@
 // import "./globals.css";
 
 
-// import Header from "@/component/Header/page";
-// import Footer from "@/component/Footer/page";
+// import Header from "@/components/Header/page";
+// import Footer from "@/components/Footer/page";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -51,7 +51,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import LayoutWrapper from "@/component/LayoutWrapper/page"; // 👈 new wrapper
+import LayoutWrapper from "@/components/LayoutWrapper/page"; // 👈 new wrapper
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

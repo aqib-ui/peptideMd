@@ -2,10 +2,10 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import Step1 from "@/component/onboarding/Step1";
-import Step2 from "@/component/onboarding/Step2";
-import Step3 from "@/component/onboarding/Step3";
-import ProgressBar from "@/component/onboarding/ProgressBar";
+import Step1 from "@/components/onboarding/Step1";
+import Step2 from "@/components/onboarding/Step2";
+import Step3 from "@/components/onboarding/Step3";
+import ProgressBar from "@/components/onboarding/ProgressBar";
 
 export default function OnBoard() {
   const [step, setStep] = useState(1);

@@ -4,7 +4,7 @@ interface PageProps {
   params: ParamsType;
 }
 import Image from "next/image";
-import ScrollButton from "@/component/ScrollButton/ScrollButton";
+import ScrollButton from "@/components/ScrollButton/ScrollButton";
 
 const Page = ({ params }: PageProps) => {
   const pageData: Record<string, { title: JSX.Element; content: JSX.Element }> =

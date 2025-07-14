@@ -5,7 +5,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import dynamic from "next/dynamic";
 
-const ScrollButton = dynamic(() => import("@/component/ScrollButton/ScrollButton"), {
+const ScrollButton = dynamic(() => import("@/components/ScrollButton/ScrollButton"), {
   ssr: false,
 });
 
