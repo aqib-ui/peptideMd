@@ -8,9 +8,10 @@ import StartTracking from "@/components/DashboardComponents/StartTracking/StartT
 import RecommendedPodcasts from "@/components/DashboardComponents/RecommendedPodcasts/RecommendedPodcasts";
 import PepiAI from "@/components/DashboardComponents/PepiAI/PepiAI";
 import RecommendedCaseStudies from "@/components/DashboardComponents/RecommendedCaseStudies/RecommendedCaseStudies";
-import DashboardPopup from "../../components/DashboardComponents/Dashboard-popup/page";
+
 import SuccessModal from "@/components/DashboardComponents/SuccessModal/SuccessModal";
 import { useRouter } from "next/navigation";
+import DashboardPopup from "@/components/DashboardComponents/Dashboard-popup/page";
 
 export default function DashboardPage() {
   const router = useRouter();

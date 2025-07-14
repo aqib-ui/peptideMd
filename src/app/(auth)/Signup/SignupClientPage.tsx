@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import authLogo from "../../../public/authIcons/authLogo.png";
+
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Link from "next/link";
@@ -108,7 +108,8 @@ export default function SignupClientPage() {
             {/* Foreground content */}
             <div className="relative z-10 flex items-center justify-center w-full h-full p-8">
               <Image
-                src={authLogo}
+                priority
+                src="/authIcons/authLogo.png"
                 alt="PeptideMD Logo"
                 width={492}
                 height={211}
@@ -126,7 +127,7 @@ export default function SignupClientPage() {
             <div className="max-sm:mb-3 mb-1 [@media(min-width:1600px)]:mb-6">
               <button
                 onClick={handleBack}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white border
+                className=" cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-white border
               border-gray-200 hover:bg-gray-50 transition"
               >
                 <IoIosArrowRoundBack className="text-gray-700 txt-24" />

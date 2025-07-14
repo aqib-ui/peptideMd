@@ -1,6 +1,5 @@
 "use client";
 import { useState, useRef, useEffect, Suspense } from "react";
-import authLogo from "../../../public/authIcons/authLogo.png";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -143,7 +142,7 @@ function SixDigitVerifyInner() {
             <div className="relative z-10 flex items-center justify-center w-full h-full p-8">
               <Image
                 priority
-                src={authLogo}
+                src="/authIcons/authLogo.png"
                 alt="PeptideMD Logo"
                 width={492}
                 height={211}

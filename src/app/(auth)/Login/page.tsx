@@ -1,9 +1,8 @@
-
 // after eid footer added
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import authLogo from "../../../public/authIcons/authLogo.png";
+
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Link from "next/link";
@@ -88,11 +87,9 @@ export default function LoginPage() {
         className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 px-4 py-6 2xl:py-8 [@media(min-width:1600px)]:p- 
             xl:pl-10 2xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"
       >
-     
         <div
           className="w-full md:w-[48%] md:h-[calc(100vh-64px)] lg:h-[calc(100vh-66px)] [@media(min-width:1600px)]:h-[calc(100vh-104px)]
                  [@media(min-width:1600px)]::mt-[2rem] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
-         
         >
           <div className="relative w-full h-full rounded-[16px] overflow-hidden">
             {/* Background video */}
@@ -113,7 +110,8 @@ export default function LoginPage() {
             {/* Foreground content */}
             <div className="relative z-10 flex items-center justify-center w-full h-full p-8">
               <Image
-                src={authLogo}
+                priority
+                src="/authIcons/authLogo.png"
                 alt="PeptideMD Logo"
                 width={492}
                 height={211}
@@ -201,8 +199,6 @@ export default function LoginPage() {
                 )}
               </div>
 
-             
-
               {/* Forgot Password */}
               <div className="w-full 2xl:w-[496px] mt-1 flex justify-end">
                 <Link
@@ -248,8 +244,6 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-
-     
     </div>
   );
 }

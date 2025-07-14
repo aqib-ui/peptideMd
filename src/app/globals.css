@@ -2,9 +2,9 @@
 
 @theme {
   --breakpoint-xll: 1400px;
-   --breakpoint-3xl: 1600px;
-      --breakpoint-4xl: 1700px;
-      --breakpoint-xs: 500px;
+  --breakpoint-3xl: 1600px;
+  --breakpoint-4xl: 1700px;
+  --breakpoint-xs: 500px;
 }
 /* ==== Custom Scrollbar for Popup Only ==== */
 .dashboard-popup-scroll::-webkit-scrollbar {
@@ -21,7 +21,7 @@
 .dashboard-popup-scroll::-webkit-scrollbar-thumb {
   background-color: #4a84c5; /* thumb color matching popup */
   border-radius: 8px;
-    border-top-left-radius: 0px;
+  border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
   border: 2px solid #224674; /* border to blend with bg */
 }
@@ -39,7 +39,7 @@
 }
 
 /* Firefox */
-.remove-arrow[type='number'] {
+.remove-arrow[type="number"] {
   -moz-appearance: textfield;
 }
 
@@ -54,42 +54,47 @@ body {
 }
 
 /* dailog box start */
-  body {
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-            sans-serif;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          background-color: #f9fafb;
-        }
-        
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        
-        @keyframes zoomIn {
-          from { transform: scale(0.95); }
-          to { transform: scale(1); }
-        }
-        
-        .animate-in {
-          animation: fadeIn 0.3s ease-out, zoomIn 0.3s ease-out;
-        }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f9fafb;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-in {
+  animation: fadeIn 0.3s ease-out, zoomIn 0.3s ease-out;
+}
 /* dailog box end */
-
-
-
 
 @theme inline {
   --color-background: var(--background);
@@ -174,7 +179,6 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
-
 /* thin scrollbar */
 /* Works in modern browsers */
 .custom-scroll::-webkit-scrollbar {
@@ -186,17 +190,14 @@ body {
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-  background-color: #C8E4FC; /* Match your design */
-  border-radius: 9999px;      /* Fully rounded */
+  background-color: #c8e4fc; /* Match your design */
+  border-radius: 9999px; /* Fully rounded */
 }
 
 .custom-scroll {
-  scrollbar-width: thin;           /* Firefox */
-  scrollbar-color: #C8E4FC transparent; /* Firefox */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #c8e4fc transparent; /* Firefox */
 }
-
-
-
 
 /* globals.css */
 

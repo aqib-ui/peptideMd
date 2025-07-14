@@ -4,10 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
-// import logo from "../../../public/headerIcon/logo.png";
-import authLogo from "../../../public/authIcons/authLogo.png";
-// import { FaFacebookF, FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
-// import { AiFillInstagram } from "react-icons/ai";
 import Link from "next/link";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
@@ -103,7 +99,8 @@ export default function CreateNewPassword() {
             {/* Foreground content */}
             <div className="relative z-10 flex items-center justify-center w-full h-full p-8">
               <Image
-                src={authLogo}
+                  priority
+                src="/authIcons/authLogo.png"
                 alt="PeptideMD Logo"
                 width={492}
                 height={211}
@@ -249,27 +246,6 @@ export default function CreateNewPassword() {
           </div>
         </div>
       </div>
-
-      {/* Footer */}
-      {/* <footer className="bg-[#F2F5F6] py-2">
-        <div className="max-w-[1440px] sm:mx-auto sm:px-6 grid grid-cols-3 max-sm:flex max-sm:flex-col max-sm:gap-1 items-center text-[#25292A] txt-16 font-medium">
-
-          <p className="text-left max-md:text-center">
-            Privacy Policy <span className="px-4">|</span> Terms & Conditions
-          </p>
-
-          <span className="text-center">
-            © 2025, Nuda Peptide Therapeutics, All Rights Reserved
-          </span>
-
-          <div className="flex justify-end max-md:justify-center gap-4 text-[#224674] text-lg">
-            <FaFacebookF />
-            <FaLinkedinIn />
-            <AiFillInstagram />
-            <FaXTwitter />
-          </div>
-        </div>
-      </footer> */}
     </div>
   );
 }
