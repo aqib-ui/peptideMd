@@ -112,7 +112,7 @@ export default function PeptideDetailPage({
                 </svg>
               </div>
               <span className="text-sm font-semibold text-[#25292A]">
-                Peptide archived
+                Peptide Saved
               </span>
             </div>
           )}

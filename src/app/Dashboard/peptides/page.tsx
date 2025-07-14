@@ -278,7 +278,9 @@ function TableComponent({
                 Primary Applications
               </th>
               <th className="py-4 tracking-wider">Protocol Duration</th>
-              <th className="py-4  tracking-wider whitespace-nowrap ">Experience Level</th>
+              <th className="py-4  tracking-wider whitespace-nowrap ">
+                Experience Level
+              </th>
               <th className="py-4   tracking-wider whitespace-nowrap">
                 Side Effect Profile
               </th>
@@ -300,7 +302,7 @@ function TableComponent({
               >
                 {isCompareMode && (
                   <td className="px-4 min-w-[56px] ">
-                    <div className="relative min-w-[36px] xl:min-w-[33px] 2xl:min-w-[20px]">
+                    <div className="relative  flex items-center justify-center">
                       <input
                         type="checkbox"
                         checked={selectedPeptides.includes(peptide.id)}
@@ -310,7 +312,7 @@ function TableComponent({
                       />
                       {selectedPeptides.includes(peptide.id) && (
                         <svg
-                          className="w-5 h-5 text-white absolute left-2 xl:left-2.5  2xl:left-2.25 top-[2px] pointer-events-none"
+                          className="w-5 h-5 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                           fill="none"
                           stroke="currentColor"
                           strokeWidth={3}
@@ -399,13 +401,15 @@ function TableComponent({
       </div>
 
       {/* Pagination component */}
-      <Pagination
-        currentPage={currentPage}
-        totalItems={totalItems}
-        rowsPerPage={rowsPerPage}
-        setRowsPerPage={setRowsPerPage}
-        setCurrentPage={setCurrentPage}
-      />
+      {peptidesData.length > 0 && (
+        <Pagination
+          currentPage={currentPage}
+          totalItems={totalItems}
+          rowsPerPage={rowsPerPage}
+          setRowsPerPage={setRowsPerPage}
+          setCurrentPage={setCurrentPage}
+        />
+      )}
     </div>
   );
 }

@@ -30,6 +30,18 @@
   background-color: #6daaff;
 }
 
+/* Remove Arrows from Number Input in onboarding step-3 */
+/* Chrome, Safari, Edge, Opera */
+.remove-arrow::-webkit-outer-spin-button,
+.remove-arrow::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.remove-arrow[type='number'] {
+  -moz-appearance: textfield;
+}
 
 html,
 body {

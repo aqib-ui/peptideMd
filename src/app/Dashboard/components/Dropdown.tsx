@@ -66,7 +66,7 @@ export default function Dropdown({
               value === "" ? "bg-[#F2F5F6]" : ""
             }`}
           >
-            {placeholder}
+            {placeholder === "Select Status" ? "Both" : placeholder}
           </div>
 
           {/* Mapped options */}

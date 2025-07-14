@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="px-6 md:px-10 flex flex-col bg-[#1F1F1F] text-white ">
+    <footer className=" flex flex-col bg-[#1F1F1F] text-white ">
       {/* Top Section */}
-      <div className=" flex flex-col sm:flex-row  sm:flex-wrap justify-between mt-10 md:pr-3  ">
+      <div className="  px-6 md:px-10 flex flex-col sm:flex-row  sm:flex-wrap justify-between mt-10 md:pr-3  ">
         {/* Left-aligned Content */}
         <div className="max-w-3xl ml-[-10px]">
           <Link href="/">
@@ -34,7 +34,7 @@ export default function Footer() {
 
         {/* Right-aligned Lists */}
         <div
-          className="flex flex-col md:flex-row items-center gap-20 mt-10 md:mt-0"
+          className="flex flex-col md:flex-row items-center gap-20 mt-10 md:mt-0 pr-6 md:pr-10"
           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
           <ul className="text-[clamp(18px,0.43vw+16.63px,22px)] space-y-6">
@@ -60,7 +60,7 @@ export default function Footer() {
               {/* <a href="/AiAssistant" className="hover:text-blue-500">
                     AI Assistant
                   </a> */}
-              <Link href="/AiAssistant" className="hover:text-blue-500">
+              <Link href="/Dashboard/chat-pepi" className="hover:text-blue-500">
                 Peptide Database
               </Link>
             </li>
