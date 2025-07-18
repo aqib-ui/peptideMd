@@ -116,7 +116,7 @@ export default function CreateNewPassword() {
             {/* Back Button */}
             <Link href="/Login">
               <div className="mb-6">
-                <button className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition">
+                <button className=" cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition">
                   <IoIosArrowRoundBack className="text-gray-700 txt-24" />
                 </button>
               </div>
@@ -228,7 +228,7 @@ export default function CreateNewPassword() {
                 className={`w-full txt-18 2xl:w-[496px] 2xl:h-[56px] py-3 rounded-full font-semibold transition ${
                   !isFormValid
                     ? "bg-[#D8DFE0] cursor-not-allowed text-[#9EA9AA]"
-                    : "bg-[#224674] text-white"
+                    : "bg-[#224674] text-white cursor-pointer"
                 }`}
                 disabled={!isFormValid || isSubmitting}
               >

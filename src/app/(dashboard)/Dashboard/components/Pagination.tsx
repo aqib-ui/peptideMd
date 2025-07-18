@@ -10,7 +10,7 @@ interface PaginationProps {
   setCurrentPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const rowsOptions = [5, 10, 25, 50];
+const rowsOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export default function Pagination({
   currentPage,

@@ -27,7 +27,7 @@ export default function Step1({ onContinue }: Step1Props) {
           <button
             key={option}
             onClick={() => setSelectedOption(option)}
-            className={`text-left text-xl text-[#25292A]  rounded-md px-5 py-4 border transition-all duration-200 ${
+            className={`text-left text-xl cursor-pointer text-[#25292A]  rounded-md px-5 py-4 border transition-all duration-200 ${
               selectedOption === option
                 ? "border-[#224674] bg-[rgba(200,228,252,0.50)]"
                 : "border-[#F2F5F6] bg-[#F2F5F6]"

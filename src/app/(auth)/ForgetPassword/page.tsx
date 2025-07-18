@@ -81,7 +81,7 @@ export default function EmailVerification() {
             <Link href="/Login">
               <div className="mb-6">
                 <button
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200
+                  className=" cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200
                  hover:bg-gray-50 transition"
                 >
                   <IoIosArrowRoundBack className="text-gray-700 txt-24" />
@@ -138,10 +138,10 @@ export default function EmailVerification() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className={`w-full txt-18 py-3 2xl:w-[496px] 2xl:h-[56px] rounded-full font-semibold transition ${
+                className={` w-full txt-18 py-3 2xl:w-[496px] 2xl:h-[56px] rounded-full font-semibold transition ${
                   !email || error
                     ? "bg-[#D8DFE0] cursor-not-allowed text-[#9EA9AA]"
-                    : "bg-[#224674] text-white"
+                    : "bg-[#224674] text-white cursor-pointer"
                 }`}
                 disabled={!email || !!error || isSubmitting}
               >
@@ -149,7 +149,7 @@ export default function EmailVerification() {
                   <img
                     src="/loader.gif"
                     alt="Loading..."
-                    className="w-6 h-6 mx-auto bg-[#224674]"
+                    className="w-6 h-6 mx-auto bg-[#224674] "
                   />
                 ) : (
                   "Continue"

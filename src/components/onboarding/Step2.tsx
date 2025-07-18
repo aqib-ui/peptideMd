@@ -59,7 +59,7 @@ export default function Step2({ onContinue }: Step2Props) {
                 </span>
               </div>
               <div
-                className={`w-6 h-6 rounded-md border-2 flex items-center justify-center ${
+                className={`w-6 h-6 cursor-pointer rounded-md border-2 flex items-center justify-center ${
                   isSelected
                     ? "bg-[#224674] border-[#224674]"
                     : " bg-[#F2F5F6]  border-[#9EA9AA]"

@@ -6,20 +6,49 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
 export const dynamic = "force-dynamic";
 function SixDigitVerifyInner() {
-  const [code, setCode] = useState(Array(6).fill(""));
+  const [code, setCode] = useState(Array(5).fill(""));
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [secondsLeft, setSecondsLeft] = useState(30);
   const inputsRef = useRef<Array<HTMLInputElement | null>>([]);
   const router = useRouter();
   const searchParams = useSearchParams();
   const from = searchParams.get("from");
+  const email =
+    typeof window !== "undefined"
+      ? localStorage.getItem("peptide_user_email")
+      : null;
 
   const isFormValid = () => {
     return code.every((digit) => digit !== "");
   };
 
-  const handleResendCode = () => {
-    setSecondsLeft(30);
+  const handleResendCode = async () => {
+    const email = localStorage.getItem("peptide_user_email");
+    if (!email) return toast.error("Email not found!");
+
+    try {
+      const response = await fetch(
+        "https://peptide-backend.mazedigital.us/users/v1_mobile_check-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
+
+      const result = await response.json();
+
+      if (result.status === "success") {
+        toast.success("OTP sent again!");
+        setSecondsLeft(30); //reset timer on resend
+      } else {
+        toast.error(result.message || "Failed to resend code.");
+      }
+    } catch (err) {
+      toast.error("Network error while resending code.");
+    }
   };
 
   useEffect(() => {
@@ -33,7 +62,7 @@ function SixDigitVerifyInner() {
       });
     }, 1000);
     return () => clearInterval(interval);
-  }, []);
+  }, [secondsLeft]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -70,7 +99,7 @@ function SixDigitVerifyInner() {
       setCode(newCode);
     } else if (e.key === "ArrowLeft" && index > 0) {
       inputsRef.current[index - 1]?.focus();
-    } else if (e.key === "ArrowRight" && index < 5) {
+    } else if (e.key === "ArrowRight" && index < 4) {
       inputsRef.current[index + 1]?.focus();
     }
   };
@@ -79,35 +108,78 @@ function SixDigitVerifyInner() {
     e.preventDefault();
     const pasted = e.clipboardData
       .getData("text")
-      .slice(0, 6)
+      .slice(0, 4)
       .replace(/\D/g, "");
-    if (pasted.length === 6) {
+    if (pasted.length === 5) {
       const newCode = pasted.split("");
       setCode(newCode);
       inputsRef.current[5]?.focus();
     }
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+
     const verificationCode = code.join("");
 
-    if (verificationCode.length !== 6) {
+    if (!email || verificationCode.length !== 5) {
+      toast.error("Please enter a valid 5-digit code.");
       setIsSubmitting(false);
-    } else {
-      setTimeout(() => {
-        setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        "https://peptide-backend.mazedigital.us/users/v1_mobile_verify-otp",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            otp: verificationCode,
+          }),
+        }
+      );
+
+      const result = await response.json();
+      console.log("🔁 OTP Verify Response:", result);
+
+      if (result.status === "success") {
+        toast.success("OTP verified!");
+
         if (from === "signup") {
-          router.push("/SixDigitVerify/on-board"); // Navigate to dashboard
+          router.push("/SixDigitVerify/on-board");
+          localStorage.removeItem("peptide_user_email");
         } else if (from === "forgetpassword") {
-          router.push("/CreateNewPassword"); // Navigate to create password page
+          router.push("/CreateNewPassword");
         } else {
           router.push("/");
         }
-      }, 1000);
+      } else {
+        const rawMsg = result?.message || "Invalid OTP";
+        const msgNormalized = rawMsg.toLowerCase().trim();
+
+        if (
+          msgNormalized === "invalid otp" ||
+          msgNormalized.includes("otp") ||
+          msgNormalized.includes("expired")
+        ) {
+          toast.error("Invalid or expired OTP. Please try again.");
+        } else {
+          toast.error(rawMsg);
+        }
+      }
+    } catch (err) {
+      console.error("🚨 OTP Verify Error:", err);
+      toast.error("Network error. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
+
+
 
   return (
     <div className="min-h-screen grid grid-rows-[1fr_auto]">
@@ -167,7 +239,7 @@ function SixDigitVerifyInner() {
                     router.push("/");
                   }
                 }}
-                className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition"
+                className=" cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition"
               >
                 <IoIosArrowRoundBack className="txt-24" />
               </button>
@@ -187,7 +259,7 @@ function SixDigitVerifyInner() {
             </h2>
             <p className="txt-20 text-[#51595A] mb-6 w-full 2xl:w-[496px]">
               Please enter the verification code sent to{" "}
-              <span className="text-[#224674]">janecooper10@gmail.com</span> to
+              <span className="text-[#224674]">{email || "your email"}</span> to
               verify your request and continue resetting your password.
             </p>
 
@@ -221,7 +293,7 @@ function SixDigitVerifyInner() {
                   <button
                     type="button"
                     onClick={handleResendCode}
-                    className="text-[#224674] txt-16 font-[600] leading-[100%] underline font-[Afacad Flux] transition"
+                    className=" cursor-pointer text-[#224674] txt-16 font-[600] leading-[100%] underline font-[Afacad Flux] transition"
                   >
                     Request a new code
                   </button>
@@ -233,7 +305,7 @@ function SixDigitVerifyInner() {
                 className={`w-full txt-18 2xl:w-[496px] 2xl:h-[56px] py-3 rounded-full font-semibold transition ${
                   !isFormValid()
                     ? "bg-[#D8DFE0] cursor-not-allowed text-[#9EA9AA]"
-                    : "bg-[#224674] text-white"
+                    : "bg-[#224674] text-white cursor-pointer"
                 }`}
                 disabled={!isFormValid()}
               >

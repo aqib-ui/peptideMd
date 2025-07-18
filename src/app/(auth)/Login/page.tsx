@@ -1,10 +1,8 @@
-// after eid footer added
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-
+import { Toaster, toast } from "react-hot-toast";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
-import { IoIosArrowRoundBack } from "react-icons/io";
 import Link from "next/link";
 
 import { useRouter } from "next/navigation";
@@ -14,32 +12,24 @@ export default function LoginPage() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [confirmPassword, setConfirmPassword] = useState("");
+
   const [errors, setErrors] = useState<{
     email?: string;
     password?: string;
-    // confirmPassword?: string;
   }>({});
-  const [showPassword, setShowPassword] = useState(false);
-  // const [showConfirmPassword, setshowConfirmPassword] = useState(false);
 
+  const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validate = () => {
     const newErrors: typeof errors = {};
-    if (!email) newErrors.email = "Email is required.";
+    if (!email) newErrors.email = "Enter your email.";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
       newErrors.email = "Enter a valid email.";
 
     if (!password) newErrors.password = "Password is required.";
     else if (password.length < 6)
       newErrors.password = "Password must be at least 6 characters.";
-
-    // if (!confirmPassword) {
-    //   newErrors.confirmPassword = "Confirm Password is required.";
-    // } else if (confirmPassword !== password) {
-    //   newErrors.confirmPassword = "Passwords do not match.";
-    // }
 
     return newErrors;
   };
@@ -49,39 +39,82 @@ export default function LoginPage() {
     return Object.keys(currentErrors).length === 0;
   };
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   if (!isFormValid()) return;
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   const validationErrors = validate(); // Run validation
+  //   const validationErrors = validate();
+  //   setErrors(validationErrors); // Update UI with errors
+
   //   if (Object.keys(validationErrors).length > 0) return;
 
   //   setIsSubmitting(true);
-  //   await new Promise((r) => setTimeout(r, 1500)); // Simulated delay
+
+  //   // Simulate login API
+  //   await new Promise((resolve) => setTimeout(resolve, 1500));
+
   //   setIsSubmitting(false);
+
+  //   // On successful login
+  //   router.push("/Dashboard");
   // };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     const validationErrors = validate();
-    setErrors(validationErrors); // Update UI with errors
+    setErrors(validationErrors);
 
     if (Object.keys(validationErrors).length > 0) return;
 
     setIsSubmitting(true);
 
-    // Simulate login API
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch(
+        "https://peptide-backend.mazedigital.us/users/v1_mobile_login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        }
+      );
 
-    setIsSubmitting(false);
+      let result;
 
-    // On successful login
-    router.push("/Dashboard");
+      // Try parsing JSON safely
+      try {
+        result = await response.json();
+      } catch (jsonError) {
+        console.error("Invalid JSON response", jsonError);
+        toast.error("Unexpected server response. Please try again later.");
+        return;
+      }
+
+      if (!response.ok) {
+        console.error("HTTP Error:", response.status);
+        toast.error(result?.message || "Login failed. Try again.");
+        return;
+      }
+
+      if (result.status === "success") {
+        localStorage.setItem("peptide_user_token", result.data.token);
+        localStorage.setItem("peptide_user", JSON.stringify(result.data.user));
+        toast.success("Login successful!");
+        router.push("/Dashboard");
+      } else {
+        toast.error(result.message || "Invalid credentials.");
+      }
+    } catch (error: any) {
+      console.error("Network/API Error:", error);
+      toast.error(
+        "Something went wrong. Please check your internet connection."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="min-h-screen grid grid-rows-[1fr_auto]">
+      <Toaster position="top-center" />
+
       {/* === Content Area === */}
       <div
         className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 px-4 py-6 2xl:py-8 [@media(min-width:1600px)]:p- 
@@ -125,13 +158,15 @@ export default function LoginPage() {
         <div className="md:w-[52%] flex justify-start items-center  max-sm:mt-6 max-sm:mb-20">
           <div className="w-full max-w-2xl max-sm:p-2 lg:px-4  bg-white rounded-3xl">
             {/* Back Button */}
-            <Link href="/">
-              <div className="mb-6">
-                <button className="w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition">
-                  <IoIosArrowRoundBack className="text-gray-700 txt-24" />
-                </button>
-              </div>
-            </Link>
+            <div onClick={() => router.back()} className="cursor-pointer mb-3">
+              <Image
+                src="/authIcons/authBack-button.svg"
+                height={24}
+                width={24}
+                className="h-10 w-10"
+                alt="left-arrows"
+              />
+            </div>
 
             <h2 className="txt-32 font-semibold mb-2 text-[#25292A]">
               Welcome back to PeptideMD
@@ -141,28 +176,54 @@ export default function LoginPage() {
               progress.
             </p>
 
-            <form noValidate className="space-y-4" onSubmit={handleSubmit}>
+            <form noValidate className="space-y-1" onSubmit={handleSubmit}>
               {/* Email Field */}
-              <div>
-                <label className="block txt-16 font-medium mb-1">
-                  Email<span className="text-red-500">*</span>
+              <div className="">
+                <label className="block txt-16 font-normal mb-1">
+                  Email <span className="text-red-500">*</span>
                 </label>
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className={`w-full  2xl:w-[496px] 2xl:h-[56px] rounded-lg bg-[#F2F5F6] p-3 pr-12 txt-14 outline-none ${
+                  onFocus={() => {
+                    // Just entering the field hides the error
+                    if (errors.email) {
+                      setErrors((prev) => ({
+                        ...prev,
+                        email: undefined,
+                      }));
+                    }
+                  }}
+                  onBlur={() => {
+                    const validationErrors = validate();
+                    setErrors((prev) => ({
+                      ...prev,
+                      email: validationErrors.email,
+                    }));
+                  }}
+                  className={`w-full 2xl:w-[496px] 2xl:h-[56px] rounded-lg bg-[#F2F5F6] p-3 pr-12 txt-14 outline-none transition-all duration-300 ${
                     errors.email
-                      ? "border border-red-500"
+                      ? "border border-[#F14D4D] bg-[rgba(241,77,77,0.08)]"
                       : "border border-transparent focus:border-[#224674] focus:bg-[#C8E4FC80]"
                   }`}
                   placeholder="Enter your email address"
                 />
-                {errors.email && (
-                  <p className="text-red-500 text-xs mt-1">{errors.email}</p>
-                )}
+                {/* Error message with fixed height and opacity transition */}
+                <p
+                  className={`text-[#25292A] flex gap-1 text-xs mt-1 transition-opacity duration-100 ${
+                    errors.email ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <Image
+                    src="/authIcons/info-circle.svg"
+                    alt="warning"
+                    width={16}
+                    height={16}
+                  />{" "}
+                  {errors.email ?? "\u00A0"}
+                </p>
               </div>
-
               {/* Password Field */}
               <div>
                 <label className="block txt-16 font-medium mb-1">
@@ -187,9 +248,9 @@ export default function LoginPage() {
                       className="text-gray-500 hover:text-gray-700 focus:outline-none"
                     >
                       {showPassword ? (
-                        <RiEyeLine className="txt-24 text-[#224674]" />
+                        <RiEyeLine className="cursor-pointer txt-24 text-[#224674]" />
                       ) : (
-                        <RiEyeOffLine className="txt-24 text-[#224674]" />
+                        <RiEyeOffLine className="cursor-pointer txt-24 text-[#224674]" />
                       )}
                     </button>
                   </div>
