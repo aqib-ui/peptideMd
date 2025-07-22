@@ -11,13 +11,16 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "antd": "^5.26.0",
+    "date-fns": "^4.1.0",
     "lucide-react": "^0.522.0",
     "next": "15.2.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
-    "react-leaflet": "^5.0.0-rc.2"
+    "react-leaflet": "^5.0.0-rc.2",
+    "react-markdown": "^10.1.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

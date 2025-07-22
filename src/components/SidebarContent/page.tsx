@@ -162,7 +162,7 @@ export default function SidebarContent({
                 </div>
               </div>
               <div className=" flex justify-center gap-4">
-                <AuthButton href="/Signup" variant="primary">
+                <AuthButton href="/Signup" variant="primary" >
                   Signup
                 </AuthButton>
                 <AuthButton href="/Login" variant="secondary">
@@ -193,7 +193,7 @@ function AuthButton({
     <Link href={href}>
       <button
         className={`
-        px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3.5 rounded-full font-semibold text-sm md:text-base lg:text-lg
+        px-4 py-2 md:px-5 md:py-2.5 lg:px-6 lg:py-3.5 cursor-pointer rounded-full font-semibold text-sm md:text-base lg:text-lg
         transition-colors duration-300 min-w-[100px] md:min-w-[120px] lg:min-w-[174px]
         ${
           variant === "primary"

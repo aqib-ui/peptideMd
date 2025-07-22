@@ -36,7 +36,7 @@ export default function Dropdown({
     <div ref={dropdownRef} className="relative w-full z-10">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full border border-[#E9EDEE] px-4 py-3 rounded-lg flex justify-between items-center bg-white"
+        className="w-full border cursor-pointer border-[#E9EDEE] px-4 py-3 rounded-lg flex justify-between items-center bg-white"
       >
         <span className={value ? "text-[#25292A]" : "text-gray-400"}>
           {value || placeholder}

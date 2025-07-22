@@ -23,7 +23,6 @@ function SixDigitVerifyInner() {
   };
 
   const handleResendCode = async () => {
-    const email = localStorage.getItem("peptide_user_email");
     if (!email) return toast.error("Email not found!");
 
     try {
@@ -178,8 +177,6 @@ function SixDigitVerifyInner() {
       setIsSubmitting(false);
     }
   };
-
-
 
   return (
     <div className="min-h-screen grid grid-rows-[1fr_auto]">

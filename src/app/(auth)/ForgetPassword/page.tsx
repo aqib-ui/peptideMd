@@ -16,7 +16,7 @@ export default function EmailVerification() {
   const isValidEmail = (value: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!isValidEmail(email)) {
       setError("Please enter a valid email address.");
@@ -25,12 +25,46 @@ export default function EmailVerification() {
 
     setError(null);
     setIsSubmitting(true);
+    try {
+      // 🔁 Send OTP
+      const otpResponse = await fetch(
+        "https://peptide-backend.mazedigital.us/users/v1_mobile_check-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        }
+      );
 
-    // Simulate API call delay
-    setTimeout(() => {
+      const otpResult = await otpResponse.json();
+
+      if (otpResult.status === "success") {
+        localStorage.setItem("peptide_user_email", email);
+        router.push("/SixDigitVerify?from=forgetpassword");
+      } else {
+        alert("Please enter a valid email address." + otpResult.message);
+      }
+    } catch (error) {
+      console.error("🔁 error ===>", error);
+      if (error instanceof Error) {
+        alert("Please enter a valid email address." + error.message);
+      } else {
+        alert("Please enter a valid email address. An unknown error occurred.");
+      }
+    } finally {
       setIsSubmitting(false);
-      router.push("/SixDigitVerify?from=forgetpassword");
-    }, 1000); // adjust delay if needed
+    }
+    
+
+    // setIsSubmitting(true);
+
+    // // Simulate API call delay
+    // setTimeout(() => {
+    //   setIsSubmitting(false);
+    //   router.push("/SixDigitVerify?from=forgetpassword");
+    // }, 1000); // adjust delay if needed
   };
 
   return (

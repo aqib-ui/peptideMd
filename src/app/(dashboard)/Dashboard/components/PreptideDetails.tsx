@@ -3,26 +3,16 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import MainPeptideContentCard from "./MainPeptideContentCard";
-
-interface Peptide {
-  id: string;
-  peptide: string;
-  nudaName: string;
-  primaryApplications: string;
-  protocolDuration: string;
-  experiencesLevel: string;
-  sideEffectProfile: string;
-  status: string;
-}
+import { PeptideData } from "@/services/peptideApi";
 
 export default function PeptideDetailPage({
-  obj,
+  peptideObj,
   page,
 }: {
-  obj: any;
+  peptideObj: PeptideData;
   page: string;
 }) {
-  // console.log("obj----------->", obj, page);
+  // console.log("obj----------->", peptideObj, page);
   const router = useRouter();
   const [archives, setArchives] = useState(true);
   const [showTooltip, setShowTooltip] = useState(false);
@@ -122,7 +112,7 @@ export default function PeptideDetailPage({
       {/* comparison tabs area */}
 
       {/* Main Content Card */}
-      <MainPeptideContentCard obj={obj} />
+      <MainPeptideContentCard obj={peptideObj} />
     </div>
   );
 }

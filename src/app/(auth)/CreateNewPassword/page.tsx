@@ -1,14 +1,17 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { toast } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import Link from "next/link";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
-
+type ErrorState = {
+  password?: string;
+  confirmPassword?: string;
+};
 export default function CreateNewPassword() {
+  const [email, setEmail] = useState("");
   const router = useRouter();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -20,13 +23,13 @@ export default function CreateNewPassword() {
     confirmPassword?: string;
   }>({});
 
-  const validateForm = () => {
+  const validateForm = (): ErrorState => {
     const newErrors: { password?: string; confirmPassword?: string } = {};
 
     if (!password) {
-      newErrors.password = "Password is required.";
+      newErrors.password = "Please enter your password.";
     } else if (password.length < 6) {
-      newErrors.password = "Password must be at least 8 characters.";
+      newErrors.password = "Password must be at least 6 characters.";
     }
 
     if (!confirmPassword) {
@@ -35,41 +38,64 @@ export default function CreateNewPassword() {
       newErrors.confirmPassword = "Passwords do not match.";
     }
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
+    return newErrors;
+  };
+  const isFormValid = (): boolean => {
+    const validation = validateForm();
+    return Object.keys(validation).length === 0;
+    // check if the object is empty so the form is valid then return true otherwise return false
   };
 
   const handlePasswordReset = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!validateForm()) return;
+    const validationErrors = validateForm();
+    setErrors(validationErrors);
+    if (Object.keys(validationErrors).length > 0) return;
 
     setIsSubmitting(true);
 
-    setTimeout(() => {
-      toast.success("Your password has been reset successfully.", {
-        style: {
-          color: "#25292A",
-        },
-        iconTheme: {
-          primary: "#224674",
-          secondary: "#fff",
-        },
-      });
-
-      setIsSubmitting(false);
-
-      setTimeout(() => {
+    try {
+      const response = await fetch(
+        "https://peptide-backend.mazedigital.us/users/v1_web_forget-password",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        }
+      );
+      const result = await response.json();
+      if (result.status === "success") {
+        toast.success("Your password has been reset successfully.");
         router.push("/Login");
-      }, 3000);
-    }, 1000);
+        localStorage.removeItem("peptide_user_email");
+      } else {
+        toast.error(result.message);
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again.");
+      console.error("🔁 error ===>", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const isFormValid =
-    password && confirmPassword && password === confirmPassword;
+  useEffect(() => {
+    setEmail(localStorage.getItem("peptide_user_email") || "");
+    console.log("🔁 email ===>", email);
+    // if (!email || email === null ) {
+    //   router.push("/Login");
+    // }
+  }, [email]);
 
   return (
     <div className="min-h-screen grid grid-rows-[1fr_auto]">
+      <Toaster position="top-center" />
       <div className="flex flex-col md:flex-row md:justify-between max-sm:p-4 px-4 py-6 2xl:py-8 xl:pl-10 2xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34">
         {/* Left Section - Logo */}
         <div
@@ -99,7 +125,7 @@ export default function CreateNewPassword() {
             {/* Foreground content */}
             <div className="relative z-10 flex items-center justify-center w-full h-full p-8">
               <Image
-                  priority
+                priority
                 src="/authIcons/authLogo.png"
                 alt="PeptideMD Logo"
                 width={492}
@@ -132,7 +158,7 @@ export default function CreateNewPassword() {
 
             <form
               noValidate
-              className="space-y-4"
+              className="space-y-2"
               onSubmit={handlePasswordReset}
             >
               <h2 className="txt-32 font-semibold mb-2 text-[#25292A]">
@@ -148,18 +174,34 @@ export default function CreateNewPassword() {
                 <label className=" block txt-16 font-normal mb-1">
                   Password <span className="text-red-500">*</span>
                 </label>
-                <div className="relative w-full 2xl:w-[496px]">
+                <div className="relative w-full h-full 2xl:w-[496px] ">
                   <input
                     type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className={`w-full  2xl:w-[496px] 2xl:h-[56px] rounded-lg bg-[#F2F5F6] p-3 pr-12 txt-14 outline-none ${
+                    onFocus={() => {
+                      if (errors.password) {
+                        setErrors((prev) => ({
+                          ...prev,
+                          password: undefined,
+                        }));
+                      }
+                    }}
+                    onBlur={() => {
+                      const validationErrors = validateForm();
+                      setErrors((prev) => ({
+                        ...prev,
+                        password: validationErrors.password,
+                      }));
+                    }}
+                    className={`w-full 2xl:w-[496px] 2xl:h-[56px] rounded-lg bg-[#F2F5F6] p-3 pr-12 txt-14 outline-none transition-all duration-300 ${
                       errors.password
-                        ? "border border-red-500"
+                        ? "border border-[#F14D4D] bg-[rgba(241,77,77,0.08)]"
                         : "border border-transparent focus:border-[#224674] focus:bg-[#C8E4FC80]"
                     }`}
                     placeholder="Enter your new password"
                   />
+
                   <div className="absolute inset-y-0 right-3 flex items-center">
                     <button
                       type="button"
@@ -167,19 +209,27 @@ export default function CreateNewPassword() {
                       className="text-[#51595A]  hover:text-gray-700 focus:outline-none"
                     >
                       {showPassword ? (
-                        <RiEyeLine className="txt-24 text-[#224674]" />
+                        <RiEyeLine className="txt-24 cursor-pointer text-[#224674]" />
                       ) : (
-                        <RiEyeOffLine className="txt-24 text-[#224674]" />
+                        <RiEyeOffLine className="txt-24 cursor-pointer text-[#224674]" />
                       )}
                     </button>
                   </div>
-
-                  {errors.password && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {errors.password}
-                    </p>
-                  )}
                 </div>
+                {/* Error message with fixed height and opacity transition */}
+                <p
+                  className={`text-[#25292A] flex gap-1 text-xs mt-1 transition-opacity duration-100 ${
+                    errors.password ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <Image
+                    src="/authIcons/info-circle.svg"
+                    alt="warning"
+                    width={16}
+                    height={16}
+                  />{" "}
+                  {errors.password ?? "\u00A0"}
+                </p>
               </div>
 
               {/* Confirm Password Field */}
@@ -187,18 +237,35 @@ export default function CreateNewPassword() {
                 <label className="block txt-16 font-normal mb-1">
                   Confirm Password <span className="text-red-500">*</span>
                 </label>
-                <div className="relative w-full 2xl:w-[496px]">
+
+                <div className="relative w-full h-full 2xl:w-[496px]">
                   <input
                     type={showConfirmPassword ? "text" : "password"}
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    className={`w-full  2xl:w-[496px] 2xl:h-[56px] rounded-lg bg-[#F2F5F6] p-3 pr-12 txt-14 outline-none ${
+                    onFocus={() => {
+                      if (errors.confirmPassword) {
+                        setErrors((prev) => ({
+                          ...prev,
+                          confirmPassword: undefined,
+                        }));
+                      }
+                    }}
+                    onBlur={() => {
+                      const validationErrors = validateForm();
+                      setErrors((prev) => ({
+                        ...prev,
+                        confirmPassword: validationErrors.confirmPassword,
+                      }));
+                    }}
+                    className={`w-full 2xl:w-[496px] 2xl:h-[56px] rounded-lg bg-[#F2F5F6] p-3 pr-12 txt-14 outline-none transition-all duration-300 ${
                       errors.confirmPassword
-                        ? "border border-red-500"
+                        ? "border border-[#F14D4D] bg-[rgba(241,77,77,0.08)]"
                         : "border border-transparent focus:border-[#224674] focus:bg-[#C8E4FC80]"
                     }`}
-                    placeholder="Re-enter your new password"
+                    placeholder="Re-enter your password"
                   />
+
                   <div className="absolute inset-y-0 right-3 flex items-center">
                     <button
                       type="button"
@@ -208,29 +275,38 @@ export default function CreateNewPassword() {
                       className="text-[#51595A]  hover:text-gray-700 focus:outline-none"
                     >
                       {showConfirmPassword ? (
-                        <RiEyeLine className="txt-24 text-[#224674]" />
+                        <RiEyeLine className="txt-24 cursor-pointer text-[#224674]" />
                       ) : (
-                        <RiEyeOffLine className="txt-24 text-[#224674]" />
+                        <RiEyeOffLine className="txt-24 cursor-pointer text-[#224674]" />
                       )}
                     </button>
                   </div>
-                  {errors.confirmPassword && (
-                    <p className="text-red-500 text-xs mt-1">
-                      {errors.confirmPassword}
-                    </p>
-                  )}
                 </div>
-              </div>
 
+                {/* Error message with fixed height and opacity transition */}
+                <p
+                  className={`text-[#25292A] flex gap-1 text-xs mt-1 transition-opacity duration-100 ${
+                    errors.confirmPassword ? "opacity-100" : "opacity-0"
+                  }`}
+                >
+                  <Image
+                    src="/authIcons/info-circle.svg"
+                    alt="warning"
+                    width={16}
+                    height={16}
+                  />{" "}
+                  {errors.confirmPassword ?? "\u00A0"}
+                </p>
+              </div>
               {/* Submit Button */}
               <button
                 type="submit"
+                disabled={!isFormValid()}
                 className={`w-full txt-18 2xl:w-[496px] 2xl:h-[56px] py-3 rounded-full font-semibold transition ${
-                  !isFormValid
-                    ? "bg-[#D8DFE0] cursor-not-allowed text-[#9EA9AA]"
-                    : "bg-[#224674] text-white cursor-pointer"
+                  isFormValid()
+                    ? " bg-[#224674] text-white cursor-pointer"
+                    : "bg-[#D8DFE0] cursor-not-allowed text-[#9EA9AA]"
                 }`}
-                disabled={!isFormValid || isSubmitting}
               >
                 {isSubmitting ? (
                   <img

@@ -1,41 +1,61 @@
 "use client";
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useEffect } from "react";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import peptidesDataRaw from "@/data/peptidesData";
 import MainPeptideContentCard from "../../components/MainPeptideContentCard";
+import { getPeptideById, PeptideData } from "@/services/peptideApi";
 
-interface Peptide {
-  id: string;
-  peptide: string;
-  nudaName: string;
-  primaryApplications: string;
-  protocolDuration: string;
-  experiencesLevel: string;
-  sideEffectProfile: string;
-  status: string;
-}
-
-// Inner component with Suspense boundary
 function ComparisonPeptideContent() {
   const searchParams = useSearchParams();
   const id1 = searchParams.get("id1");
   const id2 = searchParams.get("id2");
   const router = useRouter();
 
-  const peptide1 = peptidesDataRaw.find((item) => item.id === id1);
-  const peptide2 = peptidesDataRaw.find((item) => item.id === id2);
+  const [peptide1, setPeptide1] = useState<PeptideData | null>(null);
+  const [peptide2, setPeptide2] = useState<PeptideData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [activePeptideId, setActivePeptideId] = useState<number | null>(null);
 
-  if (!peptide1 || !peptide2) {
-    return (
-      <div className="text-red-600 text-4xl font-bold">
-        Invalid peptide IDs. Please go back and try again.
-      </div>
-    );
+  useEffect(() => {
+    async function fetchData() {
+      setLoading(true);
+      setError("");
+      try {
+        // Parallel fetch
+        const [p1, p2] = await Promise.all([
+          id1 ? getPeptideById(id1) : Promise.resolve(null),
+          id2 ? getPeptideById(id2) : Promise.resolve(null),
+        ]);
+        if (!p1 || !p2) {
+          setError("Invalid peptide IDs. Please go back and try again.");
+        } else {
+          setPeptide1(p1);
+          setPeptide2(p2);
+          setActivePeptideId(p1.id);
+        }
+      } catch (e) {
+        setError("Error fetching peptides.");
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, [id1, id2]);
+
+  if (loading) {
+    return <div className="text-center p-8">Loading comparison...</div>;
   }
 
-  const obj: Peptide[] = [peptide1, peptide2];
-  const [activePeptideId, setActivePeptideId] = useState(obj[0].id);
+  if (error) {
+    return <div className="text-red-600 text-4xl font-bold">{error}</div>;
+  }
+
+  if (!peptide1 || !peptide2) {
+    return null;
+  }
+
+  const obj: PeptideData[] = [peptide1, peptide2];
   const activePeptideObj = obj.find((item) => item.id === activePeptideId);
 
   return (
@@ -65,7 +85,7 @@ function ComparisonPeptideContent() {
                 : "bg-[#E9EDEE] text-[#51595A]"
             }`}
           >
-            {peptide.peptide}
+            {peptide.title}
           </button>
         ))}
       </div>
@@ -76,12 +96,9 @@ function ComparisonPeptideContent() {
   );
 }
 
-// Outer component with Suspense boundary
 export default function ComparisonPeptide() {
   return (
-    <Suspense
-      fallback={<div className="text-center p-8">Loading comparison...</div>}
-    >
+    <Suspense fallback={<div>Loading comparison...</div>}>
       <ComparisonPeptideContent />
     </Suspense>
   );

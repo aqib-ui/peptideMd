@@ -20,6 +20,7 @@ const DashboardHeader = () => {
         <div className="flex items-center space-x-2">
           <Link href="/">
             <Image
+             priority
               src="/headerIcon/logo.svg"
               alt="Logo"
               width={150}

@@ -287,7 +287,7 @@ const ShareDialog: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           <h3 className="text-3xl font-medium text-[#0F0F0F]  ">Share</h3>
           <button
             onClick={onClose}
-            className="text-[#030303] hover:text-gray-700 transition-colors "
+            className="text-[#030303] hover:text-gray-700 transition-colors cursor-pointer "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -314,7 +314,7 @@ const ShareDialog: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         <div className="py-2  relative ">
           {showLeftArrow && (
             <button
-              className="absolute -left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-[0px_2.986px_11.946px_0px_rgba(0,0,0,0.25)] z-10 hover:bg-gray-100 transition-all"
+              className="cursor-pointer absolute -left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-[0px_2.986px_11.946px_0px_rgba(0,0,0,0.25)] z-10 hover:bg-gray-100 transition-all"
               onClick={() => scrollSlider("left")}
             >
               <svg
@@ -343,7 +343,7 @@ const ShareDialog: React.FC<{ onClose: () => void }> = ({ onClose }) => {
                 className="flex flex-col items-center flex-shrink-0 w-19 p-1"
               >
                 <div
-                  className="w-19 h-19 rounded-full flex items-center justify-center text-white mb-1 transition-transform hover:scale-105"
+                  className=" cursor-pointer w-19 h-19 rounded-full flex items-center justify-center text-white mb-1 transition-transform hover:scale-105"
                   style={{ backgroundColor: item.color }}
                 >
                   {item.icon}
@@ -355,7 +355,7 @@ const ShareDialog: React.FC<{ onClose: () => void }> = ({ onClose }) => {
 
           {showRightArrow && (
             <button
-              className="absolute -right-6 top-1/2 -mt-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-[0px_2.986px_11.946px_0px_rgba(0,0,0,0.25)] z-10 hover:bg-gray-100 transition-all"
+              className="cursor-pointer absolute -right-6 top-1/2 -mt-2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-[0px_2.986px_11.946px_0px_rgba(0,0,0,0.25)] z-10 hover:bg-gray-100 transition-all"
               onClick={() => scrollSlider("right")}
             >
               <svg
@@ -382,7 +382,7 @@ const ShareDialog: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             </p>
             <button
               onClick={copyToClipboard}
-              className={`m-2 px-5 py-2.5 text-lg  rounded-full font-medium transition-colors ${
+              className={`cursor-pointer m-2 px-5 py-2.5 text-lg  rounded-full font-medium transition-colors ${
                 copied
                   ? "bg-green-500 text-white"
                   : "bg-[#2EA7E0] text-white hover:bg-blue-600"

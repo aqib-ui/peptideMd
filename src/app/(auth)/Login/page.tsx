@@ -277,7 +277,7 @@ export default function LoginPage() {
                 className={`w-full txt-18 2xl:w-[496px] 2xl:h-[56px] py-3 rounded-full font-semibold transition ${
                   !isFormValid()
                     ? "bg-[#D8DFE0] cursor-not-allowed text-[#9EA9AA]"
-                    : "bg-[#224674] text-white"
+                    : "bg-[#224674] text-white cursor-pointer"
                 }`}
                 disabled={!isFormValid()}
               >
