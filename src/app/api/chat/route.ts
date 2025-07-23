@@ -3,7 +3,6 @@ import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   const { message } = await req.json();
-
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: {

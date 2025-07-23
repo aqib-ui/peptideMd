@@ -24,7 +24,7 @@ const menuItemsLeft = [
 const menuItemsRight = [
   {
     title: "Peptide Database",
-    icon: "/headerIcon/prep-database.svg",
+    icon: "/headerIcon/prep-database1.svg",
     href: "/Dashboard/peptides",
   },
   {

@@ -89,6 +89,7 @@ export default function SignupClientPage() {
         const email = result.data.user.email;
 
         localStorage.setItem("peptide_user_email", email);
+        localStorage.setItem("peptide_user_token", result.data.user.token);
 
         // 🔁 Send OTP
         const otpResponse = await fetch(

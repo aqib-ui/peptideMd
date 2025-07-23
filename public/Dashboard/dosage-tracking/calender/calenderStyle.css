@@ -1,0 +1,441 @@
+/* Force Afacad Flux for Ant Design calendar popup */
+        .custom-datepicker-dropdown,
+        .custom-datepicker-dropdown * {
+          font-family: "Afacad Flux", "Afacad", "Roboto", sans-serif !important;
+        }
+
+        /* ===== START: Custom Weekday Headers - Guaranteed to Work ===== */
+        .custom-datepicker-dropdown .ant-picker-content th {
+          width: 28px !important;
+          height: 40px !important;
+          padding: 0 !important;
+          line-height: 40px !important;
+          text-align: center !important;
+          font-size: 0 !important; /* Hide original text */
+        }
+
+        /* Override for ≥768px */
+        @media (min-width: 768px) {
+          .custom-datepicker-dropdown .ant-picker-content th {
+            width: 48px !important;
+          }
+        }
+
+        .custom-datepicker-dropdown .ant-picker-content th::after {
+          content: attr(data-short);
+          display: block !important;
+          font-weight: 500 !important;
+          font-size: 16px !important;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          line-height: 40px;
+          color: #25292a !important;
+        }
+
+        /* Apply specific letters to each column */
+        .custom-datepicker-dropdown
+          .ant-picker-content
+          thead
+          tr
+          th:nth-child(1) {
+          --short: "S";
+        }
+        .custom-datepicker-dropdown
+          .ant-picker-content
+          thead
+          tr
+          th:nth-child(2) {
+          --short: "M";
+        }
+        .custom-datepicker-dropdown
+          .ant-picker-content
+          thead
+          tr
+          th:nth-child(3) {
+          --short: "T";
+        }
+        .custom-datepicker-dropdown
+          .ant-picker-content
+          thead
+          tr
+          th:nth-child(4) {
+          --short: "W";
+        }
+        .custom-datepicker-dropdown
+          .ant-picker-content
+          thead
+          tr
+          th:nth-child(5) {
+          --short: "T";
+        }
+        .custom-datepicker-dropdown
+          .ant-picker-content
+          thead
+          tr
+          th:nth-child(6) {
+          --short: "F";
+        }
+        .custom-datepicker-dropdown
+          .ant-picker-content
+          thead
+          tr
+          th:nth-child(7) {
+          --short: "S";
+        }
+
+        .custom-datepicker-dropdown .ant-picker-content th::after {
+          content: var(--short) !important;
+        }
+
+        .custom-datepicker-dropdown .ant-picker-content th {
+          position: relative;
+        }
+        /* ===== END: Custom Weekday Headers ===== */
+
+        /* Rest of your styles... */
+        .no-header-datepicker .ant-picker-header {
+          display: none !important;
+        }
+
+
+
+
+
+
+
+
+        /* This targets the actual input inside the DatePicker */
+        .custom-datepicker-input input::placeholder {
+          color: #8d9a9b !important;
+          font-family: "Afacad Flux", "Afacad", "Roboto", sans-serif !important;
+          font-weight: 400 !important;
+          font-size: 16px !important;
+          letter-spacing: 0.5px !important;
+          line-height: 100% !important;
+        }
+
+        .custom-datepicker-input input {
+          color: #25292a !important;
+          font-family: "Afacad Flux", "Afacad", "Roboto", sans-serif !important;
+          font-weight: 500 !important;
+          font-size: 16px !important;
+          letter-spacing: 0.5px !important;
+          line-height: 100% !important;
+        }
+
+        /* Force Afacad Flux for Ant Design calendar popup */
+        .custom-datepicker-dropdown,
+        .custom-datepicker-dropdown * {
+          font-family: "Afacad Flux", "Afacad", "Roboto", sans-serif !important;
+          font-weight: 500 !important;
+          font-size: 16px !important;
+        }
+
+        .no-header-datepicker .ant-picker-header {
+          display: none !important;
+        }
+
+        /* 1) Remove “today” default highlight entirely */
+        .custom-datepicker-dropdown
+          .ant-picker-cell-today
+          .ant-picker-cell-inner {
+          background: none !important;
+          color: inherit !important;
+        }
+
+        /* 2) Remove the light‑blue focus/focus‑range square */
+        .custom-datepicker-dropdown
+          .ant-picker-cell-selected
+          .ant-picker-cell-inner,
+        .custom-datepicker-dropdown
+          .ant-picker-cell-in-view:not(.ant-picker-cell-selected)
+          .ant-picker-cell-inner,
+        .custom-datepicker-dropdown
+          .ant-picker-cell-range-start
+          .ant-picker-cell-inner,
+        .custom-datepicker-dropdown
+          .ant-picker-cell-range-end
+          .ant-picker-cell-inner {
+          background: none !important;
+          color: inherit !important;
+        }
+
+        .custom-datepicker-dropdown
+          .ant-picker-cell-today
+          .ant-picker-cell-inner::before {
+          content: none !important;
+        }
+        .custom-datepicker-dropdown
+          .ant-picker-cell-today:not(.ant-picker-cell-selected)
+          .ant-picker-cell-inner {
+          position: relative;
+          border: 1px solid #224674 !important;
+          color: #224674 !important;
+          border-radius: 50% !important;
+          background: transparent !important;
+        }
+
+        /* 3) Only your selected date gets the circle */
+        .custom-datepicker-dropdown
+          .ant-picker-cell-selected
+          .ant-picker-cell-inner {
+          background-color: #224674 !important;
+          color: #ffffff !important;
+          border-radius: 50% !important;
+        }
+
+        /* 1) Outer popup wrapper */
+        /* .custom-datepicker-dropdown {
+          width: 260px !important;
+          height: 344px !important;
+          min-width: 260px !important;
+          min-height: 344px !important;
+          max-width: 360px !important;
+          max-height: auto !important;
+          border-radius: 28px !important;
+          box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+            0px 1px 2px 0px rgba(0, 0, 0, 0.3) !important;
+          overflow: hidden !important;
+        } */
+
+        /* Override for ≥768px */
+        /* @media (min-width: 768px) {
+          .custom-datepicker-dropdown {
+            width: 360px !important; */
+            /* height: 344px !important; */
+            /* height: auto !important;
+            min-width: 360px !important;
+          }
+        } */
+         /* AddEditPeptideModal.css */
+.custom-datepicker-dropdown {
+  width: 260px !important;
+  min-width: 260px !important;
+  max-width: 360px !important;
+  border-radius: 28px !important;
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15),
+              0px 1px 2px 0px rgba(0, 0, 0, 0.3) !important;
+  overflow: hidden !important;
+  transition: height 0.3s ease, min-height 0.3s ease !important;
+}
+
+@media (min-width: 768px) {
+  .custom-datepicker-dropdown {
+    width: 360px !important;
+    min-width: 360px !important;
+  }
+}
+
+/* Remove fixed heights */
+.no-header-datepicker {
+  /* Remove fixed height properties */
+  height: auto !important;
+  min-height: auto !important;
+}
+
+/* Smooth transition for calendar resize */
+.custom-panel-container {
+  transition: height 0.3s ease;
+}
+
+
+
+
+
+/* calenderStyle.css */
+
+/* For ALL disabled dates - base style */
+.ant-picker-cell-disabled .ant-picker-cell-inner {
+  color: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Only apply opacity to NON-CURRENT months */
+.ant-picker-cell.ant-picker-cell-disabled:not(.ant-picker-cell-in-view) {
+  opacity: 0.4;
+}
+
+/* Remove hover effects on disabled dates */
+.ant-picker-cell-disabled:hover .ant-picker-cell-inner {
+  background: transparent !important;
+}
+
+
+
+/* Apply horizontal scroll and min width to the date panel */
+.ant-picker-calendar .ant-picker-date-panel {
+  overflow-x: auto !important;
+  min-width: 200px !important;
+}
+
+/* Apply minimum width to the calendar body */
+.ant-picker-calendar .ant-picker-body {
+  min-width: 1024px !important;
+}
+
+
+
+
+        /* 2) Panel container and panel itself */
+        .custom-datepicker-dropdown .ant-picker-panel-container,
+        .custom-datepicker-dropdown .ant-picker-panel {
+          width: 100% !important;
+          height: 100% !important;
+        }
+
+        /* 3) Date panel (header + body) */
+        .custom-datepicker-dropdown .ant-picker-date-panel {
+          display: flex !important;
+          flex-direction: column !important;
+          width: 100% !important;
+          height: 100% !important;
+        }
+
+        /* 4) Header (month + year nav) */
+        .custom-datepicker-dropdown .ant-picker-header {
+          flex-shrink: 0;
+          width: 100%;
+          padding: 12px 16px !important;
+        }
+
+        /* 5) Body wrapper */
+        .custom-datepicker-dropdown .ant-picker-body {
+          flex: 1 !important;
+          display: flex !important;
+          flex-direction: column !important;
+          width: 100% !important;
+          height: 100% !important;
+          padding: 1px 12px !important;
+        }
+
+        /* 6) Content (the table) */
+        .custom-datepicker-dropdown .ant-picker-content {
+          flex: 1 !important;
+          width: 100% !important;
+          height: 100% !important;
+          table-layout: fixed !important;
+        }
+
+        /* 7) Each cell fill height */
+        .custom-datepicker-dropdown .ant-picker-cell {
+          height: 100% !important;
+          padding: 12px !important;
+        }
+
+        /* Hide out-of-month dates */
+        .custom-datepicker-dropdown
+          .ant-picker-cell:not(.ant-picker-cell-in-view) {
+          visibility: hidden !important;
+          pointer-events: none !important;
+        }
+
+        /* 8) Highlight today/selected */
+        .custom-datepicker-dropdown
+          .ant-picker-cell-today
+          .ant-picker-cell-inner,
+        .custom-datepicker-dropdown
+          .ant-picker-cell-selected
+          .ant-picker-cell-inner {
+          background-color: #224674 !important;
+          color: #fff !important;
+          border-radius: 50% !important;
+        }
+
+        /* 9) Remove footer */
+        .custom-datepicker-dropdown .ant-picker-footer {
+          display: none !important;
+        }
+
+
+        .ant-picker-calendar.ant-picker-calendar-full .ant-picker-cell-selected .ant-picker-calendar-date 
+        .ant-picker-calendar-date-value, :where(.css-dev-only-do-not-override-pjilya).ant-picker-calendar.ant-picker-calendar-full 
+        .ant-picker-cell-selected:hover .ant-picker-calendar-date .ant-picker-calendar-date-value,
+        :where(.css-dev-only-do-not-override-pjilya).ant-picker-calendar.ant-picker-calendar-full .ant-picker-cell-selected 
+        .ant-picker-calendar-date-today .ant-picker-calendar-date-value, :where(.css-dev-only-do-not-override-pjilya).ant-picker-calendar.ant-picker-calendar-full 
+        .ant-picker-cell-selected:hover .ant-picker-calendar-date-today .ant-picker-calendar-date-value {
+            color: #000000;
+        }
+        
+        :where(.css-dev-only-do-not-override-pjilya).ant-picker-calendar.ant-picker-calendar-full .ant-picker-cell-in-view.ant-picker-cell-selected 
+        .ant-picker-calendar-date, :where(.css-dev-only-do-not-override-pjilya).ant-picker-calendar.ant-picker-calendar-full 
+        .ant-picker-cell-in-view.ant-picker-cell-selected .ant-picker-calendar-date-today {
+            background: #ffffff;
+        }
+
+
+
+        .calendar-wrapper
+          .ant-picker-cell:not(.ant-picker-cell-in-view)
+          .ant-picker-cell-inner {
+          color: #25292a !important;
+          opacity: 1 !important;
+        }
+
+        /* Apply Inter font only to Calendar */
+        .calendar-wrapper .ant-picker-calendar {
+          font-family: "Inter", sans-serif !important;
+        }
+
+        /* Remove unwanted border-top and margins */
+        .ant-picker-calendar.ant-picker-calendar-full
+          .ant-picker-calendar-date {
+          display: block;
+          width: auto;
+          height: auto;
+          margin: 0 !important;
+          padding: 4px 8px 0 !important;
+          border: none !important;
+          border-radius: 0;
+          transition: background 0.3s;
+        }
+
+        .ant-picker-calendar-date {
+          border-top: none !important;
+        }
+
+        .ant-picker-calendar .ant-picker-body {
+          border-radius: 0.375rem;
+          overflow: hidden;
+        }
+
+        .ant-picker-calendar .ant-picker-content thead th {
+          text-align: left !important;
+          padding: 12px 8px !important;
+          border: 1px solid #e9edee;
+          font-weight: 500 !important;
+          color: #626d6f;
+          font-size: 16px !important;
+          line-height: 16px !important;
+          letter-spacing: 0 !important;
+        }
+
+        .ant-picker-calendar .ant-picker-cell {
+          text-align: left !important;
+          vertical-align: top !important;
+          padding: 0.5rem;
+          font-weight: 500;
+          font-size: 21px !important;
+          line-height: 21px !important;
+          border: 1px solid #e9edee;
+        }
+
+        .ant-picker-calendar .ant-picker-cell-inner {
+          justify-content: flex-start !important;
+          padding: 0 !important;
+        }
+
+        /* Popup styles */
+        .event-popup {
+          transition: transform 0.2s ease-out;
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+          border: 1px solid #e2e8f0;
+        }
+
+        @media (max-width: 640px) {
+          .event-popup {
+            min-width: 240px !important;
+            max-width: 90vw !important;
+          }
+        }

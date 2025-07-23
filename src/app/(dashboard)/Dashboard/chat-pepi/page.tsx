@@ -3,12 +3,28 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { HiOutlineMenuAlt2, HiX, HiOutlineTrash } from "react-icons/hi";
-
+import DosageRemoteService from "@/services/remote/modules/dosage";
 import ShareDialog from "../components/ShareDialog";
 import ReactMarkdown from "react-markdown";
 import { v4 as uuidv4 } from "uuid";
-
+import { useSearchParams } from "next/navigation";
+// // Define type for dosage item
+interface DosageItem {
+  peptide_title: string;
+  dosage: string;
+  goals: string;
+  date: string;
+}
 const AiAssistantPage = () => {
+  // ========================
+  // Read URL params
+  const params = useSearchParams();
+  const start = params.get("start");
+  const end = params.get("end") || params.get("start");
+  const isSingle = start === end;
+
+  // ========================
+
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [messages, setMessages] = useState<any[]>([]);
@@ -121,7 +137,10 @@ const AiAssistantPage = () => {
   };
 
   // New helper to always append AI response to current messages
-  const generateResponseWithAppend = async (userMessage: string, baseMessages?: any[]) => {
+  const generateResponseWithAppend = async (
+    userMessage: string,
+    baseMessages?: any[]
+  ) => {
     setIsLoading(true);
     try {
       const res = await fetch("/api/chat", {
@@ -229,6 +248,78 @@ const AiAssistantPage = () => {
     fetchUserChats();
   }, []);
 
+  // Bilal useEffect
+  useEffect(() => {
+    if (!start) return;
+    setIsLoading(true);
+
+    const fetchDosages = async () => {
+      try {
+        const res = isSingle
+          ? await DosageRemoteService.getPeptideDosageByDate(start)
+          : await DosageRemoteService.getPeptideDosageByDateRange(start, end!);
+
+        if (res.status === "success") {
+          console.log(res);
+          // Type assertion for the response data
+          const dosageData = res.data as DosageItem[];
+          console.log(dosageData);
+          // dosageData.reverse();
+
+          // 1. Extract unique peptide names
+          const uniquePeptides = Array.from(
+            new Set(dosageData.map((item) => item.dosage + " " + item.goals))
+          ).join(", ");
+
+          // 2. Format dates for display
+          const formatDate = (dateStr: string) => {
+            const date = new Date(dateStr + "T00:00:00"); // Add time to prevent UTC conversion
+
+            return date.toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            });
+          };
+
+          let dateRange = "";
+          if (isSingle) {
+            dateRange = `[${formatDate(start)}]`;
+          } else {
+            // Get unique sorted dates
+            const dates = Array.from(
+              new Set(dosageData.map((item) => item.date))
+            ).sort((a, b) => new Date(a).getTime() - new Date(b).getTime());
+
+            dateRange = `[${dates.map((d) => formatDate(d)).join(", ")}]`;
+          }
+
+          // 3. Set the input value with the default prompt
+          setInputValue(
+            ` (${uniquePeptides}) from ${dateRange} Based on available research and studies, please provide an informational overview of this peptide's typical effects, safety profile, and usage practices.`
+            // `Can you review my dosage plan for (${uniquePeptides}) from ${dateRange} and suggest any improvements?`
+          );
+
+          // Please review this dosage and provide feedback on its safety, effectiveness, and potential side effects.
+        } else {
+          setInputValue(
+            "Based on available research and studies, please provide an informational overview of this peptide's typical effects, safety profile, and usage practices."
+
+            // "Can you review my dosage plan and suggest any improvements?"
+          );
+        }
+      } catch (err) {
+        console.error(err);
+        setInputValue(
+          "Can you review my dosage plan and suggest any improvements?"
+        );
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchDosages();
+  }, [start, end, isSingle]);
+
   // Load chat by identifier
   const loadChatByIdentifier = async (
     chatIdentifier: string
@@ -289,6 +380,8 @@ const AiAssistantPage = () => {
     }
   }, [messages, activeChat]);
 
+  // ===========================================
+
   // Copy to clipboard
   const copyToClipboard = () => {
     const lastResponse = messages.filter((m) => !m.isUser).pop();
@@ -346,45 +439,45 @@ const AiAssistantPage = () => {
     <div className="flex min-h-[calc(100vh+10px)]  2xl:min-h-[calc(100vh-100px)] w-full max-sm:px-2 px-4 sm:px-6 py-8 md:py-9 gap-6.5 max-sm:gap-0">
       {/* Sidebar / Drawer */}
       <div
-        className={`fixed  inset-y-0 left-0 z-20 w-4/5  max-w-xs bg-[#F2F5F6] rounded-3xl p-4 gap-4 flex-col items-start overflow-x-hidden overflow-y-auto transform
-           transition-transform duration-300 lg:static lg:translate-x-0 lg:flex lg:w-[20%] lg:h-auto  lg:gap-4 lg:p-6 lg:overflow-auto
+        className={`fixed  inset-y-0 left-0 z-20 w-4/5  max-w-[260px] bg-[#F2F5F6] rounded-3xl p-4 gap-4 flex-col items-start overflow-x-hidden overflow-y-auto transform
+           transition-transform duration-300 lg:static lg:translate-x-0 lg:flex  lg:h-auto  lg:gap-4 lg:p-6 lg:overflow-auto
           ${drawerOpen ? "translate-x-0" : "-translate-x-full"}`}
         style={{
           overflowX: "hidden",
         }}
       >
         {/* Close Button (mobile) */}
-        <div className="lg:hidden w-full flex justify-end">
+        <div className="lg:hidden w-full flex justify-end ">
           <button onClick={() => setDrawerOpen(false)}>
-            <HiX className="text-2xl text-[#224674]" />
+            <HiX className="text-2xl text-[#224674] cursor-pointer" />
           </button>
         </div>
 
         {/* New Chat Button */}
         <button
           onClick={handleNewChat}
-          className="bg-[#224674] text-white txt-18 font-semibold px-3 py-2.5 rounded-full  cursor-pointer max-lg:mb-6 w-full max-w-[108px]"
+          className="bg-[#224674] text-white txt-18 font-semibold px-3 py-2 rounded-full  cursor-pointer max-lg:mb-6 w-full max-w-[108px]"
         >
           New Chat
         </button>
 
         {Object.entries(groupedChats as Record<string, any[]>).map(
           ([date, chats]) => (
-            <div key={date} className="">
+            <div key={date} className=" flex flex-col ">
               <p className="txt-16 text-[#626D6F] font-medium">{date}</p>
               {chats.map((chat: any) => {
                 return (
                   <div
                     key={chat.chatIdentifier}
                     onClick={() => handleChatClick(String(chat.chatIdentifier))}
-                    className={`p-2 rounded-md cursor-pointer my-2 w-[175px]   ${
+                    className={` shrink  p-2 rounded-md cursor-pointer my-1     ${
                       activeChat === chat.chatIdentifier
                         ? "bg-[#224674] text-white"
                         : "bg-[#E9EDEE] text-[#626D6F] hover:bg-[#D8DFE0]"
                     } overflow-x-hidden`}
                   >
-                    <div className="flex flex-col overflow-x-hidden">
-                      <span className="truncate max-w-full font-semibold">
+                    <div className="flex flex-col ">
+                      <span className="truncate  font-semibold max-w-[200px] ">
                         {chat.title || "New Chat"}
                       </span>
                     </div>
@@ -396,7 +489,7 @@ const AiAssistantPage = () => {
         )}
       </div>
 
-      {/* Overlay (mobile)
+      {/* Overlay (mobile) */}
       {drawerOpen && (
         <div
           className="fixed inset-0 bg-black/30 z-10 lg:hidden"
@@ -405,11 +498,11 @@ const AiAssistantPage = () => {
       )}
 
       {/* Top bar for mobile with menu button */}
-      {/* <div className="flex items-start justify-between mt-2 md:mt-10 lg:hidden">
+      <div className="flex items-start justify-between  lg:hidden">
         <button onClick={() => setDrawerOpen(true)}>
-          <HiOutlineMenuAlt2 className="txt-48 text-[#224674]" />
+          <HiOutlineMenuAlt2 className="txt-48 text-[#224674] cursor-pointer" />
         </button>
-      </div> */}
+      </div>
 
       {/* Right Side */}
       <div

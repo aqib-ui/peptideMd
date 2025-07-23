@@ -1,0 +1,14 @@
+/* Add to your global CSS */
+.custom-datepicker-dropdown .ant-picker-cell-disabled .ant-picker-cell-inner {
+  color: #9CA3AF !important; /* Gray text */
+  background: transparent !important;
+  cursor: not-allowed;
+}
+
+.custom-datepicker-dropdown .ant-picker-cell-disabled::before {
+  background: transparent !important;
+}
+
+.custom-datepicker-dropdown .ant-picker-cell-disabled:hover .ant-picker-cell-inner {
+  background: transparent !important;
+}

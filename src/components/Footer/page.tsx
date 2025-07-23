@@ -34,7 +34,7 @@ export default function Footer() {
 
         {/* Right-aligned Lists */}
         <div
-          className="flex flex-col md:flex-row items-center gap-20 mt-10 md:mt-0 pr-6 md:pr-10"
+          className="flex flex-row md:items-center gap-20 mt-10 md:mt-0 pr-6 md:pr-10"
           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
           <ul className="text-[clamp(18px,0.43vw+16.63px,22px)] space-y-6">
@@ -84,9 +84,9 @@ export default function Footer() {
 
       {/* Centered Copyright Text with Full-Width Separator */}
       <div className="mt-10 w-full">
-        <hr className="border-t border-gray-600 w-full mb-4" />
+        <hr className="border-t border-gray-600 w-full mb-2" />
         <div
-          className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-20 [@media(min-width:1600px)]:space-x-30 text-center"
+          className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-20 [@media(min-width:1600px)]:space-x-30 text-center pb-2"
           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
         >
           <p className="text-[clamp(18px,0.43vw+16.63px,22px)]">

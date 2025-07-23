@@ -9,11 +9,16 @@ import Step3 from "@/components/onboarding/Step3";
 import ProgressBar from "@/components/onboarding/ProgressBar";
 
 export default function OnBoard() {
+  const token =
+    typeof window !== "undefined"
+      ? localStorage.getItem("peptide_user_token")
+      : null;
+
   const router = useRouter();
   const [step, setStep] = useState(1);
 
   const [formData, setFormData] = useState({
-    familiarWithPeptides: null,
+    howFamiliarAreYou: null,
     mostInterestPeptide: [],
     gender: null,
     age: null,
@@ -31,9 +36,41 @@ export default function OnBoard() {
     if (step > 1) setStep(step - 1);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    // const token = localStorage.getItem("peptide_user_token");
     console.log("Final Submit:", formData);
-    // router.push("/Dashboard");
+    try {
+      const response = await fetch(
+        "https://peptide-backend.mazedigital.us/users/v1_web_update_profile",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            howFamiliarAreYou: formData.howFamiliarAreYou,
+            mostInterestPeptide: formData.mostInterestPeptide,
+            gender: formData.gender,
+            age: formData.age,
+            weight: formData.weight,
+          }),
+        }
+      );
+      const result = await response.json();
+      if (result.status === "success") {
+        // toast.success("Your password has been reset successfully.");
+        router.push("/Dashboard");
+        console.log("🔁 result ===>", result);
+      } else {
+        // toast.error(result.message);
+        alert(result.message);
+      }
+    } catch (error) {
+      // toast.error("An error occurred. Please try again.");
+      alert("An error occurred. Please try again.");
+      console.error("🔁 error ===>", error);
+    }
   };
 
   return (
@@ -82,8 +119,8 @@ export default function OnBoard() {
 
           {step === 1 && (
             <Step1
-              value={formData.familiarWithPeptides}
-              onChange={(value) => updateForm("familiarWithPeptides", value)}
+              value={formData.howFamiliarAreYou}
+              onChange={(value) => updateForm("howFamiliarAreYou", value)}
               onContinue={() => setStep(2)}
             />
           )}

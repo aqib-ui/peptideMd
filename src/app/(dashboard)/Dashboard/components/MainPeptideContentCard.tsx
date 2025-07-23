@@ -7,7 +7,7 @@ export default function MainPeptideContentCard({ obj }: any) {
     {
       key: "nuda_name",
       label: "Nuda Name",
-      icon: "/Dashboard/pep-database/nudu-name.svg",
+      icon: "/Dashboard/pep-database/nudu-name1.svg",
     },
     {
       key: "primary_applications",

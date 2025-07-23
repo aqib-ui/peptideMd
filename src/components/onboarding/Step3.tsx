@@ -27,6 +27,9 @@ export default function Step3({
       </p>
 
       {/* Gender Selection */}
+      <label className="text-base font-medium text-[#25292A] mb-1 block">
+          Gender<span className="text-red-500">*</span>
+        </label>
       <div className="flex gap-4 mb-6">
         {["male", "female"].map((g) => (
           <button

@@ -97,7 +97,12 @@ export default function LoginPage() {
         localStorage.setItem("peptide_user_token", result.data.token);
         localStorage.setItem("peptide_user", JSON.stringify(result.data.user));
         toast.success("Login successful!");
-        router.push("/Dashboard");
+        // console.log( "🔁 result.data.user.isOnboardingIncomplete ===>", typeof(result.data.isOnboardingIncomplete));
+        if (result.data.isOnboardingIncomplete == true) {
+          router.push("/SixDigitVerify/on-board");
+        } else {
+          router.push("/Dashboard");
+        }
       } else {
         toast.error(result.message || "Invalid credentials.");
       }

@@ -141,7 +141,7 @@ export default function HomePage() {
                 cursor: "pointer",
               }}
             >
-              Explore Peptides
+              <a href="#description"> Explore Peptides</a>
             </button>
           </div>
         </div>
@@ -162,7 +162,10 @@ export default function HomePage() {
       </section>
 
       {/* Video Section */}
-      <section className=" relative dark:bg-app  flex items-center justify-center px-3 md:px-8 2xl:px-12 pt-13 z-30  bg-white">
+      <section
+        id="videoSection"
+        className=" relative dark:bg-app  flex items-center justify-center px-3 md:px-8 2xl:px-12 pt-13 z-30  bg-white"
+      >
         {/* Video Wrapper with Relative Positioning */}
         <div className="relative w-full rounded-[50px] shadow-lg overflow-hidden">
           <video
@@ -217,7 +220,7 @@ export default function HomePage() {
       </section>
 
       {/* Description Section */}
-      <section className="  flex flex-col justify-center px-2  md:px-8 2xl:px-12 my-14 md:my-20 lg:my-26 2xl:my-40">
+      <section id="description" className="  flex flex-col justify-center px-2  md:px-8 2xl:px-12 my-14 md:my-20 lg:my-26 2xl:my-40">
         <h1
           className="txt-72 font-bold leading-[100%] text-left"
           style={{ fontFamily: " 'Afacad Flux', sans-serif" }}

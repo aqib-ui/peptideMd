@@ -178,9 +178,9 @@ const DashboardHeader = () => {
           </Link>
 
           <Link
-            href="/dosage"
+            href="/Dashboard/dosage-tracking/calender"
             className={`relative inline-block mr-5 text-xl font-medium group ${
-              isActive("/dosage")
+              isActive("/Dashboard/dosage-tracking/calender")
                 ? "text-[#224674] underline underline-offset-7 decoration-[#224674] decoration-3"
                 : "text-[#626D6F] hover:text-[#224674]"
             }`}
