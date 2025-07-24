@@ -169,7 +169,7 @@ function DosageGuide() {
                   text-[#224674] dark:text-[var(--foreground)]"
                     > {selectedPeptide || "Select peptide"}
                       <Image
-                        src="/dropdown-icon.png"
+                        src="/homePage/dropdown-icon.png"
                         alt="Dropdown icon"
                         width={80}
                         height={80}
@@ -568,7 +568,7 @@ function Calculator() {
                 />
 
                 <Image
-                  src="/cal-enter-icon.png"
+                  src="/homePage/cal-enter-icon.png"
                   alt="Dropdown icon"
                   width={80}
                   height={80}
@@ -596,7 +596,7 @@ function Calculator() {
                 />
 
                 <Image
-                  src="/cal-enter-icon.png"
+                  src="/homePage/cal-enter-icon.png"
                   alt="Dropdown icon"
                   width={80}
                   height={80}
@@ -624,7 +624,7 @@ function Calculator() {
                 />
 
                 <Image
-                  src="/cal-enter-icon.png"
+                  src="/homePage/cal-enter-icon.png"
                   alt="Dropdown icon"
                   width={80}
                   height={80}

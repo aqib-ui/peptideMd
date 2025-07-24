@@ -25,7 +25,7 @@ const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
   return (
     <section className="relative">
       <Image
-        src="/image1.png"
+        src="/homePage/image1.png"
         alt="Molecule Top Left"
         width={160}
         height={160}
@@ -61,7 +61,7 @@ const MoleculeTopLeftAnimation: React.FC<MoleculeTopLeftAnimationProps> = ({
           </p>
 
           <Image
-            src="/image1.png"
+            src="/homePage/image1.png"
             alt="Molecule Bottom Right"
             width={220}
             height={220}

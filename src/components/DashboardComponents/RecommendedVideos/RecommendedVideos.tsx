@@ -1,5 +1,4 @@
-
-import Link  from "next/link";
+import Link from "next/link";
 import { RiPlayMiniLine } from "react-icons/ri";
 
 export default function RecommendedVideos() {
@@ -27,23 +26,22 @@ export default function RecommendedVideos() {
   ];
 
   return (
-    <div className=" rounded-xl ">
+    <div className=" rounded-xl my-4 xl:my-0">
       <div className="flex justify-between items-center py-2">
         <h2 className="txt-28 font-medium text-[#25292A]">
           Recommended Videos
         </h2>
 
         <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">
-          <Link href="/Dashboard/videos?viewAll=true">View All</Link> 
+          <Link href="/Dashboard/videos?viewAll=true">View All</Link>
         </span>
-       
       </div>
 
-      <div className="pt-1 flex gap-3   max-xl:flex-wrap  w-full ">
+      <div className="pt-1 gap-3  w-full grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4">
         {videoData.map((video, index) => (
           <div
             key={index}
-            className=" grow-1 relative w-full h-[190px] lg:w-[250px] lg:h-[230px] xl:w-[287px] xl:h-[280px] 
+            className=" grow-1 relative w-full   h-[300px]  xl:h-[280px] 
             rounded-[12px] overflow-hidden"
             // style={{ boxShadow: "0px 14px 18px 0px #00000040" }}
           >
@@ -56,14 +54,14 @@ export default function RecommendedVideos() {
             </video>
 
             <div
-              className="absolute inset-0 flex items-end justify-center max-lg:justify-between text-white text-center gap-2 p-4 rounded-[12px]"
+              className="absolute inset-0 flex items-end justify-between text-white text-center gap-2 p-4 rounded-[12px]"
               style={{
                 background:
                   "linear-gradient(180deg, rgba(0, 0, 0, 0) 44.11%, rgba(0, 0, 0, 0.7) 98.75%)",
               }}
             >
               <h2
-                className="txt-20 font-semibold tracking-[0.5%] text-white text-start w-[207px] h-[54px] overflow-hidden"
+                className="txt-20 font-semibold tracking-[0.5%] text-white text-start h-[42px] xl:h-[54px] overflow-hidden"
                 style={{
                   fontFamily: "'Afacad Flux', sans-serif",
                   textShadow: "1px 1px 0px #000000",

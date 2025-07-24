@@ -284,7 +284,9 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
         <div className="flex flex-col gap-4 mb-6">
           <div className="flex flex-col gap-6">
             <div className="relative">
-              <p>Date<span className="ml-0.5 text-[#F14D4D]">*</span></p>
+              <p>
+                Date<span className="ml-0.5 text-[#F14D4D]">*</span>
+              </p>
               <DatePicker
                 allowClear
                 open={isCalendarOpen}
@@ -322,7 +324,11 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
                     className="cursor-pointer"
                   />
                 }
-                popupClassName="custom-datepicker-dropdown no-header-datepicker"
+                classNames={{
+                  popup: {
+                    root: "custom-datepicker-dropdown no-header-datepicker",
+                  },
+                }}
                 disabledDate={disabledDate}
                 panelRender={(panelNode) => (
                   <div
@@ -398,7 +404,9 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
           </div>
 
           <div className="relative">
-            <p>Peptide<span className="ml-0.5 text-[#F14D4D]">*</span></p>
+            <p>
+              Peptide<span className="ml-0.5 text-[#F14D4D]">*</span>
+            </p>
             <PeptideDropdown
               selected={selectedPeptide}
               setSelected={setSelectedPeptide}
@@ -406,7 +414,9 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
           </div>
 
           <div className="relative">
-            <p>Dosage<span className="ml-0.5 text-[#F14D4D]">*</span></p>
+            <p>
+              Dosage<span className="ml-0.5 text-[#F14D4D]">*</span>
+            </p>
             <div className="relative">
               <input
                 type="text"
@@ -429,7 +439,9 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
           </div>
 
           <div className="relative">
-            <p>Goal<span className="ml-0.5 text-[#F14D4D]">*</span></p>
+            <p>
+              Goal<span className="ml-0.5 text-[#F14D4D]">*</span>
+            </p>
             <textarea
               placeholder="Write your primary goal"
               className="w-full 2xl:w-[448px] h-[100px] font-medium placeholder:font-normal bg-[#F2F5F6] border-none focus:outline-none focus:ring-0 focus:border-transparent placeholder:text-[#8D9A9B] rounded-md px-4 py-2 resize-none"

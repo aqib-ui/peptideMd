@@ -4,6 +4,7 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
+import SideAnimation from "../authComponents/SideAnimation";
 export const dynamic = "force-dynamic";
 function SixDigitVerifyInner() {
   const [code, setCode] = useState(Array(5).fill(""));
@@ -179,51 +180,13 @@ function SixDigitVerifyInner() {
   };
 
   return (
-    <div className="min-h-screen grid grid-rows-[1fr_auto]">
-      <Toaster position="top-center" />
-
-      {/* === Content Area === */}
-      <div
-        className=" flex flex-col  md:flex-row md:justify-between max-sm:p-4 px-4 py-6 2xl:py-8 [@media(min-width:1600px)]:p- 
-            xl:pl-10 2xl:pl-20 gap-4 md:gap-8 xl:gap-12 2xl:gap-34"
-      >
-        <div
-          className="w-full md:w-[48%] md:h-[calc(100vh-64px)] lg:h-[calc(100vh-66px)] [@media(min-width:1600px)]:h-[calc(100vh-104px)]
-                 [@media(min-width:1600px)]::mt-[2rem] max-h-[975px] max-w-[922px] p-[2px] rounded-[48px] flex items-center justify-center"
-        >
-          <div className="relative w-full h-full rounded-[16px] overflow-hidden">
-            {/* Background video */}
-            <video
-              autoPlay
-              muted
-              loop
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-            >
-              <source src="/authIcons/authVid.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-
-            {/* Dark translucent overlay */}
-            <div className="absolute inset-0 bg-[#000D1F]/32"></div>
-
-            {/* Foreground content */}
-            <div className="relative z-10 flex items-center justify-center w-full h-full p-8">
-              <Image
-                priority
-                src="/authIcons/authLogo.png"
-                alt="PeptideMD Logo"
-                width={492}
-                height={211}
-                className="w-auto xl:!w-[492px] h-auto xl:!h-[211px] object-contain"
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Right Section */}
-        <div className="md:w-[52%] flex justify-start items-center max-sm:mt-6 max-sm:mb-20">
-          <div className="w-full max-w-lg p-2 lg:px-4 bg-white rounded-3xl">
+       <div className=" min-h-[100vh] flex flex-col  md:flex-row items-stretch gap-10 xl:gap-20 2xl:gap-32 pt-10 pl-6 xl:pl-10 pr-6 xl:pr-20 pb-10 2xl:pb-20  ">
+          <Toaster position="top-center" />
+          {/* === Left Section === */}
+          <SideAnimation />
+          {/* Right Section */}
+          <div className=" w-full md:w-[50%] flex self-center ">
+            <div className="   bg-white  mx-auto md:mx-0 ">
             {/* Back Button */}
             <div className="mb-6">
               <button
@@ -308,7 +271,7 @@ function SixDigitVerifyInner() {
               >
                 {isSubmitting ? (
                   <img
-                    src="/loader.gif"
+                    src="/homePage/loader.gif"
                     alt="Loading..."
                     className="w-6 h-6 mx-auto bg-[#224674]"
                   />
@@ -320,7 +283,6 @@ function SixDigitVerifyInner() {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

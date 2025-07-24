@@ -22,7 +22,7 @@ const podcasts = [
 
 export default function RecommendedPodcasts() {
   return (
-    <div className="bg-white  py-4 max-lg:p-0 w-full rounded-xl">
+    <div className="bg-white  max-lg:p-0 w-full rounded-xl">
       <div className="flex justify-between items-center mb-1">
         <h2 className="txt-28 font-medium">Recommended Podcast</h2>
        <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">

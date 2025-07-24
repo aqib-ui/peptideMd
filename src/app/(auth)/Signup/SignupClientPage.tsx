@@ -5,6 +5,7 @@ import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import SideAnimation from "../authComponents/SideAnimation";
 
 type ErrorState = {
   fullName?: string;
@@ -135,36 +136,10 @@ export default function SignupClientPage() {
     }
   };
 
-
-
   return (
     <div className=" min-h-[100vh] flex flex-col  md:flex-row items-stretch gap-10 xl:gap-20 2xl:gap-32 pt-10 pl-6 xl:pl-10 pr-6 xl:pr-20 pb-10 2xl:pb-20  ">
       {/* === Left Section === */}
-      <div className="hidden md:flex w-full md:w-[48%] xl:w-[55%]  h-[650px] lg:h-auto self-center lg:self-stretch  rounded-[48px]  items-center justify-center">
-        <div className="relative w-full h-full rounded-[16px] overflow-hidden">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="/authIcons/authVid.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="absolute inset-0 bg-[#000D1F]/32"></div>
-          <div className="relative z-10 flex items-center justify-center w-full h-full ">
-            <Image
-              priority
-              src="/authIcons/authLogo.png"
-              alt="PeptideMD Logo"
-              width={492}
-              height={211}
-              className="w-auto xl:!w-[492px] h-auto xl:!h-[211px] object-contain"
-            />
-          </div>
-        </div>
-      </div>
+      <SideAnimation />
 
       {/* Right Section */}
       <div className=" w-full md:w-[50%] flex py-10  self-center ">
@@ -437,7 +412,7 @@ export default function SignupClientPage() {
             >
               {isSubmitting ? (
                 <img
-                  src="/loader.gif"
+                  src="/homePage/loader.gif"
                   alt="Loading..."
                   className="w-6 h-6 mx-auto  "
                 />

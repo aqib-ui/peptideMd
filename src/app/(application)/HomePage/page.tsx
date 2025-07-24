@@ -60,7 +60,7 @@ export default function HomePage() {
       const newCards: CardType[] = [
         {
           title: "AI Diagnostics",
-          imageSrc: "/image.png",
+          imageSrc: "/homePage/image.png",
           rotateDeg: -6,
           expandedX: spacingX ? -spacingX : 0,
           expandedY: spacingY ? -spacingY : 0,
@@ -68,7 +68,7 @@ export default function HomePage() {
         },
         {
           title: "Genetic Screening",
-          imageSrc: "/image.png",
+          imageSrc: "/homePage/image.png",
           rotateDeg: 0,
           expandedX: 0,
           expandedY: 0,
@@ -76,7 +76,7 @@ export default function HomePage() {
         },
         {
           title: "Oncology Testing",
-          imageSrc: "/image.png",
+          imageSrc: "/homePage/image.png",
           rotateDeg: 6,
           expandedX: spacingX ? spacingX : 0,
           expandedY: spacingY ? spacingY : 0,
@@ -149,7 +149,7 @@ export default function HomePage() {
         {/* Right Side (DNA Image - Hidden on Small Screens) */}
         <div className=" relative flex-1  justify-end hidden lg:block ">
           <Image
-            src="/dna.png"
+            src="/homePage/dna.png"
             alt="DNA Structure"
             width={882}
             height={1211}
@@ -175,7 +175,7 @@ export default function HomePage() {
             className="w-full rounded-[50px] object-cover"
             controls
             onPlay={handlePlay}
-            poster="/vid.png"
+            poster="/homePage/vid.png"
           >
             <source src="#" type="/authIcons/authVid.mp4" />
             Your browser does not support the video tag.
@@ -207,7 +207,7 @@ export default function HomePage() {
 
               <button className="absolute flex items-center justify-center w-full h-full mt-6 lg:mt-16 lg:opacity-100">
                 <Image
-                  src="/play.png"
+                  src="/homePage/play.png"
                   alt="Play Button"
                   width={96}
                   height={96}

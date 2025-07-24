@@ -173,7 +173,7 @@ const peptides = [
 export default function RecommendedPeptides() {
   return (
     <div className="bg-[#F2F5F6] p-4  rounded-xl">
-      <h2 className="txt-28 font-medium">Recommended Peptides</h2>
+      <h2 className=" text-2xl 2xl:txt-28 font-medium">Recommended Peptides</h2>
 
       <div className="mt-6 w-full">
         {peptides.map((peptide, index) => (

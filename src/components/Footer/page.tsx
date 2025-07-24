@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="max-w-3xl ml-[-10px]">
           <Link href="/">
             <Image
-              src="/footerlogo.png"
+              src="/homePage/footerlogo.png"
               alt="Logo"
               width={280}
               height={120}

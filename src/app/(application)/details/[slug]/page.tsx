@@ -1056,7 +1056,7 @@ const Page = ({ params }: PageProps) => {
       {/* image with Animation  */}
       <div>
         <Image
-          src="/image2.png"
+          src="/homePage/image2.png"
           alt="Molecule Bottom Right"
           width={220}
           height={220}

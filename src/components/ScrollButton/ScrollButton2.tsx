@@ -25,7 +25,7 @@ const ScrollButton2: React.FC<ScrollButton2Props> = ({ showSearch, setShowSearch
       onClick={handleScroll} // <-- fixed here
     >
       <Image
-        src="/blue-search.png"
+        src="/homePage/blue-search.png"
         alt="Search"
         width={24}
         height={24}

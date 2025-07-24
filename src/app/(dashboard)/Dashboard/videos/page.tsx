@@ -71,12 +71,13 @@ function VideoContent() {
           </Link>
         ))}
       </div>
-
-      <div className="flex justify-center mt-10">
-        <button className="basis-[342px] h-[48px] bg-blue-100 text-[#224674] rounded-full text-base font-semibold hover:bg-blue-200 transition-all">
-          Load more videos
-        </button>
-      </div>
+      {fromViewAll !== "true" && (
+        <div className="flex justify-center mt-10">
+          <button className="basis-[342px] h-[48px] bg-blue-100 text-[#224674] rounded-full text-base font-semibold hover:bg-blue-200 transition-all">
+            Load more videos
+          </button>
+        </div>
+      )}
     </div>
   );
 }

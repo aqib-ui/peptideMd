@@ -21,7 +21,7 @@ export const CardSection2 = () => {
             // style={{ height: 'clamp(550px, calc(385px + 0.2135vw), 753px)' }}
           >
             <Image
-              src="/card-pic.png"
+              src="/homePage/card-pic.png"
               alt="Card Image"
               fill
               className="object-cover md:object-cover"
@@ -39,7 +39,7 @@ export const CardSection2 = () => {
                 <div className="flex justify-center mb-4 overflow-visible">
                   <div className="relative flex flex-row sm:flex-row max-[460px]:flex-col items-center">
                     <Image
-                      src="/11.png"
+                      src="/homePage/11.png"
                       alt="Avatar 1"
                       width={60}
                       height={60}
@@ -48,7 +48,7 @@ export const CardSection2 = () => {
                              z-10 max-[460px]:mb-[-20px]"
                     />
                     <Image
-                      src="/22.png"
+                      src="/homePage/22.png"
                       alt="Avatar 2"
                       width={60}
                       height={60}
@@ -57,7 +57,7 @@ export const CardSection2 = () => {
                              z-20 -ml-4 sm:-ml-5 md:-ml-6 max-[460px]:ml-0 max-[460px]:mb-[-20px]"
                     />
                     <Image
-                      src="/33.png"
+                      src="/homePage/33.png"
                       alt="Avatar 3"
                       width={60}
                       height={60}
@@ -97,7 +97,7 @@ export const CardSection2 = () => {
             {/* Top image + card */}
             <div className="relative flex justify-center xl:justify-end items-start">
               <Image
-                src="/small-card-pic.png"
+                src="/homePage/small-card-pic.png"
                 alt="Play Button"
                 width={96}
                 height={96}

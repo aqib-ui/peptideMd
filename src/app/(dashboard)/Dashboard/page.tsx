@@ -51,8 +51,8 @@ export default function DashboardPage() {
 
       {showSuccessModal && <SuccessModal onClose={handleCloseSuccessModal} />}
 
-      <div className="flex max-lg:flex-col gap-6">
-        <div className="w-[75%] max-lg:w-full max-2xl:gap-10  flex flex-col gap-6">
+      <div className="flex flex-col xl:flex-row gap-6 ">
+        <div className="w-full xl:w-[75%]   flex flex-col gap-9 xl:gap-0  xl:justify-between">
           <RecommendedVideos />
           <StartTracking />
           <RecommendedPodcasts />
@@ -60,7 +60,7 @@ export default function DashboardPage() {
           <RecommendedCaseStudies />
         </div>
 
-        <div className="w-[25%] max-lg:w-full flex flex-col gap-6 2xl:gap-0 [@media(min-width:1600px)]:gap-6">
+        <div className="xl:w-[25%] w-full flex flex-col  xl:justify-between">
           <RecommendedPeptides />
           <RecommendedArticles />
         </div>
