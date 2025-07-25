@@ -60,7 +60,7 @@ export default function Footer() {
               {/* <a href="/AiAssistant" className="hover:text-blue-500">
                     AI Assistant
                   </a> */}
-              <Link href="/Dashboard/chat-pepi" className="hover:text-blue-500">
+              <Link href="/Dashboard/peptides" className="hover:text-blue-500">
                 Peptide Database
               </Link>
             </li>

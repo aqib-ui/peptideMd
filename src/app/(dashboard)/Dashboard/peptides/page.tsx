@@ -112,7 +112,7 @@ function PeptidesContent() {
             <img src="/Dashboard/videos/left-arrow.svg" alt="left-arrows" />
           </div>
           <h1 className=" text-xl sm:text-3xl font-semibold">
-            {fromViewAll === "true" ? "Recomended Peptides" : "Peptides"}
+            {fromViewAll === "true" ? "Recommended Peptides" : "Peptides"}
           </h1>
         </div>
 

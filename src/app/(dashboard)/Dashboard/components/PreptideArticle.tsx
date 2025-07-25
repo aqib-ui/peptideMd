@@ -113,7 +113,7 @@ export default function PeptidesArticle({
                 </svg>
               </div>
               <span className="text-sm font-semibold text-[#25292A]">
-                Video saved.
+                Peptide saved.
               </span>
             </div>
           )}

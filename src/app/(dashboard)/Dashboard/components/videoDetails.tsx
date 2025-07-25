@@ -117,7 +117,7 @@ export default function VideoDetailClient({
                 </svg>
               </div>
               <span className="text-sm font-semibold text-[#25292A]">
-                Video saved.
+                Video saved
               </span>
             </div>
           )}
