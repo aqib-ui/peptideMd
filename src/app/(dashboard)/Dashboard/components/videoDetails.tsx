@@ -44,7 +44,7 @@ export default function VideoDetailClient({
   if (!video) return notFound();
 
   return (
-    <div className="max-w-[1128px] mx-auto bg-white mt-12">
+    <div className="max-w-[1128px] mx-auto bg-white mt-12 px-4 xl:px-0 ">
       {/*top section */}
       <div className="mb-10 flex justify-between ">
         <div onClick={() => router.back()} className="cursor-pointer">

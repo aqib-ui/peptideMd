@@ -81,6 +81,10 @@ const CalendarPage: React.FC = () => {
   const calendarRef = useRef<HTMLDivElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
 
+  const [toast, setToast] = useState<{ message: string; key: number } | null>(
+    null
+  );
+
   const hiddenDateRef = useRef<HTMLInputElement>(null);
   const [isAIModalOpen, setIsAIModalOpen] = useState(false);
 
@@ -201,6 +205,15 @@ const CalendarPage: React.FC = () => {
     setDosage("");
     setGoal("");
     setEditingEvent(null);
+
+    // now show toast
+    setToast({
+      message:
+        data.type === "create"
+          ? "Peptide has been added."
+          : "Peptide has been updated.",
+      key: Date.now(), // unique so we can retrigger even if same text
+    });
   };
 
   // Add this inside CalendarPage component
@@ -250,6 +263,12 @@ const CalendarPage: React.FC = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isDrawerOpen]);
+
+  useEffect(() => {
+    if (!toast) return;
+    const id = window.setTimeout(() => setToast(null), 3000);
+    return () => window.clearTimeout(id);
+  }, [toast]);
 
   const onPanelChange: CalendarProps<Dayjs>["onPanelChange"] = (value) => {
     setCurrentDate(value.locale("en-gb"));
@@ -411,7 +430,7 @@ const CalendarPage: React.FC = () => {
               ${
                 !hasEvents()
                   ? "bg-[#D8DFE0] !text-[#9EA9AA] cursor-not-allowed"
-                  : "bg-[#E9EDEE] !text-[#224674] hover:bg-[#d0d9db] cursor-pointer"
+                  : "bg-[#C8E4FC] !text-[#224674]   cursor-pointer"
               }`}
           >
             AI Feedback
@@ -423,7 +442,7 @@ const CalendarPage: React.FC = () => {
               setIsModalOpen(true);
             }}
             style={{ fontFamily: "Afacad Flux, Afacad, Inter, sans-serif" }}
-            className=" cursor-pointer h-10 rounded-3xl px-6 py-2 flex items-center justify-center gap-2 bg-[#224674] !text-white font-semibold"
+            className="h-10 rounded-3xl px-6 py-2 flex items-center justify-center gap-2 cursor-pointer bg-[#224674] !text-white font-semibold"
           >
             Add Peptide Dose
           </button>
@@ -492,7 +511,7 @@ const CalendarPage: React.FC = () => {
                               </h3>
                               <div className="relative self-start">
                                 <button
-                                  className="w-8 h-8 flex items-center justify-center cursor-pointer bg-white rounded-full"
+                                  className="w-8 h-8 flex items-center justify-center bg-white rounded-full"
                                   onClick={() => toggleDropdown(event.id)}
                                 >
                                   <PiDotsThreeOutline size={16} />
@@ -500,7 +519,7 @@ const CalendarPage: React.FC = () => {
                                 {dropdownVisible[event.id] && (
                                   <div className="absolute right-0 mt-1 w-32 bg-white rounded-md shadow-lg py-1 z-10">
                                     <button
-                                      className=" cursor-pointer block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
+                                      className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100"
                                       onClick={() => setupEditForm(event)}
                                     >
                                       <Image
@@ -510,12 +529,12 @@ const CalendarPage: React.FC = () => {
                                         height={24}
                                         className="inline mr-2"
                                       />
-                                      <span className="txt-18 font-medium ">
+                                      <span className="txt-18 font-medium">
                                         Edit
                                       </span>
                                     </button>
                                     <button
-                                      className=" cursor-pointer block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 text-red-500"
+                                      className="block w-full text-left px-4 py-2 text-sm hover:bg-gray-100 text-red-500"
                                       onClick={() =>
                                         setupDeleteConfirmation(event)
                                       }
@@ -607,13 +626,13 @@ const CalendarPage: React.FC = () => {
                 </div>
                 <div className="flex justify-end gap-3">
                   <button
-                    className="cursor-pointer px-4 py-2"
+                    className="px-4 py-2"
                     onClick={() => setDeletingEvent(null)}
                   >
                     Cancel
                   </button>
                   <button
-                    className=" cursor-pointer px-4 py-2 bg-[#224674] !text-white w-[138px] max-md:w-auto h-12 max-md:h-auto rounded-full"
+                    className="px-4 py-2 bg-[#224674] !text-white w-[138px] max-md:w-auto h-12 max-md:h-auto rounded-full"
                     onClick={handleDeleteEvent}
                   >
                     Delete
@@ -622,7 +641,21 @@ const CalendarPage: React.FC = () => {
               </div>
             </div>
           )}
-
+          {toast && (
+            <div
+              key={toast.key}
+              className="
+            fixed top-4 right-6 z-[999]
+            bg-white shadow-lg rounded-md
+            px-4 py-2 flex items-center gap-2
+          "
+            >
+              <FaCircleCheck className="text-[#224674]" />
+              <span className="text-sm font-medium text-[#224674]">
+                {toast.message}
+              </span>
+            </div>
+          )}
           {/* Add/Edit Peptide Modal */}
           <AddEditPeptideModal
             isModalOpen={isModalOpen}
@@ -645,7 +678,8 @@ const CalendarPage: React.FC = () => {
           {/* AI Feedback Modal */}
           {isAIModalOpen && (
             <div className="fixed inset-0 z-50 bg-black/20 flex items-center justify-center">
-              <div className="bg-white rounded-[16px] p-6 w-[496px] max-sm:w-[300px] h-[555px] max-h-auto relative">
+              <div className="bg-white rounded-[16px] p-6 w-[496px] max-sm:w-[300px] h-auto max-h-[90vh] overflow-y-auto relative">
+              {/* <div className="bg-white rounded-[16px] p-6 w-[496px] max-sm:w-[300px] h-auto overflow-y-auto relative"> */}
                 <div className="flex flex-col items-center justify-between max-sm:gap-10">
                   <div className="flex items-center justify-between w-full">
                     <h2 className="txt-32 font-semibold text-[#25292A]">

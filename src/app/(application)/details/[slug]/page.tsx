@@ -217,7 +217,7 @@ const Page = ({ params }: PageProps) => {
             {/* "Peptide Overview" Button */}
             <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.85vw,66px)]">
               <button
-                className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
+                className="w-full h-full rounded-full border border-[#EB6793] hover:border-0  bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
                 style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
@@ -385,8 +385,8 @@ const Page = ({ params }: PageProps) => {
 
             {/* "Peptide Overview" Button */}
             <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.85vw,66px)]">
-              <button
-                className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
+             <button
+                className="w-full h-full rounded-full border border-[#EB6793] hover:border-0  bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
                 style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
@@ -554,8 +554,8 @@ const Page = ({ params }: PageProps) => {
 
             {/* "Peptide Overview" Button */}
             <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.85vw,66px)]">
-              <button
-                className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
+               <button
+                className="w-full h-full rounded-full border border-[#EB6793] hover:border-0  bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
                 style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
@@ -724,7 +724,7 @@ const Page = ({ params }: PageProps) => {
             {/* "Peptide Overview" Button */}
             <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.85vw,66px)]">
               <button
-                className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
+                className="w-full h-full rounded-full border border-[#EB6793] hover:border-0  bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
                 style={{ fontFamily: " 'Afacad Flux', sans-serif" }}
@@ -893,7 +893,7 @@ const Page = ({ params }: PageProps) => {
             {/* "Peptide Overview" Button */}
             <div className="gradient-border min-w-[clamp(160px,13.3vw,184px)] min-h-[clamp(50px,3.85vw,66px)]">
               <button
-                className="w-full h-full rounded-full bg-app text-black txt-btn-24 font-medium
+                className="w-full h-full rounded-full border border-[#EB6793] hover:border-0  bg-app text-black txt-btn-24 font-medium
             flex items-center justify-center transition-colors duration-100 
             ease-in-out hover:bg-gradient-to-tr hover:from-[#5CB0E2] hover:to-[#EB6793] hover:text-white"
                 style={{ fontFamily: " 'Afacad Flux', sans-serif" }}

@@ -4,10 +4,19 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import { useRouter } from "next/navigation";
 
+import DosageRemoteService from "@/services/remote/modules/dosage";
+
 const Calendar1: React.FC = () => {
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
+
+  // new!
+  const [errorMsg, setErrorMsg] = useState<string>("");
+
+  // define single‑date vs range here
+  const isSingleLocal = endDate === null;
+
   const [showYearDropdown, setShowYearDropdown] = useState(false);
 
   const weekdays = ["S", "M", "T", "W", "T", "F", "S"];
@@ -34,14 +43,24 @@ const Calendar1: React.FC = () => {
   };
 
   // Generate years for dropdown
-  const generateYears = () => {
-    const currentYear = new Date().getFullYear();
-    const years = [];
-    for (let i = currentYear - 4; i <= currentYear + 0; i++) {
-      years.push(i);
-    }
-    return years;
-  };
+  // const generateYears = () => {
+  //   const currentYear = new Date().getFullYear();
+  //   const years = [];
+  //   for (let i = currentYear - 4; i <= currentYear + 0; i++) {
+  //     years.push(i);
+  //   }
+  //   return years;
+  // };
+const generateYears = () => {
+  const currentYear = new Date().getFullYear();
+  const years = [];
+  const START_YEAR = 2021;  // Fixed starting point
+  
+  for (let i = START_YEAR; i <= currentYear; i++) {
+    years.push(i);
+  }
+  return years;
+};
 
   const years = generateYears();
 
@@ -171,38 +190,58 @@ const Calendar1: React.FC = () => {
     return dates;
   };
 
- 
-
   const router = useRouter();
 
- 
-const handleContinue = async () => {
-  if (!startDate) {
-    alert("Please select at least one date");
-    return;
-  }
+  const handleContinue = async () => {
+    if (!startDate) {
+      // alert("Please select at least one date");
+      setErrorMsg("Please select a date or date range.");
+      return;
+    }
 
-  // Format dates to YYYY-MM-DD without UTC conversion
-  const formatLocalDate = (date: Date) => {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
-    return `${year}-${month}-${day}`;
+    // clear any prior error
+    setErrorMsg("");
+
+    // format to YYYY‑MM‑DD
+    const formatLocalDate = (date: Date) => {
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2, "0");
+      const d = String(date.getDate()).padStart(2, "0");
+      return `${y}-${m}-${d}`;
+    };
+
+    const startISO = formatLocalDate(startDate);
+    const endISO = endDate ? formatLocalDate(endDate) : startISO;
+
+    try {
+      // choose the right endpoint
+      const res = isSingleLocal
+        ? await DosageRemoteService.getPeptideDosageByDate(startISO)
+        : await DosageRemoteService.getPeptideDosageByDateRange(
+            startISO,
+            endISO
+          );
+
+      // if no records, show error and bail out
+       if (res.status !== "success" || !res.data?.length) {
+        setErrorMsg(
+          isSingleLocal
+            ? "No data exists for this date."
+            : "No data exists for the selected date range."
+        );
+        return;
+      }
+
+      // otherwise navigate
+      router.push(`/Dashboard/chat-pepi?start=${startISO}&end=${endISO}`);
+    } catch (err) {
+      console.error(err);
+      setErrorMsg("Error checking peptide data. Please try again.");
+    }
   };
 
-  const startISO = formatLocalDate(startDate);
-  const endISO = endDate ? formatLocalDate(endDate) : startISO;
-
-  try {
-    router.push(`/Dashboard/chat-pepi?start=${startISO}&end=${endISO}`);
-  } catch (err) {
-    console.error(err);
-    alert("Error preparing your data");
-  }
-};
- 
   return (
-    <div className="flex flex-col items-center w-full max-w-[448px] min-h-[360px] gap-6">
+    <div className="flex flex-col items-center w-full max-w-[448px] min-h-[360px] h-auto gap-6 ">
       {/* Calendar Container */}
       <div
         className="bg-white rounded-4xl px-6 py-2 w-full"
@@ -325,14 +364,22 @@ const handleContinue = async () => {
           })}
         </div>
       </div>
-
+      
+      <div className="w-full max-w-[448px] flex flex-col justify-center items-center gap-1">
+        {/* <p> */}
+          {errorMsg && <p className="text-red-500 text-sm mb-4">{errorMsg}</p>}
+        {/* </p> */}
       {/* Continue Button */}
       <button
-        className="w-full py-3.5 bg-[#224674] !text-white rounded-full font-semibold transition-colors hover:bg-[#1a3559]"
+        className="w-full py-3.5 bg-[#224674] cursor-pointer !text-white rounded-full font-semibold transition-colors hover:bg-[#1a3559]"
         onClick={handleContinue}
       >
         Continue
       </button>
+      </div>
+
+      {/* {errorMsg && <p className="text-red-500 text-sm mb-4">{errorMsg}</p>} */}
+
     </div>
   );
 };

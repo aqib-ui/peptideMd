@@ -98,7 +98,7 @@ const CustomVideoPlayer: React.FC<VideoPlayerProps> = ({
   return (
     <div className=" w-full  rounded-xl  overflow-hidden ">
       {/* Video Container */}
-      <div className="relative w-full h-[580px] overflow-hidden ">
+      <div className="relative w-full h-[300px] sm:h-[580px] overflow-hidden ">
         <video
           ref={videoRef}
           className="w-full object-cover h-full"
@@ -110,7 +110,7 @@ const CustomVideoPlayer: React.FC<VideoPlayerProps> = ({
           Your browser doesn't support videos.
         </video>
         {/* Custom Controls Container - Positioned at bottom-4 */}
-        <div className="absolute bottom-4 left-10 right-10 pt-4.5 px-3.5 bg-[rgba(37,37,37,.70)] rounded-2xl  h-[100px]">
+        <div className="absolute bottom-4 left-3 sm:left-10  right-3 sm:right-10 pt-4.5 px-3.5 bg-[rgba(37,37,37,.70)] rounded-2xl h-[100px]">
           {/* Progress Bar */}
           <div
             className="h-1.25 w-full bg-[rgba(93,93,108,0.32)] mb-3 rounded-full cursor-pointer relative"

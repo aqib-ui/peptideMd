@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function StartTracking() {
   return (
@@ -12,10 +13,10 @@ export default function StartTracking() {
         Manage Peptide Plan
       </button> */}
       
-      <button className="rounded-[48px] bg-[#C8E4FC] text-[#224674] txt-18 font-medium 
+      <Link  href="/Dashboard/dosage-tracking/calender" className="rounded-[48px] bg-[#C8E4FC] text-[#224674] txt-18 font-medium 
       sm:w-[200px] sm:h-[56px] sm:px-6 py-2 sm:py-4">
         Manage Peptide Plan
-      </button>
+      </Link>
      </div>
 
      {/* Right section: Image */}

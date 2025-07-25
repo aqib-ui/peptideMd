@@ -1,5 +1,4 @@
-// api integration
-// AddEditPeptideModal.tsx
+
 import React, { useState, useEffect, useRef } from "react";
 import dayjs, { Dayjs } from "dayjs";
 import { DatePicker } from "antd";
@@ -26,7 +25,6 @@ interface AddEditPeptideModalProps {
   setDosage: (dosage: string) => void;
   goal: string;
   setGoal: (goal: string) => void;
-  // onSuccess: () => void;
   onSuccess: (data: {
     type: "create" | "update";
     event: CalendarEvent;
@@ -50,15 +48,20 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
   const [pickerValue, setPickerValue] = useState<Dayjs>(dayjs());
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isClient, setIsClient] = useState(false); // Track client-side rendering
-
-  // Use directly
-  // await dosageService.createPeptideDosage(data);
+  const [isClient, setIsClient] = useState(false);
   const [authError, setAuthError] = useState<string | null>(null);
-
   const calendarRef = useRef<HTMLDivElement>(null);
 
-  // Initialize client-side state
+  useEffect(() => {
+    if (isModalOpen) {
+      const original = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = original;
+      };
+    }
+  }, [isModalOpen]);
+
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -77,9 +80,9 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
     try {
       const user = JSON.parse(rawUser);
       return {
-        token, // your JWT
-        id: user.id, // or whatever the user object shape is
-        ...user, // any other user fields you need
+        token,
+        id: user.id,
+        ...user,
       };
     } catch {
       setAuthError("Session error. Please log in again.");
@@ -87,7 +90,6 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
     }
   };
 
-  // Sync header/month view with selectedDate
   useEffect(() => {
     if (selectedDate) {
       setPickerValue(dayjs(selectedDate));
@@ -101,7 +103,6 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
     setIsSubmitting(true);
     setAuthError(null);
 
-    // ensure we have a token in localStorage (your axiosClient will read it)
     const userData = getUserData();
     if (!userData?.token) {
       setAuthError("Authentication required. Please log in.");
@@ -109,11 +110,9 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
       return;
     }
 
-    // strip any mg/mcg, then always append mg
     const numericDosage = dosage.trim().replace(/mg$|mcg$/i, "");
     const dosagePayload = `${numericDosage}mg`;
 
-    // **NO** user_id here!
     const payload = {
       date: selectedDate!,
       peptide_id: selectedPeptide!.id,
@@ -124,7 +123,6 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
     console.log("📤 Payload:", payload);
 
     try {
-      // call the right endpoint
       const wrapper = editingEvent
         ? await dosageService.updatePeptideDosage(
             Number(editingEvent.id),
@@ -134,7 +132,6 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
 
       const saved = wrapper.data;
 
-      // rebuild the calendar event
       const eventData: CalendarEvent = {
         id: saved.id.toString(),
         date: saved.date,
@@ -162,13 +159,11 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
     }
   };
 
-  // Close modal and reset state
   const handleClose = () => {
     setIsModalOpen(false);
     resetFormState();
   };
 
-  // Reset form fields
   const resetFormState = () => {
     setSelectedDate(null);
     setSelectedPeptide(null);
@@ -176,21 +171,17 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
     setGoal("");
   };
 
-  // Disable future dates
   const disabledDate = (current: Dayjs) => {
     return current.isAfter(dayjs().endOf("day"));
   };
 
-  // Fixed next month disable logic
   const isNextMonthDisabled = pickerValue
     .add(1, "month")
     .startOf("month")
     .isAfter(dayjs().endOf("day"));
 
-  // Compute years dynamically
   const years = Array.from({ length: 5 }, (_, i) => pickerValue.year() - 4 + i);
 
-  // Update handler to maintain month when changing year
   const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newYear = parseInt(e.target.value);
     setPickerValue(pickerValue.year(newYear));
@@ -206,48 +197,31 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
     }
   };
 
-  // Calculate weeks in current month
   const getWeeksInMonth = () => {
     const firstDay = pickerValue.startOf("month");
     const lastDay = pickerValue.endOf("month");
-
-    // Get starting weekday (0=Sunday, 6=Saturday)
     const firstDayOfWeek = firstDay.day();
-
-    // Get total days in month
     const daysInMonth = lastDay.date();
-
-    // Calculate visible days from previous month
     const daysFromPrevMonth = firstDayOfWeek;
-
-    // Total cells needed in calendar
     const totalCells = daysInMonth + daysFromPrevMonth;
-
-    // Return number of weeks (rows)
     return Math.ceil(totalCells / 7);
   };
 
-  // Update calendar height based on weeks
   const updateCalendarHeight = () => {
     if (!calendarRef.current) return;
 
     const weeks = getWeeksInMonth();
-    const baseHeight = 344; // Base height for 5 weeks
-    const rowHeight = 50; // Approx height per week row
-
-    // Calculate new height
+    const baseHeight = 344;
+    const rowHeight = 50;
     const newHeight =
       weeks > 5 ? baseHeight + (weeks - 5) * rowHeight : baseHeight;
 
-    // Apply to calendar popup
     calendarRef.current.style.height = `${newHeight}px`;
     calendarRef.current.style.minHeight = `${newHeight}px`;
   };
 
-  // Update height when month changes or calendar opens
   useEffect(() => {
     if (isCalendarOpen) {
-      // Small delay to allow DOM update
       setTimeout(updateCalendarHeight, 10);
     }
   }, [pickerValue, isCalendarOpen]);
@@ -266,11 +240,13 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
       onClick={handleClose}
     >
       <div
-        className="bg-white rounded-[16px] p-6 w-[496px] max-sm:w-[300px] relative overflow-y-auto"
+        className="bg-white rounded-[16px] p-6 w-[496px] max-sm:w-[300px] 
+                   max-h-[90vh] min-h-[300px] flex flex-col overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="txt-32 font-semibold text-[#25292A] mb-4">
+        {/* Header - Fixed at top */}
+        <div className="flex items-center justify-between mb-6 flex-shrink-0">
+          <h2 className="txt-32 font-semibold text-[#25292A]">
             {editingEvent ? "Edit Peptide" : "Add Peptide"}
           </h2>
           <div
@@ -281,8 +257,10 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 mb-6">
+        {/* Scrollable Content Area */}
+        <div className="flex flex-col gap-4 overflow-y-auto flex-grow min-h-0">
           <div className="flex flex-col gap-6">
+            {/* Date Picker */}
             <div className="relative">
               <p>
                 Date<span className="ml-0.5 text-[#F14D4D]">*</span>
@@ -401,62 +379,68 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
                 )}
               />
             </div>
-          </div>
 
-          <div className="relative">
-            <p>
-              Peptide<span className="ml-0.5 text-[#F14D4D]">*</span>
-            </p>
-            <PeptideDropdown
-              selected={selectedPeptide}
-              setSelected={setSelectedPeptide}
-            />
-          </div>
-
-          <div className="relative">
-            <p>
-              Dosage<span className="ml-0.5 text-[#F14D4D]">*</span>
-            </p>
+            {/* Peptide Dropdown */}
             <div className="relative">
-              <input
-                type="text"
-                inputMode="numeric"
-                pattern="[0-9]*"
-                placeholder="Enter dosage you have taken"
-                className="w-full h-auto 2xl:w-[448px] xl:h-[48px] bg-[#F2F5F6] border-none focus:outline-none focus:ring-0 focus:border-transparent font-medium placeholder:font-normal placeholder:text-[#8D9A9B] rounded-md px-4 py-2 pr-12"
-                value={dosage}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  if (value === "" || /^\d+$/.test(value)) {
-                    setDosage(value);
-                  }
-                }}
+              <p>
+                Peptide<span className="ml-0.5 text-[#F14D4D]">*</span>
+              </p>
+              <PeptideDropdown
+                selected={selectedPeptide}
+                setSelected={setSelectedPeptide}
               />
-              <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#8D9A9B]">
-                mcg
-              </span>
             </div>
-          </div>
 
-          <div className="relative">
-            <p>
-              Goal<span className="ml-0.5 text-[#F14D4D]">*</span>
-            </p>
-            <textarea
-              placeholder="Write your primary goal"
-              className="w-full 2xl:w-[448px] h-[100px] font-medium placeholder:font-normal bg-[#F2F5F6] border-none focus:outline-none focus:ring-0 focus:border-transparent placeholder:text-[#8D9A9B] rounded-md px-4 py-2 resize-none"
-              value={goal}
-              onChange={(e) => setGoal(e.target.value)}
-            ></textarea>
-          </div>
-
-          {/* Add error display near the submit button */}
-          {authError && (
-            <div className="text-red-500 text-sm mb-4 text-center">
-              {authError}
+            {/* Dosage Input */}
+            <div className="relative">
+              <p>
+                Dosage<span className="ml-0.5 text-[#F14D4D]">*</span>
+              </p>
+              <div className="relative">
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  placeholder="Enter dosage you have taken"
+                  className="w-full h-auto 2xl:w-[448px] xl:h-[48px] bg-[#F2F5F6] border-none focus:outline-none focus:ring-0 focus:border-transparent font-medium placeholder:font-normal placeholder:text-[#8D9A9B] rounded-md px-4 py-2 pr-12"
+                  value={dosage}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (value === "" || /^\d+$/.test(value)) {
+                      setDosage(value);
+                    }
+                  }}
+                />
+                <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-[#8D9A9B]">
+                  mcg
+                </span>
+              </div>
             </div>
-          )}
 
+            {/* Goal Textarea */}
+            <div className="relative">
+              <p>
+                Goal<span className="ml-0.5 text-[#F14D4D]">*</span>
+              </p>
+              <textarea
+                placeholder="Write your primary goal"
+                className="w-full 2xl:w-[448px] h-[100px] font-medium placeholder:font-normal bg-[#F2F5F6] border-none focus:outline-none focus:ring-0 focus:border-transparent placeholder:text-[#8D9A9B] rounded-md px-4 py-2 resize-none"
+                value={goal}
+                onChange={(e) => setGoal(e.target.value)}
+              ></textarea>
+            </div>
+
+            {/* Error Message */}
+            {authError && (
+              <div className="text-red-500 text-sm mb-4 text-center">
+                {authError}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Submit Button - Fixed at bottom */}
+        <div className="pt-4 flex-shrink-0">
           <button
             className={`txt-18 font-semibold leading-none text-center px-4 py-4 rounded-full w-full ${
               isFormValid && !isSubmitting
@@ -476,7 +460,4 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
 
 export default AddEditPeptideModal;
 
-// function getFDAStatus(tag: string) {
-//   throw new Error("Function not implemented.");
-// }
 const getFDAStatus = (tag: string): boolean => tag === "FDA";

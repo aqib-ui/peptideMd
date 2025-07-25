@@ -48,6 +48,7 @@ const AiAssistantPage = () => {
     setIsLoading(true);
 
     try {
+      console.log("USER MESSAGE ON BUTTON PRESS, ", userMessage);
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -439,7 +440,9 @@ const AiAssistantPage = () => {
     <div className="flex min-h-[calc(100vh+10px)]  2xl:min-h-[calc(100vh-100px)] w-full max-sm:px-2 px-4 sm:px-6 py-8 md:py-9 gap-6.5 max-sm:gap-0">
       {/* Sidebar / Drawer */}
       <div
-        className={`fixed  inset-y-0 left-0 z-20 w-4/5  max-w-[260px] bg-[#F2F5F6] rounded-3xl p-4 gap-4 flex-col items-start overflow-x-hidden overflow-y-auto transform
+        className={`fixed  inset-y-0 left-0 z-20 w-4/5  max-w-[260px] bg-[#F2F5F6] ${
+          drawerOpen ? "rounded-none" : "rounded-3xl"
+        } p-4 gap-4 flex-col items-start overflow-x-hidden overflow-y-auto transform
            transition-transform duration-300 lg:static lg:translate-x-0 lg:flex  lg:h-auto  lg:gap-4 lg:p-6 lg:overflow-auto
           ${drawerOpen ? "translate-x-0" : "-translate-x-full"}`}
         style={{
@@ -463,21 +466,21 @@ const AiAssistantPage = () => {
 
         {Object.entries(groupedChats as Record<string, any[]>).map(
           ([date, chats]) => (
-            <div key={date} className=" flex flex-col ">
+            <div key={date} className=" flex flex-col  ">
               <p className="txt-16 text-[#626D6F] font-medium">{date}</p>
-              {chats.map((chat: any) => {
+              {chats.map((chat: any , index) => {
                 return (
                   <div
-                    key={chat.chatIdentifier}
+                    key={chat.chatIdentifier + index}
                     onClick={() => handleChatClick(String(chat.chatIdentifier))}
-                    className={` shrink  p-2 rounded-md cursor-pointer my-1     ${
+                    className={` shrink  p-2 rounded-md cursor-pointer my-1 w-full    ${
                       activeChat === chat.chatIdentifier
                         ? "bg-[#224674] text-white"
                         : "bg-[#E9EDEE] text-[#626D6F] hover:bg-[#D8DFE0]"
                     } overflow-x-hidden`}
                   >
                     <div className="flex flex-col ">
-                      <span className="truncate  font-semibold max-w-[200px] ">
+                      <span className="truncate  font-semibold w-[200px] ">
                         {chat.title || "New Chat"}
                       </span>
                     </div>

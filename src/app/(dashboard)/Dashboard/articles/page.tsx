@@ -52,7 +52,7 @@ function ArticleContent() {
                         Recommended
                       </span>
                     )}
-                    <h3 className="text-2xl text-[#25292A] font-semibold w-full">
+                    <h3 className="text-lg sm:text-xl xl:text-2xl font-semibold text-[#25292A] line-clamp-2   lg:h-auto ">
                       {article.title}
                     </h3>
                   </div>
@@ -67,7 +67,7 @@ function ArticleContent() {
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <p className="text-[#626D6F] font-medium text-sm py-1">
+                  <p className="text-[#626D6F] font-medium text-sm py-1 ">
                     {article.date}
                   </p>
                 </div>

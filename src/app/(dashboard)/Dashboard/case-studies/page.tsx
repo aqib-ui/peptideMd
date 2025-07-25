@@ -47,7 +47,7 @@ function CaseStudyContent() {
             <Link href={`/Dashboard/case-studies/${caseStudy.id}`}>
               <div
                 key={index}
-                className="bg-[#F2F5F6] w-full h-[124px] rounded-lg flex p-3 gap-3"
+                className="bg-[#F2F5F6] w-full h-[140px] lg:h-[124px] rounded-lg flex p-3 gap-3"
               >
                 {/* left Image */}
                 <div className="relative w-[100px] h-full rounded-[12px] overflow-hidden flex-shrink-0">
@@ -68,7 +68,7 @@ function CaseStudyContent() {
                         Recommended
                       </span>
                     )}
-                    <h3 className="text-2xl font-semibold text-[#25292A]">
+                    <h3 className=" text-lg sm:text-xl xl:text-2xl font-semibold text-[#25292A] line-clamp-2   lg:h-auto">
                       {caseStudy.title}
                     </h3>
                   </div>

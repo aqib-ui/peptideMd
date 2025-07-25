@@ -2,6 +2,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
+  // console.log("🔁 request ===>", req);
   const { message } = await req.json();
   const response = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
@@ -16,6 +17,17 @@ export async function POST(req: NextRequest) {
     }),
   });
 
+  // console.log("🔁 response ===>", response);
+
   const data = await response.json();
-  return NextResponse.json({ result: data.choices[0].message.content });
+  // console.log("🔁 data ===>", data?.choices);
+  const responseData = data?.choices;
+  if (!responseData) {
+    return NextResponse.json({
+      result: "NOTHING FOUND",
+    });
+  }
+  return NextResponse.json({
+    result: data.choices[0].message.content ?? "NOTHING FOUND",
+  });
 }
