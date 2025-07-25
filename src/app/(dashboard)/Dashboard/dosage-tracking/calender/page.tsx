@@ -676,10 +676,9 @@ const CalendarPage: React.FC = () => {
           />
 
           {/* AI Feedback Modal */}
-          {isAIModalOpen && (
+          {/* {isAIModalOpen && (
             <div className="fixed inset-0 z-50 bg-black/20 flex items-center justify-center">
               <div className="bg-white rounded-[16px] p-6 w-[496px] max-sm:w-[300px] h-auto max-h-[90vh] overflow-y-auto relative">
-              {/* <div className="bg-white rounded-[16px] p-6 w-[496px] max-sm:w-[300px] h-auto overflow-y-auto relative"> */}
                 <div className="flex flex-col items-center justify-between max-sm:gap-10">
                   <div className="flex items-center justify-between w-full">
                     <h2 className="txt-32 font-semibold text-[#25292A]">
@@ -692,6 +691,29 @@ const CalendarPage: React.FC = () => {
                       <RxCross2 className="text-[#9EA9AA] !font-extrabold w-6 h-6 max-sm:w-4 max-sm:h-4" />
                     </div>
                   </div>
+                  <Calendar1 />
+                </div>
+              </div>
+            </div>
+          )} */}
+          {isAIModalOpen && (
+            <div className="fixed inset-0 z-50 bg-black/20 flex items-center justify-center">
+              <div className="bg-white rounded-[16px] p-6 w-[496px] max-sm:w-[300px] max-h-[90vh] flex flex-col">
+                {/* Fixed Header */}
+                <div className="flex items-center justify-between w-full pb-4">
+                  <h2 className="txt-32 font-semibold text-[#25292A]">
+                    Select a Date
+                  </h2>
+                  <div
+                    className="bg-[#D8DFE0] rounded-full p-2 cursor-pointer"
+                    onClick={() => setIsAIModalOpen(false)}
+                  >
+                    <RxCross2 className="text-[#9EA9AA] !font-extrabold w-6 h-6 max-sm:w-4 max-sm:h-4" />
+                  </div>
+                </div>
+
+                {/* Scrollable Calendar & Button Section */}
+                <div className="overflow-y-auto flex-grow">
                   <Calendar1 />
                 </div>
               </div>
