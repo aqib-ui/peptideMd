@@ -1,20 +1,23 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import Image from "next/image";
-import { HiOutlineMenuAlt2, HiX, HiOutlineTrash } from "react-icons/hi";
-import DosageRemoteService from "@/services/remote/modules/dosage";
-import ShareDialog from "../components/ShareDialog";
-import ReactMarkdown from "react-markdown";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useSearchParams } from "next/navigation";
-// // Define type for dosage item
+import DosageRemoteService from "@/services/remote/modules/dosage";
+import ShareDialog from "../components/ShareDialog";
+import ChatSidebar from "./components/ChatSidebar";
+import ChatMessages from "./components/ChatMessages";
+import ChatInput from "./components/ChatInput";
+import MobileHeader from "./components/MobileHeader";
+
+// Define type for dosage item
 interface DosageItem {
   peptide_title: string;
   dosage: string;
   goals: string;
   date: string;
 }
+
 const AiAssistantPage = () => {
   // ========================
   // Read URL params
@@ -41,7 +44,6 @@ const AiAssistantPage = () => {
   const [activeChat, setActiveChat] = useState<string | null>(null);
   const [showShareOptions, setShowShareOptions] = useState(false);
   const [copied, setCopied] = useState(false);
-  const messagesEndRef = useRef<null | HTMLDivElement>(null);
 
   // Function to generate a response based on user input from chatgpt
   const generateResponse = async (userMessage: string) => {
@@ -77,7 +79,6 @@ const AiAssistantPage = () => {
     }
 
     setIsLoading(false);
-    scrollToBottom();
   };
 
   // Handle form submission
@@ -89,18 +90,27 @@ const AiAssistantPage = () => {
     if (!activeChat) {
       const newChatId = uuidv4();
       const now = new Date().toISOString();
-      setChatHistory((prev) => [
-        {
-          id: newChatId,
-          title:
-            inputValue.split(" ").slice(0, 8).join(" ") +
-            (inputValue.split(" ").length > 8 ? " ..." : ""),
-          createdAt: now,
-          updatedAt: now,
-          chatIdentifier: newChatId,
-        },
-        ...prev,
-      ]);
+      
+      // Check if this chat already exists to prevent duplicates
+      const chatExists = chatHistory.some(chat => chat.chatIdentifier === newChatId);
+      if (chatExists) {
+        console.log("Chat already exists, preventing duplicate creation");
+        return;
+      }
+      
+      // Create new chat with proper title
+      const chatTitle = inputValue.split(" ").slice(0, 8).join(" ") +
+        (inputValue.split(" ").length > 8 ? " ..." : "");
+      
+      const newChat = {
+        id: newChatId,
+        title: chatTitle,
+        createdAt: now,
+        updatedAt: now,
+        chatIdentifier: newChatId,
+      };
+      
+      setChatHistory((prev) => [newChat, ...prev]);
       setActiveChat(newChatId);
 
       // 1. Set first message
@@ -110,7 +120,6 @@ const AiAssistantPage = () => {
         timestamp: new Date(),
       };
       setMessages([firstMsg]);
-      saveChatToBackend(newChatId, [firstMsg]);
 
       // 2. Call OpenAI and append response to current messages
       generateResponseWithAppend(inputValue, [firstMsg]);
@@ -121,6 +130,8 @@ const AiAssistantPage = () => {
     // Existing chat logic
     const userMsg = { text: inputValue, isUser: true, timestamp: new Date() };
     setMessages((prev) => [...prev, userMsg]);
+    
+    // Update chat title if it's still "New Chat"
     setChatHistory((prev) =>
       prev.map((chat) =>
         chat.chatIdentifier === activeChat && chat.title === "New Chat"
@@ -133,6 +144,7 @@ const AiAssistantPage = () => {
           : chat
       )
     );
+    
     generateResponseWithAppend(inputValue);
     setInputValue("");
   };
@@ -169,34 +181,46 @@ const AiAssistantPage = () => {
       ]);
     }
     setIsLoading(false);
-    scrollToBottom();
   };
 
   // New chat button
   const handleNewChat = () => {
     const newChatId = uuidv4();
     const now = new Date().toISOString();
-    setChatHistory((prev) => [
-      {
-        id: newChatId,
-        title: "New Chat",
-        createdAt: now,
-        updatedAt: now,
-        chatIdentifier: newChatId,
-      },
-      ...prev,
-    ]);
+    
+    // Check if this chat already exists to prevent duplicates
+    const chatExists = chatHistory.some(chat => chat.chatIdentifier === newChatId);
+    if (chatExists) {
+      console.log("Chat already exists, preventing duplicate creation");
+      return;
+    }
+    
+    // Check if there's already an active "New Chat" to prevent multiple empty chats
+    const hasActiveNewChat = chatHistory.some(chat => 
+      chat.title === "New Chat" && chat.chatIdentifier === activeChat
+    );
+    
+    if (hasActiveNewChat) {
+      console.log("Already have an active new chat, switching to it");
+      setActiveChat(activeChat);
+      setMessages([]);
+      setInputValue(""); // Clear input when switching to existing new chat
+      return;
+    }
+    
+    const newChat = {
+      id: newChatId,
+      title: "New Chat",
+      createdAt: now,
+      updatedAt: now,
+      chatIdentifier: newChatId,
+    };
+    
+    setChatHistory((prev) => [newChat, ...prev]);
     setActiveChat(newChatId);
     setMessages([]);
+    setInputValue(""); // Clear input when creating new chat
   };
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
 
   // Fetch user chats
   useEffect(() => {
@@ -233,25 +257,33 @@ const AiAssistantPage = () => {
                   title,
                   createdAt: chat.createdAt,
                   updatedAt: chat.updatedAt,
-                  chatIdentifier: chat.chatIdentifier, // <-- Make sure this is unique and from backend
+                  chatIdentifier: chat.chatIdentifier,
                 };
               })
             );
           }
         });
       }
+      
+      // Remove duplicates based on chatIdentifier
+      const uniqueChats = chats.filter((chat, index, self) => 
+        index === self.findIndex(c => c.chatIdentifier === chat.chatIdentifier)
+      );
+      
       console.log(
         "Fetched chats:",
-        chats.map((c) => c.chatIdentifier)
+        uniqueChats.map((c) => c.chatIdentifier)
       ); // Debug: log all identifiers
-      setChatHistory(chats);
+      setChatHistory(uniqueChats);
     };
     fetchUserChats();
   }, []);
 
-  // Bilal useEffect
+  // Bilal useEffect - Only run when coming from dosage section
   useEffect(() => {
-    if (!start) return;
+    // Only run if we have start parameter AND no active chat (fresh visit from dosage)
+    if (!start || activeChat) return;
+    
     setIsLoading(true);
 
     const fetchDosages = async () => {
@@ -265,7 +297,6 @@ const AiAssistantPage = () => {
           // Type assertion for the response data
           const dosageData = res.data as DosageItem[];
           console.log(dosageData);
-          // dosageData.reverse();
 
           // 1. Extract unique peptide names
           const uniquePeptides = Array.from(
@@ -295,31 +326,33 @@ const AiAssistantPage = () => {
             dateRange = `[${dates.map((d) => formatDate(d)).join(", ")}]`;
           }
 
-          // 3. Set the input value with the default prompt
-          setInputValue(
-            ` (${uniquePeptides}) from ${dateRange} Based on available research and studies, please provide an informational overview of this peptide's typical effects, safety profile, and usage practices.`
-            // `Can you review my dosage plan for (${uniquePeptides}) from ${dateRange} and suggest any improvements?`
-          );
+          // 3. Set the input value with the default prompt ONLY if no active chat
+          if (!activeChat) {
+            setInputValue(
+              ` (${uniquePeptides}) from ${dateRange} Based on available research and studies, please provide an informational overview of this peptide's typical effects, safety profile, and usage practices.`
+            );
+          }
 
-          // Please review this dosage and provide feedback on its safety, effectiveness, and potential side effects.
         } else {
-          setInputValue(
-            "Based on available research and studies, please provide an informational overview of this peptide's typical effects, safety profile, and usage practices."
-
-            // "Can you review my dosage plan and suggest any improvements?"
-          );
+          if (!activeChat) {
+            setInputValue(
+              "Based on available research and studies, please provide an informational overview of this peptide's typical effects, safety profile, and usage practices."
+            );
+          }
         }
       } catch (err) {
         console.error(err);
-        setInputValue(
-          "Can you review my dosage plan and suggest any improvements?"
-        );
+        if (!activeChat) {
+          setInputValue(
+            "Can you review my dosage plan and suggest any improvements?"
+          );
+        }
       } finally {
         setIsLoading(false);
       }
     };
     fetchDosages();
-  }, [start, end, isSingle]);
+  }, [start, end, isSingle, activeChat]);
 
   // Load chat by identifier
   const loadChatByIdentifier = async (
@@ -353,31 +386,46 @@ const AiAssistantPage = () => {
     }
   }, [activeChat]);
 
-  // Save chat to backend
+  // Save chat to backend with debouncing
   const saveChatToBackend = async (
     chatIdentifier: string,
     messages: any[]
   ): Promise<void> => {
+    if (!chatIdentifier || messages.length === 0) return;
+    
     const userToken = localStorage.getItem("peptide_user_token");
-    await fetch(
-      "https://peptide-backend.mazedigital.us/chats/v1_mobiel_create-or-update",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${userToken}`,
-        },
-        body: JSON.stringify({
-          chatIdentifier,
-          history: JSON.stringify(messages),
-        }),
+    try {
+      const response = await fetch(
+        "https://peptide-backend.mazedigital.us/chats/v1_mobiel_create-or-update",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${userToken}`,
+          },
+          body: JSON.stringify({
+            chatIdentifier,
+            history: JSON.stringify(messages),
+          }),
+        }
+      );
+      
+      if (!response.ok) {
+        console.error("Failed to save chat to backend");
       }
-    );
+    } catch (error) {
+      console.error("Error saving chat to backend:", error);
+    }
   };
 
+  // Debounced save effect
   useEffect(() => {
-    if (messages.length > 0) {
-      saveChatToBackend(activeChat || "", messages);
+    if (messages.length > 0 && activeChat) {
+      const timeoutId = setTimeout(() => {
+        saveChatToBackend(activeChat, messages);
+      }, 1000); // Wait 1 second before saving
+      
+      return () => clearTimeout(timeoutId);
     }
   }, [messages, activeChat]);
 
@@ -403,109 +451,27 @@ const AiAssistantPage = () => {
     setShowShareOptions(!showShareOptions);
   };
 
-  // Helper to check if a date is today
-  const isToday = (dateStr: string) => {
-    const date = new Date(dateStr);
-    const now = new Date();
-    return (
-      date.getDate() === now.getDate() &&
-      date.getMonth() === now.getMonth() &&
-      date.getFullYear() === now.getFullYear()
-    );
-  };
-
-  // Group chats by 'Today' or date
-  const groupedChats: Record<string, any[]> = chatHistory.reduce(
-    (groups: Record<string, any[]>, chat) => {
-      const dateStr =
-        chat.createdAt || chat.updatedAt || new Date().toISOString();
-      const dateObj = new Date(dateStr);
-      const dateLabel = isToday(dateStr)
-        ? "Today"
-        : dateObj.toLocaleDateString();
-      if (!groups[dateLabel]) groups[dateLabel] = [];
-      groups[dateLabel].push(chat);
-      return groups;
-    },
-    {}
-  );
   const handleChatClick = (chatIdentifier: string) => {
     setActiveChat(chatIdentifier);
     setMessages([]); // Clear previous messages immediately for UI feedback
+    setInputValue(""); // Clear input when switching chats
     loadChatByIdentifier(chatIdentifier);
   };
 
-  // Sidebar render (remove time from title, just show title)
   return (
     <div className="flex min-h-[calc(100vh+10px)]  2xl:min-h-[calc(100vh-100px)] w-full max-sm:px-2 px-4 sm:px-6 py-8 md:py-9 gap-6.5 max-sm:gap-0">
-      {/* Sidebar / Drawer */}
-      <div
-        className={`fixed  inset-y-0 left-0 z-20 w-4/5  max-w-[260px] bg-[#F2F5F6] ${
-          drawerOpen ? "rounded-none" : "rounded-3xl"
-        } p-4 gap-4 flex-col items-start overflow-x-hidden overflow-y-auto transform
-           transition-transform duration-300 lg:static lg:translate-x-0 lg:flex  lg:h-auto  lg:gap-4 lg:p-6 lg:overflow-auto
-          ${drawerOpen ? "translate-x-0" : "-translate-x-full"}`}
-        style={{
-          overflowX: "hidden",
-        }}
-      >
-        {/* Close Button (mobile) */}
-        <div className="lg:hidden w-full flex justify-end ">
-          <button onClick={() => setDrawerOpen(false)}>
-            <HiX className="text-2xl text-[#224674] cursor-pointer" />
-          </button>
-        </div>
+      {/* Sidebar Component */}
+      <ChatSidebar
+        drawerOpen={drawerOpen}
+        setDrawerOpen={setDrawerOpen}
+        chatHistory={chatHistory}
+        activeChat={activeChat}
+        handleNewChat={handleNewChat}
+        handleChatClick={handleChatClick}
+      />
 
-        {/* New Chat Button */}
-        <button
-          onClick={handleNewChat}
-          className="bg-[#224674] text-white txt-18 font-semibold px-3 py-2 rounded-full  cursor-pointer max-lg:mb-6 w-full max-w-[108px]"
-        >
-          New Chat
-        </button>
-
-        {Object.entries(groupedChats as Record<string, any[]>).map(
-          ([date, chats]) => (
-            <div key={date} className=" flex flex-col  ">
-              <p className="txt-16 text-[#626D6F] font-medium">{date}</p>
-              {chats.map((chat: any , index) => {
-                return (
-                  <div
-                    key={chat.chatIdentifier + index}
-                    onClick={() => handleChatClick(String(chat.chatIdentifier))}
-                    className={` shrink  p-2 rounded-md cursor-pointer my-1 w-full    ${
-                      activeChat === chat.chatIdentifier
-                        ? "bg-[#224674] text-white"
-                        : "bg-[#E9EDEE] text-[#626D6F] hover:bg-[#D8DFE0]"
-                    } overflow-x-hidden`}
-                  >
-                    <div className="flex flex-col ">
-                      <span className="truncate  font-semibold w-[200px] ">
-                        {chat.title || "New Chat"}
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          )
-        )}
-      </div>
-
-      {/* Overlay (mobile) */}
-      {drawerOpen && (
-        <div
-          className="fixed inset-0 bg-black/30 z-10 lg:hidden"
-          onClick={() => setDrawerOpen(false)}
-        />
-      )}
-
-      {/* Top bar for mobile with menu button */}
-      <div className="flex items-start justify-between  lg:hidden">
-        <button onClick={() => setDrawerOpen(true)}>
-          <HiOutlineMenuAlt2 className="txt-48 text-[#224674] cursor-pointer" />
-        </button>
-      </div>
+      {/* Mobile Header */}
+      <MobileHeader setDrawerOpen={setDrawerOpen} />
 
       {/* Right Side */}
       <div
@@ -513,147 +479,14 @@ const AiAssistantPage = () => {
         style={{ fontFamily: "'Afacad', sans-serif" }}
       >
         <div className="bg-white rounded-[3rem] h-full p-6 sm:p-10 flex flex-col">
-          {messages.length === 0 ? (
-            // Initial state - greeting
-            <div className="flex flex-col items-center justify-center h-full text-center">
-              <div className="flex max-sm:flex-col items-center gap-4 ">
-                <div className="w-10 h-10 rounded-full  flex items-center justify-center">
-                  <Image
-                    src="/Dashboard/pep-logo.svg"
-                    alt="Pepi"
-                    width={40}
-                    height={40}
-                    className="h-10 w-10"
-                  />
-                </div>
-                <h2 className="text-2xl text-[#224674] font-semibold">
-                  Hi, I am Pepi! Your AI friend
-                </h2>
-              </div>
-
-              <h2 className="text-4xl md:text-5xl font-semibold bg-gradient-to-r from-[#224674] to-[#DD6F94] bg-clip-text text-transparent mt-4">
-                How can I help you?
-              </h2>
-            </div>
-          ) : (
-            // Chat messages
-            <div className="flex-1 overflow-y-auto pb-4">
-              {messages.map((message, index) => (
-                <div
-                  key={index}
-                  className={`mb-6 ${
-                    message.isUser ? "text-right" : "text-left"
-                  }`}
-                >
-                  {message.isUser ? (
-                    <div className="inline-block bg-[#F2F5F6] text-[#25292A] rounded-xl p-[12px_16px] max-w-full break-words">
-                      <div className="font-medium">You</div>
-                      <div className="text-xl break-words">{message.text}</div>
-                    </div>
-                  ) : (
-                    <div className="block text-[#25292A] border-b border-[#D8DFE0] pb-8 max-w-full break-words">
-                      <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center bg-[#F2F5F6]">
-                          <Image
-                            src="/Dashboard/pep-logo.svg"
-                            alt="Pepi"
-                            width={48}
-                            height={48}
-                            className="w-10 h-10 object-contain"
-                          />
-                        </div>
-                        <div className="flex-1">
-                          <div className="font-medium">Pepi</div>
-                          <div className="mt-1 text-lg break-words">
-                            <ReactMarkdown
-                              components={{
-                                hr: () => null,
-                              }}
-                            >
-                              {message.text}
-                            </ReactMarkdown>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {index === messages.length - 1 && (
-                    <div className="mt-4 flex justify-end gap-4">
-                      {/* Copy button */}
-                      {copied ? (
-                        <button className="flex items-center gap-1  cursor-pointer  ">
-                          <Image
-                            src="/Dashboard/peptide-copied-tick.svg"
-                            alt="share"
-                            width={24}
-                            height={24}
-                          />
-                          <span className="text-[#25292A] text-xl font-semibold ">
-                            Copy
-                          </span>
-                        </button>
-                      ) : (
-                        <button
-                          onClick={copyToClipboard}
-                          className="flex items-center gap-1 cursor-pointer"
-                        >
-                          <Image
-                            src="/Dashboard/peptide-copy.svg"
-                            alt="share"
-                            width={24}
-                            height={24}
-                          />
-                          <span className="text-[#25292A] text-xl font-semibold">
-                            Copy
-                          </span>
-                        </button>
-                      )}
-                      {/* Share button */}
-                      <button
-                        onClick={handleShare}
-                        className="flex items-center gap-1 cursor-pointer"
-                      >
-                        <Image
-                          src="/Dashboard/peptide-share.svg"
-                          alt="share"
-                          width={24}
-                          height={24}
-                        />
-                        <span className="text-[#25292A] text-xl font-semibold">
-                          Share
-                        </span>
-                      </button>
-                    </div>
-                  )}
-                </div>
-              ))}
-
-              {isLoading && (
-                <div className="flex mb-6">
-                  <div className="inline-block">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full  flex items-center justify-center">
-                        <Image
-                          src="/Dashboard/pep-logo.svg"
-                          alt="Pepi"
-                          width={50}
-                          height={50}
-                        />
-                      </div>
-                      <div className="flex space-x-2 bg-[#F0F4F5] p-1 rounded-[6px]">
-                        <div className="w-3 h-3 rounded-full bg-[#D6F0F5] animate-bounce"></div>
-                        <div className="w-3 h-3 rounded-full bg-[#D6F0F5] animate-bounce delay-75"></div>
-                        <div className="w-3 h-3 rounded-full bg-[#D6F0F5] animate-bounce delay-150"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              <div ref={messagesEndRef} />
-            </div>
-          )}
+          {/* Chat Messages Component */}
+          <ChatMessages
+            messages={messages}
+            isLoading={isLoading}
+            copied={copied}
+            copyToClipboard={copyToClipboard}
+            handleShare={handleShare}
+          />
 
           {showShareOptions && (
             <ShareDialog
@@ -661,46 +494,17 @@ const AiAssistantPage = () => {
             />
           )}
 
-          {/* Input and Button */}
-          <form onSubmit={handleSubmit} className="flex gap-4 w-full mt-6">
-            <input
-              type="text"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              placeholder="Ask about peptides..."
-              className="bg-gray-100 px-6 w-full p-4 text-base sm:text-lg font-medium rounded-full placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-[#224674]"
-              disabled={isLoading}
-            />
-
-            <button
-              type="submit"
-              disabled={isLoading || !inputValue.trim()}
-              className={`flex justify-center items-center text-white text-xl font-medium p-6 rounded-full ${
-                isLoading || !inputValue.trim()
-                  ? "bg-[#D8DFE0] cursor-not-allowed"
-                  : "bg-[#224674] hover:bg-[#1a3559] cursor-pointer"
-              }`}
-            >
-              {isLoading ? (
-                <Image
-                  src="/Dashboard/stop.svg"
-                  alt="send"
-                  width={40}
-                  height={40}
-                />
-              ) : (
-                <Image
-                  src="/Dashboard/arrow-up.svg"
-                  alt="send"
-                  width={40}
-                  height={40}
-                />
-              )}
-            </button>
-          </form>
+          {/* Chat Input Component */}
+          <ChatInput
+            inputValue={inputValue}
+            setInputValue={setInputValue}
+            handleSubmit={handleSubmit}
+            isLoading={isLoading}
+          />
         </div>
       </div>
     </div>
   );
 };
+
 export default AiAssistantPage;
