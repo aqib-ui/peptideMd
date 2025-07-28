@@ -429,7 +429,7 @@ const CalendarPage: React.FC = () => {
             className={`h-10 rounded-3xl px-6 py-2 flex items-center justify-center gap-2 font-semibold transition 
               ${
                 !hasEvents()
-                  ? "bg-[#D8DFE0] !text-[#9EA9AA] cursor-not-allowed"
+                  ? "bg-[#E9EDEE] !text-[#9EA9AA] cursor-not-allowed"
                   : "bg-[#C8E4FC] !text-[#224674]   cursor-pointer"
               }`}
           >
@@ -650,7 +650,7 @@ const CalendarPage: React.FC = () => {
             px-4 py-2 flex items-center gap-2
           "
             >
-              <FaCircleCheck className="text-[#224674]" />
+              <FaCircleCheck className="text-[#224674] " />
               <span className="text-sm font-medium text-[#224674]">
                 {toast.message}
               </span>
@@ -676,26 +676,6 @@ const CalendarPage: React.FC = () => {
           />
 
           {/* AI Feedback Modal */}
-          {/* {isAIModalOpen && (
-            <div className="fixed inset-0 z-50 bg-black/20 flex items-center justify-center">
-              <div className="bg-white rounded-[16px] p-6 w-[496px] max-sm:w-[300px] h-auto max-h-[90vh] overflow-y-auto relative">
-                <div className="flex flex-col items-center justify-between max-sm:gap-10">
-                  <div className="flex items-center justify-between w-full">
-                    <h2 className="txt-32 font-semibold text-[#25292A]">
-                      Select a Date
-                    </h2>
-                    <div
-                      className="bg-[#D8DFE0] rounded-full p-2 cursor-pointer mb-4"
-                      onClick={() => setIsAIModalOpen(false)}
-                    >
-                      <RxCross2 className="text-[#9EA9AA] !font-extrabold w-6 h-6 max-sm:w-4 max-sm:h-4" />
-                    </div>
-                  </div>
-                  <Calendar1 />
-                </div>
-              </div>
-            </div>
-          )} */}
           {isAIModalOpen && (
             <div className="fixed inset-0 z-50 bg-black/20 flex items-center justify-center">
               <div className="bg-white rounded-[16px] p-6 w-[496px] max-sm:w-[300px] max-h-[90vh] flex flex-col">
@@ -713,7 +693,7 @@ const CalendarPage: React.FC = () => {
                 </div>
 
                 {/* Scrollable Calendar & Button Section */}
-                <div className="overflow-y-auto flex-grow">
+                <div className="overflow-y-auto flex-grow modal-content">
                   <Calendar1 />
                 </div>
               </div>
