@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-app scroll-smooth" >
+    <html lang="en" className="bg-app" >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
