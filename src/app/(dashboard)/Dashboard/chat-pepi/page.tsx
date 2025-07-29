@@ -9,6 +9,9 @@ import ChatSidebar from "./components/ChatSidebar";
 import ChatMessages from "./components/ChatMessages";
 import ChatInput from "./components/ChatInput";
 import MobileHeader from "./components/MobileHeader";
+import { fetchUserChats, saveChatToBackend, loadChatByIdentifier } from '@/services/chatPepi/chatService';
+import { formatDate } from '@/utils/dateUtils';
+import { copyToClipboard } from '@/utils/clipboard';
 
 // Define type for dosage item
 interface DosageItem {
@@ -194,159 +197,49 @@ const AiAssistantPage = () => {
     setMessages([]);
   };
 
-  // Fetch user chats
+  // useEffect for fetching user chats
   useEffect(() => {
-    const fetchUserChats = async (): Promise<void> => {
-      const userToken = localStorage.getItem("peptide_user_token");
-      const res = await fetch(
-        "https://peptide-backend.mazedigital.us/chats/v1_get-by-user",
-        {
-          headers: { Authorization: `Bearer ${userToken}` },
-        }
-      );
-      const data = await res.json();
-      let chats: any[] = [];
-      if (data.data && typeof data.data === "object") {
-        Object.values(data.data).forEach((arr: any) => {
-          if (Array.isArray(arr)) {
-            chats = chats.concat(
-              arr.map((chat: any) => {
-                // Parse history and get first user message for title
-                let title = "New Chat";
-                try {
-                  const hist = JSON.parse(chat.history);
-                  if (Array.isArray(hist) && hist.length > 0) {
-                    const firstUserMsg = hist.find((m: any) => m.isUser);
-                    if (firstUserMsg && firstUserMsg.text) {
-                      const words = firstUserMsg.text.split(" ");
-                      title = words.slice(0, 8).join(" ");
-                      if (words.length > 8) title += " ...";
-                    }
-                  }
-                } catch {}
-                return {
-                  id: chat.id,
-                  title,
-                  createdAt: chat.createdAt,
-                  updatedAt: chat.updatedAt,
-                  chatIdentifier: chat.chatIdentifier,
-                };
-              })
-            );
-          }
-        });
-      }
-
-      // Remove duplicates based on chatIdentifier
-      const uniqueChats = chats.filter(
-        (chat, index, self) =>
-          index ===
-          self.findIndex((c) => c.chatIdentifier === chat.chatIdentifier)
-      );
-
-      console.log(
-        "Fetched chats:",
-        uniqueChats.map((c) => c.chatIdentifier)
-      ); // Debug: log all identifiers
-      setChatHistory(uniqueChats);
-    };
-    fetchUserChats();
+    const userToken = localStorage.getItem("peptide_user_token");
+    if (!userToken) return;
+    fetchUserChats(userToken).then(setChatHistory);
   }, []);
 
-  // Load chat by identifier
-  const loadChatByIdentifier = async (
-    chatIdentifier: string
-  ): Promise<void> => {
+  // Function to load chat by identifier
+  const handleChatClick = (chatIdentifier: string) => {
+    setActiveChat(chatIdentifier);
+    setIsChatLoading(true);
+    setMessages([]);
     const userToken = localStorage.getItem("peptide_user_token");
-    const res = await fetch(
-      `https://peptide-backend.mazedigital.us/chats/v1_mobile_get-by-identifier/${chatIdentifier}`,
-      {
-        headers: { Authorization: `Bearer ${userToken}` },
-      }
-    );
-    const data = await res.json();
-    if (data.data && data.data.history) {
-      try {
-        const parsed = JSON.parse(data.data.history);
-        if (Array.isArray(parsed)) {
-          // First set loading to false
-          setIsChatLoading(false);
-          // Then set messages in the next frame to ensure container is ready
-          requestAnimationFrame(() => {
-            setMessages(parsed);
-          });
-        } else {
-          setMessages([]);
-          setIsChatLoading(false);
-        }
-      } catch {
-        setMessages([]);
-        setIsChatLoading(false);
-      }
-    } else {
-      setMessages([]);
+    if (!userToken) return;
+    loadChatByIdentifier(chatIdentifier, userToken).then((msgs) => {
       setIsChatLoading(false);
-    }
-  };
-
-  // Only load conversation when user clicks a chat
-  useEffect(() => {
-    if (activeChat) {
-      loadChatByIdentifier(activeChat);
-    }
-  }, [activeChat]);
-
-  // Save chat to backend with debouncing
-  const saveChatToBackend = async (
-    chatIdentifier: string,
-    messages: any[]
-  ): Promise<void> => {
-    if (!chatIdentifier || messages.length === 0) return;
-
-    const userToken = localStorage.getItem("peptide_user_token");
-    try {
-      const response = await fetch(
-        "https://peptide-backend.mazedigital.us/chats/v1_mobiel_create-or-update",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${userToken}`,
-          },
-          body: JSON.stringify({
-            chatIdentifier,
-            history: JSON.stringify(messages),
-          }),
-        }
-      );
-
-      if (!response.ok) {
-        console.error("Failed to save chat to backend");
-      }
-    } catch (error) {
-      console.error("Error saving chat to backend:", error);
-    }
+      setMessages(msgs);
+    });
   };
 
   // Debounced save effect
   useEffect(() => {
     if (messages.length > 0 && activeChat) {
+      const userToken = localStorage.getItem("peptide_user_token");
+      if (!userToken) return;
       const timeoutId = setTimeout(() => {
-        saveChatToBackend(activeChat, messages);
-      }, 1000); // Wait 1 second before saving
-
+        saveChatToBackend(activeChat, messages, userToken);
+      }, 1000);
       return () => clearTimeout(timeoutId);
     }
   }, [messages, activeChat]);
 
- 
+  // Copy to clipboard (imported)
+  const handleCopyToClipboard = () => {
+    const lastResponse = messages.filter((m) => !m.isUser).pop();
+    if (lastResponse) {
+      copyToClipboard(lastResponse.text, setCopied);
+    }
+  };
 
-  // Handle new chat click and reset state of chat
-  const handleChatClick = (chatIdentifier: string) => {
-    setActiveChat(chatIdentifier);
-    setIsChatLoading(true);
-    setMessages([]);
-    loadChatByIdentifier(chatIdentifier);
+  // Share button
+  const handleShare = () => {
+    setShowShareOptions(!showShareOptions);
   };
 
   // Bilal useEffect to fetch dosages
@@ -373,27 +266,13 @@ const AiAssistantPage = () => {
           ).join(", ");
 
           // 2. Format dates for display
-          const formatDate = (dateStr: string) => {
-            const date = new Date(dateStr + "T00:00:00"); // Add time to prevent UTC conversion
-
-            return date.toLocaleDateString("en-US", {
-              month: "short",
-              day: "numeric",
-              year: "numeric",
-            });
-          };
-
-          let dateRange = "";
-          if (isSingle) {
-            dateRange = `[${formatDate(start)}]`;
-          } else {
-            // Get unique sorted dates
-            const dates = Array.from(
-              new Set(dosageData.map((item) => item.date))
-            ).sort((a, b) => new Date(a).getTime() - new Date(b).getTime());
-
-            dateRange = `[${dates.map((d) => formatDate(d)).join(", ")}]`;
-          }
+          const dateRange = isSingle
+            ? `[${formatDate(start)}]`
+            : `[${Array.from(
+                new Set(dosageData.map((item) => item.date))
+              ).sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
+                .map((d) => formatDate(d))
+                .join(", ")}]`;
 
           // 3. Set the input value with the default prompt
           setInputValue(
@@ -421,25 +300,6 @@ const AiAssistantPage = () => {
     fetchDosages();
   }, [start, end, isSingle]);
 
-  // Copy to clipboard
-  const copyToClipboard = () => {
-    const lastResponse = messages.filter((m) => !m.isUser).pop();
-    if (lastResponse) {
-      // Create temporary element to strip HTML tags
-      const tempDiv = document.createElement("div");
-      tempDiv.innerHTML = lastResponse.text;
-      const plainText = tempDiv.textContent || tempDiv.innerText || "";
-
-      navigator.clipboard.writeText(plainText);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    }
-  };
-
-  // Share button
-  const handleShare = () => {
-    setShowShareOptions(!showShareOptions);
-  };
   return (
     <div className="flex  min-h-[calc(100vh+10px)]  2xl:min-h-[calc(100vh-100px)] w-full max-sm:px-2 px-4 sm:px-6  py-8 md:py-9 gap-6.5 max-sm:gap-0">
       {/* Sidebar Component */}
@@ -468,7 +328,7 @@ const AiAssistantPage = () => {
               messages={messages}
               isLoading={isLoading}
               copied={copied}
-              copyToClipboard={copyToClipboard}
+              copyToClipboard={handleCopyToClipboard}
               handleShare={handleShare}
               isChatLoading={isChatLoading}
             />
