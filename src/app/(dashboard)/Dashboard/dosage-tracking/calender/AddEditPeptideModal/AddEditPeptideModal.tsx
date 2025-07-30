@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import dayjs, { Dayjs } from "dayjs";
 import { DatePicker } from "antd";
@@ -262,19 +261,19 @@ const AddEditPeptideModal: React.FC<AddEditPeptideModalProps> = ({
       >
         {/* Header - Fixed at top */}
         <div className="flex items-center justify-between mb-6 flex-shrink-0">
-          <h2 className="text-xl md:text-2xl font-semibold text-[#25292A]">
+          <h2 className="txt-32 font-semibold text-[#25292A]">
             {editingEvent ? "Edit Peptide" : "Add Peptide"}
           </h2>
           <div
             className="bg-[#D8DFE0] rounded-full p-2 cursor-pointer"
             onClick={handleClose}
           >
-            <RxCross2 className="text-[#9EA9AA] font-extrabold" />
+            <RxCross2 className="text-[#9EA9AA] !font-extrabold w-6 h-6 max-sm:w-4 max-sm:h-4" />
           </div>
         </div>
 
         {/* Scrollable Content Area */}
-        <div className="flex flex-col gap-4 overflow-y-auto flex-grow min-h-0">
+        <div className="flex flex-col gap-4 overflow-y-auto modal-content flex-grow min-h-0">
           <div className="flex flex-col gap-6">
             {/* Date Picker */}
             <div className="relative">

@@ -3,8 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation"; // Naya hook import kiya hai
+import { useRouter } from "next/navigation";
 
 const DashboardHeader = () => {
+  const router = useRouter();
   const [isExploreHovered, setIsExploreHovered] = useState(false);
   const pathname = usePathname(); // Current URL path get karne ke liye
 
@@ -20,7 +22,7 @@ const DashboardHeader = () => {
         <div className="flex items-center space-x-2">
           <Link href="/">
             <Image
-             priority
+              priority
               src="/headerIcon/logo.svg"
               alt="Logo"
               width={150}
@@ -191,7 +193,10 @@ const DashboardHeader = () => {
         </nav>
 
         {/* User Avatar */}
-        <div className="relative p-[1px] rounded-full bg-gradient-to-r from-[#FFC02E] to-[#D7D43C] cursor-pointer">
+        <div
+          onClick={() => router.push(`/profile`)}
+          className="relative p-[1px] rounded-full bg-gradient-to-r from-[#FFC02E] to-[#D7D43C] cursor-pointer"
+        >
           <div className="w-10 h-10 rounded-full text-lg bg-[#C8E4FC] flex items-center justify-center text-[#224674] font-semibold">
             JC
           </div>

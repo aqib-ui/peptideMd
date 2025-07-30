@@ -199,6 +199,41 @@ body {
   scrollbar-color: #c8e4fc transparent; /* Firefox */
 }
 
+
+
+/* scroll for dosage tracking modals */
+.modal-content {
+  overflow-y: auto;
+  scrollbar-width: auto;               
+  scrollbar-color: #D8DFE0 transparent;
+}
+
+.modal-content::-webkit-scrollbar {
+  width: 8px;          
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background-color: #D8DFE0;   
+  border-radius: 4px;          
+  border: 1px solid transparent;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background-color: #C0C4C5;    
+}
+
+.modal-content::-webkit-scrollbar-corner {
+  background: transparent;
+}
+/*  
+
+
+
+
 /* globals.css */
 
 @layer utilities {

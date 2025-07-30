@@ -3,8 +3,6 @@ import React, { use, useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
-import Link from "next/link";
-import { IoIosArrowRoundBack } from "react-icons/io";
 import { RiEyeLine, RiEyeOffLine } from "react-icons/ri";
 import SideAnimation from "../authComponents/SideAnimation";
 type ErrorState = {
@@ -103,13 +101,16 @@ export default function CreateNewPassword() {
       <div className=" w-full md:w-[50%] flex self-center ">
         <div className="   bg-white  mx-auto md:mx-0 ">
           {/* Back Button */}
-          <Link href="/Login">
-            <div className="mb-6">
-              <button className=" cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition">
-                <IoIosArrowRoundBack className="text-gray-700 txt-24" />
-              </button>
-            </div>
-          </Link>
+          <div onClick={() => router.back()} className="cursor-pointer mb-3">
+            <Image
+              src="/authIcons/authBack-button.svg"
+              height={24}
+              width={24}
+              className="h-10 w-10"
+              alt="left-arrows"
+            />
+          </div>
+
           {/* Icon */}
           <div className="p-2  bg-[#DD6F941F] border-[#DD6F94] border-1 rounded-xl flex items-center justify-center w-fit lg:w-15 lg:h-15 mb-6">
             <img

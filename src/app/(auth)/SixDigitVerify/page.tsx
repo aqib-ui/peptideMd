@@ -1,6 +1,5 @@
 "use client";
 import { useState, useRef, useEffect, Suspense } from "react";
-import { IoIosArrowRoundBack } from "react-icons/io";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Toaster, toast } from "react-hot-toast";
@@ -180,109 +179,102 @@ function SixDigitVerifyInner() {
   };
 
   return (
-       <div className=" min-h-[100vh] flex flex-col  md:flex-row items-stretch gap-10 xl:gap-20 2xl:gap-32 pt-10 pl-6 xl:pl-10 pr-6 xl:pr-20 pb-10 2xl:pb-20  ">
-          <Toaster position="top-center" />
-          {/* === Left Section === */}
-          <SideAnimation />
-          {/* Right Section */}
-          <div className=" w-full md:w-[50%] flex self-center ">
-            <div className="   bg-white  mx-auto md:mx-0 ">
-            {/* Back Button */}
-            <div className="mb-6">
-              <button
-                onClick={() => {
-                  if (from === "signup") {
-                    router.push("/Signup");
-                  } else if (from === "forgetpassword") {
-                    router.push("/ForgetPassword");
-                  } else {
-                    router.push("/");
-                  }
-                }}
-                className=" cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:bg-gray-50 transition"
-              >
-                <IoIosArrowRoundBack className="txt-24" />
-              </button>
-            </div>
-
-            {/* Icon */}
-            <div className="p-2  bg-[#DD6F941F] border-[#DD6F94] border-1 rounded-xl flex items-center justify-center w-fit lg:w-15 lg:h-15 mb-6">
-              <img
-                src="/authIcons/password-check.png"
-                alt="SMS Icon"
-                className="w-10 h-10 object-contain"
-              />
-            </div>
-
-            <h2 className="txt-32 font-semibold mb-2 text-[#25292A]">
-              Enter Verification Code
-            </h2>
-            <p className="txt-20 text-[#51595A] mb-6 w-full 2xl:w-[496px]">
-              Please enter the verification code sent to{" "}
-              <span className="text-[#224674]">{email || "your email"}</span> to
-              verify your request and continue resetting your password.
-            </p>
-
-            <form onSubmit={handleSubmit}>
-              <div className="w-full 2xl:w-[496px] 2xl:h-[56px] flex justify-around  gap-2 lg:gap-3 mb-6">
-                {code.map((digit, idx) => (
-                  <input
-                    key={idx}
-                    type="text"
-                    maxLength={1}
-                    value={digit}
-                    onChange={(e) => handleChange(e, idx)}
-                    onKeyDown={(e) => handleKeyDown(e, idx)}
-                    onPaste={handlePaste}
-                    ref={(el) => {
-                      inputsRef.current[idx] = el;
-                    }}
-                    className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-14 xl:w-18 xl:h-16
-                  text-center txt-18 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 bg-gray-50"
-                  />
-                ))}
-              </div>
-
-              <div className="text-left mb-6">
-                {secondsLeft > 0 ? (
-                  <div className="text-[#8D9A9B] txt-18 font-[400] leading-[100%] font-[Afacad Flux]">
-                    Request a new code (0:
-                    {secondsLeft < 10 ? `0${secondsLeft}` : secondsLeft})
-                  </div>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={handleResendCode}
-                    className=" cursor-pointer text-[#224674] txt-16 font-[600] leading-[100%] underline font-[Afacad Flux] transition"
-                  >
-                    Request a new code
-                  </button>
-                )}
-              </div>
-
-              <button
-                type="submit"
-                className={`w-full txt-18 2xl:w-[496px] 2xl:h-[56px] py-3 rounded-full font-semibold transition ${
-                  !isFormValid()
-                    ? "bg-[#D8DFE0] cursor-not-allowed text-[#9EA9AA]"
-                    : "bg-[#224674] text-white cursor-pointer"
-                }`}
-                disabled={!isFormValid()}
-              >
-                {isSubmitting ? (
-                  <img
-                    src="/homePage/loader.gif"
-                    alt="Loading..."
-                    className="w-6 h-6 mx-auto bg-[#224674]"
-                  />
-                ) : (
-                  "Verify"
-                )}
-              </button>
-            </form>
+    <div className=" min-h-[100vh] flex flex-col  md:flex-row items-stretch gap-10 xl:gap-20 2xl:gap-32 pt-10 pl-6 xl:pl-10 pr-6 xl:pr-20 pb-10 2xl:pb-20  ">
+      <Toaster position="top-center" />
+      {/* === Left Section === */}
+      <SideAnimation />
+      {/* Right Section */}
+      <div className=" w-full md:w-[50%] flex self-center ">
+        <div className="   bg-white  mx-auto md:mx-0 ">
+          {/* Back Button */}
+          <div onClick={() => router.back()} className="cursor-pointer mb-3">
+            <Image
+              src="/authIcons/authBack-button.svg"
+              height={24}
+              width={24}
+              className="h-10 w-10"
+              alt="left-arrows"
+            />
           </div>
+
+          {/* Icon */}
+          <div className="p-2  bg-[#DD6F941F] border-[#DD6F94] border-1 rounded-xl flex items-center justify-center w-fit lg:w-15 lg:h-15 mb-6">
+            <img
+              src="/authIcons/password-check.png"
+              alt="SMS Icon"
+              className="w-10 h-10 object-contain"
+            />
+          </div>
+
+          <h2 className="txt-32 font-semibold mb-2 text-[#25292A]">
+            Enter Verification Code
+          </h2>
+          <p className="txt-20 text-[#51595A] mb-6 w-full 2xl:w-[496px]">
+            Please enter the verification code sent to{" "}
+            <span className="text-[#224674]">{email || "your email"}</span> to
+            verify your request and continue resetting your password.
+          </p>
+
+          <form onSubmit={handleSubmit}>
+            <div className="w-full 2xl:w-[496px] 2xl:h-[56px] flex justify-around  gap-2 lg:gap-3 mb-6">
+              {code.map((digit, idx) => (
+                <input
+                  key={idx}
+                  type="text"
+                  maxLength={1}
+                  value={digit}
+                  onChange={(e) => handleChange(e, idx)}
+                  onKeyDown={(e) => handleKeyDown(e, idx)}
+                  onPaste={handlePaste}
+                  ref={(el) => {
+                    inputsRef.current[idx] = el;
+                  }}
+                  className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-14 xl:w-18 xl:h-16
+                  text-center txt-18 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 bg-gray-50"
+                />
+              ))}
+            </div>
+
+            <div className="text-left mb-6">
+              {secondsLeft > 0 ? (
+                <div className="text-[#8D9A9B] txt-18 font-[400] leading-[100%] font-[Afacad Flux]">
+                  Request a new code (0:
+                  {secondsLeft < 10 ? `0${secondsLeft}` : secondsLeft})
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={handleResendCode}
+                  className=" cursor-pointer text-[#224674] txt-16 font-[600] leading-[100%] underline font-[Afacad Flux] transition"
+                >
+                  Request a new code
+                </button>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className={`w-full txt-18 2xl:w-[496px] 2xl:h-[56px] py-3 rounded-full font-semibold transition ${
+                !isFormValid()
+                  ? "bg-[#D8DFE0] cursor-not-allowed text-[#9EA9AA]"
+                  : "bg-[#224674] text-white cursor-pointer"
+              }`}
+              disabled={!isFormValid()}
+            >
+              {isSubmitting ? (
+                <img
+                  src="/homePage/loader.gif"
+                  alt="Loading..."
+                  className="w-6 h-6 mx-auto bg-[#224674]"
+                />
+              ) : (
+                "Verify"
+              )}
+            </button>
+          </form>
         </div>
       </div>
+    </div>
   );
 }
 

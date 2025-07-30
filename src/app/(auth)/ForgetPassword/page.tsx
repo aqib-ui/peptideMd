@@ -1,9 +1,6 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-// import logo from "../../../public/headerIcon/logo.png";
-import { IoIosArrowRoundBack } from "react-icons/io";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import SideAnimation from "../authComponents/SideAnimation";
 
@@ -68,16 +65,15 @@ export default function EmailVerification() {
       <div className=" w-full md:w-[50%] flex self-center ">
         <div className="   bg-white  mx-auto md:mx-0 ">
           {/* Back Button */}
-          <Link href="/Login">
-            <div className="mb-6">
-              <button
-                className=" cursor-pointer w-10 h-10 flex items-center justify-center rounded-full bg-white border border-gray-200
-                 hover:bg-gray-50 transition"
-              >
-                <IoIosArrowRoundBack className="text-gray-700 txt-24" />
-              </button>
-            </div>
-          </Link>
+          <div onClick={() => router.back()} className="cursor-pointer mb-6">
+            <Image
+              src="/authIcons/authBack-button.svg"
+              height={24}
+              width={24}
+              className="h-10 w-10"
+              alt="left-arrows"
+            />
+          </div>
 
           {/* Envelope Icon */}
           <div className="p-2  bg-[#DD6F941F] border-[#DD6F94] border-1 rounded-xl flex items-center justify-center w-fit lg:w-15 lg:h-15 mb-6">

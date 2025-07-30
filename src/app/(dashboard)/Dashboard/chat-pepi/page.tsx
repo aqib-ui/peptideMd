@@ -262,7 +262,7 @@ const AiAssistantPage = () => {
 
           // 1. Extract unique peptide names
           const uniquePeptides = Array.from(
-            new Set(dosageData.map((item) => item.dosage + " " + item.goals))
+            new Set(dosageData.map((item) =>  item.dosage + " " + item.goals))
           ).join(", ");
 
           // 2. Format dates for display

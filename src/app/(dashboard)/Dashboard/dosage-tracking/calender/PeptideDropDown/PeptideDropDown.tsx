@@ -1,12 +1,15 @@
-
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { FaExclamationTriangle } from "react-icons/fa";
+// import { FaExclamationTriangle } from "react-icons/fa";
 import { CiSearch } from "react-icons/ci";
 // import { FaAngleDown } from "react-icons/fa";
 import { FaAngleDown } from "react-icons/fa6";
+
+import { CiWarning } from "react-icons/ci";
+// import { IoIosCheckmarkCircle } from "react-icons/io";
+import { FaCircleCheck } from "react-icons/fa6";
 
 
 export type PeptideOption = {
@@ -45,7 +48,6 @@ export default function PeptideDropdown({
         const response = await fetch(
           // "https://peptide-backend.mazedigital.us/peptides/v1_web_getAllPeptide?page=1&limit=10&title=AOD&side_effect_profile=Minimal&experience_level=Beginner&fda_status=Not FDA"
 
-
           "https://peptide-backend.mazedigital.us/peptides/v1_web_getAllPeptide"
         );
         if (!response.ok) {
@@ -57,10 +59,10 @@ export default function PeptideDropdown({
         // Map and normalize FDA status
         const mappedOptions = data.data.peptides.map((peptide: any) => {
           // Normalize FDA status by trimming and converting to uppercase
-          const normalizedStatus = peptide.fda_status 
-            ? peptide.fda_status.trim().toUpperCase() 
-            : '';
-          
+          const normalizedStatus = peptide.fda_status
+            ? peptide.fda_status.trim().toUpperCase()
+            : "";
+
           return {
             id: peptide.id,
             name: peptide.title,
@@ -106,9 +108,9 @@ export default function PeptideDropdown({
   });
 
   return (
-    <div className="relative w-full" ref={wrapperRef}>
+    <div className="relative " ref={wrapperRef}>
       <div
-        className="w-full h-auto 2xl:w-[448px] xl:h-[48px] !bg-[#F2F5F6] rounded-md px-3 py-2 flex justify-between items-center cursor-pointer"
+        className="w-full h-auto xl:h-[48px] !bg-[#F2F5F6] rounded-md px-3 py-2 flex justify-between items-center cursor-pointer"
         onClick={() => setOpen(!open)}
       >
         <span
@@ -122,8 +124,8 @@ export default function PeptideDropdown({
         </span>
         {/* <IoMdArrowDropdown className="text-[#8D9A9B] text-lg" /> */}
         <FaAngleDown
-  onClick={() => setOpen(!open)}
-  className={`
+          onClick={() => setOpen(!open)}
+          className={`
     text-[#8D9A9B] 
     text-lg 
     transform 
@@ -132,7 +134,7 @@ export default function PeptideDropdown({
     ease-in-out 
     ${open ? "rotate-180" : "rotate-0"}
   `}
-/>
+        />
       </div>
 
       {open && (
@@ -156,7 +158,7 @@ export default function PeptideDropdown({
               </div>
             ) : error ? (
               <div className="h-48 flex flex-col items-center justify-center text-[#8D9A9B] text-sm p-4 text-center">
-                <FaExclamationTriangle className="text-yellow-500 mb-2" />
+                <CiWarning className="text-yellow-500 mb-2" />
                 <span>Error loading peptides:</span>
                 <span className="text-red-500 text-xs mt-1">{error}</span>
               </div>
@@ -173,7 +175,7 @@ export default function PeptideDropdown({
                     setOpen(false);
                   }}
                   className={`px-4 py-3 cursor-pointer flex justify-between items-center hover:bg-[#E4EBEC] h-16 ${
-                    idx % 2 === 1 ? "bg-[#D8DFE0]" : "bg-white"
+                    idx % 2 === 1 ? "bg-[#F2F5F6]" : "bg-white"
                   }`}
                 >
                   <div className="flex gap-4">
@@ -184,22 +186,22 @@ export default function PeptideDropdown({
                       <p className="text-[#25292A] font-medium text-[15px] !m-0 truncate">
                         {option.name}
                       </p>
-                      <p className="text-[#626D6F] text-[13px] !m-0 w-40 max-sm:w-28 !truncate">
+                      <p className="text-[#51595A] text-[13px] !m-0 w-40 max-sm:w-28 !truncate">
                         {option.sub}
                       </p>
                     </div>
                   </div>
 
                   {option.tag === "NOT FDA" && (
-                    <div className="flex items-center justify-center gap-1 text-[#A18233] bg-[#FCF3DB] w-[72px] h-[24px] rounded-2xl text-[12px]">
-                      <FaExclamationTriangle className="text-xs mt-[2px]" />
+                    <div className="flex items-center justify-center gap-1 text-[#A18233] font-medium bg-[#FCF3DB] w-[72px] h-[24px] rounded-2xl text-[12px]">
+                      <CiWarning className="text-sm" />
                       Not FDA
                     </div>
                   )}
 
                   {option.tag === "FDA" && (
-                    <div className="flex items-center justify-center gap-1 text-[#1C8F5D] bg-[#DBFCDF] w-[72px] h-[24px] rounded-2xl text-[12px]">
-                      <FaExclamationTriangle className="text-xs mt-[2px]" />
+                    <div className="flex items-center justify-center gap-1 text-[#1C8F5D] font-medium bg-[#DBFCDF] w-[72px] h-[24px] rounded-2xl text-[12px]">
+                      <FaCircleCheck className="text-sm" />
                       FDA
                     </div>
                   )}
