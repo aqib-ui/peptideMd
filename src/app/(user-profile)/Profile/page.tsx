@@ -48,19 +48,19 @@ const links: {
     href: "/profileIcons/privacy-policy",
     iconSrc: "/profileIcons/privacy.svg",
   },
-//   {
-//     label: "Logout",
-//     href: "/profileIcons/logout",
-//     iconSrc: "/profileIcons/logout.svg",
-//   },
+  //   {
+  //     label: "Logout",
+  //     href: "/profileIcons/logout",
+  //     iconSrc: "/profileIcons/logout.svg",
+  //   },
 ];
 
 export default function Profile() {
-    const router = useRouter();
+  const router = useRouter();
 
-    const firstGroup  = links.slice(0, 2);  // items 0 & 1
-  const secondGroup = links.slice(2, 6);  // items 2,3,4,5
-  const thirdGroup  = links.slice(6);     // everything from item 6 onward
+  const firstGroup = links.slice(0, 2); // items 0 & 1
+  const secondGroup = links.slice(2, 6); // items 2,3,4,5
+  const thirdGroup = links.slice(6); // everything from item 6 onward
 
   function handleLogout() {
     // remove both items you’ve stored
@@ -71,15 +71,14 @@ export default function Profile() {
     // localStorage.clear();
 
     // redirect back to login (or home) page
-    router.replace("/login");
+    router.replace("/Login");
   }
-
 
   return (
     <div className="flex flex-col items-center justify-center h-screen px-2 max-md:px-4">
       <div className="flex flex-col items-start justify-center bg-white gap-8 rounded-lg w-full max-w-[486px] h-auto">
         {/* Back Button */}
-        <div className="cursor-pointer w-full">
+        <div className="cursor-pointer w-full" >
           <Image
             src="/profileIcons/profileBackBtn.svg"
             height={24}
@@ -127,8 +126,7 @@ export default function Profile() {
             ))}
           </div>
 
-            <div className="w-full bg-gray-200 h-1"></div>
-
+          <div className="w-full bg-gray-200 h-1"></div>
 
           <div className="grid grid-cols-1 ">
             {secondGroup.map(({ label, href, iconSrc }) => (
@@ -151,8 +149,8 @@ export default function Profile() {
           </div>
 
           <div className="w-full bg-gray-200 h-1"></div>
-          
- {/*  */}
+
+          {/*  */}
           <div className="grid grid-cols-1 ">
             {thirdGroup.map(({ label, href, iconSrc }) => (
               <a
@@ -171,22 +169,21 @@ export default function Profile() {
                 <span className="font-medium txt-18">{label}</span>
               </a>
             ))}
-            
-            {/* Logout button */}
-        <button
-          onClick={handleLogout}
-          className="flex items-center gap-3 p-4 hover:bg-gray-50 transition"
-        >
-          <Image
-            src="/profileIcons/logout.svg"
-            alt="Logout icon"
-            width={24}
-            height={24}
-          />
-          <span className="font-medium txt-18">Logout</span>
-        </button>
-          </div>
 
+            {/* Logout button */}
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-3 p-4 hover:bg-gray-50 transition"
+            >
+              <Image
+                src="/profileIcons/logout.svg"
+                alt="Logout icon"
+                width={24}
+                height={24}
+              />
+              <span className="font-medium txt-18">Logout</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
