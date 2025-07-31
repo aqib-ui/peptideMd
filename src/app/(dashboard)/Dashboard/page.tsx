@@ -25,8 +25,18 @@ export default function DashboardPage() {
     }
   }, []);
 
-  const handleSubscribe = () => {
+  const handleSubscribe = (plan: "annual" | "monthly") => {
     localStorage.setItem("hasSubscribed", "true");
+      localStorage.setItem("selectedPlan", plan); // Add this line
+
+      // Dispatch custom event
+  const event = new CustomEvent("subscriptionUpdated", {
+    detail: { plan }
+  });
+  window.dispatchEvent(event);
+
+  
+
     setShowPopup(false);
     // router.push("/Subscription");
     setShowSuccessModal(true); // show modal instead of navigating
