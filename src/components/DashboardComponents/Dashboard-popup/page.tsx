@@ -145,8 +145,6 @@
 //   );
 // }
 
-
-
 // // Bilal Code
 // // "use client";
 // // import React, { useEffect, useState } from "react";
@@ -184,7 +182,7 @@
 // //   return (
 // //     <div className="fixed inset-0 bg-[#00000033] flex justify-center items-center z-50 p-4">
 // //       <div
-// //         className="bg-[#224674] p-6 sm:p-8 rounded-xl shadow-xl max-w-md sm:max-w-lg w-full 
+// //         className="bg-[#224674] p-6 sm:p-8 rounded-xl shadow-xl max-w-md sm:max-w-lg w-full
 // //        overflow-y-auto custom-scroll"
 // //       >
 // //         {/* --> thin scrollbar */}
@@ -283,14 +281,12 @@
 // //   );
 // // }
 
-
-
-
 // src/components/DashboardComponents/Dashboard-popup/page.tsx
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { BsCheckCircleFill } from "react-icons/bs";
+import { RxCross2 } from "react-icons/rx";
 
 interface Props {
   onClose: () => void;
@@ -329,19 +325,31 @@ export default function DashboardPopup({ onClose, onSubscribe }: Props) {
         className=" dashboard-popup-scroll  w-full max-w-md sm:max-w-[470px] rounded-xl bg-[#224674] px-6 py-4 shadow-xl overflow-y-auto"
         style={{ maxHeight: "calc(100vh - 2rem)" }}
       >
-        {/* Header */}
-        <h2 className="text-3xl font-medium mb-4 text-center text-white">
-          Upgrade to Peptide Pro
-        </h2>
+        <div className="flex flex-col items-end justify-center">
+          {/* cross */}
+          <button
+            onClick={onClose}
+            className="text-[#224674] rounded-full bg-[#C8E4FC] p-2 hover:text-gray-700"
+          >
+            <RxCross2 size={16} />
+          </button>
+        </div>
+        
+        <div>
+          {/* Header */}
+          <h2 className="text-3xl font-medium mb-4 text-center text-white">
+            Upgrade to Peptide Pro
+          </h2>
 
-        {/* Image */}
-        <Image
-          src="/Dashboard/popup/popupImage.png"
-          alt="Upgrade to Peptide Pro"
-          width={363}
-          height={153}
-          className="mx-auto mb-4 w-[323px] h-[123px] object-contain"
-        />
+          {/* Image */}
+          <Image
+            src="/Dashboard/popup/popupImage.png"
+            alt="Upgrade to Peptide Pro"
+            width={363}
+            height={153}
+            className="mx-auto mb-4 w-[323px] h-[123px] object-contain"
+          />
+        </div>
 
         {/* Features List */}
         <div className="text-white text-lg mb-4">

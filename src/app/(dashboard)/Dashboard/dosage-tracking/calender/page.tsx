@@ -12,7 +12,7 @@ import enGB from "antd/locale/en_GB";
 import "@fontsource/inter";
 // import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
-import "antd/dist/reset.css";
+// import "antd/dist/reset.css";
 // import { DatePicker } from "antd";
 import type { CalendarProps } from "antd";
 // import PeptideDropdown from "./PeptideDropDown/PeptideDropDown";
