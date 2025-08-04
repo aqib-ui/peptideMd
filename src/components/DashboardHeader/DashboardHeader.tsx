@@ -20,7 +20,7 @@ const DashboardHeader = () => {
         <div className="flex items-center space-x-2">
           <Link href="/">
             <Image
-             priority
+              priority
               src="/headerIcon/logo.svg"
               alt="Logo"
               width={150}
@@ -177,7 +177,7 @@ const DashboardHeader = () => {
             {/* <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span> */}
           </Link>
 
-          <Link
+          {/* <Link
             href="/Dashboard/dosage-tracking/calender"
             className={`relative inline-block mr-5 text-xl font-medium group ${
               isActive("/Dashboard/dosage-tracking/calender")
@@ -186,7 +186,19 @@ const DashboardHeader = () => {
             }`}
           >
             <span className="relative z-10">Dosage</span>
-            {/* <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span> */}
+          </Link> */}
+
+          {/* // Add prefetch prop to the Dosage link */}
+          <Link
+            href="/Dashboard/dosage-tracking/calender"
+            prefetch={true} // Enable prefetching
+            className={`relative inline-block mr-5 text-xl font-medium group ${
+              isActive("/Dashboard/dosage-tracking/calender")
+                ? "text-[#224674] underline underline-offset-7 decoration-[#224674] decoration-3"
+                : "text-[#626D6F] hover:text-[#224674]"
+            }`}
+          >
+            <span className="relative z-10">Dosage</span>
           </Link>
         </nav>
 
