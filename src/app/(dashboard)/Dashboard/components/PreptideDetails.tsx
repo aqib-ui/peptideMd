@@ -17,17 +17,60 @@ export default function PeptideDetailPage({
   const [archives, setArchives] = useState(true);
   const [showTooltip, setShowTooltip] = useState(false);
 
-  const toggleArchive = () => {
-    setArchives(!archives);
-    const isArchiving = !archives;
+  // const toggleArchive = () => {
+  //   setArchives(!archives);
+  //   const isArchiving = !archives;
 
-    if (!isArchiving) {
-      setShowTooltip(true);
-      setTimeout(() => setShowTooltip(false), 1000);
+  //   if (!isArchiving) {
+  //     setShowTooltip(true);
+  //     setTimeout(() => setShowTooltip(false), 1000);
+  //   }
+
+  //   setArchives(isArchiving);
+  // };
+  const toggleArchive = async (peptideId: number) => {
+    try {
+      // toggle state locally first
+      setArchives((prev) => !prev);
+      const isArchiving = !archives;
+
+      // agar unarchive ho raha hai to tooltip show karo
+      if (!isArchiving) {
+        setShowTooltip(true);
+        setTimeout(() => setShowTooltip(false), 1000);
+      }
+
+      // API call
+      const token = localStorage.getItem("peptide_user_token");
+
+      const res = await fetch(
+        `https://peptide-backend.mazedigital.us/peptides/save/toggle?`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          // peptideId ko ensure number me bhej rahe hai
+          body: JSON.stringify({ peptideId: Number(peptideId) }),
+        }
+      );
+
+      const data = await res.json();
+      console.log("API response ===>", data);
+
+      // agar response success nahi hai to state revert karo
+      if (data?.status !== "success") {
+        setArchives((prev) => !prev);
+        alert("Something went wrong! Please try again");
+      }
+    } catch (error) {
+      console.error("Error toggling peptide:", error);
+      setArchives((prev) => !prev);
+      alert("Network error! Please try again");
     }
-
-    setArchives(isArchiving);
   };
+
   return (
     <div className="max-w-[1128px] px-4 xl:px-0 mx-auto  mt-12">
       {/* top section {back button and archives} */}
@@ -46,7 +89,7 @@ export default function PeptideDetailPage({
           {/* Archives button */}
           <button
             className="flex p-2 items-center gap-2 bg-[#F2F5F6] rounded-full cursor-pointer"
-            onClick={toggleArchive}
+            onClick={() => toggleArchive(peptideObj.id)}
           >
             {archives ? (
               <svg

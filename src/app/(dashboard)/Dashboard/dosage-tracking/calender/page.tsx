@@ -10,17 +10,12 @@ import updateLocale from "dayjs/plugin/updateLocale";
 import "dayjs/locale/en-gb";
 import enGB from "antd/locale/en_GB";
 import "@fontsource/inter";
-// import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
-import "antd/dist/reset.css";
-// import { DatePicker } from "antd";
 import type { CalendarProps } from "antd";
-// import PeptideDropdown from "./PeptideDropDown/PeptideDropDown";
 import type { PeptideOption } from "./PeptideDropDown/PeptideDropDown";
 import Calendar1 from "./AiFeedbackCalendar/AiFeedbackCalendar";
 import AddEditPeptideModal from "./AddEditPeptideModal/AddEditPeptideModal";
 import { PiDotsThreeOutline, PiDotsThreeOutlineLight } from "react-icons/pi";
-
 import "./calenderStyle.css";
 import { FaCircleCheck, FaSyringe } from "react-icons/fa6";
 

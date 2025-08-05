@@ -199,17 +199,15 @@ body {
   scrollbar-color: #c8e4fc transparent; /* Firefox */
 }
 
-
-
 /* scroll for dosage tracking modals */
 .modal-content {
   overflow-y: auto;
-  scrollbar-width: auto;               
-  scrollbar-color: #D8DFE0 transparent;
+  scrollbar-width: auto;
+  scrollbar-color: #d8dfe0 transparent;
 }
 
 .modal-content::-webkit-scrollbar {
-  width: 8px;          
+  width: 8px;
 }
 
 .modal-content::-webkit-scrollbar-track {
@@ -217,13 +215,13 @@ body {
 }
 
 .modal-content::-webkit-scrollbar-thumb {
-  background-color: #D8DFE0;   
-  border-radius: 4px;          
+  background-color: #d8dfe0;
+  border-radius: 4px;
   border: 1px solid transparent;
 }
 
 .modal-content::-webkit-scrollbar-thumb:hover {
-  background-color: #C0C4C5;    
+  background-color: #c0c4c5;
 }
 
 .modal-content::-webkit-scrollbar-corner {
@@ -234,7 +232,18 @@ body {
 
 
 
+
+
 /* globals.css */
+/* custom scrollbar for profile provider locator page */
+.custom-scrollbar-profile::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar-profile::-webkit-scrollbar-thumb {
+  background: #d8dfe0;
+  border-radius: 8px;
+}
 
 @layer utilities {
   /* .txt-72 { font-size: clamp(40px, 2.1vw + 28.5px, 72px); } */

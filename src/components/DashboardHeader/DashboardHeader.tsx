@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation"; // Naya hook import kiya hai
 import { useRouter } from "next/navigation";
+import CustomLink from "../CustomLink";
 
 const DashboardHeader = () => {
   const router = useRouter();
@@ -34,7 +35,7 @@ const DashboardHeader = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center">
-          <Link
+          <CustomLink
             href="/Dashboard"
             className={`relative inline-block mr-5 text-xl font-medium group ${
               isActive("/Dashboard")
@@ -44,7 +45,7 @@ const DashboardHeader = () => {
           >
             <span className="relative z-10">Dashboard</span>
             {/* <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span> */}
-          </Link>
+          </CustomLink>
           {/* Explore with dropdown menu */}
           <div
             className="relative pr-3 mr-2 "
@@ -91,8 +92,8 @@ const DashboardHeader = () => {
               onMouseLeave={() => setIsExploreHovered(false)}
             >
               <ul className="overflow-hidden">
-                <Link
-                  onClick={() => setIsExploreHovered(false)}
+                <CustomLink
+                  // onClick={() => setIsExploreHovered(false)}
                   href="/Dashboard/videos"
                   className="flex items-center gap-3 p-4 border-b border-[#D8DFE0]  hover:bg-blue-50 cursor-pointer transition-colors"
                 >
@@ -105,9 +106,9 @@ const DashboardHeader = () => {
                   <span className="text-[#626D6F] text-xl font-medium">
                     Videos
                   </span>
-                </Link>
-                <Link
-                  onClick={() => setIsExploreHovered(false)}
+                </CustomLink>
+                <CustomLink
+                  // onClick={() => setIsExploreHovered(false)}
                   href="/Dashboard/podcast"
                   className="flex items-center gap-3 p-4 border-b border-[#D8DFE0] hover:bg-blue-50 cursor-pointer transition-colors"
                 >
@@ -120,10 +121,10 @@ const DashboardHeader = () => {
                   <span className="text-[#626D6F] text-xl font-medium">
                     Podcast
                   </span>
-                </Link>
-                <Link
+                </CustomLink>
+                <CustomLink
                   href={"/Dashboard/articles"}
-                  onClick={() => setIsExploreHovered(false)}
+                  // onClick={() => setIsExploreHovered(false)}
                   className="flex items-center gap-3 p-4 border-b border-[#D8DFE0] hover:bg-blue-50 cursor-pointer transition-colors"
                 >
                   <Image
@@ -135,10 +136,10 @@ const DashboardHeader = () => {
                   <span className="text-[#626D6F] text-xl font-medium">
                     Articles
                   </span>
-                </Link>
-                <Link
+                </CustomLink>
+                <CustomLink
                   href={"/Dashboard/case-studies"}
-                  onClick={() => setIsExploreHovered(false)}
+                  // onClick={() => setIsExploreHovered(false)}
                   className="flex items-center gap-3 p-4  hover:bg-blue-50 cursor-pointer transition-colors"
                 >
                   <Image
@@ -150,12 +151,12 @@ const DashboardHeader = () => {
                   <span className="text-[#626D6F] text-xl font-medium ">
                     Case Studies
                   </span>
-                </Link>
+                </CustomLink>
               </ul>
             </div>
           </div>
 
-          <Link
+          <CustomLink
             href="/Dashboard/peptides"
             className={`relative inline-block mr-5 text-xl font-medium group ${
               isActive("/Dashboard/peptides")
@@ -165,9 +166,9 @@ const DashboardHeader = () => {
           >
             <span className="relative z-10">Peptides</span>
             {/* <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span> */}
-          </Link>
+          </CustomLink>
 
-          <Link
+          <CustomLink
             href="/Dashboard/chat-pepi"
             className={`relative inline-block mr-5 text-xl font-medium group ${
               isActive("/Dashboard/chat-pepi")
@@ -177,9 +178,9 @@ const DashboardHeader = () => {
           >
             <span className="relative z-10">Chat with Pepi</span>
             {/* <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span> */}
-          </Link>
+          </CustomLink>
 
-          <Link
+          <CustomLink
             href="/Dashboard/dosage-tracking/calender"
             className={`relative inline-block mr-5 text-xl font-medium group ${
               isActive("/Dashboard/dosage-tracking/calender")
@@ -189,7 +190,7 @@ const DashboardHeader = () => {
           >
             <span className="relative z-10">Dosage</span>
             {/* <span className="absolute left-0 -bottom-[3px] w-0 h-[2.5px] bg-[#224674] transition-all duration-400 ease-in-out group-hover:w-full"></span> */}
-          </Link>
+          </CustomLink>
         </nav>
 
         {/* User Avatar */}

@@ -104,7 +104,7 @@ function PeptidesContent() {
   ]);
 
   return (
-    <div className="p-4 md:py-10 bg-white lg:px-8 2xl:px-0 max-w-screen-2xl mx-auto">
+    <div className="p-4 md:py-10 bg-white lg:px-8 max-w-screen-2xl mx-auto">
       {/* Header */}
       <div className="flex justify-between">
         <div className="flex gap-4 items-center">

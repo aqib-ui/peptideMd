@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useSearchParams } from "next/navigation";
 import DosageRemoteService from "@/services/remote/modules/dosage";
@@ -9,9 +9,13 @@ import ChatSidebar from "./components/ChatSidebar";
 import ChatMessages from "./components/ChatMessages";
 import ChatInput from "./components/ChatInput";
 import MobileHeader from "./components/MobileHeader";
-import { fetchUserChats, saveChatToBackend, loadChatByIdentifier } from '@/services/chatPepi/chatService';
-import { formatDate } from '@/utils/dateUtils';
-import { copyToClipboard } from '@/utils/clipboard';
+import {
+  fetchUserChats,
+  saveChatToBackend,
+  loadChatByIdentifier,
+} from "@/services/chatPepi/chatService";
+import { formatDate } from "@/utils/dateUtils";
+import { copyToClipboard } from "@/utils/clipboard";
 
 // Define type for dosage item
 interface DosageItem {
@@ -120,7 +124,6 @@ const AiAssistantPage = () => {
     setInputValue("");
   };
 
-  
   // == Call OpenAI and append response to current messages ====
   const generateResponseWithAppend = async (
     userMessage: string,
@@ -262,15 +265,14 @@ const AiAssistantPage = () => {
 
           // 1. Extract unique peptide names
           const uniquePeptides = Array.from(
-            new Set(dosageData.map((item) =>  item.dosage + " " + item.goals))
+            new Set(dosageData.map((item) => item.dosage + " " + item.goals))
           ).join(", ");
 
           // 2. Format dates for display
           const dateRange = isSingle
             ? `[${formatDate(start)}]`
-            : `[${Array.from(
-                new Set(dosageData.map((item) => item.date))
-              ).sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
+            : `[${Array.from(new Set(dosageData.map((item) => item.date)))
+                .sort((a, b) => new Date(a).getTime() - new Date(b).getTime())
                 .map((d) => formatDate(d))
                 .join(", ")}]`;
 
@@ -355,4 +357,11 @@ const AiAssistantPage = () => {
   );
 };
 
-export default AiAssistantPage;
+// Outer Default component with Suspense boundary
+export default function Page() {
+  return (
+    <Suspense fallback={<div>loading chat-pepi</div>}>
+      <AiAssistantPage />
+    </Suspense>
+  );
+}
