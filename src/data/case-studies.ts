@@ -2,7 +2,7 @@ export const caseStudies = [
   {
     id: "1",
     title: "Quality Considerations in Solid Phase Peptide Synthesis: A Case Study with Liraglutide",
-    image: "/Dashboard/rec-case/1.png",
+    image: "/Dashboard/rec-case/1.jpg",
     description:
       "Discover how peptides influence muscle growth, fat loss, skin health, and overall recovery. This video breaks down the science behind peptides in a simple, engaging way — perfect for beginners and enthusiasts alike.",
     date: "1/May/2025",
@@ -11,7 +11,7 @@ export const caseStudies = [
   {
     id: "2",
     title: "Reversing Tendon Injury with BPC-157: A Healing Journey”",
-    image: "/Dashboard/rec-case/2.jpg",
+    image: "/Dashboard/rec-case/2-a.jpg",
     description:
       "This video helps you choose the best peptide for your needs. if you have a specific health goal or need, this video can help you find the right peptides to help you achieve your goals.",
     date: "1/May/2025",

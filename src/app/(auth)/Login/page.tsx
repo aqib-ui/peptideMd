@@ -53,7 +53,7 @@ export default function LoginPage() {
   //   setIsSubmitting(false);
 
   //   // On successful login
-  //   router.push("/Dashboard");
+  //   router.push("/dashboard");
   // };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,9 +100,9 @@ export default function LoginPage() {
         toast.success("Login successful!");
         // console.log( "🔁 result.data.user.isOnboardingIncomplete ===>", typeof(result.data.isOnboardingIncomplete));
         if (result.data.isOnboardingIncomplete == true) {
-          router.push("/SixDigitVerify/on-board");
+          router.push("/on-board");
         } else {
-          router.push("/Dashboard");
+          router.push("/dashboard");
         }
       } else {
         toast.error(result.message || "Invalid credentials.");
@@ -231,7 +231,7 @@ export default function LoginPage() {
             {/* Forgot Password */}
             <div className="w-full 2xl:w-[496px] mt-1 flex justify-end">
               <Link
-                href="/ForgetPassword"
+                href="/forget-password"
                 className="txt-18 text-[#224674] font-semibold underline text-right"
                 // className="inline-block text-[#224674] font-semibold underline text-right text-[18px]"
               >
@@ -263,7 +263,7 @@ export default function LoginPage() {
             {/* Sign Up Link */}
             <div className="w-full 2xl:w-[496px] mt-1 flex justify-center">
               <Link
-                href="/Signup"
+                href="/signup"
                 className="inline-block text-[#224674] font-semibold underline text-center txt-18"
               >
                 I don’t have an account?

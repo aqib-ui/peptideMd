@@ -7,12 +7,12 @@ const caseStudies = [
   {
     title:
       "Quality Considerations in Solid Phase Peptide Synthesis: A Case Study with Liraglutide",
-    poster: "/Dashboard/rec-case/1.png",
+    poster: "/Dashboard/rec-case/1.jpg",
     date: "1/May/2025",
   },
   {
     title: "Reversing Tendon Injury with BPC-157: A Healing Journey",
-    poster: "/Dashboard/rec-case/2.jpg",
+    poster: "/Dashboard/rec-case/2-a.jpg",
     date: "1/May/2025",
   },
   {
@@ -26,9 +26,13 @@ export default function RecommendedCaseStudies() {
   return (
     <div className="bg-white max-lg:p-0 w-full rounded-xl">
       <div className="flex justify-between items-center mb-">
-        <h2 className="text-2xl 2xl:txt-28 font-medium">Recommended Case Studies</h2>
+        <h2 className="text-2xl 2xl:txt-28 font-medium">
+          Recommended Case Studies
+        </h2>
         <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">
-          <Link href="/Dashboard/case-studies?viewAll=true">View All</Link>
+          <Link href="/case-studies?viewAll=recommended">
+            View All
+          </Link>
         </span>
       </div>
 
@@ -58,7 +62,9 @@ export default function RecommendedCaseStudies() {
             {/* right */}
             {/* <div className="flex flex-col justify-between h-full pt-2"> */}
             <div className="flex flex-col  w-full   justify-between  max-2xl:gap-0">
-              <h3 className="txt-18 leading-6 font-semibold w-full line-clamp-3 h-[76px] ">{study.title}</h3>
+              <h3 className="txt-18 leading-6 font-semibold w-full line-clamp-3 h-[76px] ">
+                {study.title}
+              </h3>
               <div className="flex items-center justify-between  ">
                 <p className="text-[#626D6F] font-medium txt-14">
                   {study.date}

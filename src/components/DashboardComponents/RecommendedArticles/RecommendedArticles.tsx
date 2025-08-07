@@ -35,7 +35,7 @@ export default function RecommendedArticles() {
       <div className="flex justify-between items-center mb-1">
         <h2 className="text-2xl 2xl:txt-28 font-medium">Recommended Articles</h2>
         <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">
-          <Link href="/Dashboard/articles?viewAll=true">View All</Link>
+          <Link href="/articles?viewAll=recommended">View All</Link>
         </span>
       </div>
 

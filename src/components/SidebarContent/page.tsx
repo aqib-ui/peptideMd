@@ -12,12 +12,12 @@ const menuItemsLeft = [
   {
     title: "Videos",
     icon: "/headerIcon/prep-video.svg",
-    href: "/Dashboard/videos",
+    href: "/videos",
   },
   {
     title: "Articles",
     icon: "/headerIcon/prep-article.svg",
-    href: "/Dashboard/articles",
+    href: "/articles",
   },
 ];
 
@@ -25,17 +25,17 @@ const menuItemsRight = [
   {
     title: "Peptide Database",
     icon: "/headerIcon/prep-database1.svg",
-    href: "/Dashboard/peptides",
+    href: "/peptides",
   },
   {
     title: "Podcast",
     icon: "/headerIcon/prep-podcast.svg",
-    href: "/Dashboard/podcast",
+    href: "/podcast",
   },
   {
     title: "Case Studies",
     icon: "/headerIcon/case-icon.svg",
-    href: "/Dashboard/case-studies",
+    href: "/case-studies",
   },
 ];
 interface SidebarContentProps {
@@ -162,10 +162,10 @@ export default function SidebarContent({
                 </div>
               </div>
               <div className=" flex justify-center gap-4">
-                <AuthButton href="/Signup" variant="primary" >
+                <AuthButton href="/signup" variant="primary" >
                   Signup
                 </AuthButton>
-                <AuthButton href="/Login" variant="secondary">
+                <AuthButton href="/login" variant="secondary">
                   Log In
                 </AuthButton>
               </div>

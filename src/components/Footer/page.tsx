@@ -44,12 +44,12 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="/Dashboard/videos" className="hover:text-blue-500">
+              <Link href="/videos" className="hover:text-blue-500">
                 Videos
               </Link>
             </li>
             <li>
-              <Link href="/Dashboard/articles" className="hover:text-blue-500">
+              <Link href="/articles" className="hover:text-blue-500">
                 Articles
               </Link>
             </li>
@@ -60,19 +60,19 @@ export default function Footer() {
               {/* <a href="/AiAssistant" className="hover:text-blue-500">
                     AI Assistant
                   </a> */}
-              <Link href="/Dashboard/peptides" className="hover:text-blue-500">
+              <Link href="/peptides" className="hover:text-blue-500">
                 Peptide Database
               </Link>
             </li>
 
             <li>
-              <Link href="/Dashboard/podcast" className="hover:text-blue-500">
+              <Link href="/podcast" className="hover:text-blue-500">
                 Podcast
               </Link>
             </li>
             <li>
               <Link
-                href="/Dashboard/case-studies"
+                href="/case-studies"
                 className="hover:text-blue-500"
               >
                 Case Studies
@@ -106,25 +106,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-//  <footer className="bg-[#F2F5F6] py-2">
-//         <div className="max-w-[1440px] sm:mx-auto sm:px-6 grid grid-cols-3 max-sm:flex max-sm:flex-col max-sm:gap-1 items-center text-[#25292A] txt-16 font-medium">
-//         {/* Left: Links */}
-//         <p className="text-left max-md:text-center">
-//           Privacy Policy <span className="px-4">|</span> Terms & Conditions
-//         </p>
-
-//         {/* Center: Always centered */}
-//         <span className="text-center">
-//           © 2025, Nuda Peptide Therapeutics, All Rights Reserved
-//         </span>
-
-//         {/* Right: Social Icons */}
-//         <div className="flex justify-end max-md:justify-center gap-4 text-[#224674] text-lg">
-//           <FaFacebookF />
-//           <FaLinkedinIn />
-//           <AiFillInstagram />
-//           <FaXTwitter />
-//         </div>
-//       </div>
-//     </footer>

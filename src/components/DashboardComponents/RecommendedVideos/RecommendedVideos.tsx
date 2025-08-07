@@ -33,7 +33,7 @@ export default function RecommendedVideos() {
         </h2>
 
         <span className="cursor-pointer text-[#224674] text-base underline font-semibold hover:text-[#1b3a5c]">
-          <Link href="/Dashboard/videos?viewAll=true">View All</Link>
+          <Link href="/videos?viewAll=recommended">View All</Link>
         </span>
       </div>
 

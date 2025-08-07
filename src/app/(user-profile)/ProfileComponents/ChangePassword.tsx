@@ -18,29 +18,22 @@ export default function ChangePassword({
     confirmPassword?: string;
   };
 
-  // get user form local storage
-  const user = JSON.parse(localStorage.getItem("peptide_user") || "{}");
-  //   console.log(user);
-  const userName = user?.name || "your name";
-  const userEmail = user?.email || "your email";
-  // get user password from local storage and deecrypt it
-  const userPassword = user?.password;
-
   const token = localStorage.getItem("peptide_user_token") || "";
-  console.log(token);
 
   const [oldPassword, setOldPassword] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [showOldPassword, setShowOldPassword] = useState(false);
   const [errors, setErrors] = useState<ErrorState>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   //Validation function to validate fields in client side
+
   const validateFields = (): ErrorState => {
     const newErrors: ErrorState = {};
-    if (!oldPassword) newErrors.oldPassword = "Old password is required.";
+    if (!oldPassword) newErrors.oldPassword = "Please enter your old password.";
 
     if (!password) newErrors.password = "Password is required.";
     else if (password.length < 6)
@@ -61,12 +54,48 @@ export default function ChangePassword({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     const validationErrors = validateFields();
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length > 0) return;
-    
-    //api call 
+    // update password api call with try catch
+    console.log("🔁 oldPassword ===>", oldPassword);
+    console.log("🔁 password ===>", password);
+    try {
+      const response = await fetch(
+        "https://peptide-backend.mazedigital.us/users/v1_mobile_change-password",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            oldPassword: oldPassword,
+            newPassword: password,
+          }),
+        }
+      );
+      const result = await response.json();
+      console.log("🔁 result ===>", result);
+      if (result.status === "success") {
+        toast.success("Password changed successfully.");
+        setTimeout(() => {
+          setChangePassword(false);
+        }, 1500);
+      } else if (
+        result.status === "error" ||
+        result.message.includes("Old password is incorrect")
+      ) {
+        setErrors((prev) => ({
+          ...prev,
+          oldPassword: "Old password is incorrect",
+        }));
+      } else {
+        toast.error(result.message);
+      }
+    } catch (error) {
+      console.error("Error updating password:", error);
+    }
   };
   return (
     <>
@@ -75,6 +104,7 @@ export default function ChangePassword({
 
       {/* Dialog Box */}
       <div className="fixed inset-0 flex items-center justify-center z-50">
+        <Toaster position="top-center" />
         <div className="bg-white  p-6 rounded-2xl w-[480px] max-h-[550px] shadow-xl flex flex-col gap-6">
           {/* Header */}
           <div className="flex items-center justify-between  pb-3 ">
@@ -109,7 +139,7 @@ export default function ChangePassword({
               </label>
               <div className="relative w-full h-full  ">
                 <input
-                  type={showPassword ? "text" : "password"}
+                  type={showOldPassword ? "text" : "password"}
                   value={oldPassword}
                   onChange={(e) => setOldPassword(e.target.value)}
                   onFocus={() => {
@@ -132,16 +162,16 @@ export default function ChangePassword({
                       ? "border border-[#F14D4D] bg-[rgba(241,77,77,0.08)]"
                       : "border border-transparent focus:border-[#224674] focus:bg-[#C8E4FC80]"
                   }`}
-                  placeholder="Enter your password"
+                  placeholder="Enter your old password"
                 />
 
                 <div className="absolute inset-y-0 right-3 flex items-center">
                   <button
                     type="button"
-                    onClick={() => setShowPassword(!showPassword)}
+                    onClick={() => setShowOldPassword(!showOldPassword)}
                     className="text-[#51595A]  hover:text-gray-700 focus:outline-none"
                   >
-                    {showPassword ? (
+                    {showOldPassword ? (
                       <RiEyeLine className="txt-24 cursor-pointer text-[#224674]" />
                     ) : (
                       <RiEyeOffLine className="txt-24 cursor-pointer text-[#224674]" />
@@ -151,7 +181,7 @@ export default function ChangePassword({
               </div>
               {/* Error message with fixed height and opacity transition */}
               <p
-                className={`text-[#25292A] flex gap-1 text-xs mt-1 transition-opacity duration-100 ${
+                className={`text-[#F14D4D] flex gap-1 text-xs mt-1 transition-opacity duration-100 ${
                   errors.oldPassword ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -167,7 +197,7 @@ export default function ChangePassword({
 
             {/* Link to forgot password */}
             <Link
-              href="/ForgetPassword"
+              href="/forget-password"
               className="text-[#224674] text-sm self-end font-semibold underline mb-1"
             >
               Forgot Password?
@@ -222,7 +252,7 @@ export default function ChangePassword({
               </div>
               {/* Error message with fixed height and opacity transition */}
               <p
-                className={`text-[#25292A] flex gap-1 text-xs mt-1 transition-opacity duration-100 ${
+                className={`text-[#F14D4D] flex gap-1 text-xs mt-1 transition-opacity duration-100 ${
                   errors.password ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -287,7 +317,7 @@ export default function ChangePassword({
 
               {/* Error message with fixed height and opacity transition */}
               <p
-                className={`text-[#25292A] flex gap-1 text-xs mt-1 transition-opacity duration-100 ${
+                className={`text-[#F14D4D] flex gap-1 text-xs mt-1 transition-opacity duration-100 ${
                   errors.confirmPassword ? "opacity-100" : "opacity-0"
                 }`}
               >

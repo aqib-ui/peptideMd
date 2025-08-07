@@ -91,6 +91,10 @@ body {
   }
 }
 
+
+
+
+
 .animate-in {
   animation: fadeIn 0.3s ease-out, zoomIn 0.3s ease-out;
 }
